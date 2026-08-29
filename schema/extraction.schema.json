@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "hn_claim_extraction_v1",
+  "description": "Extractor output for one document (story title + self-text + top comments). Granularity v1: a claim is an atomic, generalized proposition someone could agree or disagree with — not a doc-specific anecdote. Target 3-10 claims per doc; 0 is valid for content-free docs.",
+  "type": "object",
+  "required": ["claims"],
+  "additionalProperties": false,
+  "properties": {
+    "claims": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["claim", "concepts"],
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200,
+            "description": "Atomic declarative statement, present tense, self-contained (no 'this', 'the author', 'OP'). Generalized beyond the specific instance: 'Rust prevents memory-safety bug classes', not 'my Rust port fixed a segfault'."
+          },
+          "concepts": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": { "type": "string", "minLength": 2, "maxLength": 60 },
+            "description": "Noun-phrase concept anchors of the claim (lowercase, singular). The co-occurrence graph is built over resolved claims; concepts aid clustering and audit."
+          },
+          "quote": {
+            "type": "string",
+            "maxLength": 300,
+            "description": "Shortest verbatim source snippet grounding the claim (for audit; optional)."
+          }
+        }
+      }
+    }
+  }
+}
