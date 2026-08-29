@@ -27,7 +27,7 @@ import sys
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "data", "registry", "pilot0")
+OUT = os.environ.get("REGISTRY_OUT", os.path.join(ROOT, "data", "registry", "pilot0"))
 EXTRACTOR_ID = "deepseek-v4-flash-nothink_ptitles1_svt1"
 EMBED_MODEL = "BAAI/bge-small-en-v1.5"   # 2023 release; predates all eval windows
 AUTO_HI = 0.95
@@ -60,6 +60,8 @@ def stage_collect() -> None:
         JOIN read_parquet('{ROOT}/data/docs/docs_*.parquet') d ON c.doc_id = d.doc_id
         ORDER BY d.time, c.doc_id
     """).arrow()
+    if hasattr(times, "read_all"):
+        times = times.read_all()
     pq.write_table(times, out, compression="zstd")
     print(f"collect: {times.num_rows} claims from {len(shards)} docs")
 
