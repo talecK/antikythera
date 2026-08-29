@@ -1,0 +1,7 @@
+data/
+*.parquet
+*.jsonl
+*.jsonl.gz
+.env
+__pycache__/
+.venv/
