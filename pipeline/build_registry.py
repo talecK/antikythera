@@ -125,7 +125,15 @@ def stage_cluster() -> None:
     times = table["time"].to_pylist()
 
     dim = vecs.shape[1]
-    index = faiss.IndexFlatIP(dim)          # exact search; rebuilt-free adds
+    if os.environ.get("CLUSTER_INDEX", "flat") == "hnsw":
+        # approximate: ~N log N. Certify against an exact run before trusting
+        # a registry built this way (recall misses compound sequentially).
+        index = faiss.IndexHNSWFlat(dim, 32, faiss.METRIC_INNER_PRODUCT)
+        index.hnsw.efConstruction = 200
+        index.hnsw.efSearch = 64
+        print("cluster: HNSW index (approximate)", flush=True)
+    else:
+        index = faiss.IndexFlatIP(dim)      # exact search; rebuilt-free adds
     centroids: list[np.ndarray] = []        # running sums (unnormalized)
     counts: list[int] = []
     ideas: list[dict] = []                  # idea_id -> canonical, first_seen, n
