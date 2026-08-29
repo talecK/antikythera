@@ -1,0 +1,21 @@
+-- Filtered HN stories for year {YEAR} (pre-registered filter spec)
+-- Source: ClickHouse playground default.hackernews_history
+--   (ReplicatedReplacingMergeTree(update_time) ORDER BY id; FINAL = latest version per id)
+-- Filter per brief: score >= 5 OR descendants >= 3; alive, not deleted.
+SELECT
+    id,
+    time,
+    by,
+    title,
+    url,
+    text,
+    score,
+    descendants
+FROM hackernews_history FINAL
+WHERE type = 'story'
+  AND deleted = 0
+  AND dead = 0
+  AND (score >= 5 OR descendants >= 3)
+  AND time >= toDateTime('{YEAR}-01-01 00:00:00')
+  AND time <  toDateTime('{NEXT_YEAR}-01-01 00:00:00')
+FORMAT Parquet

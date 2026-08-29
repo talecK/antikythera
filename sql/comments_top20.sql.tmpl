@@ -1,0 +1,33 @@
+-- Top ~20 comments per filtered story, stories of year {YEAR}
+-- Ranking decision (logged for pre-registration): playground has no comment
+-- scores, so rank TOP-LEVEL comments (parent = story id) by direct-reply
+-- count (length(kids)) desc, then time asc; take 20 per story.
+-- Comment window: {YEAR}-01-01 .. {NEXT_YEAR}-01-01 + 90 days (late comments
+-- beyond +90d after year end are negligible; HN threads die within days).
+-- Deeper replies remain reachable via the comment skeleton pull.
+SELECT
+    parent AS story_id,
+    id,
+    time,
+    by,
+    text,
+    length(kids) AS n_replies
+FROM hackernews_history FINAL
+WHERE type = 'comment'
+  AND deleted = 0
+  AND dead = 0
+  AND time >= toDateTime('{YEAR}-01-01 00:00:00')
+  AND time <  toDateTime('{NEXT_YEAR}-01-01 00:00:00') + INTERVAL 90 DAY
+  AND parent IN (
+      SELECT id
+      FROM hackernews_history FINAL
+      WHERE type = 'story'
+        AND deleted = 0
+        AND dead = 0
+        AND (score >= 5 OR descendants >= 3)
+        AND time >= toDateTime('{YEAR}-01-01 00:00:00')
+        AND time <  toDateTime('{NEXT_YEAR}-01-01 00:00:00')
+  )
+ORDER BY story_id, n_replies DESC, time ASC
+LIMIT 20 BY story_id
+FORMAT Parquet

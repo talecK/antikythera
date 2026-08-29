@@ -1,0 +1,18 @@
+-- Comment skeleton for [{START}, {END}): full comment graph, no text.
+-- Pulled in MONTHLY chunks: playground caps results at 1M rows and a full
+-- year of comments (~4M) exceeds it.
+-- Enables later re-ranking (subtree sizes), deep-reply retrieval, and
+-- independent-author counting without re-pulling text.
+SELECT
+    id,
+    parent,
+    time,
+    by,
+    length(kids) AS n_replies
+FROM hackernews_history FINAL
+WHERE type = 'comment'
+  AND deleted = 0
+  AND dead = 0
+  AND time >= toDateTime('{START} 00:00:00')
+  AND time <  toDateTime('{END} 00:00:00')
+FORMAT Parquet
