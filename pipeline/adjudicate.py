@@ -142,7 +142,9 @@ def main() -> None:
         for attempt in range(2):
             try:
                 raw = call(format_batch(batch))
-            except Exception:
+            except Exception as e:
+                if "402" in str(e) or "Insufficient Balance" in str(e):
+                    raise SystemExit("402 Insufficient Balance — top up and re-run")
                 time.sleep(5 * (attempt + 1))
                 continue
             verdicts = parse_verdicts(raw, expected)
