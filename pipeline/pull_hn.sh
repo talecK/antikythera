@@ -58,6 +58,10 @@ for year in $(seq "$FIRST" "$LAST"); do
     fetch "$(year_query "$SQL/comments_top20.sql.tmpl" "$year")" \
           "$OUT/comments_top20/comments_$year.parquet" || fails=$((fails+1))
     for month in $(seq 1 12); do
+        # don't query months that haven't happened yet
+        if [[ $(printf '%04d%02d' "$year" "$month") -gt $(date +%Y%m) ]]; then
+            continue
+        fi
         fetch "$(month_query "$SQL/comment_skeleton.sql.tmpl" "$year" "$month")" \
               "$OUT/comment_skeleton/skeleton_$(printf '%04d_%02d' "$year" "$month").parquet" || fails=$((fails+1))
     done
