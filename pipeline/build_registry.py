@@ -28,7 +28,7 @@ import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.environ.get("REGISTRY_OUT", os.path.join(ROOT, "data", "registry", "pilot0"))
-EXTRACTOR_ID = "deepseek-v4-flash-nothink_ptitles1_svt1"
+EXTRACTOR_ID = os.environ.get("REGISTRY_EXTRACTOR", "deepseek-v4-flash-nothink_ptitles1_svt1")
 EMBED_MODEL = "BAAI/bge-small-en-v1.5"   # 2023 release; predates all eval windows
 AUTO_HI = 0.95
 GRAY_LO = 0.85
@@ -43,21 +43,41 @@ def stage_collect() -> None:
     if os.path.exists(out):
         print("collect: cached")
         return
+    import re
+    fence = re.compile(r"^\s*```(?:json)?\s*(.*?)\s*```\s*$", re.S)
+
+    def rec_claims(rec: dict) -> list[str]:
+        if "claims" in rec:                      # titles-conveyor shape
+            return rec["claims"]
+        m = fence.match(rec.get("raw", ""))      # doc-conveyor shape: parse raw
+        try:
+            data = json.loads(m.group(1) if m else rec["raw"])
+        except (json.JSONDecodeError, KeyError):
+            return []
+        out = []
+        for c in data.get("claims", []) if isinstance(data, dict) else []:
+            if isinstance(c, dict) and isinstance(c.get("claim"), str):
+                out.append(c["claim"])           # lenient: extras/null quotes ignored
+        return out
+
     rows = []
     shards = glob.glob(os.path.join(ROOT, "data", "extractions", EXTRACTOR_ID, "*", "*.json"))
-    print(f"collect: {len(shards)} cached docs")
+    print(f"collect: {len(shards)} cached docs ({EXTRACTOR_ID})")
     for path in shards:
         rec = json.load(open(path))
-        for c in rec["claims"]:
+        for c in rec_claims(rec):
             rows.append((rec["doc_id"], c))
     import pyarrow as pa
     import pyarrow.parquet as pq
     con = duckdb.connect()
     t = pa.table({"doc_id": [r[0] for r in rows], "claim": [r[1] for r in rows]})
     con.register("claims_raw", t)
+    years = os.environ.get("REGISTRY_YEARS", "")  # e.g. "2015,2016,2017"; empty = all
+    year_filter = f"AND year(d.time) IN ({years})" if years else ""
     times = con.sql(f"""
         SELECT c.doc_id, c.claim, d.time FROM claims_raw c
         JOIN read_parquet('{ROOT}/data/docs/docs_*.parquet') d ON c.doc_id = d.doc_id
+        WHERE 1=1 {year_filter}
         ORDER BY d.time, c.doc_id
     """).arrow()
     if hasattr(times, "read_all"):
