@@ -90,7 +90,12 @@ def process_batch(client: openai.OpenAI, batch_no: int, batch: list[tuple[int, s
             "\n\nREMINDER: raw JSON only; every index 0..N-1 exactly once.")):
         try:
             result = call_batch(client, batch, corrective)
-        except openai.APIError as e:
+        except openai.APIStatusError as e:
+            if e.status_code == 402:  # out of balance: halt run, don't grind
+                raise SystemExit("402 Insufficient Balance — top up and re-run")
+            time.sleep(5 * (attempt + 1))
+            continue
+        except openai.APIError:
             time.sleep(5 * (attempt + 1))
             continue
         claims = parse_batch(result["raw"], len(batch))
