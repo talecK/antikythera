@@ -50,6 +50,17 @@ Reproduce: `sql/bq/*.sql` + `pipeline/export_bq.py` (canonical);
 `pipeline/pull_hn.sh 2006 2026` (mirror; idempotent).
 Verify: `pipeline/verify_pull.py`.
 
+## Mirror completeness (2026-08-28, final)
+- Stories 21/21 years, top-20 comments 21/21 years: COMPLETE.
+- Comment skeleton: 197/248 months (gaps: 2014-02..2018-04 block + 2026
+  partials). Cause: playground quota `queries_per_normalized_hash = 100/hr`
+  — all monthly skeleton queries share one normalized hash, so bulk backfill
+  stalls at ~100 chunks/hour. Decision: skeleton stays CANONICAL-ONLY
+  (BigQuery file is complete + verified); the mirror's job — independent
+  cross-check of the doc corpus (stories + comments) — is fully served.
+  `pull_hn.sh` is idempotent; re-running in a fresh quota hour fills gaps if
+  ever wanted. Do not engineer around the quota (shared free service).
+
 ## Leakage notes
 - Every row carries its HN `time`. No derived fields peek forward.
 - Caveat: score/descendants/kids are LATEST values, not point-in-time — the

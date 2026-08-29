@@ -2,6 +2,9 @@
 # Pull the filtered HN slice from the ClickHouse public playground.
 # Idempotent: skips files that already exist and are non-empty.
 # Playground caps results at 1M rows -> comment skeleton is pulled monthly.
+# Playground quota: 100 queries/hour per normalized query hash (all monthly
+# skeleton queries share one hash). Bulk runs stall after ~100 chunks; re-run
+# in a later hour to continue (idempotent). Do not engineer around this.
 # Usage: pull_hn.sh [first_year] [last_year]
 set -uo pipefail
 
