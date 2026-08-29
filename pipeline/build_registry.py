@@ -170,7 +170,17 @@ def main() -> None:
     ap.add_argument("stages", nargs="*", default=list(STAGES))
     args = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
-    for s in args.stages or list(STAGES):
+    stages = args.stages or list(STAGES)
+    # torch (embed) and faiss (cluster) crash macOS when loaded in one
+    # process (duplicate libomp) — the crash is silent behind a pipe. Run
+    # each stage in its own subprocess when more than one was requested.
+    if len(stages) > 1:
+        import subprocess
+        for s in stages:
+            subprocess.run([sys.executable, os.path.abspath(__file__), s],
+                           check=True, env=os.environ)
+        return
+    for s in stages:
         STAGES[s]()
 
 
