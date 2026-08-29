@@ -158,8 +158,9 @@ def stage_cluster() -> None:
             # for Pilot 0 (anchor matching); noted in report.
         ideas[idea]["n"] += 1
         assign.append(idea)
-        if row and row % 200_000 == 0:
-            print(f"cluster: {row} claims -> {len(ideas)} ideas, {len(gray)} gray")
+        if row and row % 50_000 == 0:
+            print(f"cluster: {row} claims -> {len(ideas)} ideas, {len(gray)} gray",
+                  flush=True)  # flush: piped runs must not go blind (2026-08-29)
 
     json.dump(ideas, open(reg_path, "w"))
     np.save(os.path.join(OUT, "assignments.npy"), np.array(assign, dtype=np.int64))
