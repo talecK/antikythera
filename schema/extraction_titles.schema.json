@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "hn_titles_extraction_v1",
+  "type": "object",
+  "required": ["items"],
+  "additionalProperties": false,
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["i", "claims"],
+        "additionalProperties": false,
+        "properties": {
+          "i": { "type": "integer", "minimum": 0 },
+          "claims": {
+            "type": "array",
+            "maxItems": 5,
+            "items": { "type": "string", "minLength": 10, "maxLength": 200 }
+          }
+        }
+      }
+    }
+  }
+}
