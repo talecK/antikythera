@@ -27,11 +27,17 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCHEMA = json.load(open(os.path.join(ROOT, "schema", "extraction.schema.json")))
 
 EXTRACTORS = {
-    # extractor_id -> (provider, model id, prompt file). Prompt/schema versions
-    # are part of the id: changing either mints a new cache namespace.
-    "haiku-4-5_pv1_sv1": ("anthropic", "claude-haiku-4-5", "extraction_v1.md"),
-    "haiku-4-5_pv2_sv1": ("anthropic", "claude-haiku-4-5", "extraction_v2.md"),
+    # extractor_id -> (provider, model id, prompt file, ($/M in, $/M out)).
+    # Prompt/schema versions AND sampling/thinking config are part of the id:
+    # changing any of them mints a new cache namespace.
+    "haiku-4-5_pv1_sv1": ("anthropic", "claude-haiku-4-5", "extraction_v1.md", (1.0, 5.0)),
+    "haiku-4-5_pv2_sv1": ("anthropic", "claude-haiku-4-5", "extraction_v2.md", (1.0, 5.0)),
+    # reasoning left ON by default -> burned max_tokens on thinking; kept for the record
+    "deepseek-v4-flash_pv2_sv1": ("deepseek", "deepseek-v4-flash", "extraction_v2.md", (0.14, 0.28)),
+    # thinking disabled via extra_body (the data-plane configuration)
+    "deepseek-v4-flash-nothink_pv2_sv1": ("deepseek", "deepseek-v4-flash", "extraction_v2.md", (0.14, 0.28)),
 }
+NOTHINK = {"thinking": {"type": "disabled"}}
 
 
 def load_prompt(name: str) -> str:
@@ -64,23 +70,47 @@ def sample_docs(n_per_year: int) -> list[tuple[int, str]]:
     """).fetchall()
 
 
-def extract_one(client: anthropic.Anthropic, model: str, extractor_id: str,
-                prompt: str, doc_id: int, text: str) -> dict:
+def make_caller(provider: str, model: str, prompt: str, thinking: bool = False):
+    """Returns fn(text) -> (raw, stop_reason, tokens_in, tokens_out)."""
+    if provider == "anthropic":
+        client = anthropic.Anthropic()
+
+        def call(text: str):
+            r = client.messages.create(
+                model=model, max_tokens=2000, system=prompt,
+                messages=[{"role": "user", "content": text}])
+            raw = next((b.text for b in r.content if b.type == "text"), "")
+            return raw, r.stop_reason, r.usage.input_tokens, r.usage.output_tokens
+        return call
+    if provider == "deepseek":
+        import openai
+        client = openai.OpenAI(
+            api_key=os.environ["DEEPSEEK_API_KEY"],
+            base_url="https://api.deepseek.com")
+        extra = {} if thinking else NOTHINK
+
+        def call(text: str):
+            r = client.chat.completions.create(
+                model=model, max_tokens=2000, extra_body=extra,
+                messages=[{"role": "system", "content": prompt},
+                          {"role": "user", "content": text}])
+            c = r.choices[0]
+            return (c.message.content or "", c.finish_reason,
+                    r.usage.prompt_tokens, r.usage.completion_tokens)
+        return call
+    raise ValueError(f"unknown provider {provider}")
+
+
+def extract_one(call, extractor_id: str, doc_id: int, text: str) -> dict:
     cached = cache.get(extractor_id, doc_id)
     if cached is not None:
         return cached
-    response = client.messages.create(
-        model=model,
-        max_tokens=2000,
-        system=prompt,
-        messages=[{"role": "user", "content": text}],
-    )
-    raw = next((b.text for b in response.content if b.type == "text"), "")
+    raw, stop, tok_in, tok_out = call(text)
     record = {
         "doc_id": doc_id,
         "raw": raw,
-        "stop_reason": response.stop_reason,
-        "usage": {"in": response.usage.input_tokens, "out": response.usage.output_tokens},
+        "stop_reason": stop,
+        "usage": {"in": tok_in, "out": tok_out},
     }
     cache.put(extractor_id, doc_id, record)
     return record
@@ -113,16 +143,15 @@ def main() -> None:
     ap.add_argument("--n-per-year", type=int, default=5)
     args = ap.parse_args()
     load_env()
-    provider, model, prompt_file = EXTRACTORS[args.extractor]
-    assert provider == "anthropic", "only anthropic wired up so far"
-    prompt = load_prompt(prompt_file)
-    client = anthropic.Anthropic()
+    provider, model, prompt_file, (price_in, price_out) = EXTRACTORS[args.extractor]
+    call = make_caller(provider, model, load_prompt(prompt_file),
+                       thinking="nothink" not in args.extractor)
 
     docs = sample_docs(args.n_per_year)
     print(f"{args.extractor}: {len(docs)} docs")
     with cf.ThreadPoolExecutor(max_workers=8) as pool:
         records = list(pool.map(
-            lambda d: extract_one(client, model, args.extractor, prompt, d[0], d[1]), docs))
+            lambda d: extract_one(call, args.extractor, d[0], d[1]), docs))
 
     graded = [grade(r) for r in records]
     n = len(graded)
@@ -139,7 +168,7 @@ def main() -> None:
         print(f"claims/doc min {min(counts)} / median {statistics.median(counts)} / max {max(counts)}")
         print(f"zero-claim docs: {sum(1 for c in counts if c == 0)}")
     print(f"tokens: {tok_in} in / {tok_out} out "
-          f"(haiku cost ≈ ${tok_in / 1e6 * 1 + tok_out / 1e6 * 5:.2f})")
+          f"(cost ≈ ${tok_in / 1e6 * price_in + tok_out / 1e6 * price_out:.2f})")
     for g in graded:
         if g["schema_ok"] is False:
             print(f"  BAD doc {g['doc_id']}: json_ok={g['json_ok']} {g.get('error', '')}")
