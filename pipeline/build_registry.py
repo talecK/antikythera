@@ -82,7 +82,9 @@ def stage_embed(batch_size: int = 256) -> None:
     model = SentenceTransformer(EMBED_MODEL, device=device)
     vecs = model.encode(uniq, batch_size=batch_size, normalize_embeddings=True,
                         show_progress_bar=True)
-    np.save(emb_path, vecs.astype(np.float32))
+    with open(emb_path + ".tmp", "wb") as f:  # atomic: partial write never caches
+        np.save(f, vecs.astype(np.float32))
+    os.replace(emb_path + ".tmp", emb_path)
     json.dump(uniq, open(txt_path, "w"))
     print(f"embed: {vecs.shape} saved")
 
