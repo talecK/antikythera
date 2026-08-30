@@ -123,7 +123,7 @@ ours measures whether expected combinations happen at all.
 
 **Link prediction and its pathologies.** Co-occurrence gap prediction is
 link prediction on a growing graph (Liben-Nowell and Kleinberg 2007).
-Kojaku et al. (2025) showed that standard link-prediction evaluation
+Aiyappa et al. (2025) showed that standard link-prediction evaluation
 carries an implicit degree bias: a degree-only ranker is near optimal on
 many benchmarks. A Science4Cast competition entry demonstrated the same
 point in practice, winning with degree features alone (Aghajohari 2021).
@@ -257,7 +257,7 @@ eligible pairs in a 10-million-pair sample), and ranked precision
 reaches roughly 105 times random. Two observations from this control
 matter later. First, in science as on Hacker News, popularity features
 tie or beat closure and semantic features add nothing, consistent with
-the degree-bias literature (Kojaku et al. 2025). Second, the 67 percent
+the degree-bias literature (Aiyappa et al. 2025). Second, the 67 percent
 figure is produced by the same z-criterion we later found to be
 miscalibrated; we return to this in Section 6.
 
@@ -411,16 +411,47 @@ design (top-20 comments per thread), so author-space frequencies
 undercount true activity; this shrinks the eligible universe but has no
 evident mechanism for biasing formation direction.
 
-### 6.3 Does anything close gaps? (pending)
+### 6.3 A second platform [INTERIM — fold B pending; do not submit as is]
 
-[PLACEHOLDER. A pre-registered gate on Reddit financial discourse
-(2017-2024, ticker units, same formulation and calibrated criterion,
-frozen bars committed before evaluation) tests (a) whether below-chance
-segregation replicates on a structurally different platform and unit
-type, and (b) whether any above-chance calibrated formation exists
-there. Power analysis is registered: the formation test can detect true
-rates above roughly 4 percent; the segregation test is well powered.
-Result and interpretation slot in here.]
+Whether these regularities are facts about one forum or about discourse
+is testable, and a pre-registered replication is in progress on a
+structurally different corpus: Reddit financial discussion (six
+subreddits, 2017-2024), where the concept unit is the stock ticker,
+regex-extracted and validated against the SEC registrant table rather
+than produced by a language model. The design, criterion, folds, power
+analysis, and interpretation bars were frozen and committed before any
+outcome was computed, with two folds separated by the 2020-2021 market
+regime break; conclusions are registered as requiring both folds, and
+the first fold's results are therefore reported here as interim.
+
+On the first fold (build 2017-2018, evaluation 2019; 14.6M items), both
+headline patterns reproduce. Calibrated formation is null in every cell
+(0-1 pairs formed against false-positive floors of 0.2-1.7; the
+registered power analysis limits this to "no effect larger than roughly
+4 percent," not "no effect"). And below-chance segregation replicates
+almost exactly: across all six subreddits, suppressed ticker pairs
+co-occur at z = -9.4 versus their shuffled null (341 observed joint
+mentions against 555 expected), compared with z = -9.2 and -9.3 on
+Hacker News, despite the change of platform, community, unit type, and
+extraction method.
+
+One unregistered, exploratory observation deserves reporting with that
+label attached. Splitting by community type, the segregation lives
+entirely in the analysis-oriented subreddits (SecurityAnalysis,
+ValueInvesting, and similar: z = -10.0, co-mention at 46 percent of
+chance), while wallstreetbets sits exactly at chance (z = -0.2, 150
+observed versus 152 expected) - and the difference is not a power
+artifact, since at the analysis-stratum effect size the meme stratum
+would show z near -7. Read plainly: communities organized around
+argument keep their topics in lanes; a community organized around
+attention co-mentions tickers at chance with respect to prior
+structure. Whether this split survives the second fold, which sits on
+the other side of the 2021 regime break, is exactly what the
+registration will decide.
+
+[FOLD B: acquisition in progress. On completion, this section reports
+both folds against the registered bars and either claims cross-platform
+generality or scopes it, per the frozen interpretation rules.]
 
 ### 6.4 Segregation as the object of study
 
@@ -493,11 +524,13 @@ registered placebo that overturned an intermediate conclusion.
   Review* 80(5), 875-908. doi:10.1177/0003122415601618
 - Liben-Nowell, D., Kleinberg, J. (2007). The link-prediction problem
   for social networks. *JASIST* 58(7), 1019-1031. doi:10.1002/asi.20591
-- Kojaku, S., et al. (2025). Implicit degree bias in the link prediction
-  task. *ICML 2025*. [verify: final citation and pages]
-- Aghajohari, M. (2021). Degree-based feature is all you need
-  (Science4Cast competition entry). *IEEE BigData 2021*. [verify: exact
-  title, authors, DOI]
+- Aiyappa, R., Wang, X., Kim, M., Seckin, O.C., Yoon, J., Ahn, Y.-Y.,
+  Kojaku, S. (2025). Implicit degree bias in the link prediction task.
+  *Proceedings of the 42nd International Conference on Machine Learning
+  (ICML)*. arXiv:2405.14985.
+- Aghajohari, M., Akhondzadeh, M.S., Ashkboos, S., Chitsaz, K. (2021).
+  Degree-based feature is all you need: Science4Cast report. *IEEE
+  International Conference on Big Data 2021*, 5791-5794.
 - Maslov, S., Sneppen, K. (2002). Specificity and stability in topology
   of protein networks. *Science* 296(5569), 910-913.
   doi:10.1126/science.1065103
