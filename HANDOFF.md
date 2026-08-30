@@ -96,6 +96,11 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    detector fires before anyone writes the connecting claim (this is the
    product-shaped fact). HN's exposed slice is thin (~13 flags/yr): density
    must come from the variant corpus.
+1b. **DONE — Run 7 (scout class, registered ff94e9f, result c9cf264):
+   FAILED.** Bridge precision has zero persistence (rho 0.012 vs null95
+   0.035); scout ranker below random. Bridging is state, not trait, on HN.
+   Ranking within eligible sets: dead on graph, semantic, and reputational
+   features. The gate below is CENSUS-ONLY.
 2. **Variant gate (cheap; likely $0 API): author-space suppressed-pair
    census on financial/infosec discourse.** Tickers/CVE-IDs are REGEXABLE —
    the gate needs a corpus pull but no LLM extraction. Measure suppressed
