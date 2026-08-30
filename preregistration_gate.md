@@ -1,6 +1,26 @@
 # Variant gate registration — Reddit finance discourse (2026-08-30)
 
-## STATUS: DRAFT — design frozen below; census numbers appended pre-eval.
+## STATUS: REGISTERED (2026-08-30) — design frozen; fold-A census recorded
+## outcome-blind at commit f27680f; fold-B census appended when acquisition
+## completes.
+
+### INTERIM RUN CLAUSE (added 2026-08-30, before any gate outcome computed)
+Fold A acquisition is COMPLETE (API-sourced, 14.6M items) and its census is
+already committed. Fold B is ~40% acquired. Fold A is therefore evaluated
+NOW as a declared INTERIM, under the frozen design and the amended
+(run-8) criterion; fold B is evaluated when acquisition completes.
+- The registered conclusions require BOTH folds. No fold-A-only result may
+  be reported as meeting or failing a registered bar; it is an interim
+  observation and must be labelled as such wherever it appears, including
+  in Paper 1 Sec 6.3.
+- Seeing fold A before fold B runs cannot change the design: every bar,
+  the criterion, the power table and the unit rules are frozen above and
+  committed. No parameter may be altered after this point; any change
+  would constitute a new registration reported alongside this one.
+- The gate harness (eval/run_gate.py) was ported to the run-8 criterion
+  BEFORE this run (it previously implemented the retired z>=2 rule) and
+  IMPORTS run_eval8.binom_sf_ge so the HN and Reddit statistics are
+  identical by construction.
 (`eval/run_gate.py` refuses to run in eval mode until this line reads
 "STATUS: REGISTERED".)
 

@@ -4,7 +4,14 @@
 Same formulation as runs 5/6 (validated on HN), units = tickers:
   document        = (author, calendar quarter)
   eligible pair   = E_build >= 2 AND zero build co-mentions ("suppressed")
-  formation       = >= 2 eval docs, >= 2 distinct authors, eval z >= 2
+  formation       = shuffle-calibrated (registered amendment, run 8): obs
+                    eval co-mention docs > per-pair label-shuffle p99
+                    (R=100, seed 20260831) AND >= 2 docs AND >= 2 authors
+  segregation     = CO-PRIMARY (Q1b): total obs co-mention over eligible
+                    pairs vs shuffle-null total, as z
+
+The null is imported from eval/run_eval8.py so the HN and Reddit numbers are
+identical by construction, not by reimplementation.
 
 Modes:
   --census   outcome-blind structure only (for the registration)
@@ -24,6 +31,9 @@ from datetime import datetime, timezone
 import duckdb
 import numpy as np
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from run_eval8 import binom_sf_ge  # noqa: E402  (registered null, run 8)
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MENTIONS = "/Volumes/1TB NVME 1/antikythera/data/reddit_gate/ticker_mentions.parquet"
 DD_SUBS = {"SecurityAnalysis", "ValueInvesting", "StockMarket", "stocks",
@@ -37,6 +47,8 @@ F_DEFAULT = 20
 E_MIN = 2.0
 HUB_MAX = 50          # author-quarters with more distinct tickers are dropped
 SEED = 20260830
+R = 100               # shuffle reps, matching run 8
+SHUFFLE_SEED = 20260831
 
 
 def wilson(k: int, n: int) -> tuple[float, float]:
@@ -99,28 +111,62 @@ def analyse(rows, fold: str, stratum: str, lens: str, census: bool,
     if census:
         return out
 
-    epair, efreq = defaultdict(set), defaultdict(int)
-    for d, s in edocs.items():
-        ss = sorted(s & fs)
-        for t in ss:
-            efreq[t] += 1
-        for i in range(len(ss)):
-            for j in range(i + 1, len(ss)):
-                epair[(ss[i], ss[j])].add(d)
-    Ne = len(edocs)
-    formed = set()
-    for pair, dd in epair.items():
-        a, b = pair
-        E = efreq[a] * efreq[b] / max(Ne, 1)
-        if len(dd) >= 2 and len({x[0] for x in dd}) >= 2 and \
-           (len(dd) - E) / max(math.sqrt(E), 1e-9) >= 2.0:
-            formed.add(pair)
-    hits = [p for p in eligible if p in formed]
-    lo, hi = wilson(len(hits), len(eligible))
-    out.update({"formed": len(hits), "rate": len(hits) / max(len(eligible), 1),
-                "ci95": [lo, hi],
-                "top_hits": [list(p) for p in sorted(
-                    hits, key=lambda p: -len(neigh[p[0]] & neigh[p[1]]))[:15]]})
+    # --- registered criterion (run-8 amendment): per-pair shuffle null ---
+    idx = {p: j for j, p in enumerate(eligible)}
+    n = len(eligible)
+    if n == 0:
+        out.update({"formed": 0, "binom_p": 1.0, "z_seg": 0.0,
+                    "obs_total": 0, "formed_pairs": []})
+        return out
+
+    def pair_counts(docmap):
+        counts = np.zeros(n, dtype=np.int32)
+        docs_of = defaultdict(set)
+        for d, s in docmap.items():
+            ss = sorted(s & fs)
+            for i in range(len(ss)):
+                for j in range(i + 1, len(ss)):
+                    j2 = idx.get((ss[i], ss[j]))
+                    if j2 is not None:
+                        counts[j2] += 1
+                        docs_of[(ss[i], ss[j])].add(d)
+        return counts, docs_of
+
+    obs, docs_of = pair_counts(edocs)
+    inc_doc, inc_tok = [], []
+    for d in edocs:
+        for t in edocs[d] & fs:
+            inc_doc.append(d)
+            inc_tok.append(t)
+    inc_tok = np.array(inc_tok, dtype=object)
+    rng = np.random.default_rng(SHUFFLE_SEED)
+    null = np.zeros((R, n), dtype=np.int32)
+    for r in range(R):
+        perm = rng.permutation(inc_tok)
+        sh = defaultdict(set)
+        for d, t in zip(inc_doc, perm):
+            sh[d].add(t)
+        null[r], _ = pair_counts(sh)
+
+    p99 = np.percentile(null, 99, axis=0)
+    formed = []
+    for pr, j in idx.items():
+        if obs[j] > p99[j] and obs[j] >= 2 and \
+           len({d[0] for d in docs_of.get(pr, set())}) >= 2:
+            formed.append((pr, int(obs[j]), float(p99[j])))
+    k = len(formed)
+    pval = binom_sf_ge(k, n, 0.01) if k else 1.0
+    totals = null.sum(axis=1)
+    z_seg = (obs.sum() - totals.mean()) / max(totals.std(), 1e-9)
+    lo, hi = wilson(k, n)
+    out.update({"formed": k, "rate": k / n, "ci95": [lo, hi],
+                "floor": 0.01 * n, "binom_p": float(pval),
+                "obs_total": int(obs.sum()),
+                "null_total_mean": float(totals.mean()),
+                "null_total_sd": float(totals.std()),
+                "z_seg": float(z_seg),
+                "formed_pairs": [(list(pr), o, t) for pr, o, t in
+                                 sorted(formed, key=lambda x: -x[1])]})
     return out
 
 
@@ -145,8 +191,11 @@ def main() -> None:
                 r = analyse(rows, fold, stratum, lens, census)
                 results.append(r)
                 extra = "" if census else \
-                    f" | formed {r['formed']} ({r['rate']:.2%}, " \
-                    f"CI {r['ci95'][0]:.2%}-{r['ci95'][1]:.2%})"
+                    f" | Q1 formed {r['formed']}/{r['eligible_suppressed']} " \
+                    f"(floor {r.get('floor', 0):.1f}, p={r.get('binom_p', 1):.3g})" \
+                    f" | Q1b seg z={r.get('z_seg', 0):+.1f} " \
+                    f"(obs {r.get('obs_total', 0)} vs null " \
+                    f"{r.get('null_total_mean', 0):.0f})"
                 print(f"fold {fold} {stratum:5s} {lens:8s}: "
                       f"docs {r['build_docs']:>7}/{r['eval_docs']:<7} "
                       f"tickers {r['frequent_tickers']:>4} "
