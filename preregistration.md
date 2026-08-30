@@ -78,6 +78,22 @@ Build-window diagnostics reviewed OUTCOME-BLIND before registration:
 - Affinity term/baseline use the concept's own embedding (unit = single
   string, centroid degenerates to the embedding itself).
 
+## REGISTERED RUN 3 (2026-08-30, pre-eval) — suppressed-pair formulation
+- Motivation: run 2 autopsy showed zero-observation among frequent pairs is
+  not an anomaly; gap ranking degenerated to the frequency product. Run 3
+  tests the thesis's actual object: pairs EXPECTED to co-occur that don't.
+- Eligible: concept pairs (F>=20 units, unchanged) with E_build >= 2 and
+  observed build co-occurrence = 0. Feasibility (outcome-blind): 25,161.
+- Outcome (primary): chance-calibrated formation — eval-window z >= 2 AND
+  >= 2 docs AND >= 2 distinct story authors.
+- Rankers: (a) suppression x affinity = E_build * cosine; (b) affinity_only;
+  (c) common_neighbors (count of frequent concepts co-occurring with BOTH
+  ends in build — Science4Cast's strongest classical feature); (d)
+  freq_product (confound control — a pass REQUIRES beating it); (e) random.
+- Success: (a) or (c) beats freq_product AND random at k=200. k in
+  {50, 200, 1000}; k capped at eligible-set size.
+- Everything else unchanged from run 2.
+
 ## Registered corpus facts (fixed by the pull, 2026-08-28)
 - Canonical source: bigquery-public-data.hacker_news.full (max ts 2026-08-27).
 - Filter: type=story, not dead/deleted, score>=5 OR descendants>=3.
