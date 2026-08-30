@@ -4,7 +4,11 @@
 (`eval/run_gate.py` refuses to run in eval mode until this line reads
 "STATUS: REGISTERED".)
 
-Question the gate answers: does financial discourse have the structure the
+Question the gate answers (RESCOPED 2026-08-30, post-run-8): primarily,
+does below-chance SEGREGATION replicate on a second platform and unit
+type (Q1b); secondarily, does financial discourse show any above-chance
+calibrated formation where HN shows none (Q1). Original framing follows.
+Original: does financial discourse have the structure the
 instrument needs? Specifically (Q1) do author-space suppressed ticker pairs
 exist and form at a usable rate, and (Q2) does connection-seeking culture
 close gaps faster than reactive culture — the first CONTROLLED test of the
@@ -81,14 +85,56 @@ formation where HN shows none?
      tested; the variant is DEAD and the project closes on a clean
      negative across two platforms and three unit types.
    - Mixed: indeterminate; report, no interpretation stretch.
-   Also reported (descriptive): the run-8 sub-chance persistence readout —
-   total observed co-mention over suppressed pairs vs shuffle-null total
-   (z) — to test whether below-chance segregation replicates on Reddit.
+   Also reported: the sub-chance persistence readout — now PROMOTED to
+   co-primary, see Q1b.
+
+1a. **REGISTERED POWER (added 2026-08-30, outcome-blind; binomial exact,
+   alpha = 0.01, floor p0 = 0.01, fold-A census counts).** Formed pairs
+   needed for significance, and the smallest TRUE formation rate the gate
+   can detect (power 80% / 50%):
+
+   | cell | n eligible | k needed | MDR@80% | MDR@50% |
+   |------|-----------:|---------:|--------:|--------:|
+   | ALL / union   | 169 | 6 | 3.7% | 2.4% |
+   | DD / union    | 144 | 6 | 4.5% | 3.0% |
+   | MEME / union  |  62 | 4 | 7.8% | 4.9% |
+   | ALL / cashtag |  54 | 4 | 9.0% | 5.8% |
+
+   CONSEQUENCE, registered in advance: a non-significant Q1 licenses only
+   "no LARGE effect (>~4%) in this corpus", NEVER "no effect". Any writeup
+   of a null must quote the MDR alongside it. Fold-B numbers are appended
+   when acquisition completes; if fold B's eligible count differs
+   materially, its own MDR is computed and reported the same way.
+
+1b. **Q1b SEGREGATION (CO-PRIMARY, promoted 2026-08-30)** — total observed
+   co-mention over eligible suppressed pairs vs the shuffle-null total,
+   as z, per fold and per stratum (the run-8 statistic, same null).
+   Rationale for promotion: this is the surviving, strongly-powered
+   finding of run 8 (author z = -9.2/-9.3, thread z = -162/-124), it is a
+   directional test rather than a rare-event count, and it is adequately
+   powered at the fold-A census sizes where Q1 is not. Reddit is a
+   structurally independent corpus (self-indexing units, financial
+   vocabulary, different community), so this is the strongest available
+   replication test.
+   - z <= -3 in both folds: below-chance segregation REPLICATES on a
+     second platform and unit type; the finding generalises beyond HN.
+   - |z| < 3 in both folds: segregation is HN-specific; run 8's result
+     does not generalise, and the paper's claim narrows accordingly.
+   - Mixed / positive z: report as measured, no interpretation stretch.
 2. **Q2 MECHANISM (the controlled test)** — DD vs MEME calibrated
    formation within each fold. Registered prediction: DD > MEME.
    - Reported twice: raw, and with MEME author-quarters randomly
      subsampled (seed 20260830) to match the DD document count, because
      document count enters eligibility and the shuffle null.
+   - UNDERPOWERED BY CONSTRUCTION (registered 2026-08-30): at the fold-A
+     census, DD needs 6 formed pairs and MEME 4 to clear the floor at all,
+     and both cells are expected to sit at 1-2 under the null. Q2 is
+     therefore DEMOTED to descriptive: it can only report a large
+     asymmetry, and "DD ~= MEME" here is NOT evidence that culture does
+     not matter. The mechanism claim I attached to this comparison
+     (a "controlled test") is withdrawn; the segregation readout (Q1b)
+     compared across strata is the better-powered version of the same
+     question and is reported alongside.
    - DD > MEME in both folds (non-overlapping CIs in at least one):
      mechanism story survives its first controlled test.
    - DD ~= MEME (or both at floor): connection-seeking culture confers no
