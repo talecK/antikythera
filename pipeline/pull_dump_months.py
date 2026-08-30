@@ -66,6 +66,8 @@ def start_download(m: str, slot: int):
         [ARIA, f"--select-file={idxs}", "--torrent-file=" + TORRENT,
          "-d", p["dir"], "--seed-time=0", "--console-log-level=warn",
          "--summary-interval=0", "--file-allocation=none",
+         "--check-integrity=true",   # re-hash on resume; a crash can leave
+                                     # torn pieces aria2 believes complete
          "--bt-stop-timeout=14400"],
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
@@ -116,7 +118,25 @@ def main() -> None:
         while shutil.disk_usage(BASE).free / 1e9 < MIN_FREE_GB:
             print(f"{m}: waiting for disk", flush=True)
             time.sleep(300)
-        filter_month(m, slot)
+        try:
+            filter_month(m, slot)
+        except RuntimeError as e:
+            # Corrupt dump (zstd rc=1) — drop it, re-fetch once, retry.
+            print(f"{m}: FILTER FAILED ({e}); purging and re-fetching once",
+                  flush=True)
+            for k in ("RC", "RS"):
+                src = paths(m, slot)[k][1]
+                if os.path.exists(src):
+                    os.remove(src)
+            retry = start_download(m, slot)
+            if retry is not None:
+                retry.wait()
+            try:
+                filter_month(m, slot)
+            except RuntimeError as e2:
+                print(f"{m}: FILTER FAILED AGAIN ({e2}) — SKIPPING MONTH. "
+                      f"This month is absent from the corpus; disclose it.",
+                      flush=True)
         shutil.rmtree(f"{BASE}/dl{slot}", ignore_errors=True)
         slot = 1 - slot
     if proc is not None:
