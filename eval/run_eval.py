@@ -170,6 +170,31 @@ def main() -> None:
         "freq_growth": sorted(eligible, key=lambda p: -p["growth"]),
         "random": list(rng.permutation(np.array(eligible, dtype=object))),
     }
+    if os.environ.get("DIAG_RANKERS"):   # exploratory confound probes, not prereg
+        rankers["freq_product_only"] = sorted(
+            eligible, key=lambda p: -(decayed[p["i"]] * decayed[p["j"]]))
+        # chance-calibrated formation: formed only if eval co-docs exceed
+        # in-window expectation (z_eval >= 2)
+        formed_cal = set()
+        eval_n = defaultdict(int)
+        for d in eval_docs:
+            ideas_l = sorted(doc_ideas[d] & fset)
+            for i in ideas_l:
+                eval_n[i] += 1
+        Ne = len(eval_docs)
+        for pair, docs in pair_docs.items():
+            i, j = pair
+            E = Ne * (eval_n[i] / Ne) * (eval_n[j] / Ne)
+            if len(docs) >= MIN_ADOPTERS and \
+               len({doc_author[d] for d in docs}) >= MIN_ADOPTERS and \
+               (len(docs) - E) / max(np.sqrt(E), 1e-9) >= 2.0:
+                formed_cal.add(pair)
+        print(f"\nDIAG chance-calibrated formed: {len(formed_cal)} "
+              f"(was {len(formed)})")
+        for name, ranked in rankers.items():
+            r = {k: sum(1 for p in ranked[:k] if key(p) in formed_cal) / k
+                 for k in K_VALUES}
+            print(f"CAL {name:<18}" + "".join(f"{r[k]:<10.4f}" for k in K_VALUES))
     results = {}
     for name, ranked in rankers.items():
         results[name] = {k: sum(1 for p in ranked[:k] if key(p) in formed) / k
