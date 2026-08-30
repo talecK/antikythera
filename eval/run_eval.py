@@ -41,7 +41,8 @@ OUT = os.environ.get("REGISTRY_OUT", os.path.join(ROOT, "data", "registry", "pil
 EVAL_START = "2017-01-01"
 EVAL_END = "2018-01-01"
 HALF_LIFE_DAYS = 365.0
-FREQ_FLOOR = 10          # F: min distinct build docs per idea
+FREQ_FLOOR = int(os.environ.get("FREQ_FLOOR", "10"))  # F; env only for the
+# pre-declared F=5 sensitivity run — primary is 10 per preregistration.md
 AFFINITY_MIN = 0.55      # A: min centroid cosine
 MIN_ADOPTERS = 2         # M: co-mentioning docs AND distinct story authors
 K_VALUES = [50, 200, 1000]
@@ -57,7 +58,9 @@ def load_doc_ideas():
               FROM read_parquet('{ROOT}/data/docs/docs_*.parquet') GROUP BY doc_id) d
           ON c.doc_id = d.doc_id
     """).fetchall()
-    assign = np.load(os.path.join(OUT, "assignments.npy"))
+    a2 = os.path.join(OUT, "assignments_v2.npy")   # post-adjudication merges
+    assign = np.load(a2 if os.path.exists(a2) else os.path.join(OUT, "assignments.npy"))
+    print(f"assignments: {'v2 (merged)' if os.path.exists(a2) else 'v1 UNMERGED'}")
     rows = defaultdict(set)          # doc_id -> idea set
     doc_time, doc_author = {}, {}
     for (doc_id, ts, author), idea in zip(t, assign):
@@ -113,7 +116,8 @@ def main() -> None:
     vec_of = {t: k for k, t in enumerate(texts)}
     con = duckdb.connect()
     cl = con.sql(f"SELECT doc_id, claim FROM read_parquet('{OUT}/claims.parquet')").fetchall()
-    assign = np.load(os.path.join(OUT, "assignments.npy"))
+    a2 = os.path.join(OUT, "assignments_v2.npy")
+    assign = np.load(a2 if os.path.exists(a2) else os.path.join(OUT, "assignments.npy"))
     cent = defaultdict(lambda: np.zeros(vecs.shape[1], dtype=np.float64))
     fset = set(frequent)
     for (doc_id, claim), idea in zip(cl, assign):

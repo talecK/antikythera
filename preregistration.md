@@ -4,10 +4,17 @@ Rule (brief, decisions 6–8 + protocol): every field below is committed BEFORE
 the eval harness runs on a real fold. Changing any field after first eval =
 new registered run, old result reported alongside.
 
-## STATUS: DRAFT
-(eval/run_eval.py --prereg refuses to run until this reads
-"STATUS: REGISTERED". Flip only after build-window diagnostics confirm the
-thresholds below, and BEFORE the first eval execution.)
+## STATUS: REGISTERED (2026-08-30, pre-eval)
+Build-window diagnostics reviewed OUTCOME-BLIND before registration:
+- 726,846 build-window ideas; 355 pass F>=10 (2,236 pass F=5); max freq 44.
+- Eligible gap pairs at primary thresholds: 50,673 (well-posed; k<=1000 ok).
+- Observation, logged not acted on: affinity>=0.55 retains 81% of frequent
+  pairs (BGE cosines run high) — the filter is loose but identical across
+  all rankers. Revisit only in a future registered run.
+- SENSITIVITY (pre-declared before eval): F=5 rerun (1,745,049 eligible);
+  reported alongside primary, never substituted for it.
+- Registry: box-built batched-exact (bit-identity-validated), adjudicated
+  (380,248 pairs, 101,130 merges, $6.35), assignments_v2.
 
 ## Primary extractor
 - extractor_id: `deepseek-v4-flash-nothink_pv2_sv1`
