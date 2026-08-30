@@ -54,7 +54,7 @@ def load_doc_ideas():
     t = con.sql(f"""
         SELECT c.doc_id, c.time, d."by" AS author
         FROM read_parquet('{OUT}/claims.parquet') c
-        JOIN (SELECT doc_id, any_value(authors[1]) AS "by"
+        JOIN (SELECT doc_id, min(authors[1]) AS "by"  -- deterministic pick
               FROM read_parquet('{ROOT}/data/docs/docs_*.parquet') GROUP BY doc_id) d
           ON c.doc_id = d.doc_id
     """).fetchall()
