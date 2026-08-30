@@ -218,10 +218,14 @@ outcomes were computed. The repository's commit history, released with
 the paper, provides independent timestamps for the ordering of every
 registration and result, including the ones that embarrassed us. One
 exception is disclosed: the Science4Cast control's registration and
-result were committed together in a single commit, so for that control
-the ordering rests on the session record rather than on commit
-granularity. Every Hacker News evaluation has a registration commit
-that strictly precedes its result commit.
+result were originally committed together in a single commit, so for
+that control the ordering rested on the session record rather than on
+commit granularity. To close the gap, the control was subsequently
+re-executed from a separately pre-committed registration on different
+hardware (x86-64 Linux versus the original Apple Silicon; disclosed in
+the registration), with MD5-verified inputs; the outputs matched the
+originals exactly, byte for byte. Every Hacker News evaluation has a
+registration commit that strictly precedes its result commit.
 
 ## 4. Thread-level results: a certified null
 

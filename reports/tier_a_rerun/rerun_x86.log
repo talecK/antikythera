@@ -1,0 +1,241 @@
+===== SemanticGraph_delta_1_cutoff_25_minedge_1
+fold: build<=end-2019 predict+1y cutoff=25 minedge=1 | 17892352 edge events | 10000000 pairs | base rate 0.22713%
+unique undirected edges: 11629104 (2s)
+bitsets built (8s); mean unweighted degree 366.4
+  cn 50000/10000000 (11s)
+  cn 2050000/10000000 (103s)
+  cn 4050000/10000000 (194s)
+  cn 6050000/10000000 (286s)
+  cn 8050000/10000000 (377s)
+features done (467s)
+
+== full_sample: 10000000 pairs, 22713 formed (0.22713%) ==
+ranker            P@50      P@200     P@1000    AUC
+suppr_affinity    0.2800    0.3950    0.2890    0.8902
+affinity_only     0.0600    0.0300    0.0340    0.5617
+common_neighbors  0.4400    0.4750    0.3570    0.8985
+freq_product      0.3000    0.3850    0.2820    0.8885
+random            0.0000    0.0000    0.0010    0.5007
+
+== suppressed_E>=2: 555 pairs, 180 formed (32.43243%) ==
+ranker            P@50      P@200     AUC
+suppr_affinity    0.2800    0.3950    0.5708
+affinity_only     0.4800    0.3350    0.5413
+common_neighbors  0.4800    0.4550    0.6006
+freq_product      0.3000    0.3850    0.5583
+random            0.2800    0.3100    0.5031
+
+Top suppressed pairs by common_neighbors:
+  cn= 2491 E=   13.5 formed=0  'support vector machine' <-> 'encoder decoder'
+  cn= 2266 E=    5.3 formed=0  'classification performance' <-> 'step toward'
+  cn= 2186 E=    7.7 formed=0  'data analysis' <-> 'deep model'
+  cn= 2020 E=    8.7 formed=0  'linear function' <-> 'high quality'
+  cn= 1930 E=    7.8 formed=0  'numerical experiment' <-> 'domain specific'
+  cn= 1917 E=    5.0 formed=1  'machine learning method' <-> 'fine tune'
+  cn= 1898 E=    7.9 formed=1  'graph neural network' <-> 'objective function'
+  cn= 1857 E=   13.8 formed=0  'markov chain' <-> 'semantic segmentation'
+  cn= 1812 E=   10.6 formed=0  'variational inference' <-> 'input image'
+  cn= 1809 E=    5.9 formed=0  'domain specific' <-> 'principal component'
+  cn= 1783 E=    5.8 formed=1  'adversarial attack' <-> 'cnn model'
+  cn= 1772 E=    9.6 formed=0  'high resolution' <-> 'worst case'
+  cn= 1768 E=    9.7 formed=1  'image class' <-> 'collaborative filtering'
+  cn= 1766 E=    5.5 formed=1  'convolutional network' <-> 'compact representation'
+  cn= 1729 E=    3.2 formed=0  'open problem' <-> 'test time'
+  cn= 1715 E=    2.8 formed=0  'powerful tool' <-> 'prediction accuracy'
+  cn= 1714 E=    3.9 formed=0  'feed forward' <-> 'gaussian mixture'
+  cn= 1696 E=    7.1 formed=0  'deep feature' <-> 'optimization algorithm'
+  cn= 1667 E=    4.7 formed=1  'deep learning method' <-> 'time complexity'
+  cn= 1625 E=    5.7 formed=1  'source code' <-> 'high probability'
+  cn= 1618 E=    2.3 formed=1  'wide variety' <-> 'prior information'
+  cn= 1616 E=    6.3 formed=1  'benchmark datasets' <-> 'maximum likelihood estimation'
+  cn= 1613 E=    6.5 formed=0  'object classification' <-> 'time series'
+  cn= 1603 E=    5.4 formed=1  'bayesian inference' <-> 'markov decision process'
+  cn= 1581 E=    8.7 formed=0  'community detection' <-> 'network architecture'
+  cn= 1564 E=   10.9 formed=0  'real time' <-> 'visual question'
+  cn= 1541 E=    2.6 formed=1  'powerful tool' <-> 'domain specific'
+  cn= 1535 E=    2.8 formed=0  'density estimation' <-> 'cost function'
+  cn= 1531 E=    4.6 formed=1  'low cost' <-> 'special case'
+  cn= 1529 E=    9.5 formed=0  'computer vision' <-> 'stochastic process'
+
+saved tier_a_y2019_d1_c25_m1.json
+===== SemanticGraph_delta_3_cutoff_25_minedge_1
+fold: build<=end-2017 predict+3y cutoff=25 minedge=1 | 7652856 edge events | 10000000 pairs | base rate 0.75039%
+unique undirected edges: 5568238 (1s)
+bitsets built (4s); mean unweighted degree 199.0
+  cn 50000/10000000 (7s)
+  cn 2050000/10000000 (102s)
+  cn 4050000/10000000 (198s)
+  cn 6050000/10000000 (293s)
+  cn 8050000/10000000 (387s)
+features done (480s)
+
+== full_sample: 10000000 pairs, 75039 formed (0.75039%) ==
+ranker            P@50      P@200     P@1000    AUC
+suppr_affinity    0.7200    0.6900    0.5960    0.8674
+affinity_only     0.3000    0.1800    0.1230    0.5645
+common_neighbors  0.8400    0.7850    0.6560    0.8740
+freq_product      0.7600    0.6900    0.6010    0.8658
+random            0.0000    0.0050    0.0060    0.5018
+
+== suppressed_E>=2: 281 pairs, 188 formed (66.90391%) ==
+ranker            P@50      P@200     AUC
+suppr_affinity    0.7200    0.6850    0.5531
+affinity_only     0.7000    0.6700    0.4981
+common_neighbors  0.8200    0.7150    0.6300
+freq_product      0.7600    0.6900    0.5512
+random            0.7200    0.6500    0.4959
+
+Top suppressed pairs by common_neighbors:
+  cn= 1322 E=    8.2 formed=1  'network architecture' <-> 'clustering algorithm'
+  cn= 1146 E=    9.4 formed=0  'low rank' <-> 'genetic algorithm'
+  cn= 1098 E=    3.2 formed=1  'linear model' <-> 'unified framework'
+  cn= 1072 E=    6.3 formed=1  'gradient descent' <-> 'processing step'
+  cn= 1067 E=    6.5 formed=1  'neural network architecture' <-> 'gaussian process'
+  cn= 1059 E=    4.6 formed=1  'face recognition' <-> 'spatio temporal'
+  cn= 1024 E=    5.1 formed=1  'mean squared error' <-> 'extensive experiment'
+  cn= 1015 E=    5.5 formed=1  'object detection' <-> 'super resolution'
+  cn= 1011 E=    6.2 formed=1  'reinforcement learning' <-> 'graph structure'
+  cn= 1006 E=    3.4 formed=1  'state space' <-> 'main contribution'
+  cn=  982 E=    5.2 formed=1  'benchmark dataset' <-> 'inverse problem'
+  cn=  970 E=    2.3 formed=0  'large data set' <-> 'real world dataset'
+  cn=  966 E=    3.3 formed=1  'line method' <-> 'special case'
+  cn=  960 E=    4.7 formed=1  'real image' <-> 'support vector'
+  cn=  928 E=    2.9 formed=0  'theoretical analysis' <-> 'bayesian model'
+  cn=  927 E=    2.6 formed=1  'closed form' <-> 'general purpose'
+  cn=  919 E=    3.7 formed=1  'directed graph' <-> 'training set'
+  cn=  908 E=    3.5 formed=0  'alternating direction' <-> 'nearest neighbor'
+  cn=  905 E=    4.9 formed=1  'probabilistic graphical model' <-> 'extensive experiment'
+  cn=  904 E=    5.2 formed=1  'semantic segmentation' <-> 'real world datasets'
+  cn=  902 E=    2.6 formed=1  'component analysis' <-> 'regularization term'
+  cn=  901 E=    3.1 formed=1  'expectation maximization' <-> 'natural image'
+  cn=  893 E=    3.4 formed=0  'binary classification' <-> 'markov chain'
+  cn=  890 E=    4.3 formed=1  'image segment' <-> 'hidden markov model'
+  cn=  849 E=    2.7 formed=1  'large number' <-> 'diverse set'
+  cn=  844 E=    5.2 formed=1  'gaussian process' <-> 'nn architecture'
+  cn=  839 E=    4.3 formed=1  'natural language processing' <-> 'semantic segmentation'
+  cn=  837 E=    2.3 formed=1  'computational complexity' <-> 'main challenge'
+  cn=  837 E=    2.9 formed=1  'hidden markov model' <-> 'training sample'
+  cn=  837 E=    2.8 formed=1  'segmentation algorithm' <-> 'wide range'
+
+saved tier_a_y2017_d3_c25_m1.json
+===== SemanticGraph_delta_3_cutoff_25_minedge_3
+fold: build<=end-2017 predict+3y cutoff=25 minedge=3 | 7652856 edge events | 10000000 pairs | base rate 0.03051%
+unique undirected edges: 5568238 (1s)
+bitsets built (4s); mean unweighted degree 199.0
+  cn 50000/10000000 (7s)
+  cn 2050000/10000000 (101s)
+  cn 4050000/10000000 (195s)
+  cn 6050000/10000000 (290s)
+  cn 8050000/10000000 (385s)
+features done (477s)
+
+== full_sample: 10000000 pairs, 3051 formed (0.03051%) ==
+ranker            P@50      P@200     P@1000    AUC
+suppr_affinity    0.4800    0.3550    0.2190    0.9698
+affinity_only     0.0400    0.0150    0.0100    0.6039
+common_neighbors  0.5600    0.3800    0.2330    0.9734
+freq_product      0.4000    0.3450    0.2200    0.9678
+random            0.0000    0.0000    0.0000    0.5031
+
+== suppressed_E>=2: 245 pairs, 83 formed (33.87755%) ==
+ranker            P@50      P@200     AUC
+suppr_affinity    0.4800    0.3500    0.5695
+affinity_only     0.3000    0.3450    0.5130
+common_neighbors  0.5600    0.3200    0.5957
+freq_product      0.4000    0.3450    0.5676
+random            0.3200    0.3250    0.4520
+
+Top suppressed pairs by common_neighbors:
+  cn= 1494 E=    7.9 formed=1  'network architecture' <-> 'cost function'
+  cn= 1385 E=    9.1 formed=1  'convolutional network' <-> 'language processing'
+  cn= 1091 E=    8.0 formed=1  'low rank' <-> 'hand crafted'
+  cn= 1074 E=    4.5 formed=1  'local feature' <-> 'non line'
+  cn= 1071 E=    2.7 formed=1  'deep learning approach' <-> 'large amount'
+  cn= 1060 E=    6.9 formed=0  'deep network' <-> 'knowledge base'
+  cn=  996 E=    4.2 formed=0  'low dimensional' <-> 'classification algorithm'
+  cn=  986 E=    3.5 formed=1  'model selection' <-> 'classification performance'
+  cn=  974 E=    2.9 formed=1  'class label' <-> 'machine learning algorithm'
+  cn=  972 E=    4.9 formed=0  'deep feature' <-> 'natural language'
+  cn=  970 E=    4.7 formed=0  'genetic algorithm' <-> 'mixture model'
+  cn=  954 E=    3.4 formed=0  'logistic regression' <-> 'pattern recognition'
+  cn=  941 E=    2.6 formed=1  'probabilistic model' <-> 'graph structure'
+  cn=  927 E=    3.6 formed=1  'nn architecture' <-> 'machine learning algorithm'
+  cn=  918 E=    4.2 formed=1  'real image' <-> 'support vector machine'
+  cn=  915 E=   10.4 formed=0  'high dimension' <-> 'knowledge representation'
+  cn=  910 E=    2.5 formed=1  'real world application' <-> 'estimation problem'
+  cn=  900 E=    3.3 formed=1  'decision tree' <-> 'feature representation'
+  cn=  896 E=    3.5 formed=0  'magnetic resonance' <-> 'real world application'
+  cn=  893 E=    2.3 formed=1  'theoretical analysis' <-> 'graph structure'
+  cn=  892 E=    3.4 formed=0  'high quality' <-> 'linear function'
+  cn=  890 E=    5.6 formed=0  'convolutional network' <-> 'alternating direction method'
+  cn=  886 E=    4.6 formed=1  'global optimization' <-> 'real time'
+  cn=  865 E=    3.6 formed=1  'benchmark dataset' <-> 'data collected'
+  cn=  863 E=    2.6 formed=0  'bayesian inference' <-> 'near optimal'
+  cn=  862 E=    4.6 formed=1  'long standing' <-> 'data set'
+  cn=  858 E=    3.7 formed=0  'least square' <-> 'prediction task'
+  cn=  854 E=    4.8 formed=1  'decision making' <-> 'domain adaptation'
+  cn=  850 E=    3.4 formed=0  'et al' <-> 'extensive evaluation'
+  cn=  843 E=    2.6 formed=1  'human pose' <-> 'novel method'
+
+saved tier_a_y2017_d3_c25_m3.json
+===== SemanticGraph_delta_5_cutoff_25_minedge_1
+fold: build<=end-2015 predict+5y cutoff=25 minedge=1 | 3342034 edge events | 10000000 pairs | base rate 1.53304%
+unique undirected edges: 2629091 (0s)
+bitsets built (3s); mean unweighted degree 121.2
+  cn 50000/10000000 (6s)
+  cn 2050000/10000000 (98s)
+  cn 4050000/10000000 (190s)
+  cn 6050000/10000000 (282s)
+  cn 8050000/10000000 (375s)
+features done (466s)
+
+== full_sample: 10000000 pairs, 153304 formed (1.53304%) ==
+ranker            P@50      P@200     P@1000    AUC
+suppr_affinity    0.8400    0.8200    0.7620    0.8341
+affinity_only     0.2400    0.2400    0.1990    0.5607
+common_neighbors  0.9000    0.8600    0.7940    0.8314
+freq_product      0.8600    0.8200    0.7530    0.8323
+random            0.0400    0.0300    0.0170    0.5004
+
+== suppressed_E>=2: 149 pairs, 123 formed (82.55034%) ==
+ranker            P@50      AUC
+suppr_affinity    0.8400    0.5763
+affinity_only     0.8000    0.5813
+common_neighbors  0.9000    0.6116
+freq_product      0.8600    0.5522
+random            0.8000    0.4259
+
+Top suppressed pairs by common_neighbors:
+  cn=  992 E=    6.0 formed=0  'extensive experiment' <-> 'numerical experiment'
+  cn=  744 E=    4.8 formed=1  'non line' <-> 'social network'
+  cn=  719 E=    4.5 formed=1  'data analysis' <-> 'line learning'
+  cn=  710 E=    6.5 formed=1  'stochastic gradient' <-> 'bayesian network'
+  cn=  653 E=    3.9 formed=1  'sparse representation' <-> 'deep neural network'
+  cn=  651 E=    5.0 formed=1  'image segmentation' <-> 'markov chain'
+  cn=  642 E=    5.9 formed=1  'object detection' <-> 'low dimension'
+  cn=  632 E=    3.0 formed=1  'basis function' <-> 'large number'
+  cn=  628 E=    3.5 formed=1  'optimal solution' <-> 'regression model'
+  cn=  626 E=    4.6 formed=1  'classification performance' <-> 'graphical model'
+  cn=  626 E=    3.7 formed=1  'support vector' <-> 'feature learning'
+  cn=  615 E=    3.7 formed=1  'object recognition' <-> 'latent variable'
+  cn=  610 E=    3.1 formed=1  'non convex' <-> 'large dataset'
+  cn=  597 E=    2.3 formed=1  'general framework' <-> 'novel method'
+  cn=  594 E=    2.6 formed=1  'nearest neighbor' <-> 'second order'
+  cn=  592 E=    3.8 formed=1  'image segment' <-> 'dimensionality reduction'
+  cn=  581 E=    3.6 formed=1  'low rank' <-> 'density estimation'
+  cn=  581 E=   11.6 formed=1  'dirichlet process' <-> 'neural network'
+  cn=  579 E=    2.5 formed=1  'general framework' <-> 'benchmark datasets'
+  cn=  571 E=    5.0 formed=1  'linear program' <-> 'deep learning'
+  cn=  561 E=    5.7 formed=1  'extensive experiment' <-> 'markov decision process'
+  cn=  558 E=    4.5 formed=1  'random field' <-> 'artificial intelligence'
+  cn=  557 E=    5.0 formed=1  'recognition task' <-> 'low rank'
+  cn=  556 E=    3.4 formed=1  'minimization problem' <-> 'monte carlo'
+  cn=  549 E=    2.4 formed=1  'non convex' <-> 'large datasets'
+  cn=  539 E=    2.7 formed=1  'unsupervised learning' <-> 'social network'
+  cn=  535 E=   11.9 formed=0  'logic programming' <-> 'high dimension'
+  cn=  529 E=    2.7 formed=1  'model selection' <-> 'linear program'
+  cn=  518 E=    2.4 formed=1  'semi supervised' <-> 'network model'
+  cn=  517 E=    2.9 formed=0  'data analysis' <-> 'belief propagation'
+
+saved tier_a_y2015_d5_c25_m1.json
+ALL-DONE
