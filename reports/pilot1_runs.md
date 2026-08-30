@@ -148,3 +148,60 @@ Prompted by owner challenge: was stage A powered to see a real trait?
    ranking was tested only here (graph/semantic failed on HN AND science).
    Negative transfers weakly; the variant registration should carry a cheap
    scout-module secondary readout rather than dropping the idea.
+
+## Robustness suite R1-R4 (2026-08-30) — R1 PLACEBO FAILS: run-5/6 rates are sub-mechanical
+Registered pre-eval (preregistration_robustness.md, commit 31bc9ab).
+Harness sanity: reproduces run 5 exactly (364/70, 110/26) before any check.
+
+- **R1 PLACEBO (load-bearing): FAILED — committed revision clause fires.**
+  Eval-window label shuffle (doc sizes and concept totals preserved,
+  within-doc association destroyed; R=100/fold, seed 20260830):
+  - fold 1: observed 70 formed vs null mean 124.6 (sd 8.9, p99 140,
+    min 105) — observed is 6.1 sd BELOW the mechanical null.
+  - fold 2: observed 26 vs null mean 52.0 (sd 4.9, p99 63, min 42) —
+    5.3 sd BELOW.
+  Reading: the z>=2 formation criterion's internal null (Poisson-style on
+  doc counts) is badly anti-conservative under author-doc size
+  heterogeneity — random relabeling "forms" 34%/47% of suppressed pairs.
+  The 19-24% headline is NOT person-level bridging enrichment; it sits
+  UNDER the pooling-mechanics floor. Direction flip: eligible suppressed
+  pairs co-mention LESS than chance given eval marginals — build-window
+  segregation persists into eval. Per the frozen interpretation, run 5's
+  meaning is REVISED (not nuanced): author-space "formation at 19-24%" is
+  substantially mechanical; the 30x author-vs-thread enrichment is
+  criterion-confounded (thread-space shuffle null not computed here; out
+  of registered scope). Knock-ons, in order: run 6's 23.1% exposed rate
+  (same criterion) inherits the confound; the cross-corpus ladder
+  (science 67% / HN-authors 20% / HN-threads 0.6%) is criterion-bound and
+  cannot calibrate anything until each rung gets its own shuffle null
+  (Science4Cast rung = absentia's scope); the variant gate's Q1 bars are
+  uninterpretable as registered.
+- **R2 window sensitivity: rates >=5% everywhere** (month 9.7%/20.6%,
+  half-year 15.8%/27.8%; eligible 618/189 and 304/90) — the measured rate
+  is not a quarter-window artifact. Post-R1 this corroborates that the
+  artifact lives in the formation criterion, not the window plumbing.
+- **R3 formation x articulation + timing** (descriptive): pooled, 74/96
+  formed pairs (77%) have NO articulating claim anywhere in the 2015-2017
+  cache; of 22 ever-articulated, first co-mention strictly precedes first
+  articulation in 12, ties in 6, trails in 4. The registered withdrawal
+  condition (articulation typically precedes co-mention) does NOT fire;
+  the pre-articulation pattern stands, now conditional on "formation"
+  surviving recalibration under a corrected null.
+- **R4 attribution lens: robust as measured** — dropping every
+  story-author-attributed row (conservative over-exclusion) gives
+  24.9%/27.5% on 209/69 eligible; the rate is not an attribution-path
+  artifact.
+- Net: the robustness suite did its job on the check that could change a
+  conclusion. The author-lens revision of the kill is itself revised:
+  what survives of runs 5/6 is (a) the structural finding that
+  author-space co-occurrence graphs are dense/science-like (eligibility
+  census numbers are outcome-free and stand), (b) the persistence of
+  segregation (suppressed pairs under-co-mention chance, -5 to -6 sd),
+  and (c) the R3 articulation pattern. What does not survive: any claim
+  that individuals bridge suppressed pairs at enriched rates under the
+  current criterion.
+- Follow-up (not run, needs registration): run 8 — shuffle-calibrated
+  formation (pair forms iff observed eval co-mention docs exceed its own
+  per-pair shuffle p99), recomputed in author AND thread space; ladder
+  recalibration; gate Q1 bars re-derived from the corrected criterion
+  BEFORE the gate flips to REGISTERED.

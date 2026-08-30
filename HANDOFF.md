@@ -1,8 +1,16 @@
-# Handoff — state of the Antikythera project (2026-08-30, REVISED 2026-08-30)
+# Handoff — state of the Antikythera project (2026-08-30, RE-REVISED 2026-08-30 evening)
 
-## Status: kill REVISED. Thread-lens kill stands; author-lens re-cut (run 5)
-## shows the target event is real at ~20%/yr. We own a DETECTOR, not a
-## telescope. Instrument certified by a passed positive control (Tier A).
+## Status: author-lens revision ITSELF REVISED by registered placebo (R1,
+## reports/pilot1_runs.md "Robustness suite"). The 19-24% author-space
+## formation rate is BELOW its mechanical (label-shuffle) floor of 34-47%:
+## the z>=2 criterion is anti-conservative under doc-size heterogeneity.
+## No current evidence that individuals bridge suppressed pairs at
+## enriched rates. Detector claim SUSPENDED pending run 8
+## (shuffle-calibrated formation criterion + ladder recalibration).
+## Thread-lens kill stands. Tier A positive control stands (harness
+## faithfully finds planted signal; criterion calibration is a separate
+## defect). Gate MUST NOT flip to REGISTERED until Q1 bars are re-derived
+## under the corrected criterion.
 
 The discourse-gap thesis (never-co-mentioned idea pairs predict future
 connection; see discourse-gap-engine-brief.md) was tested on 20 years of
@@ -46,6 +54,30 @@ preregistration.md (git history proves reg-before-eval ordering throughout).
    formation vs 1-in-160 background. Author-space co-occurrence is the
    default lens for all future corpora.
 
+### RE-REVISION (2026-08-30 evening — registered robustness suite R1-R4,
+### preregistration_robustness.md 31bc9ab; results in reports/pilot1_runs.md)
+1. **R1 placebo FAILED against the frozen bar, in the strong direction**:
+   an eval-window label shuffle (doc sizes + concept totals preserved)
+   "forms" 124.6/364 and 52.0/110 suppressed pairs on average — the
+   observed 70 and 26 are 6.1 and 5.3 sd BELOW the mechanical null. The
+   z>=2 formation criterion under-counts chance co-mention when doc sizes
+   are heterogeneous. Points 2-3 above are accordingly SUSPENDED: the
+   19-24% rate is not bridging enrichment, and the 1-in-5-vs-1-in-160
+   detector arithmetic is criterion-confounded (thread-space needs its own
+   shuffle null before any ratio is quoted).
+2. **What survives**: author-space structural density (census numbers are
+   outcome-free); segregation persistence (suppressed pairs co-mention
+   LESS than chance — a real, negative-direction regularity); R3's
+   articulation pattern (77% of formed pairs never articulated in-cache;
+   co-mention precedes articulation 12/22, trails 4/22); R2/R4 show the
+   measured rate is not a window or attribution artifact — the defect is
+   the criterion, not the plumbing.
+3. **Mandatory before anything else runs: run 8** — shuffle-calibrated
+   formation (per-pair null from the label shuffle), recomputed in author
+   AND thread space, ladder recalibrated (science rung = absentia's
+   remit). The Reddit gate's Q1 bars are uninterpretable as drafted and
+   the gate must not flip to REGISTERED until re-derived.
+
 ## What a new session inherits
 - **Corpus**: 1.32M HN threads 2006–2026 (title + top-20 comments), clean
   parquet, `data/docs/`; raw pull + provenance in `data/README.md`. All
@@ -87,7 +119,14 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
 4. No timeline claims without a microbenchmark; no eval without frozen
    registration. Both failed painfully when skipped.
 
-## Next steps (revised 2026-08-30; ordered by information per dollar)
+## Next steps (RE-REVISED 2026-08-30 evening; ordered by information per dollar)
+0. **Run 8 FIRST (blocks everything below): shuffle-calibrated formation.**
+   Register: pair forms iff observed eval co-mention exceeds its own
+   label-shuffle null (p99, R=100), recomputed in author AND thread space,
+   both folds. Recalibrate the ladder; re-derive gate Q1 bars. Until then
+   the 19-24%, 23.1%, 0.6%, and 67% numbers must not be quoted as rates
+   ("R1 placebo failed" is the honest one-liner). Science4Cast rung is
+   absentia's remit — flag it to that repo.
 1. **DONE — Run 6: exposure lens x author space (registered d3844c1,
    result b244d65): PRIMARY MET.** Exposed pairs form at 23.1% pooled
    (6/26), same as all-pairs author space; thread-space was 0.55%. The
@@ -104,19 +143,19 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    graph/semantic ranking failed on HN and science; reputational only on
    HN — the negative transfers weakly. Gate below is census-PRIMARY;
    register a cheap scout-module secondary in the variant, don't drop it.
-2. **Variant gate (cheap; likely $0 API): author-space suppressed-pair
-   census on financial/infosec discourse.** Tickers/CVE-IDs are REGEXABLE —
-   the gate needs a corpus pull but no LLM extraction. Measure suppressed
-   count + formation rate in author space; calibrated thresholds now exist:
-   science 67% / HN-authors ~20% / HN-threads 0.6%. Science-like or
-   HN-author-like => variant graduates to a registered run; thread-like =>
-   dead. Corpus candidates: Reddit finance/netsec, StockTwits, oss-security.
-3. **If 1 or 2 pays: build the detector as a standing screen** (cron
-   pipeline emitting the ~few-hundred-pair watchlist + formation tracking),
-   and/or the Foundry play: LLM writes the connective content for flagged
-   pairs — a 1-in-5 early-hit rate needs no ranking.
-4. Write-up is now publishable-grade (passed positive control + "gaps close
-   in people, not rooms" lens result) — optional credibility asset.
+2. **Variant gate: ON HOLD at DRAFT pending run 8.** Acquisition/census
+   may continue (outcome-blind); Q1 interpretation bars and the calibration
+   ladder in preregistration_gate.md are stale as written and must be
+   re-derived under the corrected criterion before STATUS flips to
+   REGISTERED. Corpus and units sections remain valid.
+3. **Detector/standing-screen and Foundry plays: SUSPENDED** until run 8
+   re-establishes (or kills) an above-chance formation event. The 1-in-5
+   arithmetic is criterion-confounded; do not quote it.
+4. Write-up: still viable but the story changed — now "certified negative
+   + a measurement-criterion trap that manufactured a false revival, caught
+   by a registered placebo." Arguably a stronger methods paper; the "gaps
+   close in people, not rooms" headline is withdrawn unless run 8 revives
+   a calibrated version of it.
 - Still banked: paraphrase-verdict dataset (claim-matcher training);
   Uzzi-Jones story-success flip; atlas trend analyses.
 - SPUN OFF (2026-08-30): the Science4Cast critique (Tier A finding 1 —
