@@ -20,7 +20,45 @@
 - Structural lesson: "never co-occurred" among frequent pairs is not by
   itself an anomaly; the anomaly is "expected to co-occur, didn't."
 
-## Run 3 (planned) — suppressed-pair formulation
+## Run 3 (2026-08-30) — suppressed-pair formulation — FAILED
+- 25,161 suppressed pairs (E>=2, obs=0); 151 formed above chance (0.60%).
+- Pre-registered primary (suppression x affinity): P@k = 0 across the board.
+- freq_product control: 0 (suppression selects against it, as designed).
+- Faint residues: affinity_only 4x random on fold 1 (did NOT replicate on
+  fold 2); common_neighbors ~2.5x random in both folds (5/200 hits — the
+  oldest generic feature in network science, not the thesis).
+- Nominal technicality: common_neighbors met run 3's badly-drafted pass
+  condition; flagged as registration-design error, not claimed.
+
+## Check 1 (learned ranker, exploratory) — CEILING = TRIADIC CLOSURE
+- GBM over 10 features, 5-fold CV: P@200 = 0.025 (4.2x lift) — identical to
+  common_neighbors alone. Feature importance: adamic_adar 0.07, everything
+  else ~0 (cosine did not register). No learnable signal beyond closure.
+
+## Run 4 (2026-08-30) — economic-exposure lens — TERMINAL, FAILED
+- 5,998 pair-eligible concepts classified EXPOSED/INERT by control-plane
+  model under one written rule (1,055 EXPOSED); verdicts frozen pre-eval.
+- Exposed lens: fold 1 = 8 formed / 1,452 eligible, all rankers at random;
+  fold 2 = 1 formed / 428. exposed x focused lens: EMPTY in both folds
+  (exposed concepts are inherently high-promiscuity connectors).
+- Registered success bar (beat random AND freq_product at k=200, both
+  folds): FAILED decisively.
+
+## FINAL VERDICT — KILL (per run 4's pre-registered terminal clause)
+The thesis-specific machinery (co-occurrence nulls, suppression scoring,
+semantic affinity over gaps) produced zero incremental predictive signal in
+four registered runs, two folds, and an ML sweep. The only real pattern is
+textbook triadic closure at ~2.5% precision. On financially-relevant
+vocabulary the target event (suppressed pair forming above chance) occurs
+~8 times/year on all of HN — no instrument can be built on that base rate.
+Clean negative: discourse gaps on HN do not close in a predictable,
+exploitable way at any granularity tested.
+
+Assets retained: 20-yr corpus + doc pipeline, 1.3M-doc extraction cache,
+registry/eval infrastructure (portable to any future corpus), batched
+clustering (16x), full pre-registration audit trail in git.
+
+## Run 3 (original plan, superseded by the above) — suppressed-pair formulation
 - Eligible: E_build >= threshold AND observed co-occurrence = 0
   ("statistically suppressed" pairs — the thesis's actual gaps).
 - Outcome: chance-calibrated formation (eval z >= 2, >=2 docs, >=2 authors).

@@ -126,6 +126,10 @@ def main() -> None:
     rng = np.random.default_rng(RNG_SEED)
     all_results = {}
     for lens, elig in lenses.items():
+        if not elig:
+            print(f"\n== lens {lens}: EMPTY ==")
+            all_results[lens] = {}
+            continue
         ks = [k for k in K_VALUES if k <= len(elig)] or [len(elig)]
         lhits = sum(1 for p in elig if p["pair"] in formed)
         print(f"\n== lens {lens}: {len(elig)} eligible, {lhits} formed "
