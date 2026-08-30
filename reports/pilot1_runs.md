@@ -112,3 +112,21 @@ clustering (16x), full pre-registration audit trail in git.
   fires BEFORE anyone writes the connecting claim.
 - Scale caveat: on HN the exposed slice is thin (~13 flags/yr, ~3 form).
   Density must come from a finance/security-native corpus (variant gate).
+
+## Run 7 (2026-08-30) — scout class: FAILED all three stages
+- Registered pre-eval (preregistration_run7.md, ff94e9f). 1.6M track-era
+  bridge events, 27,258 bridging authors, catch-on rate 6.5%.
+- Stage A (PRIMARY, persistence): split-half Spearman rho = 0.012 vs null95
+  = 0.035 across 4,236 qualified authors — FAIL. First-bridge precision has
+  zero measurable persistence: bridging is state, not trait.
+- Stage B (telescope): scout ranker P@50 = 0.14 — BELOW random (0.24);
+  activity and common_neighbors ≈ random. FAIL. Also: 364/364 eligible
+  pairs had a qualified slow-bridger — the notion is too common to select.
+- Stage C (alert): top-tercile first-bridger precision 28.2% formed vs
+  bottom 25.4%, Fisher p=0.43. FAIL.
+- Registered interpretation applies: scout products are dead on HN; the
+  variant gate proceeds CENSUS-ONLY (identities not first-class). Ranking
+  within the eligible set remains dead on every feature family tried:
+  graph (runs 3/5), semantic (runs 2-4), reputational (run 7).
+- Scope caveat: HN vocabulary + quarterly buckets; a finance-native retest
+  is nearly free once a gate corpus exists, but carries no priority claim.
