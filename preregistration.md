@@ -94,6 +94,25 @@ Build-window diagnostics reviewed OUTCOME-BLIND before registration:
   {50, 200, 1000}; k capped at eligible-set size.
 - Everything else unchanged from run 2.
 
+## REGISTERED RUN 4 (2026-08-30, pre-eval) — economic-exposure lens; TERMINAL
+- Vocabulary: all concepts participating in any eligible suppressed pair on
+  either fold (5,998), classified by the control-plane model (Fable, this
+  session) under ONE written rule, verdicts cached before eval:
+  RULE: "EXPOSED iff a new public connection involving this concept would
+  plausibly move an economic position — a stock, sector, commodity, or
+  investable theme. Broad-but-anchoring concepts (cancer, obesity, housing
+  supply) are EXPOSED via their sector; pure science, math, CS-internals,
+  and abstract nouns (gravity, monads, difficulty) are INERT."
+- Lenses (both registered): EXPOSED-pairs (both ends exposed);
+  EXPOSED x focused (both exposed AND neither in the top-third promiscuity
+  band — reported alongside, not substituted).
+- Formulation/outcome/rankers/folds: unchanged from run 3.
+- Success: any ranker beats BOTH random and freq_product at k=200 on the
+  EXPOSED-pairs lens IN BOTH folds.
+- TERMINAL: whatever the outcome, this is the last Pilot 1 iteration.
+  Negative -> kill with writeup. Positive -> $40 clean fold + second
+  extractor before any further claim.
+
 ## Registered corpus facts (fixed by the pull, 2026-08-28)
 - Canonical source: bigquery-public-data.hacker_news.full (max ts 2026-08-27).
 - Filter: type=story, not dead/deleted, score>=5 OR descendants>=3.
