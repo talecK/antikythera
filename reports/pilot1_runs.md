@@ -69,3 +69,28 @@ clustering (16x), full pre-registration audit trail in git.
 ## Ledger
 - API ~$75.5 (extraction 51.2 + adjudication 10.6 + smoke 0.7 + pilot0 13)
 - Compute: box $4. All folds cached; runs 1-3 reuse everything.
+
+## Run 5 (2026-08-29, post-kill diagnostic) — author-as-document re-cut
+- Registered pre-eval in preregistration_run5.md (commit ce6d639); doc =
+  (author, quarter) over quote-attributed concepts (81% of cached claims
+  attribute; pipeline/build_author_concepts.py).
+- Structure (outcome-blind, recorded pre-eval): eligible suppressed pairs
+  collapse from 25,161/7,505 (thread space) to 364/110 (author space) on
+  the same folds — the author graph is dense, structurally Science4Cast-
+  like (there: 281 per 10M sampled), not thread-HN-like.
+- HEADLINE: suppressed-pair formation 70/364 = 19.23% (fold 1) and
+  26/110 = 23.64% (fold 2), vs 0.60%/0.68% thread-space. Registered
+  >=5%-both-folds threshold MET decisively -> "rooms buried the signal"
+  supported: HN individuals DO bridge expected-but-absent concept pairs;
+  thread-level co-occurrence was the wrong measurement for the mechanism.
+- SECONDARY (ranking): FAILED, as registered-anticipated. common_neighbors
+  P@200 = 0.195 vs random 0.230 (fold 1); fold-2 capped k equals the full
+  set so P = base rate. Same behavior as Science4Cast's suppressed subset:
+  ELIGIBILITY carries all the signal, ranking within it adds none.
+- Net: the kill verdict acquires a measurement-artifact component. What
+  exists on HN is a suppressed-set DETECTOR (~30x enrichment over the
+  thread-space event rate), not a ranked telescope. Author-space
+  co-occurrence becomes the default lens for any future discourse corpus.
+- Caveats: concept vocabulary still generic; 364/110 eligible pairs is a
+  small universe; only top-20-comment threads sampled, so author histories
+  are partial; 19% attribution loss assumed outcome-independent.
