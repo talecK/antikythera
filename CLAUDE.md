@@ -1,8 +1,12 @@
 # Antikythera — Discourse Gap Engine
 
-Read `discourse-gap-engine-brief.md` fully before any work. It is the complete
-project state: thesis, prior art, architecture, experiment protocol, open
-questions.
+**STATUS (2026-08-30): the original thesis was tested and KILLED — read
+`HANDOFF.md` FIRST for current state, banked assets, deferred work, and
+operational lessons.** `reports/pilot1_runs.md` holds the full experimental
+record. The brief below describes the pre-kill project.
+
+Read `discourse-gap-engine-brief.md` for the original thesis, prior art,
+architecture, and protocol.
 
 ## Decisions made (settled — do not relitigate unless explicitly reopened)
 
