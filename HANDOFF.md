@@ -88,13 +88,14 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    registration. Both failed painfully when skipped.
 
 ## Next steps (revised 2026-08-30; ordered by information per dollar)
-1. **Run 6 ($0, banked data): exposure lens x author space.** Rerun run-4's
-   EXPOSED-vocabulary restriction (1,055 frozen verdicts,
-   `data/atlas/concept_exposure_labels.csv`) on the run-5 author-space
-   eligible sets. Question: does the detector survive restriction to
-   economically-relevant vocabulary? Thread-space answer was ~8 events/yr
-   (nothing buildable); author space runs 30x hotter, so it may flip. This
-   is the last HN question that matters for value.
+1. **DONE — Run 6: exposure lens x author space (registered d3844c1,
+   result b244d65): PRIMARY MET.** Exposed pairs form at 23.1% pooled
+   (6/26), same as all-pairs author space; thread-space was 0.55%. The
+   detector survives economic vocabulary. Articulated-formation readout:
+   ~zero — formation is pre-articulation audience convergence, i.e. the
+   detector fires before anyone writes the connecting claim (this is the
+   product-shaped fact). HN's exposed slice is thin (~13 flags/yr): density
+   must come from the variant corpus.
 2. **Variant gate (cheap; likely $0 API): author-space suppressed-pair
    census on financial/infosec discourse.** Tickers/CVE-IDs are REGEXABLE —
    the gate needs a corpus pull but no LLM extraction. Measure suppressed
