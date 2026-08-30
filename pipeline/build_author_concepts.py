@@ -8,7 +8,8 @@ Claims with no quote, an unmatched quote, or an ambiguous quote are dropped
 (coverage measured in the run-5 feasibility check: 82% attributed).
 
 Output: data/registry/run5_author/author_concepts.parquet
-  doc_id, time (story ts), author, concept   (one row per attribution)
+  doc_id, time (story ts), author, concept, claim_id (doc-local claim index,
+  for claim-level "articulated" co-occurrence)   (one row per attribution)
 Deterministic; touches no eval outcome.
 """
 import glob
@@ -68,7 +69,7 @@ def main() -> None:
 
     files = sorted(glob.glob(f"{EXT}/*/*.json"))
     print(f"{len(files)} cached extractions", flush=True)
-    rows_doc, rows_ts, rows_auth, rows_conc = [], [], [], []
+    rows_doc, rows_ts, rows_auth, rows_conc, rows_claim = [], [], [], [], []
     stats = {"claims": 0, "attributed": 0}
     for n, f in enumerate(files):
         if n % 200000 == 0:
@@ -84,7 +85,7 @@ def main() -> None:
         except Exception:
             continue
         cs = by_story.get(did, [])
-        for c in claims:
+        for ci, c in enumerate(claims):
             if not isinstance(c, dict):
                 continue
             stats["claims"] += 1
@@ -107,12 +108,14 @@ def main() -> None:
                 if len(cc) >= 2:
                     rows_doc.append(did); rows_ts.append(s_ts)
                     rows_auth.append(author); rows_conc.append(cc)
+                    rows_claim.append(ci)
 
     table = pa.table({
         "doc_id": pa.array(rows_doc, pa.int64()),
         "time": pa.array(rows_ts, pa.timestamp("us")),
         "author": rows_auth,
         "concept": rows_conc,
+        "claim_id": pa.array(rows_claim, pa.int32()),
     })
     pq.write_table(table, os.path.join(OUT, "author_concepts.parquet"),
                    compression="zstd")
