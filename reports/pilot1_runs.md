@@ -241,3 +241,38 @@ floor per pair by construction).
 - Thread-space depth note: thread co-mention at ~1/4 of chance means the
   original 0.6% "formation rate" was itself mostly criterion artifact on
   top of massive under-mixing; runs 1-4's kill is thereby STRENGTHENED.
+
+## Variant gate — FOLD A INTERIM (2026-08-30; registered, interim clause)
+Harness ported to the run-8 criterion before running (imports
+run_eval8.binom_sf_ge); registration REGISTERED with the interim clause
+committed pre-eval. Fold A acquisition complete (API, 14.6M items);
+FOLD B RAN ON PARTIAL ACQUISITION (15/36 months) and its numbers are NOT
+reportable — they are re-run when the dump loop finishes. Fold-A-only
+results cannot meet or fail a registered bar (bars need both folds).
+
+| stratum | lens | eligible | Q1 formed (floor, p) | Q1b seg z | obs vs null |
+|---------|------|---------:|----------------------|----------:|-------------|
+| ALL  | union   | 169 | 0 (1.7, p=1)     |  **-9.4** | 341 vs 555 |
+| ALL  | cashtag |  54 | 0 (0.5, p=1)     |      -2.4 |  62 vs  84 |
+| DD   | union   | 144 | 1 (1.4, p=0.765) | **-10.0** | 166 vs 358 |
+| DD   | cashtag |  22 | 0 (0.2, p=1)     |      -2.7 |   4 vs  12 |
+| MEME | union   |  62 | 1 (0.6, p=0.464) |  **-0.2** | 150 vs 152 |
+| MEME | cashtag |  32 | 0 (0.3, p=1)     |      -1.1 |  37 vs  44 |
+
+1. **Q1 formation: null, as predicted.** 0-1 formed per cell, every cell at
+   or below its false-positive floor. Per the registered power table this
+   licenses "no effect larger than ~3.7%", NOT "no effect".
+2. **Q1b segregation REPLICATES on a second platform and unit type**:
+   ALL z=-9.4, DD z=-10.0 — within 0.2 of HN author-space (-9.2/-9.3)
+   despite different platform, units (tickers vs LLM concepts), community
+   and years. DD co-mentions at 46% of chance.
+3. **NEW, UNREGISTERED, STRATUM SPLIT (exploratory, flagged as such):**
+   the segregation effect is entirely in the DD stratum. MEME (WSB) sits
+   at z=-0.2 — 150 observed vs 152 expected, i.e. exactly chance. This is
+   NOT a power artifact: at DD's effect size MEME would show ~70 vs 152
+   (z~-7). Reading: analyst-style subs are topically segregated (people
+   keep lanes); meme culture co-mentions tickers at chance with respect to
+   prior structure — undifferentiated attention. This is the better-powered
+   form of the Q2 mechanism question, as anticipated when Q2 was demoted,
+   but the split itself was not registered and must be replicated on fold B
+   before any claim.
