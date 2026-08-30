@@ -27,3 +27,7 @@ questions.
   per (doc, extractor).
 - Communication: terse, conclusions first, numbered lists, execution over
   explanation.
+- Launch long-running pipeline stages with stdout redirected to a FILE
+  (`>> run.log 2>&1`), never through `| tail` / `| grep` — pipes buffer and
+  blind the run until exit (bitten twice, 2026-08-29). Read the log file to
+  check progress.
