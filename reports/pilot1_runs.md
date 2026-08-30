@@ -94,3 +94,21 @@ clustering (16x), full pre-registration audit trail in git.
 - Caveats: concept vocabulary still generic; 364/110 eligible pairs is a
   small universe; only top-20-comment threads sampled, so author histories
   are partial; 19% attribution loss assumed outcome-independent.
+
+## Run 6 (2026-08-30) — exposure lens x author space + articulated outcome
+- Registered pre-eval (preregistration_run6.md, commit d3844c1). Universe =
+  run 5; labels = run 4's frozen verdicts (100% coverage, outcome-blind).
+- PRIMARY MET: pooled EXPOSEDxEXPOSED formation 6/26 = 23.1% (Wilson95
+  11.0-42.1%; fold 1: 3/20, fold 2: 3/6) vs registered >=3/26 bar. Same
+  rate as all-pairs author space (19%/24%); vs thread-space exposed 0.55%/
+  0.23%. The detector survives economically-relevant vocabulary.
+- Exposed hits: google<->housing costs, pricing<->saudi arabia,
+  github<->spacex (2017); real estate<->security, artificial
+  intelligence<->pricing, microsoft<->sustainability (2016).
+- SECONDARY (articulated = both concepts in ONE extracted claim, eval
+  window): all-pairs strict 4+2, weak 13+11 of 364+110 eligible; exposed
+  strict 0, weak 1. Author-space formation is almost never an articulated
+  connection — it is pre-articulation audience convergence. The detector
+  fires BEFORE anyone writes the connecting claim.
+- Scale caveat: on HN the exposed slice is thin (~13 flags/yr, ~3 form).
+  Density must come from a finance/security-native corpus (variant gate).
