@@ -93,4 +93,34 @@ reports/pilot1_runs.md): Science4Cast 67% / HN author-space ~20% (19.2%,
   designed follow-up, not part of this decision.
 
 ## Census (outcome-blind, appended before eval)
-- [to be filled from `eval/run_gate.py --census` when acquisition completes]
+
+### Fold A — COMPLETE (2026-08-30; API-sourced, 14.6M items)
+| stratum | lens | build docs | eval docs | tickers | co-pairs | SUPPRESSED |
+|---------|------|-----------:|----------:|--------:|---------:|-----------:|
+| ALL  | union   | 99,321 | 68,606 | 1,187 | 202,268 | **169** |
+| ALL  | cashtag | 23,717 | 14,206 |   347 |  21,781 |  54 |
+| DD   | union   | 56,147 | 29,070 |   849 | 100,493 | 144 |
+| DD   | cashtag |  8,815 |  2,816 |   164 |   5,966 |  22 |
+| MEME | union   | 52,373 | 44,304 |   735 | 103,089 |  62 |
+| MEME | cashtag | 16,374 | 11,942 |   239 |  12,437 |  32 |
+
+### F decision: PRIMARY F = 20 STANDS; the F>=10 fallback is NOT invoked.
+Outcome-blind sweep on the complete fold A (suppressed pairs, ALL/union):
+F=20 -> 169, F=15 -> 184, F=10 -> 187, F=5 -> 187. Relaxing F saturates
+because added tickers are rarer and fail E >= 2. The fallback existed to
+rescue an under-powered census; since it cannot add pairs, invoking it
+would only admit marginal tickers. Recorded before any outcome was computed.
+
+### Structural reading (outcome-blind, recorded pre-eval)
+The ticker graph is DENSE: ~169 suppressed pairs against 202,268 observed
+co-mention pairs among frequent tickers. Structurally this matches
+Science4Cast (281 per 10M sampled) and HN author-space (364/110) — the
+"rare" half of rare-but-hot — and is the opposite of HN thread-space
+(25,161 plentiful-but-inert). Whether these pairs are HOT is precisely the
+eval. Cashtag lens is thin but NOT empty (54/22/32), so it is a usable
+sensitivity check rather than the pre-declared UNINFORMATIVE case.
+
+### Fold B — PARTIAL at census time (dump loop ~20/36 months); numbers
+appended when acquisition completes. Eval-2024 months were not yet
+downloaded when this table was produced (MEME fold-B eval docs read 0),
+so no fold-B number here is final and none was interpreted.
