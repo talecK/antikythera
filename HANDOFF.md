@@ -119,5 +119,9 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    in people, not rooms" lens result) — optional credibility asset.
 - Still banked: paraphrase-verdict dataset (claim-matcher training);
   Uzzi-Jones story-success flip; atlas trend analyses.
+- SPUN OFF (2026-08-30): the Science4Cast critique (Tier A finding 1 —
+  celebrated signal = popularity+closure) is now its own paper project at
+  `../absentia` (prereg DRAFT there; reads this repo's Tier A data via
+  symlink, treat `data/science4cast/` as shared read-only).
 - Do NOT: chase within-set ranking (dead on three corpora); pay for the
   20-yr extraction before the detector proves value on 1–2.
