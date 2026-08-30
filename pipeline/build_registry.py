@@ -140,35 +140,129 @@ def stage_cluster() -> None:
     assign: list[int] = []                  # per claim row -> idea_id
     gray: list[tuple[int, int, float]] = [] # (claim_row, idea_id, cos)
 
-    for row, (doc_id, claim, t) in enumerate(zip(doc_ids, claims, times)):
-        v = vecs[vec_of[claim]]
-        idea = -1
-        if index.ntotal:
-            cos, nn = index.search(v[None, :], 1)
-            cos, nn = float(cos[0, 0]), int(nn[0, 0])
-            if cos >= AUTO_HI:
-                idea = nn
-            elif cos >= GRAY_LO:
-                gray.append((row, nn, round(cos, 4)))
-        if idea < 0:
-            idea = len(ideas)
-            ideas.append({"idea_id": idea, "canonical": claim,
-                          "first_seen": str(t), "n": 0})
-            centroids.append(v.copy())
-            counts.append(0)
-            index.add(v[None, :])
-        else:
-            centroids[idea] += v
-            counts[idea] += 1
-            norm = centroids[idea] / np.linalg.norm(centroids[idea])
-            # faiss has no in-place update on IndexFlat; use reconstruct-free
-            # trick: keep index as first-claim anchors. Centroid drift ignored
-            # for Pilot 0 (anchor matching); noted in report.
-        ideas[idea]["n"] += 1
-        assign.append(idea)
-        if row and row % 50_000 == 0:
-            print(f"cluster: {row} claims -> {len(ideas)} ideas, {len(gray)} gray",
-                  flush=True)  # flush: piped runs must not go blind (2026-08-29)
+    batch_size = int(os.environ.get("CLUSTER_BATCH", "1"))
+
+    def found_idea(row: int, claim: str, t, v: np.ndarray) -> int:
+        idea = len(ideas)
+        ideas.append({"idea_id": idea, "canonical": claim,
+                      "first_seen": str(t), "n": 0})
+        centroids.append(v.copy())
+        counts.append(0)
+        return idea
+
+    if batch_size > 1:
+        # Batched variant — semantics IDENTICAL to sequential: every claim is
+        # matched against exactly the founders that precede it (frozen index
+        # for prior batches + in-batch founders created before it). Batch
+        # searches use all cores via faiss's internal OpenMP.
+        # Resumable: atomic checkpoint every ~100K claims; status.json is the
+        # live progress interface (cat it for row/rate/eta).
+        import time as _time
+        ckpt_path = os.path.join(OUT, "cluster_ckpt.npz")
+        ckpt_ideas = os.path.join(OUT, "cluster_ckpt_ideas.json")
+        status_path = os.path.join(OUT, "status.json")
+        resume_row = 0
+        if os.path.exists(ckpt_path):
+            ck = np.load(ckpt_path, allow_pickle=False)
+            assign.extend(int(x) for x in ck["assign"])
+            gray.extend((int(a), int(b), float(c)) for a, b, c in ck["gray"])
+            ideas.extend(json.load(open(ckpt_ideas)))
+            resume_row = int(ck["next_row"])
+            index.add(np.stack([vecs[vec_of[i["canonical"]]] for i in ideas]))
+            centroids.extend(np.zeros(dim) for _ in ideas)  # accumulators only
+            counts.extend(0 for _ in ideas)
+            print(f"cluster: RESUMED at row {resume_row} "
+                  f"({len(ideas)} ideas, {len(gray)} gray)", flush=True)
+
+        def checkpoint(next_row: int) -> None:
+            np.savez(ckpt_path + ".tmp.npz",
+                     assign=np.array(assign, dtype=np.int64),
+                     gray=np.array(gray, dtype=np.float64).reshape(len(gray), 3)
+                     if gray else np.zeros((0, 3)),
+                     next_row=np.int64(next_row))
+            os.replace(ckpt_path + ".tmp.npz", ckpt_path)
+            json.dump(ideas, open(ckpt_ideas + ".tmp", "w"))
+            os.replace(ckpt_ideas + ".tmp", ckpt_ideas)
+
+        t0 = _time.time()
+        done0 = resume_row
+
+        def write_status(row_now: int) -> None:
+            rate = (row_now - done0) / max(_time.time() - t0, 1e-9)
+            remaining = len(doc_ids) - row_now
+            json.dump({"row": row_now, "total": len(doc_ids),
+                       "ideas": len(ideas), "gray": len(gray),
+                       "claims_per_sec": round(rate, 1),
+                       "eta_min": round(remaining / max(rate, 1e-9) / 60, 1)},
+                      open(status_path + ".tmp", "w"))
+            os.replace(status_path + ".tmp", status_path)
+
+        rows = list(zip(doc_ids, claims, times))
+        for start in range(resume_row, len(rows), batch_size):
+            chunk = rows[start:start + batch_size]
+            V = np.stack([vecs[vec_of[c]] for _, c, _ in chunk])
+            if index.ntotal:
+                D, NN = index.search(V, 1)
+            else:
+                D = np.full((len(chunk), 1), -1.0, dtype=np.float32)
+                NN = np.full((len(chunk), 1), -1, dtype=np.int64)
+            new_vecs = []          # founders created in this batch
+            new_ids = []
+            for k, (doc_id, claim, t) in enumerate(chunk):
+                row = start + k
+                cos, nn = float(D[k, 0]), int(NN[k, 0])
+                # also consider in-batch founders created before this claim
+                if new_vecs:
+                    sims = np.asarray(new_vecs) @ V[k]
+                    j = int(np.argmax(sims))
+                    if float(sims[j]) > cos:
+                        cos, nn = float(sims[j]), new_ids[j]
+                idea = -1
+                if nn >= 0 and cos >= AUTO_HI:
+                    idea = nn
+                elif nn >= 0 and cos >= GRAY_LO:
+                    gray.append((row, nn, round(cos, 4)))
+                if idea < 0:
+                    idea = found_idea(row, claim, t, V[k])
+                    new_vecs.append(V[k])
+                    new_ids.append(idea)
+                else:
+                    centroids[idea] += V[k]
+                    counts[idea] += 1
+                ideas[idea]["n"] += 1
+                assign.append(idea)
+            if new_vecs:
+                index.add(np.stack(new_vecs))
+            if start and start % 50_000 < batch_size:
+                write_status(start + len(chunk))
+                print(f"cluster: {start + len(chunk)} claims -> {len(ideas)} ideas, "
+                      f"{len(gray)} gray", flush=True)
+            if start and start % 100_000 < batch_size:
+                checkpoint(start + len(chunk))
+        checkpoint(len(rows))
+        write_status(len(rows))
+    else:
+        for row, (doc_id, claim, t) in enumerate(zip(doc_ids, claims, times)):
+            v = vecs[vec_of[claim]]
+            idea = -1
+            if index.ntotal:
+                cos, nn = index.search(v[None, :], 1)
+                cos, nn = float(cos[0, 0]), int(nn[0, 0])
+                if cos >= AUTO_HI:
+                    idea = nn
+                elif cos >= GRAY_LO:
+                    gray.append((row, nn, round(cos, 4)))
+            if idea < 0:
+                idea = found_idea(row, claim, t, v)
+                index.add(v[None, :])
+            else:
+                centroids[idea] += v
+                counts[idea] += 1
+            ideas[idea]["n"] += 1
+            assign.append(idea)
+            if row and row % 50_000 == 0:
+                print(f"cluster: {row} claims -> {len(ideas)} ideas, {len(gray)} gray",
+                      flush=True)  # flush: piped runs must not go blind (2026-08-29)
 
     json.dump(ideas, open(reg_path, "w"))
     np.save(os.path.join(OUT, "assignments.npy"), np.array(assign, dtype=np.int64))
