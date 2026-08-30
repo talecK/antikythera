@@ -1,10 +1,11 @@
 # Handoff — state of the Antikythera project (2026-08-30)
 
-## Status: original thesis KILLED, cleanly. Assets banked. Open to new ideas.
+## Status: thesis KILLED ON HN (corpus-scoped). Domain-2 test never run.
+## Assets banked. Open to new ideas — including the equities/infosec variant.
 
 The discourse-gap thesis (never-co-mentioned idea pairs predict future
 connection; see discourse-gap-engine-brief.md) was tested on 20 years of
-Hacker News and falsified in four pre-registered runs across two folds plus
+Hacker News and falsified THERE in four pre-registered runs across two folds plus
 an ML sweep — full record in reports/pilot1_runs.md, registrations in
 preregistration.md (git history proves reg-before-eval ordering throughout).
 
@@ -62,8 +63,14 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    registration. Both failed painfully when skipped.
 
 ## Fresh-idea starting points (untested, from the post-mortems)
-- Equities/infosec corpora sidestep the unitization problem (tickers/CVEs
-  are self-indexing) — the brief's niche #2/#3 remain unexplored.
+- **The live thesis variant — equities/infosec (brief niches #2/#3), never
+  tested**: tickers/CVEs are self-indexing units, deleting the exact
+  failure mode (unitization noise, generic vocabulary) the HN autopsy
+  identified. Requires: new corpus pull (financial/security discourse),
+  the run-3/4 formulation from the start (suppression + chance-calibrated
+  outcome — the naive gap score degenerates to popularity on ANY corpus),
+  and a fresh registration. Prior odds ~10-15%. This is a new experiment,
+  not a rerun; the HN kill does not prejudge it.
 - The paraphrase-verdict dataset could train/benchmark a claim-matcher.
 - The Uzzi-Jones outcome flip: predict which STORIES succeed given they
   contain an atypical concept pair (success = points, measurable here).
