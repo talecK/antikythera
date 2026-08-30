@@ -63,6 +63,21 @@ Build-window diagnostics reviewed OUTCOME-BLIND before registration:
   growth ratios).
 - Success: gap_score P@k exceeds ALL three baselines at k=200; report all k.
 
+## REGISTERED RUN 2 (2026-08-30, pre-eval) — granularity rebuild 1
+- Run 1 (claim units) was DEGENERATE: 0 formations among 58,183 eligible
+  (only 26 pairs total hit >=2 eval docs). Not a thesis result.
+- Rebuild 1a unit: CONCEPT STRINGS (lowercased exact identity, no
+  clustering) from the same cached extractions. Same fold, same outcome
+  definition (>=2 docs AND >=2 distinct story authors), same baselines,
+  same k values, same half-life and affinity threshold.
+- F (unit-relative, set from outcome-blind density check): >= 20 distinct
+  build docs -> 10,444 concepts; 2.46M build co-occurring pairs.
+  (Outcome-side count of formed edges was observed during the density
+  check — disclosed: ~66K never-connected pairs form. Ranking results
+  remain unseen at registration.)
+- Affinity term/baseline use the concept's own embedding (unit = single
+  string, centroid degenerates to the embedding itself).
+
 ## Registered corpus facts (fixed by the pull, 2026-08-28)
 - Canonical source: bigquery-public-data.hacker_news.full (max ts 2026-08-27).
 - Filter: type=story, not dead/deleted, score>=5 OR descendants>=3.
