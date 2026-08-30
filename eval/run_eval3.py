@@ -110,22 +110,40 @@ def main() -> None:
     print(f"formed among eligible: {hits}/{len(eligible)} "
           f"({hits / max(len(eligible), 1):.4%})")
 
+    # lenses: all / exposed-pairs / exposed x focused (run 4 registration)
+    lenses = {"all": eligible}
+    exp_file = os.environ.get("EXPOSED_FILE")
+    if exp_file:
+        exposed = {l.strip() for l in open(exp_file) if l.strip()}
+        lenses["exposed"] = [p for p in eligible
+                             if p["pair"][0] in exposed and p["pair"][1] in exposed]
+        import math
+        prom = {c: len(neigh[c]) / math.sqrt(len(bfreq[c])) for c in fs}
+        cut = sorted(prom.values())[int(len(prom) * 2 / 3)]
+        lenses["exposed_focused"] = [p for p in lenses["exposed"]
+                                     if prom[p["pair"][0]] < cut and prom[p["pair"][1]] < cut]
+
     rng = np.random.default_rng(RNG_SEED)
-    ks = [k for k in K_VALUES if k <= len(eligible)]
-    rankers = {
-        "suppr_affinity": sorted(eligible, key=lambda p: -p["suppression_affinity"]),
-        "affinity_only": sorted(eligible, key=lambda p: -p["affinity"]),
-        "common_neighbors": sorted(eligible, key=lambda p: -p["common_neighbors"]),
-        "freq_product": sorted(eligible, key=lambda p: -p["freq_product"]),
-        "random": list(rng.permutation(np.array(eligible, dtype=object))),
-    }
-    print(f"\n{'ranker':<18}" + "".join(f"P@{k:<8}" for k in ks))
-    results = {}
-    for name, ranked in rankers.items():
-        results[name] = {k: sum(1 for p in ranked[:k] if p["pair"] in formed) / k
-                         for k in ks}
-        print(f"{name:<18}" + "".join(f"{results[name][k]:<10.4f}" for k in ks))
-    json.dump({"n_eligible": len(eligible), "hits": hits, "results": results},
+    all_results = {}
+    for lens, elig in lenses.items():
+        ks = [k for k in K_VALUES if k <= len(elig)] or [len(elig)]
+        lhits = sum(1 for p in elig if p["pair"] in formed)
+        print(f"\n== lens {lens}: {len(elig)} eligible, {lhits} formed "
+              f"({lhits / max(len(elig), 1):.4%}) ==")
+        rankers = {
+            "suppr_affinity": sorted(elig, key=lambda p: -p["suppression_affinity"]),
+            "affinity_only": sorted(elig, key=lambda p: -p["affinity"]),
+            "common_neighbors": sorted(elig, key=lambda p: -p["common_neighbors"]),
+            "freq_product": sorted(elig, key=lambda p: -p["freq_product"]),
+            "random": list(rng.permutation(np.array(elig, dtype=object))),
+        }
+        print(f"{'ranker':<18}" + "".join(f"P@{k:<8}" for k in ks))
+        all_results[lens] = {}
+        for name, ranked in rankers.items():
+            all_results[lens][name] = {k: sum(1 for p in ranked[:k] if p["pair"] in formed) / k
+                                       for k in ks}
+            print(f"{name:<18}" + "".join(f"{all_results[lens][name][k]:<10.4f}" for k in ks))
+    json.dump({"n_eligible": len(eligible), "hits": hits, "results": all_results},
               open(os.path.join(OUT, "eval3_results.json"), "w"), indent=1)
 
 
