@@ -16,7 +16,8 @@ import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.environ.get("REGISTRY_OUT", os.path.join(ROOT, "data", "registry", "pilot1_concepts"))
-EVAL_START, EVAL_END = "2017-01-01", "2018-01-01"
+EVAL_START = os.environ.get("EVAL_START", "2017-01-01")
+EVAL_END = os.environ.get("EVAL_END", "2018-01-01")
 F = 20
 E_MIN = 2.0
 K_VALUES = [50, 200, 1000]
