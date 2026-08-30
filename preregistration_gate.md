@@ -10,9 +10,13 @@ exist and form at a usable rate, and (Q2) does connection-seeking culture
 close gaps faster than reactive culture — the first CONTROLLED test of the
 mechanism story that runs 5/6 and Tier A built.
 
-Calibration ladder from prior registered work (reports/tier_a.md,
-reports/pilot1_runs.md): Science4Cast 67% / HN author-space ~20% (19.2%,
-23.6%; exposed-vocabulary 23.1%) / HN thread-space 0.6%.
+Calibration ladder RETIRED (2026-08-30, run 8): the z>=2 criterion behind
+the 67% / ~20% / 0.6% rungs is anti-conservative under doc-size
+heterogeneity (R1 placebo), and under the shuffle-calibrated criterion HN
+shows NO above-chance formation in either space (run 8,
+reports/pilot1_runs.md). The gate therefore asks an open question, not a
+ladder placement: does financial discourse show above-chance calibrated
+formation where HN shows none?
 
 ## Corpus and provenance (disclosed seams)
 - Subreddits: DD stratum = SecurityAnalysis, ValueInvesting, StockMarket,
@@ -50,8 +54,14 @@ reports/pilot1_runs.md): Science4Cast 67% / HN author-space ~20% (19.2%,
   pairs in a stratum; the choice is recorded below before eval).
 - Eligible ("suppressed") pair: E_build = f_i * f_j / N_docs >= 2 AND zero
   observed build co-mentions.
-- Formation: >= 2 eval author-docs co-mention AND >= 2 distinct authors AND
-  eval-window z >= 2.
+- Formation (AMENDED 2026-08-30 per the outcome-blind procedure registered
+  in preregistration_run8.md; the z>=2 criterion is retired after failing
+  the R1 placebo): a pair FORMS iff its observed eval co-mention doc count
+  STRICTLY exceeds its per-pair label-shuffle p99 (R = 100 eval-window
+  shuffles, numpy default_rng seed 20260831, concept column permuted over
+  (doc, ticker) incidences restricted to the frequent set, within-doc
+  duplicates collapsed) AND >= 2 eval author-docs AND >= 2 distinct
+  authors. Per-pair false-positive rate ~1% by construction.
 
 ## Folds
 - A: build 2017-01-01..2018-12-31, eval 2019 (pre-GME, pre-COVID).
@@ -60,25 +70,32 @@ reports/pilot1_runs.md): Science4Cast 67% / HN author-space ~20% (19.2%,
   project's own lesson is that folds must not straddle them.
 
 ## Registered readouts
-1. **Q1 HEADLINE** — suppressed-pair formation rate, ALL stratum, union
-   lens, both folds, with Wilson 95% CIs.
-   - >= 10% in BOTH folds: financial discourse has the needed structure;
-     the variant graduates to a funded registered run.
-   - < 2% in BOTH folds: thread-like; the variant is DEAD and the project
-     closes on a clean negative.
-   - Otherwise: indeterminate; report, no interpretation stretch.
-2. **Q2 MECHANISM (the controlled test)** — DD vs MEME formation rates
-   within each fold. Registered prediction: DD > MEME.
+1. **Q1 HEADLINE (bars AMENDED 2026-08-30 per preregistration_run8.md,
+   outcome-blind)** — calibrated formed count among suppressed pairs, ALL
+   stratum, union lens, both folds, vs the false-positive floor
+   Binomial(n_eligible, 0.01), one-sided exact test.
+   - p < 0.01 in BOTH folds: financial discourse shows above-chance gap
+     formation where HN (run 8) shows none; the variant graduates to a
+     funded registered run.
+   - Not significant in BOTH folds: no above-chance formation anywhere
+     tested; the variant is DEAD and the project closes on a clean
+     negative across two platforms and three unit types.
+   - Mixed: indeterminate; report, no interpretation stretch.
+   Also reported (descriptive): the run-8 sub-chance persistence readout —
+   total observed co-mention over suppressed pairs vs shuffle-null total
+   (z) — to test whether below-chance segregation replicates on Reddit.
+2. **Q2 MECHANISM (the controlled test)** — DD vs MEME calibrated
+   formation within each fold. Registered prediction: DD > MEME.
    - Reported twice: raw, and with MEME author-quarters randomly
      subsampled (seed 20260830) to match the DD document count, because
-     document count enters both E and z.
+     document count enters eligibility and the shuffle null.
    - DD > MEME in both folds (non-overlapping CIs in at least one):
      mechanism story survives its first controlled test.
-   - DD ~= MEME: the ~20% author-space rate is likely a generic property of
-     dense forums, and run 5's result means less than claimed — a finding
-     we commit to reporting as such.
-   - MEME > DD: the instrument is a hype-propagation sensor, not an
-     insight sensor; redirects the design, does not kill it.
+   - DD ~= MEME (or both at floor): connection-seeking culture confers no
+     above-chance bridging — consistent with run 8's HN closure; reported
+     as such.
+   - MEME > DD: whatever forms is hype propagation, not insight;
+     redirects the design, does not kill it.
 3. **Q3 SCOUT (secondary, per the run-7 scope correction)** — run-7's
    split-half persistence test on ticker bridges, ALL stratum. Reported
    with the same overdispersion diagnostic; no pass/fail bar attached.

@@ -205,3 +205,39 @@ Harness sanity: reproduces run 5 exactly (364/70, 110/26) before any check.
   per-pair shuffle p99), recomputed in author AND thread space; ladder
   recalibration; gate Q1 bars re-derived from the corrected criterion
   BEFORE the gate flips to REGISTERED.
+
+## Run 8 (2026-08-30) — shuffle-calibrated formation: NO above-chance formation ANYWHERE; sub-chance persistence CONFIRMED at scale
+Registered pre-eval (preregistration_run8.md, commit 63b72d9). Criterion:
+pair forms iff observed eval co-mention docs > per-pair label-shuffle p99
+(R=100, seed 20260831) AND >=2 docs AND >=2 authors (~1% false-positive
+floor per pair by construction).
+- PRIMARY: calibrated formed counts sit AT or BELOW the false-positive
+  floor in every cell:
+  - author fold 1: 3/364 (floor 3.6, one-sided binomial p=0.71)
+  - author fold 2: 1/110 (floor 1.1, p=0.67)
+  - thread fold 1: 20/25,161 (floor 251.6, p=1)
+  - thread fold 2: 11/7,505 (floor 75.0, p=1)
+  Registered interpretation applies: no evidence that individuals (or
+  threads) bridge suppressed pairs above chance. The author-lens revival
+  is CLOSED FOR GOOD. The detector is dead on HN under an honest null.
+- SUB-CHANCE PERSISTENCE (registered bar z<=-3 both author folds): MET,
+  overwhelmingly. Total co-mention over eligible pairs vs shuffle null:
+  - author: 746 vs 1,055 (z=-9.2) and 454 vs 651 (z=-9.3) — ~70% of chance
+  - thread: 12,098 vs 48,373 (z=-162) and 7,866 vs 28,230 (z=-124) —
+    ~25-28% of chance.
+  The paper claims it: suppressed pairs co-mention BELOW chance;
+  community/topic segregation persists into the eval year in both spaces.
+  This is the corpus's real, large, replicated regularity — gaps don't
+  close; they actively stay open.
+- LADDER RECALIBRATION: the retired rungs (19-24% author, 0.6% thread)
+  are replaced by "calibrated rate indistinguishable from the 1% floor"
+  in all four HN cells. The Science4Cast 67% rung is untested under this
+  criterion and is absentia's remit; until re-measured there, NO
+  cross-corpus rate comparison is quotable.
+- GATE: the outcome-blind amendment registered in preregistration_run8.md
+  is applied — gate Q1/Q2 move to the calibrated criterion with
+  floor-relative bars. The gate's question is now sharp: does financial
+  discourse show above-chance calibrated formation where HN shows none?
+- Thread-space depth note: thread co-mention at ~1/4 of chance means the
+  original 0.6% "formation rate" was itself mostly criterion artifact on
+  top of massive under-mixing; runs 1-4's kill is thereby STRENGTHENED.

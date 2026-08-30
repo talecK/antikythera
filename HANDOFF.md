@@ -1,16 +1,19 @@
 # Handoff — state of the Antikythera project (2026-08-30, RE-REVISED 2026-08-30 evening)
 
-## Status: author-lens revision ITSELF REVISED by registered placebo (R1,
-## reports/pilot1_runs.md "Robustness suite"). The 19-24% author-space
-## formation rate is BELOW its mechanical (label-shuffle) floor of 34-47%:
-## the z>=2 criterion is anti-conservative under doc-size heterogeneity.
-## No current evidence that individuals bridge suppressed pairs at
-## enriched rates. Detector claim SUSPENDED pending run 8
-## (shuffle-calibrated formation criterion + ladder recalibration).
-## Thread-lens kill stands. Tier A positive control stands (harness
-## faithfully finds planted signal; criterion calibration is a separate
-## defect). Gate MUST NOT flip to REGISTERED until Q1 bars are re-derived
-## under the corrected criterion.
+## Status: FINAL on HN (run 8, registered 63b72d9). Under a
+## shuffle-calibrated criterion there is NO above-chance gap formation in
+## either space (author 3/364 & 1/110 vs ~1% floor; thread 20/25,161 &
+## 11/7,505 — all at/below floor). The z>=2 criterion that produced every
+## earlier positive rate (19-24%, 23.1%, 0.6%, and science's 67%) is
+## anti-conservative under doc-size heterogeneity (R1 placebo). The REAL
+## finding, registered bar met at z=-9 (author) and z=-124/-162 (thread):
+## suppressed pairs co-mention BELOW chance — segregation persists; gaps
+## actively stay open. Detector/Foundry: CLOSED on HN. Thread-lens kill:
+## STRENGTHENED. Tier A control: stands (harness fidelity, not criterion
+## calibration). Gate: Q1/Q2 amended to the calibrated criterion
+## (outcome-blind procedure registered in preregistration_run8.md) and
+## UNBLOCKED — it now asks whether Reddit finance shows above-chance
+## formation where HN shows none.
 
 The discourse-gap thesis (never-co-mentioned idea pairs predict future
 connection; see discourse-gap-engine-brief.md) was tested on 20 years of
@@ -72,11 +75,15 @@ preregistration.md (git history proves reg-before-eval ordering throughout).
    co-mention precedes articulation 12/22, trails 4/22); R2/R4 show the
    measured rate is not a window or attribution artifact — the defect is
    the criterion, not the plumbing.
-3. **Mandatory before anything else runs: run 8** — shuffle-calibrated
-   formation (per-pair null from the label shuffle), recomputed in author
-   AND thread space, ladder recalibrated (science rung = absentia's
-   remit). The Reddit gate's Q1 bars are uninterpretable as drafted and
-   the gate must not flip to REGISTERED until re-derived.
+3. **Run 8 DONE (registered 63b72d9, results in reports/pilot1_runs.md)**:
+   calibrated formation at/below the 1% false-positive floor in all four
+   HN cells — the author-lens revival is closed for good, and the
+   thread-space kill is strengthened (thread co-mention runs at ~1/4 of
+   chance). Sub-chance persistence bar MET decisively: author z=-9.2/-9.3,
+   thread z=-162/-124. Gate Q1/Q2 amended to the calibrated criterion per
+   the outcome-blind procedure and unblocked. Science4Cast's 67% under
+   this criterion = absentia's remit (their celebrated rate may share the
+   defect).
 
 ## What a new session inherits
 - **Corpus**: 1.32M HN threads 2006–2026 (title + top-20 comments), clean
@@ -120,13 +127,10 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    registration. Both failed painfully when skipped.
 
 ## Next steps (RE-REVISED 2026-08-30 evening; ordered by information per dollar)
-0. **Run 8 FIRST (blocks everything below): shuffle-calibrated formation.**
-   Register: pair forms iff observed eval co-mention exceeds its own
-   label-shuffle null (p99, R=100), recomputed in author AND thread space,
-   both folds. Recalibrate the ladder; re-derive gate Q1 bars. Until then
-   the 19-24%, 23.1%, 0.6%, and 67% numbers must not be quoted as rates
-   ("R1 placebo failed" is the honest one-liner). Science4Cast rung is
-   absentia's remit — flag it to that repo.
+0. **DONE — Run 8 (see status banner).** No above-chance formation on HN
+   in either space; segregation-persistence claim registered-met. The
+   retired rates (19-24%, 23.1%, 0.6%, 67%) must never be quoted except
+   as examples of the criterion trap.
 1. **DONE — Run 6: exposure lens x author space (registered d3844c1,
    result b244d65): PRIMARY MET.** Exposed pairs form at 23.1% pooled
    (6/26), same as all-pairs author space; thread-space was 0.55%. The
@@ -143,19 +147,22 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    graph/semantic ranking failed on HN and science; reputational only on
    HN — the negative transfers weakly. Gate below is census-PRIMARY;
    register a cheap scout-module secondary in the variant, don't drop it.
-2. **Variant gate: ON HOLD at DRAFT pending run 8.** Acquisition/census
-   may continue (outcome-blind); Q1 interpretation bars and the calibration
-   ladder in preregistration_gate.md are stale as written and must be
-   re-derived under the corrected criterion before STATUS flips to
-   REGISTERED. Corpus and units sections remain valid.
-3. **Detector/standing-screen and Foundry plays: SUSPENDED** until run 8
-   re-establishes (or kills) an above-chance formation event. The 1-in-5
-   arithmetic is criterion-confounded; do not quote it.
-4. Write-up: still viable but the story changed — now "certified negative
-   + a measurement-criterion trap that manufactured a false revival, caught
-   by a registered placebo." Arguably a stronger methods paper; the "gaps
-   close in people, not rooms" headline is withdrawn unless run 8 revives
-   a calibrated version of it.
+2. **Variant gate: UNBLOCKED, still DRAFT.** Q1/Q2 amended to the
+   calibrated criterion (see preregistration_gate.md); fold-B acquisition
+   continues; STATUS flips to REGISTERED once the census is appended. The
+   gate is now the project's only live positive hypothesis: above-chance
+   calibrated formation on Reddit finance where HN has none — plus the
+   Reddit replication of sub-chance persistence.
+3. **Detector/standing-screen and Foundry plays: CLOSED on HN** (no
+   above-chance event to detect). Revivable only by a gate pass.
+4. Write-up (paper 1) is READY to draft and the story is now complete:
+   certified thread-space negative -> criterion trap manufactures an
+   author-space revival -> registered placebo catches it -> calibrated
+   re-measurement finds the true regularity, sub-chance persistence
+   ("the gaps that don't close", z -9 author / -124 to -162 thread).
+   Methods contribution: the label-shuffle placebo as a mandatory control
+   for co-occurrence formation claims; likely contaminates published
+   results elsewhere (absentia tests the flagship case).
 - Still banked: paraphrase-verdict dataset (claim-matcher training);
   Uzzi-Jones story-success flip; atlas trend analyses.
 - SPUN OFF (2026-08-30): the Science4Cast critique (Tier A finding 1 —
