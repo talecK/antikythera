@@ -1,7 +1,8 @@
-# Handoff — state of the Antikythera project (2026-08-30)
+# Handoff — state of the Antikythera project (2026-08-30, REVISED 2026-08-30)
 
-## Status: thesis KILLED ON HN (corpus-scoped). Domain-2 test never run.
-## Assets banked. Open to new ideas — including the equities/infosec variant.
+## Status: kill REVISED. Thread-lens kill stands; author-lens re-cut (run 5)
+## shows the target event is real at ~20%/yr. We own a DETECTOR, not a
+## telescope. Instrument certified by a passed positive control (Tier A).
 
 The discourse-gap thesis (never-co-mentioned idea pairs predict future
 connection; see discourse-gap-engine-brief.md) was tested on 20 years of
@@ -9,7 +10,7 @@ Hacker News and falsified THERE in four pre-registered runs across two folds plu
 an ML sweep — full record in reports/pilot1_runs.md, registrations in
 preregistration.md (git history proves reg-before-eval ordering throughout).
 
-### The three load-bearing findings
+### The three load-bearing findings (original kill, thread lens)
 1. **Granularity bracket**: claim-level units → co-occurrence graph is
    all-zeros (nothing repeats). Concept-level units → the graph is alive,
    but prediction reduces to popularity mechanics. Nothing in between was
@@ -20,6 +21,30 @@ preregistration.md (git history proves reg-before-eval ordering throughout).
 3. **On economically-relevant vocabulary the target event barely exists**:
    suppressed exposed-concept pairs form above-chance connections ~8
    times/year on all of HN.
+
+### REVISION (2026-08-30 session — Tier A + run 5, both registered/committed)
+1. **Tier A positive control PASSED** (`reports/tier_a.md`): the exact
+   run-3 harness on the Science4Cast benchmark finds the known signal at
+   ~105x lift; the HN null was not a harness artifact. Also learned there:
+   the celebrated science signal is itself just popularity+closure
+   (freq_product ties common_neighbors; embedding affinity dead, AUC~0.56),
+   and the benchmark's RAKE units are as mushy as ours — so the thesis's
+   distinctive ranking machinery adds nothing on ANY corpus, and unitization
+   noise was NOT the HN killer. Calibration: suppressed pairs form at 67%
+   in science vs 0.6% thread-HN.
+2. **Run 5 (author-as-document re-cut) FLIPS the measurement story**
+   (`preregistration_run5.md`, run log): with document = (author, quarter)
+   over quote-attributed concepts (81% attribution,
+   `pipeline/build_author_concepts.py`), suppressed pairs are rare
+   (364/110 per fold, science-like structure) and form at **19%/24%** vs
+   0.60%/0.68% thread-space — registered >=5% bar met both folds. HN
+   individuals DO bridge expected-but-absent pairs; comment threads never
+   showed it. The kill acquires a measurement-artifact component.
+3. **Detector, not telescope**: ranking WITHIN the eligible suppressed set
+   beats nothing (here, and in science's suppressed subset alike).
+   Eligibility is the entire instrument: ~360 flagged pairs/yr at ~1-in-5
+   formation vs 1-in-160 background. Author-space co-occurrence is the
+   default lens for all future corpora.
 
 ## What a new session inherits
 - **Corpus**: 1.32M HN threads 2006–2026 (title + top-20 comments), clean
@@ -62,17 +87,28 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
 4. No timeline claims without a microbenchmark; no eval without frozen
    registration. Both failed painfully when skipped.
 
-## Fresh-idea starting points (untested, from the post-mortems)
-- **The live thesis variant — equities/infosec (brief niches #2/#3), never
-  tested**: tickers/CVEs are self-indexing units, deleting the exact
-  failure mode (unitization noise, generic vocabulary) the HN autopsy
-  identified. Requires: new corpus pull (financial/security discourse),
-  the run-3/4 formulation from the start (suppression + chance-calibrated
-  outcome — the naive gap score degenerates to popularity on ANY corpus),
-  and a fresh registration. Prior odds ~10-15%. This is a new experiment,
-  not a rerun; the HN kill does not prejudge it.
-- The paraphrase-verdict dataset could train/benchmark a claim-matcher.
-- The Uzzi-Jones outcome flip: predict which STORIES succeed given they
-  contain an atypical concept pair (success = points, measurable here).
-- Concept trend data (atlas) supports "when did HN start caring about X"
-  analyses with no further spend.
+## Next steps (revised 2026-08-30; ordered by information per dollar)
+1. **Run 6 ($0, banked data): exposure lens x author space.** Rerun run-4's
+   EXPOSED-vocabulary restriction (1,055 frozen verdicts,
+   `data/atlas/concept_exposure_labels.csv`) on the run-5 author-space
+   eligible sets. Question: does the detector survive restriction to
+   economically-relevant vocabulary? Thread-space answer was ~8 events/yr
+   (nothing buildable); author space runs 30x hotter, so it may flip. This
+   is the last HN question that matters for value.
+2. **Variant gate (cheap; likely $0 API): author-space suppressed-pair
+   census on financial/infosec discourse.** Tickers/CVE-IDs are REGEXABLE —
+   the gate needs a corpus pull but no LLM extraction. Measure suppressed
+   count + formation rate in author space; calibrated thresholds now exist:
+   science 67% / HN-authors ~20% / HN-threads 0.6%. Science-like or
+   HN-author-like => variant graduates to a registered run; thread-like =>
+   dead. Corpus candidates: Reddit finance/netsec, StockTwits, oss-security.
+3. **If 1 or 2 pays: build the detector as a standing screen** (cron
+   pipeline emitting the ~few-hundred-pair watchlist + formation tracking),
+   and/or the Foundry play: LLM writes the connective content for flagged
+   pairs — a 1-in-5 early-hit rate needs no ranking.
+4. Write-up is now publishable-grade (passed positive control + "gaps close
+   in people, not rooms" lens result) — optional credibility asset.
+- Still banked: paraphrase-verdict dataset (claim-matcher training);
+  Uzzi-Jones story-success flip; atlas trend analyses.
+- Do NOT: chase within-set ranking (dead on three corpora); pay for the
+  20-yr extraction before the detector proves value on 1–2.
