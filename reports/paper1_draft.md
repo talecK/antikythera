@@ -216,7 +216,12 @@ until the registration is in place. Outcome-blind quantities (document
 counts, eligible-pair censuses) were appended to registrations before
 outcomes were computed. The repository's commit history, released with
 the paper, provides independent timestamps for the ordering of every
-registration and result, including the ones that embarrassed us.
+registration and result, including the ones that embarrassed us. One
+exception is disclosed: the Science4Cast control's registration and
+result were committed together in a single commit, so for that control
+the ordering rests on the session record rather than on commit
+granularity. Every Hacker News evaluation has a registration commit
+that strictly precedes its result commit.
 
 ## 4. Thread-level results: a certified null
 
@@ -457,35 +462,41 @@ pre-registered and committed before evaluation, by either party; the
 version-control history documents the full sequence, including the
 registered placebo that overturned an intermediate conclusion.
 
-## References (spine; to be completed)
+## References (spine; DOIs marked [verify] to be confirmed at submission)
 
 - Swanson, D.R. (1986). Fish oil, Raynaud's syndrome, and undiscovered
-  public knowledge. *Perspectives in Biology and Medicine* 30(1).
+  public knowledge. *Perspectives in Biology and Medicine* 30(1), 7-18.
+  doi:10.1353/pbm.1986.0087
 - Smalheiser, N.R., Swanson, D.R. (1998). Using ARROWSMITH: a
   computer-assisted approach to formulating and assessing scientific
-  hypotheses. *Computer Methods and Programs in Biomedicine* 57(3).
+  hypotheses. *Computer Methods and Programs in Biomedicine* 57(3),
+  149-153. doi:10.1016/S0169-2607(98)00033-9
 - Krenn, M., Zeilinger, A. (2020). Predicting research trends with
   semantic and neural networks with an application in quantum physics.
-  *PNAS* 117(4).
-- Krenn, M. et al. (2023). Forecasting the future of artificial
-  intelligence with machine learning-based link prediction in an
-  exponentially growing knowledge network. *Nature Machine
-  Intelligence* 5.
-- Tshitoyan, V. et al. (2019). Unsupervised word embeddings capture
-  latent knowledge from materials science literature. *Nature* 571.
+  *PNAS* 117(4), 1910-1916. doi:10.1073/pnas.1914370116
+- Krenn, M., Buffoni, L., Coutinho, B., et al. (2023). Forecasting the
+  future of artificial intelligence with machine learning-based link
+  prediction in an exponentially growing knowledge network. *Nature
+  Machine Intelligence* 5, 1326-1335. doi:10.1038/s42256-023-00735-0
+- Tshitoyan, V., Dagdelen, J., Weston, L., et al. (2019). Unsupervised
+  word embeddings capture latent knowledge from materials science
+  literature. *Nature* 571, 95-98. doi:10.1038/s41586-019-1335-8
 - Uzzi, B., Mukherjee, S., Stringer, M., Jones, B. (2013). Atypical
-  combinations and scientific impact. *Science* 342(6157).
+  combinations and scientific impact. *Science* 342(6157), 468-472.
+  doi:10.1126/science.1240474
 - Foster, J.G., Rzhetsky, A., Evans, J.A. (2015). Tradition and
   innovation in scientists' research strategies. *American Sociological
-  Review* 80(5).
+  Review* 80(5), 875-908. doi:10.1177/0003122415601618
 - Liben-Nowell, D., Kleinberg, J. (2007). The link-prediction problem
-  for social networks. *JASIST* 58(7).
-- Kojaku, S. et al. (2025). Implicit degree bias in the link prediction
-  task. *ICML*.
-- Aghajohari, M. (2021). Degree-based feature is all you need. *IEEE
-  BigData* (Science4Cast competition).
+  for social networks. *JASIST* 58(7), 1019-1031. doi:10.1002/asi.20591
+- Kojaku, S., et al. (2025). Implicit degree bias in the link prediction
+  task. *ICML 2025*. [verify: final citation and pages]
+- Aghajohari, M. (2021). Degree-based feature is all you need
+  (Science4Cast competition entry). *IEEE BigData 2021*. [verify: exact
+  title, authors, DOI]
 - Maslov, S., Sneppen, K. (2002). Specificity and stability in topology
-  of protein networks. *Science* 296(5569).
+  of protein networks. *Science* 296(5569), 910-913.
+  doi:10.1126/science.1065103
 - Gotelli, N.J., Graves, G.R. (1996). *Null Models in Ecology*.
   Smithsonian Institution Press.
 

@@ -71,6 +71,10 @@ STOPLIST = {
 }
 
 
+GATE_SUBS = {"wallstreetbets", "stocks", "investing", "SecurityAnalysis",
+             "ValueInvesting", "StockMarket"}
+
+
 def load_symbols() -> set[str]:
     return {r["ticker"].upper() for r in json.load(open(SEC)).values()
             if r.get("ticker")}
@@ -121,6 +125,12 @@ def main() -> None:
         if limit and n_items > limit:
             break
         if not author or author in ("[deleted]", "AutoModerator") or not ts:
+            continue
+        # The dump filter matches the subreddit field anywhere in the line, so
+        # crossposts carrying a gate sub inside crosspost_parent_list leak in
+        # (BBBY, WallStreetbetsELITE, ... — ~0.05% of rows). Require the
+        # item's OWN subreddit to be a gate sub.
+        if sub not in GATE_SUBS:
             continue
         if item_id in seen_ids:      # dump/API overlap -> keep one copy
             continue
