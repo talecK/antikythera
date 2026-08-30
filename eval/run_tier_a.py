@@ -9,14 +9,16 @@ Input pkl (Krenn et al. NMI 2023, Zenodo 7882892):
 Usage: run_tier_a.py <pkl> [--sample FRAC] (sample = microbenchmark mode)
 """
 import json
+import os
 import pickle
 import sys
 import time
 
 import numpy as np
 
-ROOT = "/Users/andrej/workspace/antikythera"
-BASE = "/Volumes/1TB NVME 1/antikythera/data/science4cast"
+ROOT = os.environ.get("TIER_A_ROOT", "/Users/andrej/workspace/antikythera")
+BASE = os.environ.get("TIER_A_BASE",
+                      "/Volumes/1TB NVME 1/antikythera/data/science4cast")
 E_MIN = 2.0
 K_VALUES = [50, 200, 1000]
 RNG_SEED = 20260829
