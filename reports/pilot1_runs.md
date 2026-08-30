@@ -130,3 +130,21 @@ clustering (16x), full pre-registration audit trail in git.
   graph (runs 3/5), semantic (runs 2-4), reputational (run 7).
 - Scope caveat: HN vocabulary + quarterly buckets; a finance-native retest
   is nearly free once a gate corpus exists, but carries no priority claim.
+
+### Run 7 addendum (2026-08-30) — POST-HOC diagnostics (exploratory, labeled)
+Prompted by owner challenge: was stage A powered to see a real trait?
+1. Power: YES for meaningful effects. Simulated stable traits at the exact
+   per-author event counts: trait SD 0.03/0.05/0.10 -> expected split-half
+   rho 0.28/0.46/0.68 (100% detectable vs null95 0.035); observed 0.012.
+   Caveat: sims assume independent events; within-author outcome dependence
+   (shared topics/moments) inflates noise ~3x (chi ratio), which drags the
+   SD=0.03 case toward marginal — but SD>=0.05 (scouts reliably ~2x base
+   rate) stays firmly excluded.
+2. Overdispersion: heterogeneity EXISTS — chi 47,100 vs null 14,701
+   (p<0.001). Reconciliation with rho~0: author outcomes correlate WITHIN a
+   period but not ACROSS periods. Bridging success is bursty/situational
+   (being in the right topic at the right moment), not a persistent skill.
+3. SCOPE correction: all run-7 conclusions are HN-scoped. Reputational
+   ranking was tested only here (graph/semantic failed on HN AND science).
+   Negative transfers weakly; the variant registration should carry a cheap
+   scout-module secondary readout rather than dropping the idea.
