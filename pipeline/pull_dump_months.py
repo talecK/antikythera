@@ -18,6 +18,9 @@ import subprocess
 import sys
 import time
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import validate_month  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "/Volumes/1TB NVME 1/antikythera/data/reddit_gate"
 TORRENT = f"{BASE}/3d426c47c767d40f82c7ef0f47c3acacedd2bf44.torrent"
@@ -85,11 +88,13 @@ def filter_month(m: str, slot: int) -> None:
             print(f"{m} {k}: MISSING after download — skipped", flush=True)
             continue
         sz = os.path.getsize(src) / 1e9
-        # A partially-downloaded sparse file reports full logical size, so
-        # size alone cannot prove completeness — decode-test the stream.
-        if subprocess.run(["zstd", "-t", src], stdout=subprocess.DEVNULL,
-                          stderr=subprocess.DEVNULL).returncode != 0:
-            raise RuntimeError(f"corrupt/incomplete dump {m} {k}")
+        # Pre-flight smoke test on a sample: proves the stream decodes AND
+        # that the fast filter agrees with a json.loads reference. Replaces
+        # the old `zstd -t`, which cost a full extra decompression pass and
+        # could not see format drift at all.
+        probs = validate_month.preflight(src)
+        if probs:
+            raise RuntimeError(f"preflight {m} {k}: " + "; ".join(probs))
         out = f"{FILT}/filtered_{k}_{m}.ndjson.gz"
         t0 = time.time()
         with open(out + ".tmp", "wb") as fo:
@@ -104,13 +109,12 @@ def filter_month(m: str, slot: int) -> None:
             rc3, rc2, rc1 = p3.wait(), p2.wait(), p1.wait()
         if rc1 != 0 or rc2 != 0 or rc3 != 0:
             raise RuntimeError(f"filter failed {m} {k}: {rc1} {rc2} {rc3}")
-        MIN_OUT = {"RC": 20_000_000, "RS": 2_000_000}[k]
-        if os.path.getsize(out + ".tmp") < MIN_OUT:
-            os.remove(out + ".tmp")
-            raise RuntimeError(
-                f"implausibly small output {m} {k} "
-                f"(<{MIN_OUT/1e6:.0f}MB; neighbouring months are 10-150MB)")
         os.replace(out + ".tmp", out)
+        oprobs = [x for x in validate_month.output(out, m, k)
+                  if not x.startswith("NOTE")]
+        if oprobs:
+            os.remove(out)
+            raise RuntimeError(f"output checks {m} {k}: " + "; ".join(oprobs))
         print(f"{m} {k}: {sz:.1f}GB dump -> "
               f"{os.path.getsize(out)/1e6:.0f}MB kept "
               f"(filter {time.time()-t0:.0f}s)", flush=True)
