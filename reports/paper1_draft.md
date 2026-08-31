@@ -438,7 +438,13 @@ attribution path, unit mushiness bounds how sharp any concept-level
 claim can be. Second, author histories are truncated by the corpus
 design (top-20 comments per thread), so author-space frequencies
 undercount true activity; this shrinks the eligible universe but has no
-evident mechanism for biasing formation direction.
+evident mechanism for biasing formation direction. Third, raised by our
+own internal adversarial review and untested: the label-shuffle placebo
+preserves marginal frequencies but destroys temporal structure within
+the evaluation window, so a null model that additionally preserved
+within-window burst timing could in principle calibrate differently;
+constructing one is future work, and the segregation direction (real
+data below even our permissive null) is unaffected.
 
 ### 6.3 A second platform
 
