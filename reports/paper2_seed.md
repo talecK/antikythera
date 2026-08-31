@@ -39,8 +39,26 @@ TRANSITION in the whole research program — everything else is static.
 ## The design (two parts, one acquisition)
 
 Acquisition: complete WSB via API, 2019-01..2024-12, one source, one
-pull era. Serves both parts. Outcome-blind; may run before
-registration. See the runbook.
+pull era. Serves both parts. Outcome-blind; may run before the
+registration is frozen, but DO NOT LAUNCH without the owner's explicit
+go given in your own session — inherited docs (this one included) are
+context, not authorization. See the runbook, and its §0 first.
+
+Three acquisition decisions to make consciously (runbook §0 + peer
+flags, 2026-08-31):
+1. FIELDS/`score`: the existing puller does not collect `score`. Extend
+   FIELDS BEFORE launching — a re-pull is the full job. RECOMMENDATION:
+   include it. The audience-capture mechanism candidate predicts
+   engagement-dependent segregation, score is free to collect and
+   expensive to regret, and the ~36h score-settling caveat is moot for
+   2019-2024 content pulled in 2026. Final call: owner, in-session.
+2. This pull deliberately INCLUDES 2020-2021, the window every prior
+   fold in this project excluded as a regime break. That exclusion
+   reflex does not apply here: the transition IS the object of study.
+   Do not "fix" the range down.
+3. The registered analysis windows (Part B) still get frozen before any
+   segregation statistic is computed — acquisition breadth does not
+   pre-commit analysis windows.
 
 Part A — provenance-hardening (confirmatory, cheap): rebuild fold B
 with the dump months replaced by API months (uniform provenance both
