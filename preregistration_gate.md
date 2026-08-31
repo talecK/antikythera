@@ -331,3 +331,17 @@ union equivalent to either source at the measured 0.9996 agreement).
 Build-window gaps (2023-04..12 where the archive lacks a month) are
 API-filled per A4. Fleet pacing: <= 2 req/s per client, the service's own
 stated per-user comfort; failures back off exponentially on 429.
+
+### A6' — full API sweep; the source boundary becomes the crawler seam
+### (2026-08-31 ~00:45, pre-outcome)
+Extension of A6, decided while acquisition is in flight and no fold-B WSB
+outcome exists: build months 2023-05..12 are ALSO API-sourced (parallel
+fleet), and the torrent track is retired. Resulting provenance, final:
+- Pushshift-era months (2022-01..2023-03): monthly dumps. 15 months,
+  banked and validated.
+- Arctic-Shift-era months (2023-04..2024-12): API. 21 months.
+The two provenance classes now split EXACTLY at the 2023-03|04 crawler
+seam that separates the collection systems anyway — one boundary, two
+classes, equivalence measured at 0.9996 (A1'). This supersedes scattered
+per-month gap-filling; A4's caveat about a third class is moot (per-month
+torrents unused).
