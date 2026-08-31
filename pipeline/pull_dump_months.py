@@ -68,7 +68,9 @@ def start_download(m: str, slot: int):
          "--summary-interval=0", "--file-allocation=none",
          "--check-integrity=true",   # re-hash on resume; a crash can leave
                                      # torn pieces aria2 believes complete
-         "--bt-stop-timeout=14400"],
+         "--bt-stop-timeout=900"   # swarm has only ~16 seeders and does
+                                 # not hold every file; fail fast
+                                 # on unavailable months (was 4h)],
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
