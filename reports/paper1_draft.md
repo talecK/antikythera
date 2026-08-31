@@ -558,8 +558,10 @@ deduplication order, disclosed in the released run log). A follow-up
 study's independently acquired corpus (same platform, separate API pull
 on a different day, shared unit rules) additionally reproduces the
 first fold's wallstreetbets document count exactly (44,304
-author-quarters), corroborating that the census layer is stable across
-acquisition runs.
+author-quarters), and its registered confirmatory run reproduces the
+second fold's endpoint under uniform single-source provenance (all
+strata walled, formation null), so the second fold's result is not a
+sourcing artifact.
 
 ### 6.4 Segregation as the object of study
 
