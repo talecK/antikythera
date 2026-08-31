@@ -309,6 +309,16 @@ here is that every re-derivation step is a frozen rule with no free
 parameter — the same property that protected the interim-fold-A clause
 in the gate registration.
 
+V4 ADDENDUM (same evening, before the corrected census lands): the V3
+"consistency anchor" (44,304 = gate fold-A MEME docs) was an
+OLD-vs-OLD match — both sides pre-exclusion (peer-flagged; their
+verification error, our stale target, same root). The operative
+comparison target for the corrected census is the gate v2 census value
+(fold-A MEME eval docs 44,012, gate_rerun_v2.log). V3's paragraph
+stands as written per the no-rewording rule; this addendum supersedes
+its target. The corrected cell is reported when the census lands —
+match or mismatch.
+
 ---
 
 ## AMENDMENT V3 — per-window census + B-ladder decision (2026-08-31,
