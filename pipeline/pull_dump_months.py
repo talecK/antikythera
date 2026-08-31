@@ -27,6 +27,10 @@ PY = f"{ROOT}/.venv/bin/python"
 ARIA = "/usr/local/Cellar/aria2/1.37.0_2/bin/aria2c"
 RC0, RS0, MONTH0 = 194, 441, (2022, 1)
 MIN_FREE_GB = 60
+# Months the swarm cannot serve (see UNAVAIL note): recorded, not retried.
+# The ~16-seeder archive does not hold every file; a dead month must be
+# named so it can be API-filled, never silently skipped.
+UNAVAIL = f"{BASE}/unavailable_months.txt"
 
 
 def month_index(m: str) -> int:
@@ -121,6 +125,10 @@ def main() -> None:
         if not pending(m):
             print(f"{m}: done (cached)", flush=True)
             continue
+        if os.path.exists(UNAVAIL) and m in open(UNAVAIL).read().split():
+            print(f"{m}: known UNAVAILABLE — skipping (API fill required)",
+                  flush=True)
+            continue
         if proc is None:
             proc = start_download(m, slot)
         if proc is not None:
@@ -156,9 +164,11 @@ def main() -> None:
             try:
                 filter_month(m, slot)
             except RuntimeError as e2:
-                print(f"{m}: FILTER FAILED AGAIN ({e2}) — SKIPPING MONTH. "
-                      f"This month is absent from the corpus; disclose it.",
+                print(f"{m}: UNAVAILABLE after 2 attempts ({e2}) — recording "
+                      f"and moving on; fill from the API and disclose.",
                       flush=True)
+                with open(UNAVAIL, "a") as uf:
+                    uf.write(f"{m}\n")
         shutil.rmtree(f"{BASE}/dl{slot}", ignore_errors=True)
         slot = 1 - slot
     if proc is not None:

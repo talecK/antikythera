@@ -207,3 +207,65 @@ sensitivity check rather than the pre-declared UNINFORMATIVE case.
 appended when acquisition completes. Eval-2024 months were not yet
 downloaded when this table was produced (MEME fold-B eval docs read 0),
 so no fold-B number here is final and none was interpreted.
+
+---
+
+## DATED AMENDMENT — 2026-08-30 evening, provenance and missing months
+## Committed BEFORE any WSB-dependent outcome is computed. Amends by
+## addition; nothing above is reworded or deleted.
+
+### A1. The provenance seam is no longer fold-aligned — correction
+The "Corpus and provenance" section states the API/dump seam is ALIGNED
+WITH FOLDS and therefore does not touch the within-fold DD-vs-MEME
+comparison. That is now FALSE and is corrected here rather than rewritten
+above. Cause: the monthly-dumps torrent (~16 seeders, 3.8TB archive) does
+not hold every file — RC_2023-04 arrives as 27GB of zeros with zero swarm
+growth over a measured 60s while adjacent months download normally. Months
+the swarm cannot serve must be filled from the API, so within fold B the
+DD stratum is API-sourced while the MEME stratum becomes mixed. The seam
+now lies BETWEEN STRATA, i.e. exactly on the registered DD-vs-MEME
+comparison and on the exploratory split.
+
+The comparison's validity therefore rests on MEASURED SOURCE EQUIVALENCE
+rather than on design alignment:
+- `pipeline/provenance_check.py`, WSB 2023-03-14..17, both sources:
+  API 99.94% of union, dump 100.00%, ratio API/DUMP = 0.9994
+  (~70 of 113,705 ids differ). No material coverage or density difference,
+  hence no document-size heterogeneity of the kind that produced the R1
+  artifact.
+- Supporting, and independent of sourcing: fold A produced the stratum
+  split under UNIFORM provenance (both strata API), so the split's
+  existence does not depend on fold-B sourcing at all.
+
+### A2. MANDATORY PRECONDITION before any WSB-dependent cell is computed
+The equivalence above was measured in the BUILD window. Formation and the
+segregation z are evaluated in 2024, so the check MUST be repeated on at
+least one overlap window inside the EVAL year, with both sources holding
+that window, and the result recorded here. If eval-year equivalence is not
+materially the same (ratio within 0.99-1.01), the mixed-provenance MEME
+cells are reported as provenance-limited and interpreted accordingly.
+
+### A3. Missing-month handling rule — fixed NOW, outcome-blind
+Cells are computed on available months; every missing month is NAMED in
+the results; the registered bars apply UNCHANGED. The shuffle-calibrated
+criterion conditions on realized documents (the null inherits any density
+step), so a hole is statistically tolerable. Choosing between reporting
+and withholding AFTER seeing which way a cell fell is not permitted, which
+is why this rule is committed before the outcome exists. Fallback: only if
+WSB eval-year data is MAJORITY-missing are the ALL/MEME fold-B cells
+withheld, leaving DD-only fold B (final, unaffected) as the fold-B result.
+
+### A4. Gap-fill source: API only
+Unavailable months are filled from the Arctic Shift API, not from the
+per-month torrents that exist for 2024-04+. Reason: archive months up to
+2024-03 were "reformatted and updated with additional data sources"
+relative to the standalone per-month releases, so using both would create
+THREE provenance classes inside one eval window with no pairwise
+equivalence measurement. The API path gives exactly two classes with the
+measured 0.9994 equivalence above. Per-month torrents are used only if the
+API path fails, and any such use is disclosed with its own check.
+
+### A5. Unavailable months (live list)
+Recorded in `data/reddit_gate/unavailable_months.txt` as the loop
+encounters them; reproduced in the results section at completion.
+Known at amendment time: 2023-04.
