@@ -137,12 +137,20 @@ families are node popularity and triadic closure. A companion study
 (in preparation) examines the Science4Cast benchmark itself in this
 light.
 
-**Null models for co-occurrence.** Our corrected formation criterion is
-a permutation test in the tradition of degree-preserving null models
-(Maslov and Sneppen 2002; Gotelli and Graves 1996). The specific failure
-we document, chance-calibration against marginal frequencies while
-document sizes are heterogeneous, is a bipartite version of the same
-family of errors.
+**Null models for co-occurrence.** Ecology confronted this exact
+problem class decades ago: whether species co-occur more or less than
+chance, tested against nulls that hold row and column totals of a
+site-by-species matrix to varying degrees. That literature measured
+the Type I inflation of partially constrained nulls and settled on
+fully constrained ("fixed-fixed") randomizations as the defensible
+default (Connor and Simberloff 1979; Gotelli 2000; Gotelli and Ulrich
+2012; Gotelli and Graves 1996; see also Maslov and Sneppen 2002 for
+the network analog). Our corrected criterion is a member of that
+family, implemented as a label permutation on the document-concept
+incidence structure, and the failure we document in the standard
+text-corpus criterion is the known failure of its partially
+constrained analog. We claim no novelty for the fix; the contribution
+is the transfer, and the measurement of what not making it costs.
 
 ## 3. Data and methods
 
@@ -397,12 +405,16 @@ do, just not above chance.
 
 ### 6.1 A criterion to retire
 
-The z-style chance calibration we began with is not an exotic choice; it
-is the natural first implementation of "co-occurs more than expected"
-and variants of it appear throughout the co-occurrence, LBD, and trend
-detection literatures. Our results show that with heterogeneous document
-sizes it can manufacture large, stable, replication-surviving effects
-from nothing. The 19-to-24-percent author-space rates survived two
+The z-style chance calibration we began with is not an exotic choice;
+it is the natural first implementation of "co-occurs more than
+expected" and variants of it appear throughout the co-occurrence, LBD,
+and trend detection literatures. Ecologists identified the defect in
+this class of test roughly twenty-five years ago and standardized on
+fully constrained permutation nulls in response (Section 2); to our
+knowledge, text-corpus practice never absorbed that lesson. Our
+results measure what the omission costs: with heterogeneous document
+sizes the partially constrained criterion manufactures large, stable,
+replication-surviving effects from nothing. The 19-to-24-percent author-space rates survived two
 further pre-registered evaluations with frozen thresholds before the placebo
 caught them. We suggest a label-shuffle placebo, five lines of code and
 a few CPU-minutes, as a mandatory control wherever a formation or
@@ -657,6 +669,15 @@ registered placebo that overturned an intermediate conclusion.
   of Sociology* 110(2), 349-399. doi:10.1086/421787
 - Gotelli, N.J., Graves, G.R. (1996). *Null Models in Ecology*.
   Smithsonian Institution Press.
+- Connor, E.F., Simberloff, D. (1979). The assembly of species
+  communities: chance or competition? *Ecology* 60(6), 1132-1140.
+  doi:10.2307/1936961
+- Gotelli, N.J. (2000). Null model analysis of species co-occurrence
+  patterns. *Ecology* 81(9), 2606-2621.
+  doi:10.1890/0012-9658(2000)081[2606:NMAOSC]2.0.CO;2
+- Gotelli, N.J., Ulrich, W. (2012). Statistical challenges in null
+  model analysis. *Oikos* 121(2), 171-180.
+  doi:10.1111/j.1600-0706.2011.20301.x
 
 ---
 
