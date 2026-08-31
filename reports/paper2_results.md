@@ -43,6 +43,26 @@ below-chance walls set in. The cascade-susceptibility framing was kept
 out of the registration (seed doc, house rule) and belongs to the
 discussion; it is noted here only as the shape the data took.
 
+## Part A — provenance-hardened fold-B endpoint (registered expectation MET)
+
+Frozen gate criterion (run_gate.analyse verbatim) on the uniform-API
+paper-2 corpus, fold B (build 2022-23, eval 2024):
+
+| cell | n_elig | z (uniform API) | z (gate, mixed prov.) | formed | binom_p |
+|------|-------:|---------------:|----------------------:|-------:|--------:|
+| MEME/union | 214 | **-9.42** | -8.7 | 1 | 0.88 |
+| ALL/union  | 488 | **-16.58** | -17.6 | 2 | 0.96 |
+| DD/union   | 281 | **-17.68** | -16.3 | 0 | 1.00 |
+
+Registered expectation (MEME z <= -3) met with margin; all three union
+cells reproduce the gate's mixed-provenance values to within ~1 z.
+Formation stays null (all binom_p >> 0.01). Cashtag cells consistent
+(-7.6/-12.4/-4.5). Confound 2 (provenance) is REMOVED from the paper-1
+Sec 6.3 endpoint: the fold-B wall is not a source artifact. Eligible-pair
+counts differ from the gate census (e.g. MEME 214 vs 596) because the
+corpora differ slightly (API-only vs mixed, dedup scope); the criterion
+conditions on the realized corpus, so cells are internally calibrated.
+
 ## Discussion-section notes (NOT registered claims; framing exchanged
 ## with the paper-1 session 2026-08-31 evening, post-result)
 
