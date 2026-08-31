@@ -186,9 +186,59 @@ identification.
 5. Paper 1 is final; cite, don't reopen.
 
 ## Freeze checklist (all must be true before eval)
-- [ ] Acquisition complete; validate_month + volume table amendment
-      committed.
+- [x] Acquisition complete; validate_month + volume table amendment
+      committed. (Amendment V1, 2026-08-31.)
 - [ ] Causal-anchor list amendment committed.
 - [ ] Per-window census + B-ladder decision amendment committed,
       owner-reviewed.
 - [ ] STATUS flipped to REGISTERED by the owner's explicit go, committed.
+
+---
+
+## AMENDMENT V1 — acquisition complete, outcome-blind integrity + volume
+## table (2026-08-31, appended before any census or statistic)
+
+Acquisition completed 2026-08-31 07:10 local: 77/77 shards home in ~4.1h
+wall, teardown verified (0 instances by tag, collector + independent API
+check). 864 files (72 WSB months + 5 DD subs x 72 months, comments and
+posts), 98,084,631 rows total, ~5.6GB gz.
+
+Integrity pass (pipeline/validate_paper2.py, full parse of every row):
+PASS with zero failures — no missing shard, no unparseable line, no
+month with >1% out-of-span timestamps, `score` present on every row, no
+zero or <5%-of-neighbour month. Full per-shard table:
+reports/paper2_volume_table.tsv (kind, sub, month, rows, distinct
+authors, out-of-span count, missing-score count). One transient during
+acquisition: a single dropped rsync (wsb-2024-04, 05:52), self-healed on
+the next sweep with byte-identical sizes; no data implication.
+
+Cross-validation against the runbook §0 spot values (from the prior
+acquisition era): 2022-06 = 1.13M, 2023-09 = 510K, 2024-03 = 962K — all
+match this pull exactly.
+
+WSB comments per month (thousands):
+
+| year | Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec | total |
+|------|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|----:|------:|
+| 2019 | 250 | 179 | 213 | 331 | 285 | 262 | 260 | 398 | 299 | 356 | 325 | 258 | 3.4M |
+| 2020 | 512 | 1041 | 2604 | 1914 | 1546 | 1817 | 1508 | 1350 | 1408 | 1196 | 1521 | 1756 | 18.2M |
+| 2021 | 8047 | 6681 | 4183 | 1682 | 1364 | 2184 | 1099 | 1010 | 1005 | 922 | 1052 | 1003 | 30.2M |
+| 2022 | 1367 | 1158 | 1125 | 1093 | 1265 | 1131 | 1084 | 1717 | 1200 | 1161 | 1002 | 921 | 14.2M |
+| 2023 | 902 | 808 | 940 | 625 | 657 | 639 | 600 | 632 | 510 | 577 | 528 | 542 | 8.0M |
+| 2024 | 667 | 901 | 961 | 815 | 788 | 665 | 698 | 870 | 551 | 598 | 658 | 659 | 8.8M |
+
+DD comments per sub-year (thousands, 2019..2024):
+stocks 205/1129/1844/1443/693/646; investing 579/1110/830/510/413/486;
+StockMarket 80/222/491/366/233/196; ValueInvesting 2/12/106/132/109/228;
+SecurityAnalysis 21/32/12/3/2/1.
+
+Outcome-blind observations recorded now, before any census:
+- The WSB volume regime break is visible in raw volume (2020-03 COVID
+  spike 2.6M; 2021-01 GME 8.0M). Volume is NOT the studied statistic;
+  the shuffle null conditions on realized documents, and the density
+  check (per-window eligible-pair census) remains the registered gate
+  before any z.
+- SecurityAnalysis decays to ~1-2K comments/yr by 2023-24; the DD
+  control is registered as the UNION of the five subs, so this changes
+  nothing, but per-sub sparsity is noted here before anyone sees a
+  result it could explain.
