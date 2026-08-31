@@ -517,7 +517,8 @@ shuffled data.
 All pipeline code, evaluation harnesses, pre-registration files, and the
 derived datasets (concept extraction cache, author-attribution table,
 co-occurrence censuses, and per-run result files) are released at
-[REPOSITORY URL], including the version-control history that timestamps
+https://github.com/talecK/antikythera (private during review; public at
+publication), including the version-control history that timestamps
 every registration ahead of its result. Raw Hacker News content is
 public and retrievable via the official API; the release includes exact
 pull specifications.
