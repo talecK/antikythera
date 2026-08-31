@@ -443,7 +443,14 @@ that no discourse corpus anywhere shows real gap-closing (a
 structurally different corpus is tested in Section 6.3), nor that no
 individual pair ever genuinely connects (our per-pair power is limited
 by rarity), nor anything about scientific corpora except that their
-headline rates deserve re-measurement.
+headline rates deserve re-measurement. Nor does it say formation never
+occurs under any conditions: a registered follow-up study on the
+replication corpus (in preparation) finds a confined above-floor
+formation burst inside the 2021 meme-stock cascade windows - windows
+our folds exclude by design as a regime break - with formation at the
+floor in every other window of six years. The negative reported here
+is about discourse in its ordinary state; what cascades do is that
+study's question.
 
 Two limitations deserve emphasis. First, concept units come from a
 language-model extraction; although the science control shows the
