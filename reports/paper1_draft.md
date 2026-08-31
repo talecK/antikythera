@@ -30,8 +30,8 @@ indistinguishable from the false-positive floor in every condition. The
 real regularity runs in the opposite direction: suppressed pairs co-occur
 substantially below chance (9 standard deviations below at the author
 level, over 120 at the thread level). A pre-registered replication on a
-second platform confirms both results: in 49 million Reddit finance
-posts, with self-indexing ticker units and no language model in the
+second platform confirms both results: in 41.5 million Reddit finance
+posts and comments, with self-indexing ticker units and no language model in the
 loop, suppressed pairs again fail to form above chance and again
 co-occur far below it (z = -9.4 and -17.6), on either side of the
 2020-2021 market regime change. Idea communities in discourse do not
@@ -96,8 +96,8 @@ co-occur below chance, by 9 standard deviations at the author level
 and by more than 120 at the thread level. The communities of attention
 around two ideas that have never met tend to stay apart, at rates far
 beyond what their sizes explain. In discourse, the gaps that
-literature-based discovery hunts for do not close. They are actively
-maintained.
+literature-based discovery hunts for do not close. They persist,
+far below chance, everywhere we measured.
 
 The rest of the paper proceeds conventionally. Section 2 situates the
 work. Section 3 describes the corpus, the extraction pipeline, and the
@@ -219,7 +219,10 @@ and interpretation thresholds were written to a registration file and
 committed to version control, and the evaluation code refuses to run
 until the registration is in place. Outcome-blind quantities (document
 counts, eligible-pair censuses) were appended to registrations before
-outcomes were computed. The repository's commit history, released with
+outcomes were computed, with one exception disclosed in Section 6.3:
+the replication's second-fold census exists only in released artifacts
+and was not appended to its registration. The repository's commit
+history, released with
 the paper, provides independent timestamps for the ordering of every
 registration and result, including the ones that embarrassed us. One
 exception is disclosed: the Science4Cast control's registration and
@@ -374,8 +377,8 @@ overwhelmingly, in both spaces. The interpretation is simple and, we
 believe, the paper's most durable finding: two concepts that have never
 co-occurred, despite ample independent popularity, are not on their way
 to meeting. Their audiences are substantially disjoint and remain so.
-Discourse does not slowly mix; its communities of attention actively
-fail to overlap, at magnitudes far beyond what topic sizes explain. The
+Discourse does not slowly mix; its communities of attention
+persistently fail to overlap, at magnitudes far beyond what topic sizes explain. The
 suppressed pairs of literature-based discovery are, in discourse,
 markers of persistent segregation rather than latent connection.
 
@@ -396,8 +399,8 @@ is the natural first implementation of "co-occurs more than expected"
 and variants of it appear throughout the co-occurrence, LBD, and trend
 detection literatures. Our results show that with heterogeneous document
 sizes it can manufacture large, stable, replication-surviving effects
-from nothing. The 19-to-24-percent author-space rates passed three
-pre-registered evaluations with frozen thresholds before the placebo
+from nothing. The 19-to-24-percent author-space rates survived two
+further pre-registered evaluations with frozen thresholds before the placebo
 caught them. We suggest a label-shuffle placebo, five lines of code and
 a few CPU-minutes, as a mandatory control wherever a formation or
 emergence rate is computed from co-occurrence counts, and per-pair
@@ -441,34 +444,64 @@ evident mechanism for biasing formation direction.
 Whether these regularities are facts about one forum or about discourse
 is testable, and we tested it with a pre-registered replication on a
 structurally different corpus: Reddit financial discussion (six
-subreddits, 49.2M items, 2017-2024), where the concept unit is the
+subreddits, 41.5 million unique posts and comments, 2017-2024), where
+the concept unit is the
 stock ticker, regex-extracted and validated against the SEC registrant
 table rather than produced by a language model. The design, criterion,
-folds, power analysis, and interpretation bars were frozen and
-committed before any outcome was computed, with two folds separated by
-the 2020-2021 market regime break (build 2017-2018 with evaluation
-2019; build 2022-2023 with evaluation 2024). Mid-acquisition, part of
-the archival source proved unavailable and was replaced by API pulls
-under a dated, pre-outcome amendment; the two sources agree at 99.94
-percent coverage on an overlap window, the evaluation year is uniformly
-single-source, and no month is missing. Two registered secondary
-readouts (an author-persistence module and duplicate-rate hygiene
-counts) were not computed; neither carries a bar.
+folds, the first fold's power analysis, and all interpretation bars
+were frozen and committed before any outcome was computed, with two
+folds separated by the 2020-2021 market regime break (build 2017-2018
+with evaluation 2019; build 2022-2023 with evaluation 2024).
+
+The acquisition did not go to plan, and we disclose the sequence
+precisely because parts of it fall short of the strict outcome-blind
+standard we hold elsewhere. Part of the archival source proved
+unavailable mid-acquisition and was replaced by API pulls under dated
+amendments. An interim evaluation ran before those amendments; its
+partial-fold outcomes existed but had been voided in advance by a
+committed interim clause, and one stratum's early exemption from that
+voiding was decided after seeing its result replicate - a
+choose-after-seeing step, later validated when the final corpus
+reproduced the stratum's counts exactly. A registered source-
+equivalence check on the evaluation year was never performed: it was
+rendered moot when the evaluation year became uniformly single-source,
+so cross-source equivalence evidence rests on one build-era month
+(comments only), where the two sources agree at 99.96 percent. No
+month is missing. Separately, a registered unit rule (exclusion of
+index ETFs) was found unenforced in one extraction branch by an
+internal adversarial review after the first complete run; the final
+numbers below enforce it, which changed no conclusion. Registered
+secondary readouts not computed: the author-persistence module and
+duplicate-rate hygiene counts (no bars attached). The second fold's
+minimum-detectable-rate figure is post-hoc arithmetic on the final
+census, computed by the registered formula but not itself registered.
 
 Both registered claims resolved. Formation: not significant in either
 fold (0 of 169 eligible pairs, then 2 of 487 against a floor of 4.9;
-the registered power analysis licenses "no effect larger than 3.7 and
-2.1 percent respectively," not "no effect"). With Hacker News this
-closes the discovery hypothesis on a clean negative spanning two
-platforms and three unit types. Segregation: the registered bar
-(z <= -3 in both folds) is met decisively. Across all six subreddits,
-suppressed ticker pairs co-occur at z = -9.4 in the pre-regime fold
-(341 observed joint mentions against 555 expected) and z = -17.6 in the
-post-regime fold (710 against 1,344), robust to the ticker-extraction
-lens (cashtags only: z = -9.8). Against Hacker News's z = -9.2 and
--9.3, the finding generalizes across platform, community, unit type,
-extraction method, and a market regime change - and is larger after
-the regime break, not smaller.
+power limits this to "no effect larger than 3.7 and 2.1 percent
+respectively," not "no effect" - the first figure registered, the
+second post-hoc as noted above). One of the two formed pairs in the
+second fold is itself a disclosed mechanical artifact: a symbol that
+listed mid-build (ARM, September 2023) is automatically "suppressed"
+early and automatically likely to co-occur later, a survivorship
+pattern that inflates formation and therefore cannot rescue the null.
+With Hacker News this closes the discovery hypothesis on a clean
+negative spanning two platforms and two independent unit vocabularies.
+Segregation: the registered bar (z <= -3 in both folds) is met
+decisively in the pooled all-subreddits cell, which we take as primary
+for symmetry with the formation readout; the registration left the
+cell unspecified, and per-stratum readings vary (one fold-A stratum
+sits at chance, below). Suppressed ticker pairs co-occur at z = -9.4
+in the pre-regime fold (341 observed joint mentions against 555
+expected) and z = -17.6 in the post-regime fold (710 against 1,344),
+robust to the ticker-extraction lens (cashtags only: z = -9.8).
+Against Hacker News's z = -9.2 and -9.3, the finding generalizes
+across platform, community, unit type, extraction method, and a market
+regime change - and is larger after the regime break, not smaller.
+(Shuffle-based z values are quoted from the registered seed under a
+deterministic harness; with 100 shuffle replicates the null-sd
+estimate implies roughly plus-minus 0.5 seed-to-seed variation at
+these magnitudes, immaterial to every bar.)
 
 One exploratory observation from the first fold did not survive the
 second, and we report it as measured. In fold A the segregation lived
@@ -485,11 +518,10 @@ observation. The registered, stable result is simpler: in the
 post-regime fold, every stratum segregates.
 
 A reproduction check accompanied the amended acquisition: the
-analysis-stratum cells, which cannot receive data from the amended
-source, were recomputed on the rebuilt corpus and match (observed and
-eligible counts identical; z within shuffle-simulation noise; build
-documents differ by one due to deduplication order, disclosed in the
-released run log).
+analysis-stratum cells were recomputed on successive corpus rebuilds
+and match (observed and eligible counts identical; z within the Monte
+Carlo noise of the null estimate; build documents differ by one due to
+deduplication order, disclosed in the released run log).
 
 ### 6.4 Segregation as the object of study
 
@@ -516,8 +548,8 @@ finance communities co-mention economically adjacent tickers at less
 than half chance rates, in both folds, on either side of a market
 regime change. Similarly, the returns to brokerage across "structural
 holes" (Burt) require that holes persist against the incentive to close
-them; below-chance co-attention maintained over two decades is direct
-evidence of that persistence. We note one implication running the other
+them; co-attention persistently below chance over two decades is
+direct evidence of that persistence. We note one implication running the other
 way: accounts in which new cross-domain narratives percolate upward
 from public conversation sit uneasily with both the timing evidence of
 Section 5 and the segregation result, though discourse data alone
@@ -533,8 +565,8 @@ positive, a corrected permutation criterion, and a pre-registered
 replication on a second platform with independent units, is none of
 them, at rates distinguishable from error. The durable fact is the
 opposite one. In open discourse, the expected-but-absent pairs are not
-discoveries waiting to happen; they are walls, quietly maintained,
-decade after decade, on every platform we measured. Instruments that
+discoveries waiting to happen; they are walls that persist, decade
+after decade, on every platform we measured. Instruments that
 claim otherwise should first be pointed at shuffled data.
 
 ## Data and code availability
