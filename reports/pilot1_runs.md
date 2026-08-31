@@ -360,3 +360,56 @@ REGISTERED READOUTS:
    dedup-order artifact, disclosed).
 5. NOT RUN (disclosed): Q3 scout module and Q4 hygiene counts — secondary,
    no bars attached; can be computed from the banked corpus at any time.
+
+## POST-REVIEW RERUN v2 (2026-08-31) — deterministic harness, registered exclusions enforced; ALL CONCLUSIONS HOLD
+Triggered by the adversarial review (reports/adversarial_review_2026-08-31.md,
+committed verbatim at 45455bc). Fixes at f89cb2b: sorted incidence iteration
+(finding 1.2 — the registered seed previously pinned nothing), SPY/QQQ/VIX +
+BTC/ETH exclusion enforced at gate load (1.4), Q2 MEME-subsample implemented
+(2.2), R2/R4 shuffle nulls added (1.1), timestamped outputs (2.8), run-5
+noguard sensitivity delivered (2.1). Every quoted number regenerated from
+single clean artifacts. THIS TABLE SUPERSEDES the "VARIANT GATE — FINAL"
+table above, which mixed two nondeterministic runs (finding 1.3), including
+one wrong primary count (fold A MEME formed: reported 1, final artifact 0;
+under the deterministic harness it is 2 — the count was seed-noise all along,
+p ns in every version).
+
+Gate v2 (data/registry/gate_eval.json + timestamped copy; log gate_rerun_v2.log):
+| fold | stratum | lens | eligible | Q1 formed (floor, p) | Q1b z | obs/null |
+|---|---|---|---:|---|---:|---|
+| A | ALL  | union   | 166 | 0 (1.7, p=1)      |  -8.8 | 334/544 |
+| A | ALL  | cashtag |  56 | 0 (0.6, p=1)      |  -2.8 | 62/88 |
+| A | DD   | union   | 146 | 0 (1.5, p=1)      | -10.1 | 168/359 |
+| A | DD   | cashtag |  19 | 0 (0.2, p=1)      |  -2.8 | 3/13 |
+| A | MEME | union   |  62 | 2 (0.6, p=0.128)  |  -0.1 | 151/153 |
+| A | MEME | cashtag |  32 | 0 (0.3, p=1)      |  -1.2 | 39/46 |
+| B | ALL  | union   | 478 | 1 (4.8, p=0.992)  | -17.7 | 726/1383 |
+| B | ALL  | cashtag | 191 | 0 (1.9, p=1)      | -10.6 | 99/263 |
+| B | DD   | union   | 281 | 1 (2.8, p=0.941)  | -17.1 | 359/826 |
+| B | DD   | cashtag |  39 | 0 (0.4, p=1)      |  -4.3 | 9/29 |
+| B | MEME | union   | 209 | 1 (2.1, p=0.878)  |  -9.0 | 369/595 |
+| B | MEME | cashtag | 140 | 0 (1.4, p=1)      |  -7.6 | 80/186 |
+
+- Q1: ns everywhere (min p=0.128). Fold-B ALL/union's single formed pair is
+  ARM x BBAI — the disclosed IPO-backfill artifact (review 2.6). MDRs at the
+  v2 census: fold A 3.7% (n=166, k=6), fold B 1.8% (n=478, k=11) — fold B
+  post-hoc arithmetic by the registered formula, labeled as such.
+- Q1b: ALL/union -8.8 / -17.7 — registered bar met, both folds, unchanged.
+- Q2 REGISTERED SUBSAMPLE (first execution): MEME docs matched to DD counts,
+  seed 20260830 — fold A z=-0.0 (at chance even matched), fold B z=-5.2
+  (segregated even subsampled). Neither stratum reading is a doc-count
+  artifact.
+- Run 8 v2: author 2/364 (p=0.88) & 0/110 (p=1); totals z -8.9 / -8.6;
+  thread 22/25,161 & 12/7,505 (p=1); totals z -152.3 / -123.2.
+- R1 v2: null mean 125.1 (sd 9.5) vs obs 70 (-5.8 sd); 53.0 (5.4) vs 26
+  (-5.0 sd). R2/R4 SHUFFLE NULLS (new): observed formation is below the
+  null MINIMUM of 100 replicates in every window and lens (month 60<133,
+  39<53; half 48<86, 25<35; comment-lens 52<62, 19<25) — the paper's Sec
+  5.2 claim is now measured, not asserted.
+- Run-5 noguard sensitivity (delivered per 2.1): without the hub guard the
+  suppressed universe collapses to 41 (fold 1) and 9 (fold 2) eligible
+  pairs — hub documents' combinatorial co-occurrence destroys eligibility;
+  the guard is load-bearing for universe existence, not a rate tweak.
+- Seed-noise note: pre-fix runs varied by hash order (documented +-0.5-0.7
+  in |z|, and 0-2 in small formed counts). v2 numbers reproduce exactly
+  from seed 20260831 under PYTHONHASHSEED-independent sorted iteration.

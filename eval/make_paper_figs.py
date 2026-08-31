@@ -74,7 +74,8 @@ def fig2():
     # rate (%) under each criterion; calibrated floor = 1%
     cells = ["author f1", "author f2", "thread f1", "thread f2"]
     zrate = [70 / 364, 26 / 110, 0.0060, 0.0068]
-    crate = [3 / 364, 1 / 110, 20 / 25161, 11 / 7505]
+    crate = [2 / 364, 1e-4, 22 / 25161, 12 / 7505]  # v2 deterministic rerun
+    # (author f2 calibrated formed = 0; plotted at 1e-4 for log axis)
     xs = np.arange(4)
     fig, ax = plt.subplots(figsize=(5.2, 3.2))
     ax.bar(xs - 0.18, [r * 100 for r in zrate], 0.36, color=RED,

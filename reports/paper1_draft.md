@@ -33,7 +33,7 @@ level, over 120 at the thread level). A pre-registered replication on a
 second platform confirms both results: in 41.5 million Reddit finance
 posts and comments, with self-indexing ticker units and no language model in the
 loop, suppressed pairs again fail to form above chance and again
-co-occur far below it (z = -9.4 and -17.6), on either side of the
+co-occur far below it (z = -8.8 and -17.7), on either side of the
 2020-2021 market regime change. Idea communities in discourse do not
 drift together; they stay apart. We release all code, data derivations,
 and time-stamped pre-registrations.
@@ -180,9 +180,9 @@ attribution path.
 Analyses use two document definitions. In **thread space**, a document
 is one discussion thread. In **author space**, a document is one
 author's set of concepts within one calendar quarter; author-quarters
-with more than 100 distinct concepts are excluded as hubs (a
-sensitivity analysis without the guard is reported in the released
-materials).
+with more than 100 distinct concepts are excluded as hubs (without the guard, hub documents' combinatorial
+co-occurrence collapses the suppressed universe to 41 and 9 eligible
+pairs in the two folds; released with the artifacts).
 
 Within a **build window**, a concept is *frequent* if it appears in at
 least 20 distinct documents. For frequent concepts i and j with document
@@ -322,8 +322,8 @@ or above half the observed count would be reported as a revision of the
 result, not a nuance.
 
 The placebo did not merely halve the result. Shuffled data forms more
-pairs than the real data: 124.6 on average versus 70 observed in fold 1,
-and 52.0 versus 26 in fold 2. The observed counts sit 6.1 and 5.3
+pairs than the real data: 125.1 on average versus 70 observed in fold 1,
+and 53.0 versus 26 in fold 2. The observed counts sit 5.8 and 5.0
 standard deviations below their own mechanical nulls. The z-criterion's
 internal expectation, built from marginal frequencies, does not account
 for the fact that large documents generate joint occurrences
@@ -333,8 +333,9 @@ the measuring stick. Registered sensitivity analyses confirmed the
 artifact lives in the criterion and nowhere else: the rate is stable
 under monthly and half-yearly document windows (9.7 to 27.8 percent)
 and under a conservative attribution lens that discards all
-story-author credits (24.9 and 27.5 percent), yet all of these numbers
-are equally below their own shuffled nulls.
+story-author credits (24.9 and 27.5 percent), yet all of these numbers sit below their own shuffled nulls: in every
+window and every lens the observed formation count falls below the
+minimum of its 100 shuffle replicates (released artifacts).
 
 ### 5.3 Calibrated formation: nothing, anywhere
 
@@ -477,11 +478,11 @@ minimum-detectable-rate figure is post-hoc arithmetic on the final
 census, computed by the registered formula but not itself registered.
 
 Both registered claims resolved. Formation: not significant in either
-fold (0 of 169 eligible pairs, then 2 of 487 against a floor of 4.9;
-power limits this to "no effect larger than 3.7 and 2.1 percent
+fold (0 of 166 eligible pairs, then 1 of 478 against a floor of 4.8;
+power limits this to "no effect larger than 3.7 and 1.8 percent
 respectively," not "no effect" - the first figure registered, the
-second post-hoc as noted above). One of the two formed pairs in the
-second fold is itself a disclosed mechanical artifact: a symbol that
+second post-hoc as noted above). The single formed pair in the second
+fold's pooled cell is itself a disclosed mechanical artifact: a symbol that
 listed mid-build (ARM, September 2023) is automatically "suppressed"
 early and automatically likely to co-occur later, a survivorship
 pattern that inflates formation and therefore cannot rescue the null.
@@ -491,11 +492,11 @@ Segregation: the registered bar (z <= -3 in both folds) is met
 decisively in the pooled all-subreddits cell, which we take as primary
 for symmetry with the formation readout; the registration left the
 cell unspecified, and per-stratum readings vary (one fold-A stratum
-sits at chance, below). Suppressed ticker pairs co-occur at z = -9.4
-in the pre-regime fold (341 observed joint mentions against 555
-expected) and z = -17.6 in the post-regime fold (710 against 1,344),
-robust to the ticker-extraction lens (cashtags only: z = -9.8).
-Against Hacker News's z = -9.2 and -9.3, the finding generalizes
+sits at chance, below). Suppressed ticker pairs co-occur at z = -8.8
+in the pre-regime fold (334 observed joint mentions against 544
+expected) and z = -17.7 in the post-regime fold (726 against 1,383),
+robust to the ticker-extraction lens (cashtags only: z = -10.6).
+Against Hacker News's z = -8.9 and -8.6, the finding generalizes
 across platform, community, unit type, extraction method, and a market
 regime change - and is larger after the regime break, not smaller.
 (Shuffle-based z values are quoted from the registered seed under a
@@ -505,11 +506,14 @@ these magnitudes, immaterial to every bar.)
 
 One exploratory observation from the first fold did not survive the
 second, and we report it as measured. In fold A the segregation lived
-entirely in the analysis-oriented subreddits (z = -10.0) while
-wallstreetbets sat exactly at chance (z = -0.2; not a power artifact,
+entirely in the analysis-oriented subreddits (z = -10.1) while
+wallstreetbets sat exactly at chance (z = -0.1; not a power artifact,
 since an analysis-stratum effect there would have shown z near -7). In
-fold B wallstreetbets is strongly segregated (z = -8.7), like every
-other stratum. A community-type moderator of segregation is therefore
+fold B wallstreetbets is strongly segregated (z = -9.0), like every
+other stratum. The registered subsampling control agrees: matched to
+the analysis stratum document counts, wallstreetbets remains at chance
+in fold A (z = -0.0) and segregated in fold B (z = -5.2), so neither
+reading is a document-count artifact. A community-type moderator of segregation is therefore
 not a stable property of these data. On its face the pattern is
 regime-dependent (the same community at chance before 2020, segregated
 after 2021), but that reading is post-hoc and confounded with the

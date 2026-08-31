@@ -345,3 +345,32 @@ seam that separates the collection systems anyway — one boundary, two
 classes, equivalence measured at 0.9996 (A1'). This supersedes scattered
 per-month gap-filling; A4's caveat about a third class is moot (per-month
 torrents unused).
+
+## POST-REVIEW CORRECTIONS (2026-08-31, dated; registered text above unchanged)
+Adversarial review findings (reports/adversarial_review_2026-08-31.md):
+1. The Units section's SPY/QQQ/VIX exclusion was not enforced in the
+   extractor's cashtag branch; $BTC/$ETH also resolved to unrelated SEC
+   registrants, so "noise-free by construction" was false for that lens.
+   Enforced at eval load from f89cb2b (EXCLUDED_TICKERS); v2 table in the
+   run log supersedes all prior cells. Conclusion-preserving.
+2. The survivorship note ("does not bias whether an observed suppressed
+   pair forms") is WRONG: symbols listing during/after build are
+   mechanically suppressed then mechanically likely to co-mention —
+   inflating Q1 (anti-conservative; Q1 still null) and pulling Q1b toward
+   zero (conservative). Fold-B's only formed pair (ARM x BBAI) is this
+   artifact.
+3. Q1b's bar never named its cell; resolved to ALL/union as primary (by
+   symmetry with Q1), disclosed post-hoc. Per-stratum readings reported.
+4. A1' full-month numbers are not reproducible from the committed
+   provenance_check.py (3-day window hard-coded), and the check covers
+   comments only; the dump-only deficit may be pull-cursor pagination
+   rather than archive coverage (direction unchanged: sparser-never-
+   denser).
+5. Amendment-ordering language ("committed BEFORE any WSB-dependent
+   outcome") overstated: an interim run had computed (voided) partial
+   cells at 15:37; the DD un-voiding (17:15) was decided after seeing DD
+   replicate and its stated basis ("DD entirely API") was wrong —
+   validated post hoc by exact reproduction; the A2 eval-year equivalence
+   check was amended into vacuity, never performed.
+6. The registered seed did not determine outcomes until f89cb2b (set
+   iteration fed the RNG); all pre-v2 numbers carry documented seed noise.
