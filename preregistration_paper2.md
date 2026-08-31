@@ -208,8 +208,8 @@ identification.
       sources and the frozen mechanism-discrimination reading; A8's
       introduction date is flagged as unpinned and unusable for timing
       claims until separately dated.)
-- [ ] Per-window census + B-ladder decision amendment committed,
-      owner-reviewed.
+- [x] Per-window census + B-ladder decision amendment committed
+      (Amendment V3 below, 2026-08-31); owner review pending.
 - [ ] STATUS flipped to REGISTERED by the owner's explicit go, committed.
 
 ---
@@ -261,3 +261,51 @@ Outcome-blind observations recorded now, before any census:
   control is registered as the UNION of the five subs, so this changes
   nothing, but per-sub sparsity is noted here before anyone sees a
   result it could explain.
+
+---
+
+## AMENDMENT V3 — per-window census + B-ladder decision (2026-08-31,
+## outcome-blind: eligibility structure only, no eval statistic computed)
+
+Extraction: 98,084,631 items -> 11,200,484 mentions (frozen unit rules
+imported from the gate extractor; zero resume-duplicates). Census:
+eval/census_paper2.py (imports build_docs/E_MIN/F from run_gate.py;
+structurally cannot compute the statistic). Full table for all three B
+values, both strata, both lenses: reports/paper2_window_census.tsv.
+
+### B-ladder decision (registered rule applied mechanically)
+| B | windows | median eligible (WSB/union) | min | max | LOW-POWER (<30) |
+|---|--------:|---------------------------:|----:|----:|----------------:|
+| 4q | 19 | **116** | 46 | 501 | 0 |
+| 6q | 17 | 275 | 96 | 702 | 0 |
+| 8q | 15 | 628 | 214 | 844 | 0 |
+
+**PRIMARY B = 4 quarters** — the shortest rung meets the median >= 100
+bar. B=6 and B=8 become the registered sensitivity curves. NO window in
+any B is LOW-POWER (< 30 eligible pairs), in either stratum, union lens:
+every window enters the onset rule. Cashtag lens: several early windows
+sit below 20 eligible pairs and will be reported UNINFORMATIVE per the
+frozen rule.
+
+### Consistency anchor (outcome-blind)
+The first B=4 window (build 2019, eval 2020Q1-Q2) reproduces the gate's
+fold-A WSB structure on the new corpus: 44,304 build docs (gate fold-A
+MEME census: 44,304 eval docs over the same 2019 year, same construction)
+— the two independently-pulled corpora agree exactly on shared ground.
+
+### Registered observation on the census shape (before any z)
+Eligible-pair counts co-move with era volume (46-78 pre-2021 windows,
+~500 GME-era, ~100 by 2023-24). The shuffle null conditions on realized
+documents per window, so per-window z values are each internally
+calibrated; but between-window comparability rests on the null's
+conditioning, and windows differ up to ~10x in build docs. The onset
+rule (threshold crossings) uses only per-window calibration and is
+unaffected; readers comparing raw z magnitudes ACROSS windows are
+comparing different-powered tests — the paper must plot eligible-pair
+counts under the z series. Recorded before any z exists.
+
+### Sequencing note
+2020Q4-2021Q1 eval windows straddle the GME event itself; the census
+shows their eligibility structure is intact (125/316 pairs). No window
+is excluded for era reasons — per gate decision 2, the transition is
+the object.
