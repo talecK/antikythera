@@ -299,3 +299,23 @@ equivalence check being inapplicable.
 Committed pre-outcome and pre-knowledge: at commit time we do not know
 whether the archive serves 2024, so this rule cannot have been chosen to
 suit an observed result.
+
+### A1' STRENGTHENED EQUIVALENCE — full-month comparison (2026-08-30 late)
+A1 rested on a 3-day window. The same check has now completed over a FULL
+month, which is the stronger evidence and supersedes it as the primary
+citation (the 3-day figure is retained above, unaltered):
+
+- WSB, 2023-03, both sources independently enumerated:
+  API 940,021 unique comment ids; dump 940,410; in both 940,021;
+  **API-only 0; dump-only 389 (0.041%)**. Ratio API/DUMP = 0.99959.
+- Direction matters and is favourable: the API never returns a record the
+  dump lacks, so an API-filled month is marginally SPARSER, never denser.
+  A co-mention census cannot be inflated by this seam; the only possible
+  effect is a negligible loss of recall, which the shuffle null absorbs
+  because it conditions on realized documents.
+- 3-day window (2023-03-14..17), retained for continuity: API 113,705,
+  dump 113,770, API-only 0, dump-only 65, ratio 0.9994.
+- Reproduce: `pipeline/provenance_check.py`.
+
+This is measurement, not assumption: the mixed-provenance tolerance in A1
+and the vacuous-satisfaction rule in A2' both rest on it.
