@@ -108,8 +108,8 @@ successors established gap-finding on scientific text (Smalheiser and
 Swanson 1998). Krenn and Zeilinger (2020) formalized the co-occurrence
 graph approach on quantum-physics abstracts; the Science4Cast benchmark
 (Krenn et al. 2023) turned it into a machine-learning competition on a
-64,000-node concept graph, with link-prediction AUCs above 0.99 for the
-best models. Tshitoyan et al. (2019) is the flagship prospective result.
+64,000-node concept graph, with link-prediction AUCs above 0.9 for the
+best methods on the main task. Tshitoyan et al. (2019) is the flagship prospective result.
 Our study is, to our knowledge, the first application of this machinery
 to non-scientific discourse, and our positive control reuses
 Science4Cast directly.
@@ -431,7 +431,7 @@ design (top-20 comments per thread), so author-space frequencies
 undercount true activity; this shrinks the eligible universe but has no
 evident mechanism for biasing formation direction.
 
-### 6.3 A second platform [INTERIM — fold B pending; do not submit as is]
+### 6.3 A second platform [INTERIM: fold B pending; do not submit as is]
 
 Whether these regularities are facts about one forum or about discourse
 is testable, and a pre-registered replication is in progress on a
