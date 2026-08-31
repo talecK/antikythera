@@ -102,6 +102,21 @@ statistic is identical by construction. Fold definitions unchanged
   from run_eval8 — identical to the gate by construction.
 - Formation counts per window: SECONDARY, reported, no bar attached
   (known underpowered at these window sizes; gate power table).
+- SENSITIVITY (registered 2026-08-31, pre-census): after the primary z
+  series is computed at the ladder-chosen B, the full z series is ALSO
+  computed at the other two B values and plotted alongside. No bars
+  attach to the sensitivity curves; they are computed and reported
+  regardless of outcome, so the window-length choice cannot be what
+  makes the transition appear.
+- SECONDARY onset estimate (registered 2026-08-31, pre-census): a
+  one-break step fit on the primary z series over non-LOW-POWER
+  windows — for every interior candidate break location, fit the
+  two-segment piecewise-constant model by least squares; the point
+  estimate is the SSE-minimizing break; reported with the set of
+  candidate breaks whose SSE is within 10% of the minimum, as a range.
+  Purpose: an uncertainty band on the onset date for the mechanism
+  discussion (fast scale-driven vs lagging governance-driven). No bar
+  attached; P1/P2 are scored ONLY by the primary threshold rule.
 - Strata: WSB (treatment) and DD-union-of-5-subs (control), computed
   identically and independently. Lens: union primary, cashtag
   sensitivity (if cashtag yields < 20 eligible pairs in a window it is
