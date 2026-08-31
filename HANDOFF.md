@@ -154,12 +154,15 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    graph/semantic ranking failed on HN and science; reputational only on
    HN — the negative transfers weakly. Gate below is census-PRIMARY;
    register a cheap scout-module secondary in the variant, don't drop it.
-2. **Variant gate: UNBLOCKED, still DRAFT.** Q1/Q2 amended to the
-   calibrated criterion (see preregistration_gate.md); fold-B acquisition
-   continues; STATUS flips to REGISTERED once the census is appended. The
-   gate is now the project's only live positive hypothesis: above-chance
-   calibrated formation on Reddit finance where HN has none — plus the
-   Reddit replication of sub-chance persistence.
+2. **Variant gate: COMPLETE (v2, 2026-08-31).** Ran, was adversarially
+   reviewed (reports/adversarial_review_2026-08-31.md), and was re-run on
+   a deterministic harness with registered exclusions enforced — the v2
+   table in reports/pilot1_runs.md supersedes all earlier gate numbers.
+   Q1 null both folds (variant DEAD, MDR 3.7%/1.8%); Q1b segregation
+   replicates (ALL/union -8.8/-17.7); WSB split regime-dependent (fold A
+   at chance z=-0.1 even doc-matched, fold B segregated -9.0/-5.2
+   subsampled); paper 2 (seed doc reports/paper2_seed.md) owns the
+   transition question.
 3. **Detector/standing-screen and Foundry plays: CLOSED on HN** (no
    above-chance event to detect). Revivable only by a gate pass.
 4. Write-up (paper 1) is READY to draft and the story is now complete:
