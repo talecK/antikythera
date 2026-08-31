@@ -222,8 +222,8 @@ counts, eligible-pair censuses) were appended to registrations before
 outcomes were computed, with one exception disclosed in Section 6.3:
 the replication's second-fold census exists only in released artifacts
 and was not appended to its registration. The repository's commit
-history, released with
-the paper, provides independent timestamps for the ordering of every
+history, released with the paper, provides independent timestamps
+(Figure 3) for the ordering of every
 registration and result, including the ones that embarrassed us. One
 exception is disclosed: the Science4Cast control's registration and
 result were originally committed together in a single commit, so for
@@ -322,7 +322,8 @@ or above half the observed count would be reported as a revision of the
 result, not a nuance.
 
 The placebo did not merely halve the result. Shuffled data forms more
-pairs than the real data: 125.1 on average versus 70 observed in fold 1,
+pairs than the real data (Figure 1, top): 125.1 on average versus 70
+observed in fold 1,
 and 53.0 versus 26 in fold 2. The observed counts sit 5.8 and 5.0
 standard deviations below their own mechanical nulls. The z-criterion's
 internal expectation, built from marginal frequencies, does not account
@@ -342,7 +343,7 @@ minimum of its 100 shuffle replicates (released artifacts).
 We then registered and ran the corrected criterion (per-pair permutation
 null, Section 3.3) in both document spaces and both folds, with the
 interpretation bars again frozen in advance. Formation collapses to the
-false-positive floor everywhere:
+false-positive floor everywhere (Figure 2):
 
 | space | fold | eligible | formed | 1% floor | binomial p |
 |-------|------|---------:|-------:|---------:|-----------:|
@@ -361,7 +362,8 @@ at either granularity.
 
 The same permutation machinery yields a second, better-powered
 statistic: the total number of joint occurrences across all eligible
-pairs, observed versus shuffled. Here the data speak loudly, in the
+pairs, observed versus shuffled (Figure 1, bottom). Here the data speak
+loudly, in the
 direction opposite to the discovery thesis:
 
 | space | fold | observed total | null mean (sd) | z |
@@ -658,19 +660,31 @@ registered placebo that overturned an intermediate conclusion.
 
 ---
 
-## Figure plan (to be produced)
+## Figures (produced; files in reports/figures/, regenerated from the v2
+## deterministic artifacts)
 
-1. **Fig. 1 (money figure): observed vs shuffled.** Four panels (space x
-   fold): histogram of null formation counts across 100 replicates with
-   the observed count as a vertical line far in the left tail; inset,
-   the same for total co-mentions. One picture carries Sections 5.2-5.4.
-2. **Fig. 2: the trap.** Schematic bipartite illustration: same marginal
-   frequencies, homogeneous vs heterogeneous document sizes, why z >= 2
-   fires under the latter; alongside, formation rate under z-criterion
-   vs calibrated criterion in all four cells.
-3. **Fig. 3: pipeline and protocol.** Corpus -> extraction -> attribution
-   -> census -> registration -> eval, with commit timestamps for every
-   registration/result pair (the reproducibility figure).
-4. **Table 1:** corpus and census statistics per space/fold. **Table 2:**
-   calibrated formation (Sec. 5.3). **Table 3:** sub-chance totals
-   (Sec. 5.4).
+**Figure 1** (fig1.png/.pdf) — Observed versus shuffled. Top: the
+placebo result (Section 5.2); histograms of formation counts across
+100 label-shuffled replicates in the two author-space folds, with the
+observed count as a vertical line far below the null distribution.
+Bottom: the sub-chance totals (Section 5.4); observed co-mention over
+eligible pairs as a fraction of the shuffled expectation in all four
+space-fold cells, with null two-standard-deviation bands. Referenced
+from Sections 5.2 and 5.4.
+
+**Figure 2** (fig2.png/.pdf) — Formation rate by criterion. The
+retired z-criterion rates versus the calibrated per-pair-permutation
+rates in all four cells, log scale, against the one-percent
+false-positive floor. The manufactured effect and its collapse in one
+panel. Referenced from Section 5.3.
+
+**Figure 3** (fig3.png/.pdf) — Registration protocol. Each
+evaluation's registration commit and result commit on a common
+timeline, from repository timestamps (asterisk: the positive control's
+single joint commit, disclosed in Section 3.4; the subsequent
+re-execution and post-review regeneration commits appear in the
+repository history). Referenced from Section 3.4.
+
+Tables 1-3 are set inline (census statistics in Section 3; calibrated
+formation in Section 5.3; sub-chance totals in Section 5.4; the
+replication table in Section 6.3 cites the released gate artifact).
