@@ -532,7 +532,12 @@ A reproduction check accompanied the amended acquisition: the
 analysis-stratum cells were recomputed on successive corpus rebuilds
 and match (observed and eligible counts identical; z within the Monte
 Carlo noise of the null estimate; build documents differ by one due to
-deduplication order, disclosed in the released run log).
+deduplication order, disclosed in the released run log). A follow-up
+study's independently acquired corpus (same platform, separate API pull
+on a different day, shared unit rules) additionally reproduces the
+first fold's wallstreetbets document count exactly (44,304
+author-quarters), corroborating that the census layer is stable across
+acquisition runs.
 
 ### 6.4 Segregation as the object of study
 
