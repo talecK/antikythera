@@ -269,3 +269,33 @@ API path fails, and any such use is disclosed with its own check.
 Recorded in `data/reddit_gate/unavailable_months.txt` as the loop
 encounters them; reproduced in the results section at completion.
 Known at amendment time: 2023-04.
+
+### A2' CLARIFICATION — 2026-08-30 evening, committed while 2024's
+### archive availability is STILL UNKNOWN (the loop is at 2023-05)
+A2 as written treats an unsatisfiable eval-year equivalence check as a
+failure. That conflates two different worlds, and in one of them it
+discards a valid result for no epistemic gain. Corrected scope:
+
+- The eval-year check is a precondition **only if the eval year is itself
+  MIXED-PROVENANCE** — i.e. 2024 contains months from more than one
+  source. Then it must be performed on an overlap month INSIDE 2024.
+- If the eval year is **uniformly sourced** (every 2024 month from one
+  source, e.g. archive-unavailable wholesale so all are API), the check is
+  satisfied VACUOUSLY: there is no within-eval seam for it to test. The
+  seam instead sits at the BUILD/EVAL boundary and is disclosed as such.
+
+Why the uniform-eval world is not merely acceptable but CLEANER than the
+world A2 was written to guard: eligibility, the frequency floor and E are
+derived from the BUILD window, where source equivalence is already
+measured (0.9994, 2023-03); every formation and segregation statistic is
+then computed inside a single-provenance eval window, so the shuffle null
+and the observed counts share one source by construction. A mixed eval
+year would be the harder case, not this one.
+
+Consequently A3's majority-missing fallback (DD-only fold B) triggers on
+ACTUAL DATA ABSENCE — months no source can supply — and never on the
+equivalence check being inapplicable.
+
+Committed pre-outcome and pre-knowledge: at commit time we do not know
+whether the archive serves 2024, so this rule cannot have been chosen to
+suit an observed result.
