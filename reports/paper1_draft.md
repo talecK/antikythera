@@ -416,10 +416,11 @@ results measure what the omission costs: with heterogeneous document
 sizes the partially constrained criterion manufactures large, stable,
 replication-surviving effects from nothing. The 19-to-24-percent author-space rates survived two
 further pre-registered evaluations with frozen thresholds before the placebo
-caught them. We suggest a label-shuffle placebo, five lines of code and
-a few CPU-minutes, as a mandatory control wherever a formation or
-emergence rate is computed from co-occurrence counts, and per-pair
-permutation thresholds where the claim needs to survive it.
+caught them. We urge text-corpus practice to adopt what ecology already
+settled: a label-shuffle placebo, five lines of code and a few
+CPU-minutes, as a mandatory control wherever a formation or emergence
+rate is computed from co-occurrence counts, and per-pair permutation
+thresholds where the claim needs to survive it.
 
 A related external question remains open. The science-corpus figure of
 67 percent rests on the benchmark's own edge-existence ground truth
