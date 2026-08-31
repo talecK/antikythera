@@ -276,3 +276,21 @@ results cannot meet or fail a registered bar (bars need both folds).
    form of the Q2 mechanism question, as anticipated when Q2 was demoted,
    but the split itself was not registered and must be replicated on fold B
    before any claim.
+
+### Gate fold-B amendment (2026-08-30 evening) — DD cells EXEMPT from the
+### partial-acquisition disclaimer; valid as run
+The earlier blanket ("fold B ran on partial acquisition; not reportable")
+was overcautious for the DD stratum: DD is built ENTIRELY from the API
+pull, which was complete (build 2022-23 + eval 2024, 265K mentions in
+2024) before the gate ran. Only WSB comes from the dump loop. Cell status:
+- **fold B DD union: z = -16.5 (obs 358 vs null 824; 43% of chance),
+  formed 0/281 (floor 2.8) — VALID, final. DD cashtag: z = -4.6, 0/44.**
+- Combined with fold A: segregation replicates in the analyst stratum in
+  BOTH folds on BOTH platforms (Reddit -10.0/-16.5; HN -9.2/-9.3), with
+  calibrated formation null throughout (power caveat: MDR ~4%).
+- ALL and MEME fold-B cells remain pending WSB dump completion (~14h;
+  2023-04..2024-12). The exploratory DD-vs-MEME split (WSB at chance,
+  z=-0.2 fold A) awaits its fold-B test there — no claim before that.
+- On WSB completion: rebuild the mentions parquet, re-run the full gate
+  table; DD numbers must reproduce (added WSB rows never enter the DD
+  stratum) — any drift is a red flag, not noise.
