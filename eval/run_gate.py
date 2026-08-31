@@ -46,9 +46,14 @@ FOLDS = {  # name: (build_start, build_end/eval_start, eval_end)
 F_DEFAULT = 20
 E_MIN = 2.0
 HUB_MAX = 50          # author-quarters with more distinct tickers are dropped
-SEED = 20260830
+SEED = 20260830       # Q2 MEME-subsample draws (registered)
 R = 100               # shuffle reps, matching run 8
 SHUFFLE_SEED = 20260831
+# Registered unit rule (preregistration_gate.md "Units"): index/vol ETFs
+# excluded as macro hubs; crypto excluded project-wide. The extractor's
+# cashtag branch did not enforce this (review finding 1.4) — enforced here
+# at load. BTC/ETH are cashtag misresolutions to unrelated SEC registrants.
+EXCLUDED_TICKERS = {"SPY", "QQQ", "VIX", "BTC", "ETH"}
 
 
 def wilson(k: int, n: int) -> tuple[float, float]:
@@ -134,8 +139,11 @@ def analyse(rows, fold: str, stratum: str, lens: str, census: bool,
 
     obs, docs_of = pair_counts(edocs)
     inc_doc, inc_tok = [], []
+    # sorted(): set iteration is hash-order nondeterministic and feeds the
+    # RNG permutation — unsorted, the registered seed pins nothing
+    # (adversarial review 2026-08-31, finding 1.2)
     for d in edocs:
-        for t in edocs[d] & fs:
+        for t in sorted(edocs[d] & fs):
             inc_doc.append(d)
             inc_tok.append(t)
     inc_tok = np.array(inc_tok, dtype=object)
@@ -179,8 +187,12 @@ def main() -> None:
     con = duckdb.connect()
     all_rows = con.sql(f"""
         SELECT author, time, ticker, subreddit, unit_type
-        FROM read_parquet('{MENTIONS}')""").fetchall()
-    print(f"mentions: {len(all_rows)}", flush=True)
+        FROM read_parquet('{MENTIONS}')
+        ORDER BY time, author, ticker""").fetchall()
+    n_raw = len(all_rows)
+    all_rows = [r for r in all_rows if r[2] not in EXCLUDED_TICKERS]
+    print(f"mentions: {len(all_rows)} (excluded {n_raw - len(all_rows)} "
+          f"rows for {sorted(EXCLUDED_TICKERS)})", flush=True)
     results = []
     for fold in FOLDS:
         for stratum, subs in (("ALL", None), ("DD", DD_SUBS), ("MEME", MEME_SUBS)):
@@ -202,8 +214,39 @@ def main() -> None:
                       f"co-pairs {r['co_pairs']:>7} "
                       f"suppressed {r['eligible_suppressed']:>6}{extra}",
                       flush=True)
+    # Q2 registered readout: MEME author-quarters subsampled (seed 20260830)
+    # to the DD document count — never previously executed (review 2.2)
+    if not census:
+        rng = np.random.default_rng(SEED)
+        for fold in FOLDS:
+            dd = next(r for r in results if r["fold"] == fold
+                      and r["stratum"] == "DD" and r["lens"] == "union")
+            rows = [(a, t, k) for a, t, k, s, u in all_rows if s in MEME_SUBS]
+            bs, be, ee = (datetime.fromisoformat(x) for x in FOLDS[fold])
+            bd, ed = build_docs(rows, bs, be), build_docs(rows, be, ee)
+            sub_rows = []
+            for docs, target in ((bd, dd["build_docs"]), (ed, dd["eval_docs"])):
+                keys = sorted(docs.keys())
+                if len(keys) > target:
+                    sel = rng.permutation(len(keys))[:target]
+                    keep = {keys[i] for i in sel}
+                else:
+                    keep = set(keys)
+                for kkey in keep:
+                    a, y, q = kkey
+                    for t in sorted(docs[kkey]):
+                        sub_rows.append((a, datetime(y, 1 + 3 * q, 1)
+                                         .timestamp() + 1, t))
+            r = analyse(sub_rows, fold, "MEME_SUB", "union", census)
+            results.append(r)
+            print(f"fold {fold} MEME subsampled to DD doc counts: "
+                  f"eligible {r['eligible_suppressed']} formed {r.get('formed')} "
+                  f"z_seg {r.get('z_seg', 0):+.1f}", flush=True)
     tag = "census" if census else "eval"
-    json.dump(results, open(f"{ROOT}/data/registry/gate_{tag}.json", "w"), indent=1)
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    for path in (f"{ROOT}/data/registry/gate_{tag}.json",
+                 f"{ROOT}/data/registry/gate_{tag}_{stamp}.json"):
+        json.dump(results, open(path, "w"), indent=1)
 
 
 if __name__ == "__main__":

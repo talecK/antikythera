@@ -129,8 +129,9 @@ def r1():
               flush=True)
         docs = list(edoc.keys())
         inc_doc, inc_con = [], []
+        # sorted(): determinism fix, adversarial review 2026-08-31 finding 1.2
         for d in docs:
-            for c in edoc[d] & fs:
+            for c in sorted(edoc[d] & fs):
                 inc_doc.append(d)
                 inc_con.append(c)
         inc_con = np.array(inc_con, dtype=object)
@@ -242,11 +243,69 @@ def r4():
               indent=1)
 
 
+def _placebo_cell(rows, be, ee, window, reps, rng):
+    """Label-shuffle null for one cell (added 2026-08-31 to substantiate the
+    paper's R2/R4 claim, which the adversarial review found unbacked —
+    finding 1.1; same construction as r1)."""
+    bdoc, edoc = build_docs(rows, be, ee, window)
+    fs, eligible = eligible_pairs(bdoc)
+    observed = len(formed_pairs(edoc, fs, eligible))
+    inc_doc, inc_con = [], []
+    for d in edoc:
+        for c in sorted(edoc[d] & fs):
+            inc_doc.append(d)
+            inc_con.append(c)
+    inc_con = np.array(inc_con, dtype=object)
+    null_counts = []
+    for _ in range(reps):
+        perm = rng.permutation(inc_con)
+        sh = defaultdict(set)
+        for d, c in zip(inc_doc, perm):
+            sh[d].add(c)
+        null_counts.append(len(formed_pairs(sh, fs, eligible)))
+    nc = np.array(null_counts)
+    return {"eligible": len(eligible), "observed": observed,
+            "null_mean": float(nc.mean()), "null_sd": float(nc.std()),
+            "null_min": int(nc.min()),
+            "below_null": bool(observed < nc.min())}
+
+
+def r2null():
+    rows = load_rows()
+    rng = np.random.default_rng(20260831)
+    out = {}
+    for window in ("month", "half"):
+        for name, be, ee in FOLDS:
+            out[f"{window}_{name}"] = _placebo_cell(rows, be, ee, window,
+                                                    R1_REPS, rng)
+            c = out[f"{window}_{name}"]
+            print(f"R2-NULL {window} {name}: observed {c['observed']} vs "
+                  f"null mean {c['null_mean']:.1f} (sd {c['null_sd']:.1f}, "
+                  f"min {c['null_min']})", flush=True)
+    json.dump(out, open(os.path.join(OUTDIR, "robustness_r2_nulls.json"),
+                        "w"), indent=1)
+
+
+def r4null():
+    rows = load_rows(drop_story_author=True)
+    rng = np.random.default_rng(20260831)
+    out = {}
+    for name, be, ee in FOLDS:
+        out[name] = _placebo_cell(rows, be, ee, "quarter", R1_REPS, rng)
+        c = out[name]
+        print(f"R4-NULL {name}: observed {c['observed']} vs null mean "
+              f"{c['null_mean']:.1f} (sd {c['null_sd']:.1f}, "
+              f"min {c['null_min']})", flush=True)
+    json.dump(out, open(os.path.join(OUTDIR, "robustness_r4_nulls.json"),
+                        "w"), indent=1)
+
+
 def main():
     reg = open(os.path.join(ROOT, "preregistration_robustness.md")).read()
     assert "Robustness registration" in reg
     mode = sys.argv[1] if len(sys.argv) > 1 else ""
-    {"--r1": r1, "--r2": r2, "--r3": r3, "--r4": r4}[mode]()
+    {"--r1": r1, "--r2": r2, "--r3": r3, "--r4": r4,
+     "--r2null": r2null, "--r4null": r4null}[mode]()
 
 
 if __name__ == "__main__":

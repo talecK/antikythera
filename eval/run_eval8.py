@@ -126,8 +126,11 @@ def run_space(space, rng):
               flush=True)
 
         inc_doc, inc_con = [], []
+        # sorted(): unsorted set iteration is hash-order nondeterministic and
+        # feeds rng.permutation — the seed pins nothing without it
+        # (adversarial review 2026-08-31, finding 1.2)
         for d in edoc:
-            for c in edoc[d] & fs:
+            for c in sorted(edoc[d] & fs):
                 inc_doc.append(d)
                 inc_con.append(c)
         inc_con = np.array(inc_con, dtype=object)
