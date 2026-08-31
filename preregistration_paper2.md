@@ -203,7 +203,11 @@ identification.
 ## Freeze checklist (all must be true before eval)
 - [x] Acquisition complete; validate_month + volume table amendment
       committed. (Amendment V1, 2026-08-31.)
-- [ ] Causal-anchor list amendment committed.
+- [x] Causal-anchor list amendment committed. (Amendment V2, 2026-08-31:
+      reports/paper2_anchors.md — 8 dated governance events A1-A8 with
+      sources and the frozen mechanism-discrimination reading; A8's
+      introduction date is flagged as unpinned and unusable for timing
+      claims until separately dated.)
 - [ ] Per-window census + B-ladder decision amendment committed,
       owner-reviewed.
 - [ ] STATUS flipped to REGISTERED by the owner's explicit go, committed.
