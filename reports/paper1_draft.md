@@ -29,7 +29,7 @@ data. Under a corrected per-pair permutation criterion, formation is
 indistinguishable from the false-positive floor in every condition. The
 real regularity runs in the opposite direction: suppressed pairs co-occur
 substantially below chance (9 standard deviations below at the author
-level, over 120 at the thread level). A pre-registered replication on a
+level, over 100 at the thread level). A pre-registered replication on a
 second platform confirms both results: in 41.5 million Reddit finance
 posts and comments, with self-indexing ticker units and no language model in the
 loop, suppressed pairs again fail to form above chance and again
@@ -93,7 +93,7 @@ formation claims generally.
 Third, a positive finding we did not seek. Under the corrected
 criterion, suppressed pairs do not merely fail to connect. They
 co-occur below chance, by 9 standard deviations at the author level
-and by more than 120 at the thread level. The communities of attention
+and by more than 100 at the thread level. The communities of attention
 around two ideas that have never met tend to stay apart, at rates far
 beyond what their sizes explain. In discourse, the gaps that
 literature-based discovery hunts for do not close. They persist,
@@ -346,10 +346,10 @@ false-positive floor everywhere:
 
 | space | fold | eligible | formed | 1% floor | binomial p |
 |-------|------|---------:|-------:|---------:|-----------:|
-| author | 1 | 364 | 3 | 3.6 | 0.71 |
-| author | 2 | 110 | 1 | 1.1 | 0.67 |
-| thread | 1 | 25,161 | 20 | 251.6 | ~1 |
-| thread | 2 | 7,505 | 11 | 75.0 | ~1 |
+| author | 1 | 364 | 2 | 3.6 | 0.88 |
+| author | 2 | 110 | 0 | 1.1 | 1 |
+| thread | 1 | 25,161 | 22 | 251.6 | ~1 |
+| thread | 2 | 7,505 | 12 | 75.0 | ~1 |
 
 No cell shows formation above what a 1-percent-per-pair error rate
 produces on its own. The handful of "formed" pairs are consistent with
@@ -366,10 +366,10 @@ direction opposite to the discovery thesis:
 
 | space | fold | observed total | null mean (sd) | z |
 |-------|------|---------------:|---------------:|----:|
-| author | 1 | 746 | 1,055 (33) | −9.2 |
-| author | 2 | 454 | 651 (21) | −9.3 |
-| thread | 1 | 12,098 | 48,373 (224) | −162 |
-| thread | 2 | 7,866 | 28,230 (164) | −124 |
+| author | 1 | 746 | 1,057 (35) | −8.9 |
+| author | 2 | 454 | 647 (23) | −8.6 |
+| thread | 1 | 12,098 | 48,378 (238) | −152 |
+| thread | 2 | 7,866 | 28,274 (166) | −123 |
 
 Suppressed pairs co-occur at roughly 70 percent of chance in author
 space and roughly a quarter of chance in thread space. The registered
