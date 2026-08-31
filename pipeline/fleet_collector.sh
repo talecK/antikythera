@@ -8,6 +8,9 @@ set -u
 source ~/.config/pricemole/vultr.env
 AUTH="Authorization: Bearer $VULTR_API_KEY"
 S="-o StrictHostKeyChecking=accept-new -o ConnectTimeout=12 -o ServerAliveInterval=5 -o ServerAliveCountMax=3"
+# macOS has no timeout(1); perl alarm gives every remote call a hard bound so
+# one hung ssh can never stall the sweep (it did: 30 min on a held channel).
+TO () { perl -e 'alarm shift @ARGV; exec @ARGV' "$@"; }
 DEST="/Volumes/1TB NVME 1/antikythera/data/reddit_gate/pull"
 LOG="/Volumes/1TB NVME 1/antikythera/data/reddit_gate/fleet_watch.log"
 PULLER="/Users/andrej/workspace/antikythera/pipeline/pull_reddit_gate.py"
@@ -27,10 +30,10 @@ while true; do
       echo "$(date +%H:%M) COLLECTED $m — box destroyed" >> "$LOG"; continue
     fi
     [ "$ip" = "0.0.0.0" ] && { line="$line $m:prov"; continue; }
-    ST=$(ssh -n $S root@"$ip" "ls /root/out/*.ndjson.gz 2>/dev/null | wc -l; pgrep -c python3 || true; tail -c 300 /root/pull.log 2>/dev/null | grep -oE '[0-9]+ rows' | tail -1" 2>/dev/null | tr '\n' '|')
+    ST=$(TO 30 ssh -n $S root@"$ip" "ls /root/out/*.ndjson.gz 2>/dev/null | wc -l; pgrep -c python3 || true; tail -c 300 /root/pull.log 2>/dev/null | grep -oE '[0-9]+ rows' | tail -1" 2>/dev/null | tr '\n' '|')
     ngz=$(echo "$ST" | cut -d'|' -f1 | tr -d ' '); alive=$(echo "$ST" | cut -d'|' -f2 | tr -d ' '); rows=$(echo "$ST" | cut -d'|' -f3)
     if [ "${ngz:-0}" = "2" ]; then
-      rsync -az -e "ssh $S" root@"$ip":/root/out/ "$DEST/" >> "$LOG" 2>&1
+      TO 300 rsync -az -e "ssh $S" root@"$ip":/root/out/ "$DEST/" >> "$LOG" 2>&1
       if have_month "$m"; then
         curl -s -X DELETE -H "$AUTH" "https://api.vultr.com/v2/instances/$id" >/dev/null
         echo "$(date +%H:%M) COLLECTED $m — box destroyed" >> "$LOG"
@@ -38,8 +41,8 @@ while true; do
         echo "$(date +%H:%M) STUCK $m: rsync did not land files" >> "$LOG"
       fi
     elif [ "${alive:-0}" = "0" ]; then
-      scp $S "$PULLER" root@"$ip":/root/pull.py >/dev/null 2>&1
-      ssh -n $S root@"$ip" "mkdir -p /root/out && cd /root && PULL_OUT=/root/out PULL_SLEEP=0.25 nohup python3 -u pull.py wallstreetbets --month $m > pull.log 2>&1 < /dev/null &" 2>/dev/null \
+      TO 60 scp $S "$PULLER" root@"$ip":/root/pull.py >/dev/null 2>&1
+      TO 30 ssh -n $S root@"$ip" "mkdir -p /root/out; cd /root; (PULL_OUT=/root/out PULL_SLEEP=0.25 setsid nohup python3 -u pull.py wallstreetbets --month $m > pull.log 2>&1 < /dev/null &) ; exit 0" 2>/dev/null \
         && echo "$(date +%H:%M) RELAUNCH $m on $ip" >> "$LOG" \
         || echo "$(date +%H:%M) STUCK $m: cannot launch on $ip" >> "$LOG"
     else

@@ -313,3 +313,50 @@ that harness never contained. Consequences for the record:
 4. Whether the benchmark's 67% is substantially mechanical (target-year
    densification) is untested; a shuffle null there is absentia's scope.
 Paper Sec 4.2/6.1 rewritten accordingly; HANDOFF banner corrected.
+
+## VARIANT GATE — FINAL (2026-08-31 02:21; registration preregistration_gate.md
+## + amendments A1-A6', all committed pre-outcome)
+Corpus final: 49.2M items, 4.55M ticker mentions, 41.5M unique items;
+provenance = dumps for the Pushshift era (2022-01..2023-03) + API for the
+Arctic-Shift era (2023-04..2024-12, uniform eval year per A6/A6') + fold A
+API. NO missing months (A3 hole never triggered; 2023-04 API-filled).
+
+| fold | stratum | lens | eligible | Q1 formed (floor, p) | Q1b seg z | obs/null |
+|---|---|---|---:|---|---:|---|
+| A | ALL  | union   | 169 | 0 (1.7, p=1)     |  -9.4 | 341/555 |
+| A | ALL  | cashtag |  54 | 0 (0.5, p=1)     |  -2.4 | 62/84 |
+| A | DD   | union   | 144 | 1 (1.4, p=.765)  | -10.0 | 166/358 |
+| A | DD   | cashtag |  22 | 0 (0.2, p=1)     |  -2.7 | 4/12 |
+| A | MEME | union   |  62 | 1 (0.6, p=.464)  |  -0.2 | 150/152 |
+| A | MEME | cashtag |  32 | 0 (0.3, p=1)     |  -1.4 | 37/45 |
+| B | ALL  | union   | 487 | 2 (4.9, p=.956)  | -17.6 | 710/1344 |
+| B | ALL  | cashtag | 192 | 0 (1.9, p=1)     |  -9.8 | 138/331 |
+| B | DD   | union   | 281 | 0 (2.8, p=1)     | -16.3 | 358/823 |
+| B | DD   | cashtag |  44 | 0 (0.4, p=1)     |  -4.5 | 11/41 |
+| B | MEME | union   | 213 | 1 (2.1, p=.882)  |  -8.7 | 369/596 |
+| B | MEME | cashtag | 141 | 0 (1.4, p=1)     |  -8.0 | 102/223 |
+
+REGISTERED READOUTS:
+1. **Q1 formation: NOT significant in either fold** (ALL/union p=1, p=.956).
+   Registered branch applies: no above-chance calibrated gap formation on a
+   second platform — the variant is DEAD; the project's positive hypothesis
+   closes on a clean two-platform, three-unit-type negative. Power caveat
+   (registered): licenses only "no effect > ~3.7% (fold A) / ~2.1% (fold
+   B)", never "no effect".
+2. **Q1b segregation: REPLICATES — registered bar met.** ALL/union
+   z = -9.4 and -17.6 (bar: z<=-3 both folds). Suppressed ticker pairs
+   co-mention at 61%/53% of chance. Robust across lenses in fold B
+   (cashtag -9.8). The HN finding generalises: gaps actively stay open.
+3. **Q2 / exploratory split: DOES NOT SURVIVE fold B.** Fold A: DD -10.0
+   vs MEME -0.2 (at chance). Fold B: DD -16.3 vs MEME -8.7 — WSB is
+   strongly segregated post-GME. The community-type moderator is NOT a
+   stable property; on its face the split is regime-dependent (WSB
+   pre-2020: at chance; post-2021: segregated), reported as measured with
+   no interpretation stretch per the frozen rule. The stable finding is
+   stratum-independent segregation in fold B.
+4. **DD reproduction check: PASSES.** z -16.3 vs -16.5 across corpus
+   rebuilds = shuffle-simulation noise (obs identical at 358; eligible
+   identical at 281; build docs differ by ONE, 122,816 vs 122,815 —
+   dedup-order artifact, disclosed).
+5. NOT RUN (disclosed): Q3 scout module and Q4 hygiene counts — secondary,
+   no bars attached; can be computed from the banked corpus at any time.
