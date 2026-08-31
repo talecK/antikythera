@@ -1,10 +1,11 @@
 # Paper 2 registration — "Watching the walls go up" (drafted 2026-08-31)
 
-## STATUS: DRAFT — PENDING OWNER REVIEW. Not registered. No rolling-window
-## or rebuilt-fold statistic may be computed until this line reads
-## "STATUS: REGISTERED", the file is committed, and the owner has reviewed
-## it in-session. Any eval script for this study must refuse to run in
-## eval mode until then (same mechanism as eval/run_gate.py).
+## STATUS: REGISTERED (2026-08-31, owner's explicit go in-session:
+## "flip it and continue", after review discussion of the B-ladder,
+## onset rule, P2 timing bet, and P3 operationalization). Design frozen
+## as amended (V1 volume, V2 anchors, V3 census + B-ladder, primary-cell
+## + determinism clauses). Any change after this point is a new dated
+## amendment reported alongside, never a rewording.
 
 Question: did r/wallstreetbets transition from the only wall-free state
 ever observed in this program (fold A, seg z = -0.2, exactly chance) to
@@ -224,7 +225,8 @@ identification.
       claims until separately dated.)
 - [x] Per-window census + B-ladder decision amendment committed
       (Amendment V3 below, 2026-08-31); owner review pending.
-- [ ] STATUS flipped to REGISTERED by the owner's explicit go, committed.
+- [x] STATUS flipped to REGISTERED by the owner's explicit go, committed
+      (2026-08-31).
 
 ---
 
