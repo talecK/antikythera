@@ -499,6 +499,26 @@ for studying how ideas spread, or fail to, than formation counts that
 inherit the criterion trap. We offer it as the constructive replacement
 for the discovery framing this paper set out to test.
 
+The finding also supplies a measured mechanism to literatures that have
+so far had to assume it. Models of segmented investor attention take
+persistent, sticky attention boundaries as a premise: Merton's investor
+recognition hypothesis prices assets partly by which investors are
+aware of them, Hong and Stein derive momentum from information crossing
+investor segments only slowly, and Cohen and Frazzini document returns
+diffusing along economic links with a lag attributed to inattention to
+connected firms. Our replication corpus is exactly such a setting, and
+there the boundaries are directly visible: even analysis-oriented
+finance communities co-mention economically adjacent tickers at less
+than half chance rates, in both folds, on either side of a market
+regime change. Similarly, the returns to brokerage across "structural
+holes" (Burt) require that holes persist against the incentive to close
+them; below-chance co-attention maintained over two decades is direct
+evidence of that persistence. We note one implication running the other
+way: accounts in which new cross-domain narratives percolate upward
+from public conversation sit uneasily with both the timing evidence of
+Section 5 and the segregation result, though discourse data alone
+cannot settle how narratives interact with prices.
+
 ## 7. Conclusion
 
 We built the missing co-occurrence index for a twenty-year discourse
@@ -569,6 +589,17 @@ registered placebo that overturned an intermediate conclusion.
 - Maslov, S., Sneppen, K. (2002). Specificity and stability in topology
   of protein networks. *Science* 296(5569), 910-913.
   doi:10.1126/science.1065103
+- Merton, R.C. (1987). A simple model of capital market equilibrium with
+  incomplete information. *Journal of Finance* 42(3), 483-510.
+  doi:10.1111/j.1540-6261.1987.tb04565.x
+- Hong, H., Stein, J.C. (1999). A unified theory of underreaction,
+  momentum trading, and overreaction in asset markets. *Journal of
+  Finance* 54(6), 2143-2184. doi:10.1111/0022-1082.00184
+- Cohen, L., Frazzini, A. (2008). Economic links and predictable
+  returns. *Journal of Finance* 63(4), 1977-2011.
+  doi:10.1111/j.1540-6261.2008.01379.x
+- Burt, R.S. (2004). Structural holes and good ideas. *American Journal
+  of Sociology* 110(2), 349-399. doi:10.1086/421787
 - Gotelli, N.J., Graves, G.R. (1996). *Null Models in Ecology*.
   Smithsonian Institution Press.
 
