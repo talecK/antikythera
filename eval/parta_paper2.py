@@ -22,7 +22,7 @@ import sys
 import duckdb
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from run_gate import analyse  # noqa: E402  (frozen criterion, verbatim)
+from run_gate import analyse, EXCLUDED_TICKERS  # noqa: E402  (frozen criterion, verbatim)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MENTIONS = "/Volumes/1TB NVME 1/antikythera/data/paper2/ticker_mentions.parquet"
@@ -30,8 +30,8 @@ DD_SUBS = ("SecurityAnalysis", "ValueInvesting", "StockMarket", "stocks",
            "investing")
 MEME_SUBS = ("wallstreetbets",)
 ALL_SUBS = DD_SUBS + MEME_SUBS
-GATE_REF = {("ALL", "union"): -17.6, ("MEME", "union"): -8.7,
-            ("DD", "union"): -16.3}
+GATE_REF = {("ALL", "union"): -17.7, ("MEME", "union"): -9.0,
+            ("DD", "union"): -17.1}   # gate v2 (post-review rerun, f89cb2b)
 
 
 def main() -> None:
@@ -43,10 +43,10 @@ def main() -> None:
                           ("DD", DD_SUBS)):
         for lens in ("union", "cashtag"):
             unit = "" if lens == "union" else "AND unit_type = 'cashtag'"
-            rows = con.sql(f"""
+            rows = [r for r in con.sql(f"""
                 SELECT author, time, ticker FROM '{MENTIONS}'
                 WHERE subreddit IN {subs!r} {unit}
-            """).fetchall()
+            """).fetchall() if r[2] not in EXCLUDED_TICKERS]
             r = analyse(rows, "B", stratum, lens, census=False)
             ref = GATE_REF.get((stratum, lens))
             print(f"PARTA fold B {stratum}/{lens}: n_eligible="

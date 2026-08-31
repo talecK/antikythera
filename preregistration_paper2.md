@@ -280,6 +280,37 @@ Outcome-blind observations recorded now, before any census:
 
 ---
 
+## AMENDMENT V4 — implementation-deviation correction (2026-08-31
+## evening, AFTER first-run outcomes were seen; nature of the error is
+## mechanical and the correction path is rule-bound, disclosed in full)
+
+DEVIATION: the three paper-2 scripts (census_paper2, run_paper2,
+parta_paper2) loaded mention rows directly from the parquet and omitted
+the load-time EXCLUDED_TICKERS filter (SPY, QQQ, VIX, BTC, ETH) that
+run_gate applies since its post-review rerun (antikythera f89cb2b) and
+that the GATE registration freezes as the macro-hub exclusion. The
+paper-2 registration incorporates those unit rules ("identical to the
+gate"), so the first run deviated from the registered spec. Found by
+the paper-1 session diffing Part A's comparison column against the gate
+v2 table.
+
+CORRECTION, entirely rule-bound (no bar, seed, window definition,
+onset rule, or threshold changes): the filter is added to all three
+loaders; the census is re-derived and the B-ladder re-decided by the
+UNCHANGED registered rule; Part B and Part A are rerun under the
+UNCHANGED bars; the Part A comparison column is updated to the gate v2
+values (MEME -9.0, ALL -17.7, DD -17.1). First-run outputs are retained
+as superseded artifacts (reports/paper2_windows_z_v1_superseded.tsv,
+paper2_window_census_v1_superseded.tsv) and both runs are disclosed in
+the paper. The corrected run is the registration-conforming result;
+verdicts are re-scored from it mechanically. Risk disclosure: because
+first-run outcomes were seen before this correction, the protection
+here is that every re-derivation step is a frozen rule with no free
+parameter — the same property that protected the interim-fold-A clause
+in the gate registration.
+
+---
+
 ## AMENDMENT V3 — per-window census + B-ladder decision (2026-08-31,
 ## outcome-blind: eligibility structure only, no eval statistic computed)
 

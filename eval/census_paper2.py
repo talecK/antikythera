@@ -26,7 +26,7 @@ from datetime import datetime
 import duckdb
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
-from run_gate import build_docs, E_MIN, F_DEFAULT  # noqa: E402
+from run_gate import build_docs, E_MIN, F_DEFAULT, EXCLUDED_TICKERS  # noqa: E402
 from collections import defaultdict  # noqa: E402
 
 MENTIONS = "/Volumes/1TB NVME 1/antikythera/data/paper2/ticker_mentions.parquet"
@@ -87,10 +87,11 @@ def main() -> None:
     for stratum, subs in (("WSB", WSB_SUBS), ("DD", DD_SUBS)):
         for lens in ("union", "cashtag"):
             unit = "" if lens == "union" else "AND unit_type = 'cashtag'"
-            data[(stratum, lens)] = con.sql(f"""
-                SELECT author, time, ticker FROM '{MENTIONS}'
-                WHERE subreddit IN {subs!r} {unit}
-            """).fetchall()
+            data[(stratum, lens)] = [
+                r for r in con.sql(f"""
+                    SELECT author, time, ticker FROM '{MENTIONS}'
+                    WHERE subreddit IN {subs!r} {unit}
+                """).fetchall() if r[2] not in EXCLUDED_TICKERS]
             print(f"loaded {stratum}/{lens}: {len(data[(stratum, lens)])} "
                   f"mentions", flush=True)
 

@@ -30,7 +30,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from run_gate import (  # noqa: E402
-    build_docs, E_MIN, F_DEFAULT, R, SHUFFLE_SEED)
+    build_docs, E_MIN, F_DEFAULT, R, SHUFFLE_SEED, EXCLUDED_TICKERS)
 from run_eval8 import binom_sf_ge  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -172,10 +172,11 @@ def main() -> None:
     for stratum, subs in (("WSB", WSB_SUBS), ("DD", DD_SUBS)):
         for lens in ("union", "cashtag"):
             unit = "" if lens == "union" else "AND unit_type = 'cashtag'"
-            data[(stratum, lens)] = con.sql(f"""
-                SELECT author, time, ticker FROM '{MENTIONS}'
-                WHERE subreddit IN {subs!r} {unit}
-            """).fetchall()
+            data[(stratum, lens)] = [
+                r for r in con.sql(f"""
+                    SELECT author, time, ticker FROM '{MENTIONS}'
+                    WHERE subreddit IN {subs!r} {unit}
+                """).fetchall() if r[2] not in EXCLUDED_TICKERS]
 
     cells = []
     for stratum in ("WSB", "DD"):                       # primary B first
