@@ -43,6 +43,24 @@ below-chance walls set in. The cascade-susceptibility framing was kept
 out of the registration (seed doc, house rule) and belongs to the
 discussion; it is noted here only as the shape the data took.
 
+## Discussion-section notes (NOT registered claims; framing exchanged
+## with the paper-1 session 2026-08-31 evening, post-result)
+
+- Three-regime arc: with the cascade windows' above-chance mixing
+  (+29.5/+23.5; +25.9/+37.0 at B=6), the program has now observed all
+  three states in one community across five years — walled (below
+  chance), chance-level, and cascade-fused (above chance). The
+  cascade-susceptibility reading (chance-mixing state as substrate; the
+  event fuses everything; walls are the scar) is a describable arc, not
+  speculation — but the registered non-separability caveat stands: the
+  timing cannot pick the mechanism behind the walls.
+- Pre-cascade generality: the series is chance-level through 2020Q3, so
+  paper 1's fold-A (eval 2019) chance result was not a special year —
+  the pre-cascade state was chance, full stop. This inference belongs
+  to THIS paper (paper 1 stays as-is; its Sec 6.2 now carries one
+  scope sentence citing the burst as a demonstrated boundary of its
+  null, commit d0aa9d6 there).
+
 ## Bounds on interpretation (from the registration, restated)
 
 - Onset at 2021Q2 is the anchor amendment's NON-SEPARABLE case: the
