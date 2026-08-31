@@ -413,3 +413,10 @@ Gate v2 (data/registry/gate_eval.json + timestamped copy; log gate_rerun_v2.log)
 - Seed-noise note: pre-fix runs varied by hash order (documented +-0.5-0.7
   in |z|, and 0-2 in small formed counts). v2 numbers reproduce exactly
   from seed 20260831 under PYTHONHASHSEED-independent sorted iteration.
+
+### v2 addendum (2026-08-31, post second review pass): MDR k-values for the
+### record — fold A n=166: k=6 (P(X>=6|166,.01)=0.0034); fold B n=478: k=11
+### (P(X>=11|478,.01)=0.00975, a 2.5% margin under alpha — at n+-4 the
+### threshold moves to k=12/2.1%, hence the paper quotes "roughly 2 percent").
+### Second pass verified v2 end-to-end: traceability PASS, determinism PASS
+### (PYTHONHASHSEED-independent to 6 decimals), no stale numbers.

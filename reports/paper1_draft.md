@@ -28,8 +28,8 @@ heterogeneous, and a label-shuffled null "forms" more pairs than the real
 data. Under a corrected per-pair permutation criterion, formation is
 indistinguishable from the false-positive floor in every condition. The
 real regularity runs in the opposite direction: suppressed pairs co-occur
-substantially below chance (9 standard deviations below at the author
-level, over 100 at the thread level). A pre-registered replication on a
+substantially below chance (nearly 9 standard deviations below at the
+author level, over 100 at the thread level). A pre-registered replication on a
 second platform confirms both results: in 41.5 million Reddit finance
 posts and comments, with self-indexing ticker units and no language model in the
 loop, suppressed pairs again fail to form above chance and again
@@ -92,8 +92,8 @@ formation claims generally.
 
 Third, a positive finding we did not seek. Under the corrected
 criterion, suppressed pairs do not merely fail to connect. They
-co-occur below chance, by 9 standard deviations at the author level
-and by more than 100 at the thread level. The communities of attention
+co-occur below chance, by nearly 9 standard deviations at the author
+level and by more than 100 at the thread level. The communities of attention
 around two ideas that have never met tend to stay apart, at rates far
 beyond what their sizes explain. In discourse, the gaps that
 literature-based discovery hunts for do not close. They persist,
@@ -465,7 +465,8 @@ voiding was decided after seeing its result replicate - a
 choose-after-seeing step, later validated when the final corpus
 reproduced the stratum's counts exactly. A registered source-
 equivalence check on the evaluation year was never performed: it was
-rendered moot when the evaluation year became uniformly single-source,
+rendered moot when we chose to acquire the evaluation year uniformly
+from one source,
 so cross-source equivalence evidence rests on one build-era month
 (comments only), where the two sources agree at 99.96 percent. No
 month is missing. Separately, a registered unit rule (exclusion of
@@ -479,7 +480,7 @@ census, computed by the registered formula but not itself registered.
 
 Both registered claims resolved. Formation: not significant in either
 fold (0 of 166 eligible pairs, then 1 of 478 against a floor of 4.8;
-power limits this to "no effect larger than 3.7 and 1.8 percent
+power limits this to "no effect larger than 3.7 and roughly 2 percent
 respectively," not "no effect" - the first figure registered, the
 second post-hoc as noted above). The single formed pair in the second
 fold's pooled cell is itself a disclosed mechanical artifact: a symbol that
