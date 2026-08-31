@@ -319,3 +319,15 @@ citation (the 3-day figure is retained above, unaltered):
 
 This is measurement, not assumption: the mixed-provenance tolerance in A1
 and the vacuous-satisfaction rule in A2' both rest on it.
+
+### A6 — eval-year sourcing BY DESIGN (2026-08-30 late, pre-outcome)
+Decision, made before any 2024 data exists in the corpus: the fold-B eval
+year (WSB 2024-01..12) is acquired UNIFORMLY FROM THE API via a parallel
+fleet, regardless of archive availability. Consequences: A2's eval-year
+equivalence check is satisfied vacuously by construction (single-source
+eval window); the build/eval boundary seam is the disclosed seam; torrent
+months landing for 2024 are redundant (extractor dedup by id makes the
+union equivalent to either source at the measured 0.9996 agreement).
+Build-window gaps (2023-04..12 where the archive lacks a month) are
+API-filled per A4. Fleet pacing: <= 2 req/s per client, the service's own
+stated per-user comfort; failures back off exponentially on 429.
