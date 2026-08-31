@@ -480,12 +480,18 @@ structure. Whether this split survives the second fold, which sits on
 the other side of the 2021 regime break, is exactly what the
 registration will decide.
 
-[FOLD B REMAINDER: wallstreetbets acquisition in progress (~14h). On
-completion: the ALL-stratum registered headline cells, the fold-B test
-of the exploratory stratum split, and a reproduction check on the
-analysis-stratum numbers above (added data cannot enter that stratum;
-any drift is an error signal). Section finalizes against the registered
-bars then.]
+[FOLD B REMAINDER: wallstreetbets acquisition in progress; the archive
+torrent proved sparse (some months unavailable in the swarm), so gaps
+are API-filled under a dated, pre-outcome registration amendment
+(dae3a1c) that also measured API/dump source equivalence at 0.9994
+coverage on an overlap window and made an eval-year equivalence check a
+precondition. Three possible endings, all pre-committed: (a) full table
+against the registered bars; (b) table with named missing months, bars
+unchanged; (c) if WSB eval-year data proves majority-missing, DD-only
+fold B stands as the result and the split test is reported as not
+performed. Also pending: reproduction check on the analysis-stratum
+numbers above (added data cannot enter that stratum; drift is an error
+signal).]
 
 ### 6.4 Segregation as the object of study
 
