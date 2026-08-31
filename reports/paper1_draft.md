@@ -435,6 +435,17 @@ mentions against 555 expected), compared with z = -9.2 and -9.3 on
 Hacker News, despite the change of platform, community, unit type, and
 extraction method.
 
+For the analysis-oriented stratum, whose source data was complete for
+both folds ahead of the rest of the corpus, the second fold is already
+final: in build 2022-2023 with evaluation 2024, on the far side of the
+2020-2021 market regime break, suppressed pairs co-occur at z = -16.5
+(358 observed against 824 expected, 43 percent of chance), with
+calibrated formation again null (0 of 281 eligible pairs). In that
+stratum the segregation result now stands in both folds on both
+platforms: z = -9.2 and -9.3 on Hacker News, -10.0 and -16.5 on Reddit
+finance. The effect did not merely survive the regime break; it is
+larger after it.
+
 One unregistered, exploratory observation deserves reporting with that
 label attached. Splitting by community type, the segregation lives
 entirely in the analysis-oriented subreddits (SecurityAnalysis,
@@ -449,9 +460,12 @@ structure. Whether this split survives the second fold, which sits on
 the other side of the 2021 regime break, is exactly what the
 registration will decide.
 
-[FOLD B: acquisition in progress. On completion, this section reports
-both folds against the registered bars and either claims cross-platform
-generality or scopes it, per the frozen interpretation rules.]
+[FOLD B REMAINDER: wallstreetbets acquisition in progress (~14h). On
+completion: the ALL-stratum registered headline cells, the fold-B test
+of the exploratory stratum split, and a reproduction check on the
+analysis-stratum numbers above (added data cannot enter that stratum;
+any drift is an error signal). Section finalizes against the registered
+bars then.]
 
 ### 6.4 Segregation as the object of study
 
