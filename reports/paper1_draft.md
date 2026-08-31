@@ -249,17 +249,35 @@ the entire site.
 
 ### 4.2 The instrument finds the signal where it exists
 
-A null of this kind is only as credible as its instrument, so we ran the
-identical harness, unchanged, on the Science4Cast benchmark where the
-signal is known to exist. It finds it: suppressed pairs in the science
-corpus form at 67 percent under the same z-criterion (188 of 281
-eligible pairs in a 10-million-pair sample), and ranked precision
-reaches roughly 105 times random. Two observations from this control
-matter later. First, in science as on Hacker News, popularity features
-tie or beat closure and semantic features add nothing, consistent with
-the degree-bias literature (Aiyappa et al. 2025). Second, the 67 percent
-figure is produced by the same z-criterion we later found to be
-miscalibrated; we return to this in Section 6.
+A null of this kind is only as credible as its instrument, so we ran
+the identical eligibility and ranking harness, unchanged, on the
+Science4Cast benchmark where the signal is known to exist. It finds it:
+ranked precision reaches roughly 105 times random, and our feature set
+reaches AUC 0.899 against the benchmark's published 15-feature baseline
+of 0.851. Within the benchmark's suppressed subset (expected joint
+count at least 2, no prior co-occurrence), 67 percent of pairs connect
+(188 of 281 in a 10-million-pair sample).
+
+One definitional difference matters and is easy to miss, so we state it
+plainly. Formation on the benchmark is the benchmark's own ground
+truth: the appearance of any edge in the target-year graph. Our
+discourse analyses use the chance-calibrated criterion of Section 3.3.
+The control therefore certifies the harness (eligibility construction,
+ranking, precision measurement) and not the formation criterion, which
+the benchmark never exercises. It also means the 67 percent is not
+commensurable with any discourse rate in this paper: "any edge appears"
+and "co-mention exceeds a calibrated null across two independent
+authors" are different events. Early in this project we treated the two
+as rungs of one calibration ladder; that comparison was ill-posed and
+we withdraw it here. Whether the benchmark's 67 percent is itself
+substantially mechanical (the AI concept graph densifies rapidly over
+the target years) is a further open question, outside this paper's
+scope.
+
+One observation from this control does carry forward: in science as on
+Hacker News, popularity features tie or beat closure and semantic
+features add nothing, consistent with the degree-bias literature
+(Aiyappa et al. 2025).
 
 ## 5. The author-level revival and its correction
 
@@ -380,13 +398,15 @@ a few CPU-minutes, as a mandatory control wherever a formation or
 emergence rate is computed from co-occurrence counts, and per-pair
 permutation thresholds where the claim needs to survive it.
 
-This has one immediate external consequence. Our positive control
-reproduced the science-corpus regularity that suppressed pairs form at
-67 percent, computed there, as everywhere before Section 5.2, with the
-z-criterion. Scientific corpora also have heterogeneous document sizes.
-Whether that celebrated number survives a calibrated re-measurement is
-an open question, outside this paper's scope and under active
-investigation.
+A related external question remains open. The science-corpus figure of
+67 percent rests on the benchmark's own edge-existence ground truth
+(Section 4.2), not on the criterion we retire here, so it is not
+contaminated by this defect. But scientific corpora share the
+structural features that make co-occurrence baselines treacherous:
+rapid densification and heavily skewed degree distributions. Whether
+that celebrated number is substantially mechanical under a shuffle
+null has, to our knowledge, never been tested. The question is outside
+this paper's scope and under active investigation.
 
 ### 6.2 What the negative does and does not say
 

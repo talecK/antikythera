@@ -294,3 +294,22 @@ pull, which was complete (build 2022-23 + eval 2024, 265K mentions in
 - On WSB completion: rebuild the mentions parquet, re-run the full gate
   table; DD numbers must reproduce (added WSB rows never enter the DD
   stratum) — any drift is a red flag, not noise.
+
+### Correction (2026-08-30, late) — the science "67%" rung was never z-criterion
+Flagged by the gate session, verified against eval/run_tier_a.py: Tier A
+formation is the BENCHMARK'S OWN ground truth (`sol` from the pkl — any
+edge appears in the target-year graph), not our z>=2 criterion, which
+that harness never contained. Consequences for the record:
+1. The 67% (188/281) is NOT contaminated by the R1-exposed criterion
+   defect. Statements above tying the "67 / 20 / 0.6 ladder" to the z>=2
+   criterion are wrong for the 67 rung specifically.
+2. Worse for the ladder, not better: 67% ("any edge appears") and the HN
+   rates ("z>=2 co-mention, >=2 distinct authors") were DIFFERENT EVENTS
+   from day one — the cross-corpus comparison was ill-posed regardless of
+   criterion calibration. The ladder is retired on both grounds.
+3. Tier A certifies harness correctness (eligibility, ranking, P@k, AUC
+   0.899 vs published 0.851) — it never exercised, and cannot certify,
+   the formation criterion.
+4. Whether the benchmark's 67% is substantially mechanical (target-year
+   densification) is untested; a shuffle null there is absentia's scope.
+Paper Sec 4.2/6.1 rewritten accordingly; HANDOFF banner corrected.

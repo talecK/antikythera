@@ -4,8 +4,12 @@
 ## shuffle-calibrated criterion there is NO above-chance gap formation in
 ## either space (author 3/364 & 1/110 vs ~1% floor; thread 20/25,161 &
 ## 11/7,505 — all at/below floor). The z>=2 criterion that produced every
-## earlier positive rate (19-24%, 23.1%, 0.6%, and science's 67%) is
-## anti-conservative under doc-size heterogeneity (R1 placebo). The REAL
+## earlier positive HN rate (19-24%, 23.1%, 0.6%) is anti-conservative
+## under doc-size heterogeneity (R1 placebo). CORRECTION (2026-08-30
+## late): science's 67% is NOT z-criterion-based — it is benchmark
+## edge-existence ground truth, so it is uncontaminated but was never
+## comparable to the HN rates; the ladder was ill-posed, not merely
+## miscalibrated (see report correction). The REAL
 ## finding, registered bar met at z=-9 (author) and z=-124/-162 (thread):
 ## suppressed pairs co-mention BELOW chance — segregation persists; gaps
 ## actively stay open. Detector/Foundry: CLOSED on HN. Thread-lens kill:
@@ -81,9 +85,11 @@ preregistration.md (git history proves reg-before-eval ordering throughout).
    thread-space kill is strengthened (thread co-mention runs at ~1/4 of
    chance). Sub-chance persistence bar MET decisively: author z=-9.2/-9.3,
    thread z=-162/-124. Gate Q1/Q2 amended to the calibrated criterion per
-   the outcome-blind procedure and unblocked. Science4Cast's 67% under
-   this criterion = absentia's remit (their celebrated rate may share the
-   defect).
+   the outcome-blind procedure and unblocked. Science4Cast's 67%:
+   corrected 2026-08-30 late — it is benchmark edge-existence ground
+   truth, not z-criterion, hence uncontaminated but incommensurable with
+   HN rates; whether it is mechanical under a shuffle null is untested
+   and absentia's remit.
 
 ## What a new session inherits
 - **Corpus**: 1.32M HN threads 2006–2026 (title + top-20 comments), clean
@@ -129,8 +135,9 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
 ## Next steps (RE-REVISED 2026-08-30 evening; ordered by information per dollar)
 0. **DONE — Run 8 (see status banner).** No above-chance formation on HN
    in either space; segregation-persistence claim registered-met. The
-   retired rates (19-24%, 23.1%, 0.6%, 67%) must never be quoted except
-   as examples of the criterion trap.
+   retired HN rates (19-24%, 23.1%, 0.6%) must never be quoted except
+   as examples of the criterion trap; the science 67% is a different
+   event (benchmark edge existence) and must never be compared to them.
 1. **DONE — Run 6: exposure lens x author space (registered d3844c1,
    result b244d65): PRIMARY MET.** Exposed pairs form at 23.1% pooled
    (6/26), same as all-pairs author space; thread-space was 0.55%. The
