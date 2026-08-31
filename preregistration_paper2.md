@@ -154,6 +154,20 @@ interval. If no such window exists, there is no onset (P1 fails).
   would indicate an era-wide narrative effect rather than a
   WSB-specific structural change.
 
+PRIMARY CELL, named explicitly for every bar (clarified 2026-08-31 on
+peer-review advice, pre-outcome; this was always the intent of "union
+primary" above): P1 and P2 are scored on the WSB stratum, union lens, at
+the ladder-chosen primary B (= 4 quarters per Amendment V3). P3 is
+scored on the DD stratum, union lens, same B. No other cell scores any
+bar; every other cell (cashtag, B=6, B=8) is sensitivity or descriptive.
+
+DETERMINISM RULE for the eval implementation (binding, from the gate's
+adversarial review finding 1.2): no set or dict iteration may feed the
+seeded RNG or any order-sensitive accumulation — every incidence list is
+sorted before permutation. The paper-2 eval script must reuse run_gate's
+fixed pair_counts/shuffle machinery or replicate its sorted() discipline
+verbatim, and this is checked in review before the first run.
+
 Scoring: P1+P2+P3 all pass = the transition claim as designed. P1 pass
 with P2 fail = a transition exists but the GME-era timing story is
 wrong; report the measured onset, no stretch. P1 fail = the endpoints do
