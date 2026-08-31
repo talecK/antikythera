@@ -79,6 +79,11 @@ def filter_month(m: str, slot: int) -> None:
             print(f"{m} {k}: MISSING after download — skipped", flush=True)
             continue
         sz = os.path.getsize(src) / 1e9
+        # A partially-downloaded sparse file reports full logical size, so
+        # size alone cannot prove completeness — decode-test the stream.
+        if subprocess.run(["zstd", "-t", src], stdout=subprocess.DEVNULL,
+                          stderr=subprocess.DEVNULL).returncode != 0:
+            raise RuntimeError(f"corrupt/incomplete dump {m} {k}")
         out = f"{FILT}/filtered_{k}_{m}.ndjson.gz"
         t0 = time.time()
         with open(out + ".tmp", "wb") as fo:
@@ -93,6 +98,12 @@ def filter_month(m: str, slot: int) -> None:
             rc3, rc2, rc1 = p3.wait(), p2.wait(), p1.wait()
         if rc1 != 0 or rc2 != 0 or rc3 != 0:
             raise RuntimeError(f"filter failed {m} {k}: {rc1} {rc2} {rc3}")
+        MIN_OUT = {"RC": 20_000_000, "RS": 2_000_000}[k]
+        if os.path.getsize(out + ".tmp") < MIN_OUT:
+            os.remove(out + ".tmp")
+            raise RuntimeError(
+                f"implausibly small output {m} {k} "
+                f"(<{MIN_OUT/1e6:.0f}MB; neighbouring months are 10-150MB)")
         os.replace(out + ".tmp", out)
         print(f"{m} {k}: {sz:.1f}GB dump -> "
               f"{os.path.getsize(out)/1e6:.0f}MB kept "
@@ -111,7 +122,16 @@ def main() -> None:
         if proc is None:
             proc = start_download(m, slot)
         if proc is not None:
-            proc.wait()
+            rc = proc.wait()
+            if rc != 0:
+                print(f"{m}: aria2 exited {rc}; retrying download once",
+                      flush=True)
+                r2 = start_download(m, slot)
+                if r2 is not None and r2.wait() != 0:
+                    print(f"{m}: aria2 FAILED TWICE — skipping month "
+                          f"(absent from corpus; disclose it)", flush=True)
+                    shutil.rmtree(f"{BASE}/dl{slot}", ignore_errors=True)
+                    continue
         # prefetch the next month into the other slot while this one filters
         nxt = next((x for x in months[i + 1:] if pending(x)), None)
         proc = start_download(nxt, 1 - slot) if nxt else None
