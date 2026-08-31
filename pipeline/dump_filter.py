@@ -3,15 +3,19 @@
 
 Chunk-scans bytes with one compiled regex instead of per-line matching:
 ~540MB/s vs ~111MB/s for BSD `grep -aiE` (measured 2026-08-30 on this box).
-Match is case-sensitive on canonical subreddit casing, which is how the
-dumps store the field ("subreddit":"wallstreetbets").
+Match is case-sensitive on canonical subreddit casing, and tolerates the
+optional space after the colon that the post-2023-03 crawler emits.
 """
 import re
 import sys
 
 SUBS = ["wallstreetbets", "stocks", "investing", "SecurityAnalysis",
         "ValueInvesting", "StockMarket"]
-PAT = re.compile(b'"subreddit":"(?:' + b"|".join(s.encode() for s in SUBS) + b')"')
+# Two dump formats exist. Pushshift-era files (through 2023-03) are compact
+# JSON: {"subreddit":"stocks"}. Arctic Shift's own crawler (2023-04 onward)
+# emits spaces after colons: {"subreddit": "stocks"}. Matching only the
+# compact form silently yields ZERO rows for every post-seam month.
+PAT = re.compile(b'"subreddit": ?"(?:' + b"|".join(s.encode() for s in SUBS) + b')"')
 CHUNK = 1 << 26
 
 
