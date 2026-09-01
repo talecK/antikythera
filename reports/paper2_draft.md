@@ -48,11 +48,7 @@ windows, so the fusion is specific to one community, not to the era.
 The measured onset lands in the case the registration named in advance
 as non-separable: the subscriber explosion and the governance overhaul
 were both active in that quarter. The timing is therefore reported as
-ordering evidence rather than as mechanism identification. An
-implementation deviation caught after the first run (an omitted
-ticker-exclusion filter) was corrected by re-running the unchanged
-frozen rules; both runs are disclosed, both outputs are released, and
-they agree on every verdict.
+ordering evidence rather than as mechanism identification.
 
 ---
 
