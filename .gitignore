@@ -8,3 +8,6 @@ __pycache__/
 .venv/
 bin/
 !data/atlas/README.md
+
+# private planning notes (people-related; never in history)
+private/

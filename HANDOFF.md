@@ -79,6 +79,12 @@ News first with the post quoting the paper's own hedge line, paper 1 to
 HN one to two weeks later. A lay-summary paragraph does not exist in
 either draft and needs writing (outreach session drafts, paper session
 fact-checks numbers, owner signs off, prose rules apply).
+The full plan (named targets, send order, venue choices) is
+people-related and kept OUT of version control in private/ (gitignored)
+so it never enters a history that goes public at publication. Paper-3
+note above is stale: absentia Stage 0 is done, H2 table ~a day from
+2026-09-01, private remote created at github.com/talecK/absentia the
+same day.
 
 ### Pending owner decisions
 1. Ownership of paper_1 (original session gone from the bus; this session
