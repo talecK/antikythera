@@ -195,6 +195,63 @@ The candidate mechanisms, stated before any window was computed
   everywhere at once; this predicts a parallel discontinuity in the DD
   control stratum. P3 is its test.
 
+### 2.1 Related work
+
+Four literatures border this study; none measures what it measures.
+
+**The GameStop episode itself** has a substantial computational and
+financial literature. Lucchini et al. (2022) show that a committed
+minority of WSB users grew before the price surge and occupied central
+network positions. Mancini et al. (2022) model the squeeze as
+self-reinforcing consensus formation in WSB conversations. Semenova
+and Winkler (2021) document social contagion in WSB asset discussions,
+where engagement with a discussed asset raises a user's probability of
+starting new discussions of it. Pedersen (2022) builds the equilibrium
+theory: a social network propagating an investment idea produces
+exactly the frenzy, bubble, and burst observed. All of this work
+studies the cascade as the outcome: how coordination formed and how it
+moved prices. The present study measures the other side of the event:
+what the cascade did to the community's idea-structure, before, during,
+and after, under a registered design. To our knowledge no prior work
+tracks a community's co-attention structure through the episode.
+
+**Moderation interventions** on Reddit have a causal-inference
+literature. Chandrasekharan et al. (2017) measured the effects of the
+2015 subreddit bans on hate speech; Trujillo and Cresci (2022)
+measured the escalating quarantine-restrict-ban sequence applied to
+r/The_Donald. These study platform-administered interventions and
+behavioral outcomes (activity, toxicity). Our governance mechanism
+concerns interventions from inside the community (a mod-team regime
+change, automated ticker filtering, containment-by-megathread; anchors
+A3-A8), and the outcome is the structure of the community's idea
+space rather than the behavior of its users.
+
+**Newcomer floods** are a classic concern of online-community research.
+Kiene, Monroy-Hernandez and Hill (2016) found that r/NoSleep absorbed
+a large newcomer surge without major incident; Lin et al. (2017) found
+that ten subreddits hit by default-listing growth shocks stayed
+recognizably themselves. Both studies find resilience, at growth
+scales far below WSB's roughly 30-fold explosion in weeks. Whether the
+transition we measure is what a growth shock beyond that scale does to
+a community is exactly the scale mechanism of Section 2, and Section
+6.1 explains why this design cannot settle it.
+
+**Cascade theory** predicts that a system's susceptibility to global
+cascades depends on its connectivity structure: cascades require
+enough overlap for a story to jump between audiences (Watts 2002), and
+behaviors that need social reinforcement spread only across wide
+bridges (Centola and Macy 2007), with information cascades supplying
+the individual-level mechanism (Bikhchandani, Hirshleifer and Welch
+1992). The cascade-susceptibility reading of our results (Section 6.2,
+labelled speculative there) is the empirical cousin of this theory:
+chance-level mixing is the connectivity substrate, and the walls are
+its removal.
+
+What this paper adds to all four shelves is a registered, longitudinal
+measurement of one community's idea-segregation state through a
+cascade, with a calibrated null (the companion paper's machinery), a
+dated onset, and a same-platform control.
+
 ## 3. Corpus
 
 ### 3.1 Acquisition
@@ -678,7 +735,8 @@ being discussed by the same people at multiples of chance. On this
 reading the walls are the scar. The event triggered governance and
 structural responses (megathread containment, ticker filtering,
 spin-off fragmentation) that removed the conditions for its own
-repetition. The registered results *describe* every step of that
+repetition. This is the connectivity condition of threshold-cascade
+models (Watts 2002; Centola and Macy 2007), read empirically. The registered results *describe* every step of that
 sentence (the substrate state, the fusion, the walls, and their
 order), but the causal links between the steps are not claimed, per
 Section 6.1. We note the reading because it inverts the usual valence
@@ -803,12 +861,50 @@ registered and committed before evaluation; the version-control
 history documents the full sequence, including the implementation
 deviation and its correction (Amendment V4).
 
-## References
+## References (DOIs marked [verify] to be confirmed at submission)
 
 - Quiring, K. (2026). The gaps that don't close: idea segregation
   persists in twenty years of online discourse. Draft in the same
   repository (reports/paper1_draft.md); the source observation is its
   Section 6.3.
+- Lucchini, L., Aiello, L.M., Alessandretti, L., De Francisci Morales,
+  G., Starnini, M., Baronchelli, A. (2022). From Reddit to Wall Street:
+  the role of committed minorities in financial collective action.
+  *Royal Society Open Science* 9(4), 211488. doi:10.1098/rsos.211488
+- Mancini, A., Desiderio, A., Di Clemente, R., Cimini, G. (2022).
+  Self-induced consensus of Reddit users to characterise the GameStop
+  short squeeze. *Scientific Reports* 12, 13866.
+  doi:10.1038/s41598-022-17925-2
+- Semenova, V., Winkler, J. (2021). Social contagion and asset prices:
+  Reddit's self-organised bull runs. INET Oxford Working Paper
+  No. 2021-04; arXiv:2104.01847.
+- Pedersen, L.H. (2022). Game on: Social networks and markets.
+  *Journal of Financial Economics* 146(3), 1097-1119. doi [verify]
+- Chandrasekharan, E., Pavalanathan, U., Srinivasan, A., Glynn, A.,
+  Eisenstein, J., Gilbert, E. (2017). You can't stay here: The efficacy
+  of Reddit's 2015 ban examined through hate speech. *Proceedings of
+  the ACM on Human-Computer Interaction* 1(CSCW), 31.
+  doi:10.1145/3134666
+- Trujillo, A., Cresci, S. (2022). Make Reddit great again: Assessing
+  community effects of moderation interventions on r/The_Donald.
+  *Proceedings of the ACM on Human-Computer Interaction* 6(CSCW2), 526.
+  doi:10.1145/3555639
+- Kiene, C., Monroy-Hernandez, A., Hill, B.M. (2016). Surviving an
+  "Eternal September": How an online community managed a surge of
+  newcomers. *Proceedings of CHI 2016*, 1152-1156.
+  doi:10.1145/2858036.2858356
+- Lin, Z., Salehi, N., Yao, B., Chen, Y., Bernstein, M. (2017). Better
+  when it was smaller? Community content and behavior after massive
+  growth. *Proceedings of ICWSM 2017* 11(1), 132-141.
+  doi:10.1609/icwsm.v11i1.14884
+- Watts, D.J. (2002). A simple model of global cascades on random
+  networks. *PNAS* 99(9), 5766-5771. doi [verify]
+- Centola, D., Macy, M. (2007). Complex contagions and the weakness of
+  long ties. *American Journal of Sociology* 113(3), 702-734.
+  doi [verify]
+- Bikhchandani, S., Hirshleifer, D., Welch, I. (1992). A theory of
+  fads, fashion, custom, and cultural change as informational cascades.
+  *Journal of Political Economy* 100(5), 992-1026. doi [verify]
 - Contemporaneous sources for the governance anchors A1-A8 (CNBC,
   Bloomberg, Shacknews, Slashdot, and subreddit records) are dated and
   cited in reports/paper2_anchors.md, committed before any window
