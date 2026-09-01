@@ -855,12 +855,6 @@ the corpus, ran the analyses, and wrote the manuscript.
 
 ## Figure legends
 
-Figure 1 is a schematic (its generator is in the code release and
-draws no data). Figures 2 to 4 are generated from the committed window
-and placebo tables only (figure generator in the code release). Per the registered display
-rule, **every z-series panel carries an eligible-pair-count panel
-directly beneath it, sharing its x-axis.**
-
 **Figure 1** (p2_schematic.png/.pdf). How the statistic is built, and
 the three regimes it can express. (a) The document is one author's set
 of tickers in one calendar quarter. (b) An eligible, or suppressed,
@@ -888,7 +882,7 @@ marker is the onset, 2021-04-01; the two labelled points are the
 excursion windows straddling the GameStop squeeze. (b) The DD control
 stratum over the same calendar. Beneath each z panel, the
 number of eligible pairs in that window, which sets the power of that
-window's test.
+window's test; every z series in this paper is shown with this strip.
 
 **Figure 3** (p2_fig2.png/.pdf). The excursion placebo. (a, b) For
 each excursion window, the 20 truth-null placebo z values as a histogram,
