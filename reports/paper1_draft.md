@@ -625,6 +625,13 @@ every registration ahead of its result. Raw Hacker News content is
 public and retrievable via the official API; the release includes exact
 pull specifications.
 
+## Competing interests
+
+This research originated in a commercial signal-research effort by the
+author; the studied hypothesis failed its registered tests and no
+product, trading activity, or financial position resulted or exists.
+The author declares no other competing interests.
+
 ## Statement on AI assistance
 
 Analysis code, evaluations, and manuscript drafting were performed with
@@ -634,7 +641,7 @@ pre-registered and committed before evaluation, by either party; the
 version-control history documents the full sequence, including the
 registered placebo that overturned an intermediate conclusion.
 
-## References (spine; DOIs marked [verify] to be confirmed at submission)
+## References
 
 - Swanson, D.R. (1986). Fish oil, Raynaud's syndrome, and undiscovered
   public knowledge. *Perspectives in Biology and Medicine* 30(1), 7-18.
