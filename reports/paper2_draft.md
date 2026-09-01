@@ -874,8 +874,8 @@ mixing (z near zero), fusion (z far above zero), and walls (z far below
 zero), in the order r/wallstreetbets passed through them. All values in
 this figure are illustrative; measured values are in Figures 2 to 4.
 
-**Figure 2** (p2_fig1.png/.pdf). The transition and the excursion. Top:
-the primary segregation z for r/wallstreetbets (union lens, four-quarter
+**Figure 2** (p2_fig1.png/.pdf). The transition and the excursion. (a)
+The primary segregation z for r/wallstreetbets (union lens, four-quarter
 build) over the nineteen rolling evaluation windows, labelled by
 starting quarter. z is the count of evaluation-window documents
 co-mentioning any suppressed ticker pair, standardized against a
@@ -885,21 +885,21 @@ are kept apart, and positive values mean they are brought together
 beyond chance. The shaded band marks |z| < 3, the chance region; the
 dashed line marks the registered wall threshold z = -5; the vertical
 marker is the onset, 2021-04-01; the two labelled points are the
-excursion windows straddling the GameStop squeeze. Bottom: the DD
-control stratum over the same calendar. Beneath each z panel, the
+excursion windows straddling the GameStop squeeze. (b) The DD control
+stratum over the same calendar. Beneath each z panel, the
 number of eligible pairs in that window, which sets the power of that
 window's test.
 
-**Figure 3** (p2_fig2.png/.pdf). The excursion placebo. For each
-excursion window, the 20 truth-null placebo z values as a histogram,
+**Figure 3** (p2_fig2.png/.pdf). The excursion placebo. (a, b) For
+each excursion window, the 20 truth-null placebo z values as a histogram,
 each obtained by shuffling ticker labels across authors and recomputing
 the full registered statistic from scratch, with the real value marked.
 Annotations carry the secondary formation counts (real 24 and 61
 versus placebo maxima 4 and 7).
 
-**Figure 4** (p2_fig3.png/.pdf). Sensitivity. Top: r/wallstreetbets
+**Figure 4** (p2_fig3.png/.pdf). Sensitivity. (a) r/wallstreetbets
 union-lens z at build lengths of four, six, and eight quarters on a
-common calendar, with grouped pair counts beneath. Bottom: the cashtag
+common calendar, with grouped pair counts beneath. (b) The cashtag
 sensitivity lens at a four-quarter build, with windows under 20
 eligible pairs shown as open markers (reported UNINFORMATIVE, never as
 negative), pair counts beneath.
