@@ -48,7 +48,7 @@ r/wallstreetbets, not to the era. Two candidate causes for the walls
 were in play: the community's sudden thirty-fold growth during the
 squeeze, and the moderation overhaul in the months after it. We
 decided in advance that an onset in mid-2021 could point to either
-cause, which is precisely where it fell. As such, the study can say
+cause, and that is precisely where it fell. As such, the study can say
 when the walls went up, but not the exact mechanism that built them.
 
 ---
