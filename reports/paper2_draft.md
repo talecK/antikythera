@@ -75,7 +75,7 @@ evaluation 2024 (fold B). The companion analysis's final values (its section "A 
 | DD | -10.1 | -17.1 |
 | WSB | **-0.1** | **-9.0** |
 
-(The registration for the present study quotes the earlier values -0.2 and -8.7 for the WSB cells, from a run of the companion analysis that preceded its post-review correction. The difference is that correction plus Monte Carlo noise and is immaterial to every bar here.)
+(The registration for the present study quotes the earlier values -0.2 and -8.7 for the WSB cells, from a run of the companion analysis that preceded its post-review correction. The difference is that correction plus Monte Carlo noise and is immaterial to every pass threshold here.)
 
 WSB's fold-A chance reading is well measured: the registered
 subsampling control matched to DD's document counts leaves it at chance
@@ -332,8 +332,7 @@ co-mention beyond their per-pair permutation thresholds, against a
 context: across two platforms, two unit vocabularies, and every
 ordinary window ever measured in this program, formation sat at the
 false-positive floor; these two windows are the only place it has ever
-risen above it. No registered bar attaches to formation here, by
-design. The claim rests on z, and the z is unambiguous.
+risen above it. No registered pass threshold attaches to formation here, by design. The claim rests on z, and the z is unambiguous.
 
 **The placebo.** A result this far above chance calls for the same
 scrutiny the companion paper applied to its own false positive: its
@@ -398,8 +397,7 @@ the five years (from about -8 toward -15.7) is gradual, as predicted.
 shape at both alternative window lengths. At B = 6 the excursion
 windows read +32.2 and +46.0 and the flip to walls occurs at the same evaluation window (2021Q2, z = -8.9, all subsequent windows ≤ -5). At B = 8
 the single in-range excursion window reads +27.3 with the flip likewise
-at 2021Q2 (-7.6). No bar attaches to these curves; they are reported
-regardless of outcome so that the ladder's choice of B = 4 cannot be
+at 2021Q2 (-7.6). No pass threshold attaches to these curves; they are reported regardless of outcome so that the ladder's choice of B = 4 cannot be
 what makes the transition appear. Longer builds start later in the
 calendar, so the B = 6 and B = 8 series begin at evaluation windows 2020Q3 and 2021Q1 respectively. The full series with pair counts are in the released
 window table.
@@ -601,7 +599,7 @@ explain.
 
 ### Registration
 
-The full registration (preregistration_paper2.md) was fixed and committed, with the author's sign-off recorded in the commit history, before any outcome statistic was computed; its amendments V1-V4 are dated appendices, never rewordings. The registration refers to the companion paper's Reddit analysis by its working name, the gate. The study has two parts sharing one acquisition.
+The full registration (preregistration_paper2.md) was fixed and committed, with the author's sign-off recorded in the commit history, before any outcome statistic was computed; its amendments V1-V4 are dated appendices, never rewordings. The registration refers to the companion paper's Reddit analysis by its working name, the gate, and calls each pass threshold a bar. The study has two parts sharing one acquisition.
 
 ### Part B: rolling windows and the primary statistic
 
@@ -623,7 +621,7 @@ before permutation, so no set or dict iteration order can feed the
 seeded RNG. The script refuses to run unless the registration status
 is REGISTERED. Formation counts per window (eligible pairs newly
 co-mentioning beyond their per-pair permutation thresholds) are a
-registered *secondary* readout with no bar attached: the companion analysis's power table shows them underpowered at these window sizes.
+registered *secondary* readout with no pass threshold attached: the companion analysis's power table shows them underpowered at these window sizes.
 
 Both strata (WSB treatment, DD control) are computed identically and
 independently, under both lenses (union primary, cashtag sensitivity;
@@ -680,11 +678,9 @@ w's evaluation interval. If no such window exists, there is no onset.
   DD's deepening (fold A -10.1 to fold B -17.1) is predicted gradual.
 
 P1 and P2 are scored on the WSB stratum, union lens, at the
-ladder-chosen B = 4; P3 on the DD stratum, union lens, same B. No other
-cell scores any bar (primary-cell clause, committed pre-outcome). A
+ladder-chosen B = 4; P3 on the DD stratum, union lens, same B. No other cell is tested against a threshold (primary-cell clause, committed pre-outcome). A
 secondary one-break step fit on the primary z series (least-squares, all interior candidate breaks, near-tie set within 10% of the best fit's squared error)
-was registered pre-census as an uncertainty band on the onset date. No
-bar attaches to it.
+was registered pre-census as an uncertainty band on the onset date. No pass threshold attaches to it.
 
 The registration also states its own epistemic position: the two
 fold-level endpoints were known and could not be un-seen, so what is
@@ -744,9 +740,7 @@ disclosed as Amendment V4.
 The correction path is rule-bound. The filter was added to the three reading scripts. The census was re-derived and the window-length ladder
 re-decided by the unchanged registered rule; B = 4 stands, and the
 re-decision was committed before any corrected z existed. Parts A and
-B were then re-run under the unchanged bars, seeds, and window
-definitions. No bar, threshold, seed, window definition, or onset rule
-changed at any point.
+B were then re-run under the unchanged thresholds, seeds, and window definitions. No threshold, seed, window definition, or onset rule changed at any point.
 
 Because first-run outcomes were seen before the correction, the
 protection is that every re-derivation step is a rule fixed in advance, with no free parameter. Both runs are released: the first-run outputs
