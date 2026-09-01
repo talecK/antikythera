@@ -76,10 +76,10 @@ segregation z = -0.1, where an effect of the size seen in the
 analysis-oriented subreddits would have registered near -7. In the
 post-2021 fold it was strongly walled (z = -9.0), like every other
 stratum. The companion paper reported this as a described observation
-and declined to interpret it, for three stated reasons: the two folds
+and declined to interpret it, for three stated reasons. The two folds
 sit on opposite sides of the 2020-2021 market regime break (era
-confound); they differ in acquisition provenance, with the source seam
-aligned to the fold boundary (provenance confound); and the community
+confound). They differ in acquisition provenance, with the source seam
+aligned to the fold boundary (provenance confound). And the community
 split itself was exploratory, with no registered prediction attached
 (post-hoc). The observation nevertheless stands out. Across twenty
 years of Hacker News at two granularities, six financial subreddits,
@@ -170,7 +170,7 @@ noise and is immaterial to every bar here.)
 
 WSB's fold-A chance reading is well measured: the registered
 subsampling control matched to DD's document counts leaves it at chance
-(z = -0.0), so it is not a power artifact, and a DD-sized effect would
+(z = -0.0), so it is not a power artifact. A DD-sized effect would
 have shown near z = -7. The observation is therefore that the one
 wall-free community ever measured in this program grew walls somewhere
 between 2019 and 2024. The companion paper is final on that
@@ -541,10 +541,10 @@ volume heterogeneity in the GME-era windows does not, by itself,
 produce anything resembling the observed values.
 
 In concrete terms: for two overlapping half-year evaluation windows,
-ticker pairs that the preceding year of WSB discourse had kept fully
-apart (zero co-mentions, despite ample independent popularity) were
-co-mentioned by the same authors at two to three times their expected
-rates, in thousands of documents. The mixing deficit inverted. Every
+the same authors co-mentioned, in thousands of documents, ticker pairs
+at two to three times their expected rates. These were pairs the
+preceding year of WSB discourse had kept fully apart: zero
+co-mentions, despite ample independent popularity. The mixing deficit inverted. Every
 other measurement in this program, including WSB itself one quarter
 later, sits at or far below chance.
 
@@ -576,7 +576,7 @@ the five years (from about -8 toward -15.7) is gradual, as predicted.
 **Window length.** The registered sensitivity curves reproduce the
 shape at both alternative window lengths. At B = 6 the excursion
 windows read +32.2 and +46.0 and the flip to walls occurs at the same
-eval window (2021Q2, z = -8.9, all subsequent windows ≤ -5); at B = 8
+eval window (2021Q2, z = -8.9, all subsequent windows ≤ -5). At B = 8
 the single in-range excursion window reads +27.3 with the flip likewise
 at 2021Q2 (-7.6). No bar attaches to these curves; they are reported
 regardless of outcome so that the ladder's choice of B = 4 cannot be
@@ -590,8 +590,8 @@ informativeness floor: windows under 20 eligible pairs are reported
 UNINFORMATIVE, which claims several early windows (and most DD cashtag
 windows). Where informative, the cashtag series shows the same
 signature: elevated in the excursion windows (+2.0, +2.5 at B = 4, with
-formation 9/63 and 14/117, binomial p of about 1e-8 and 1e-11), then
-negative in every window from 2021Q2 onward. The cashtag excursion z is
+formation 9/63 and 14/117, binomial p of about 1e-8 and 1e-11). From
+2021Q2 onward every informative window is negative. The cashtag excursion z is
 far smaller than the union value on a far smaller eligible universe; it
 is reported as directional sensitivity, not as a second measurement of
 the magnitude.
@@ -672,7 +672,7 @@ and the walls begin exactly as it ends.
 The arc is consistent with a reading in which chance-level mixing is
 the *substrate* of the cascade rather than its casualty. A community
 whose idea-audiences freely overlap is one where a single story can
-recruit everyone, and that recruitment is what the excursion measures
+recruit everyone. That recruitment is what the excursion measures
 directly: during the squeeze, previously never-connected tickers were
 being discussed by the same people at multiples of chance. On this
 reading the walls are the scar. The event triggered governance and
@@ -701,11 +701,11 @@ companion paper cites this inference to the present study (its Section
 ### 6.3 Limitations
 
 1. **Quarterly resolution, two-quarter evaluations.** The onset time is
-   the start of an evaluation interval; events inside a quarter (the
-   squeeze itself spans weeks) are unresolvable, and the excursion's
-   two windows overlap by one quarter, so they are not independent
-   measurements of the same phenomenon (nor were they treated as such;
-   the placebo nulls each separately).
+   the start of an evaluation interval, so events inside a quarter (the
+   squeeze itself spans weeks) are unresolvable. The excursion's two
+   windows overlap by one quarter, so they are not independent
+   measurements of the same phenomenon. They were not treated as such;
+   the placebo nulls each separately.
 2. **Different-powered windows.** Eligible-pair universes range 45-498
    across the primary series. Threshold verdicts are per-window
    calibrated; cross-window magnitude comparisons are not. See the
@@ -714,7 +714,7 @@ companion paper cites this inference to the present study (its Section
    study of the only transition the program has observed. Nothing here
    establishes how often discourse communities transition, in either
    direction, or whether fusion-then-walls is the generic cascade
-   signature; that requires deliberately surveying for transitions,
+   signature. That requires deliberately surveying for transitions,
    which the mixing-deficit instrument makes possible.
 4. **The excursion placebo is post-registration.** It follows the
    companion paper's registered placebo pattern and its per-replicate
@@ -737,9 +737,9 @@ measured, at quarterly resolution and under a frozen design, how the
 one known exception ended. r/wallstreetbets mixed at chance through
 mid-2020. In the two windows around the GameStop squeeze its
 suppressed pairs co-mentioned at 28 to 31 standard deviations above
-chance, the only above-chance excursion in the program on any platform
-at any granularity, and one the machinery cannot produce from shuffled
-data. From April 2021 to the end of the data the community is walled
+chance. This is the only above-chance excursion in the program on any
+platform at any granularity, and one the machinery cannot produce from
+shuffled data. From April 2021 to the end of the data the community is walled
 in every window, with no reversion, while the analysis-oriented
 control stayed below chance for the entire five years, squeeze
 included. The registered timing bet resolved inside 2021 as predicted,
