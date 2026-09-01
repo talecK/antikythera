@@ -601,8 +601,7 @@ explain.
 
 ### Registration
 
-The full registration (preregistration_paper2.md) was fixed and committed, with the author's sign-off recorded in the commit history, before any outcome statistic was computed; its amendments V1-V4 are dated appendices,
-never rewordings. The study has two parts sharing one acquisition.
+The full registration (preregistration_paper2.md) was fixed and committed, with the author's sign-off recorded in the commit history, before any outcome statistic was computed; its amendments V1-V4 are dated appendices, never rewordings. The registration refers to the companion paper's Reddit analysis by its working name, the gate. The study has two parts sharing one acquisition.
 
 ### Part B: rolling windows and the primary statistic
 
@@ -738,7 +737,7 @@ P3 its power against era-wide narratives.
 The first full run of the three paper-2 scripts (census, rolling
 windows, Part A) deviated from the registered spec. The scripts loaded
 mention rows directly from the extraction table and omitted the
-load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH). The companion analysis applies that filter as its standing exclusion of index and macro tickers, and this registration incorporates it by reference (its phrase is "identical to the gate", the registration's internal name for the companion analysis).
+load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH). The companion analysis applies that filter as its standing exclusion of index and macro tickers, and this registration incorporates it by reference to the companion analysis.
 The omission was found by a code diff during cross-checking against the companion analysis's tables, *after* first-run outcomes had been seen, and is
 disclosed as Amendment V4.
 
