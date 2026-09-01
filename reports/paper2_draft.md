@@ -16,7 +16,8 @@ table at the end. Awaiting author prose pass.**
 A companion study of idea segregation in online discourse found that
 concept pairs which should co-occur but never have ("suppressed" pairs)
 stay apart at rates far below chance in every community measured, on
-two platforms (Quiring 2026, "The gaps that don't close"). We call
+two platforms, Hacker News and Reddit (Quiring 2026, "The gaps that
+don't close"). We call
 that persistent below-chance separation a wall. The single exception
 was r/wallstreetbets: before 2020 it sat exactly at chance, and by
 2024 it was walled like everywhere else. This is the only
