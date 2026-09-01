@@ -926,8 +926,8 @@ ahead of its result. The numbers in this paper trace as follows:
 | Anchors A1-A8 + frozen discrimination reading | reports/paper2_anchors.md | 3fa0d73 |
 | Volume table + integrity pass | reports/paper2_volume_table.tsv | 63b7f6e |
 | Discussion notes (non-registered readings) | reports/paper2_results.md | d184472 |
-| Figure 1 (schematic, no data) | eval/make_paper2_schematic.py, reports/figures/p2_schematic | cdbb5d8 |
-| Figures 2-4 | eval/make_paper2_figs.py, reports/figures/p2_fig1-3 | 4360746 |
+| Figure 1 (schematic, no data) | eval/make_paper2_schematic.py, reports/figures/p2_schematic | cdbb5d8; restyled 5eb7eb2 |
+| Figures 2-4 | eval/make_paper2_figs.py, reports/figures/p2_fig1-3 | 4360746; restyled 5eb7eb2 (shared style eval/paper2_figstyle.py) |
 | Gate v2 comparison values (companion paper) | gate table / gate_rerun_v2.log | f89cb2b, 1386fc0 |
 
 ## References (all DOIs verified against Crossref 2026-09-01; one anchor source still marked [verify])
