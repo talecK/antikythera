@@ -27,9 +27,10 @@
   abstract 200, main text 5,000 excl. Methods, Methods <3,000, 70 refs,
   10 display items), PNAS Nexus alongside, EPJ DS floor; Nature Human
   Behaviour dropped as reach (needs a mechanism claim the paper declines
-  to make). Same file serves SocArXiv. Still open from the venue
-  patterns: schematic Figure 1 (needs a figure script; current figures
-  then become 2-4). Earlier state, superseded but true of the machinery:
+  to make). Same file serves SocArXiv. Schematic Figure 1 DONE (cdbb5d8,
+  eval/make_paper2_schematic.py; old figures now 2-4); body prose pass
+  DONE; all DOIs Crossref-verified, Semenova & Winkler cited to its 2025
+  Quantitative Finance version. Earlier state, superseded but true of the machinery:
   v0.3 at 51c8441 (repo HEAD 468e859). Registered study, all numbers
   from the conforming run (21a9dc7); P1+P2+P3 PASS, onset 2021-04-01,
   excursion +28.6/+30.9 placebo-armored, DD walled through the squeeze.
