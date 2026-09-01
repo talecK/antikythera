@@ -1,5 +1,99 @@
 # Handoff — state of the Antikythera project (2026-08-30, RE-REVISED 2026-08-30 evening)
 
+## PAPER PROGRAM HANDOFF (2026-09-01) — READ THIS FIRST FOR PAPER 1 / PAPER 2 WORK
+## Consolidates a multi-session day; one new session should own both
+## papers from here. Everything below the next "## Status" banner is the
+## pre-paper project history and is still accurate for the machinery.
+
+### Where the papers stand
+- **Paper 1** ("The gaps that don't close"), reports/paper1_draft.md, last
+  commit ddb7e29. Results FINAL (all numbers v2-regenerated, adversarially
+  audited). Today: prose-only passes (abstract accessibility 6c8ae76, body
+  long-sentence splits 086843c, "walled" defined at first use in 6.2), then
+  another session resolved all [verify] DOI tags and added a
+  competing-interests statement (ddb7e29). Header still says "awaiting
+  author prose pass" — that is the only substantive open item.
+- **Paper 2** ("Watching the walls go up"), reports/paper2_draft.md, v0.3,
+  last commit 51c8441 (repo HEAD 468e859). Registered study, all numbers
+  from the conforming run (21a9dc7); P1+P2+P3 PASS, onset 2021-04-01,
+  excursion +28.6/+30.9 placebo-armored, DD walled through the squeeze.
+  Drafted today from reports/paper2_results.md (operative), section by
+  section, then: prose passes (no em-dashes, conventional register,
+  accessible; abstract iterated with owner to grade-school register on
+  the mechanism sentences); Sec 2.1 Related Work (four literatures, 11
+  web-verified refs); anchor sources promoted into inline citations +
+  reference entries (Sec 4.5; A5 date pinned 2021-02-27 via HN 26281147;
+  A8 introduction date still unpinned); figures p2_fig1-3 produced
+  (eval/make_paper2_figs.py, from committed TSVs only; placebo reps
+  committed as reports/paper2_placebo_reps.tsv). Registration, results
+  doc, and eval code were NOT modified at any point.
+- **Paper 3** (absentia, ../absentia): not touched by this session; last
+  known state in memory is "REGISTERED 823c479, H2 evals starting".
+
+### Review artifacts (phone-readable, private, figures embedded)
+- Paper 1: https://claude.ai/code/artifact/b6e82250-dc7e-42d1-9421-64eff6faeda9
+- Paper 2: https://claude.ai/code/artifact/34b0ab8e-c6bd-48b2-af90-8d5874de0ba7
+- Regenerate after ANY draft edit (markdown is the source of record):
+  `python3 eval/render_paper_html.py paper2 --out <scratch>/paper2_draft_artifact.html`
+  then republish with the Artifact tool passing the URL above as `url`
+  (updates in place). Same for paper1. Pages cross-link in their headers.
+
+### Outstanding before preprint-ready
+Paper 2: (1) owner prose pass; (2) four DOIs tagged [verify] in the
+references (Pedersen 2022 JFE; Watts 2002; Centola & Macy 2007;
+Bikhchandani et al. 1992) plus a check for a journal version of Semenova
+& Winkler (arXiv:2104.01847); (3) typeset to PDF with table numbering
+(tables are unnumbered inline); (4) packaging only: A8 Wayback pass over
+the subreddit rules page, contemporaneous April-2020 source for A1
+(currently Forbes 2023 retrospective); (5) the paper-1 reference must
+become paper 1's SocArXiv DOI at posting; (6) owner call: Figure 1 DD
+panel has its own y-scale (shared x + chance band); one-line change to
+share y. Estimate: ~half a day of mechanical work after the prose pass.
+Paper 1: owner prose pass; typeset; one consistency sentence to check
+(abstract "2006 to 2026" vs Sec 3.1 "active since 2007").
+
+### Rules that bound today's edits (keep them)
+- Owner prose rules: no em-dashes or AI-tell phrasing; conventional paper
+  structure; accessible language, abstracts near grade 6-9, tested by
+  paraphrasing as a layman. Abstracts carry findings only — procedural
+  deviations, methods detail, provenance clauses live in the body.
+- Paper 1 is final on results: cite, never reopen. Paper 2's registration,
+  results doc, and eval code are frozen; drafts only.
+- Every number traces to a committed artifact (paper 2 has a provenance
+  table); prose passes never touch numbers, verdicts, tables, quoted
+  registered language, or disclosure terms.
+- Public-quote cautions (for outreach text, pre-review): keep the z-first
+  framing (formation counts and their binomial p are secondary, no bar);
+  "only above-chance excursion" always with "in this program"; Sec 6.2
+  cascade-susceptibility sentences ("substrate", "scar") are labeled
+  speculative and must carry the label; Sec 2.1 novelty sentence is
+  unreviewed; quote the V4 disclosure whole or not at all; pair the
+  conclusion's "the community that cascaded was the one without walls"
+  with the abstract's hedge ("can say when the walls went up, but not the
+  exact mechanism that built them").
+
+### Outreach plan (from the outreach session antikythera-17, 2026-09-01;
+### owner decides)
+Both preprints to SocArXiv together (mutual citation), paper 2 to Hacker
+News first with the post quoting the paper's own hedge line, paper 1 to
+HN one to two weeks later. A lay-summary paragraph does not exist in
+either draft and needs writing (outreach session drafts, paper session
+fact-checks numbers, owner signs off, prose rules apply).
+
+### Pending owner decisions
+1. Ownership of paper_1 (original session gone from the bus; this session
+   edited it under per-change approval).
+2. Whether talecK/antikythera goes public at preprint time (both papers
+   currently say "private during review; public at publication"; an HN
+   thread will ask for it).
+
+### Session hygiene
+Multiple sessions touched the repo today (paper_1, paper_2, outreach
+antikythera-17, plus this one). Working tree is clean at 468e859; nothing
+is uncommitted or session-local except the rendered artifact HTML, which
+the script regenerates. A new session picking up both papers needs only
+this block, the two drafts, and the memory files.
+
 ## Status: FINAL on HN (run 8, registered 63b72d9). Under a
 ## shuffle-calibrated criterion there is NO above-chance gap formation in
 ## either space (author 3/364 & 1/110 vs ~1% floor; thread 20/25,161 &
