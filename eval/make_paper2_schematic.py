@@ -133,7 +133,7 @@ def panel_c(ax, box):
     x, y, w, h = box
     top = y + h
     n = 24
-    qw = (w * 0.62) / n
+    qw = w / n                      # strip spans the full content width
     strip_y = top - 0.12 - 0.10
     for i in range(n):
         ax.add_patch(Rectangle((x + i * qw, strip_y), qw * 0.88, 0.10,
@@ -150,7 +150,7 @@ def panel_c(ax, box):
                                fc=RED, alpha=0.40, ec="none"))
         text(ax, bx + 6 * qw + 0.06, ry - 0.08, f"window {k + 1}",
              size=T_SMALL, color=MUTED, va="center")
-    lx = x + w * 0.62 + 0.15
+    lx = x + w - 1.30               # legend block, right edge inside the card
     for k, (fc, a, s) in enumerate([(BLUE, 0.35, "build, 4 quarters"),
                                     (RED, 0.40, "evaluate, 2 quarters"),
                                     (None, 0, "step 1 quarter, 19 windows")]):
