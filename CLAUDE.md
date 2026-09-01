@@ -31,6 +31,14 @@ architecture, and protocol.
   per (doc, extractor).
 - Communication: terse, conclusions first, numbered lists, execution over
   explanation.
+- **This repo goes public at publication; its full history goes with it.**
+  Anything that assesses a named person — outreach targets, co-author or
+  referee strategy, "ally/adversary" framing, response-odds guesses,
+  contact details — lives in `private/` (gitignored) and NEVER in a
+  tracked file or a commit message. Papers, registrations, run reports,
+  and adversarial reviews of our own work belong in history; opinions
+  about people do not. A slip here required a history rewrite and
+  force-push on 2026-09-01.
 - Launch long-running pipeline stages with stdout redirected to a FILE
   (`>> run.log 2>&1`), never through `| tail` / `| grep` — pipes buffer and
   blind the run until exit (bitten twice, 2026-08-29). Read the log file to
