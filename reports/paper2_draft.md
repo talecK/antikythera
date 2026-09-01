@@ -44,11 +44,13 @@ cannot manufacture the excursion; the real values sit roughly 24 to 31
 placebo standard deviations out. The analysis-oriented control
 communities stay walled straight through the squeeze, at z = -7.7 and
 -8.6 in the same two windows, so the excursion is specific to
-r/wallstreetbets, not to the era. On timing, the onset quarter
-contained both candidate causes at once: the subscriber explosion and
-the moderation overhaul that followed the squeeze. The registration
-named that case in advance as one the design cannot split, so the
-study dates the transition but does not pick its mechanism.
+r/wallstreetbets, not to the era. Two candidate causes for the walls
+were in play: the community's sudden thirty-fold growth during the
+squeeze, and the moderation overhaul in the months after it. Before
+any result existed, the registration ruled that an onset in mid-2021
+would be consistent with either. The onset landed exactly there, so
+the study answers when the walls went up but cannot say which of the
+two built them.
 
 ---
 
