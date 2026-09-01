@@ -23,12 +23,12 @@ from paper2_figstyle import (BLUE, ORANGE, GREEN, RED, GREY, BAND, INK, MUTED,
                              FIG_W, save)
 
 # ---- geometry (inches) --------------------------------------------------
-M = 0.20          # outer margin, all four sides
+M = 0.0           # outer margin is applied at save (PAD_X / PAD_Y)
 G = 0.25          # gutter between cards
 P = 0.12          # inner padding of every card
 HEAD = 0.24       # header band inside each card (letter + title)
 R1 = 2.05         # height of rows 1 and 2
-R3 = 1.60         # height of row 3
+R3 = 1.85         # height of row 3
 CW = (FIG_W - 2 * M - G) / 2          # card width, two-column rows
 FIG_H = 2 * M + 2 * R1 + R3 + 2 * G   # total height
 
@@ -139,8 +139,8 @@ def panel_c(ax, box):
         ax.add_patch(Rectangle((x + i * qw, strip_y), qw * 0.88, 0.10,
                                fc=BAND, ec="none"))
         if i % 4 == 0:
-            text(ax, x + i * qw + qw * 0.44, top, str(2019 + i // 4),
-                 size=T_SMALL, color=MUTED, ha="center")
+            text(ax, x + i * qw, top, str(2019 + i // 4), size=T_SMALL,
+                 color=MUTED, ha="left")
     rows = [strip_y - 0.13 - k * 0.22 for k in range(3)]
     for k, ry in enumerate(rows):
         bx = x + k * qw

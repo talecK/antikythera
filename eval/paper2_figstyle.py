@@ -33,7 +33,10 @@ SURFACE = "#ffffff"
 MARKERS = {BLUE: "o", ORANGE: "s", GREEN: "^"}   # secondary encoding
 
 FIG_W = 7.0           # inches, full text width
-PAD = 0.06            # outer padding at save, inches
+DPI = 300
+PAD_X = 32 / DPI      # outer padding at save: 32 px horizontally at 300 dpi
+PAD_Y = 24 / DPI      # 24 px vertically
+PAD = PAD_Y           # kept for rcParams; save() applies the asymmetric pad
 
 plt.rcParams.update({
     "font.size": 8,
@@ -90,9 +93,45 @@ def title_and_legend(ax, title, legend=True, ncol=4):
 
 
 def save(fig, name, tight=True):
-    """tight=True crops to content with PAD on every side (data figures);
-    tight=False keeps the figure's own fixed margins (the schematic)."""
-    kw = {} if tight else dict(bbox_inches=None, pad_inches=0)
+    """Crop to the drawn content, then pad by PAD_X horizontally and PAD_Y
+    vertically, so every figure has the same outer padding regardless of
+    how its axes or cards are laid out. (`tight` is accepted for
+    compatibility; both paths now use the same rule.)"""
+    import numpy as np
+    from matplotlib.transforms import Bbox
+    from matplotlib.text import Text
+    from matplotlib.patches import Patch
+    from matplotlib.lines import Line2D
+    from matplotlib.collections import Collection
+    fig.canvas.draw()
+    r = fig.canvas.get_renderer()
+    if all(ax.axison for ax in fig.axes):
+        px = fig.get_tightbbox(r).transformed(fig.dpi_scale_trans)
+    else:
+        # axis-off canvases (the schematic): an off axis still reports its
+        # spines and ticks at full extent, so union only the drawn artists
+        skip = {fig.patch}
+        for ax in fig.axes:
+            skip.add(ax.patch)
+            if not ax.axison:
+                for parent in [ax.xaxis, ax.yaxis, *ax.spines.values()]:
+                    skip.update(parent.findobj())
+        boxes = []
+        for a in fig.findobj():
+            if a in skip or not a.get_visible():
+                continue
+            if not isinstance(a, (Text, Patch, Line2D, Collection)):
+                continue
+            try:
+                b = a.get_window_extent(r)
+            except Exception:
+                continue
+            if b.width > 0 and b.height > 0 and np.isfinite(b.extents).all():
+                boxes.append(b)
+        px = Bbox.union(boxes)                  # display pixels
+    bb = Bbox.from_extents(px.x0 / fig.dpi - PAD_X, px.y0 / fig.dpi - PAD_Y,
+                           px.x1 / fig.dpi + PAD_X, px.y1 / fig.dpi + PAD_Y)
+    kw = dict(bbox_inches=bb, pad_inches=0)
     fig.savefig(os.path.join(FIG_DIR, name + ".png"), **kw)
     fig.savefig(os.path.join(FIG_DIR, name + ".pdf"), **kw)
     plt.close(fig)
