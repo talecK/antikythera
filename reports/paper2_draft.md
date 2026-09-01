@@ -46,11 +46,10 @@ communities stay walled straight through the squeeze, at z = -7.7 and
 -8.6 in the same two windows, so the excursion is specific to
 r/wallstreetbets, not to the era. Two candidate causes for the walls
 were in play: the community's sudden thirty-fold growth during the
-squeeze, and the moderation overhaul in the months after it. Before
-any result existed, the registration ruled that an onset in mid-2021
-would be consistent with either. The onset landed exactly there, so
-the study answers when the walls went up but cannot say which of the
-two built them.
+squeeze, and the moderation overhaul in the months after it. We said
+in advance that an onset in mid-2021 could point to either cause. That
+is where the onset fell. So the study can say when the walls went up,
+but not which cause built them.
 
 ---
 
