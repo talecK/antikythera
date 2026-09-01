@@ -2,54 +2,56 @@
 
 **Author:** Kevin Quiring (independent researcher)
 
-**Draft v0.2, 2026-08-31. Registered study (preregistration_paper2.md,
+**Draft v0.3, 2026-08-31. Registered study (preregistration_paper2.md,
 commit 99ffd9e, amendments V1-V4). All numbers are from the
 registration-conforming run (commit 21a9dc7); a disclosed implementation
 deviation and its rule-bound correction are reported in Section 4.6.
-Awaiting author prose pass.**
+Commit references for every quantity are collected in the provenance
+table at the end. Awaiting author prose pass.**
 
 ---
 
 ## Abstract
 
-A companion study of idea segregation in online discourse (Quiring 2026,
-"The gaps that don't close") found that concept pairs which should
-co-occur but never have ("suppressed" pairs) stay apart at rates far
-below chance in every community measured, on two platforms, with a
-single exception: r/wallstreetbets before 2020 sat exactly at chance,
+A companion study of idea segregation in online discourse found that
+concept pairs which should co-occur but never have ("suppressed" pairs)
+stay apart at rates far below chance in every community measured, on
+two platforms (Quiring 2026, "The gaps that don't close"). The single
+exception was r/wallstreetbets: before 2020 it sat exactly at chance,
 and by 2024 it was walled like everywhere else. This is the only
 transition between segregation states observed anywhere in the program.
 Here we report a registered study of when the transition happened and
-what its timing can and cannot say about why. On a fresh single-source
-corpus of 98.1 million Reddit posts and comments (2019-2024, one API,
-one pull era, never mixed with the earlier corpus), rolling quarterly
-windows test three predictions committed before any statistic was
-computed: that the transition is visible and localizable at quarterly
-resolution (P1), that its onset falls within 2021 (P2), and that an
-analysis-oriented control stratum shows no comparable discontinuity
-(P3). All three pass. r/wallstreetbets moves from chance-level mixing
-(z = +1.5 in two consecutive pre-onset windows) to persistent walls
-(z between -4.6 and -11.0 in all fourteen windows from onset onward,
-with zero reversions), and the onset date is 2021-04-01. The central
-finding lies between those regimes. In the two evaluation windows
-straddling the January 2021 GameStop episode, suppressed ticker pairs
-co-mention 28.6 and 30.9 standard deviations above their shuffle nulls,
-the only above-chance excursion in five years of windows and the only
-one this program has observed at any granularity on either platform. A
-forty-replicate truth-null placebo running the full registered
-statistic shows that the machinery cannot manufacture the excursion:
-placebo z values are distributed approximately as N(0,1), and the real
-values sit roughly 24 to 31 placebo standard deviations out. The
-control stratum stays walled straight through the squeeze (z = -7.7 and
--8.6 in the same two windows), so the fusion is specific to one
-community, not to the era. The measured onset lands in the case the
-registration named in advance as non-separable (the subscriber
-explosion and the governance overhaul were both active in that
-quarter), so the timing is reported as ordering evidence rather than as
-mechanism identification. An implementation deviation caught after the
-first run (an omitted ticker-exclusion filter) was corrected by
-re-running the unchanged frozen rules; both runs are disclosed, both
-outputs are released, and they agree on every verdict.
+what its timing can and cannot say about why. The study runs on a fresh
+single-source corpus of 98.1 million Reddit posts and comments covering
+2019-2024, pulled from one API in one era and never mixed with the
+earlier corpus. Rolling quarterly windows test three predictions
+committed before any statistic was computed: the transition is visible
+and localizable at quarterly resolution (P1), its onset falls within
+2021 (P2), and an analysis-oriented control stratum shows no comparable
+discontinuity (P3). All three pass. r/wallstreetbets moves from
+chance-level mixing, with z = +1.5 in two consecutive pre-onset
+windows, to persistent walls, with z between -4.6 and -11.0 in all
+fourteen windows from onset onward and zero reversions. The onset date
+is 2021-04-01. The central finding lies between those regimes. In the
+two evaluation windows straddling the January 2021 GameStop episode,
+suppressed ticker pairs co-mention 28.6 and 30.9 standard deviations
+above their shuffle nulls. This is the only above-chance excursion in
+five years of windows, and the only one this program has observed at
+any granularity on either platform. A forty-replicate truth-null
+placebo running the full registered statistic shows that the machinery
+cannot manufacture the excursion. Placebo z values are distributed
+approximately as N(0,1), and the real values sit roughly 24 to 31
+placebo standard deviations out. The control stratum stays walled
+straight through the squeeze, at z = -7.7 and -8.6 in the same two
+windows, so the fusion is specific to one community, not to the era.
+The measured onset lands in the case the registration named in advance
+as non-separable: the subscriber explosion and the governance overhaul
+were both active in that quarter. The timing is therefore reported as
+ordering evidence rather than as mechanism identification. An
+implementation deviation caught after the first run (an omitted
+ticker-exclusion filter) was corrected by re-running the unchanged
+frozen rules; both runs are disclosed, both outputs are released, and
+they agree on every verdict.
 
 ---
 
@@ -66,13 +68,13 @@ result was segregation: the communities of attention around two
 never-connected ideas stay apart, on every platform and at every
 granularity measured.
 
-There was one exception. In the replication corpus (Reddit financial
+There was one exception. The replication corpus is Reddit financial
 discussion, where the concept unit is the stock ticker, regex-extracted
-with no language model in the loop), the meme-oriented community
-r/wallstreetbets sat exactly at chance in the pre-2020 fold
-(segregation z = -0.1, where an effect of the size seen in the
-analysis-oriented subreddits would have registered near -7), and was
-strongly walled in the post-2021 fold (z = -9.0), like every other
+with no language model in the loop. There, the meme-oriented community
+r/wallstreetbets sat exactly at chance in the pre-2020 fold:
+segregation z = -0.1, where an effect of the size seen in the
+analysis-oriented subreddits would have registered near -7. In the
+post-2021 fold it was strongly walled (z = -9.0), like every other
 stratum. The companion paper reported this as a described observation
 and declined to interpret it, for three stated reasons: the two folds
 sit on opposite sides of the 2020-2021 market regime break (era
@@ -97,19 +99,19 @@ an era-wide shift that any finance community of the period would show
 (P3)?
 
 The design addresses the three confounds in order. A fresh corpus of
-98.1 million posts and comments, covering r/wallstreetbets and five
+98.1 million posts and comments covers r/wallstreetbets and five
 analysis-oriented control subreddits continuously from 2019 through
-2024 and acquired from a single source in a single pull era, removes
-the provenance seam entirely; a confirmatory Part A verifies that the
-companion paper's walled endpoint survives on uniform provenance. A
-rolling-window design over continuous time, with the control stratum
+2024, acquired from a single source in a single pull era. That removes
+the provenance seam entirely, and a confirmatory Part A verifies that
+the companion paper's walled endpoint survives on uniform provenance.
+A rolling-window design over continuous time, with the control stratum
 computed identically alongside, answers (though cannot eliminate) the
 era confound: there is no fold boundary for a regime break to hide in,
-and an era-wide effect would move both strata. The registration,
-committed with its window definitions, thresholds, onset rule, and
-primary cell frozen before any outcome was computed, with outcome-blind
-census gates in between, removes the post-hoc character of the original
-observation.
+and an era-wide effect would move both strata. The registration removes
+the post-hoc character of the original observation: window definitions,
+thresholds, onset rule, and primary cell were frozen and committed
+before any outcome was computed, with outcome-blind census gates in
+between.
 
 All three registered predictions pass. The transition is real, sharp,
 and dated: onset 2021-04-01, with chance-level mixing before it and
@@ -143,17 +145,17 @@ subreddits into two strata: MEME (r/wallstreetbets alone, hereafter
 WSB) and DD (the union of five analysis-oriented subreddits:
 r/SecurityAnalysis, r/ValueInvesting, r/StockMarket, r/stocks,
 r/investing). The document is one author's ticker mentions within one
-calendar quarter; a pair of frequently mentioned tickers is *eligible*
+calendar quarter. A pair of frequently mentioned tickers is *eligible*
 ("suppressed") in a build window if its expected joint document count
-is at least 2 while its observed co-mention count is zero; and the
+is at least 2 while its observed co-mention count is zero. The
 segregation statistic is the total observed eval-window co-mention
 count over all eligible pairs, standardized against a label-shuffle
 null (Section 4.1). Two temporal folds bracket the 2020-2021 regime
 break: build 2017-2018 with evaluation 2019 (fold A), and build
 2022-2023 with evaluation 2024 (fold B).
 
-The post-review gate table (companion paper Section 6.3; gate v2 run,
-commit f89cb2b there) reads:
+The post-review gate table (companion paper Section 6.3, gate v2 run)
+reads:
 
 | stratum | fold A (eval 2019) | fold B (eval 2024) |
 |---------|-------------------:|-------------------:|
@@ -162,8 +164,8 @@ commit f89cb2b there) reads:
 | WSB | **-0.1** | **-9.0** |
 
 (The registration for the present study, drafted from the pre-review
-gate run, quotes the earlier values -0.2 and -8.7 for the WSB cells;
-the difference is the gate's post-review exclusion fix plus Monte Carlo
+gate run, quotes the earlier values -0.2 and -8.7 for the WSB cells.
+The difference is the gate's post-review exclusion fix plus Monte Carlo
 noise and is immaterial to every bar here.)
 
 WSB's fold-A chance reading is well measured: the registered
@@ -173,10 +175,9 @@ have shown near z = -7. The observation is therefore that the one
 wall-free community ever measured in this program grew walls somewhere
 between 2019 and 2024. The companion paper is final on that
 observation; this study cites it and does not reopen it (its Section
-6.3, gate table commit 1386fc0). The question here is *when* the walls
-went up, at quarterly resolution, and whether the timing, read against
-a pre-committed list of dated governance events, can order the
-candidate mechanisms.
+6.3). The question here is *when* the walls went up, at quarterly
+resolution, and whether the timing, read against a pre-committed list
+of dated governance events, can order the candidate mechanisms.
 
 The candidate mechanisms, stated before any window was computed
 (registration; reports/paper2_seed.md):
@@ -206,7 +207,7 @@ monthly shards of WSB posts and comments spanning 2019-01 through
 totaling 98,084,631 rows (about 5.6 GB compressed). The corpus is
 never mixed with the companion paper's corpus: one source, one pull
 era, uniform fields for treatment and control strata alike. This
-uniformity is the design answer to the provenance confound: there is
+uniformity is the design answer to the provenance confound. There is
 no archival/API seam anywhere in the data, and in particular none
 co-located with the phenomenon under study.
 
@@ -215,12 +216,12 @@ AutoModerator dropped; deduplication by item id; ticker extraction by
 the gate's frozen extractor (union lens primary, cashtag lens
 sensitivity, committed stoplist, SEC registrant-table resolution,
 macro-hub tickers excluded, hub guard at 50 tickers per document).
-Extraction yields 11,200,484 ticker mentions (commit 8db5012; the
-exclusion-filter deviation and correction affecting the downstream
-loaders is disclosed in Section 4.6). The 2020-2021 regime-break years
-are deliberately *included*: prior studies in this program excluded
-them as a confound, but here the transition is the object of study
-(registration, gate decision 2).
+Extraction yields 11,200,484 ticker mentions. The exclusion-filter
+deviation and correction affecting the downstream loaders is disclosed
+in Section 4.6. The 2020-2021 regime-break years are deliberately
+*included*: prior studies in this program excluded them as a confound,
+but here the transition is the object of study (registration, gate
+decision 2).
 
 ### 3.2 Outcome-blind integrity checks
 
@@ -229,11 +230,10 @@ full-parse integrity check (pipeline/validate_paper2.py): no missing
 shard, no unparseable line, no month with more than 1% out-of-span
 timestamps, no month at zero or below 5% of its neighbours. The
 complete per-shard volume table was committed as a dated amendment to
-the registration (Amendment V1, commit 63b7f6e;
-reports/paper2_volume_table.tsv) before any window census existed.
-Spot-checks against the prior acquisition era's runbook match exactly
-(for example, 2022-06 = 1.13M, 2023-09 = 510K, 2024-03 = 962K WSB
-comments).
+the registration (Amendment V1; reports/paper2_volume_table.tsv) before
+any window census existed. Spot-checks against the prior acquisition
+era's runbook match exactly (for example, 2022-06 = 1.13M, 2023-09 =
+510K, 2024-03 = 962K WSB comments).
 
 Two observations were recorded in that amendment, before any outcome
 existed, precisely because a result could later be blamed on them.
@@ -243,7 +243,7 @@ March 2020 (COVID) and 8.0 million in January 2021 (GameStop), then
 decay to under a million by 2023. Volume is not the studied statistic,
 and the shuffle null conditions on the realized documents of each
 window. Second, one control subreddit (r/SecurityAnalysis) decays to a
-few thousand comments per year by 2023-24; the DD control is
+few thousand comments per year by 2023-24. The DD control is
 registered as the union of five subreddits, so this changes nothing,
 but the per-sub sparsity was noted before anyone saw a result it could
 explain.
@@ -252,9 +252,8 @@ explain.
 
 The full registration (preregistration_paper2.md) was frozen and
 committed, with the owner's explicit go recorded, before any outcome
-statistic was computed (commit 99ffd9e); its amendments V1-V4 are dated
-appendices, never rewordings. The study has two parts sharing one
-acquisition.
+statistic was computed; its amendments V1-V4 are dated appendices,
+never rewordings. The study has two parts sharing one acquisition.
 
 ### 4.1 Part B: rolling windows and the primary statistic
 
@@ -269,16 +268,16 @@ count E = f_i·f_j/N ≥ 2 with zero observed build co-mentions.
 
 The primary statistic per window is the program's run-8 segregation z:
 the total observed eval co-mention document count over all eligible
-pairs, standardized against a label-shuffle null (concept labels
-permuted over the (document, ticker) incidences of the frequent set,
-within-document duplicates collapsed; R = 100 replicates, numpy
-default_rng seed 20260831). The evaluation script imports the gate's
-machinery, so the statistic is identical by construction, and a
-registered determinism rule (from the gate's adversarial review)
-requires every incidence list to be sorted before permutation so that
-no set or dict iteration order can feed the seeded RNG. The script
-refuses to run unless the registration status is REGISTERED (commit
-35914d2). Formation counts per window (eligible pairs newly
+pairs, standardized against a label-shuffle null. The null permutes
+concept labels over the (document, ticker) incidences of the frequent
+set, with within-document duplicates collapsed, using R = 100
+replicates and numpy default_rng seed 20260831. The evaluation script
+imports the gate's machinery, so the statistic is identical by
+construction. A registered determinism rule, carried over from the
+gate's adversarial review, requires every incidence list to be sorted
+before permutation, so no set or dict iteration order can feed the
+seeded RNG. The script refuses to run unless the registration status
+is REGISTERED. Formation counts per window (eligible pairs newly
 co-mentioning beyond their per-pair permutation thresholds) are a
 registered *secondary* readout with no bar attached: the gate's power
 table shows them underpowered at these window sizes.
@@ -291,28 +290,28 @@ UNINFORMATIVE, never as a negative).
 ### 4.2 Outcome-blind census gate and the window-length ladder
 
 Window length B was chosen from {4, 6, 8} quarters by a registered
-ladder, namely the shortest B whose per-window census gives a median
-eligible-pair count of at least 100 in the WSB/union cell, so that the
-choice is a census property rather than a researcher degree of freedom.
-The census (eligibility structure only; the census script imports the
-document builder but structurally cannot compute the statistic) was
-computed, committed as a dated amendment, and owner-reviewed before the
-first segregation z existed (Amendment V3, commit b86c378; corrected
-census, Section 4.6, commit 80b3b37). The ladder chose **B = 4**: on
-the corrected census the B=4 WSB/union cell has median 115 eligible
-pairs per window (range 45-498 over 19 windows), and *no* window in any
-B, either stratum, union lens, falls below the registered LOW-POWER
-floor of 30 eligible pairs, so every window enters the onset rule.
-B = 6 and B = 8 become registered sensitivity curves, computed and
-reported regardless of outcome, so that the window-length choice cannot
-be what makes a transition appear.
+ladder: the shortest B whose per-window census gives a median
+eligible-pair count of at least 100 in the WSB/union cell. The ladder
+makes the choice a census property rather than a researcher degree of
+freedom. The census covers eligibility structure only; the census
+script imports the document builder but structurally cannot compute
+the statistic. It was computed, committed as a dated amendment, and
+owner-reviewed before the first segregation z existed (Amendment V3;
+corrected census in Section 4.6). The ladder chose **B = 4**: on the
+corrected census the B=4 WSB/union cell has a median of 115 eligible
+pairs per window, with range 45-498 over 19 windows. No window at any
+B, in either stratum under the union lens, falls below the registered
+LOW-POWER floor of 30 eligible pairs, so every window enters the onset
+rule. B = 6 and B = 8 become registered sensitivity curves, computed
+and reported regardless of outcome, so that the window-length choice
+cannot be what makes a transition appear.
 
 One census property was recorded in the amendment before any z existed,
 and it binds how results are displayed: eligible-pair counts co-move
 with era volume, so between-window z magnitudes are different-powered
-tests. Per-window z values are each internally calibrated (the null
-conditions on that window's realized documents), and the onset rule
-uses only per-window threshold crossings; but a reader comparing raw z
+tests. Per-window z values are each internally calibrated, because the
+null conditions on that window's realized documents, and the onset rule
+uses only per-window threshold crossings. But a reader comparing raw z
 magnitudes across windows is comparing tests whose eligible universes
 differ by up to a factor of ten. For this reason every z series in this
 paper, in every figure and every table, carries its eligible-pair
@@ -339,11 +338,11 @@ w's evaluation interval. If no such window exists, there is no onset.
 
 P1 and P2 are scored on the WSB stratum, union lens, at the
 ladder-chosen B = 4; P3 on the DD stratum, union lens, same B. No other
-cell scores any bar (primary-cell clause, committed pre-outcome,
-commit f004bfc). A secondary one-break step fit on the primary z series
-(least-squares, all interior candidate breaks, near-tie set within 10%
-of minimum SSE) was registered pre-census as an uncertainty band on the
-onset date; no bar attaches to it.
+cell scores any bar (primary-cell clause, committed pre-outcome). A
+secondary one-break step fit on the primary z series (least-squares,
+all interior candidate breaks, near-tie set within 10% of minimum SSE)
+was registered pre-census as an uncertainty band on the onset date. No
+bar attaches to it.
 
 The registration also states its own epistemic position: the two
 fold-level endpoints were known and could not be un-seen, so what is
@@ -356,19 +355,19 @@ and timing of the transition, not on its existence at the endpoints.
 
 Part A rebuilds the companion paper's fold B with the archival-dump
 months replaced by API months from this pull, giving uniform API
-provenance in both folds, and recomputes the WSB-dependent gate cells
-under the frozen gate criterion, reusing the gate evaluation code
-verbatim (same per-pair label-shuffle p99, R = 100, seed 20260831,
-formation floor, and segregation z). The registered expectation is that
-fold-B MEME segregation z stays ≤ -3, i.e., that the walled endpoint is
-real and not a provenance artifact. Part A removes the provenance
-confound only; it says nothing about timing.
+provenance in both folds. It then recomputes the WSB-dependent gate
+cells under the frozen gate criterion, reusing the gate evaluation
+code verbatim: same per-pair label-shuffle p99, R = 100, seed
+20260831, formation floor, and segregation z. The registered
+expectation is that fold-B MEME segregation z stays ≤ -3, i.e., that
+the walled endpoint is real and not a provenance artifact. Part A
+removes the provenance confound only; it says nothing about timing.
 
 ### 4.5 Causal anchors, committed before any window
 
 Because "the onset matches event X" is cheap after the fact, a list of
 dated WSB governance events was collected and committed before any
-rolling-window statistic existed (Amendment V2, commit 3fa0d73;
+rolling-window statistic existed (Amendment V2;
 reports/paper2_anchors.md). Eight anchors A1-A8 span April 2020 through
 August 2021: the pre-event removal of the subreddit's founder (A1,
 2020-04); the GameStop squeeze and roughly 30x subscriber explosion
@@ -393,45 +392,44 @@ P3 its power against era-wide narratives.
 ### 4.6 Disclosed deviation and rule-bound correction (Amendment V4)
 
 The first full run of the three paper-2 scripts (census, rolling
-windows, Part A) deviated from the registered spec: the scripts loaded
+windows, Part A) deviated from the registered spec. The scripts loaded
 mention rows directly from the extraction parquet and omitted the
-load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH) that the
-gate applies as its frozen macro-hub exclusion and that this
-registration incorporates by reference ("identical to the gate"). The
-omission was found by a code diff during cross-checking against the
-gate's tables, *after* first-run outcomes had been seen, and is
-disclosed as Amendment V4 (commit fbf3ace) with a rule-bound correction
-path: the filter was added to the three loaders; the census was
-re-derived and the window-length ladder re-decided by the unchanged
-registered rule (B = 4 stands; committed before any corrected z
-existed, commit 80b3b37); and Parts A and B were re-run under the
-unchanged bars, seeds, and window definitions. No bar, threshold, seed,
-window definition, or onset rule changed at any point.
+load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH). The gate
+applies that filter as its frozen macro-hub exclusion, and this
+registration incorporates it by reference ("identical to the gate").
+The omission was found by a code diff during cross-checking against
+the gate's tables, *after* first-run outcomes had been seen, and is
+disclosed as Amendment V4.
+
+The correction path is rule-bound. The filter was added to the three
+loaders. The census was re-derived and the window-length ladder
+re-decided by the unchanged registered rule; B = 4 stands, and the
+re-decision was committed before any corrected z existed. Parts A and
+B were then re-run under the unchanged bars, seeds, and window
+definitions. No bar, threshold, seed, window definition, or onset rule
+changed at any point.
 
 Because first-run outcomes were seen before the correction, the
 protection is exactly that every re-derivation step is a frozen rule
 with no free parameter. Both runs are released: the first-run outputs
-are retained as superseded artifacts
-(reports/paper2_windows_z_v1_superseded.tsv,
-reports/paper2_window_census_v1_superseded.tsv), the conforming run's
-outputs are the operative tables (reports/paper2_windows_z.tsv,
-reports/paper2_window_census.tsv), and **the two runs agree on every
-verdict**: same onset window, same P1/P2/P3 outcomes, same excursion
-and control readings. Every number in Section 5 is from the conforming
-run (commit 21a9dc7). A related target correction is disclosed in the
-same amendment: the census consistency anchor recorded in Amendment V3
-compared two pre-exclusion quantities (their agreement was real but
-old-vs-old); the operative target is the gate v2 census value, and the
-corrected comparison is reported in Section 5.5.
+are retained as superseded artifacts, and the conforming run's outputs
+are the operative tables (file names in the provenance table). **The
+two runs agree on every verdict**: same onset window, same P1/P2/P3
+outcomes, same excursion and control readings. Every number in Section
+5 is from the conforming run. A related target correction is disclosed
+in the same amendment: the census consistency anchor recorded in
+Amendment V3 compared two pre-exclusion quantities; the agreement was
+real but old-vs-old. The operative target is the gate v2 census value,
+and the corrected comparison is reported in Section 5.5.
 
 ## 5. Results
 
 All numbers in this section are from the registration-conforming run
-(reports/paper2_windows_z.tsv and reports/paper2_results.md, commit
-21a9dc7). Throughout, every z series is tabulated with its
-eligible-pair counts, per the registered display rule (Section 4.2):
-between-window z magnitudes are different-powered tests, and the pair
-counts are the power context.
+(reports/paper2_windows_z.tsv and reports/paper2_results.md).
+Throughout, every z series is tabulated with its eligible-pair counts,
+per the registered display rule (Section 4.2): between-window z
+magnitudes are different-powered tests, and the pair counts are the
+power context.
 
 ### 5.1 The endpoint survives uniform provenance (Part A)
 
@@ -519,14 +517,14 @@ design. The claim is z-first, and the z is unambiguous.
 scrutiny the companion paper applied to its own false positive: its
 central cautionary finding was a formation effect manufactured by the
 measuring stick, caught by a label-shuffle placebo. The same pattern
-was applied to this excursion (post-registration robustness check, in
-the registered placebo's mold; commit 7bef4a2). Forty truth-null
-replicates ask whether the machinery can produce the excursion from
-GME-era document structure alone. Each replicate applies an *outer*
-label shuffle that destroys any real author-ticker association, then
-recomputes the full registered statistic from scratch (eligibility
-construction, inner shuffle null, R = 100), with 20 replicates per
-excursion window and per-replicate seeds documented:
+was applied to this excursion, as a post-registration robustness check
+in the registered placebo's mold. Forty truth-null replicates ask
+whether the machinery can produce the excursion from GME-era document
+structure alone. Each replicate applies an *outer* label shuffle that
+destroys any real author-ticker association, then recomputes the full
+registered statistic from scratch (eligibility construction, inner
+shuffle null, R = 100), with 20 replicates per excursion window and
+per-replicate seeds documented:
 
 | window (eval) | placebo z mean | sd | min | max | placebo formed max | real z / formed |
 |---|---:|---:|---:|---:|---:|---|
@@ -606,45 +604,44 @@ agree to one document in 44 thousand. The agreement is near-exact, not
 identical, and is reported as such (Amendment V4 addendum; the
 superseded V3 anchor had matched two pre-exclusion values exactly).
 
-**Power context, restated.** Eligible-pair counts range 45-498 across
-the primary series; the deep-wall z values of 2021-2022 sit on the
-largest universes (373-498 pairs) and the pre-onset chance readings on
-the smallest (45-77). The onset rule is threshold-based and per-window
-calibrated, so this cannot move a verdict, but it is why the figures
-place the pair-count series directly under every z panel, and why we
-do not interpret, for example, -11.0 (2024Q1, 71 pairs) as deeper than
--9.0 (2021Q3, 391 pairs).
+**Power context.** Eligible-pair counts range 45-498 across the
+primary series. The deep-wall z values of 2021-2022 sit on the largest
+universes (373-498 pairs) and the pre-onset chance readings on the
+smallest (45-77). Section 4.2's display rule exists for exactly this
+reason: threshold verdicts are per-window calibrated, cross-window
+magnitude comparisons are not, and so we do not read -11.0 (2024Q1, 71
+pairs) as deeper than -9.0 (2021Q3, 391 pairs).
 
 ## 6. Discussion
 
 ### 6.1 What the registered result establishes, and the mechanism it does not pick
 
 With P1, P2, and P3 all passing, the registered claim stands as
-designed: **a WSB-specific structural transition, onset 2021-04-01**,
-from the only chance-level mixing state this program has observed, to
-walls indistinguishable from every other measured community, through
-the only above-chance excursion this program has observed, while the
+designed: **a WSB-specific structural transition, onset 2021-04-01**.
+The community moved from the only chance-level mixing state this
+program has observed, through its only above-chance excursion, to
+walls indistinguishable from every other measured community. The
 control stratum moved gradually and monotonically the whole time.
 
 What the timing does *not* do is pick a mechanism, and the registration
 constrains what we may conclude here. The anchors amendment froze the
-discrimination rule before any window existed: onset in 2021Q1 would
-have favored scale/fragmentation (the subscriber explosion, A2); onset
+discrimination rule before any window existed. Onset in 2021Q1 would
+have favored scale/fragmentation (the subscriber explosion, A2). Onset
 in late 2021 would have favored governance (the mod-team regime change,
-ticker-filter bot, megathread containment, and market-cap ban, A4-A8);
-and onset in 2021Q2 was named, in advance, as the non-separable case in
-which both mechanism families are active and the design supports
-neither over the other. The measured onset is 2021Q2. The ordering
-evidence is still worth recording: the onset follows the squeeze and
-the governance regime change rather than preceding them, and its first
-evaluation quarter contains the containment-by-megathread anchors (A6,
-A7, mid-April 2021). But the scale shock is only one quarter older, and
-at two-quarter evaluation resolution the design cannot cut between
-them. Separating the mechanisms would need a different instrument,
-such as engagement-stratified or cohort-stratified readouts on the same
-corpus (the acquisition deliberately collected the `score` field for
-exactly this follow-up, under a separate registration), not a sharper
-reading of this one.
+ticker-filter bot, megathread containment, and market-cap ban, A4-A8).
+Onset in 2021Q2 was named, in advance, as the non-separable case: both
+mechanism families active, and the design supporting neither over the
+other. The measured onset is 2021Q2. The ordering evidence is still
+worth recording: the onset follows the squeeze and the governance
+regime change rather than preceding them, and its first evaluation
+quarter contains the containment-by-megathread anchors (A6, A7,
+mid-April 2021). But the scale shock is only one quarter older, and at
+two-quarter evaluation resolution the design cannot cut between them.
+Separating the mechanisms would need a different instrument, not a
+sharper reading of this one. Engagement-stratified or
+cohort-stratified readouts on the same corpus are the natural
+candidates; the acquisition deliberately collected the `score` field
+for exactly this follow-up, under a separate registration.
 
 Likewise stated directly: the era confound is answered by design, not
 eliminated. A continuous within-community series under uniform
@@ -661,7 +658,7 @@ anchors amendment describes.
 Nothing in this subsection is a registered claim; these are the
 readings the registered results invite, offered with their status
 marked (recorded pre-publication in reports/paper2_results.md,
-discussion notes, and commit d184472).
+discussion notes).
 
 **The three-regime arc (descriptive, non-registered).** One community,
 five years, all three states this program's statistic can express:
@@ -673,21 +670,22 @@ and the walls begin exactly as it ends.
 
 **Cascade susceptibility (interpretive, non-registered, speculative).**
 The arc is consistent with a reading in which chance-level mixing is
-the *substrate* of the cascade rather than its casualty: a community
+the *substrate* of the cascade rather than its casualty. A community
 whose idea-audiences freely overlap is one where a single story can
-recruit everyone, which is what the excursion measures directly.
-During the squeeze, previously never-connected tickers were being
-discussed by the same people at multiples of chance. On this reading
-the walls are the scar: the event triggered governance and structural
-responses (megathread containment, ticker filtering, spin-off
-fragmentation) that removed the conditions for its own repetition. The
-registered results *describe* every step of that sentence (the
-substrate state, the fusion, the walls, and their order), but the
-causal links between the steps are not claimed, per Section 6.1. We
-note the reading because it inverts the usual valence of this
-program's segregation statistic: chance-level mixing looks "healthy"
-by the lights of the discovery framing the companion paper tested, yet
-here the one mixing community was the one that produced the cascade.
+recruit everyone, and that recruitment is what the excursion measures
+directly: during the squeeze, previously never-connected tickers were
+being discussed by the same people at multiples of chance. On this
+reading the walls are the scar. The event triggered governance and
+structural responses (megathread containment, ticker filtering,
+spin-off fragmentation) that removed the conditions for its own
+repetition. The registered results *describe* every step of that
+sentence (the substrate state, the fusion, the walls, and their
+order), but the causal links between the steps are not claimed, per
+Section 6.1. We note the reading because it inverts the usual valence
+of this program's segregation statistic. Chance-level mixing looks
+"healthy" by the lights of the discovery framing the companion paper
+tested; yet here, the one mixing community was the one that produced
+the cascade.
 
 **Pre-cascade generality (inferential, non-registered).** The companion
 paper could not say whether WSB's fold-A chance reading was a property
@@ -710,9 +708,8 @@ companion paper cites this inference to the present study (its Section
    the placebo nulls each separately).
 2. **Different-powered windows.** Eligible-pair universes range 45-498
    across the primary series. Threshold verdicts are per-window
-   calibrated; cross-window magnitude comparisons are not, and the
-   paper's display rule (pair counts under every z series) exists so no
-   reader makes them inadvertently.
+   calibrated; cross-window magnitude comparisons are not. See the
+   display rule in Section 4.2 and the power context in Section 5.5.
 3. **One community, one platform, one transition.** This is a case
    study of the only transition the program has observed. Nothing here
    establishes how often discourse communities transition, in either
@@ -721,16 +718,16 @@ companion paper cites this inference to the present study (its Section
    which the mixing-deficit instrument makes possible.
 4. **The excursion placebo is post-registration.** It follows the
    companion paper's registered placebo pattern and its per-replicate
-   seeds and code are committed (7bef4a2), but it was designed after
-   the excursion was seen, as a robustness check on a result the
+   seeds and code are committed, but it was designed after the
+   excursion was seen, as a robustness check on a result the
    registration did not predict. The registered claims (P1-P3) do not
    depend on it.
 5. **The V4 deviation.** The first run omitted a registered exclusion
-   filter and its outcomes were seen before correction (Section 4.6).
-   The correction was rule-bound with no free parameter, both runs are
-   released, and every verdict is identical across them. Even so, the
-   strict outcome-blind standard was not met by the first run, and we
-   say so rather than netting the two runs into one clean story.
+   filter, and its outcomes were seen before correction (Section 4.6).
+   The correction was rule-bound, both runs are released, and every
+   verdict is identical across them. Even so, the first run did not
+   meet the strict outcome-blind standard, and we say so rather than
+   netting the two runs into one clean story.
 
 ## 7. Conclusion
 
@@ -780,7 +777,8 @@ ahead of its result. The numbers in this paper trace as follows:
 
 | quantity | artifact | commit |
 |---|---|---|
-| Registration + amendments V1-V4 | preregistration_paper2.md | 99ffd9e (registered); 63b7f6e (V1), 3fa0d73 (V2), b86c378 (V3), fbf3ace + 7cb1109 (V4) |
+| Registration + amendments V1-V4 | preregistration_paper2.md | 99ffd9e (registered); f004bfc (primary-cell + determinism clauses); 63b7f6e (V1), 3fa0d73 (V2), b86c378 (V3), fbf3ace + 7cb1109 (V4) |
+| Ticker extraction (frozen unit rules) | pipeline extractor | 8db5012 |
 | Evaluation code (registration-checked, gate machinery) | eval/run_paper2.py | 35914d2 |
 | Corrected census + B-ladder re-decision (pre-outcome) | reports/paper2_window_census.tsv | 80b3b37 |
 | Conforming-run z series, all 204 cells | reports/paper2_windows_z.tsv | 21a9dc7 |
@@ -789,6 +787,7 @@ ahead of its result. The numbers in this paper trace as follows:
 | First run (superseded, disclosed) | reports/paper2_windows_z_v1_superseded.tsv, paper2_window_census_v1_superseded.tsv | fbf3ace; first-run verdicts 9487884 |
 | Anchors A1-A8 + frozen discrimination reading | reports/paper2_anchors.md | 3fa0d73 |
 | Volume table + integrity pass | reports/paper2_volume_table.tsv | 63b7f6e |
+| Discussion notes (non-registered readings) | reports/paper2_results.md | d184472 |
 | Gate v2 comparison values (companion paper) | gate table / gate_rerun_v2.log | f89cb2b, 1386fc0 |
 
 Raw Reddit content is retrievable via the Arctic Shift API; the release
