@@ -27,7 +27,13 @@
   abstract 200, main text 5,000 excl. Methods, Methods <3,000, 70 refs,
   10 display items), PNAS Nexus alongside, EPJ DS floor; Nature Human
   Behaviour dropped as reach (needs a mechanism claim the paper declines
-  to make). Same file serves SocArXiv. Schematic Figure 1 DONE (cdbb5d8,
+  to make). Same file serves SocArXiv. Later the same day: figures restyled on a shared
+  style module with a validated palette and 64x48 px padding
+  (eval/paper2_figstyle.py; owner markup rounds); jargon passes done
+  (gate/bar/ladder/frozen/provenance and 20 more, each owner-approved).
+  The whole process is written up as reports/paper_polish_playbook.md,
+  the spec for applying the same passes to paper 1 in a new session.
+  Schematic Figure 1 DONE (cdbb5d8,
   eval/make_paper2_schematic.py; old figures now 2-4); body prose pass
   DONE; all DOIs Crossref-verified, Semenova & Winkler cited to its 2025
   Quantitative Finance version. Earlier state, superseded but true of the machinery:
