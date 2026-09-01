@@ -448,7 +448,9 @@ occurs under any conditions: a registered follow-up study on the
 replication corpus (in preparation) finds a confined above-floor
 formation burst inside the 2021 meme-stock cascade windows - windows
 our folds exclude by design as a regime break - with formation at the
-floor in every other window of six years. The negative reported here
+floor in every other window of six years, and confined even then to
+the meme community: the analysis-oriented stratum stayed walled
+straight through the event. The negative reported here
 is about discourse in its ordinary state; what cascades do is that
 study's question.
 
@@ -557,11 +559,11 @@ Carlo noise of the null estimate; build documents differ by one due to
 deduplication order, disclosed in the released run log). A follow-up
 study's independently acquired corpus (same platform, separate API pull
 on a different day, shared unit rules) additionally reproduces the
-first fold's wallstreetbets document count exactly (44,304
-author-quarters), and its registered confirmatory run reproduces the
-second fold's endpoint under uniform single-source provenance (all
-strata walled, formation null), so the second fold's result is not a
-sourcing artifact.
+first fold's wallstreetbets document census to within one document
+(44,013 versus 44,012 author-quarters), and its registered confirmatory
+run reproduces the second fold's endpoint under uniform single-source
+provenance (all strata walled, formation null), so the second fold's
+result is not a sourcing artifact.
 
 ### 6.4 Segregation as the object of study
 
