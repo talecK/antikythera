@@ -422,4 +422,199 @@ compared two pre-exclusion quantities (their agreement was real but
 old-vs-old); the operative target is the gate v2 census value, and the
 corrected comparison is reported in Section 5.5.
 
+## 5. Results
+
+All numbers in this section are from the registration-conforming run
+(reports/paper2_windows_z.tsv and reports/paper2_results.md, commit
+21a9dc7). Throughout, every z series is tabulated with its eligible-pair
+counts, per the registered display rule (Section 4.2): between-window z
+magnitudes are different-powered tests, and the pair counts are the
+power context.
+
+### 5.1 The endpoint survives uniform provenance (Part A)
+
+Rebuilt with uniform API provenance in both folds, the fold-B endpoint
+cells read (frozen gate criterion; gate v2 mixed-provenance values in
+parentheses for comparison):
+
+| cell | eligible pairs | z (uniform API) | z (gate v2, mixed) | formed | binomial p |
+|------|---------------:|----------------:|-------------------:|-------:|-----------:|
+| WSB (MEME)/union | 210 | **-9.40** | -9.0 | 0 | 1.00 |
+| ALL/union | 479 | **-21.57** | -17.7 | 2 | 0.95 |
+| DD/union | 281 | **-16.41** | -17.1 | 0 | 1.00 |
+
+The registered expectation (WSB fold-B z ≤ -3) is met with a wide
+margin, and the eligible-pair counts track the gate v2 census (210
+versus 209). The cashtag sensitivity lens is directionally consistent
+(-8.5/-10.1/-3.1; reports/paper2_results.md). The companion paper's
+walled endpoint is therefore not a provenance artifact; the provenance
+confound is removed from that observation, and the transition study
+below runs on ground whose far end is secured.
+
+### 5.2 The transition: onset 2021-04-01, all three predictions pass
+
+The primary cell — WSB stratum, union lens, B = 4, nineteen rolling
+windows with two-quarter evaluation intervals from 2020Q1 through
+2024Q4 — produces this series (eval labelled by starting quarter):
+
+| eval start | 20Q1 | 20Q2 | 20Q3 | 20Q4 | 21Q1 | 21Q2 | 21Q3 | 21Q4 | 22Q1 | 22Q2 | 22Q3 | 22Q4 | 23Q1 | 23Q2 | 23Q3 | 23Q4 | 24Q1 | 24Q2 | 24Q3 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| z | -3.7 | +1.5 | +1.5 | **+28.6** | **+30.9** | -10.7 | -9.0 | -8.6 | -5.9 | -7.3 | -4.9 | -9.7 | -4.6 | -7.7 | -6.7 | -7.2 | -11.0 | -5.3 | -6.3 |
+| eligible pairs | 45 | 77 | 64 | 124 | 318 | 498 | 391 | 373 | 397 | 225 | 146 | 115 | 99 | 94 | 103 | 78 | 71 | 93 | 131 |
+
+Applying the frozen onset rule mechanically: the onset window is the
+one whose evaluation interval begins 2021Q2 (z = -10.7), because every
+one of the thirteen subsequent windows also has z ≤ -3 — zero
+reversions, where the rule allowed one. **The onset time is
+2021-04-01.** (The first window, at -3.7, does not start an onset: the
+rule requires persistence, and the four windows after it include two at
+chance and two far above it.)
+
+- **P1 PASS.** Two consecutive windows with |z| < 3 precede the onset
+  (eval 2020Q2 and 2020Q3, both +1.5), and two consecutive windows with
+  z ≤ -5 sit at and after it (-10.7, -9.0). The transition is visible
+  and localizable at quarterly resolution.
+- **P2 PASS.** The onset time 2021-04-01 lies within the registered
+  interval [2021-01-01, 2021-12-31].
+
+The registered secondary step fit agrees and adds no uncertainty band:
+the least-squares one-break fit places the break immediately before the
+2021Q2 evaluation window, and the near-tie set (breaks within 10% of
+minimum SSE) contains that break alone. At this resolution the
+transition is as sharp as the design can express: chance-level mixing
+through 2020Q3, and walls in every window from 2021Q2 to the end of the
+data, three and a half years without a single reversion.
+
+### 5.3 The central finding: the cascade excursion
+
+Between the chance-level regime and the walls sit two windows the
+series above already shows. They deserve to be read slowly. In the two
+evaluation windows straddling the GameStop episode — eval 2020Q4-2021Q1
+and eval 2021Q1-2021Q2 — the suppressed pairs of WSB co-mention not at
+chance, and not below it, but at **+28.6 and +30.9 standard deviations
+above** their label-shuffle nulls:
+
+| cell (B=4, union) | eligible pairs | observed co-mentions | null mean | z | formed (secondary) | binomial p |
+|---|---:|---:|---:|---:|---:|---|
+| WSB eval 2020Q4-2021Q1 | 124 | 1,125 | 485.3 | **+28.6** | 24 | 1e-23 |
+| WSB eval 2021Q1-2021Q2 | 318 | 2,891 | 1,707.9 | **+30.9** | 61 | 1e-57 |
+| DD eval 2020Q4-2021Q1 | 145 | 570 | 780.9 | -7.7 | 1 | 0.77 |
+| DD eval 2021Q1-2021Q2 | 211 | 522 | 771.4 | -8.6 | 0 | 1.0 |
+
+The excursion claim rests on the primary z — the same statistic, same
+null, same seed as every other window in the series. The formation
+counts are the registered secondary readout and point the same way: 24
+of 124 and 61 of 318 eligible pairs newly co-mention beyond their
+per-pair permutation thresholds, against a 1-percent-per-pair floor
+(binomial p ≈ 1e-23 and 1e-57). In the companion paper's terms: across
+two platforms, two unit vocabularies, and every ordinary window ever
+measured, formation sat at the false-positive floor; these two windows
+are the only place in the program it has ever risen above it. But no
+registered bar attaches to formation here, by design — the claim is
+z-first, and the z is unambiguous.
+
+**The placebo.** An excursion this large, in this program, triggers
+reflexive suspicion: the companion paper's central cautionary result
+was a formation effect manufactured by the measuring stick, caught by a
+label-shuffle placebo. The same pattern was therefore turned on this
+excursion (post-registration robustness check, in the registered
+placebo's mold; commit 7bef4a2). Forty truth-null replicates — an
+*outer* label shuffle that destroys any real author-ticker association,
+with the full registered statistic (eligibility construction, inner
+shuffle null, R = 100) recomputed from scratch per replicate, 20
+replicates per excursion window, per-replicate seeds documented — ask
+whether the machinery can produce the excursion from GME-era document
+structure alone:
+
+| window (eval) | placebo z mean | sd | min | max | placebo formed max | real z / formed |
+|---|---:|---:|---:|---:|---:|---|
+| 2020Q4-2021Q1 | +0.47 | 1.18 | -1.45 | +3.25 | 4 | **+28.6** / 24 |
+| 2021Q1-2021Q2 | +0.30 | 0.99 | -1.71 | +2.53 | 7 | **+30.9** / 61 |
+
+Under truth-null the statistic behaves like a standard normal, exactly
+as a calibrated instrument should; the real values sit roughly 24 and
+31 placebo standard deviations outside their placebo distributions. The
+excursion is in the data, not the machinery. This answers, for this
+specific regime, the densification concern that killed the companion
+paper's author-space formation result: extreme document-size and
+volume heterogeneity in the GME-era windows does not, by itself,
+produce anything resembling the observed values.
+
+What the excursion says, in the measured terms of this program: for two
+overlapping half-year evaluation windows, ticker pairs that the
+preceding year of WSB discourse had kept fully apart — never one
+co-mention, despite ample independent popularity — were co-mentioned
+by the same authors at two to three times their expected rates, in
+thousands of documents. The walls did not merely pause; the mixing
+deficit inverted. Everything this program measured before and after —
+including WSB itself, one quarter later — sits at or far below chance.
+
+### 5.4 Specificity: the control stays walled through the squeeze
+
+The DD stratum, computed identically through the same calendar:
+
+| eval start | 20Q1 | 20Q2 | 20Q3 | 20Q4 | 21Q1 | 21Q2 | 21Q3 | 21Q4 | 22Q1 | 22Q2 | 22Q3 | 22Q4 | 23Q1 | 23Q2 | 23Q3 | 23Q4 | 24Q1 | 24Q2 | 24Q3 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| z | -8.1 | -9.8 | -8.9 | -7.7 | -8.6 | -11.6 | -10.7 | -10.3 | -9.6 | -9.4 | -7.2 | -8.0 | -6.7 | -10.2 | -10.1 | -10.6 | -11.2 | -12.1 | -15.7 |
+| eligible pairs | 63 | 104 | 151 | 145 | 211 | 345 | 272 | 281 | 290 | 250 | 179 | 158 | 150 | 139 | 128 | 143 | 120 | 127 | 161 |
+
+- **P3 PASS.** Every DD window in the registered range (and in fact
+  every DD window, period) sits between -6.7 and -15.7: no window pair
+  anywhere shows the registered cliff pattern (chance-level then
+  z ≤ -5), because no DD window is ever above -6.7 to begin with.
+
+The contrast carries the paper's specificity claim, and it is starkest
+exactly where it matters. In the two excursion windows — the squeeze
+itself, the period when GameStop was the front page of the financial
+internet — the analysis-oriented communities' suppressed pairs stayed
+*below* chance (-7.7, -8.6). Whatever fused WSB's idea-communities in
+those quarters was not the era, not the news cycle, and not the
+market-wide meme-stock narrative, all of which DD's authors lived
+through in the same corpus under the same statistic. The fusion and the
+subsequent wall-building are properties of one community. DD's own
+deepening over the five years (from around -8 toward -15.7) is gradual,
+as predicted.
+
+### 5.5 Sensitivity, consistency, and power context
+
+**Window length.** The registered sensitivity curves reproduce the
+shape at both alternative window lengths. At B = 6 the excursion
+windows read +32.2 and +46.0 and the flip to walls occurs at the same
+eval window (2021Q2, z = -8.9, all subsequent windows ≤ -5); at B = 8
+the single in-range excursion window reads +27.3 with the flip likewise
+at 2021Q2 (-7.6). No bar attaches to these curves; they are reported
+regardless of outcome so that the ladder's choice of B = 4 cannot be
+what makes the transition appear. (Longer builds start later in the
+calendar, so the B = 6 and B = 8 series begin at eval 2020Q3 and 2021Q1
+respectively; full series with pair counts in
+reports/paper2_windows_z.tsv.)
+
+**Lens.** The cashtag lens is registered sensitivity with an
+informativeness floor: windows under 20 eligible pairs are reported
+UNINFORMATIVE, which claims several early windows (and most DD cashtag
+windows). Where informative, the cashtag series shows the same
+signature: elevated in the excursion windows (+2.0, +2.5 at B = 4, with
+formation 9/63 and 14/117, binomial p ≈ 1e-8 and 1e-11), then negative
+in every window from 2021Q2 onward. The cashtag excursion z is far
+smaller than the union value on a far smaller eligible universe; it is
+reported as directional sensitivity, not as a second measurement of the
+magnitude.
+
+**Census consistency.** The corrected census's first B = 4 window
+(build year 2019) counts 44,013 WSB/union build documents; the gate v2
+census counts 44,012 fold-A MEME eval documents over the same year by
+the same construction. Two corpora pulled independently, months apart,
+agree to one document in 44 thousand — near-exact, not identical, and
+reported as such (Amendment V4 addendum; the superseded V3 anchor had
+matched two pre-exclusion values exactly).
+
+**Power context, restated.** Eligible-pair counts range 45-498 across
+the primary series; the deep-wall z values of 2021-2022 sit on the
+largest universes (373-498 pairs) and the pre-onset chance readings on
+the smallest (45-77). The onset rule is threshold-based and per-window
+calibrated, so this cannot move a verdict, but it is why the figures
+place the pair-count series directly under every z panel, and why we
+do not interpret, e.g., -11.0 (2024Q1, 71 pairs) as deeper than -9.0
+(2021Q3, 391 pairs).
+
 <!-- DRAFT CONTINUES -->
