@@ -430,16 +430,22 @@ dated WSB governance events was collected and committed before any
 rolling-window statistic existed (Amendment V2;
 reports/paper2_anchors.md). Eight anchors A1-A8 span April 2020 through
 August 2021: the pre-event removal of the subreddit's founder (A1,
-2020-04); the GameStop squeeze and roughly 30x subscriber explosion
-(A2, 2021-01); the Discord ban and brief private-mode flip as
-moderation was overwhelmed (A3, 2021-01-27); the mod-team regime
-change (A4, 2021-02-04/05); the automod ticker-filter bot, publicized
-by a WSB moderator (A5, 2021-02); containment-by-daily-thread
-demonstrated on crypto and reversed within a day (A6, 2021-04-14/15);
-the final GME megathread, pushing single-ticker attention out to
-spin-off subreddits (A7, 2021-04-16); and the sub-$1B market-cap
-discussion ban (A8, in force by 2021-08; its introduction date is
-flagged in the amendment as unpinned and unusable for timing claims).
+2020-04; Reimann 2023); the GameStop squeeze and roughly 30x
+subscriber explosion (A2, 2021-01; Bloomberg News 2021; Newsweek
+2021); the Discord ban and brief private-mode flip as moderation was
+overwhelmed (A3, 2021-01-27; Sandler 2021; Kotaku 2021); the mod-team
+regime change (A4, 2021-02-04/05; Business Insider 2021; HotHardware
+2021); the automod ticker-filter bot, publicized by a WSB moderator
+(A5, 2021-02, posted 2021-02-27; Hacker News item 26281147);
+containment-by-daily-thread demonstrated on crypto and reversed within
+a day (A6, 2021-04-14/15; Decrypt 2021; Bitcoin.com News 2021); the
+final GME megathread, pushing single-ticker attention out to spin-off
+subreddits (A7, 2021-04-16; Shacknews 2021); and the sub-$1B
+market-cap discussion ban (A8, in force by 2021-08; wallstbets101.com
+mirror; its introduction date is flagged in the amendment as unpinned
+and unusable for timing claims). The committed anchors file remains
+the pre-commitment record; its sources are itemized in the reference
+list.
 
 The amendment freezes the discrimination reading in advance: onset in
 2021Q1 favors scale/fragmentation (A2); onset in late 2021 favors
@@ -908,10 +914,39 @@ deviation and its correction (Amendment V4).
 - Bikhchandani, S., Hirshleifer, D., Welch, I. (1992). A theory of
   fads, fashion, custom, and cultural change as informational cascades.
   *Journal of Political Economy* 100(5), 992-1026. doi [verify]
-- Contemporaneous sources for the governance anchors A1-A8 (CNBC,
-  Bloomberg, Shacknews, Slashdot, and subreddit records) are dated and
-  cited in reports/paper2_anchors.md, committed before any window
-  statistic existed.
+- Anchor sources (the anchors file, reports/paper2_anchors.md,
+  committed before any window statistic existed, remains the
+  pre-commitment record; all URLs accessed 2026-08-31):
+  - Reimann, N. (2023). Founder of WallStreetBets, which sparked meme
+    stock craze, sues Reddit for ousting him. *Forbes*, February 15,
+    2023. (Documents the April 2020 removal.) [A1]
+  - Bloomberg News (2021). WallStreetBets gains more than a million new
+    members overnight. *Bloomberg*, January 28, 2021. [A2]
+  - Newsweek (2021). WallStreetBets subreddit gains 2 million members
+    in a day. *Newsweek*, January 2021. [A2]
+  - Sandler, R. (2021). Discord bans r/WallStreetBets over "hate
+    speech," Reddit forum goes private. *Forbes*, January 27, 2021. [A3]
+  - Kotaku (2021). Discord bans r/WallStreetBets server for "hateful"
+    content (update: subreddit briefly taken offline). *Kotaku*,
+    January 27, 2021. [A3]
+  - Business Insider (2021). Reddit banned a group of WallStreetBets
+    moderators after they staged an attempted coup. *Business Insider*,
+    February 5, 2021. [A4]
+  - HotHardware (2021). Reddit stops attempted moderator movie deal
+    coup in r/WallStreetBets drama. *HotHardware*, February 2021. [A4]
+  - WSB moderator (2021). "Hi all, I am a mod on r/WallStreetBets..."
+    *Hacker News*, item 26281147, February 27, 2021.
+    https://news.ycombinator.com/item?id=26281147 [A5]
+  - Decrypt, via Yahoo Finance (2021). Reddit forum WallStreetBets
+    allows crypto conversation, immediately re-bans it. April 2021. [A6]
+  - Bitcoin.com News (2021). Wallstreetbets reinstates ban on
+    cryptocurrency discussions, citing Bloomberg coverage. April
+    2021. [A6]
+  - Shacknews (2021). r/wallstreetbets mods announce that today will be
+    the final GME megathread. *Shacknews*, April 16, 2021. [A7]
+  - wallstbets101.com (2021). Mirror of an August 2021 r/wallstreetbets
+    post debating the sub-$1B market-cap rule. [A8; rule introduction
+    date unpinned, Wayback pass pending; verify]
 - Null-model lineage for the label-shuffle machinery (Connor &
   Simberloff 1979; Gotelli 2000; Gotelli & Ulrich 2012) as discussed in
   the companion paper's Sections 2 and 6.1.
