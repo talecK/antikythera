@@ -35,7 +35,7 @@ def titled(ax, title, legend=True, ncol=1):
             ax.legend(h, l, loc="upper right", ncol=ncol, borderaxespad=0.4)
 
 
-GS = dict(height_ratios=[2.4, 0.8, 0.5, 1.8, 0.8], hspace=0.25,
+GS = dict(height_ratios=[2.4, 0.8, 0.35, 1.8, 0.8], hspace=0.25,
           left=0.11, right=0.99, top=0.95, bottom=0.06)
 
 QUARTERS = [f"{y}Q{q}" for y in range(2020, 2025) for q in range(1, 5)][:19]

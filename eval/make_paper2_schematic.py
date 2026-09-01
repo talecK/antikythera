@@ -6,205 +6,247 @@ Purely illustrative. No panel is computed from data; every number shown
 is a toy value chosen to make the construction legible. Real values live
 in Figures 2 to 4 (eval/make_paper2_figs.py, from committed TSVs).
 
+Layout: one axes spanning the figure, coordinates in inches. Every panel
+is a card of fixed size with the same inner padding; the panel letter
+and its title share a baseline; margins and gutters are single constants.
+The figure is saved at its own size (no auto-crop), so the outer margin
+is the same on all four sides.
+
 Output: reports/figures/p2_schematic.{png,pdf}
 Style: eval/paper2_figstyle.py (shared with the data figures).
 """
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, Circle, FancyArrowPatch
+from matplotlib.patches import FancyBboxPatch, Circle, FancyArrowPatch, Rectangle
 import numpy as np
 
 from paper2_figstyle import (BLUE, ORANGE, GREEN, RED, GREY, BAND, INK, MUTED,
-                             FIG_W, panel_label, save)
+                             FIG_W, save)
 
-# every panel is drawn on a 10 x 10 canvas with a 0.5 margin on all sides
-X0, X1, Y0, Y1 = 0.5, 9.5, 0.5, 9.5
-BODY = 7.2       # body text size in panels
-SMALL = 6.8      # secondary text size
+# ---- geometry (inches) --------------------------------------------------
+M = 0.20          # outer margin, all four sides
+G = 0.25          # gutter between cards
+P = 0.12          # inner padding of every card
+HEAD = 0.24       # header band inside each card (letter + title)
+R1 = 2.05         # height of rows 1 and 2
+R3 = 1.60         # height of row 3
+CW = (FIG_W - 2 * M - G) / 2          # card width, two-column rows
+FIG_H = 2 * M + 2 * R1 + R3 + 2 * G   # total height
 
-
-def canvas(ax, letter, title, w=10, h=10, y0=0):
-    ax.set_xlim(0, w)
-    ax.set_ylim(y0, h)
-    ax.set_aspect("equal")
-    ax.axis("off")
-    panel_label(ax, letter)
-    ax.set_title(title, loc="left")
-
-
-def body(ax, x, y, text, size=BODY, color=INK):
-    ax.text(x, y, text, fontsize=size, va="top", ha="left", color=color,
-            linespacing=1.25)
+# ---- type (points) ------------------------------------------------------
+T_LETTER, T_TITLE, T_BODY, T_SMALL, T_CHIP = 10, 8.5, 7.2, 6.8, 7
+LINE = 1.28       # line spacing multiplier for body text
+PT = 1 / 72       # inches per point
 
 
-def chip(ax, x, y, text, fc):
-    ax.add_patch(FancyBboxPatch((x, y), 1.0, 0.6,
-                                boxstyle="round,pad=0.02,rounding_size=0.14",
+def lines_h(n, size=T_BODY):
+    """Height in inches of n lines of text at a point size."""
+    return n * size * LINE * PT
+
+
+# ---- primitives ---------------------------------------------------------
+def card(ax, x, y, w, h, letter, title):
+    """Header inside the card; returns the content box (x0, y0, w, h)."""
+    base = y + h - P - 0.15                    # shared baseline of letter and title
+    ax.text(x + P, base, letter, fontsize=T_LETTER, fontweight="bold",
+            va="baseline", ha="left", color=INK)
+    ax.text(x + P + 0.27, base, title, fontsize=T_TITLE, va="baseline",
+            ha="left", color=INK)
+    return x + P, y + P, w - 2 * P, h - 2 * P - HEAD
+
+
+def text(ax, x, y, s, size=T_BODY, color=INK, ha="left", va="top", **kw):
+    ax.text(x, y, s, fontsize=size, color=color, ha=ha, va=va,
+            linespacing=LINE, **kw)
+
+
+def chip(ax, x, y, label, fc, w=0.30, h=0.17):
+    ax.add_patch(FancyBboxPatch((x, y), w, h,
+                                boxstyle="round,pad=0,rounding_size=0.04",
                                 fc=fc, ec="none"))
-    ax.text(x + 0.5, y + 0.3, text, ha="center", va="center", fontsize=7,
-            color="white", fontweight="bold")
+    ax.text(x + w / 2, y + h / 2, label, ha="center", va="center",
+            fontsize=T_CHIP, color="white", fontweight="bold")
 
 
-def card(ax, x, y, who, tickers, colors):
-    ax.add_patch(FancyBboxPatch((x, y), 4.0, 1.8,
-                                boxstyle="round,pad=0.04,rounding_size=0.22",
-                                fc="#f4f4f4", ec=GREY, lw=0.7))
-    ax.text(x + 0.3, y + 1.35, who, fontsize=BODY, color=INK, va="center")
+def author_card(ax, x, y, w, h, who, tickers, colors):
+    ax.add_patch(FancyBboxPatch((x, y), w, h,
+                                boxstyle="round,pad=0,rounding_size=0.06",
+                                fc="#f4f4f4", ec=GREY, lw=0.6))
+    text(ax, x + 0.08, y + h - 0.05, who, size=T_BODY)
     for i, (t, c) in enumerate(zip(tickers, colors)):
-        chip(ax, x + 0.3 + i * 1.18, y + 0.3, t, c)
+        chip(ax, x + 0.08 + i * 0.36, y + 0.06, t, c)
 
 
-def dots_in_circle(ax, cx, cy, r, n, color, seed):
+def dots(ax, cx, cy, r, n, color, seed, ms=2.0):
     rng = np.random.default_rng(seed)
     th = rng.uniform(0, 2 * np.pi, n)
-    rr = r * 0.85 * np.sqrt(rng.uniform(0, 1, n))
-    ax.plot(cx + rr * np.cos(th), cy + rr * np.sin(th), "o", ms=2.0,
+    rr = r * 0.84 * np.sqrt(rng.uniform(0, 1, n))
+    ax.plot(cx + rr * np.cos(th), cy + rr * np.sin(th), "o", ms=ms,
             color=color, alpha=0.8, mec="none")
 
 
-def audience(ax, cx, cy, r, color, seed, n=60):
+def audience(ax, cx, cy, r, color, seed, n=60, ms=2.0):
     ax.add_patch(Circle((cx, cy), r, fc=color, ec=color, alpha=0.12, lw=0))
-    ax.add_patch(Circle((cx, cy), r, fc="none", ec=color, lw=1.1))
-    dots_in_circle(ax, cx, cy, r, n, color, seed)
+    ax.add_patch(Circle((cx, cy), r, fc="none", ec=color, lw=1.0))
+    dots(ax, cx, cy, r, n, color, seed, ms)
 
 
-def panel_document(ax):
-    canvas(ax, "a", "The document: one author, one quarter", y0=1.6)
-    ax.text(X0, Y1, "one quarter, 2020Q2", fontsize=SMALL, color=MUTED,
-            va="top")
-    card(ax, X0, 6.9, "author 1", ["A", "B", "D"], [BLUE, ORANGE, GREY])
-    card(ax, 5.3, 6.9, "author 2", ["B", "C"], [ORANGE, GREEN])
-    card(ax, X0, 4.6, "author 3", ["A", "D"], [BLUE, GREY])
-    card(ax, 5.3, 4.6, "author 4", ["C"], [GREEN])
-    ax.text(5.0, 3.85, "...", ha="center", va="center", fontsize=9, color=GREY)
-    body(ax, X0, 3.1, "Every ticker an author mentions in a quarter,\n"
-                      "across all posts and comments, is one document.\n"
-                      "Two tickers co-mention when a document holds both.")
+# ---- panels -------------------------------------------------------------
+def panel_a(ax, box):
+    x, y, w, h = box
+    top = y + h
+    text(ax, x, top, "one quarter, 2020Q2", size=T_SMALL, color=MUTED)
+    cw, ch, gap = (w - 0.2) / 2, 0.44, 0.2
+    r1 = top - 0.13 - ch
+    r2 = r1 - 0.08 - ch
+    author_card(ax, x, r1, cw, ch, "author 1", ["A", "B", "D"],
+                [BLUE, ORANGE, GREY])
+    author_card(ax, x + cw + gap, r1, cw, ch, "author 2", ["B", "C"],
+                [ORANGE, GREEN])
+    author_card(ax, x, r2, cw, ch, "author 3", ["A", "D"], [BLUE, GREY])
+    author_card(ax, x + cw + gap, r2, cw, ch, "author 4", ["C"], [GREEN])
+    text(ax, x, y + lines_h(3),
+         "Every ticker an author mentions in a quarter, across\n"
+         "all posts and comments, is one document. Two tickers\n"
+         "co-mention when a document holds both.")
 
 
-def panel_eligible(ax):
-    canvas(ax, "b", "An eligible pair: should have met, never did", y0=1.6)
-    audience(ax, 2.3, 6.6, 1.6, BLUE, 1)
-    audience(ax, 7.7, 6.6, 1.6, ORANGE, 2)
-    ax.text(2.3, 8.45, "documents\nmentioning A", ha="center", va="bottom",
-            fontsize=SMALL, color=BLUE, linespacing=1.1)
-    ax.text(7.7, 8.45, "documents\nmentioning B", ha="center", va="bottom",
-            fontsize=SMALL, color=ORANGE, linespacing=1.1)
-    ax.text(5.0, 6.6, "0\nshared", ha="center", va="center", fontsize=7.5,
-            color=RED, fontweight="bold", linespacing=1.1)
-    body(ax, X0, 4.4, "Both tickers are frequent. Had authors picked\n"
-                      "tickers independently, at least 2 build-period\n"
-                      "documents would hold both. Observed: none.\n"
-                      "The pair is eligible. Every window has dozens\n"
-                      "to hundreds of such pairs.")
+def panel_b(ax, box):
+    x, y, w, h = box
+    top = y + h
+    r = 0.36
+    cy = top - 0.26 - r
+    for cx, c, t, s in [(x + 0.70, BLUE, "A", 1),
+                        (x + w - 0.70, ORANGE, "B", 2)]:
+        audience(ax, cx, cy, r, c, s)
+        text(ax, cx, top, f"documents\nmentioning {t}", size=T_SMALL,
+             color=c, ha="center")
+    text(ax, x + w / 2, cy, "0\nshared", size=T_BODY, color=RED, ha="center",
+         va="center", fontweight="bold")
+    text(ax, x, y + lines_h(4),
+         "Both tickers are frequent. Had authors picked tickers\n"
+         "independently, at least 2 build-period documents would\n"
+         "hold both. Observed: none. The pair is eligible; every\n"
+         "window has dozens to hundreds of such pairs.")
 
 
-def panel_windows(ax):
-    canvas(ax, "c", "Rolling windows over 2019 to 2024", y0=1.6)
+def panel_c(ax, box):
+    x, y, w, h = box
+    top = y + h
     n = 24
-    w = (X1 - X0) / n
+    qw = (w * 0.62) / n
+    strip_y = top - 0.12 - 0.10
     for i in range(n):
-        ax.add_patch(FancyBboxPatch((X0 + i * w, 8.2), w * 0.9, 0.5,
-                                    boxstyle="square,pad=0", fc=BAND,
-                                    ec="none"))
+        ax.add_patch(Rectangle((x + i * qw, strip_y), qw * 0.88, 0.10,
+                               fc=BAND, ec="none"))
         if i % 4 == 0:
-            ax.text(X0 + i * w + w * 0.45, 8.95, str(2019 + i // 4),
-                    ha="center", va="bottom", fontsize=SMALL, color=MUTED)
-    for k, (start, y) in enumerate([(0, 7.0), (1, 6.0), (2, 5.0)]):
-        bx = X0 + start * w
-        ax.add_patch(FancyBboxPatch((bx, y), 4 * w * 0.97, 0.7,
-                                    boxstyle="square,pad=0", fc=BLUE,
-                                    alpha=0.35, ec="none"))
-        ax.add_patch(FancyBboxPatch((bx + 4 * w, y), 2 * w * 0.97, 0.7,
-                                    boxstyle="square,pad=0", fc=RED,
-                                    alpha=0.40, ec="none"))
-        ax.text(bx + 6 * w + 0.2, y + 0.35,
-                f"window {k + 1}", ha="left",
-                va="center", fontsize=SMALL, color=MUTED)
-    lx = 6.3
-    for y, fc, a, txt in [(7.35, BLUE, 0.35, "build, 4 quarters"),
-                          (6.35, RED, 0.40, "evaluate, 2 quarters")]:
-        ax.add_patch(FancyBboxPatch((lx, y - 0.18), 0.45, 0.36,
-                                    boxstyle="square,pad=0", fc=fc, alpha=a,
-                                    ec="none"))
-        ax.text(lx + 0.6, y, txt, ha="left", va="center", fontsize=SMALL,
-                color=INK)
-    ax.text(lx, 5.35, "step 1 quarter, 19 windows", ha="left", va="center",
-            fontsize=SMALL, color=MUTED)
-    body(ax, X0, 3.9, "Eligible pairs are found in the build period. The\n"
-                      "statistic counts evaluation-period documents that\n"
-                      "hold any eligible pair. Build length was chosen by\n"
-                      "an outcome-blind census rule before any result.")
+            text(ax, x + i * qw + qw * 0.44, top, str(2019 + i // 4),
+                 size=T_SMALL, color=MUTED, ha="center")
+    rows = [strip_y - 0.13 - k * 0.22 for k in range(3)]
+    for k, ry in enumerate(rows):
+        bx = x + k * qw
+        ax.add_patch(Rectangle((bx, ry - 0.15), 4 * qw * 0.97, 0.15, fc=BLUE,
+                               alpha=0.35, ec="none"))
+        ax.add_patch(Rectangle((bx + 4 * qw, ry - 0.15), 2 * qw * 0.97, 0.15,
+                               fc=RED, alpha=0.40, ec="none"))
+        text(ax, bx + 6 * qw + 0.06, ry - 0.08, f"window {k + 1}",
+             size=T_SMALL, color=MUTED, va="center")
+    lx = x + w * 0.62 + 0.15
+    for k, (fc, a, s) in enumerate([(BLUE, 0.35, "build, 4 quarters"),
+                                    (RED, 0.40, "evaluate, 2 quarters"),
+                                    (None, 0, "step 1 quarter, 19 windows")]):
+        ry = rows[k] - 0.08
+        if fc:
+            ax.add_patch(Rectangle((lx, ry - 0.06), 0.14, 0.12, fc=fc,
+                                   alpha=a, ec="none"))
+        text(ax, lx + (0.19 if fc else 0), ry, s, size=T_SMALL,
+             color=INK if fc else MUTED, va="center")
+    text(ax, x, y + lines_h(4),
+         "Eligible pairs are found in the build period. The statistic\n"
+         "counts evaluation-period documents that hold any eligible\n"
+         "pair. Build length was chosen by an outcome-blind census\n"
+         "rule before any result.")
 
 
-def panel_null(ax):
-    canvas(ax, "d", "The statistic: observed count against a shuffle null",
-           y0=1.6)
+def panel_d(ax, box):
+    x, y, w, h = box
+    top = y + h
     rng = np.random.default_rng(7)
     null = rng.normal(480, 22, 100)
     bins = np.arange(400, 570, 10)
-    h, edges = np.histogram(null, bins=bins)
-    h = h / h.max() * 2.6
-    base, left, span = 5.4, X0 + 0.6, 7.6
-    for c, e in zip(h, edges[:-1]):
-        ax.add_patch(FancyBboxPatch((left + (e - 400) / 170 * span, base),
-                                    span / len(bins) * 0.88, c,
-                                    boxstyle="square,pad=0", fc=GREY,
-                                    alpha=0.6, ec="none"))
+    hist, edges = np.histogram(null, bins=bins)
+    left, span = x + 0.2, w - 0.4
+    base = top - 0.16 - 0.62
+    hh = hist / hist.max() * 0.55
+    for c, e in zip(hh, edges[:-1]):
+        ax.add_patch(Rectangle((left + (e - 400) / 170 * span, base),
+                               span / len(bins) * 0.88, c, fc=GREY,
+                               alpha=0.6, ec="none"))
     ax.plot([left, left + span], [base, base], color=MUTED, lw=0.6)
-    obs_x = left + (525 - 400) / 170 * span
-    ax.plot([obs_x, obs_x], [base, base + 3.2], color=RED, lw=1.6)
-    ax.text(obs_x + 0.15, base + 3.1, "observed", color=RED, fontsize=SMALL,
-            va="top")
-    ax.text(left + span * 0.42, base + 3.4, "100 shuffles of ticker labels",
-            ha="center", va="bottom", fontsize=SMALL, color=MUTED)
-    ax.text(left, base - 0.15, "fewer co-mentions", fontsize=SMALL,
-            color=MUTED, va="top")
-    ax.text(left + span, base - 0.15, "more", fontsize=SMALL, color=MUTED,
-            va="top", ha="right")
-    body(ax, X0, 3.9, "z = (observed - shuffle mean) / shuffle sd.\n"
-                      "z near 0: suppressed pairs meet as often as chance.\n"
-                      "z far below 0: kept apart, a wall. z above 0:\n"
-                      "pushed together. Each window has its own null.")
+    ox = left + (525 - 400) / 170 * span
+    ax.plot([ox, ox], [base, base + 0.62], color=RED, lw=1.5)
+    text(ax, ox + 0.04, base + 0.60, "observed", size=T_SMALL, color=RED)
+    text(ax, left + span * 0.42, top, "100 shuffles of ticker labels",
+         size=T_SMALL, color=MUTED, ha="center")
+    text(ax, left, base - 0.03, "fewer co-mentions", size=T_SMALL,
+         color=MUTED)
+    text(ax, left + span, base - 0.03, "more", size=T_SMALL, color=MUTED,
+         ha="right")
+    text(ax, x, y + lines_h(4),
+         "z = (observed - shuffle mean) / shuffle sd. z near 0:\n"
+         "suppressed pairs meet as often as chance. z far below 0:\n"
+         "kept apart, a wall. z above 0: pushed together. Each\n"
+         "window has its own null.")
 
 
-def regime(ax, cx, sep, title, ztxt, when):
-    r = 1.15
-    audience(ax, cx - sep, 5.4, r, BLUE, 3, n=28)
-    audience(ax, cx + sep, 5.4, r, ORANGE, 4, n=28)
-    ax.text(cx, 7.1, title, ha="center", va="bottom", fontsize=8, color=INK,
-            fontweight="bold")
-    ax.text(cx, 3.9, ztxt, ha="center", va="top", fontsize=BODY, color=INK)
-    ax.text(cx, 3.2, when, ha="center", va="top", fontsize=SMALL, color=MUTED)
-
-
-def panel_regimes(ax):
-    canvas(ax, "e", "Three regimes, and the order r/wallstreetbets passed "
-                    "through them", w=30, h=8.2)
-    regime(ax, 5.0, 1.15, "Chance-level mixing", "z near 0", "through 2020Q3")
-    regime(ax, 15.0, 0.35, "Fusion", "z far above 0",
-           "the two GameStop windows")
-    regime(ax, 25.0, 1.75, "Walls", "z far below 0",
-           "2021Q2 onward, no reversion")
-    for x in (9.4, 19.4):
-        ax.add_patch(FancyArrowPatch((x, 5.4), (x + 1.2, 5.4),
-                                     arrowstyle="-|>", mutation_scale=9,
-                                     color=GREY, lw=0.9))
-    ax.text(15.0, 1.9, "Audiences of two suppressed tickers, drawn as the "
-                       "documents that mention each. Overlap is co-mention.",
-            ha="center", va="top", fontsize=SMALL, color=MUTED)
+def panel_e(ax, box):
+    x, y, w, h = box
+    top = y + h
+    r = 0.30
+    cy = top - 0.30 - r
+    col = w / 3
+    specs = [("Chance-level mixing", 0.30, "z near 0", "through 2020Q3"),
+             ("Fusion", 0.09, "z far above 0", "the two GameStop windows"),
+             ("Walls", 0.46, "z far below 0", "2021Q2 onward, no reversion")]
+    for i, (title, sep, ztxt, when) in enumerate(specs):
+        cx = x + col * (i + 0.5)
+        text(ax, cx, top - 0.06, title, size=8, color=INK, ha="center",
+             fontweight="bold")
+        audience(ax, cx - sep, cy, r, BLUE, 3, n=28, ms=1.8)
+        audience(ax, cx + sep, cy, r, ORANGE, 4, n=28, ms=1.8)
+        text(ax, cx, cy - r - 0.05, ztxt, size=T_BODY, ha="center")
+        text(ax, cx, cy - r - 0.20, when, size=T_SMALL, color=MUTED,
+             ha="center")
+        if i < 2:
+            ax.add_patch(FancyArrowPatch((cx + col / 2 - 0.16, cy),
+                                         (cx + col / 2 + 0.16, cy),
+                                         arrowstyle="-|>", mutation_scale=8,
+                                         color=GREY, lw=0.9))
 
 
 def main():
-    fig = plt.figure(figsize=(FIG_W, 6.6))
-    gs = fig.add_gridspec(3, 2, height_ratios=[0.84, 0.84, 0.82], hspace=0.32,
-                          wspace=0.10, left=0.06, right=0.99, top=0.95,
-                          bottom=0.02)
-    panel_document(fig.add_subplot(gs[0, 0]))
-    panel_eligible(fig.add_subplot(gs[0, 1]))
-    panel_windows(fig.add_subplot(gs[1, 0]))
-    panel_null(fig.add_subplot(gs[1, 1]))
-    panel_regimes(fig.add_subplot(gs[2, :]))
-    print("wrote", save(fig, "p2_schematic") + ".{png,pdf}")
+    fig = plt.figure(figsize=(FIG_W, FIG_H))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, FIG_W)
+    ax.set_ylim(0, FIG_H)
+    ax.set_aspect("equal")
+    ax.axis("off")
+
+    y3 = M
+    y2 = y3 + R3 + G
+    y1 = y2 + R1 + G
+    xl, xr = M, M + CW + G
+    panel_a(ax, card(ax, xl, y1, CW, R1, "a",
+                     "The document: one author, one quarter"))
+    panel_b(ax, card(ax, xr, y1, CW, R1, "b",
+                     "An eligible pair: should have met, never did"))
+    panel_c(ax, card(ax, xl, y2, CW, R1, "c",
+                     "Rolling windows over 2019 to 2024"))
+    panel_d(ax, card(ax, xr, y2, CW, R1, "d",
+                     "The statistic: observed count vs. a shuffle null"))
+    panel_e(ax, card(ax, xl, y3, 2 * CW + G, R3, "e",
+                     "Three regimes, and the order r/wallstreetbets passed "
+                     "through them"))
+    print("wrote", save(fig, "p2_schematic", tight=False) + ".{png,pdf}")
 
 
 if __name__ == "__main__":

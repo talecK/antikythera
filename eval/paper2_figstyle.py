@@ -71,11 +71,12 @@ plt.rcParams.update({
 
 
 def panel_label(ax, letter):
-    """Bold panel letter, same offset from the axes corner in every figure."""
+    """Bold panel letter on the same baseline as the axes title (title pad
+    is 6 pt above the axes top, va=baseline), 30 pt left of the axes."""
     ax.annotate(letter, xy=(0, 1), xycoords="axes fraction",
-                xytext=(-30, 7), textcoords="offset points",
-                fontsize=10, fontweight="bold", ha="left", va="bottom",
-                color=INK, annotation_clip=False)
+                xytext=(-30, plt.rcParams["axes.titlepad"]),
+                textcoords="offset points", fontsize=10, fontweight="bold",
+                ha="left", va="baseline", color=INK, annotation_clip=False)
 
 
 def title_and_legend(ax, title, legend=True, ncol=4):
@@ -88,8 +89,11 @@ def title_and_legend(ax, title, legend=True, ncol=4):
                       ncol=ncol)
 
 
-def save(fig, name):
-    fig.savefig(os.path.join(FIG_DIR, name + ".png"))
-    fig.savefig(os.path.join(FIG_DIR, name + ".pdf"))
+def save(fig, name, tight=True):
+    """tight=True crops to content with PAD on every side (data figures);
+    tight=False keeps the figure's own fixed margins (the schematic)."""
+    kw = {} if tight else dict(bbox_inches=None, pad_inches=0)
+    fig.savefig(os.path.join(FIG_DIR, name + ".png"), **kw)
+    fig.savefig(os.path.join(FIG_DIR, name + ".pdf"), **kw)
     plt.close(fig)
     return os.path.join(FIG_DIR, name)
