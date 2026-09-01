@@ -95,7 +95,7 @@ two folds sit on opposite sides of the 2020-2021 market regime break
 (era confound). They differ in acquisition provenance, with the source
 seam aligned to the fold boundary (provenance confound). And the
 community split itself was exploratory, with no registered prediction
-attached (post-hoc). The observation nevertheless stands out. Across
+attached (post-hoc). Even so, the observation is unique in this program. Across
 twenty years of Hacker News at two granularities, six financial
 subreddits, and a science benchmark control, it is the only case in
 which a measured community changed segregation state at all.
@@ -131,7 +131,7 @@ financial literature. Lucchini et al. (2022) show that a committed
 minority of WSB users grew before the price surge and occupied central
 network positions. Mancini et al. (2022) model the squeeze as
 self-reinforcing consensus formation in WSB conversations. Semenova
-and Winkler (2021) document social contagion in WSB asset discussions,
+and Winkler (2025) document social contagion in WSB asset discussions,
 where engagement with a discussed asset raises a user's probability of
 starting new discussions of it. Pedersen (2022) builds the equilibrium
 theory: a social network propagating an investment idea produces
@@ -158,15 +158,15 @@ incident; Lin et al. (2017) found that ten subreddits hit by
 default-listing growth shocks stayed recognizably themselves. Both
 studies find resilience, at growth scales far below WSB's roughly
 30-fold explosion in weeks. Whether the transition we measure is what a
-growth shock beyond that scale does to a community is exactly the scale
+growth shock beyond that scale does to a community is the scale
 mechanism above, and the Discussion explains why this design cannot
 settle it. Cascade theory, finally, predicts that a system's
-susceptibility to global cascades depends on its connectivity
-structure: cascades require enough overlap for a story to jump between
-audiences (Watts 2002), and behaviors that need social reinforcement
-spread only across wide bridges (Centola and Macy 2007), with
-information cascades supplying the individual-level mechanism
-(Bikhchandani, Hirshleifer and Welch 1992). The cascade-susceptibility
+susceptibility to global cascades depends on how connected it is.
+Cascades need enough overlap for a story to jump between audiences
+(Watts 2002). Behaviors that need social reinforcement spread only
+across wide bridges (Centola and Macy 2007). Information cascades
+supply the individual-level mechanism (Bikhchandani, Hirshleifer and
+Welch 1992). The cascade-susceptibility
 reading of our results, labelled speculative in the Discussion, is the
 empirical cousin of this theory: chance-level mixing is the
 connectivity substrate, and the walls are its removal. What this paper
@@ -204,8 +204,8 @@ All three registered predictions pass. The transition is real, sharp,
 and dated: onset 2021-04-01, with chance-level mixing before it and
 walls in every window after it, with zero reversions. The result we
 consider most important, however, was not one of the bets. Between the
-chance-level regime and the walls, in exactly the two evaluation
-windows that straddle the GameStop episode, the suppressed pairs of
+chance-level regime and the walls, in the two evaluation windows
+that straddle the GameStop episode, the suppressed pairs of
 r/wallstreetbets co-mention at 28.6 and 30.9 standard deviations above
 their calibrated nulls. In every other window this program has
 measured, on any platform, co-mention over suppressed pairs sits at or
@@ -233,15 +233,16 @@ The unit of observation is one author's set of ticker mentions within
 one calendar quarter, as everywhere in this program. A ticker is
 frequent in a build period if 20 or more distinct author-quarters
 mention it. Among frequent tickers, a pair is eligible, or suppressed,
-if its expected joint document count under independence is at least 2
-while its observed co-mention count in the build period is zero: two
-tickers each popular enough that chance alone should have put them in
-the same author's quarter at least twice, yet never did. The
-segregation statistic z for a window counts the documents in the
-following evaluation period in which any eligible pair is co-mentioned,
-and standardizes that total against a label-shuffle null that permutes
-ticker labels over the document-ticker incidences of the frequent set,
-with 100 replicates and a fixed seed. A z near zero means suppressed
+if two conditions hold. Its expected joint document count under
+independence is at least 2, and its observed co-mention count in the
+build period is zero. In plain terms, each ticker is popular enough
+that chance alone should have put the two in the same author's quarter
+at least twice, yet it never happened. The segregation statistic z for
+a window counts the documents in the following evaluation period in
+which any eligible pair is co-mentioned. That total is standardized
+against a label-shuffle null, which permutes ticker labels over the
+document-ticker incidences of the frequent set, with 100 replicates and
+a fixed seed. A z near zero means suppressed
 pairs are co-mentioned about as often as chance predicts. A strongly
 negative z means they are kept apart; a positive z means they are
 brought together beyond chance. Windows roll over the 24 quarters of
@@ -273,8 +274,8 @@ Methods.
 ### The endpoint survives uniform provenance (Part A)
 
 Rebuilt with uniform API provenance in both folds, the fold-B endpoint
-cells read (frozen gate criterion; gate v2 mixed-provenance values in
-parentheses for comparison):
+cells read as follows, under the frozen gate criterion and with the
+gate v2 mixed-provenance values alongside for comparison:
 
 | cell | eligible pairs | z (uniform API) | z (gate v2, mixed) | formed | binomial p |
 |------|---------------:|----------------:|-------------------:|-------:|-----------:|
@@ -292,10 +293,10 @@ the transition study below runs on ground whose far end is secured.
 
 ### The transition: onset 2021-04-01, all three predictions pass
 
-The primary cell (WSB stratum, union lens, B = 4, nineteen rolling
-windows with two-quarter evaluation intervals from 2020Q1 through
-2024Q4) produces this series, with evaluation windows labelled by
-starting quarter:
+The primary cell is the WSB stratum under the union lens at B = 4:
+nineteen rolling windows with two-quarter evaluation intervals from
+2020Q1 through 2024Q4. It produces this series, with evaluation windows
+labelled by starting quarter:
 
 | eval start | 20Q1 | 20Q2 | 20Q3 | 20Q4 | 21Q1 | 21Q2 | 21Q3 | 21Q4 | 22Q1 | 22Q2 | 22Q3 | 22Q4 | 23Q1 | 23Q2 | 23Q3 | 23Q4 | 24Q1 | 24Q2 | 24Q3 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -306,9 +307,9 @@ Applying the frozen onset rule mechanically: the onset window is the
 one whose evaluation interval begins 2021Q2 (z = -10.7), because every
 one of the thirteen subsequent windows also has z ≤ -3, with zero
 reversions where the rule allowed one. **The onset time is
-2021-04-01.** (The first window, at -3.7, does not start an onset: the
+2021-04-01.** The first window, at -3.7, does not start an onset. The
 rule requires persistence, and the four windows after it include two at
-chance and two far above it.)
+chance and two far above it.
 
 - **P1 PASS.** Two consecutive windows with |z| < 3 precede the onset
   (eval 2020Q2 and 2020Q3, both +1.5), and two consecutive windows with
@@ -360,10 +361,10 @@ was applied to this excursion, as a post-registration robustness check
 in the registered placebo's mold. Forty truth-null replicates ask
 whether the machinery can produce the excursion from GME-era document
 structure alone. Each replicate applies an *outer* label shuffle that
-destroys any real author-ticker association, then recomputes the full
-registered statistic from scratch (eligibility construction, inner
-shuffle null, R = 100), with 20 replicates per excursion window and
-per-replicate seeds documented:
+destroys any real author-ticker association. It then recomputes the
+full registered statistic from scratch: eligibility construction, inner
+shuffle null, R = 100. There are 20 replicates per excursion window,
+with per-replicate seeds documented:
 
 | window (eval) | placebo z mean | sd | min | max | placebo formed max | real z / formed |
 |---|---:|---:|---:|---:|---:|---|
@@ -379,9 +380,9 @@ paper's author-space formation result: extreme document-size and
 volume heterogeneity in the GME-era windows does not, by itself,
 produce anything resembling the observed values.
 
-In concrete terms: for two overlapping half-year evaluation windows,
-the same authors co-mentioned, in thousands of documents, ticker pairs
-at two to three times their expected rates. These were pairs the
+In other words, for two overlapping half-year evaluation windows, the
+same authors co-mentioned ticker pairs, in thousands of documents, at
+two to three times their expected rates. These were pairs the
 preceding year of WSB discourse had kept fully apart: zero
 co-mentions, despite ample independent popularity. The mixing deficit
 inverted. Every other measurement in this program, including WSB itself
@@ -419,10 +420,10 @@ eval window (2021Q2, z = -8.9, all subsequent windows ≤ -5). At B = 8
 the single in-range excursion window reads +27.3 with the flip likewise
 at 2021Q2 (-7.6). No bar attaches to these curves; they are reported
 regardless of outcome so that the ladder's choice of B = 4 cannot be
-what makes the transition appear. (Longer builds start later in the
+what makes the transition appear. Longer builds start later in the
 calendar, so the B = 6 and B = 8 series begin at eval 2020Q3 and 2021Q1
-respectively; full series with pair counts in the released window
-table.)
+respectively. The full series with pair counts are in the released
+window table.
 
 **Lens.** The cashtag lens is registered sensitivity with an
 informativeness floor: windows under 20 eligible pairs are reported
@@ -447,14 +448,13 @@ superseded V3 anchor had matched two pre-exclusion values exactly).
 primary series. The deep-wall z values of 2021-2022 sit on the largest
 universes (373-498 pairs) and the pre-onset chance readings on the
 smallest (45-77). The registered display rule (Methods) exists for
-exactly this reason: threshold verdicts are per-window calibrated,
+this reason: threshold verdicts are per-window calibrated,
 cross-window magnitude comparisons are not, and so we do not read -11.0
 (2024Q1, 71 pairs) as deeper than -9.0 (2021Q3, 391 pairs).
 
 ## Discussion
 
-With P1, P2, and P3 all passing, the registered claim stands as
-designed: **a WSB-specific structural transition, onset 2021-04-01**.
+With P1, P2, and P3 all passing, the registered claim stands: **a WSB-specific structural transition, onset 2021-04-01**.
 The community moved from the only chance-level mixing state this
 program has observed, through its only above-chance excursion, to
 walls indistinguishable from every other measured community. The
@@ -469,7 +469,7 @@ ticker-filter bot, megathread containment, and market-cap ban, A4-A8).
 Onset in 2021Q2 was named, in advance, as the non-separable case: both
 mechanism families active, and the design supporting neither over the
 other. The measured onset is 2021Q2. The ordering evidence is still
-worth recording: the onset follows the squeeze and the governance
+informative: the onset follows the squeeze and the governance
 regime change rather than preceding them, and its first evaluation
 quarter contains the containment-by-megathread anchors (A6, A7,
 mid-April 2021). But the scale shock is only one quarter older, and at
@@ -478,17 +478,16 @@ Separating the mechanisms would need a different instrument, not a
 sharper reading of this one. Engagement-stratified or
 cohort-stratified readouts on the same corpus are the natural
 candidates; the acquisition deliberately collected the `score` field
-for exactly this follow-up, under a separate registration.
+for this follow-up, under a separate registration.
 
-Likewise stated directly: the era confound is answered by design, not
-eliminated. A continuous within-community series under uniform
+The era confound, likewise, is answered by design, not eliminated. A continuous within-community series under uniform
 provenance, with a control stratum that shows no discontinuity, rules
 out the confound's most natural expressions: a fold-boundary artifact,
 a source seam, or an era-wide narrative shift moving all finance
 discourse at once. It cannot rule out an era interaction that touches
 only WSB, because WSB's era exposure (being the epicenter of the
-squeeze) is inseparable from WSB's identity in exactly the way the
-anchors amendment describes.
+squeeze) is inseparable from WSB's identity in the way the anchors
+amendment describes.
 
 Nothing in the next three paragraphs is a registered claim; these are
 the readings the registered results invite, offered with their status
@@ -500,8 +499,8 @@ five years, all three states this program's statistic can express:
 chance-level mixing (through 2020Q3), cascade fusion (2020Q4-2021Q2),
 and walls (2021Q2 onward). No other measured community has occupied
 more than one state. WSB traversed all three in eighteen months, and
-the ordering is not arbitrary: the fusion sits exactly at the cascade,
-and the walls begin exactly as it ends.
+the ordering is not arbitrary: the fusion sits at the cascade, and the
+walls begin as it ends.
 
 **Cascade susceptibility (interpretive, non-registered, speculative).**
 The arc is consistent with a reading in which chance-level mixing is
@@ -519,8 +518,8 @@ registered results *describe* every step of that sentence (the
 substrate state, the fusion, the walls, and their order), but the
 causal links between the steps are not claimed, as stated above. We
 note the reading because it inverts the usual valence of this program's
-segregation statistic. Chance-level mixing looks "healthy" by the
-lights of the discovery framing the companion paper tested; yet here,
+segregation statistic. Chance-level mixing looks "healthy" under the
+discovery framing the companion paper tested; yet here,
 the one mixing community was the one that produced the cascade.
 
 **Pre-cascade generality (inferential, non-registered).** The companion
@@ -620,8 +619,8 @@ prior acquisition era's runbook match exactly (for example, 2022-06 =
 1.13M, 2023-09 = 510K, 2024-03 = 962K WSB comments).
 
 Two observations were recorded in that amendment, before any outcome
-existed, precisely because a result could later be blamed on them.
-First, the WSB volume series itself shows the era plainly: monthly
+existed, because a result could later be blamed on them. First, the
+WSB volume series itself shows the era: monthly
 comments run around 300 thousand through 2019, spike to 2.6 million in
 March 2020 (COVID) and 8.0 million in January 2021 (GameStop), then
 decay to under a million by 2023. Volume is not the studied statistic,
@@ -800,8 +799,8 @@ definitions. No bar, threshold, seed, window definition, or onset rule
 changed at any point.
 
 Because first-run outcomes were seen before the correction, the
-protection is exactly that every re-derivation step is a frozen rule
-with no free parameter. Both runs are released: the first-run outputs
+protection is that every re-derivation step is a frozen rule with no
+free parameter. Both runs are released: the first-run outputs
 are retained as superseded artifacts, and the conforming run's outputs
 are the operative tables (file names in the provenance appendix). **The
 two runs agree on every verdict**: same onset window, same P1/P2/P3
@@ -856,12 +855,26 @@ the corpus, ran the analyses, and wrote the manuscript.
 
 ## Figure legends
 
-Figures are generated from the committed window and placebo tables
-only (figure generator in the code release). Per the registered display
+Figure 1 is a schematic (its generator is in the code release and
+draws no data). Figures 2 to 4 are generated from the committed window
+and placebo tables only (figure generator in the code release). Per the registered display
 rule, **every z-series panel carries an eligible-pair-count panel
 directly beneath it, sharing its x-axis.**
 
-**Figure 1** (p2_fig1.png/.pdf). The transition and the excursion. Top:
+**Figure 1** (p2_schematic.png/.pdf). How the statistic is built, and
+the three regimes it can express. (a) The document is one author's set
+of tickers in one calendar quarter. (b) An eligible, or suppressed,
+pair: two frequent tickers whose audiences never overlap in the build
+period even though chance alone predicts at least two shared documents.
+(c) Windows roll over 2019 to 2024 with a four-quarter build and a
+two-quarter evaluation, stepped one quarter. (d) The statistic compares
+the observed count of evaluation documents holding any eligible pair
+against 100 label shuffles, giving z. (e) The three regimes: chance-level
+mixing (z near zero), fusion (z far above zero), and walls (z far below
+zero), in the order r/wallstreetbets passed through them. All values in
+this figure are illustrative; measured values are in Figures 2 to 4.
+
+**Figure 2** (p2_fig1.png/.pdf). The transition and the excursion. Top:
 the primary segregation z for r/wallstreetbets (union lens, four-quarter
 build) over the nineteen rolling evaluation windows, labelled by
 starting quarter. z is the count of evaluation-window documents
@@ -877,14 +890,14 @@ control stratum over the same calendar. Beneath each z panel, the
 number of eligible pairs in that window, which sets the power of that
 window's test.
 
-**Figure 2** (p2_fig2.png/.pdf). The excursion placebo. For each
+**Figure 3** (p2_fig2.png/.pdf). The excursion placebo. For each
 excursion window, the 20 truth-null placebo z values as a histogram,
 each obtained by shuffling ticker labels across authors and recomputing
 the full registered statistic from scratch, with the real value marked.
 Annotations carry the secondary formation counts (real 24 and 61
 versus placebo maxima 4 and 7).
 
-**Figure 3** (p2_fig3.png/.pdf). Sensitivity. Top: r/wallstreetbets
+**Figure 4** (p2_fig3.png/.pdf). Sensitivity. Top: r/wallstreetbets
 union-lens z at build lengths of four, six, and eight quarters on a
 common calendar, with grouped pair counts beneath. Bottom: the cashtag
 sensitivity lens at a four-quarter build, with windows under 20
@@ -913,10 +926,11 @@ ahead of its result. The numbers in this paper trace as follows:
 | Anchors A1-A8 + frozen discrimination reading | reports/paper2_anchors.md | 3fa0d73 |
 | Volume table + integrity pass | reports/paper2_volume_table.tsv | 63b7f6e |
 | Discussion notes (non-registered readings) | reports/paper2_results.md | d184472 |
-| Figures 1-3 | eval/make_paper2_figs.py, reports/figures/p2_fig1-3 | 4360746 |
+| Figure 1 (schematic, no data) | eval/make_paper2_schematic.py, reports/figures/p2_schematic | this commit |
+| Figures 2-4 | eval/make_paper2_figs.py, reports/figures/p2_fig1-3 | 4360746 |
 | Gate v2 comparison values (companion paper) | gate table / gate_rerun_v2.log | f89cb2b, 1386fc0 |
 
-## References (DOIs marked [verify] to be confirmed at submission)
+## References (all DOIs verified against Crossref 2026-09-01; one anchor source still marked [verify])
 
 - Quiring, K. (2026). The gaps that don't close: idea segregation
   persists in twenty years of online discourse. Draft in the same
@@ -924,16 +938,16 @@ ahead of its result. The numbers in this paper trace as follows:
   section "A second platform".
 - McPherson, M., Smith-Lovin, L., Cook, J.M. (2001). Birds of a
   feather: Homophily in social networks. *Annual Review of Sociology*
-  27, 415-444. doi:10.1146/annurev.soc.27.1.415 [verify]
+  27, 415-444. doi:10.1146/annurev.soc.27.1.415
 - Cinelli, M., De Francisci Morales, G., Galeazzi, A., Quattrociocchi,
   W., Starnini, M. (2021). The echo chamber effect on social media.
-  *PNAS* 118(9), e2023301118. doi:10.1073/pnas.2023301118 [verify]
+  *PNAS* 118(9), e2023301118. doi:10.1073/pnas.2023301118
 - Waller, I., Anderson, A. (2021). Quantifying social organization and
   political polarization in online platforms. *Nature* 600, 264-268.
   doi:10.1038/s41586-021-04167-x
 - Swanson, D.R. (1986). Fish oil, Raynaud's syndrome, and undiscovered
   public knowledge. *Perspectives in Biology and Medicine* 30(1), 7-18.
-  doi:10.1353/pbm.1986.0087 [verify]
+  doi:10.1353/pbm.1986.0087
 - Lucchini, L., Aiello, L.M., Alessandretti, L., De Francisci Morales,
   G., Starnini, M., Baronchelli, A. (2022). From Reddit to Wall Street:
   the role of committed minorities in financial collective action.
@@ -942,11 +956,13 @@ ahead of its result. The numbers in this paper trace as follows:
   Self-induced consensus of Reddit users to characterise the GameStop
   short squeeze. *Scientific Reports* 12, 13866.
   doi:10.1038/s41598-022-17925-2
-- Semenova, V., Winkler, J. (2021). Social contagion and asset prices:
-  Reddit's self-organised bull runs. INET Oxford Working Paper
-  No. 2021-04; arXiv:2104.01847.
+- Semenova, V., Winkler, J. (2025). Social contagion and asset prices:
+  Reddit's self-organized bull runs. *Quantitative Finance* 25(12),
+  1873-1904. doi:10.1080/14697688.2025.2559970 (working-paper version:
+  INET Oxford 2021-04; arXiv:2104.01847)
 - Pedersen, L.H. (2022). Game on: Social networks and markets.
-  *Journal of Financial Economics* 146(3), 1097-1119. doi [verify]
+  *Journal of Financial Economics* 146(3), 1097-1119.
+  doi:10.1016/j.jfineco.2022.05.002
 - Chandrasekharan, E., Pavalanathan, U., Srinivasan, A., Glynn, A.,
   Eisenstein, J., Gilbert, E. (2017). You can't stay here: The efficacy
   of Reddit's 2015 ban examined through hate speech. *Proceedings of
@@ -965,13 +981,13 @@ ahead of its result. The numbers in this paper trace as follows:
   growth. *Proceedings of ICWSM 2017* 11(1), 132-141.
   doi:10.1609/icwsm.v11i1.14884
 - Watts, D.J. (2002). A simple model of global cascades on random
-  networks. *PNAS* 99(9), 5766-5771. doi [verify]
+  networks. *PNAS* 99(9), 5766-5771. doi:10.1073/pnas.082090499
 - Centola, D., Macy, M. (2007). Complex contagions and the weakness of
   long ties. *American Journal of Sociology* 113(3), 702-734.
-  doi [verify]
+  doi:10.1086/521848
 - Bikhchandani, S., Hirshleifer, D., Welch, I. (1992). A theory of
   fads, fashion, custom, and cultural change as informational cascades.
-  *Journal of Political Economy* 100(5), 992-1026. doi [verify]
+  *Journal of Political Economy* 100(5), 992-1026. doi:10.1086/261849
 - Anchor sources (the anchors file, reports/paper2_anchors.md,
   committed before any window statistic existed, remains the
   pre-commitment record; all URLs accessed 2026-08-31):
