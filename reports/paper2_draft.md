@@ -694,9 +694,10 @@ the one mixing community was the one that produced the cascade.
 **Pre-cascade generality (inferential, non-registered).** The companion
 paper could not say whether WSB's fold-A chance reading was a property
 of the community or of the single year 2019. The rolling series answers
-this: chance-level mixing holds in every window whose evaluation ends
-before 2020Q4 (and the sub-chance first window, -3.7 on the smallest
-universe in the series, 45 pairs, is the series' least-powered cell).
+this: chance-level mixing holds in the last two windows evaluated
+wholly before the cascade (evals beginning 2020Q2 and 2020Q3, both
++1.5; the series' opening window reads -3.7 on its smallest universe,
+45 pairs, its least-powered cell).
 The wall-free state was WSB's standing condition through at least
 mid-2020, not a 2019 anomaly. The companion paper cites this inference
 to the present study (its Section 6.3), and the inference belongs here.
