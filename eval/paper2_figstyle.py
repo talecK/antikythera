@@ -34,8 +34,8 @@ MARKERS = {BLUE: "o", ORANGE: "s", GREEN: "^"}   # secondary encoding
 
 FIG_W = 7.0           # inches, full text width
 DPI = 300
-PAD_X = 32 / DPI      # outer padding at save: 32 px horizontally at 300 dpi
-PAD_Y = 24 / DPI      # 24 px vertically
+PAD_X = 64 / DPI      # outer padding at save: 64 px horizontally at 300 dpi
+PAD_Y = 48 / DPI      # 48 px vertically
 PAD = PAD_Y           # kept for rcParams; save() applies the asymmetric pad
 
 plt.rcParams.update({
