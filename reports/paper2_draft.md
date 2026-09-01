@@ -16,15 +16,15 @@ table at the end. Awaiting author prose pass.**
 A companion study of idea segregation in online discourse found that
 concept pairs which should co-occur but never have ("suppressed" pairs)
 stay apart at rates far below chance in every community measured, on
-two platforms (Quiring 2026, "The gaps that don't close"). The single
-exception was r/wallstreetbets: before 2020 it sat exactly at chance,
-and by 2024 it was walled like everywhere else. This is the only
+two platforms (Quiring 2026, "The gaps that don't close"). We call
+that persistent below-chance separation a wall. The single exception
+was r/wallstreetbets: before 2020 it sat exactly at chance, and by
+2024 it was walled like everywhere else. This is the only
 transition between segregation states observed anywhere in the program.
 Here we report a registered study of when the transition happened and
-what its timing can and cannot say about why. The study runs on a fresh
-single-source corpus of 98.1 million Reddit posts and comments covering
-2019-2024, pulled from one API in one era and never mixed with the
-earlier corpus. Rolling quarterly windows test three predictions
+what its timing can and cannot say about why. The study runs on a
+fresh single-source corpus of 98.1 million Reddit posts and comments
+covering 2019-2024. Rolling quarterly windows test three predictions
 committed before any statistic was computed: the transition is visible
 and localizable at quarterly resolution (P1), its onset falls within
 2021 (P2), and an analysis-oriented control stratum shows no comparable
@@ -66,7 +66,9 @@ suppressed pairs actively co-occur far below chance, at magnitudes
 their marginal popularities cannot explain (Quiring 2026). The stable
 result was segregation: the communities of attention around two
 never-connected ideas stay apart, on every platform and at every
-granularity measured.
+granularity measured. Throughout this paper we call that persistent
+below-chance separation a wall, and a community whose suppressed pairs
+sit far below chance walled.
 
 There was one exception. The replication corpus is Reddit financial
 discussion, where the concept unit is the stock ticker, regex-extracted
