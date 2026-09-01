@@ -59,20 +59,16 @@ sit far below chance walled.
 
 There was one exception. The companion paper's replication corpus is
 Reddit financial discussion, where the concept unit is the stock
-ticker, regex-extracted with no language model in the loop. It splits
-six financial subreddits into two strata: MEME (r/wallstreetbets alone,
-hereafter WSB) and DD (the union of five analysis-oriented subreddits:
+ticker, extracted by pattern matching, with no language model involved. It splits
+six financial subreddits into two strata: r/wallstreetbets alone (hereafter WSB; the companion paper labels this stratum MEME) and DD (the union of five analysis-oriented subreddits:
 r/SecurityAnalysis, r/ValueInvesting, r/StockMarket, r/stocks,
 r/investing). The document is one author's ticker mentions within one
 calendar quarter. A pair of frequently mentioned tickers is *eligible*
 ("suppressed") in a build window if its expected joint document count
 is at least 2 while its observed co-mention count is zero. The
-segregation statistic is the total observed eval-window co-mention
-count over all eligible pairs, standardized against a label-shuffle
-null (Methods). Two temporal folds bracket the 2020-2021 regime break:
+segregation statistic is the total observed evaluation-window co-mention count over all eligible pairs, standardized against a label-shuffle null (Methods). Two temporal folds bracket the 2020-2021 regime break:
 build 2017-2018 with evaluation 2019 (fold A), and build 2022-2023 with
-evaluation 2024 (fold B). The post-review gate table (companion paper,
-"A second platform"; gate v2 run) reads:
+evaluation 2024 (fold B). The companion analysis's final values (its section "A second platform") read:
 
 | stratum | fold A (eval 2019) | fold B (eval 2024) |
 |---------|-------------------:|-------------------:|
@@ -80,10 +76,7 @@ evaluation 2024 (fold B). The post-review gate table (companion paper,
 | DD | -10.1 | -17.1 |
 | WSB | **-0.1** | **-9.0** |
 
-(The registration for the present study, drafted from the pre-review
-gate run, quotes the earlier values -0.2 and -8.7 for the WSB cells.
-The difference is the gate's post-review exclusion fix plus Monte Carlo
-noise and is immaterial to every bar here.)
+(The registration for the present study quotes the earlier values -0.2 and -8.7 for the WSB cells, from a run of the companion analysis that preceded its post-review correction. The difference is that correction plus Monte Carlo noise and is immaterial to every bar here.)
 
 WSB's fold-A chance reading is well measured: the registered
 subsampling control matched to DD's document counts leaves it at chance
@@ -95,7 +88,7 @@ two folds sit on opposite sides of the 2020-2021 market regime break
 (era confound). They differ in acquisition provenance, with the source
 seam aligned to the fold boundary (provenance confound). And the
 community split itself was exploratory, with no registered prediction
-attached (post-hoc). Even so, the observation is unique in this program. Across
+attached (post-hoc). Even so, the observation is unique in this research program, meaning the companion paper and this study. Across
 twenty years of Hacker News at two granularities, six financial
 subreddits, and a science benchmark control, it is the only case in
 which a measured community changed segregation state at all.
@@ -107,7 +100,7 @@ resolution, and whether the timing, read against a pre-committed list
 of dated governance events, can order the candidate mechanisms.
 
 The candidate mechanisms, stated before any window was computed
-(registration; seed document in the code release):
+(registration and its planning note in the code release):
 
 - **Scale/fragmentation.** WSB grew roughly 30-fold in weeks around the
   January 2021 GameStop squeeze, from about 1.8 million to over 9
@@ -178,8 +171,7 @@ same-platform control.
 This paper is the registered study of that transition. It asks three
 questions, frozen as predictions before any statistic was computed.
 Does the transition resolve into a localizable event at quarterly
-resolution, rather than an artifact of comparing two distant endpoints
-(P1)? Does its onset fall within calendar 2021, the year of the
+resolution, rather than an artifact of comparing the two fold results, hereafter the endpoints (P1)? Does its onset fall within calendar 2021, the year of the
 GameStop short squeeze and the moderation overhaul that followed it
 (P2)? And is the transition specific to r/wallstreetbets, rather than
 an era-wide shift that any finance community of the period would show
@@ -188,8 +180,7 @@ an era-wide shift that any finance community of the period would show
 The design addresses the three confounds in order. A fresh corpus of
 98.1 million posts and comments covers r/wallstreetbets and five
 analysis-oriented control subreddits continuously from 2019 through
-2024, acquired from a single source in a single pull era. That removes
-the provenance seam entirely, and a confirmatory Part A verifies that
+2024, acquired from a single source in a single collection pass. That removes any change of data source, and a confirmatory Part A verifies that
 the companion paper's walled endpoint survives on uniform provenance.
 A rolling-window design over continuous time, with the control stratum
 computed identically alongside, answers (though cannot eliminate) the
@@ -197,8 +188,7 @@ era confound: there is no fold boundary for a regime break to hide in,
 and an era-wide effect would move both strata. The registration removes
 the post-hoc character of the original observation: window definitions,
 thresholds, onset rule, and primary cell were frozen and committed
-before any outcome was computed, with outcome-blind census gates in
-between.
+before any outcome was computed, with outcome-blind census checks in between.
 
 All three registered predictions pass. The transition is real, sharp,
 and dated: onset 2021-04-01, with chance-level mixing before it and
@@ -250,7 +240,7 @@ brought together beyond chance. Windows roll over the 24 quarters of
 quarters and an evaluation period of the following two quarters, the
 build length having been chosen by an outcome-blind census rule. Both
 strata, WSB and DD, are computed identically and independently, under
-a primary union lens and a cashtag sensitivity lens. Every window
+a primary union lens, which counts a ticker whether written as $GME or as GME, and a cashtag sensitivity lens, which counts only the $GME form. Every window
 definition, threshold, and rule was registered before any statistic
 existed; full specifications are in Methods.
 
@@ -274,18 +264,16 @@ Methods.
 ### The endpoint survives uniform provenance (Part A)
 
 Rebuilt with uniform API provenance in both folds, the fold-B endpoint
-cells read as follows, under the frozen gate criterion and with the
-gate v2 mixed-provenance values alongside for comparison:
+cells read as follows, under the companion analysis's frozen criterion and with its mixed-provenance values alongside for comparison:
 
-| cell | eligible pairs | z (uniform API) | z (gate v2, mixed) | formed | binomial p |
+| cell | eligible pairs | z (uniform API) | z (companion analysis, mixed provenance) | formed | binomial p |
 |------|---------------:|----------------:|-------------------:|-------:|-----------:|
 | WSB (MEME)/union | 210 | **-9.40** | -9.0 | 0 | 1.00 |
 | ALL/union | 479 | **-21.57** | -17.7 | 2 | 0.95 |
 | DD/union | 281 | **-16.41** | -17.1 | 0 | 1.00 |
 
 The registered expectation (WSB fold-B z ≤ -3) is met with a wide
-margin, and the eligible-pair counts track the gate v2 census (210
-versus 209). The cashtag sensitivity lens is directionally consistent
+margin, and the eligible-pair counts track the companion analysis's census (210 versus 209). The cashtag sensitivity lens is directionally consistent
 (-8.5/-10.1/-3.1; results document in the provenance appendix). The
 companion paper's walled endpoint is therefore not a provenance
 artifact; the provenance confound is removed from that observation, and
@@ -312,7 +300,7 @@ rule requires persistence, and the four windows after it include two at
 chance and two far above it.
 
 - **P1 PASS.** Two consecutive windows with |z| < 3 precede the onset
-  (eval 2020Q2 and 2020Q3, both +1.5), and two consecutive windows with
+  (evaluation windows starting 2020Q2 and 2020Q3, both +1.5), and two consecutive windows with
   z ≤ -5 sit at and after it (-10.7, -9.0). The transition is visible
   and localizable at quarterly resolution.
 - **P2 PASS.** The onset time 2021-04-01 lies within the registered
@@ -320,8 +308,7 @@ chance and two far above it.
 
 The registered secondary step fit agrees and adds no uncertainty band:
 the least-squares one-break fit places the break immediately before the
-2021Q2 evaluation window, and the near-tie set (breaks within 10% of
-minimum SSE) contains that break alone. At this resolution the
+2021Q2 evaluation window, and the near-tie set (breaks within 10% of the best fit's squared error) contains that break alone. At this resolution the
 transition is as sharp as the design can express: chance-level mixing
 through 2020Q3, and walls in every window from 2021Q2 to the end of the
 data, three and a half years without a single reversion.
@@ -330,7 +317,7 @@ data, three and a half years without a single reversion.
 
 Between the chance-level regime and the walls sit two windows already
 visible in the series above. In the two evaluation windows straddling
-the GameStop episode (eval 2020Q4-2021Q1 and eval 2021Q1-2021Q2), the
+the GameStop episode (evaluation 2020Q4 to 2021Q1 and 2021Q1 to 2021Q2), the
 suppressed pairs of WSB co-mention at 28.6 and 30.9 standard deviations
 *above* their label-shuffle nulls:
 
@@ -351,14 +338,14 @@ context: across two platforms, two unit vocabularies, and every
 ordinary window ever measured in this program, formation sat at the
 false-positive floor; these two windows are the only place it has ever
 risen above it. No registered bar attaches to formation here, by
-design. The claim is z-first, and the z is unambiguous.
+design. The claim rests on z, and the z is unambiguous.
 
 **The placebo.** A result this far above chance calls for the same
 scrutiny the companion paper applied to its own false positive: its
 central cautionary finding was a formation effect manufactured by the
 measuring stick, caught by a label-shuffle placebo. The same pattern
 was applied to this excursion, as a post-registration robustness check
-in the registered placebo's mold. Forty truth-null replicates ask
+in the registered placebo's mold. Forty shuffled-data placebo replicates ask
 whether the machinery can produce the excursion from GME-era document
 structure alone. Each replicate applies an *outer* label shuffle that
 destroys any real author-ticker association. It then recomputes the
@@ -371,12 +358,11 @@ with per-replicate seeds documented:
 | 2020Q4-2021Q1 | +0.47 | 1.18 | -1.45 | +3.25 | 4 | **+28.6** / 24 |
 | 2021Q1-2021Q2 | +0.30 | 0.99 | -1.71 | +2.53 | 7 | **+30.9** / 61 |
 
-Under truth-null the statistic behaves like a standard normal, as a
+On shuffled data the statistic behaves like a standard normal, as a
 calibrated instrument should; the real values sit roughly 24 and 31
 placebo standard deviations outside their placebo distributions. The
 excursion is in the data, not the machinery. This answers, for this
-specific regime, the densification concern that killed the companion
-paper's author-space formation result: extreme document-size and
+specific regime, the document-size concern that sank the companion paper's author-level formation result: extreme document-size and
 volume heterogeneity in the GME-era windows does not, by itself,
 produce anything resembling the observed values.
 
@@ -415,14 +401,12 @@ the five years (from about -8 toward -15.7) is gradual, as predicted.
 
 **Window length.** The registered sensitivity curves reproduce the
 shape at both alternative window lengths. At B = 6 the excursion
-windows read +32.2 and +46.0 and the flip to walls occurs at the same
-eval window (2021Q2, z = -8.9, all subsequent windows ≤ -5). At B = 8
+windows read +32.2 and +46.0 and the flip to walls occurs at the same evaluation window (2021Q2, z = -8.9, all subsequent windows ≤ -5). At B = 8
 the single in-range excursion window reads +27.3 with the flip likewise
 at 2021Q2 (-7.6). No bar attaches to these curves; they are reported
 regardless of outcome so that the ladder's choice of B = 4 cannot be
 what makes the transition appear. Longer builds start later in the
-calendar, so the B = 6 and B = 8 series begin at eval 2020Q3 and 2021Q1
-respectively. The full series with pair counts are in the released
+calendar, so the B = 6 and B = 8 series begin at evaluation windows 2020Q3 and 2021Q1 respectively. The full series with pair counts are in the released
 window table.
 
 **Lens.** The cashtag lens is registered sensitivity with an
@@ -437,8 +421,7 @@ eligible universe; it is reported as directional sensitivity, not as a
 second measurement of the magnitude.
 
 **Census consistency.** The corrected census's first B = 4 window
-(build year 2019) counts 44,013 WSB/union build documents; the gate v2
-census counts 44,012 fold-A MEME eval documents over the same year by
+(build year 2019) counts 44,013 WSB/union build documents; the companion analysis's census counts 44,012 fold-A WSB evaluation documents over the same year by
 the same construction. Two corpora pulled independently, months apart,
 agree to one document in 44 thousand. The agreement is near-exact, not
 identical, and is reported as such (Amendment V4 addendum; the
@@ -547,13 +530,12 @@ one transition: this is a case study of the only transition the program
 has observed. Nothing here establishes how often discourse communities
 transition, in either direction, or whether fusion-then-walls is the
 generic cascade signature. That requires deliberately surveying for
-transitions, which the mixing-deficit instrument makes possible.
+transitions, which the segregation statistic makes possible.
 Fourth, the excursion placebo is post-registration. It follows the
 companion paper's registered placebo pattern and its per-replicate
 seeds and code are committed, but it was designed after the excursion
 was seen, as a robustness check on a result the registration did not
-predict. The registered claims (P1-P3) do not depend on it. Fifth, the
-V4 deviation: the first run omitted a registered exclusion filter, and
+predict. The registered claims (P1-P3) do not depend on it. Fifth, the Amendment V4 deviation: the first run omitted a registered exclusion filter, and
 its outcomes were seen before correction (Methods). The correction was
 rule-bound, both runs are released, and every verdict is identical
 across them. Even so, the first run did not meet the strict
@@ -584,12 +566,10 @@ went up.
 ### Corpus acquisition
 
 The corpus is a fresh, single-source pull: the Arctic Shift API,
-acquired 2026-08-31 in one fleet run (pull script and runbook in the
-code release), landing 864 shard files. These cover 72 monthly shards
-of WSB posts and comments spanning 2019-01 through 2024-12, plus the
+acquired 2026-08-31 in one run (pull script and runbook in the code release), landing 864 monthly files. These cover 72 months of WSB posts and comments spanning 2019-01 through 2024-12, plus the
 same 72 months for each of the five DD subreddits, totaling 98,084,631
 rows (about 5.6 GB compressed). The corpus is never mixed with the
-companion paper's corpus: one source, one pull era, uniform fields for
+companion paper's corpus: one source, one collection pass, uniform fields for
 treatment and control strata alike. This uniformity is the design
 answer to the provenance confound. There is no archival/API seam
 anywhere in the data, and in particular none co-located with the
@@ -597,22 +577,18 @@ phenomenon under study.
 
 Hygiene follows the program's frozen rules: deleted/removed authors and
 AutoModerator dropped; deduplication by item id; ticker extraction by
-the gate's frozen extractor (union lens primary, cashtag lens
-sensitivity, committed stoplist, SEC registrant-table resolution,
-macro-hub tickers excluded, hub guard at 50 tickers per document).
+the companion analysis's frozen extractor (union lens primary, cashtag lens sensitivity, committed stoplist, symbols resolved against the SEC registrant table, index and macro tickers excluded, a cap of 50 tickers per document).
 Extraction yields 11,200,484 ticker mentions. The exclusion-filter
-deviation and correction affecting the downstream loaders is disclosed
+deviation and correction affecting the scripts that read the mention table is disclosed
 below. The 2020-2021 regime-break years are deliberately *included*:
 prior studies in this program excluded them as a confound, but here the
-transition is the object of study (registration, gate decision 2).
+transition is the object of study (registration, decision 2 carried over from the companion analysis).
 
 ### Outcome-blind integrity checks
 
-Before any census or statistic was computed, every shard passed a
-full-parse integrity check (validation script in the code release): no
-missing shard, no unparseable line, no month with more than 1%
+Before any census or statistic was computed, every monthly file passed a full-parse integrity check (validation script in the code release): no missing file, no unparseable line, no month with more than 1%
 out-of-span timestamps, no month at zero or below 5% of its neighbours.
-The complete per-shard volume table was committed as a dated amendment
+The complete per-file volume table was committed as a dated amendment
 to the registration (Amendment V1; volume table in the provenance
 appendix) before any window census existed. Spot-checks against the
 prior acquisition era's runbook match exactly (for example, 2022-06 =
@@ -634,8 +610,7 @@ explain.
 ### Registration
 
 The full registration (preregistration_paper2.md) was frozen and
-committed, with the owner's explicit go recorded, before any outcome
-statistic was computed; its amendments V1-V4 are dated appendices,
+committed, with the author's sign-off recorded in the commit history, before any outcome statistic was computed; its amendments V1-V4 are dated appendices,
 never rewordings. The study has two parts sharing one acquisition.
 
 ### Part B: rolling windows and the primary statistic
@@ -643,34 +618,29 @@ never rewordings. The study has two parts sharing one acquisition.
 The document is one author's ticker set within one calendar quarter, as
 everywhere in this program. Windows roll over the 24 quarters
 2019Q1-2024Q4, stepped one quarter: window k has a build period of B
-quarters and an evaluation period of the following 2 quarters (eval
-length fixed). Eligibility per window is identical to the companion
-paper's gate: a ticker is frequent at 20 or more distinct build
+quarters and an evaluation period of the following 2 quarters (evaluation length fixed). Eligibility per window is identical to the companion analysis: a ticker is frequent at 20 or more distinct build
 author-quarters; an eligible ("suppressed") pair has expected joint
 count E = f_i·f_j/N ≥ 2 with zero observed build co-mentions.
 
-The primary statistic per window is the program's run-8 segregation z:
-the total observed eval co-mention document count over all eligible
+The primary statistic per window is the companion paper's segregation z: the total observed evaluation-window co-mention document count over all eligible
 pairs, standardized against a label-shuffle null. The null permutes
 concept labels over the (document, ticker) incidences of the frequent
 set, with within-document duplicates collapsed, using R = 100
 replicates and numpy default_rng seed 20260831. The evaluation script
-imports the gate's machinery, so the statistic is identical by
-construction. A registered determinism rule, carried over from the
-gate's adversarial review, requires every incidence list to be sorted
+imports the companion analysis's code, so the statistic is identical by
+construction. A registered determinism rule, carried over from the companion analysis's adversarial review, requires every incidence list to be sorted
 before permutation, so no set or dict iteration order can feed the
 seeded RNG. The script refuses to run unless the registration status
 is REGISTERED. Formation counts per window (eligible pairs newly
 co-mentioning beyond their per-pair permutation thresholds) are a
-registered *secondary* readout with no bar attached: the gate's power
-table shows them underpowered at these window sizes.
+registered *secondary* readout with no bar attached: the companion analysis's power table shows them underpowered at these window sizes.
 
 Both strata (WSB treatment, DD control) are computed identically and
 independently, under both lenses (union primary, cashtag sensitivity;
 a cashtag window with fewer than 20 eligible pairs is reported
 UNINFORMATIVE, never as a negative).
 
-### Outcome-blind census gate and the window-length ladder
+### Outcome-blind census check and the window-length ladder
 
 Window length B was chosen from {4, 6, 8} quarters by a registered
 ladder: the shortest B whose per-window census gives a median
@@ -722,8 +692,7 @@ w's evaluation interval. If no such window exists, there is no onset.
 P1 and P2 are scored on the WSB stratum, union lens, at the
 ladder-chosen B = 4; P3 on the DD stratum, union lens, same B. No other
 cell scores any bar (primary-cell clause, committed pre-outcome). A
-secondary one-break step fit on the primary z series (least-squares,
-all interior candidate breaks, near-tie set within 10% of minimum SSE)
+secondary one-break step fit on the primary z series (least-squares, all interior candidate breaks, near-tie set within 10% of the best fit's squared error)
 was registered pre-census as an uncertainty band on the onset date. No
 bar attaches to it.
 
@@ -738,11 +707,9 @@ and timing of the transition, not on its existence at the endpoints.
 
 Part A rebuilds the companion paper's fold B with the archival-dump
 months replaced by API months from this pull, giving uniform API
-provenance in both folds. It then recomputes the WSB-dependent gate
-cells under the frozen gate criterion, reusing the gate evaluation
-code verbatim: same per-pair label-shuffle p99, R = 100, seed
+provenance in both folds. It then recomputes the WSB-dependent cells of the companion analysis under its frozen criterion, reusing its evaluation code verbatim: same per-pair label-shuffle p99, R = 100, seed
 20260831, formation floor, and segregation z. The registered
-expectation is that fold-B MEME segregation z stays ≤ -3, i.e., that
+expectation is that fold-B WSB segregation z stays ≤ -3, i.e., that
 the walled endpoint is real and not a provenance artifact. Part A
 removes the provenance confound only; it says nothing about timing.
 
@@ -782,16 +749,12 @@ P3 its power against era-wide narratives.
 
 The first full run of the three paper-2 scripts (census, rolling
 windows, Part A) deviated from the registered spec. The scripts loaded
-mention rows directly from the extraction parquet and omitted the
-load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH). The gate
-applies that filter as its frozen macro-hub exclusion, and this
-registration incorporates it by reference ("identical to the gate").
-The omission was found by a code diff during cross-checking against
-the gate's tables, *after* first-run outcomes had been seen, and is
+mention rows directly from the extraction table and omitted the
+load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH). The companion analysis applies that filter as its frozen exclusion of index and macro tickers, and this registration incorporates it by reference (its phrase is "identical to the gate", the registration's internal name for the companion analysis).
+The omission was found by a code diff during cross-checking against the companion analysis's tables, *after* first-run outcomes had been seen, and is
 disclosed as Amendment V4.
 
-The correction path is rule-bound. The filter was added to the three
-loaders. The census was re-derived and the window-length ladder
+The correction path is rule-bound. The filter was added to the three reading scripts. The census was re-derived and the window-length ladder
 re-decided by the unchanged registered rule; B = 4 stands, and the
 re-decision was committed before any corrected z existed. Parts A and
 B were then re-run under the unchanged bars, seeds, and window
@@ -808,7 +771,7 @@ outcomes, same excursion and control readings. Every number in Results
 is from the conforming run. A related target correction is disclosed
 in the same amendment: the census consistency anchor recorded in
 Amendment V3 compared two pre-exclusion quantities; the agreement was
-real but old-vs-old. The operative target is the gate v2 census value,
+real but old-vs-old. The operative target is the companion analysis's final census value,
 and the corrected comparison is reported in Results under census
 consistency.
 
@@ -825,7 +788,7 @@ deviation and its correction (Amendment V4).
 
 Raw Reddit content is public and retrievable via the Arctic Shift API;
 the release includes exact pull specifications. Raw data files stay out
-of the repository. The released derivations (per-shard volume table,
+of the repository. The released derivations (per-file volume table,
 window census, window z series for all 204 cells, Part A cells,
 excursion placebo replicates, and the superseded first-run outputs) are
 committed at https://github.com/talecK/antikythera (private during
@@ -911,7 +874,7 @@ ahead of its result. The numbers in this paper trace as follows:
 | Candidate mechanisms, stated pre-window | reports/paper2_seed.md | 516a158 (first); 231573b (last edit) |
 | Ticker extraction (frozen unit rules) | pipeline extractor | 8db5012 |
 | Corpus pull and validation | pipeline/pull_reddit_paper2.py, pipeline/validate_paper2.py | e4b61ef; f367637 |
-| Evaluation code (registration-checked, gate machinery) | eval/run_paper2.py | 35914d2 |
+| Evaluation code (registration-checked; imports the companion analysis's code) | eval/run_paper2.py | 35914d2 |
 | Corrected census + B-ladder re-decision (pre-outcome) | reports/paper2_window_census.tsv | 80b3b37 |
 | Conforming-run z series, all 204 cells | reports/paper2_windows_z.tsv | 21a9dc7 |
 | Verdicts, Part A, excursion, census cell | reports/paper2_results.md | 21a9dc7 |
@@ -922,7 +885,7 @@ ahead of its result. The numbers in this paper trace as follows:
 | Discussion notes (non-registered readings) | reports/paper2_results.md | d184472 |
 | Figure 1 (schematic, no data) | eval/make_paper2_schematic.py, reports/figures/p2_schematic | cdbb5d8; restyled 5eb7eb2, aligned 9735b96, padded aefe80b |
 | Figures 2-4 | eval/make_paper2_figs.py, reports/figures/p2_fig1-3 | 4360746; restyled 5eb7eb2, aligned 9735b96, padded aefe80b (shared style eval/paper2_figstyle.py) |
-| Gate v2 comparison values (companion paper) | gate table / gate_rerun_v2.log | f89cb2b, 1386fc0 |
+| Companion analysis comparison values (final run) | gate table / gate_rerun_v2.log | f89cb2b, 1386fc0 |
 
 ## References (all DOIs verified against Crossref 2026-09-01; one anchor source still marked [verify])
 
