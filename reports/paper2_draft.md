@@ -183,13 +183,16 @@ The candidate mechanisms, stated before any window was computed
 (registration; reports/paper2_seed.md):
 
 - **Scale/fragmentation.** WSB grew roughly 30-fold in weeks around the
-  January 2021 GameStop squeeze. If walls are internal tribalization of
+  January 2021 GameStop squeeze, from about 1.8 million to over 9
+  million subscribers (anchor A2; dated sources in Section 4.5). If
+  walls are internal tribalization of
   a suddenly enormous community, onset should track the subscriber
   explosion: fast, in or immediately after 2021Q1.
 - **Governance.** After the squeeze, WSB's moderation regime changed
   wholesale: a mod-team regime change, automated ticker filtering,
   containment-by-megathread, and a market-cap floor on discussable
-  tickers. If walls are topicality policing, onset should lag the event
+  tickers (anchors A4-A8; dated sources in Section 4.5). If walls are
+  topicality policing, onset should lag the event
   by months, tracking the datable rule changes through 2021.
 - **Era narratives.** Market-wide sector stories sort attention
   everywhere at once; this predicts a parallel discontinuity in the DD
