@@ -38,10 +38,9 @@ two evaluation windows straddling the January 2021 GameStop episode,
 suppressed ticker pairs co-mention 28.6 and 30.9 standard deviations
 above their shuffle nulls. This is the only above-chance excursion in
 five years of windows, and the only one this program has observed at
-any granularity on either platform. A forty-replicate truth-null
-placebo running the full registered statistic shows that the machinery
-cannot manufacture the excursion. Placebo z values are distributed
-approximately as N(0,1), and the real values sit roughly 24 to 31
+any granularity on either platform. A truth-null placebo re-running
+the full registered statistic on shuffled data shows the machinery
+cannot manufacture the excursion; the real values sit roughly 24 to 31
 placebo standard deviations out. The control stratum stays walled
 straight through the squeeze, at z = -7.7 and -8.6 in the same two
 windows, so the fusion is specific to one community, not to the era.
