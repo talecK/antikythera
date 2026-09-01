@@ -136,4 +136,114 @@ hardening (5.1), the transition (5.2), the excursion and its placebo
 discusses what the timing can and cannot identify, and clearly labels
 the non-registered readings. Section 7 concludes.
 
+## 2. The source observation and the question
+
+The companion paper's replication corpus splits six financial
+subreddits into two strata: MEME (r/wallstreetbets alone, hereafter
+WSB) and DD (the union of five analysis-oriented subreddits:
+r/SecurityAnalysis, r/ValueInvesting, r/StockMarket, r/stocks,
+r/investing). The document is one author's ticker mentions within one
+calendar quarter; a pair of frequently mentioned tickers is *eligible*
+("suppressed") in a build window if its expected joint document count
+is at least 2 while its observed co-mention count is zero; and the
+segregation statistic is the total observed eval-window co-mention
+count over all eligible pairs, standardized against a label-shuffle
+null (Section 4.1). Two temporal folds bracket the 2020-2021 regime
+break: build 2017-2018 with evaluation 2019 (fold A), and build
+2022-2023 with evaluation 2024 (fold B).
+
+The post-review gate table (companion paper Section 6.3; gate v2 run,
+commit f89cb2b there) reads:
+
+| stratum | fold A (eval 2019) | fold B (eval 2024) |
+|---------|-------------------:|-------------------:|
+| ALL (pooled) | -8.8 | -17.7 |
+| DD | -10.1 | -17.1 |
+| WSB | **-0.1** | **-9.0** |
+
+(The registration for the present study, drafted from the pre-review
+gate run, quotes the earlier values -0.2 and -8.7 for the WSB cells;
+the difference is the gate's post-review exclusion fix plus Monte Carlo
+noise and is immaterial to every bar here.)
+
+WSB's fold-A chance reading is well measured: the registered
+subsampling control matched to DD's document counts leaves it at chance
+(z = -0.0), so it is not a power artifact, and a DD-sized effect would
+have shown near z = -7. So the observation is: the one wall-free
+community ever measured in this program grew walls somewhere between
+2019 and 2024. The companion paper is final on that observation; this
+study cites it and does not reopen it (its Section 6.3, gate table
+commit 1386fc0). The question here is *when* the walls went up, at
+quarterly resolution, and whether the timing — read against a
+pre-committed list of dated governance events — can order the candidate
+mechanisms.
+
+The candidate mechanisms, stated before any window was computed
+(registration; reports/paper2_seed.md):
+
+- **Scale/fragmentation.** WSB grew roughly 30-fold in weeks around the
+  January 2021 GameStop squeeze. If walls are internal tribalization of
+  a suddenly enormous community, onset should track the subscriber
+  explosion: fast, in or immediately after 2021Q1.
+- **Governance.** After the squeeze, WSB's moderation regime changed
+  wholesale — a mod-team regime change, automated ticker filtering,
+  containment-by-megathread, and a market-cap floor on discussable
+  tickers. If walls are topicality policing, onset should lag the event
+  by months, tracking the datable rule changes through 2021.
+- **Era narratives.** Market-wide sector stories sort attention
+  everywhere at once; this predicts a parallel discontinuity in the DD
+  control stratum. P3 is its test.
+
+## 3. Corpus
+
+### 3.1 Acquisition
+
+The corpus is a fresh, single-source pull: the Arctic Shift API,
+acquired 2026-08-31 in one fleet run (pipeline/pull_reddit_paper2.py;
+runbook in the repository), landing 864 shard files — 72 monthly shards
+of WSB posts and comments spanning 2019-01 through 2024-12, plus the
+same 72 months for each of the five DD subreddits — totaling
+98,084,631 rows (~5.6 GB compressed). It is never mixed with the
+companion paper's corpus: one source, one pull era, uniform fields for
+treatment and control strata alike. This uniformity is the design
+answer to the provenance confound: there is no archival/API seam
+anywhere in the data, and in particular none co-located with the
+phenomenon under study.
+
+Hygiene follows the program's frozen rules: deleted/removed authors and
+AutoModerator dropped; deduplication by item id; ticker extraction by
+the gate's frozen extractor (union lens primary, cashtag lens
+sensitivity, committed stoplist, SEC registrant-table resolution,
+macro-hub tickers excluded, hub guard at 50 tickers per document).
+Extraction yields 11,200,484 ticker mentions (commit 8db5012; the
+exclusion-filter deviation and correction affecting the downstream
+loaders is disclosed in Section 4.5). The 2020-2021 regime-break years
+are deliberately *included*: prior studies in this program excluded
+them as a confound, but here the transition is the object of study
+(registration, gate decision 2).
+
+### 3.2 Outcome-blind integrity checks
+
+Before any census or statistic was computed, every shard passed a
+full-parse integrity check (pipeline/validate_paper2.py): no missing
+shard, no unparseable line, no month with more than 1% out-of-span
+timestamps, no month at zero or below 5% of its neighbours. The
+complete per-shard volume table was committed as a dated amendment to
+the registration (Amendment V1, commit 63b7f6e;
+reports/paper2_volume_table.tsv) before any window census existed.
+Spot-checks against the prior acquisition era's runbook match exactly
+(e.g., 2022-06 = 1.13M, 2023-09 = 510K, 2024-03 = 962K WSB comments).
+
+Two observations were recorded in that amendment, before any outcome
+existed, precisely because a result could later be blamed on them. The
+WSB volume series itself shows the era plainly — monthly comments run
+around 300 thousand through 2019, spike to 2.6 million in March 2020
+(COVID) and 8.0 million in January 2021 (GameStop), then decay to under
+a million by 2023 — but volume is not the studied statistic, and the
+shuffle null conditions on the realized documents of each window.
+Second, one control subreddit (r/SecurityAnalysis) decays to a few
+thousand comments per year by 2023-24; the DD control is registered as
+the union of five subreddits, so this changes nothing, but the per-sub
+sparsity was noted before anyone saw a result it could explain.
+
 <!-- DRAFT CONTINUES -->
