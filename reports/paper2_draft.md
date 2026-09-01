@@ -15,41 +15,27 @@ table at the end. Awaiting author prose pass.**
 
 A companion study of idea segregation in online discourse found that
 concept pairs which should co-occur but never have ("suppressed" pairs)
-stay apart at rates far below chance in every community measured, on
-two platforms, Hacker News and Reddit (Quiring 2026, "The gaps that
-don't close"). We call
-that persistent below-chance separation a wall. The single exception
-was r/wallstreetbets: before 2020 it sat exactly at chance, and by
-2024 it was walled like everywhere else. This is the only
-transition between segregation states observed anywhere in the program.
-Here we report a registered study of when the transition happened and
-what its timing can and cannot say about why. The study runs on a
-fresh single-source corpus of 98.1 million Reddit posts and comments
-covering 2019-2024. Rolling quarterly windows test three predictions
-committed before any statistic was computed: the transition is visible
-and localizable at quarterly resolution (P1), its onset falls within
-2021 (P2), and an analysis-oriented control stratum shows no comparable
-discontinuity (P3). All three pass. r/wallstreetbets moves from
-chance-level mixing, with z = +1.5 in two consecutive pre-onset
-windows, to persistent walls, with z between -4.6 and -11.0 in all
-fourteen windows from onset onward and zero reversions. The onset date
-is 2021-04-01. The central finding lies between those regimes. In the
-two evaluation windows straddling the January 2021 GameStop episode,
-suppressed ticker pairs co-mention 28.6 and 30.9 standard deviations
-above their shuffle nulls. This is the only above-chance excursion in
-five years of windows, and the only one this program has observed at
-any granularity on either platform. A truth-null placebo re-running
-the full registered statistic on shuffled data shows the machinery
-cannot manufacture the excursion; the real values sit roughly 24 to 31
-placebo standard deviations out. The analysis-oriented control
-communities stay walled straight through the squeeze, at z = -7.7 and
--8.6 in the same two windows, so the excursion is specific to
-r/wallstreetbets, not to the era. Two candidate causes for the walls
-were in play: the community's sudden thirty-fold growth during the
-squeeze, and the moderation overhaul in the months after it. We
-decided in advance that an onset in mid-2021 could point to either
-cause, and that is precisely where it fell. As such, the study can say
-when the walls went up, but not the exact mechanism that built them.
+stay apart at rates far below chance across two platforms, Hacker News
+and Reddit. We call that persistent below-chance separation a wall.
+The single exception was r/wallstreetbets: before 2020 it sat exactly
+at chance, and by 2024 it was walled like everywhere else.
+
+This registered study of when the transition happened runs on a fresh
+single-source corpus of 98.1 million Reddit posts and comments covering
+2019-2024. Rolling quarterly windows test three
+predictions committed in advance, and all three pass. r/wallstreetbets moves from chance-level mixing to persistent
+walls with zero reversions, and the onset date is 2021-04-01. In the
+two evaluation windows straddling the January 2021 GameStop episode, suppressed ticker
+pairs co-mention 28.6 and 30.9 standard deviations above their shuffle
+nulls. It is the only above-chance excursion this program has observed.
+Shuffled data never produce this excursion. The analysis-oriented control
+communities stay walled straight through the squeeze, so the excursion
+is specific to r/wallstreetbets, not to the era. Two candidate causes
+for the walls were in play: the community's sudden thirty-fold growth
+during the squeeze, and the moderation overhaul in the months after it.
+We decided in advance that an onset in mid-2021 could point to either
+cause, and that is precisely where it fell. The study can say when the
+walls went up, but not the exact mechanism that built them.
 
 ---
 
