@@ -246,4 +246,180 @@ thousand comments per year by 2023-24; the DD control is registered as
 the union of five subreddits, so this changes nothing, but the per-sub
 sparsity was noted before anyone saw a result it could explain.
 
+## 4. Registered design
+
+The full registration (preregistration_paper2.md) was frozen and
+committed, with the owner's explicit go recorded, before any outcome
+statistic was computed (commit 99ffd9e); its amendments V1-V4 are dated
+appendices, never rewordings. The study has two parts sharing one
+acquisition.
+
+### 4.1 Part B: rolling windows and the primary statistic
+
+The document is one author's ticker set within one calendar quarter, as
+everywhere in this program. Windows roll over the 24 quarters
+2019Q1-2024Q4, stepped one quarter: window k has a build period of B
+quarters and an evaluation period of the following 2 quarters (eval
+length fixed). Eligibility per window is identical to the companion
+paper's gate: a ticker is frequent at 20 or more distinct build
+author-quarters; an eligible ("suppressed") pair has expected joint
+count E = f_i·f_j/N ≥ 2 with zero observed build co-mentions.
+
+The primary statistic per window is the program's run-8 segregation z:
+the total observed eval co-mention document count over all eligible
+pairs, standardized against a label-shuffle null (concept labels
+permuted over the (document, ticker) incidences of the frequent set,
+within-document duplicates collapsed; R = 100 replicates, numpy
+default_rng seed 20260831). The evaluation script imports the gate's
+machinery, so the statistic is identical by construction, and a
+registered determinism rule (from the gate's adversarial review)
+requires every incidence list to be sorted before permutation so that
+no set or dict iteration order can feed the seeded RNG. The script
+refuses to run unless the registration status is REGISTERED (commit
+35914d2). Formation counts per window — eligible pairs newly
+co-mentioning beyond their per-pair permutation threshold — are a
+registered *secondary* readout with no bar attached: the gate's power
+table shows them underpowered at these window sizes.
+
+Both strata (WSB treatment, DD control) are computed identically and
+independently, under both lenses (union primary, cashtag sensitivity;
+a cashtag window with fewer than 20 eligible pairs is reported
+UNINFORMATIVE, never as a negative).
+
+### 4.2 Outcome-blind census gate and the window-length ladder
+
+Window length B was chosen from {4, 6, 8} quarters by a registered
+ladder — the shortest B whose per-window census gives a median
+eligible-pair count of at least 100 in the WSB/union cell — so that the
+choice is a census property, not a researcher degree of freedom. The
+census (eligibility structure only; the census script imports the
+document builder but structurally cannot compute the statistic) was
+computed, committed as a dated amendment, and owner-reviewed before the
+first segregation z existed (Amendment V3, commit b86c378; corrected
+census, Section 4.5, commit 80b3b37). The ladder chose **B = 4**: on
+the corrected census the B=4 WSB/union cell has median 115 eligible
+pairs per window (range 45-498 over 19 windows), and *no* window in any
+B, either stratum, union lens, falls below the registered LOW-POWER
+floor of 30 eligible pairs — every window enters the onset rule. B = 6
+and B = 8 become registered sensitivity curves, computed and reported
+regardless of outcome, so that the window-length choice cannot be what
+makes a transition appear.
+
+One census property was recorded in the amendment before any z existed,
+and it binds how results are displayed: eligible-pair counts co-move
+with era volume, so between-window z magnitudes are different-powered
+tests. Per-window z values are each internally calibrated (the null
+conditions on that window's realized documents), and the onset rule
+uses only per-window threshold crossings; but any reader comparing raw
+z magnitudes across windows is comparing tests whose eligible universes
+differ by up to a factor of ten. For this reason every z series in this
+paper — every figure and every table — carries its eligible-pair counts
+alongside, and the figures plot the pair-count series directly beneath
+the z series.
+
+### 4.3 Registered predictions, onset rule, and primary cell
+
+The onset rule, frozen verbatim: the onset window is the earliest
+window w with z_w ≤ -3 such that every later window also has z ≤ -3,
+allowing at most one later exception; the onset *time* is the start of
+w's evaluation interval. If no such window exists, there is no onset.
+
+- **P1 (existence):** at least 2 consecutive non-LOW-POWER windows with
+  |z| < 3 before the onset window, and at least 2 consecutive windows
+  with z ≤ -5 at or after it. Both halves required. The known endpoints
+  make P1 the bet that the transition is visible and localizable at
+  quarterly resolution rather than an artifact of the fold endpoints.
+- **P2 (timing):** the onset time lies within [2021-01-01, 2021-12-31].
+- **P3 (control specificity):** the DD/union series contains no window
+  pair (w, w+1), both non-LOW-POWER, with z_w > -3 and z_{w+1} ≤ -5,
+  anywhere in eval range 2020-01 through 2022-12 — no cliff. DD's
+  deepening (fold A -10.1 to fold B -17.1) is predicted gradual.
+
+P1 and P2 are scored on the WSB stratum, union lens, at the
+ladder-chosen B = 4; P3 on the DD stratum, union lens, same B. No other
+cell scores any bar (primary-cell clause, committed pre-outcome,
+commit f004bfc). A secondary one-break step fit on the primary z series
+(least-squares, all interior candidate breaks, near-tie set within 10%
+of minimum SSE) was registered pre-census as an uncertainty band on the
+onset date; no bar attaches to it.
+
+The registration also states its own epistemic position plainly: the
+two fold-level endpoints were known and could not be un-seen, so what
+is registered as pre-outcome is everything between and around them — no
+rolling-window statistic, no rebuilt-fold cell, and no per-window
+census existed at registration time. The predictions bet on the shape
+and timing of the transition, not on its existence at the endpoints.
+
+### 4.4 Part A: provenance-hardening of the endpoint
+
+Part A rebuilds the companion paper's fold B with the archival-dump
+months replaced by API months from this pull — uniform API provenance
+in both folds — and recomputes the WSB-dependent gate cells under the
+frozen gate criterion, reusing the gate evaluation code verbatim (same
+per-pair label-shuffle p99, R = 100, seed 20260831, formation floor,
+and segregation z). Registered expectation: fold-B MEME segregation z
+stays ≤ -3, i.e., the walled endpoint is real and not a provenance
+artifact. Part A removes the provenance confound only; it says nothing
+about timing.
+
+### 4.5 Causal anchors, committed before any window
+
+Because "the onset matches event X" is cheap after the fact, a list of
+dated WSB governance events was collected and committed before any
+rolling-window statistic existed (Amendment V2, commit 3fa0d73;
+reports/paper2_anchors.md). Eight anchors A1-A8 span April 2020 through
+August 2021: the pre-event removal of the subreddit's founder (A1,
+2020-04); the GameStop squeeze and ~30x subscriber explosion (A2,
+2021-01); the Discord ban and brief private-mode flip as moderation was
+overwhelmed (A3, 2021-01-27); the mod-team regime change (A4,
+2021-02-04/05); the automod ticker-filter bot, publicized by a WSB
+moderator (A5, 2021-02); containment-by-daily-thread demonstrated on
+crypto and reversed within a day (A6, 2021-04-14/15); the final GME
+megathread, pushing single-ticker attention out to spin-off subreddits
+(A7, 2021-04-16); and the sub-$1B market-cap discussion ban (A8, in
+force by 2021-08; its introduction date is flagged in the amendment as
+unpinned and unusable for timing claims).
+
+The amendment freezes the discrimination reading in advance: onset in
+2021Q1 favors scale/fragmentation (A2); onset in late 2021 favors
+governance (A4-A8); **onset in 2021Q2 is the non-separable case, with
+both mechanism families active, and supports neither over the other**.
+Any timing comparison against an event not on this list is labelled
+exploratory. The DD subreddits share none of A3-A8, which is what gives
+P3 its bite against era-wide narratives.
+
+### 4.6 Disclosed deviation and rule-bound correction (Amendment V4)
+
+The first full run of the three paper-2 scripts (census, rolling
+windows, Part A) deviated from the registered spec: the scripts loaded
+mention rows directly from the extraction parquet and omitted the
+load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH) that the
+gate applies as its frozen macro-hub exclusion and that this
+registration incorporates by reference ("identical to the gate"). The
+omission was found by a code diff during cross-checking against the
+gate's tables, *after* first-run outcomes had been seen, and is
+disclosed as Amendment V4 (commit fbf3ace) with a rule-bound correction
+path: the filter was added to the three loaders; the census was
+re-derived and the window-length ladder re-decided by the unchanged
+registered rule (B = 4 stands; committed before any corrected z
+existed, commit 80b3b37); Parts A and B were re-run under the unchanged
+bars, seeds, and window definitions. No bar, threshold, seed, window
+definition, or onset rule changed at any point.
+
+Because first-run outcomes were seen before the correction, the
+protection is exactly that every re-derivation step is a frozen rule
+with no free parameter. Both runs are released: the first-run outputs
+are retained as superseded artifacts
+(reports/paper2_windows_z_v1_superseded.tsv,
+reports/paper2_window_census_v1_superseded.tsv), the conforming run's
+outputs are the operative tables (reports/paper2_windows_z.tsv,
+reports/paper2_window_census.tsv), and **the two runs agree on every
+verdict**: same onset window, same P1/P2/P3 outcomes, same excursion
+and control readings. Every number in Section 5 is from the conforming
+run (commit 21a9dc7). A related target correction is disclosed in the
+same amendment: the census consistency anchor recorded in Amendment V3
+compared two pre-exclusion quantities (their agreement was real but
+old-vs-old); the operative target is the gate v2 census value, and the
+corrected comparison is reported in Section 5.5.
+
 <!-- DRAFT CONTINUES -->
