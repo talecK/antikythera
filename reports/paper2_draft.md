@@ -617,4 +617,206 @@ place the pair-count series directly under every z panel, and why we
 do not interpret, e.g., -11.0 (2024Q1, 71 pairs) as deeper than -9.0
 (2021Q3, 391 pairs).
 
-<!-- DRAFT CONTINUES -->
+## 6. Discussion
+
+### 6.1 What the registered result establishes — and the mechanism it does not pick
+
+With P1, P2, and P3 all passing, the registered claim stands as
+designed: **a WSB-specific structural transition, onset 2021-04-01** —
+from the only chance-level mixing state this program has observed, to
+walls indistinguishable from every other measured community, through
+the only above-chance excursion this program has observed, while the
+control stratum moved gradually and monotonically the whole time.
+
+What the timing does *not* do is pick a mechanism, and we state this
+plainly because the registration forces us to. The anchors amendment
+froze the discrimination rule before any window existed: onset in
+2021Q1 would have favored scale/fragmentation (the subscriber
+explosion, A2); onset in late 2021 would have favored governance (the
+mod-team regime change, ticker-filter bot, megathread containment, and
+market-cap ban, A4-A8); and onset in 2021Q2 was named, in advance, as
+the non-separable case in which both mechanism families are active and
+the design supports neither over the other. The measured onset is
+2021Q2. The ordering evidence is still worth recording: the onset
+follows the squeeze and the governance regime change rather than
+preceding them, and its first evaluation quarter contains the
+containment-by-megathread anchors (A6, A7, mid-April 2021) — but the
+scale shock is only one quarter older, and at two-quarter evaluation
+resolution the design cannot cut between them. Separating the
+mechanisms would need a different instrument — engagement-stratified or
+cohort-stratified readouts on the same corpus (the acquisition
+deliberately collected the `score` field for exactly this follow-up,
+under a separate registration) — not a sharper reading of this one.
+
+Likewise stated plainly: the era confound is answered by design, not
+eliminated. A continuous within-community series under uniform
+provenance, with a control stratum that shows no discontinuity, rules
+out the confound's most natural expressions — a fold-boundary artifact,
+a source seam, an era-wide narrative shift moving all finance discourse
+at once. It cannot rule out an era interaction that touches only WSB,
+because WSB's era exposure (being the epicenter of the squeeze) is
+inseparable from WSB's identity in exactly the way the anchors
+amendment describes.
+
+### 6.2 Readings beyond the registration (labelled as such)
+
+Nothing in this subsection is a registered claim; these are the
+readings the registered results invite, offered with their status
+marked (recorded pre-publication in reports/paper2_results.md,
+discussion notes, and commit d184472).
+
+**The three-regime arc (descriptive, non-registered).** One community,
+five years, all three states this program's statistic can express:
+chance-level mixing (through 2020Q3), cascade fusion (2020Q4-2021Q2),
+and walls (2021Q2 onward). No other measured community has occupied
+more than one state. WSB traversed all three in eighteen months, and
+the ordering is not arbitrary: the fusion sits exactly at the cascade,
+and the walls begin exactly as it ends.
+
+**Cascade susceptibility (interpretive, non-registered, speculative).**
+The arc is consistent with a reading in which chance-level mixing is
+the *substrate* of the cascade rather than its casualty: a community
+whose idea-audiences freely overlap is one where a single story can
+recruit everyone, which is what the excursion measures directly —
+during the squeeze, previously never-connected tickers were being
+discussed by the same people at multiples of chance. On this reading
+the walls are the scar: the event triggered governance and structural
+responses (megathread containment, ticker filtering, spin-off
+fragmentation) that destroyed the conditions for its own repetition.
+The registered results *describe* every step of that sentence — the
+substrate state, the fusion, the walls, and their order — but the
+causal links between the steps are not claimed, per Section 6.1. We
+flag the reading because it inverts the usual valence of this program's
+segregation statistic: chance-level mixing looks "healthy" by the
+lights of the discovery framing the companion paper tested, yet here
+the one mixing community was the one that produced the cascade.
+
+**Pre-cascade generality (inferential, non-registered).** The companion
+paper could not say whether WSB's fold-A chance reading was a property
+of the community or of the single year 2019. The rolling series answers
+this: chance-level mixing holds in every window whose evaluation ends
+before 2020Q4 (and the sub-chance first window, -3.7 on the smallest
+universe in the series, 45 pairs, is the series' least-powered cell).
+The wall-free state was WSB's standing condition through at least
+mid-2020, not a 2019 anomaly. The companion paper cites this inference
+to the present study (its Section 6.3), and the inference belongs here.
+
+### 6.3 Limitations
+
+1. **Quarterly resolution, two-quarter evaluations.** The onset time is
+   the start of an evaluation interval; events inside a quarter (the
+   squeeze itself spans weeks) are unresolvable, and the excursion's
+   two windows overlap by one quarter — they are not independent
+   measurements of the same phenomenon (nor were they treated as such;
+   the placebo nulls each separately).
+2. **Different-powered windows.** Eligible-pair universes range 45-498
+   across the primary series. Threshold verdicts are per-window
+   calibrated; cross-window magnitude comparisons are not, and the
+   paper's display rule (pair counts under every z series) exists so no
+   reader makes them inadvertently.
+3. **One community, one platform, one transition.** This is a case
+   study of the only transition the program has observed. Nothing here
+   establishes how often discourse communities transition, in either
+   direction, or whether fusion-then-walls is the generic cascade
+   signature; that requires deliberately surveying for transitions,
+   which the mixing-deficit instrument makes possible.
+4. **The excursion placebo is post-registration.** It follows the
+   companion paper's registered placebo pattern and its per-replicate
+   seeds and code are committed (7bef4a2), but it was designed after
+   the excursion was seen, as a robustness check on a result the
+   registration did not predict. The registered claims (P1-P3) do not
+   depend on it.
+5. **The V4 deviation.** The first run omitted a registered exclusion
+   filter and its outcomes were seen before correction (Section 4.6).
+   The correction was rule-bound with no free parameter, both runs are
+   released, and every verdict is identical across them — but the
+   strict outcome-blind standard was not met by the first run, and we
+   say so rather than netting the two runs into one clean story.
+
+## 7. Conclusion
+
+The companion paper established that in ordinary discourse, the
+expected-but-absent concept pairs are walls that persist. This paper
+watched, at quarterly resolution and under a frozen design, the one
+known exception stop being one. r/wallstreetbets mixed at chance
+through mid-2020; in the two windows around the GameStop squeeze its
+suppressed pairs fused at 28 to 31 standard deviations above chance —
+the program's only above-chance excursion, on any platform, at any
+granularity, and one the machinery cannot manufacture from shuffled
+data; and from April 2021 to the end of the data it is walled in every
+window, without one reversion, while the analysis-oriented control
+communities stayed below chance through the entire five years,
+squeeze included. The registered timing bet resolved inside 2021 as
+predicted, and lands — as the pre-committed anchor list said it might —
+where the scale shock and the governance overhaul cannot be told apart.
+What can be said as measurement, not story: the community that could
+cascade was the one without walls, and after the cascade, the walls
+went up.
+
+## Figures (to be produced from reports/paper2_windows_z.tsv)
+
+Per the registered display rule, **every z-series panel carries an
+eligible-pair-count panel directly beneath it, sharing its x-axis.**
+
+**Figure 1 — The transition and the excursion.** WSB/union B=4 primary
+z series over the nineteen evaluation windows, onset 2021-04-01 marked,
+with the ±3 band and the -5 threshold shown; DD/union B=4 series on the
+same axes for the specificity contrast. Beneath each series: its
+eligible-pair counts (45-498 WSB; 63-345 DD).
+
+**Figure 2 — The excursion placebo.** For each excursion window, the 20
+truth-null placebo z values (histogram/strip, approximately N(0,1))
+with the real value marked at +28.6 / +30.9; secondary panel with
+placebo formation maxima (4, 7) against real formations (24, 61).
+
+**Figure 3 — Sensitivity.** B=6 and B=8 z curves over their (later-
+starting) windows alongside the B=4 primary; cashtag series with
+UNINFORMATIVE windows greyed. Pair counts beneath every curve.
+
+## Data, code, and provenance of every number
+
+All artifacts live in the same repository as the companion paper's
+(https://github.com/talecK/antikythera; private during review, public
+at publication), whose commit history timestamps every registration
+ahead of its result. The numbers in this paper trace as follows:
+
+| quantity | artifact | commit |
+|---|---|---|
+| Registration + amendments V1-V4 | preregistration_paper2.md | 99ffd9e (registered); 63b7f6e (V1), 3fa0d73 (V2), b86c378 (V3), fbf3ace + 7cb1109 (V4) |
+| Evaluation code (registration-checked, gate machinery) | eval/run_paper2.py | 35914d2 |
+| Corrected census + B-ladder re-decision (pre-outcome) | reports/paper2_window_census.tsv | 80b3b37 |
+| Conforming-run z series, all 204 cells | reports/paper2_windows_z.tsv | 21a9dc7 |
+| Verdicts, Part A, excursion, census cell | reports/paper2_results.md | 21a9dc7 |
+| Excursion placebo (40 reps, per-rep seeds) | eval/placebo output, commit log | 7bef4a2 |
+| First run (superseded, disclosed) | reports/paper2_windows_z_v1_superseded.tsv, paper2_window_census_v1_superseded.tsv | fbf3ace; first-run verdicts 9487884 |
+| Anchors A1-A8 + frozen discrimination reading | reports/paper2_anchors.md | 3fa0d73 |
+| Volume table + integrity pass | reports/paper2_volume_table.tsv | 63b7f6e |
+| Gate v2 comparison values (companion paper) | gate table / gate_rerun_v2.log | f89cb2b, 1386fc0 |
+
+Raw Reddit content is retrievable via the Arctic Shift API; the release
+includes exact pull specifications. Data files stay out of git; the
+released derivations (census, windows, placebo outputs) are committed.
+
+## Statement on AI assistance
+
+Analysis code, evaluations, and manuscript drafting were performed with
+a large-language-model assistant operating under the author's
+direction. All designs, thresholds, and interpretation rules were
+registered and committed before evaluation; the version-control
+history documents the full sequence, including the implementation
+deviation and its correction (Amendment V4).
+
+## References
+
+- Quiring, K. (2026). The gaps that don't close: idea segregation
+  persists in twenty years of online discourse. Draft in the same
+  repository (reports/paper1_draft.md); the source observation is its
+  Section 6.3.
+- Contemporaneous sources for the governance anchors A1-A8 (CNBC,
+  Bloomberg, Shacknews, Slashdot, and subreddit records) are dated and
+  cited in reports/paper2_anchors.md, committed before any window
+  statistic existed.
+- Null-model lineage for the label-shuffle machinery (Connor &
+  Simberloff 1979; Gotelli 2000; Gotelli & Ulrich 2012) as discussed in
+  the companion paper's Sections 2 and 6.1.
+
