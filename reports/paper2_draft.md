@@ -41,13 +41,14 @@ five years of windows, and the only one this program has observed at
 any granularity on either platform. A truth-null placebo re-running
 the full registered statistic on shuffled data shows the machinery
 cannot manufacture the excursion; the real values sit roughly 24 to 31
-placebo standard deviations out. The control stratum stays walled
-straight through the squeeze, at z = -7.7 and -8.6 in the same two
-windows, so the fusion is specific to one community, not to the era.
-The measured onset lands in the case the registration named in advance
-as non-separable: the subscriber explosion and the governance overhaul
-were both active in that quarter. The timing is therefore reported as
-ordering evidence rather than as mechanism identification.
+placebo standard deviations out. The analysis-oriented control
+communities stay walled straight through the squeeze, at z = -7.7 and
+-8.6 in the same two windows, so the excursion is specific to
+r/wallstreetbets, not to the era. On timing, the onset quarter
+contained both candidate causes at once: the subscriber explosion and
+the moderation overhaul that followed the squeeze. The registration
+named that case in advance as one the design cannot split, so the
+study dates the transition but does not pick its mechanism.
 
 ---
 
