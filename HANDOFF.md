@@ -13,8 +13,24 @@
   another session resolved all [verify] DOI tags and added a
   competing-interests statement (ddb7e29). Header still says "awaiting
   author prose pass" — that is the only substantive open item.
-- **Paper 2** ("Watching the walls go up"), reports/paper2_draft.md, v0.3,
-  last commit 51c8441 (repo HEAD 468e859). Registered study, all numbers
+- **Paper 2** ("Watching the walls go up"), reports/paper2_draft.md, v0.4,
+  last commit 912859a. 2026-09-01 (this session): owner prose pass on
+  the abstract (389 -> 198 words, unreferenced, Nature Communications
+  template, general-implication closing sentence); declarative title
+  (14 words); hedge line moved into the Conclusion paragraph; whole
+  draft restructured to journal format (Introduction / Results /
+  Discussion / Methods, Data + Code availability, Competing interests,
+  Author contributions, standalone figure legends, provenance appendix),
+  measurement-summary and predictions-table subsections added at the top
+  of Results, four background refs added with [verify] DOIs. Venue plan
+  revised: Nature Communications first (limits verified 2026-09-01:
+  abstract 200, main text 5,000 excl. Methods, Methods <3,000, 70 refs,
+  10 display items), PNAS Nexus alongside, EPJ DS floor; Nature Human
+  Behaviour dropped as reach (needs a mechanism claim the paper declines
+  to make). Same file serves SocArXiv. Still open from the venue
+  patterns: schematic Figure 1 (needs a figure script; current figures
+  then become 2-4). Earlier state, superseded but true of the machinery:
+  v0.3 at 51c8441 (repo HEAD 468e859). Registered study, all numbers
   from the conforming run (21a9dc7); P1+P2+P3 PASS, onset 2021-04-01,
   excursion +28.6/+30.9 placebo-armored, DD walled through the squeeze.
   Drafted today from reports/paper2_results.md (operative), section by
@@ -39,9 +55,10 @@
   (updates in place). Same for paper1. Pages cross-link in their headers.
 
 ### Outstanding before preprint-ready
-Paper 2: (1) owner prose pass; (2) four DOIs tagged [verify] in the
-references (Pedersen 2022 JFE; Watts 2002; Centola & Macy 2007;
-Bikhchandani et al. 1992) plus a check for a journal version of Semenova
+Paper 2: (1) owner prose pass, abstract DONE, body in progress; (2) eight
+DOIs tagged [verify] in the references (Pedersen 2022 JFE; Watts 2002;
+Centola & Macy 2007; Bikhchandani et al. 1992; McPherson 2001; Cinelli
+2021; Swanson 1986) plus a check for a journal version of Semenova
 & Winkler (arXiv:2104.01847); (3) typeset to PDF with table numbering
 (tables are unnumbered inline); (4) packaging only: A8 Wayback pass over
 the subreddit rules page, contemporaneous April-2020 source for A1
