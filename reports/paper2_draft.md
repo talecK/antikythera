@@ -6,8 +6,7 @@
 commit 99ffd9e, amendments V1-V4). All numbers are from the
 registration-conforming run (commit 21a9dc7); a disclosed implementation
 deviation and its rule-bound correction are reported in Methods.
-Commit references for every quantity are collected in the provenance
-appendix. Structured as Introduction, Results, Discussion, Methods.
+Commit references for every quantity are collected in the commit appendix. Structured as Introduction, Results, Discussion, Methods.
 Author prose pass in progress.**
 
 ---
@@ -85,8 +84,7 @@ shown near z = -7. In the post-2021 fold WSB was strongly walled, like
 every other stratum. The companion paper reported this as a described
 observation and declined to interpret it, for three stated reasons. The
 two folds sit on opposite sides of the 2020-2021 market regime break
-(era confound). They differ in acquisition provenance, with the source
-seam aligned to the fold boundary (provenance confound). And the
+(era confound). They differ in data source, with the change of source aligned to the fold boundary (data-source confound). And the
 community split itself was exploratory, with no registered prediction
 attached (post-hoc). Even so, the observation is unique in this research program, meaning the companion paper and this study. Across
 twenty years of Hacker News at two granularities, six financial
@@ -169,7 +167,7 @@ calibrated null (the companion paper's machinery), a dated onset, and a
 same-platform control.
 
 This paper is the registered study of that transition. It asks three
-questions, frozen as predictions before any statistic was computed.
+questions, committed as predictions before any statistic was computed.
 Does the transition resolve into a localizable event at quarterly
 resolution, rather than an artifact of comparing the two fold results, hereafter the endpoints (P1)? Does its onset fall within calendar 2021, the year of the
 GameStop short squeeze and the moderation overhaul that followed it
@@ -181,14 +179,13 @@ The design addresses the three confounds in order. A fresh corpus of
 98.1 million posts and comments covers r/wallstreetbets and five
 analysis-oriented control subreddits continuously from 2019 through
 2024, acquired from a single source in a single collection pass. That removes any change of data source, and a confirmatory Part A verifies that
-the companion paper's walled endpoint survives on uniform provenance.
+the companion paper's walled endpoint survives on a single data source.
 A rolling-window design over continuous time, with the control stratum
 computed identically alongside, answers (though cannot eliminate) the
 era confound: there is no fold boundary for a regime break to hide in,
 and an era-wide effect would move both strata. The registration removes
 the post-hoc character of the original observation: window definitions,
-thresholds, onset rule, and primary cell were frozen and committed
-before any outcome was computed, with outcome-blind census checks in between.
+thresholds, onset rule, and primary cell were fixed and committed before any outcome was computed, with outcome-blind census checks in between.
 
 All three registered predictions pass. The transition is real, sharp,
 and dated: onset 2021-04-01, with chance-level mixing before it and
@@ -211,8 +208,7 @@ such transitions are, and the Discussion returns to that limit.
 ## Results
 
 All numbers in this section are from the registration-conforming run
-(window series and results document listed in the provenance
-appendix). Throughout, every z series is tabulated with its
+(window series and results document listed in the commit appendix). Throughout, every z series is tabulated with its
 eligible-pair counts, per the registered display rule (Methods):
 between-window z magnitudes are different-powered tests, and the pair
 counts are the power context.
@@ -261,12 +257,12 @@ Methods.
 | Onset in late 2021 | Favors governance (anchors A4-A8) | Not observed |
 | Onset in 2021Q2 | Non-separable: both mechanism families active, supports neither over the other | Observed |
 
-### The endpoint survives uniform provenance (Part A)
+### The endpoint survives a single data source (Part A)
 
-Rebuilt with uniform API provenance in both folds, the fold-B endpoint
-cells read as follows, under the companion analysis's frozen criterion and with its mixed-provenance values alongside for comparison:
+Rebuilt with API data in both folds, the fold-B endpoint
+cells read as follows, under the companion analysis's criterion, unchanged, and with its mixed-source values alongside for comparison:
 
-| cell | eligible pairs | z (uniform API) | z (companion analysis, mixed provenance) | formed | binomial p |
+| cell | eligible pairs | z (uniform API) | z (companion analysis, mixed sources) | formed | binomial p |
 |------|---------------:|----------------:|-------------------:|-------:|-----------:|
 | WSB (MEME)/union | 210 | **-9.40** | -9.0 | 0 | 1.00 |
 | ALL/union | 479 | **-21.57** | -17.7 | 2 | 0.95 |
@@ -274,9 +270,8 @@ cells read as follows, under the companion analysis's frozen criterion and with 
 
 The registered expectation (WSB fold-B z ≤ -3) is met with a wide
 margin, and the eligible-pair counts track the companion analysis's census (210 versus 209). The cashtag sensitivity lens is directionally consistent
-(-8.5/-10.1/-3.1; results document in the provenance appendix). The
-companion paper's walled endpoint is therefore not a provenance
-artifact; the provenance confound is removed from that observation, and
+(-8.5/-10.1/-3.1; results document in the commit appendix). The
+companion paper's walled endpoint is therefore not an artifact of the data source; the data-source confound is removed from that observation, and
 the transition study below runs on ground whose far end is secured.
 
 ### The transition: onset 2021-04-01, all three predictions pass
@@ -291,7 +286,7 @@ labelled by starting quarter:
 | z | -3.7 | +1.5 | +1.5 | **+28.6** | **+30.9** | -10.7 | -9.0 | -8.6 | -5.9 | -7.3 | -4.9 | -9.7 | -4.6 | -7.7 | -6.7 | -7.2 | -11.0 | -5.3 | -6.3 |
 | eligible pairs | 45 | 77 | 64 | 124 | 318 | 498 | 391 | 373 | 397 | 225 | 146 | 115 | 99 | 94 | 103 | 78 | 71 | 93 | 131 |
 
-Applying the frozen onset rule mechanically: the onset window is the
+Applying the pre-committed onset rule mechanically: the onset window is the
 one whose evaluation interval begins 2021Q2 (z = -10.7), because every
 one of the thirteen subsequent windows also has z ≤ -3, with zero
 reversions where the rule allowed one. **The onset time is
@@ -463,8 +458,7 @@ cohort-stratified readouts on the same corpus are the natural
 candidates; the acquisition deliberately collected the `score` field
 for this follow-up, under a separate registration.
 
-The era confound, likewise, is answered by design, not eliminated. A continuous within-community series under uniform
-provenance, with a control stratum that shows no discontinuity, rules
+The era confound, likewise, is answered by design, not eliminated. A continuous within-community series on a single data source, with a control stratum that shows no discontinuity, rules
 out the confound's most natural expressions: a fold-boundary artifact,
 a source seam, or an era-wide narrative shift moving all finance
 discourse at once. It cannot rule out an era interaction that touches
@@ -544,7 +538,7 @@ into one clean story.
 
 The companion paper established that in ordinary discourse,
 expected-but-absent concept pairs are walls that persist. This paper
-measured, at quarterly resolution and under a frozen design, how the
+measured, at quarterly resolution and under a design fixed in advance, how the
 one known exception ended. r/wallstreetbets mixed at chance through
 mid-2020. In the two windows around the GameStop squeeze its
 suppressed pairs co-mentioned at 28 to 31 standard deviations above
@@ -570,14 +564,13 @@ acquired 2026-08-31 in one run (pull script and runbook in the code release), la
 same 72 months for each of the five DD subreddits, totaling 98,084,631
 rows (about 5.6 GB compressed). The corpus is never mixed with the
 companion paper's corpus: one source, one collection pass, uniform fields for
-treatment and control strata alike. This uniformity is the design
-answer to the provenance confound. There is no archival/API seam
+treatment and control strata alike. This uniformity is the design answer to the data-source confound. There is no archival/API seam
 anywhere in the data, and in particular none co-located with the
 phenomenon under study.
 
-Hygiene follows the program's frozen rules: deleted/removed authors and
+Hygiene follows the program's standing rules: deleted/removed authors and
 AutoModerator dropped; deduplication by item id; ticker extraction by
-the companion analysis's frozen extractor (union lens primary, cashtag lens sensitivity, committed stoplist, symbols resolved against the SEC registrant table, index and macro tickers excluded, a cap of 50 tickers per document).
+the companion analysis's extractor, unchanged (union lens primary, cashtag lens sensitivity, committed stoplist, symbols resolved against the SEC registrant table, index and macro tickers excluded, a cap of 50 tickers per document).
 Extraction yields 11,200,484 ticker mentions. The exclusion-filter
 deviation and correction affecting the scripts that read the mention table is disclosed
 below. The 2020-2021 regime-break years are deliberately *included*:
@@ -589,8 +582,7 @@ transition is the object of study (registration, decision 2 carried over from th
 Before any census or statistic was computed, every monthly file passed a full-parse integrity check (validation script in the code release): no missing file, no unparseable line, no month with more than 1%
 out-of-span timestamps, no month at zero or below 5% of its neighbours.
 The complete per-file volume table was committed as a dated amendment
-to the registration (Amendment V1; volume table in the provenance
-appendix) before any window census existed. Spot-checks against the
+to the registration (Amendment V1; volume table in the commit appendix) before any window census existed. Spot-checks against the
 prior acquisition era's runbook match exactly (for example, 2022-06 =
 1.13M, 2023-09 = 510K, 2024-03 = 962K WSB comments).
 
@@ -609,8 +601,7 @@ explain.
 
 ### Registration
 
-The full registration (preregistration_paper2.md) was frozen and
-committed, with the author's sign-off recorded in the commit history, before any outcome statistic was computed; its amendments V1-V4 are dated appendices,
+The full registration (preregistration_paper2.md) was fixed and committed, with the author's sign-off recorded in the commit history, before any outcome statistic was computed; its amendments V1-V4 are dated appendices,
 never rewordings. The study has two parts sharing one acquisition.
 
 ### Part B: rolling windows and the primary statistic
@@ -673,7 +664,7 @@ beneath the z series.
 
 ### Registered predictions, onset rule, and primary cell
 
-The onset rule, frozen verbatim: the onset window is the earliest
+The onset rule, as registered: the onset window is the earliest
 window w with z_w ≤ -3 such that every later window also has z ≤ -3,
 allowing at most one later exception; the onset *time* is the start of
 w's evaluation interval. If no such window exists, there is no onset.
@@ -703,22 +694,19 @@ rolling-window statistic, no rebuilt-fold cell, and no per-window
 census existed at registration time. The predictions bet on the shape
 and timing of the transition, not on its existence at the endpoints.
 
-### Part A: provenance-hardening of the endpoint
+### Part A: the endpoint on a single data source
 
 Part A rebuilds the companion paper's fold B with the archival-dump
-months replaced by API months from this pull, giving uniform API
-provenance in both folds. It then recomputes the WSB-dependent cells of the companion analysis under its frozen criterion, reusing its evaluation code verbatim: same per-pair label-shuffle p99, R = 100, seed
+months replaced by API months from this pull, giving API data in both folds. It then recomputes the WSB-dependent cells of the companion analysis under its criterion, unchanged, reusing its evaluation code verbatim: same per-pair label-shuffle p99, R = 100, seed
 20260831, formation floor, and segregation z. The registered
 expectation is that fold-B WSB segregation z stays ≤ -3, i.e., that
-the walled endpoint is real and not a provenance artifact. Part A
-removes the provenance confound only; it says nothing about timing.
+the walled endpoint is real and not an artifact of the data source. Part A removes the data-source confound only; it says nothing about timing.
 
 ### Causal anchors, committed before any window
 
 Because "the onset matches event X" is cheap after the fact, a list of
 dated WSB governance events was collected and committed before any
-rolling-window statistic existed (Amendment V2; anchors file in the
-provenance appendix). Eight anchors A1-A8 span April 2020 through
+rolling-window statistic existed (Amendment V2; anchors file in the commit appendix). Eight anchors A1-A8 span April 2020 through
 August 2021: the pre-event removal of the subreddit's founder (A1,
 2020-04; Reimann 2023); the GameStop squeeze and roughly 30x
 subscriber explosion (A2, 2021-01; Bloomberg News 2021; Newsweek
@@ -750,7 +738,7 @@ P3 its power against era-wide narratives.
 The first full run of the three paper-2 scripts (census, rolling
 windows, Part A) deviated from the registered spec. The scripts loaded
 mention rows directly from the extraction table and omitted the
-load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH). The companion analysis applies that filter as its frozen exclusion of index and macro tickers, and this registration incorporates it by reference (its phrase is "identical to the gate", the registration's internal name for the companion analysis).
+load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH). The companion analysis applies that filter as its standing exclusion of index and macro tickers, and this registration incorporates it by reference (its phrase is "identical to the gate", the registration's internal name for the companion analysis).
 The omission was found by a code diff during cross-checking against the companion analysis's tables, *after* first-run outcomes had been seen, and is
 disclosed as Amendment V4.
 
@@ -762,10 +750,9 @@ definitions. No bar, threshold, seed, window definition, or onset rule
 changed at any point.
 
 Because first-run outcomes were seen before the correction, the
-protection is that every re-derivation step is a frozen rule with no
-free parameter. Both runs are released: the first-run outputs
+protection is that every re-derivation step is a rule fixed in advance, with no free parameter. Both runs are released: the first-run outputs
 are retained as superseded artifacts, and the conforming run's outputs
-are the operative tables (file names in the provenance appendix). **The
+are the operative tables (file names in the commit appendix). **The
 two runs agree on every verdict**: same onset window, same P1/P2/P3
 outcomes, same excursion and control readings. Every number in Results
 is from the conforming run. A related target correction is disclosed
@@ -792,8 +779,7 @@ of the repository. The released derivations (per-file volume table,
 window census, window z series for all 204 cells, Part A cells,
 excursion placebo replicates, and the superseded first-run outputs) are
 committed at https://github.com/talecK/antikythera (private during
-review; public at publication), with the commit references listed in
-the provenance appendix.
+review; public at publication), with the commit references listed in the commit appendix.
 
 ## Code availability
 
@@ -861,7 +847,7 @@ sensitivity lens at a four-quarter build, with windows under 20
 eligible pairs shown as open markers (reported UNINFORMATIVE, never as
 negative), pair counts beneath.
 
-## Appendix: provenance of every number
+## Appendix: where every number comes from
 
 All artifacts live in the same repository as the companion paper's
 (https://github.com/talecK/antikythera; private during review, public
