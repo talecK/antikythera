@@ -450,7 +450,7 @@ formation burst inside the 2021 meme-stock cascade windows - windows
 our folds exclude by design as a regime break - with formation at the
 floor in every other window of six years, and confined even then to
 the meme community: the analysis-oriented stratum stayed walled
-straight through the event. The negative reported here
+(co-mention far below chance) straight through the event. The negative reported here
 is about discourse in its ordinary state; what cascades do is that
 study's question.
 
