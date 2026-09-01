@@ -15,26 +15,27 @@ never together are strong candidates for future discovery: such
 which pairs connect next is the basis of literature-based discovery. We ask
 whether the same machinery applies to general online discourse, using 1.3
 million Hacker News discussions spanning 2006 to 2026. Across four
-pre-registered evaluations at two document granularities, we find no
-predictive signal beyond generic popularity and triadic closure, a null we
-certify with a positive control on the Science4Cast benchmark. We then
-report a cautionary result. Re-defining the document as an author's
-quarterly output produced suppressed-pair "formation" rates of 19 to 24
-percent, thirty times the thread-level rate, an apparent revival that
+pre-registered evaluations, at both the thread and the author level, we
+find no predictive signal beyond generic popularity and shared-neighbor
+effects. The instrument is not at fault: pointed at the Science4Cast
+benchmark, where the signal is known to exist, the same harness finds
+it. We then report a cautionary result. When we redefined the document as one author's
+quarterly output, 19 to 24 percent of suppressed pairs appeared to
+form, thirty times the thread-level rate. This apparent revival
 survived two further pre-registered evaluations. A registered placebo test
-showed the effect to be an artifact: the standard chance-calibrated
-co-occurrence criterion is anti-conservative when document sizes are
-heterogeneous, and a label-shuffled null "forms" more pairs than the real
-data. Under a corrected per-pair permutation criterion, formation is
+showed the effect to be an artifact of the measuring stick: when
+documents vary widely in size, the standard chance-calibrated criterion
+flags formation far too easily, and randomly shuffled data "forms" more
+pairs than the real data. Under a corrected per-pair permutation criterion, formation is
 indistinguishable from the false-positive floor in every condition. The
 real regularity runs in the opposite direction: suppressed pairs co-occur
 substantially below chance (nearly 9 standard deviations below at the
 author level, over 100 at the thread level). A pre-registered replication on a
-second platform confirms both results: in 41.5 million Reddit finance
-posts and comments, with self-indexing ticker units and no language model in the
-loop, suppressed pairs again fail to form above chance and again
-co-occur far below it (z = -8.8 and -17.7), on either side of the
-2020-2021 market regime change. Idea communities in discourse do not
+second platform confirms both results. In 41.5 million Reddit finance
+posts and comments, where the concept unit is the stock ticker and no
+language model is involved, suppressed pairs again fail to form above
+chance and again co-occur far below it (z = -8.8 and -17.7), on either
+side of the 2020-2021 market regime change. Idea communities in discourse do not
 drift together; they stay apart. We release all code, data derivations,
 and time-stamped pre-registrations.
 
