@@ -61,6 +61,24 @@ print('lost', dict(num(old) - num(new))); print('new', dict(num(new) - num(old))
   regardless: EPJ Data Science accepts it, it keeps the two papers
   consistent, and SocArXiv imposes nothing. Keep the provenance
   appendix in the preprint; a journal moves it to Supplementary.
+- Paper 1's limits, verified on the venues' own pages 2026-09-01. EPJ
+  Data Science regular article: abstract 150 to 250 words with no
+  undefined abbreviations or unspecified references; no body limit;
+  3 to 10 keywords; a list of abbreviations; figure titles 15 words
+  and legends 300 words; a Declarations block with Availability of
+  data and materials, Competing interests, Funding, Authors'
+  contributions and Acknowledgements ("Not applicable" where empty);
+  LLM use documented in Methods; numbered Springer reference style;
+  APC 1,340 GBP. Quantitative Science Studies: abstract 200 words;
+  articles typically 5,000 to 8,000 words; up to 6 keywords; numbered
+  sections; author-year references; CRediT contributions; data in a
+  DOI-bearing public repository (on-request sharing refused); methods
+  early in the manuscript at the revision stage only. Writing paper 1
+  to the Nature Communications shape (abstract 200, main text 5,000
+  excluding Methods, Methods under 3,000, Methods last) clears all of
+  them for first submission; the QSS methods position and the
+  reference styles are submission-time formatting, and Funding and
+  Acknowledgements are added in the structure pass.
 - Word-count the draft by section before and after (Python split on
   `## ` headings, excluding table rows) and report main text versus
   Methods against the limits.
