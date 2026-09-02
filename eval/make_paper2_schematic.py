@@ -141,7 +141,7 @@ def panel_c(ax, box):
         if i % 4 == 0:
             text(ax, x + i * qw, top, str(2019 + i // 4), size=T_SMALL,
                  color=MUTED, ha="left")
-    rows = [strip_y - 0.13 - k * 0.22 for k in range(3)]
+    rows = [strip_y - 0.13 - k * 0.20 for k in range(3)]
     for k, ry in enumerate(rows):
         bx = x + k * qw
         ax.add_patch(Rectangle((bx, ry - 0.15), 4 * qw * 0.97, 0.15, fc=BLUE,
@@ -150,21 +150,18 @@ def panel_c(ax, box):
                                fc=RED, alpha=0.40, ec="none"))
         text(ax, bx + 6 * qw + 0.06, ry - 0.08, f"window {k + 1}",
              size=T_SMALL, color=MUTED, va="center")
-    lx = x + w - 1.30               # legend block, right edge inside the card
-    for k, (fc, a, s) in enumerate([(BLUE, 0.35, "build, 4 quarters"),
-                                    (RED, 0.40, "evaluate, 2 quarters"),
-                                    (None, 0, "step 1 quarter, 19 windows")]):
-        ry = rows[k] - 0.08
-        if fc:
-            ax.add_patch(Rectangle((lx, ry - 0.06), 0.14, 0.12, fc=fc,
-                                   alpha=a, ec="none"))
-        text(ax, lx + (0.19 if fc else 0), ry, s, size=T_SMALL,
-             color=INK if fc else MUTED, va="center")
-    text(ax, x, y + lines_h(4),
-         "Eligible pairs are found in the build period. The statistic\n"
-         "counts evaluation-period documents that hold any eligible\n"
-         "pair. Build length was chosen by an outcome-blind census\n"
-         "rule before any result.")
+    lx = x + w - 2.05               # legend row beneath the windows, as in paper 1
+    ly = rows[-1] - 0.15 - 0.13
+    for k, (fc, a, s) in enumerate([(BLUE, 0.35, "build window"),
+                                    (RED, 0.40, "evaluation period")]):
+        ax.add_patch(Rectangle((lx + k * 1.05, ly - 0.06), 0.14, 0.12, fc=fc,
+                               alpha=a, ec="none"))
+        text(ax, lx + k * 1.05 + 0.19, ly, s, size=T_SMALL, color=INK,
+             va="center")
+    text(ax, x, y + lines_h(3),
+         "Eligible pairs are found in the build period; the statistic\n"
+         "counts evaluation-period documents holding any of them. Build\n"
+         "length was set by an outcome-blind census rule before any result.")
 
 
 def panel_d(ax, box):
@@ -242,7 +239,7 @@ def main():
     panel_c(ax, card(ax, xl, y2, CW, R1, "c",
                      "Rolling windows over 2019 to 2024"))
     panel_d(ax, card(ax, xr, y2, CW, R1, "d",
-                     "The statistic: observed count vs. a shuffle null"))
+                     "The statistic: observed count vs. label shuffles"))
     panel_e(ax, card(ax, xl, y3, 2 * CW + G, R3, "e",
                      "Three regimes, and the order r/wallstreetbets passed "
                      "through them"))
