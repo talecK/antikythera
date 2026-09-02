@@ -7,7 +7,7 @@ Datasheet for the Zenodo deposit accompanying two preprints:
 - Quiring, K. (2026). Watching the walls go up: r/wallstreetbets
   segregated after the GameStop squeeze. SocArXiv, DOI at posting.
 
-Deposit DOI: inserted at publication. Cite the deposit, not this file.
+Deposit DOI: https://doi.org/10.5281/zenodo.22262036. Cite the deposit, not this file.
 
 License: to be set by the depositor at publication. The derived tables
 contain no Reddit or Hacker News text.
@@ -155,5 +155,5 @@ repository; the data files are not.
 
 ## Contact
 
-Kevin Quiring, independent researcher. Issues against the code
-repository are the preferred channel.
+Kevin Quiring, independent researcher, ORCID 0009-0001-9034-5533. Issues
+against the code repository are the preferred channel.

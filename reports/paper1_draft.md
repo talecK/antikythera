@@ -1,6 +1,6 @@
 # Ideas that never meet online mark divided communities, not future discoveries
 
-**Author:** Kevin Quiring (independent researcher)
+**Author:** Kevin Quiring (independent researcher; ORCID 0009-0001-9034-5533)
 
 **Draft v0.3, 2026-09-01. All results final (post-review regeneration on
 deterministic artifacts, commit a67d556). Structured as Introduction,
@@ -743,14 +743,19 @@ registered placebo that overturned an intermediate conclusion.
 
 ## Data availability
 
-All derived datasets (concept extraction cache, author-attribution
-table, co-occurrence censuses, and per-run result files) are released at
-https://github.com/talecK/antikythera (private during review; public at
-publication), with the commit references listed in the commit appendix.
-Raw Hacker News content is public and retrievable via the official API,
-and raw Reddit content via the archival and API sources named in the
-replication registration; the release includes exact pull
-specifications.
+The Hacker News concept atlas (monthly concept frequencies,
+co-occurrence edges, first-seen dates, economic-exposure labels, title
+claims for the full archive, and the claim-pair paraphrase verdicts) is
+deposited at Zenodo, doi:10.5281/zenodo.22262036, together with the
+replication program's Reddit ticker-mention panel with hashed authors.
+The per-document extraction cache, the author-attribution table, the
+co-occurrence censuses, and every per-run result file are released with
+the code repository at https://github.com/talecK/antikythera (private
+during review; public at publication), with the commit references
+listed in the commit appendix. Raw Hacker News content is public and
+retrievable via the official API, and raw Reddit content via the
+archival and API sources named in the replication registration; the
+release includes exact pull specifications.
 
 ## Code availability
 

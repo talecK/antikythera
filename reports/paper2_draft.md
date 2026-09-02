@@ -1,6 +1,6 @@
 # Watching the walls go up: r/wallstreetbets segregated after the GameStop squeeze
 
-**Author:** Kevin Quiring (independent researcher)
+**Author:** Kevin Quiring (independent researcher; ORCID 0009-0001-9034-5533)
 
 **Draft v0.5, 2026-09-01. Registered study (preregistration_paper2.md,
 commit 99ffd9e, amendments V1-V4). All numbers are from the
@@ -770,13 +770,17 @@ deviation and its correction (Amendment V4).
 
 ## Data availability
 
-Raw Reddit content is public and retrievable via the Arctic Shift API;
-the release includes exact pull specifications. Raw data files stay out
-of the repository. The released derivations (per-file volume table,
-window census, window z series for all 204 cells, Part A cells,
-excursion placebo replicates, and the superseded first-run outputs) are
-committed at https://github.com/talecK/antikythera (private during
-review; public at publication), with the commit references listed in the commit appendix.
+The ticker-mention panel this study runs on (11,200,484 mentions by
+976,889 authors across the six subreddits, 2019 to 2024, with author
+names replaced by a salted hash), the per-file volume table, the window
+census, the window z series for all 204 cells, and the excursion
+placebo replicates, together with the superseded first-run outputs, are
+deposited at Zenodo, doi:10.5281/zenodo.22262036. Raw Reddit content is
+public and retrievable via the Arctic Shift API; the deposit's datasheet
+and the code release include exact pull specifications, and raw data
+files stay out of both. The same derivations are committed at
+https://github.com/talecK/antikythera (private during review; public at
+publication), with the commit references listed in the commit appendix.
 
 ## Code availability
 

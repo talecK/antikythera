@@ -16,9 +16,23 @@
   (= reports/zenodo_metadata_v1.json).
 - Salt: private/release_salt.txt (gitignored, mode 600). Losing it
   means later versions get new hashes; disclosed in the datasheet.
-- Owner steps: Zenodo account (GitHub login), choose license (CC BY 4.0
-  suggested; the metadata file says SET BY DEPOSITOR), upload the
-  folder, paste metadata, publish, get DOI. Then: DOI into both papers'
+- 2026-09-02 evening: Zenodo and ORCID accounts made (email signup;
+  GitHub integration not needed). Reserved DOI 10.5281/zenodo.22262036
+  and ORCID 0009-0001-9034-5533 inserted into both papers (author line
+  and Data availability), the datasheet, and the metadata; both
+  artifacts republished. Flat upload staging at
+  data/release/v1_zenodo_upload (8 files: panel parquet, README,
+  metadata, stats, two checksum files, hn_atlas.zip, paper2_runs.zip).
+  Sensitive-string sweep done over every file including parquet
+  columns and parquet metadata: one leak (local absolute paths in
+  SOURCE_CHECKSUMS.txt) fixed and the script patched (6fd75f5); no
+  pricemole or other project names anywhere in the upload.
+- BEFORE THE REPO FLIP: data/README.md names the GCP staging project
+  (antikythera_hn under a pricemole project id); scrub it. Not in the
+  deposit.
+- Owner steps remaining: set the license on the Zenodo draft (CC BY 4.0
+  suggested), replace README.md and zenodo_metadata.json in the draft
+  with the updated copies from v1_zenodo_upload, publish. Then: DOI into both papers'
   Data availability and paper 2's paper-1 reference, re-render, post
   both preprints to SocArXiv, fill the two related_identifiers.
 - Deferred to a later deposit version: per-document HN claim
