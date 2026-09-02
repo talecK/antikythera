@@ -1,0 +1,23 @@
+{
+  "title": "Antikythera data release v1: Reddit finance ticker-mention panel (2019-2024) and Hacker News concept atlas (2015-2017)",
+  "upload_type": "dataset",
+  "version": "1.0.0",
+  "creators": [
+    {"name": "Quiring, Kevin", "affiliation": "Independent researcher"}
+  ],
+  "description": "Derived data accompanying two preprints on idea segregation in online discourse. (1) A panel of 11,200,484 stock-ticker mentions by 976,889 hashed authors across six finance subreddits (r/wallstreetbets, r/stocks, r/investing, r/StockMarket, r/ValueInvesting, r/SecurityAnalysis), January 2019 through December 2024, extracted by deterministic pattern matching against the SEC registrant table from a single Arctic Shift collection pass; no text, author usernames replaced by a salted hash. (2) Hacker News concept atlas: monthly concept frequencies, document-level co-occurrence edges, first-seen dates, and economic-exposure labels for concepts extracted by a pinned language model from 202,721 filtered Hacker News discussions, 2015-2017; clustered claims from story titles across the full 2006-2026 archive; and about 600,000 labeled near-duplicate claim pairs. (3) The registered rolling-window outputs, census, placebo replicates, and integrity table for the r/wallstreetbets transition study. The datasheet (README.md) documents sources, extraction rules, load-time filters used by the papers, counts, caveats, and checksums.",
+  "keywords": [
+    "Reddit", "wallstreetbets", "GameStop", "stock tickers", "retail investor attention",
+    "Hacker News", "co-occurrence", "literature-based discovery", "null model",
+    "permutation test", "preregistration", "computational social science"
+  ],
+  "license": "SET BY DEPOSITOR (suggested: CC-BY-4.0)",
+  "access_right": "open",
+  "language": "eng",
+  "related_identifiers": [
+    {"relation": "isSupplementTo", "identifier": "SOCARXIV DOI OF PAPER 1 AT POSTING", "resource_type": "publication-preprint"},
+    {"relation": "isSupplementTo", "identifier": "SOCARXIV DOI OF PAPER 2 AT POSTING", "resource_type": "publication-preprint"},
+    {"relation": "isDerivedFrom", "identifier": "https://github.com/talecK/antikythera", "resource_type": "software"}
+  ],
+  "notes": "Author usernames are replaced by a salted SHA-256 hash; the salt is not released. Raw Reddit and Hacker News content is not redistributed; the code repository holds exact pull specifications. Build: pipeline/build_release.py; source and output SHA-256 checksums are included in the deposit."
+}

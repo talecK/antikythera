@@ -5,6 +5,28 @@
 ## papers from here. Everything below the next "## Status" banner is the
 ## pre-paper project history and is still accurate for the machinery.
 
+### Data release v1 (2026-09-02, built, awaiting owner publish)
+- Folder: data/release/v1 (symlink to the NVMe; 194 MB, 17 files).
+  Built by pipeline/build_release.py (read-only over sources, refuses
+  overwrites, source SHA-256 before/after all matched). Contents: the
+  paper-2 ticker panel with authors replaced by a salted hash
+  (11,200,484 rows, 976,889 authors, 6,623 tickers), the six HN atlas
+  tables, the six paper-2 registered-run TSVs, stats.json, checksums,
+  README.md (= reports/data_release_v1.md), zenodo_metadata.json
+  (= reports/zenodo_metadata_v1.json).
+- Salt: private/release_salt.txt (gitignored, mode 600). Losing it
+  means later versions get new hashes; disclosed in the datasheet.
+- Owner steps: Zenodo account (GitHub login), choose license (CC BY 4.0
+  suggested; the metadata file says SET BY DEPOSITOR), upload the
+  folder, paste metadata, publish, get DOI. Then: DOI into both papers'
+  Data availability and paper 2's paper-1 reference, re-render, post
+  both preprints to SocArXiv, fill the two related_identifiers.
+- Deferred to a later deposit version: per-document HN claim
+  extractions with quotes and the hashed author-attribution table.
+- Rollout decision (owner, 2026-09-02): ship what exists; the
+  many-subreddit transition survey and cohort readout wait for mentor
+  or early feedback. Headline wording unchanged by owner call.
+
 ### Where the papers stand
 - **Paper 1** ("Ideas that never meet online mark divided communities,
   not future discoveries"), reports/paper1_draft.md, v0.3, last commit
