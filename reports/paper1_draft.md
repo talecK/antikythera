@@ -102,25 +102,28 @@ regularities of growing networks (Newman 2001; Kossinets and Watts
 (in preparation) examines the Science4Cast benchmark itself in this
 light.
 
-The chance calibration itself has a history that text-corpus practice
-has not absorbed. Ecology confronted the same problem decades
-ago: whether species co-occur more or less than
-chance, tested against null models that hold row and column totals of a
-site-by-species matrix to varying degrees. That literature measured
-the false-positive (Type I) inflation of partially constrained null
-models and settled on
-fully constrained ("fixed-fixed") randomizations as the defensible
-default (Connor and Simberloff 1979; Gotelli 2000; Gotelli and Ulrich
-2012; Gotelli and Graves 1996; see also Maslov and Sneppen 2002 for
-the network analog). Our corrected criterion is a member of that
-family, implemented as a label permutation on the document-concept
-incidence structure. The failure we document in the standard
-text-corpus criterion is the known failure of its partially
-constrained analog. We claim no novelty for the fix; the contribution
-is the transfer, and a measurement of what the omission costs.
+How to calibrate "beyond chance" was worked out in ecology decades
+ago, and text-corpus work has not adopted the answer. Ecologists faced
+the same question, whether species co-occur more or less than chance,
+and tested it against null models that hold row and column totals of a
+site-by-species matrix to varying degrees. Those studies measured the
+false-positive (Type I) inflation of partially constrained null models
+and converged on fully constrained ("fixed-fixed") randomizations as
+the safer default (Connor and Simberloff 1979; Gotelli 2000; Gotelli
+and Ulrich 2012; Gotelli and Graves 1996; see also Maslov and Sneppen
+2002 for the network analog). Our corrected criterion belongs to that
+family: a label permutation over the document-concept matrix that
+holds every document's size and every concept's frequency fixed. The
+standard text-corpus criterion, the z-score against a Poisson
+expectation, constrains less. It holds each concept's frequency fixed
+but lets document sizes float, which makes it the kind of partially
+constrained null that ecology showed to inflate false positives, and
+it fails here for the same reason: large documents produce
+co-occurrences that the expectation does not anticipate. We claim no
+novelty for the fix. Our contribution is to carry it into text corpora
+and to measure what leaving it out has cost.
 
-Our answer is negative, and the path to it is part of the contribution.
-Three headline results follow.
+Our answer is negative. Three headline results follow.
 
 First, a null result backed by a positive control. In twenty years of Hacker News data, suppressed
 concept pairs do not connect above chance at any document granularity we
@@ -137,7 +140,7 @@ that is, from how often each appears on its own. We
 show this criterion is badly anti-conservative, flagging formation far
 too easily, when documents vary in
 size, as they do in virtually every real corpus. In our author-level
-analysis it manufactured formation rates of 19 to 24 percent that
+analysis it produced formation rates of 19 to 24 percent that
 survived two further pre-registered evaluations. A placebo test,
 registered with its failure condition stated in advance, then revealed
 that randomly shuffled data "forms" nearly twice as many pairs as the
@@ -466,15 +469,15 @@ it is the natural first implementation of "co-occurs more than
 expected" and variants of it appear throughout the co-occurrence, LBD,
 and trend detection literatures (Church and Hanks 1989; Kleinberg
 2003). Ecologists identified the defect in
-this class of test roughly twenty-five years ago and standardized on
-fully constrained permutation null models in response (Introduction); to our
-knowledge, text-corpus practice never absorbed that lesson. Our
-results measure what the omission costs: with heterogeneous document
-sizes the partially constrained criterion manufactures large, stable,
+this class of test decades ago and converged on fully constrained
+permutation null models as the safer default in response (Introduction); to our
+knowledge, text-corpus practice has not adopted that fix. Our
+results measure what leaving it out costs: with heterogeneous document
+sizes the partially constrained criterion produces large, stable,
 replication-surviving effects where no real association exists. The 19-to-24-percent author-space rates survived two
 further pre-registered evaluations with thresholds fixed in advance before the placebo
-caught them. We urge text-corpus practice to adopt what ecology already
-settled: a label-shuffle placebo, five lines of code and a few
+caught them. We urge text-corpus practice to adopt the control ecology
+reached: a label-shuffle placebo, five lines of code and a few
 CPU-minutes, as a mandatory control wherever a formation or emergence
 rate is computed from co-occurrence counts. Where a claim must survive
 that placebo, use per-pair permutation thresholds.
