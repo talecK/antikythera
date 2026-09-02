@@ -1,4 +1,4 @@
-# The gaps that don't close: idea segregation persists in twenty years of online discourse
+# Ideas that never meet online mark divided communities, not future discoveries
 
 **Author:** Kevin Quiring (independent researcher)
 

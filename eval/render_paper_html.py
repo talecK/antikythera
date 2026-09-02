@@ -19,7 +19,7 @@ FIG = os.path.join(ROOT, "reports", "figures")
 PAPERS = {
     "paper1": dict(
         md="reports/paper1_draft.md",
-        title="The Gaps That Don't Close",
+        title="Ideas That Never Meet",
         eyebrow="Antikythera · Paper 1 · final results, awaiting author prose pass",
         accent=("#3d4f7d", "#333f66", "#96a8e0", "#aab9e8"),
         companion=("Watching the Walls Go Up",
@@ -30,7 +30,7 @@ PAPERS = {
         title="Watching the Walls Go Up",
         eyebrow="Antikythera · Paper 2 · registered study, conforming run",
         accent=("#0e5f6b", "#0b4d57", "#58b7c4", "#7fc9d4"),
-        companion=("The Gaps That Don't Close",
+        companion=("Ideas That Never Meet",
                    "https://claude.ai/code/artifact/b6e82250-dc7e-42d1-9421-64eff6faeda9"),
     ),
 }

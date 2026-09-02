@@ -6,7 +6,7 @@
 ## pre-paper project history and is still accurate for the machinery.
 
 ### Where the papers stand
-- **Paper 1** ("The gaps that don't close"), reports/paper1_draft.md, last
+- **Paper 1** ("Ideas that never meet online"), reports/paper1_draft.md, last
   commit ddb7e29. Results FINAL (all numbers v2-regenerated, adversarially
   audited). Today: prose-only passes (abstract accessibility 6c8ae76, body
   long-sentence splits 086843c, "walled" defined at first use in 6.2), then
