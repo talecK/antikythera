@@ -47,7 +47,7 @@ discovery, which finds concept pairs that statistically should have met
 but have not and treats them as latent connections (Swanson 1986), and
 asked whether that machinery transfers from scientific corpora to
 ordinary discourse. It found no formation signal on either of two
-platforms, and it found that suppressed pairs actively co-occur far
+platforms, and it found that suppressed pairs co-occur far
 below chance, at magnitudes their marginal popularities cannot explain.
 The stable result was segregation: the communities of attention around
 two never-connected ideas stay apart, on every platform and at every
@@ -126,7 +126,7 @@ and Winkler (2025) document social contagion in WSB asset discussions,
 where engagement with a discussed asset raises a user's probability of
 starting new discussions of it. Pedersen (2022) builds the equilibrium
 theory: a social network propagating an investment idea produces
-exactly the frenzy, bubble, and burst observed. All of this work studies the squeeze as the outcome: how coordination formed and how it
+the frenzy, bubble, and burst observed. All of this work studies the squeeze as the outcome: how coordination formed and how it
 moved prices. The present study measures the other side of the event:
 what the squeeze did to the community's idea-structure, before, during, and after, under a registered design. To our knowledge no prior work
 tracks a community's co-attention structure through the episode.
@@ -362,7 +362,7 @@ specific regime, the document-size concern that sank the companion paper's autho
 volume heterogeneity in the GME-era windows does not, by itself,
 produce anything resembling the observed values.
 
-In other words, for two overlapping half-year evaluation windows, the
+For two overlapping half-year evaluation windows, then, the
 same authors co-mentioned ticker pairs, in thousands of documents, at
 two to three times their expected rates. These were pairs the
 preceding year of WSB discourse had kept fully apart: zero
@@ -400,7 +400,7 @@ the five years (from about -8 toward -15.7) is gradual, as predicted.
 **Window length.** The registered sensitivity curves reproduce the
 shape at both alternative window lengths. At B = 6 the excursion
 windows read +32.2 and +46.0 and the flip to walls occurs at the same evaluation window (2021Q2, z = -8.9, all subsequent windows ≤ -5). At B = 8
-the single in-range excursion window reads +27.3 with the flip likewise
+the single in-range excursion window reads +27.3 with the flip also
 at 2021Q2 (-7.6). No pass threshold attaches to these curves; they are reported regardless of outcome so that the choice of B = 4 cannot be what makes the transition appear. Longer builds start later in the
 calendar, so the B = 6 and B = 8 series begin at evaluation windows 2020Q3 and 2021Q1 respectively. The full series with pair counts are in the released
 window table.
@@ -419,8 +419,8 @@ second measurement of the magnitude.
 **Census consistency.** The corrected census's first B = 4 window
 (build year 2019) counts 44,013 WSB/union build documents; the companion analysis's census counts 44,012 fold-A WSB evaluation documents over the same year by
 the same construction. Two corpora pulled independently, months apart,
-agree to one document in 44 thousand. The agreement is near-exact, not
-identical, and is reported as such (Amendment V4 addendum; the
+agree to one document in 44 thousand. The agreement is near-exact rather
+than identical (Amendment V4 addendum; the
 superseded V3 anchor had matched two pre-exclusion values exactly).
 
 **Power context.** Eligible-pair counts range 45-498 across the
@@ -457,7 +457,7 @@ cohort-stratified readouts on the same corpus are the natural
 candidates; the acquisition deliberately collected the `score` field
 for this follow-up, under a separate registration.
 
-The era confound, likewise, is answered by design, not eliminated. A continuous within-community series on a single data source, with a control stratum that shows no discontinuity, rules
+The era confound, too, is answered by design, not eliminated. A continuous within-community series on a single data source, with a control stratum that shows no discontinuity, rules
 out the confound's most natural expressions: a fold-boundary artifact,
 a source seam, or an era-wide narrative shift moving all finance
 discourse at once. It cannot rule out an era interaction that touches
@@ -523,7 +523,7 @@ two-quarter evaluations: the onset time is the start of an evaluation
 interval, so events inside a quarter (the squeeze itself spans weeks)
 are unresolvable. The excursion's two windows overlap by one quarter,
 so they are not independent measurements of the same phenomenon. They
-were not treated as such; the placebo tests each separately. Second,
+were not pooled; the placebo tests each separately. Second,
 different-powered windows: eligible-pair universes range 45-498 across
 the primary series. Threshold verdicts are per-window calibrated;
 cross-window magnitude comparisons are not (the display rule in Methods
