@@ -506,12 +506,6 @@ right, the walls came from enforcement, not from the rules themselves.
 We have not measured enforcement, and this is one rule in one
 community, so it remains a reading rather than a result.
 
-The reading matters because it reverses how the companion paper's
-framing would score this community. In that framing, borrowed from
-literature-based discovery, a community whose ideas mix freely looks
-healthy, because that is where new connections should form. Here, the
-one community that mixed freely is the one that produced the cascade.
-
 **Pre-cascade generality (inferential, non-registered).** The companion
 paper could not say whether WSB's fold-A chance reading was a property
 of the community or of the single year 2019. The rolling series answers
