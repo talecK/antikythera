@@ -833,8 +833,8 @@ The numbers in this paper trace as follows.
 | Author attribution pipeline | pipeline/build_author_concepts.py | ce6d639; d3844c1 |
 | Evaluation code (thread, author, robustness, calibrated, replication) | eval/run_eval3.py, eval/run_eval5.py, eval/run_robustness.py, eval/run_eval8.py, eval/run_gate.py | f89cb2b (deterministic pipeline, review fixes) |
 | Internal adversarial review, committed verbatim | reports/adversarial_review_2026-08-31.md | 45455bc |
-| Figure 1 (schematic, no data) | eval/make_paper1_schematic.py, reports/figures/p1_schematic | pinned in the figures commit (see history) |
-| Figures 2 to 4 | eval/make_paper_figs.py, reports/figures/fig1-3 (shared style eval/paper2_figstyle.py) | 7a1a118; regenerated a67d556; restyled in the figures commit (see history) |
+| Figure 1 (schematic, no data) | eval/make_paper1_schematic.py, reports/figures/p1_schematic | b2ebfd2 |
+| Figures 2 to 4 | eval/make_paper_figs.py, reports/figures/fig1-3 (shared style eval/paper2_figstyle.py) | 7a1a118; regenerated a67d556; restyled b2ebfd2 |
 
 ## References
 
