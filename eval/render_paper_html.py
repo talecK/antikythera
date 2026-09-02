@@ -15,6 +15,8 @@ import subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIG = os.path.join(ROOT, "reports", "figures")
+DATA_DOI = "10.5281/zenodo.22262036"
+CODE_URL = "https://github.com/talecK/antikythera"
 
 PAPERS = {
     "paper1": dict(
@@ -195,7 +197,7 @@ def data_uri(name):
         return "data:image/png;base64," + base64.b64encode(f.read()).decode()
 
 
-def render(paper, out_path):
+def render(paper, out_path, preprint=None):
     cfg = PAPERS[paper]
     md_path = os.path.join(ROOT, cfg["md"])
     md = open(md_path).read()
@@ -265,17 +267,30 @@ def render(paper, out_path):
               .replace('ACC_DI', cfg["accent"][3]).replace('ACC_D', cfg["accent"][2]))
     toc_html = ''.join(f'<li><a href="#{sid}">{html.escape(t)}</a></li>' for sid, t in toc)
     comp_name, comp_url = cfg["companion"]
+    if preprint:
+        # Public preprint: no review banner, no draft-status block, no
+        # contents strip, no private artifact links, no render footer.
+        head = (f'<p class="eyebrow">Preprint · {html.escape(preprint)}</p>'
+                f'<h1>{inline(title_line or cfg["title"])}</h1>'
+                f'<p class="byline"><b>{inline(byline or "")}</b></p>'
+                f'<div class="status">Data release: <a href="https://doi.org/{DATA_DOI}">doi:{DATA_DOI}</a>. '
+                f'Code and registrations: <a href="{CODE_URL}">{CODE_URL}</a> (public at publication). '
+                f'Companion paper: {html.escape(comp_name)} (preprint).</div>')
+        tail = ''
+    else:
+        head = (f'<p class="eyebrow">{html.escape(cfg["eyebrow"])}</p>'
+                f'<h1>{inline(title_line or cfg["title"])}</h1>'
+                f'<p class="byline"><b>{inline(byline or "")}</b></p>'
+                f'<div class="status">{inline(status or "")} Source of record: <code>{cfg["md"]}</code>, commit <code>{commit}</code>. Companion paper: <a href="{comp_url}">{html.escape(comp_name)}</a>.</div>'
+                f'<nav class="toc" aria-label="Contents"><div class="toc-label">Contents</div><ol>{toc_html}</ol></nav>')
+        tail = f'<footer>Rendered from <code>{cfg["md"]}</code> @ <code>{commit}</code> by eval/render_paper_html.py · Antikythera</footer>'
     page = f'''<title>{html.escape(cfg["title"])}</title>
 {FONTS}
 {css}
 <div class="page">
-<p class="eyebrow">{html.escape(cfg["eyebrow"])}</p>
-<h1>{inline(title_line or cfg["title"])}</h1>
-<p class="byline"><b>{inline(byline or "")}</b></p>
-<div class="status">{inline(status or "")} Source of record: <code>{cfg["md"]}</code>, commit <code>{commit}</code>. Companion paper: <a href="{comp_url}">{html.escape(comp_name)}</a>.</div>
-<nav class="toc" aria-label="Contents"><div class="toc-label">Contents</div><ol>{toc_html}</ol></nav>
+{head}
 {chr(10).join(body)}
-<footer>Rendered from <code>{cfg["md"]}</code> @ <code>{commit}</code> by eval/render_paper_html.py · Antikythera</footer>
+{tail}
 </div>
 '''
     with open(out_path, 'w') as f:
@@ -287,6 +302,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("paper", choices=sorted(PAPERS))
     ap.add_argument("--out", required=True)
+    ap.add_argument("--preprint", default=None, metavar="DATE",
+                    help="public preprint mode; DATE is shown in the eyebrow, e.g. 'September 2026'")
     a = ap.parse_args()
-    commit, size, toc = render(a.paper, a.out)
+    commit, size, toc = render(a.paper, a.out, a.preprint)
     print(f"{a.paper} @ {commit}: {size} bytes; sections: {toc}")
