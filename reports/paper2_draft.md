@@ -481,34 +481,33 @@ the ordering is not arbitrary: the fusion sits at the cascade, and the
 walls begin as it ends.
 
 **Cascade susceptibility (interpretive, non-registered, speculative).**
-The arc is consistent with a reading in which chance-level mixing is
-the *substrate* of the cascade rather than its casualty. A community
-whose idea-audiences freely overlap is one where a single story can
-recruit everyone. That recruitment is what the excursion measures
-directly: during the squeeze, previously never-connected tickers were
-being discussed by the same people at multiples of chance. On this
-reading the walls are the scar. The event triggered governance and
-structural responses (megathread containment, ticker filtering,
-spin-off fragmentation) that removed the conditions for its own
-repetition. This is the connectivity condition of threshold-cascade
-models (Watts 2002; Centola and Macy 2007), read empirically. The
-registered results *describe* every step of that sentence (the
-substrate state, the fusion, the walls, and their order), but the
-causal links between the steps are not claimed, as stated above. The
-post-registration date check on A8 (Methods) adds a small observation in
-the same spirit. The rule excluding stocks under one billion dollars in
-market value was already in the subreddit's rulebook before the squeeze
-(archived rules page, reference list), so the fusion happened under a
-moderated regime, not an unruled one. What the community lacked before
-the squeeze was not rules but the enforcement machinery and containment
-that arrived with A4 to A7. On this reading the rulebook did not hold
-the audiences apart; the mixing state let the cascade through, and the
-walls followed enforcement, not legislation. This too is a reading, not
-a result: one rule, one community, and no measurement of enforcement. We
-note the reading because it inverts the usual valence of this program's
-segregation statistic. Chance-level mixing looks "healthy" under the
-discovery framing the companion paper tested; yet here,
-the one mixing community was the one that produced the cascade.
+The arc invites a reading in which chance-level mixing is the substrate
+of the cascade rather than its casualty. A community whose audiences
+overlap freely is one where a single story can reach everyone. That is
+what the excursion measures: during the squeeze, tickers that had never
+shared an audience were being discussed by the same people at several
+times the rate chance predicts. On this reading the walls are the scar.
+The event set off changes, megathread containment, ticker filtering,
+and spin-off subreddits, that removed the conditions for a repeat. This
+is the connectivity condition of cascade models (Watts 2002; Centola and
+Macy 2007), seen in one community's data. The registered results
+describe every step of that sentence, the mixing state, the fusion, the
+walls, and their order, but the causal links between the steps are not
+claimed, as stated above.
+
+One more observation fits the same reading. The rule that excludes
+stocks worth under one billion dollars was already in the subreddit's
+rulebook before the squeeze (archived rules page, reference list), so
+the fusion happened in a moderated community, not an unruled one. What
+was missing before the squeeze was not rules but the enforcement and
+containment that arrived afterwards, A4 to A7. On this reading the
+walls followed enforcement, not legislation. One rule, one community,
+and no measure of enforcement: a reading, not a result.
+
+We note the reading because it turns the usual meaning of the
+segregation statistic on its head. Chance-level mixing looks healthy
+under the discovery framing the companion paper tested; yet here, the
+one mixing community was the one that produced the cascade.
 
 **Pre-cascade generality (inferential, non-registered).** The companion
 paper could not say whether WSB's fold-A chance reading was a property
