@@ -6,14 +6,52 @@
 ## pre-paper project history and is still accurate for the machinery.
 
 ### Where the papers stand
-- **Paper 1** ("Ideas that never meet online"), reports/paper1_draft.md, last
-  commit ddb7e29. Results FINAL (all numbers v2-regenerated, adversarially
-  audited). Today: prose-only passes (abstract accessibility 6c8ae76, body
-  long-sentence splits 086843c, "walled" defined at first use in 6.2), then
-  another session resolved all [verify] DOI tags and added a
-  competing-interests statement (ddb7e29). Header still says "awaiting
-  author prose pass" — that is the only substantive open item.
-- **Paper 2** ("Watching the walls go up"), reports/paper2_draft.md, v0.4,
+- **Paper 1** ("Ideas that never meet online mark divided communities,
+  not future discoveries"), reports/paper1_draft.md, v0.3, last commit
+  e7694ba. Results FINAL (all numbers v2-regenerated, adversarially
+  audited). 2026-09-01 evening: the paper polish playbook applied in
+  full, one owner-approved pass per commit: venue limits verified
+  (EPJ Data Science first, QSS alternative, written to the Nature
+  Communications shape; 300ad98); abstract 313 -> 200 words on the
+  template (f59f3a3 .. 3c2c45a); journal structure (Introduction,
+  Results with measurement summary and registered-predictions Table 1,
+  Discussion without subheadings, Methods last, Funding, commit
+  appendix; fcd1fe0); references Crossref-verified and raised 20 -> 37
+  (431c02b); jargon renames and definitions (6b6a91c, d037329); title
+  changed by a parallel session (c62dc0d); figures: schematic Figure 1
+  (eval/make_paper1_schematic.py) and data figures restyled on
+  eval/paper2_figstyle.py, renumbered 2-4 (b2ebfd2, f4c9603); body
+  read-aloud pass (45d0e71) and mannered-prose scan (62187ce). Main
+  text 4,464 words, Methods 1,250, abstract 200, 4 figures, 3 tables.
+  2026-09-02: external lay-reader pass (44 comments, 22 issues) applied
+  as twelve wording edits (840815e); ecology null-model paragraph
+  rewritten in plain terms and its overclaims removed here and in the
+  Discussion cascade (9b520f1); ten literature characterizations
+  corrected in both papers, one factual (Aghajohari et al. 2021 placed
+  third, not first), Cinelli 2021 no longer cited for Reddit, LBD
+  described as Swanson's shared-intermediate linkage with the
+  eligibility rule stated as ours, Rzhetsky et al. 2015 added,
+  Kleinberg 2003 removed (e7694ba; both verified against sources).
+  Reviewer PDF path recorded in the playbook (render script + headless
+  Chrome with the dark media query disabled); the Google Docs import
+  truncates Table 1 and downsamples figures, do not use it. Table 1's
+  registered readings still say "machinery" (quoted registered
+  language, untouched). Results and Discussion have had no direct
+  lay read yet.
+  Open: typeset to PDF; keywords and an abbreviation list at
+  submission; the private repository must be public (or a Zenodo
+  deposit made) before posting; Acknowledgements "Not applicable" for
+  EPJ at submission.
+- **Paper 2** ("Watching the walls go up: r/wallstreetbets segregated after
+  the GameStop squeeze"), reports/paper2_draft.md, v0.5, last commit 4d6bd9e
+  (2026-09-02: intro Cinelli/Waller attribution and LBD description
+  corrected with paper 1, "among the most stable features" dropped,
+  cascade "seen in" -> "analogous to" e7694ba; "machinery" ->
+  "instrument" at all sites and "eligible (we also call it suppressed)"
+  to match paper 1, 4d6bd9e). Before that: last commit d684971
+  (2026-09-01 evening: title trimmed b185aab, shuffle-null shorthand to
+  standard phrasing 15c87a7, regime change wording 6ce2064, schematic
+  panel c relaid 037309c, mannered-prose scan d684971). Earlier: v0.4,
   last commit 912859a. 2026-09-01 (this session): owner prose pass on
   the abstract (389 -> 198 words, unreferenced, Nature Communications
   template, general-implication closing sentence); declarative title
@@ -76,8 +114,13 @@ four searches. Remaining before submission: (3) typeset to PDF; (4) A1 contempor
 (5) the paper-1 reference must become paper 1's SocArXiv DOI at posting;
 (6) confirm Nature Communications APC and read its human-behaviour
 reporting page. Everything else is done.
-Paper 1: owner prose pass; typeset; one consistency sentence to check
-(abstract "2006 to 2026" vs Sec 3.1 "active since 2007").
+Paper 1: typeset to PDF (reviewer copy path in the playbook, 2026-09-02
+section); a second lay read of Results and Discussion on that PDF;
+submission-time keywords, abbreviation list, Acknowledgements line;
+repository public or Zenodo DOI before posting.
+(The 2006/2007 consistency check is dissolved: the abstract now says
+"twenty years"; the archive's first items are dated October 2006 and
+the site launched publicly in February 2007, both true in the body.)
 
 ### Rules that bound today's edits (keep them)
 - Owner prose rules: no em-dashes or AI-tell phrasing; conventional paper
