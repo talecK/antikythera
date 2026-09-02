@@ -44,7 +44,7 @@ another. He inferred a connection and was later proven right. The insight
 became literature-based discovery (LBD; Swanson 1986b): map which concepts co-occur in a
 corpus, find pairs that statistically should have met but have not, and
 treat those pairs as candidate discoveries. On scientific corpora the
-approach appears strikingly effective. In the Science4Cast benchmark,
+approach appears effective. In the Science4Cast benchmark,
 built from 143,000 artificial-intelligence papers, concept pairs can be
 ranked by their probability of future connection well above chance (Krenn
 et al. 2023). Word embeddings trained on materials-science abstracts
@@ -122,7 +122,7 @@ is the transfer, and a measurement of what the omission costs.
 Our answer is negative, and the path to it is part of the contribution.
 The headline results are three.
 
-First, a certified null result. On twenty years of Hacker News, suppressed
+First, a null result backed by a positive control. On twenty years of Hacker News, suppressed
 concept pairs do not connect above chance at any document granularity we
 tested, under evaluations whose designs were fixed and committed before
 any outcome was computed. The instrument is not at fault: the identical
@@ -146,7 +146,7 @@ test) and suggest the shuffle as a mandatory control for co-occurrence
 formation claims generally.
 
 Third, a positive finding we did not seek. Under the corrected
-criterion, suppressed pairs do not merely fail to connect. They
+criterion, suppressed pairs do not only fail to connect. They
 co-occur below chance, by nearly 9 standard deviations at the author
 level and by more than 100 at the thread level. The communities of attention
 around two ideas that have never met tend to stay apart, at rates far
@@ -562,8 +562,8 @@ connecting the pair. Discourse data alone cannot
 settle how narratives interact with prices, however.
 
 We built the missing co-occurrence index for a twenty-year discourse
-corpus and asked science's most romantic question of it: which of the
-ideas that should have met will meet next? The answer is none of them, at rates distinguishable from error. That
+corpus and asked the question literature-based discovery exists to ask: which of
+the ideas that should have met will meet next? The answer is none of them, at rates distinguishable from error. That
 answer is secured by a positive control, a registered placebo that
 caught our own false positive, a corrected permutation criterion, and a
 pre-registered replication on a second platform with independent
@@ -625,7 +625,7 @@ We evaluate on two temporal folds: build 2015 to 2016 with evaluation
 year 2017 (fold 1), and build 2015 with evaluation year 2016 (fold 2).
 
 A pair **forms** during the evaluation window if it newly co-occurs
-beyond chance. The definition of "beyond chance" is the crux of this
+beyond chance. The definition of "beyond chance" is the central question of this
 paper, and we used two versions:
 
 - **z-criterion (standard; used for the thread-space results and the
@@ -668,7 +668,7 @@ the replication's second-fold census exists only in released artifacts
 and was not appended to its registration. The repository's commit
 history, released with the paper, provides independent timestamps
 (Figure 4) for the ordering of every
-registration and result, including the ones that embarrassed us. A
+registration and result, including the ones that overturned our own conclusions. A
 second exception concerns the Science4Cast control: its registration and
 result were originally committed together in a single commit, so for
 that control the ordering rested on the working log rather than on
