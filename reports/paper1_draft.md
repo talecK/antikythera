@@ -15,7 +15,7 @@ progress.**
 In science, two well-studied ideas never discussed together
 make a likely candidate for a future discovery. Predicting which pair
 connects next is the aim of literature-based discovery. Whether this
-holds in online discussion is untested. Here we test it on 600 thousand
+holds in online discussion is untested. Here we test it on 200 thousand
 Hacker News discussions from 2015 to 2017, with a pre-registered
 replication on 41.5 million Reddit finance posts, 2017 to 2024, using
 stock tickers.

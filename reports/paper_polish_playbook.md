@@ -293,9 +293,13 @@ values) so the two papers' figures read as one set.
   and the extraction cache, not against the ingest. "Twenty years of
   Hacker News" survived every polish pass and an earlier consistency
   check because the ingest does span 2006 to 2026; the concept
-  extraction and both folds cover 2015 to 2017 (599,706 cached
-  documents, and pipeline/build_author_concepts.py filters raw to those
-  years). Grep the pipeline for year filters, count the cache, and
+  extraction and both folds cover 2015 to 2017 (202,721 filtered
+  stories, 202,811 cached extractions, and
+  pipeline/build_author_concepts.py filters raw to those years). The
+  first attempt at this very correction counted the wrong cache
+  (599,706 claim-pair adjudication verdicts) and wrote "600 thousand
+  discussions" into the abstract; count documents from data/docs, not
+  files in whichever cache is listed first. Grep the pipeline for year filters, count the cache, and
   state the evaluated span; the ingest span belongs in Methods only.
   Corrected at cae7c38 and 55d4b5f.
 
