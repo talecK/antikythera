@@ -11,3 +11,4 @@ bin/
 
 # private planning notes (people-related; never in history)
 private/
+.DS_Store
