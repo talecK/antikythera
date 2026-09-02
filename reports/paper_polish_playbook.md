@@ -161,6 +161,14 @@ rename, define at first use, keep. Paper 2's decisions carry over:
   conforming run, primary cell, LOW-POWER and UNINFORMATIVE as registered
   labels, verbatim, seeds and replicate counts, build and evaluation
   periods.
+- Fresh prose compresses into slogans. Any sentence written new during
+  a pass, rather than edited from the draft, gets read aloud once before
+  it goes in; if it names a defined term without its context ("the
+  fusion", "the cascade") or stacks two claims in one clause, unpack it.
+- A word can be jargon in one sentence and load-bearing in the next.
+  Paper 2's "cascade" is the theory term where the sentence says what
+  happened, and "the squeeze" where the sentence says when; decide per
+  use, not per word, and keep the quoted lines intact.
 - Figure legends carry no internal notes (no "per the registered
   display rule", no "generated from committed TSVs"); the reader-facing
   reason for a design choice goes in the legend where it first applies.
