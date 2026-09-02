@@ -62,17 +62,20 @@
   (updates in place). Same for paper1. Pages cross-link in their headers.
 
 ### Outstanding before preprint-ready
-Paper 2: (1) owner prose pass, abstract DONE, body in progress; (2) eight
-DOIs tagged [verify] in the references (Pedersen 2022 JFE; Watts 2002;
-Centola & Macy 2007; Bikhchandani et al. 1992; McPherson 2001; Cinelli
-2021; Swanson 1986) plus a check for a journal version of Semenova
-& Winkler (arXiv:2104.01847); (3) typeset to PDF with table numbering
-(tables are unnumbered inline); (4) packaging only: A8 Wayback pass over
-the subreddit rules page, contemporaneous April-2020 source for A1
-(currently Forbes 2023 retrospective); (5) the paper-1 reference must
-become paper 1's SocArXiv DOI at posting; (6) owner call: Figure 1 DD
-panel has its own y-scale (shared x + chance band); one-line change to
-share y. Estimate: ~half a day of mechanical work after the prose pass.
+Paper 2 (state at v0.5, e2c5c35+): prose, jargon and figure passes DONE;
+all DOIs Crossref-verified, no [verify] tags left; tables numbered 1-7;
+Figure 2 DD panel shares panel a's y-scale (owner call). A8 FINDING
+(2026-09-01, post-registration, disclosed in Methods/Discussion/Intro):
+Wayback captures of the WSB rules page show the sub-$1B market-cap
+clause ABSENT on 2020-09-12 and PRESENT by 2021-01-22, i.e. A8 predates
+the squeeze and is not a post-squeeze governance change; registered
+anchor list and discrimination reading left as committed; no verdict
+affected. A1 still cites the 2023 retrospective plus the pre-lawsuit
+Forbes 2021-01-28 interview (paywalled); no 2020-dated article found in
+four searches. Remaining before submission: (3) typeset to PDF; (4) A1 contemporaneous 2020 source if one turns up;
+(5) the paper-1 reference must become paper 1's SocArXiv DOI at posting;
+(6) confirm Nature Communications APC and read its human-behaviour
+reporting page. Everything else is done.
 Paper 1: owner prose pass; typeset; one consistency sentence to check
 (abstract "2006 to 2026" vs Sec 3.1 "active since 2007").
 

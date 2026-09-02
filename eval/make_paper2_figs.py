@@ -120,7 +120,7 @@ def fig1(W):
             ax.annotate(f"+{d['z']:.1f}", (x, d["z"]), xytext=(0, 7),
                         textcoords="offset points", ha="center", va="bottom",
                         fontsize=7.5, color=INK)
-    ax.set_ylim(-14, 40)
+    ax.set_ylim(-18, 40)                      # shared with panel b
     ax.set_ylabel("segregation z")
     panel_label(ax, "a")
     titled(ax, "r/wallstreetbets, treatment")
@@ -131,7 +131,7 @@ def fig1(W):
     reference_lines(ax)
     onset_line(ax, label_y=None, label=False)
     series(ax, dd, GREEN)
-    ax.set_ylim(-18, 5)
+    ax.set_ylim(-18, 40)                      # shared with panel a
     ax.set_ylabel("segregation z")
     panel_label(ax, "b")
     titled(ax, "DD control, five analysis-oriented subreddits", legend=False)

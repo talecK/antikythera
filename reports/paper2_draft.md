@@ -2,12 +2,11 @@
 
 **Author:** Kevin Quiring (independent researcher)
 
-**Draft v0.4, 2026-09-01. Registered study (preregistration_paper2.md,
+**Draft v0.5, 2026-09-01. Registered study (preregistration_paper2.md,
 commit 99ffd9e, amendments V1-V4). All numbers are from the
 registration-conforming run (commit 21a9dc7); a disclosed implementation
 deviation and its rule-bound correction are reported in Methods.
-Commit references for every quantity are collected in the commit appendix. Structured as Introduction, Results, Discussion, Methods.
-Author prose pass in progress.**
+Commit references for every quantity are collected in the commit appendix. Structured as Introduction, Results, Discussion, Methods. Prose, jargon, and figure passes complete.**
 
 ---
 
@@ -67,7 +66,9 @@ calendar quarter. A pair of frequently mentioned tickers is *eligible*
 is at least 2 while its observed co-mention count is zero. The
 segregation statistic is the total observed evaluation-window co-mention count over all eligible pairs, standardized against a label-shuffle null (Methods). Two temporal folds bracket the 2020-2021 regime break:
 build 2017-2018 with evaluation 2019 (fold A), and build 2022-2023 with
-evaluation 2024 (fold B). The companion analysis's final values (its section "A second platform") read:
+evaluation 2024 (fold B). The companion analysis's final values (its section "A second platform") read as follows (Table 1).
+
+**Table 1.** Segregation z in the companion analysis, by stratum and fold, union lens.
 
 | stratum | fold A (eval 2019) | fold B (eval 2024) |
 |---------|-------------------:|-------------------:|
@@ -108,8 +109,7 @@ The candidate mechanisms, stated before any window was computed
   2021Q1.
 - **Governance.** After the squeeze, WSB's moderation regime changed
   wholesale: a mod-team regime change, automated ticker filtering,
-  containment-by-megathread, and a market-cap floor on discussable
-  tickers (anchors A4-A8; dated sources in Methods). If walls are
+  containment-by-megathread, and a market-cap floor on discussable tickers (anchors A4-A8; dated sources in Methods, where a later source check shows the market-cap floor predates the squeeze). If walls are
   topicality policing, onset should lag the event by months, tracking
   the datable rule changes through 2021.
 - **Era narratives.** Market-wide sector stories sort attention
@@ -245,8 +245,9 @@ existed; full specifications are in Methods.
 The registration fixed three predictions and, in a separate amendment
 committed before any window statistic existed, fixed in advance how
 each possible onset date would be read against the candidate
-mechanisms. Both are summarized here; the verbatim rules are in
-Methods.
+mechanisms. Both are summarized in Table 2; the verbatim rules are in Methods.
+
+**Table 2.** Registered predictions, the pre-committed reading of each outcome, and the observed result.
 
 | Registered item | Pre-committed reading | Observed |
 |---|---|---|
@@ -259,8 +260,9 @@ Methods.
 
 ### The endpoint survives a single data source (Part A)
 
-Rebuilt with API data in both folds, the fold-B endpoint
-cells read as follows, under the companion analysis's criterion, unchanged, and with its mixed-source values alongside for comparison:
+Rebuilt with API data in both folds, the fold-B endpoint cells read as follows (Table 3), under the companion analysis's criterion, unchanged, and with its mixed-source values alongside for comparison.
+
+**Table 3.** Part A: fold-B endpoint cells rebuilt on API data in both folds.
 
 | cell | eligible pairs | z (uniform API) | z (companion analysis, mixed sources) | formed | binomial p |
 |------|---------------:|----------------:|-------------------:|-------:|-----------:|
@@ -278,8 +280,9 @@ the transition study below runs on ground whose far end is secured.
 
 The primary cell is the WSB stratum under the union lens at B = 4:
 nineteen rolling windows with two-quarter evaluation intervals from
-2020Q1 through 2024Q4. It produces this series, with evaluation windows
-labelled by starting quarter:
+2020Q1 through 2024Q4. It produces the series in Table 4, with evaluation windows labelled by starting quarter.
+
+**Table 4.** Primary series: r/wallstreetbets, union lens, four-quarter build, nineteen rolling windows.
 
 | eval start | 20Q1 | 20Q2 | 20Q3 | 20Q4 | 21Q1 | 21Q2 | 21Q3 | 21Q4 | 22Q1 | 22Q2 | 22Q3 | 22Q4 | 23Q1 | 23Q2 | 23Q3 | 23Q4 | 24Q1 | 24Q2 | 24Q3 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -312,9 +315,9 @@ data, three and a half years without a single reversion.
 
 Between the chance-level regime and the walls sit two windows already
 visible in the series above. In the two evaluation windows straddling
-the GameStop episode (evaluation 2020Q4 to 2021Q1 and 2021Q1 to 2021Q2), the
-suppressed pairs of WSB co-mention at 28.6 and 30.9 standard deviations
-*above* their label-shuffle nulls:
+the GameStop episode (evaluation 2020Q4 to 2021Q1 and 2021Q1 to 2021Q2), the suppressed pairs of WSB co-mention at 28.6 and 30.9 standard deviations *above* their label-shuffle nulls (Table 5).
+
+**Table 5.** The two excursion windows, and the control stratum in the same windows.
 
 | cell (B=4, union) | eligible pairs | observed co-mentions | null mean | z | formed (secondary) | binomial p |
 |---|---:|---:|---:|---:|---:|---|
@@ -344,8 +347,9 @@ whether the machinery can produce the excursion from GME-era document
 structure alone. Each replicate applies an *outer* label shuffle that
 destroys any real author-ticker association. It then recomputes the
 full registered statistic from scratch: eligibility construction, inner
-shuffle null, R = 100. There are 20 replicates per excursion window,
-with per-replicate seeds documented:
+shuffle null, R = 100. There are 20 replicates per excursion window, with per-replicate seeds documented (Table 6).
+
+**Table 6.** Shuffled-data placebo: 20 replicates per excursion window against the real values.
 
 | window (eval) | placebo z mean | sd | min | max | placebo formed max | real z / formed |
 |---|---:|---:|---:|---:|---:|---|
@@ -370,7 +374,9 @@ one quarter later, sits at or far below chance.
 
 ### Specificity: the control stays walled through the squeeze
 
-The DD stratum, computed identically through the same calendar:
+The DD stratum, computed identically through the same calendar (Table 7).
+
+**Table 7.** Control series: DD stratum, union lens, four-quarter build.
 
 | eval start | 20Q1 | 20Q2 | 20Q3 | 20Q4 | 21Q1 | 21Q2 | 21Q3 | 21Q4 | 22Q1 | 22Q2 | 22Q3 | 22Q4 | 23Q1 | 23Q2 | 23Q3 | 23Q4 | 24Q1 | 24Q2 | 24Q3 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -438,9 +444,7 @@ control stratum moved gradually and monotonically the whole time.
 What the timing does *not* do is pick a mechanism, and the registration
 constrains what we may conclude here. The anchors amendment froze the
 discrimination rule before any window existed. Onset in 2021Q1 would
-have favored scale/fragmentation (the subscriber explosion, A2). Onset
-in late 2021 would have favored governance (the mod-team regime change,
-ticker-filter bot, megathread containment, and market-cap ban, A4-A8).
+have favored scale/fragmentation (the subscriber explosion, A2). Onset in late 2021 would have favored governance (the mod-team regime change, ticker-filter bot, megathread containment, and market-cap ban, A4-A8; a post-registration source check dates the market-cap ban to before the squeeze, so the governance family that remains is A4 to A7, Methods).
 Onset in 2021Q2 was named, in advance, as the non-separable case: both
 mechanism families active, and the design supporting neither over the
 other. The measured onset is 2021Q2. The ordering evidence is still
@@ -697,8 +701,7 @@ the walled endpoint is real and not an artifact of the data source. Part A remov
 Because "the onset matches event X" is cheap after the fact, a list of
 dated WSB governance events was collected and committed before any
 rolling-window statistic existed (Amendment V2; anchors file in the commit appendix). Eight anchors A1-A8 span April 2020 through
-August 2021: the pre-event removal of the subreddit's founder (A1,
-2020-04; Reimann 2023); the GameStop squeeze and roughly 30x
+August 2021: the pre-event removal of the subreddit's founder (A1, 2020-04; Brown 2021; Reimann 2023); the GameStop squeeze and roughly 30x
 subscriber explosion (A2, 2021-01; Bloomberg News 2021; Newsweek
 2021); the Discord ban and brief private-mode flip as moderation was
 overwhelmed (A3, 2021-01-27; Sandler 2021; Kotaku 2021); the mod-team
@@ -708,10 +711,7 @@ regime change (A4, 2021-02-04/05; Business Insider 2021; HotHardware
 containment-by-daily-thread demonstrated on crypto and reversed within
 a day (A6, 2021-04-14/15; Decrypt 2021; Bitcoin.com News 2021); the
 final GME megathread, pushing single-ticker attention out to spin-off
-subreddits (A7, 2021-04-16; Shacknews 2021); and the sub-$1B
-market-cap discussion ban (A8, in force by 2021-08; wallstbets101.com
-mirror; its introduction date is flagged in the amendment as unpinned
-and unusable for timing claims). The committed anchors file remains
+subreddits (A7, 2021-04-16; Shacknews 2021); and the sub-$1B market-cap discussion ban (A8, in force by 2021-08; wallstbets101.com mirror; its introduction date is flagged in the amendment as unpinned and unusable for timing claims). A source check made after registration, and after all results were known, dates A8 more tightly: archived copies of the subreddit's rules page show no market-cap clause on 2020-09-12 and the clause in place by 2021-01-22, before the squeeze peak and before the moderator change (reference list). The rule therefore predates the squeeze and is not a post-squeeze governance change. The registered anchor list and its discrimination reading are left as committed; the check changes no verdict, because no prediction depends on the anchors and the measured onset was already the non-separable case. The committed anchors file remains
 the pre-commitment record; its sources are itemized in the reference
 list.
 
@@ -816,7 +816,7 @@ beyond chance. The shaded band marks |z| < 3, the chance region; the
 dashed line marks the registered wall threshold z = -5; the vertical
 marker is the onset, 2021-04-01; the two labelled points are the
 excursion windows straddling the GameStop squeeze. (b) The DD control
-stratum over the same calendar. Beneath each z panel, the
+stratum over the same calendar, on the same y-scale as (a). Beneath each z panel, the
 number of eligible pairs in that window, which sets the power of that
 window's test; every z series in this paper is shown with this strip.
 
@@ -860,12 +860,10 @@ ahead of its result. The numbers in this paper trace as follows:
 | Figures 2-4 | eval/make_paper2_figs.py, reports/figures/p2_fig1-3 | 4360746; restyled 5eb7eb2, aligned 9735b96, padded aefe80b (shared style eval/paper2_figstyle.py) |
 | Companion analysis comparison values (final run) | gate table / gate_rerun_v2.log | f89cb2b, 1386fc0 |
 
-## References (all DOIs verified against Crossref 2026-09-01; one anchor source still marked [verify])
+## References
 
 - Quiring, K. (2026). The gaps that don't close: idea segregation
-  persists in twenty years of online discourse. Draft in the same
-  repository (reports/paper1_draft.md); the source observation is its
-  section "A second platform".
+  persists in twenty years of online discourse. Preprint; SocArXiv DOI inserted at posting. The source observation is its section "A second platform".
 - McPherson, M., Smith-Lovin, L., Cook, J.M. (2001). Birds of a
   feather: Homophily in social networks. *Annual Review of Sociology*
   27, 415-444. doi:10.1146/annurev.soc.27.1.415
@@ -918,12 +916,9 @@ ahead of its result. The numbers in this paper trace as follows:
 - Bikhchandani, S., Hirshleifer, D., Welch, I. (1992). A theory of
   fads, fashion, custom, and cultural change as informational cascades.
   *Journal of Political Economy* 100(5), 992-1026. doi:10.1086/261849
-- Anchor sources (the anchors file, reports/paper2_anchors.md,
-  committed before any window statistic existed, remains the
-  pre-commitment record; all URLs accessed 2026-08-31):
-  - Reimann, N. (2023). Founder of WallStreetBets, which sparked meme
-    stock craze, sues Reddit for ousting him. *Forbes*, February 15,
-    2023. (Documents the April 2020 removal.) [A1]
+- Anchor sources (the anchor list was committed before any window statistic existed and remains the pre-commitment record; URLs accessed 2026-08-31 unless noted):
+    - Brown, A. (2021). Founder of WallStreetBets discusses why the group unleashed chaos on GameStop, and why he's (really) exiled from Reddit. *Forbes*, January 28, 2021. (Pre-lawsuit account of the April 2020 removal.) [A1]
+  - Reimann, N. (2023). Founder of WallStreetBets, which sparked meme stock craze, sues Reddit for ousting him. *Forbes*, February 15, 2023. (Documents the April 2020 removal.) [A1]
   - Bloomberg News (2021). WallStreetBets gains more than a million new
     members overnight. *Bloomberg*, January 28, 2021. [A2]
   - Newsweek (2021). WallStreetBets subreddit gains 2 million members
@@ -948,9 +943,8 @@ ahead of its result. The numbers in this paper trace as follows:
     2021. [A6]
   - Shacknews (2021). r/wallstreetbets mods announce that today will be
     the final GME megathread. *Shacknews*, April 16, 2021. [A7]
-  - wallstbets101.com (2021). Mirror of an August 2021 r/wallstreetbets
-    post debating the sub-$1B market-cap rule. [A8; rule introduction
-    date unpinned, Wayback pass pending; verify]
+  - wallstbets101.com (2021). Mirror of an August 2021 r/wallstreetbets post debating the sub-$1B market-cap rule. [A8, the registered source]
+  - Internet Archive captures of https://www.reddit.com/r/wallstreetbets/about/rules (accessed 2026-09-01): rule 4 without a market-cap clause on 2020-06-28 (old.reddit.com capture) and 2020-09-12; rule 4 reading "microcap (Less than $1BN Market Cap)" on 2021-01-22 (old.reddit.com), 2021-02-14 (old.reddit.com), 2021-03-11, 2021-04-01, and 2021-08-22. [A8, post-registration date check]
 - Null-model lineage for the label-shuffle machinery (Connor &
   Simberloff 1979; Gotelli 2000; Gotelli & Ulrich 2012) as discussed in
   the companion paper's Related work and Discussion.
