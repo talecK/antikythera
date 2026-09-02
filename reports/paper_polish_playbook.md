@@ -289,6 +289,15 @@ values) so the two papers' figures read as one set.
   --print-to-pdf`), never from a Docs conversion.
 - A lay reader who summarizes the back half with a chatbot has not read
   it. Ask which sections were read directly before counting the pass.
+- Verify every corpus-span claim against the pipeline's year filters
+  and the extraction cache, not against the ingest. "Twenty years of
+  Hacker News" survived every polish pass and an earlier consistency
+  check because the ingest does span 2006 to 2026; the concept
+  extraction and both folds cover 2015 to 2017 (599,706 cached
+  documents, and pipeline/build_author_concepts.py filters raw to those
+  years). Grep the pipeline for year filters, count the cache, and
+  state the evaluated span; the ingest span belongs in Methods only.
+  Corrected at cae7c38 and 55d4b5f.
 
 ## Paper 1 specifics to carry in
 
