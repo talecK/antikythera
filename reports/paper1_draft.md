@@ -59,7 +59,8 @@ gap-finding on scientific text (Smalheiser and Swanson 1998), and Krenn and
 Zeilinger (2020) formalized the co-occurrence graph approach on
 quantum-physics abstracts. The Science4Cast benchmark turned it into a
 machine-learning competition on a 64,000-node concept graph, with
-link-prediction AUCs above 0.9 for the best methods on the main task.
+link-prediction scores (area under the ROC curve, AUC) above 0.9 for
+the best methods on the main task.
 Our study is, to our knowledge, the first application of this machinery
 to non-scientific discourse, and our positive control reuses
 Science4Cast directly.
@@ -106,7 +107,8 @@ has not absorbed. Ecology confronted this exact problem class decades
 ago: whether species co-occur more or less than
 chance, tested against null models that hold row and column totals of a
 site-by-species matrix to varying degrees. That literature measured
-the Type I inflation of partially constrained null models and settled on
+the false-positive (Type I) inflation of partially constrained null
+models and settled on
 fully constrained ("fixed-fixed") randomizations as the defensible
 default (Connor and Simberloff 1979; Gotelli 2000; Gotelli and Ulrich
 2012; Gotelli and Graves 1996; see also Maslov and Sneppen 2002 for
@@ -130,8 +132,10 @@ pipeline, pointed at Science4Cast, recovers the known signal at roughly
 Second, a measurement trap with likely reach beyond this study. The
 standard way to score a new co-occurrence as "real" is a
 chance-calibrated test: observed joint document count against an
-expected count derived from the two concepts' marginal frequencies. We
-show this criterion is badly anti-conservative when documents vary in
+expected count derived from the two concepts' marginal frequencies,
+that is, from how often each appears on its own. We
+show this criterion is badly anti-conservative, flagging formation far
+too easily, when documents vary in
 size, as they do in virtually every real corpus. In our author-level
 analysis it manufactured formation rates of 19 to 24 percent that
 survived two further pre-registered evaluations. A placebo test,
@@ -226,7 +230,9 @@ concept-level granularity the graph is dense and eligible suppressed
 pairs are plentiful (25,161 in fold 1; 7,505 in fold 2), but under the
 z-criterion only 0.60 and 0.68 percent of them form. Ranking within
 the eligible set adds nothing. The only feature family that beats random
-ordering is triadic closure (common neighbors), at precision-at-200
+ordering is triadic closure (common neighbors, meaning the number of
+frequent concepts that co-occur with both members of a pair), at
+precision-at-200 (the share of the top 200 ranked pairs that formed)
 around 2.5 percent, roughly 4 times random: exactly the generic
 network-science baseline that requires none of the discovery apparatus.
 Semantic features (embedding affinity between concept labels) are
@@ -269,9 +275,11 @@ features add nothing, consistent with the degree-bias literature
 
 ### An apparent thirty-fold effect in author space
 
-Threads are rooms; ideas connect in people. On this reasoning we
-re-defined the document as an author-quarter and re-ran the identical
-formulation (registered before evaluation, as always). The structure of
+A thread is a room where a story is discussed; a person carries ideas
+from room to room. A person can connect two ideas that no single
+conversation ever did. On this reasoning we re-defined the document as
+one author's concepts within a calendar quarter and re-ran the
+identical formulation, registered before evaluation as always. The structure of
 the problem changed sharply: eligible suppressed pairs became rare (364
 in fold 1, 110 in fold 2, versus tens of thousands in thread space),
 resembling the science benchmark. Under the z-criterion they formed
@@ -289,7 +297,8 @@ pairs at high rates.
 ### The placebo
 
 Author-quarter documents vary widely in size (median 5 concepts, 90th
-percentile 21, maximum 100 under the hub guard). Before drafting any
+percentile 21, maximum 100 under the hub exclusion described in
+Methods). Before drafting any
 claims we registered a placebo: shuffle the concept labels across the
 evaluation window's document slots, and count how many eligible pairs
 "form" under the z-criterion in 100 such replicates. The shuffle
@@ -384,7 +393,9 @@ structurally different corpus (acquisition and disclosures in Methods): Reddit f
 subreddits, 41.5 million unique posts and comments, 2017-2024). There
 the concept unit is the stock ticker, extracted by pattern matching and validated
 against the SEC registrant table rather than produced by a language
-model. The design, criterion,
+model. The six subreddits are read as two strata, r/wallstreetbets
+alone and the five analysis-oriented subreddits pooled, and as one
+pooled set of all six. The design, criterion,
 folds, the first fold's power analysis, and all interpretation
 thresholds were fixed and committed before any outcome was computed.
 The two
