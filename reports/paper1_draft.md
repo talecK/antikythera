@@ -59,9 +59,9 @@ gap-finding on scientific text (Smalheiser and Swanson 1998), and Krenn and
 Zeilinger (2020) formalized the co-occurrence graph approach on
 quantum-physics abstracts. The Science4Cast benchmark turned it into a
 machine-learning competition on a 64,000-node concept graph, with
-link-prediction scores (area under the ROC curve, AUC) above 0.9 for
+link-prediction scores (area under the receiver operating characteristic curve, AUC) above 0.9 for
 the best methods on the main task.
-Our study is, to our knowledge, the first application of this machinery
+Our study is, to our knowledge, the first application of these methods
 to non-scientific discourse. Our positive control reuses Science4Cast
 directly.
 
@@ -120,16 +120,16 @@ constrained analog. We claim no novelty for the fix; the contribution
 is the transfer, and a measurement of what the omission costs.
 
 Our answer is negative, and the path to it is part of the contribution.
-The headline results are three.
+Three headline results follow.
 
-First, a null result backed by a positive control. On twenty years of Hacker News, suppressed
+First, a null result backed by a positive control. In twenty years of Hacker News data, suppressed
 concept pairs do not connect above chance at any document granularity we
 tested, under evaluations whose designs were fixed and committed before
 any outcome was computed. The instrument is not at fault: the identical
 pipeline, pointed at Science4Cast, recovers the known signal at roughly
 105 times random precision.
 
-Second, a measurement trap with likely reach beyond this study. The
+Second, a measurement trap likely to extend beyond this study. The
 standard way to score a new co-occurrence as "real" is a
 chance-calibrated test: observed joint document count against an
 expected count derived from the two concepts' marginal frequencies,
@@ -148,13 +148,13 @@ formation claims generally.
 Third, a positive finding we did not seek. Under the corrected
 criterion, suppressed pairs do not only fail to connect. They
 co-occur below chance, by nearly 9 standard deviations at the author
-level and by more than 100 at the thread level. The communities of attention
-around two ideas that have never met tend to stay apart, at rates far
-beyond what their sizes explain. In discourse, the gaps that
+level and by more than 100 at the thread level. Two ideas that have never met
+attract separate communities of attention. Those communities stay
+apart, at rates their sizes cannot explain. In discourse, the gaps that
 literature-based discovery hunts for do not close. They persist,
 far below chance, everywhere we measured.
 
-Hacker News is the test case and Reddit financial discussion the
+Hacker News is the test case; Reddit financial discussion is the
 replication. The general object is the mixing of idea communities in
 discourse, which literature-based discovery assumes and this paper
 measures. A companion paper (Quiring 2026) follows the one community
@@ -175,7 +175,7 @@ one author used within one calendar quarter. Concepts are short
 lowercase strings extracted from each discussion by a language model
 (Methods). Within a build window, a concept is frequent if it appears
 in at least 20 distinct documents. Among frequent concepts, a pair is
-eligible, or suppressed, if two conditions hold: its expected joint
+eligible (we also call it suppressed) if two conditions hold: its expected joint
 document count under independence is at least 2, and its observed
 co-occurrence in the build window is zero. In plain terms, each concept
 is discussed often enough that chance alone should have put the two in
@@ -184,7 +184,7 @@ are measured in the following evaluation year. Formation asks, pair by
 pair, whether the two concepts now co-occur beyond chance. The paper
 uses two definitions of beyond chance, the standard z-criterion and a
 per-pair permutation criterion. The difference between them is itself
-a result of this paper. The segregation statistic z pools all eligible
+one of this paper's findings. The segregation statistic z pools all eligible
 pairs: it counts the evaluation documents in which any eligible pair
 co-occurs and standardizes that total against a permutation null
 distribution. The shuffle moves concept labels across document slots,
@@ -249,7 +249,7 @@ A null result of this kind is only as credible as its instrument, so we ran
 the identical eligibility and ranking pipeline, unchanged, on the
 Science4Cast benchmark where the signal is known to exist. The signal
 is there: ranked precision reaches roughly 105 times random, and our feature set
-reaches AUC 0.899 against the benchmark's published 15-feature baseline
+reaches an AUC (area under the curve) of 0.899 against the benchmark's published 15-feature baseline
 of 0.851. Within the benchmark's suppressed subset (expected joint
 count at least 2, no prior co-occurrence), 67 percent of pairs connect
 (188 of 281 in a 10-million-pair sample).
@@ -270,7 +270,7 @@ the target years) is a further open question, outside this paper's
 scope.
 
 One observation from this control does carry forward: in science as on
-Hacker News, popularity features tie or beat closure and semantic
+Hacker News, popularity features match or exceed closure and semantic
 features add nothing, consistent with the degree-bias literature
 (Aiyappa et al. 2025).
 
@@ -452,15 +452,12 @@ A reproduction check accompanied the amended acquisition: the
 analysis-stratum cells were recomputed on successive corpus rebuilds
 and match (observed and eligible counts identical; z within the Monte
 Carlo noise of the shuffled estimate; build documents differ by one due to
-deduplication order, disclosed in the released run log). The companion
-paper's independently acquired corpus (Quiring 2026; same platform, a
-separate API pull on a different day, shared unit rules) additionally
-reproduces the
-first fold's r/wallstreetbets document census to within one document
-(44,013 versus 44,012 author-quarters). Its registered confirmatory
-run reproduces the second fold's endpoint on a uniform single data
-source (all strata far below chance, formation at the floor), so the second fold's
-result is not a sourcing artifact.
+deduplication order, disclosed in the released run log). A registered confirmatory
+run in the companion paper (Quiring 2026), on a single uniform data
+source, reproduces the second fold's endpoint (all strata far below
+chance, formation at the floor), so the second fold's result is not a
+sourcing artifact; the census agreement between the two corpora is
+given in Methods.
 
 ## Discussion
 
@@ -561,9 +558,9 @@ timing evidence, in which co-occurrence preceded any written claim
 connecting the pair. Discourse data alone cannot
 settle how narratives interact with prices, however.
 
-We built the missing co-occurrence index for a twenty-year discourse
-corpus and asked the question literature-based discovery exists to ask: which of
-the ideas that should have met will meet next? The answer is none of them, at rates distinguishable from error. That
+We built the co-occurrence index that literature-based discovery
+needs and discourse corpora lack, and asked its defining question. Of
+the ideas that should already have met, which will meet next? The answer is none of them, at rates distinguishable from error. That
 answer is secured by a positive control, a registered placebo that
 caught our own false positive, a corrected permutation criterion, and a
 pre-registered replication on a second platform with independent
@@ -709,7 +706,10 @@ rendered moot when we chose to acquire the evaluation year uniformly
 from one source. Cross-source equivalence evidence therefore rests on
 one build-era month (comments only), where the two sources agree at
 99.96 percent. No
-month is missing. Separately, a registered unit rule (exclusion of
+month is missing. The companion paper's independently acquired corpus
+(same platform, a separate API pull on a different day, shared unit
+rules) reproduces the first fold's r/wallstreetbets document census to
+within one document (44,013 versus 44,012 author-quarters). Separately, a registered unit rule (exclusion of
 index ETFs) was found unenforced in one extraction branch by an
 internal adversarial review after the first complete run; the final
 numbers reported in Results enforce it, which changed no conclusion. Two
@@ -767,7 +767,7 @@ manuscript.
 two readouts it produces, and why one formation criterion was retired.
 (a) The document, two ways: a Hacker News thread (story plus top
 comments) or one author's concepts within one calendar quarter. (b) An
-eligible, or suppressed, pair: two frequent concepts that never share a
+eligible (we also call it suppressed) pair: two frequent concepts that never share a
 document in the build window even though chance alone predicts at
 least two shared documents. (c) The two folds: build on 2015 to 2016
 and evaluate 2017; build on 2015 and evaluate 2016. (d) The segregation
