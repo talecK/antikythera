@@ -494,7 +494,17 @@ repetition. This is the connectivity condition of threshold-cascade
 models (Watts 2002; Centola and Macy 2007), read empirically. The
 registered results *describe* every step of that sentence (the
 substrate state, the fusion, the walls, and their order), but the
-causal links between the steps are not claimed, as stated above. We
+causal links between the steps are not claimed, as stated above. The
+post-registration date check on A8 (Methods) adds a small observation in
+the same spirit. The rule excluding stocks under one billion dollars in
+market value was already in the subreddit's rulebook before the squeeze
+(archived rules page, reference list), so the fusion happened under a
+moderated regime, not an unruled one. What the community lacked before
+the squeeze was not rules but the enforcement machinery and containment
+that arrived with A4 to A7. On this reading the rulebook did not hold
+the audiences apart; the mixing state let the cascade through, and the
+walls followed enforcement, not legislation. This too is a reading, not
+a result: one rule, one community, and no measurement of enforcement. We
 note the reading because it inverts the usual valence of this program's
 segregation statistic. Chance-level mixing looks "healthy" under the
 discovery framing the companion paper tested; yet here,
