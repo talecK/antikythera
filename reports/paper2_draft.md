@@ -1,4 +1,4 @@
-# Watching the walls go up: r/wallstreetbets segregated in the quarter after the GameStop squeeze
+# Watching the walls go up: r/wallstreetbets segregated after the GameStop squeeze
 
 **Author:** Kevin Quiring (independent researcher)
 
