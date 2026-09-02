@@ -12,22 +12,23 @@ progress.**
 
 ## Abstract
 
-In science, two well-studied ideas that are never discussed together
+In science, two well-studied ideas never discussed together
 make a likely candidate for a future discovery. Predicting which pair
 connects next is the aim of literature-based discovery. Whether this
-holds in online discussion is untested. Here we test it on 1.3 million
-Hacker News discussions over twenty years, with a pre-registered
-replication on 41.5 million Reddit finance posts using stock tickers.
+holds in online discussion is untested. Here we test it on 600 thousand
+Hacker News discussions from 2015 to 2017, with a pre-registered
+replication on 41.5 million Reddit finance posts, 2017 to 2024, using
+stock tickers.
 Four pre-registered evaluations use threads, then authors, as documents.
 Pairs never discussed together, called suppressed pairs, connect no more
 than popularity and overlapping topics predict. On the Science4Cast
 benchmark of AI papers, where the effect is known, the same method finds
 it. The standard test against chance flags connections too easily when
 document sizes vary. It reported 19 to 24 percent of pairs connecting
-within authors' quarterly output, yet randomly shuffled data connected
+within authors' quarterly output, yet shuffled data connected
 more pairs than real data. A per-pair permutation test leaves new
-connections no higher than false positives alone produce. Overall,
-suppressed pairs appear together far below chance: nearly 9 standard
+connections no higher than false positives produce.
+Suppressed pairs appear together far below chance: nearly 9 standard
 deviations at author level, over 100 at thread level. Both results
 replicate across the 2020-2021 market regime change. Ideas that never
 meet online mark communities that stay apart, not future discoveries
@@ -133,7 +134,7 @@ and to measure what leaving it out has cost.
 
 Our answer is negative. Three headline results follow.
 
-First, a null result backed by a positive control. In twenty years of Hacker News data, suppressed
+First, a null result backed by a positive control. In three years of Hacker News data, 2015 to 2017, suppressed
 concept pairs do not connect above chance at any document granularity we
 tested, under evaluations whose designs were fixed and committed before
 any outcome was computed. The instrument is not at fault: the identical
@@ -500,8 +501,9 @@ test has, to our knowledge, never been tested. The question is outside
 this paper's scope and under active investigation.
 
 **What the negative does and does not say.** The null result is strong but scoped. It says: on a large general-technology
-forum, over twenty years, with language-model-extracted concept units at two
-granularities, expected-but-absent concept pairs show no above-chance
+forum, over three years, with language-model-extracted concept units at two
+granularities, and on eight years of Reddit financial discussion with
+ticker units, expected-but-absent concept pairs show no above-chance
 tendency to connect. The previously reported positive versions of
 this effect on the same data are measurement artifacts. It does not say
 that no discourse corpus anywhere shows real gap-closing (a
@@ -560,8 +562,8 @@ finance communities mention economically adjacent tickers together at
 less than half chance rates, in both folds, on either side of a market
 regime change. Similarly, the returns to brokerage across "structural
 holes" (Burt 2004) require that holes persist against the incentive to close
-them; co-attention persistently below chance over two decades is
-consistent with that persistence, though it is measured between
+them; co-attention persistently below chance across a decade of discourse
+on two platforms, 2015 to 2024, is consistent with that persistence, though it is measured between
 concepts rather than between people. One implication runs the other
 way: accounts in which new cross-domain narratives percolate upward
 from public conversation are hard to square with both the segregation result and the author-space
@@ -577,8 +579,8 @@ caught our own false positive, a corrected permutation criterion, and a
 pre-registered replication on a second platform with independent
 units. The durable fact is the
 opposite one. In open discourse, the expected-but-absent pairs are not
-discoveries waiting to happen; they are walls that persist, decade
-after decade, on every platform we measured. Instruments that
+discoveries waiting to happen; they are walls that persist, year
+after year, on every platform we measured. Instruments that
 claim otherwise should first be pointed at shuffled data.
 
 ## Methods
@@ -586,10 +588,12 @@ claim otherwise should first be pointed at shuffled data.
 ### Corpus
 
 We use Hacker News, a technology discussion forum active since 2007,
-whose archive begins in October 2006, chosen for its twenty-year span, stable community norms, and public
-archive. The corpus contains 1.32 million discussion threads from 2006
-through 2026; each document is a story title plus its top twenty
-comments. All items carry source timestamps, and every derived artifact
+whose archive begins in October 2006, chosen for its stable community
+norms and public archive. The ingested corpus contains 1.32 million
+discussion threads from 2006 through 2026; each document is a story
+title plus its top twenty comments. Concept extraction, and therefore
+every evaluation in this paper, covers 2015 through 2017, the span the
+extraction budget allowed, with the folds placed inside it. All items carry source timestamps, and every derived artifact
 in the pipeline preserves them (no lookahead at any stage; the sentence
 embedding model used for auxiliary features predates the evaluation
 windows).
