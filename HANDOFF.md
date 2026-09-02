@@ -36,9 +36,18 @@
   Related-works entry points at the GitHub repo (still private; resolves
   after the flip). Two related_identifiers (SocArXiv DOIs) still to add
   as a metadata-only edit after posting; no new version needed.
-- NEXT: SocArXiv for both preprints (owner submits; PDF via the render
-  script + headless Chrome per the playbook), then paper 2's paper-1
-  reference and paper 1's companion reference get the SocArXiv DOIs. Then: DOI into both papers'
+- Preprint PDFs built (cfd2f55 adds --preprint DATE to the render
+  script: no banner, no draft-status block, no TOC, no private links;
+  header carries the Zenodo DOI and code URL): data/release/preprints/
+  quiring_2026_ideas_that_never_meet_preprint.pdf (26 pp) and
+  quiring_2026_watching_the_walls_go_up_preprint.pdf (29 pp), plus
+  socarxiv_submission_sheet.md (titles, abstracts, tags, links, order).
+  Recipe: render --preprint, disable the dark media query, print with
+  Chrome --headless=new --no-pdf-header-footer --print-to-pdf.
+- NEXT: owner submits both to SocArXiv (OSF login via ORCID). After
+  both DOIs arrive: insert each into the other paper's references,
+  re-render, upload v2 of both, add both DOIs to the Zenodo record as
+  related works (metadata-only edit). Then: DOI into both papers'
   Data availability and paper 2's paper-1 reference, re-render, post
   both preprints to SocArXiv, fill the two related_identifiers.
 - Deferred to a later deposit version: per-document HN claim
