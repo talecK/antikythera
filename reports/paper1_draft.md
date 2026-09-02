@@ -37,11 +37,11 @@ waiting to happen.
 
 ## Introduction
 
-Some discoveries are visible before they are made. Swanson (1986) noticed
+Some discoveries are visible before they are made. Swanson (1986a) noticed
 that the medical literature on dietary fish oil and the literature on
 Raynaud's syndrome shared intermediate findings yet never cited one
 another, inferred a connection, and was later proven right. The insight
-became literature-based discovery (LBD): map which concepts co-occur in a
+became literature-based discovery (LBD; Swanson 1986b): map which concepts co-occur in a
 corpus, find pairs that statistically should have met but have not, and
 treat those pairs as candidate discoveries. On scientific corpora the
 approach appears strikingly effective. In the Science4Cast benchmark,
@@ -51,8 +51,11 @@ et al. 2023). Word embeddings trained on materials-science abstracts
 flagged thermoelectric compounds years before their discovery papers
 (Tshitoyan et al. 2019).
 
-The method has a lineage. Swanson's successors established gap-finding
-on scientific text (Smalheiser and Swanson 1998), and Krenn and
+The method has a lineage, reviewed by Henry and McInnes (2017),
+Sebastian, Siew and Orimaye (2017) and Thilakaratne, Falkner and
+Atapattu (2019), and a scientometric cousin in co-word analysis
+(Callon, Courtial and Laville 1991). Swanson's successors established
+gap-finding on scientific text (Smalheiser and Swanson 1998), and Krenn and
 Zeilinger (2020) formalized the co-occurrence graph approach on
 quantum-physics abstracts. The Science4Cast benchmark turned it into a
 machine-learning competition on a 64,000-node concept graph, with
@@ -63,7 +66,13 @@ Science4Cast directly.
 
 Scientific literature is a small and unusual corner of written thought.
 The bulk of recorded reasoning happens in ordinary discourse: forums,
-comment threads, industry discussion. If expected-but-absent concept
+comment threads, industry discussion. That discourse is known to sort
+itself: people who discuss one thing tend not to discuss another, from
+homophily in offline networks (McPherson, Smith-Lovin and Cook 2001)
+to the segregated link structure of political blogs and Twitter
+(Adamic and Glance 2005; Conover et al. 2011) and the echo chambers
+and community polarization measured on Reddit and elsewhere (Cinelli
+et al. 2021; Waller and Anderson 2021). If expected-but-absent concept
 pairs predict future connections there, the applications are broad, from
 research recommendation to trend analysis. To our knowledge the transfer
 has not been tested, chiefly because discourse lacks the self-indexing
@@ -86,7 +95,9 @@ carries an implicit degree bias: a degree-only ranker is near optimal on
 many benchmarks. A Science4Cast competition entry demonstrated the same
 point in practice, winning with degree features alone (Aghajohari 2021).
 Our thread-level findings echo this: the only surviving predictor
-families are node popularity and triadic closure. A separate study
+families are node popularity and triadic closure, the oldest generic
+regularities of growing networks (Newman 2001; Kossinets and Watts
+2006). A separate study
 (in preparation) examines the Science4Cast benchmark itself in this
 light.
 
@@ -442,7 +453,8 @@ result is not a sourcing artifact.
 **A criterion to retire.** The z-style chance calibration we began with is not an exotic choice;
 it is the natural first implementation of "co-occurs more than
 expected" and variants of it appear throughout the co-occurrence, LBD,
-and trend detection literatures. Ecologists identified the defect in
+and trend detection literatures (Church and Hanks 1989; Kleinberg
+2003). Ecologists identified the defect in
 this class of test roughly twenty-five years ago and standardized on
 fully constrained permutation nulls in response (Introduction); to our
 knowledge, text-corpus practice never absorbed that lesson. Our
@@ -518,7 +530,9 @@ recognition hypothesis prices assets partly by which investors are
 aware of them; Hong and Stein derive momentum from information crossing
 investor segments only slowly; and Cohen and Frazzini document returns
 diffusing along economic links with a lag attributed to inattention to
-connected firms. Our replication corpus is exactly such a setting, and
+connected firms. The empirical attention literature measures the same
+boundaries from the investor side (Barber and Odean 2008; Da,
+Engelberg and Gao 2011). Our replication corpus is exactly such a setting, and
 there the boundaries are directly visible: even analysis-oriented
 finance communities co-mention economically adjacent tickers at less
 than half chance rates, in both folds, on either side of a market
@@ -626,7 +640,8 @@ registration on different hardware (Registration protocol).
 
 ### Registration protocol
 
-Every evaluation in this paper was registered before it was run: the
+Every evaluation in this paper was registered before it was run (Nosek
+et al. 2018): the
 unit definition, eligibility rule, fold boundaries, outcome criterion,
 and interpretation thresholds were written to a registration file and
 committed to version control. The evaluation code refuses to run
@@ -789,9 +804,11 @@ The numbers in this paper trace as follows.
 
 ## References
 
-- Swanson, D.R. (1986). Fish oil, Raynaud's syndrome, and undiscovered
+- Swanson, D.R. (1986a). Fish oil, Raynaud's syndrome, and undiscovered
   public knowledge. *Perspectives in Biology and Medicine* 30(1), 7-18.
   doi:10.1353/pbm.1986.0087
+- Swanson, D.R. (1986b). Undiscovered public knowledge. *The Library
+  Quarterly* 56(2), 103-118. doi:10.1086/601720
 - Smalheiser, N.R., Swanson, D.R. (1998). Using ARROWSMITH: a
   computer-assisted approach to formulating and assessing scientific
   hypotheses. *Computer Methods and Programs in Biomedicine* 57(3),
@@ -816,11 +833,12 @@ The numbers in this paper trace as follows.
   for social networks. *JASIST* 58(7), 1019-1031. doi:10.1002/asi.20591
 - Aiyappa, R., Wang, X., Kim, M., Seckin, O.C., Yoon, J., Ahn, Y.-Y.,
   Kojaku, S. (2025). Implicit degree bias in the link prediction task.
-  *Proceedings of the 42nd International Conference on Machine Learning
-  (ICML)*. arXiv:2405.14985.
+  *Proceedings of the 42nd International Conference on Machine Learning*,
+  PMLR 267, 874-908. https://proceedings.mlr.press/v267/aiyappa25a.html
 - Aghajohari, M., Akhondzadeh, M.S., Ashkboos, S., Chitsaz, K. (2021).
   Degree-based feature is all you need: Science4Cast report. *IEEE
   International Conference on Big Data 2021*, 5791-5794.
+  doi:10.1109/BigData52589.2021.9671530
 - Maslov, S., Sneppen, K. (2002). Specificity and stability in topology
   of protein networks. *Science* 296(5569), 910-913.
   doi:10.1126/science.1065103
@@ -846,6 +864,60 @@ The numbers in this paper trace as follows.
 - Gotelli, N.J., Ulrich, W. (2012). Statistical challenges in null
   model analysis. *Oikos* 121(2), 171-180.
   doi:10.1111/j.1600-0706.2011.20301.x
+- Henry, S., McInnes, B.T. (2017). Literature based discovery: models,
+  methods, and trends. *Journal of Biomedical Informatics* 74, 20-32.
+  doi:10.1016/j.jbi.2017.08.011
+- Sebastian, Y., Siew, E.-G., Orimaye, S.O. (2017). Emerging approaches
+  in literature-based discovery: techniques and performance review.
+  *The Knowledge Engineering Review* 32, e12.
+  doi:10.1017/S0269888917000042
+- Thilakaratne, M., Falkner, K., Atapattu, T. (2019). A systematic
+  review on literature-based discovery. *ACM Computing Surveys* 52(6),
+  1-34. doi:10.1145/3365756
+- Callon, M., Courtial, J.P., Laville, F. (1991). Co-word analysis as a
+  tool for describing the network of interactions between basic and
+  technological research: the case of polymer chemistry.
+  *Scientometrics* 22(1), 155-205. doi:10.1007/BF02019280
+- Newman, M.E.J. (2001). Clustering and preferential attachment in
+  growing networks. *Physical Review E* 64(2), 025102.
+  doi:10.1103/PhysRevE.64.025102
+- Kossinets, G., Watts, D.J. (2006). Empirical analysis of an evolving
+  social network. *Science* 311(5757), 88-90.
+  doi:10.1126/science.1116869
+- McPherson, M., Smith-Lovin, L., Cook, J.M. (2001). Birds of a feather:
+  homophily in social networks. *Annual Review of Sociology* 27,
+  415-444. doi:10.1146/annurev.soc.27.1.415
+- Adamic, L.A., Glance, N. (2005). The political blogosphere and the
+  2004 U.S. election: divided they blog. *Proceedings of the 3rd
+  International Workshop on Link Discovery (LinkKDD)*, 36-43.
+  doi:10.1145/1134271.1134277
+- Conover, M., Ratkiewicz, J., Francisco, M., Goncalves, B., Menczer,
+  F., Flammini, A. (2011). Political polarization on Twitter.
+  *Proceedings of the International AAAI Conference on Web and Social
+  Media* 5(1), 89-96. doi:10.1609/icwsm.v5i1.14126
+- Cinelli, M., De Francisci Morales, G., Galeazzi, A., Quattrociocchi,
+  W., Starnini, M. (2021). The echo chamber effect on social media.
+  *PNAS* 118(9), e2023301118. doi:10.1073/pnas.2023301118
+- Waller, I., Anderson, A. (2021). Quantifying social organization and
+  political polarization in online platforms. *Nature* 600, 264-268.
+  doi:10.1038/s41586-021-04167-x
+- Church, K.W., Hanks, P. (1989). Word association norms, mutual
+  information, and lexicography. *Proceedings of the 27th Annual Meeting
+  of the Association for Computational Linguistics*, 76-83.
+  doi:10.3115/981623.981633
+- Kleinberg, J. (2003). Bursty and hierarchical structure in streams.
+  *Data Mining and Knowledge Discovery* 7(4), 373-397.
+  doi:10.1023/A:1024940629314
+- Barber, B.M., Odean, T. (2008). All that glitters: the effect of
+  attention and news on the buying behavior of individual and
+  institutional investors. *Review of Financial Studies* 21(2),
+  785-818. doi:10.1093/rfs/hhm079
+- Da, Z., Engelberg, J., Gao, P. (2011). In search of attention.
+  *Journal of Finance* 66(5), 1461-1499.
+  doi:10.1111/j.1540-6261.2011.01679.x
+- Nosek, B.A., Ebersole, C.R., DeHaven, A.C., Mellor, D.T. (2018). The
+  preregistration revolution. *PNAS* 115(11), 2600-2606.
+  doi:10.1073/pnas.1708274114
 - Quiring, K. (2026). Watching the walls go up: r/wallstreetbets
   segregated after the GameStop squeeze. Preprint; SocArXiv DOI
   inserted at posting.
