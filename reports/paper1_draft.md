@@ -23,7 +23,7 @@ it. The standard test against chance flags connections too easily when
 document sizes vary. It reported 19 to 24 percent of pairs connecting
 within authors' quarterly output, yet randomly shuffled data connected
 more pairs than real data. A per-pair permutation test leaves new
-connections no higher than false positives alone produce. Instead,
+connections no higher than false positives alone produce. Overall,
 suppressed pairs appear together far below chance: nearly 9 standard
 deviations at author level, over 100 at thread level. Both results
 replicate across the 2020-2021 market regime change. Ideas that never
