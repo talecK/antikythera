@@ -163,7 +163,7 @@ empirical cousin of this theory: chance-level mixing is the
 connectivity substrate, and the walls are its removal. What this paper
 adds to all four shelves is a registered, longitudinal measurement of
 one community's idea-segregation state through a cascade, with a
-calibrated permutation test (the companion paper's machinery), a dated onset, and a
+calibrated permutation test (the companion paper's instrument), a dated onset, and a
 same-platform control.
 
 This paper is the registered study of that transition. It asks three
@@ -197,7 +197,7 @@ r/wallstreetbets co-mention at 28.6 and 30.9 standard deviations above
 chance. In every other window this program has
 measured, on any platform, co-mention over suppressed pairs sits at or
 below chance; these two windows are the only exception. The control
-stratum, measured through the same windows by the same machinery,
+stratum, measured through the same windows by the same instrument,
 stayed below chance throughout. After the excursion recedes, the walls
 appear and persist. r/wallstreetbets is the test case. The general
 object is the transition between segregation states in a discourse
@@ -218,7 +218,7 @@ counts are the power context.
 The unit of observation is one author's set of ticker mentions within
 one calendar quarter, as everywhere in this program. A ticker is
 frequent in a build period if 20 or more distinct author-quarters
-mention it. Among frequent tickers, a pair is eligible, or suppressed,
+mention it. Among frequent tickers, a pair is eligible (we also call it suppressed)
 if two conditions hold. Its expected joint document count under
 independence is at least 2, and its observed co-mention count in the
 build period is zero. In plain terms, each ticker is popular enough
@@ -339,11 +339,11 @@ risen above it. No registered pass threshold attaches to formation here, by desi
 
 **The placebo.** A result this far above chance calls for the same
 scrutiny the companion paper applied to its own false positive: its
-central cautionary finding was a formation effect manufactured by the
-measuring stick, caught by a label-shuffle placebo. The same pattern
+central cautionary finding was a formation effect produced by the test
+itself, caught by a label-shuffle placebo. The same pattern
 was applied to this excursion, as a post-registration robustness check
 in the registered placebo's mold. Forty shuffled-data placebo replicates ask
-whether the machinery can produce the excursion from GME-era document
+whether the instrument can produce the excursion from GME-era document
 structure alone. Each replicate applies an *outer* label shuffle that
 destroys any real author-ticker association. It then recomputes the
 full registered statistic from scratch: eligibility construction, inner
@@ -359,7 +359,7 @@ permutation test, R = 100. There are 20 replicates per excursion window, with pe
 On shuffled data the statistic behaves like a standard normal, as a
 calibrated instrument should; the real values sit roughly 24 and 31
 placebo standard deviations outside their placebo distributions. The
-excursion is in the data, not the machinery. This answers, for this
+excursion is in the data, not the instrument. This answers, for this
 specific regime, the document-size concern that sank the companion paper's author-level formation result: extreme document-size and
 volume heterogeneity in the GME-era windows does not, by itself,
 produce anything resembling the observed values.
@@ -554,7 +554,7 @@ one known exception ended. r/wallstreetbets mixed at chance through
 mid-2020. In the two windows around the GameStop squeeze its
 suppressed pairs co-mentioned at 28 to 31 standard deviations above
 chance. This is the only above-chance excursion in the program on any
-platform at any granularity, and one the machinery cannot produce from
+platform at any granularity, and one the instrument cannot produce from
 shuffled data. From April 2021 to the end of the data the community is
 walled in every window, with no reversion, while the analysis-oriented
 control stayed below chance for the entire five years, squeeze
@@ -803,7 +803,7 @@ the corpus, ran the analyses, and wrote the manuscript.
 
 **Figure 1** (p2_schematic.png/.pdf). How the statistic is built, and
 the three regimes it can express. (a) The document is one author's set
-of tickers in one calendar quarter. (b) An eligible, or suppressed,
+of tickers in one calendar quarter. (b) An eligible (we also call it suppressed)
 pair: two frequent tickers whose audiences never overlap in the build
 period even though chance alone predicts at least two shared documents.
 (c) Windows roll over 2019 to 2024 with a four-quarter build and a
@@ -955,6 +955,6 @@ ahead of its result. The numbers in this paper trace as follows:
     the final GME megathread. *Shacknews*, April 16, 2021. [A7]
   - wallstbets101.com (2021). Mirror of an August 2021 r/wallstreetbets post debating the sub-$1B market-cap rule. [A8, the registered source]
   - Internet Archive captures of https://www.reddit.com/r/wallstreetbets/about/rules (accessed 2026-09-01): rule 4 without a market-cap clause on 2020-06-28 (old.reddit.com capture) and 2020-09-12; rule 4 reading "microcap (Less than $1BN Market Cap)" on 2021-01-22 (old.reddit.com), 2021-02-14 (old.reddit.com), 2021-03-11, 2021-04-01, and 2021-08-22. [A8, post-registration date check]
-- Null-model lineage for the label-shuffle machinery (Connor &
+- Null-model lineage for the label-shuffle test (Connor &
   Simberloff 1979; Gotelli 2000; Gotelli & Ulrich 2012) as discussed in
   the companion paper's Related work and Discussion.
