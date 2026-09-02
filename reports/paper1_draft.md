@@ -196,6 +196,7 @@ means they are kept apart. Two temporal folds are used: build 2015 to
 (fold 2). Every unit definition, threshold, fold boundary, and
 interpretation rule was registered and committed before the
 corresponding evaluation ran; full specifications are in Methods.
+Figure 1 sketches the construction.
 
 ### Registered predictions and pre-committed readings
 
@@ -309,7 +310,7 @@ or above half the observed count would be reported as a revision of the
 result, not a nuance.
 
 The placebo did not merely halve the result. Shuffled data forms more
-pairs than the real data (Figure 1, top): 125.1 on average versus 70
+pairs than the real data (Figure 2a, b): 125.1 on average versus 70
 observed in fold 1,
 and 53.0 versus 26 in fold 2. The observed counts sit 5.8 and 5.0
 standard deviations below their own shuffled expectations. The z-criterion's
@@ -331,7 +332,7 @@ replicates (commit appendix).
 We then registered and ran the corrected criterion (per-pair permutation
 test, Methods) in both document spaces and both folds, with the
 interpretation thresholds again fixed in advance. Formation collapses to the
-false-positive floor everywhere (Figure 2, Table 2).
+false-positive floor everywhere (Figure 3, Table 2).
 
 **Table 2.** Calibrated formation against the false-positive floor, by space and fold.
 
@@ -352,7 +353,7 @@ at either granularity.
 
 The same permutation machinery yields a second, better-powered
 statistic: the total number of joint occurrences across all eligible
-pairs, observed versus shuffled (Figure 1, bottom). Here the data speak
+pairs, observed versus shuffled (Figure 2c). Here the data speak
 loudly, in the
 direction opposite to the discovery thesis (Table 3).
 
@@ -663,7 +664,7 @@ outcomes were computed, with one exception disclosed under Replication corpus be
 the replication's second-fold census exists only in released artifacts
 and was not appended to its registration. The repository's commit
 history, released with the paper, provides independent timestamps
-(Figure 3) for the ordering of every
+(Figure 4) for the ordering of every
 registration and result, including the ones that embarrassed us. One
 exception is disclosed: the Science4Cast control's registration and
 result were originally committed together in a single commit, so for
@@ -761,29 +762,49 @@ manuscript.
 
 ## Figure legends
 
-**Figure 1** (fig1.png/.pdf). Observed versus shuffled. Top: the
+**Figure 1** (p1_schematic.png/.pdf). How the instrument is built, the
+two readouts it produces, and why one formation criterion was retired.
+(a) The document, two ways: a Hacker News thread (story plus top
+comments) or one author's concepts within one calendar quarter. (b) An
+eligible, or suppressed, pair: two frequent concepts that never share a
+document in the build window even though chance alone predicts at
+least two shared documents. (c) The two folds: build on 2015 to 2016
+and evaluate 2017; build on 2015 and evaluate 2016. (d) The segregation
+statistic: the count of evaluation documents holding any eligible pair,
+compared with 100 shuffles of concept labels that preserve every
+document's size and every concept's frequency, giving z. (e) The two
+criteria for calling a pair formed. Under the retired z-criterion,
+whose expectation comes from each concept's own frequency, randomly
+shuffled data form more pairs than the real data; under the per-pair
+permutation criterion, both sit at the one-percent false-positive
+floor. The dotted guide carries the left panel's scale into the right.
+All values in this figure are illustrative; measured values are in
+Figures 2 to 4.
+
+**Figure 2** (fig1.png/.pdf). Observed versus shuffled. (a, b) The
 placebo. For each author-space fold, the histogram shows how many
 eligible suppressed pairs meet the z-criterion for formation in each of
 100 label-shuffled replicates of the evaluation window; the vertical
 line is the count observed in the real data. A replicate permutes
 concept labels across document slots, preserving every document's size
 and every concept's total frequency while destroying any real
-association between concepts and people. Bottom: segregation. The
-observed number of evaluation documents in which any eligible pair
-co-occurs, as a fraction of its mean under the same shuffle, in all four
-space-by-fold cells; the bands span two standard deviations of the
-shuffled total. Values below one mean suppressed pairs co-occur less
-often than chance predicts. Throughout the paper, z is the observed
-total minus the shuffled mean, divided by the shuffled standard
-deviation.
+association between concepts and people. (c) Segregation. The observed
+number of evaluation documents in which any eligible pair co-occurs, as
+a fraction of its mean under the same shuffle, in all four
+space-by-fold cells; the bars span two standard deviations of the
+shuffled total around its mean. Values below one mean suppressed pairs
+co-occur less often than chance predicts. Throughout the paper, z is
+the observed total minus the shuffled mean, divided by the shuffled
+standard deviation.
 
-**Figure 2** (fig2.png/.pdf). Formation rate by criterion. The share of
+**Figure 3** (fig2.png/.pdf). Formation rate by criterion. The share of
 eligible suppressed pairs that form under the retired z-criterion and
 under the per-pair permutation criterion, in all four cells, on a log
 scale, against the one-percent false-positive floor that the
-permutation criterion produces by construction.
+permutation criterion produces by construction. The author-space fold 2
+cell formed no pairs under the permutation criterion and is marked 0.
 
-**Figure 3** (fig3.png/.pdf). Registration protocol. Each evaluation's
+**Figure 4** (fig3.png/.pdf). Registration protocol. Each evaluation's
 registration commit and result commit on a common timeline, from
 repository timestamps. The asterisk marks the positive control, whose
 registration and result were originally committed together; its
@@ -812,7 +833,8 @@ The numbers in this paper trace as follows.
 | Author attribution pipeline | pipeline/build_author_concepts.py | ce6d639; d3844c1 |
 | Evaluation code (thread, author, robustness, calibrated, replication) | eval/run_eval3.py, eval/run_eval5.py, eval/run_robustness.py, eval/run_eval8.py, eval/run_gate.py | f89cb2b (deterministic pipeline, review fixes) |
 | Internal adversarial review, committed verbatim | reports/adversarial_review_2026-08-31.md | 45455bc |
-| Figures 1 to 3 | eval/make_paper_figs.py, reports/figures/fig1-3 | 7a1a118; regenerated a67d556 |
+| Figure 1 (schematic, no data) | eval/make_paper1_schematic.py, reports/figures/p1_schematic | pinned in the figures commit (see history) |
+| Figures 2 to 4 | eval/make_paper_figs.py, reports/figures/fig1-3 (shared style eval/paper2_figstyle.py) | 7a1a118; regenerated a67d556; restyled in the figures commit (see history) |
 
 ## References
 
