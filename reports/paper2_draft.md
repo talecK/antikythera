@@ -38,15 +38,17 @@ mechanisms behind them.
 ## Introduction
 
 Online communities sort attention. People who discuss one idea tend
-not to discuss another, and the structure of who talks about what is
-among the most stable features of a platform (McPherson, Smith-Lovin
-and Cook 2001; Cinelli et al. 2021; Waller and Anderson 2021). The
-companion paper to this study measured a specific form of that sorting
-(Quiring 2026). It borrowed the machinery of literature-based
-discovery, which finds concept pairs that statistically should have met
-but have not and treats them as latent connections (Swanson 1986), and
-asked whether that machinery transfers from scientific corpora to
-ordinary discourse. It found no formation signal on either of two
+not to discuss another, from homophily in offline networks (McPherson,
+Smith-Lovin and Cook 2001) to the echo chambers measured on Facebook
+and Twitter (Cinelli et al. 2021) and the community-level polarization
+measured on Reddit (Waller and Anderson 2021). The companion paper to
+this study measured a specific form of that sorting (Quiring 2026).
+It borrowed the gap criterion of literature-based discovery, which
+treats concept pairs that are linked through shared intermediates but
+never directly as latent connections (Swanson 1986), operationalized
+as pairs whose expected co-occurrence under independence is high and
+whose observed co-occurrence is zero, and asked whether that criterion
+transfers from scientific corpora to ordinary discourse. It found no formation signal on either of two
 platforms, and it found that suppressed pairs co-occur far
 below chance, at magnitudes their marginal popularities cannot explain.
 The stable result was segregation: the communities of attention around
@@ -486,8 +488,9 @@ shared an audience were being discussed by the same people at several
 times the rate chance predicts. On this reading the walls are the scar.
 The event set off changes, megathread containment, ticker filtering,
 and spin-off subreddits, that removed the conditions for a repeat. This
-is the connectivity condition of cascade models (Watts 2002; Centola and
-Macy 2007), seen in one community's data. The registered results
+is analogous to the connectivity condition of cascade models (Watts
+2002; Centola and Macy 2007), observed here in one community's
+co-attention data. The registered results
 describe every step of that sentence, the mixing state, the fusion, the
 walls, and their order, but the causal links between the steps are not
 claimed, as stated above.

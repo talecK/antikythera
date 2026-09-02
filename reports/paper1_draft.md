@@ -42,8 +42,13 @@ that the medical literature on dietary fish oil and the literature on
 Raynaud's syndrome shared intermediate findings yet never cited one
 another. He inferred a connection and was later proven right. The insight
 became literature-based discovery (LBD; Swanson 1986b): map which concepts co-occur in a
-corpus, find pairs that statistically should have met but have not, and
-treat those pairs as candidate discoveries. On scientific corpora the
+corpus, find pairs of concepts that are linked through shared
+intermediates but never directly, and treat those pairs as candidate
+discoveries. Later work recast the search as link prediction on the
+co-occurrence graph itself. The eligibility rule used in this paper,
+a pair whose expected co-occurrence under independence is high and
+whose observed co-occurrence is zero, is our own operationalization of
+that tradition, not a criterion any of these authors proposed. On scientific corpora the
 approach appears effective. In the Science4Cast benchmark,
 built from 143,000 artificial-intelligence papers, concept pairs can be
 ranked by their probability of future connection well above chance (Krenn
@@ -54,15 +59,16 @@ flagged thermoelectric compounds years before their discovery papers
 The method has a lineage, reviewed by Henry and McInnes (2017),
 Sebastian, Siew and Orimaye (2017) and Thilakaratne, Falkner and
 Atapattu (2019), and a scientometric cousin in co-word analysis
-(Callon, Courtial and Laville 1991). Swanson's successors established
-gap-finding on scientific text (Smalheiser and Swanson 1998), and Krenn and
-Zeilinger (2020) formalized the co-occurrence graph approach on
-quantum-physics abstracts. The Science4Cast benchmark turned it into a
+(Callon, Courtial and Laville 1991). Swanson and Smalheiser (1998) turned gap-finding into a working
+tool on scientific text; Rzhetsky, Foster, Foster and Evans (2015)
+built co-occurrence discovery networks on the biomedical literature;
+and Krenn and Zeilinger (2020) built the same kind of graph on
+quantum-physics abstracts and predicted its growth. The Science4Cast benchmark turned it into a
 machine-learning competition on a 64,000-node concept graph, with
 link-prediction scores (area under the receiver operating characteristic curve, AUC) above 0.9 for
 the best methods on the main task.
-Our study is, to our knowledge, the first application of these methods
-to non-scientific discourse. Our positive control reuses Science4Cast
+Our study is, to our knowledge, the first application of the
+literature-based discovery gap criterion to non-scientific discourse. Our positive control reuses Science4Cast
 directly.
 
 Scientific literature is a small and unusual corner of written thought.
@@ -71,9 +77,10 @@ comment threads, industry discussion. That discourse is known to sort
 itself: people who discuss one thing tend not to discuss another, from
 homophily in offline networks (McPherson, Smith-Lovin and Cook 2001)
 to the segregated link structure of political blogs and Twitter
-(Adamic and Glance 2005; Conover et al. 2011) and the echo chambers
-and community polarization measured on Reddit and elsewhere (Cinelli
-et al. 2021; Waller and Anderson 2021). If expected-but-absent concept
+(Adamic and Glance 2005; Conover et al. 2011), the echo chambers
+measured on Facebook and Twitter (Cinelli et al. 2021), and the
+community-level polarization measured on Reddit (Waller and Anderson
+2021). If expected-but-absent concept
 pairs predict future connections there, the applications are broad, from
 research recommendation to trend analysis. To our knowledge the transfer
 has not been tested, chiefly because discourse lacks the self-indexing
@@ -94,11 +101,12 @@ link prediction on a growing graph (Liben-Nowell and Kleinberg 2007).
 Aiyappa et al. (2025) showed that standard link-prediction evaluation
 carries an implicit degree bias: a degree-only ranker is near optimal on
 many benchmarks. A Science4Cast competition entry demonstrated the same
-point in practice, winning with degree features alone (Aghajohari 2021).
+point in practice, placing third with degree-based features alone
+(Aghajohari et al. 2021).
 Our thread-level findings echo this: the only surviving predictor
-families are node popularity and triadic closure, the oldest generic
-regularities of growing networks (Newman 2001; Kossinets and Watts
-2006). A separate study
+families are node popularity and triadic closure, the two best-established
+generic regularities of growing networks (Newman 2001; Kossinets and
+Watts 2006). A separate study
 (in preparation) examines the Science4Cast benchmark itself in this
 light.
 
@@ -466,9 +474,8 @@ given in Methods.
 
 **A criterion to retire.** The z-style chance calibration we began with is not an exotic choice;
 it is the natural first implementation of "co-occurs more than
-expected" and variants of it appear throughout the co-occurrence, LBD,
-and trend detection literatures (Church and Hanks 1989; Kleinberg
-2003). Ecologists identified the defect in
+expected" and variants of it appear throughout the co-occurrence and LBD
+literatures (Church and Hanks 1989). Ecologists identified the defect in
 this class of test decades ago and converged on fully constrained
 permutation null models as the safer default in response (Introduction); to our
 knowledge, text-corpus practice has not adopted that fix. Our
@@ -545,16 +552,17 @@ are aware of them; Hong and Stein (1999) derive momentum from
 information crossing investor segments only slowly; and Cohen and
 Frazzini (2008) document returns
 diffusing along economic links with a lag attributed to inattention to
-connected firms. The empirical attention literature measures the same
-boundaries from the investor side (Barber and Odean 2008; Da,
-Engelberg and Gao 2011). Our replication corpus is such a setting, and
+connected firms. The empirical attention literature measures investor attention
+itself and its price effects (Barber and Odean 2008; Da, Engelberg
+and Gao 2011). Our replication corpus is such a setting, and
 there the boundaries are directly visible: even analysis-oriented
 finance communities mention economically adjacent tickers together at
 less than half chance rates, in both folds, on either side of a market
 regime change. Similarly, the returns to brokerage across "structural
 holes" (Burt 2004) require that holes persist against the incentive to close
 them; co-attention persistently below chance over two decades is
-direct evidence of that persistence. One implication runs the other
+consistent with that persistence, though it is measured between
+concepts rather than between people. One implication runs the other
 way: accounts in which new cross-domain narratives percolate upward
 from public conversation are hard to square with both the segregation result and the author-space
 timing evidence, in which co-occurrence preceded any written claim
@@ -851,6 +859,9 @@ The numbers in this paper trace as follows.
   computer-assisted approach to formulating and assessing scientific
   hypotheses. *Computer Methods and Programs in Biomedicine* 57(3),
   149-153. doi:10.1016/S0169-2607(98)00033-9
+- Rzhetsky, A., Foster, J.G., Foster, I.T., Evans, J.A. (2015). Choosing
+  experiments to accelerate collective discovery. *PNAS* 112(47),
+  14569-14574. doi:10.1073/pnas.1509757112
 - Krenn, M., Zeilinger, A. (2020). Predicting research trends with
   semantic and neural networks with an application in quantum physics.
   *PNAS* 117(4), 1910-1916. doi:10.1073/pnas.1914370116
@@ -943,9 +954,6 @@ The numbers in this paper trace as follows.
   information, and lexicography. *Proceedings of the 27th Annual Meeting
   of the Association for Computational Linguistics*, 76-83.
   doi:10.3115/981623.981633
-- Kleinberg, J. (2003). Bursty and hierarchical structure in streams.
-  *Data Mining and Knowledge Discovery* 7(4), 373-397.
-  doi:10.1023/A:1024940629314
 - Barber, B.M., Odean, T. (2008). All that glitters: the effect of
   attention and news on the buying behavior of individual and
   institutional investors. *Review of Financial Studies* 21(2),
