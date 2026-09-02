@@ -90,7 +90,7 @@ two folds sit on opposite sides of the 2020-2021 market regime change
 (era confound). They differ in data source, with the change of source aligned to the fold boundary (data-source confound). And the
 community split itself was exploratory, with no registered prediction
 attached (post-hoc). Even so, the observation is unique in this research program, meaning the companion paper and this study. Across
-twenty years of Hacker News at two granularities, six financial
+three years of Hacker News at two granularities, six financial
 subreddits, and a science benchmark control, it is the only case in
 which a measured community changed segregation state at all.
 Everything else is static. The one wall-free community ever measured in

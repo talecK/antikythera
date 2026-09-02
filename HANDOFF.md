@@ -118,9 +118,13 @@ Paper 1: typeset to PDF (reviewer copy path in the playbook, 2026-09-02
 section); a second lay read of Results and Discussion on that PDF;
 submission-time keywords, abbreviation list, Acknowledgements line;
 repository public or Zenodo DOI before posting.
-(The 2006/2007 consistency check is dissolved: the abstract now says
-"twenty years"; the archive's first items are dated October 2006 and
-the site launched publicly in February 2007, both true in the body.)
+(The 2006/2007 consistency check is dissolved. 2026-09-02: the
+"twenty years" claim itself was wrong and is corrected at cae7c38:
+concept extraction and both folds cover 2015-2017 only, the extraction
+cache and pipeline/build_author_concepts.py both filter to those
+years; Methods now says so, and the program-level span is stated as
+2015 to 2024 across two platforms. Paper 2's one echo of the claim is
+corrected in the same pass.)
 
 ### Rules that bound today's edits (keep them)
 - Owner prose rules: no em-dashes or AI-tell phrasing; conventional paper
