@@ -40,7 +40,7 @@ waiting to happen.
 Some discoveries are visible before they are made. Swanson (1986a) noticed
 that the medical literature on dietary fish oil and the literature on
 Raynaud's syndrome shared intermediate findings yet never cited one
-another, inferred a connection, and was later proven right. The insight
+another. He inferred a connection and was later proven right. The insight
 became literature-based discovery (LBD; Swanson 1986b): map which concepts co-occur in a
 corpus, find pairs that statistically should have met but have not, and
 treat those pairs as candidate discoveries. On scientific corpora the
@@ -62,8 +62,8 @@ machine-learning competition on a 64,000-node concept graph, with
 link-prediction scores (area under the ROC curve, AUC) above 0.9 for
 the best methods on the main task.
 Our study is, to our knowledge, the first application of this machinery
-to non-scientific discourse, and our positive control reuses
-Science4Cast directly.
+to non-scientific discourse. Our positive control reuses Science4Cast
+directly.
 
 Scientific literature is a small and unusual corner of written thought.
 The bulk of recorded reasoning happens in ordinary discourse: forums,
@@ -89,7 +89,7 @@ Evans (2015) documented the risk-reward tradeoff of unconventional
 combinations. This literature measures the value of rare combinations;
 ours measures whether expected combinations happen at all.
 
-Co-occurrence gap prediction is also
+Co-occurrence gap prediction is a case of
 link prediction on a growing graph (Liben-Nowell and Kleinberg 2007).
 Aiyappa et al. (2025) showed that standard link-prediction evaluation
 carries an implicit degree bias: a degree-only ranker is near optimal on
@@ -103,7 +103,7 @@ regularities of growing networks (Newman 2001; Kossinets and Watts
 light.
 
 The chance calibration itself has a history that text-corpus practice
-has not absorbed. Ecology confronted this exact problem class decades
+has not absorbed. Ecology confronted the same problem decades
 ago: whether species co-occur more or less than
 chance, tested against null models that hold row and column totals of a
 site-by-species matrix to varying degrees. That literature measured
@@ -114,10 +114,10 @@ default (Connor and Simberloff 1979; Gotelli 2000; Gotelli and Ulrich
 2012; Gotelli and Graves 1996; see also Maslov and Sneppen 2002 for
 the network analog). Our corrected criterion is a member of that
 family, implemented as a label permutation on the document-concept
-incidence structure, and the failure we document in the standard
+incidence structure. The failure we document in the standard
 text-corpus criterion is the known failure of its partially
 constrained analog. We claim no novelty for the fix; the contribution
-is the transfer, and the measurement of what not making it costs.
+is the transfer, and a measurement of what the omission costs.
 
 Our answer is negative, and the path to it is part of the contribution.
 The headline results are three.
@@ -140,8 +140,8 @@ size, as they do in virtually every real corpus. In our author-level
 analysis it manufactured formation rates of 19 to 24 percent that
 survived two further pre-registered evaluations. A placebo test,
 registered with its failure condition stated in advance, then revealed
-that randomly shuffled data "forms" two to four times more pairs than
-the real data. We describe the corrected criterion (a per-pair permutation
+that randomly shuffled data "forms" nearly twice as many pairs as the
+real data. We describe the corrected criterion (a per-pair permutation
 test) and suggest the shuffle as a mandatory control for co-occurrence
 formation claims generally.
 
@@ -183,11 +183,11 @@ the same document at least twice, yet it never happened. Two outcomes
 are measured in the following evaluation year. Formation asks, pair by
 pair, whether the two concepts now co-occur beyond chance. The paper
 uses two definitions of beyond chance, the standard z-criterion and a
-per-pair permutation criterion, and the difference between them is a
-result of this paper. The segregation statistic z pools all eligible
+per-pair permutation criterion. The difference between them is itself
+a result of this paper. The segregation statistic z pools all eligible
 pairs: it counts the evaluation documents in which any eligible pair
 co-occurs and standardizes that total against a permutation null
-distribution, which shuffles concept labels across document slots,
+distribution. The shuffle moves concept labels across document slots,
 preserving every document's size and every concept's total frequency,
 with 100 replicates and a fixed seed. A z near zero means suppressed
 pairs co-occur about as often as chance predicts; a strongly negative z
@@ -232,10 +232,11 @@ pairs are plentiful (25,161 in fold 1; 7,505 in fold 2), but under the
 z-criterion only 0.60 and 0.68 percent of them form. Ranking within
 the eligible set adds nothing. The only feature family that beats random
 ordering is triadic closure (common neighbors, meaning the number of
-frequent concepts that co-occur with both members of a pair), at
-precision-at-200 (the share of the top 200 ranked pairs that formed)
-around 2.5 percent, roughly 4 times random: exactly the generic
-network-science baseline that requires none of the discovery apparatus.
+frequent concepts that co-occur with both members of a pair). Its
+precision-at-200, the share of the top 200 ranked pairs that formed, is
+around 2.5 percent, roughly 4 times random: the generic
+network-science baseline, which requires none of the discovery
+apparatus.
 Semantic features (embedding affinity between concept labels) are
 indistinguishable from random. Restricting to economically relevant
 vocabulary (a registered classification of concepts into exposed versus
@@ -246,8 +247,8 @@ the entire site.
 
 A null result of this kind is only as credible as its instrument, so we ran
 the identical eligibility and ranking pipeline, unchanged, on the
-Science4Cast benchmark where the signal is known to exist. It finds it:
-ranked precision reaches roughly 105 times random, and our feature set
+Science4Cast benchmark where the signal is known to exist. The signal
+is there: ranked precision reaches roughly 105 times random, and our feature set
 reaches AUC 0.899 against the benchmark's published 15-feature baseline
 of 0.851. Within the benchmark's suppressed subset (expected joint
 count at least 2, no prior co-occurrence), 67 percent of pairs connect
@@ -260,7 +261,7 @@ discourse analyses use the chance-calibrated criterion (Methods).
 The control therefore certifies the pipeline (eligibility construction,
 ranking, precision measurement) and not the formation criterion, which
 the benchmark never exercises. It also means the 67 percent is not
-commensurable with any discourse rate in this paper: "any edge appears"
+comparable with any discourse rate in this paper: "any edge appears"
 and "co-occurrence exceeds a calibrated threshold across two independent
 authors" are different events. Early in this project we treated the two
 as rungs of one calibration ladder; that comparison was ill-posed and
@@ -305,8 +306,8 @@ evaluation window's document slots, and count how many eligible pairs
 "form" under the z-criterion in 100 such replicates. The shuffle
 preserves every document's size and every concept's total frequency
 while destroying any real association between concepts and people. The
-registration specified the failure condition in advance: a null mean at
-or above half the observed count would be reported as a revision of the
+registration specified the failure condition in advance: a shuffled mean
+at or above half the observed count would be reported as a revision of the
 result, not a nuance.
 
 The placebo did not merely halve the result. Shuffled data forms more
@@ -315,9 +316,9 @@ observed in fold 1,
 and 53.0 versus 26 in fold 2. The observed counts sit 5.8 and 5.0
 standard deviations below their own shuffled expectations. The z-criterion's
 internal expectation, built from marginal frequencies, does not account
-for the fact that large documents generate joint occurrences
-combinatorially; with heterogeneous document sizes, random assignment
-clears z ≥ 2 constantly. The 19-to-24-percent rate was an artifact of
+for large documents, whose joint occurrences grow with the square of
+their size. When document sizes vary widely, random assignment clears
+z ≥ 2 constantly. The 19-to-24-percent rate was an artifact of
 the measuring stick. Registered sensitivity analyses confirmed the
 artifact lives in the criterion and nowhere else. The rate is stable
 under monthly and half-yearly document windows (9.7 to 27.8 percent)
@@ -378,7 +379,7 @@ persistently fail to overlap, at magnitudes far beyond what topic sizes explain.
 suppressed pairs of literature-based discovery are, in discourse,
 markers of persistent segregation rather than latent connection.
 
-Descriptively, the segregation is strongest exactly where the discovery
+Descriptively, the segregation is strongest where the discovery
 framing would have looked for opportunity: in thread space, where a
 single conversation would have to span both communities, mixing runs
 four times below chance. In author space, where one person's quarterly
@@ -403,11 +404,11 @@ The two
 folds are separated by the 2020-2021 market regime change (build
 2017-2018 with evaluation 2019; build 2022-2023 with evaluation 2024).
 
-Both registered claims resolved. Formation: not significant in either
-fold (0 of 166 eligible pairs, then 1 of 478 against a floor of 4.8;
-power limits this to "no effect larger than 3.7 and roughly 2 percent
-respectively," not "no effect" - the first figure registered, the
-second post-hoc as noted above). The single formed pair in the second
+Both registered claims resolved. Formation was not significant in
+either fold: 0 of 166 eligible pairs, then 1 of 478 against a floor of
+4.8. Power limits this to "no effect larger than 3.7 and roughly 2
+percent respectively", not "no effect"; the first figure was
+registered, the second is post-hoc arithmetic disclosed in Methods. The single formed pair in the second
 fold's pooled cell is itself a disclosed mechanical artifact. A symbol
 that listed mid-build (ARM, September 2023) is automatically
 "suppressed" early and automatically likely to co-occur later: a
@@ -425,7 +426,7 @@ expected) and z = -17.7 in the post-regime fold (726 against 1,383),
 robust to counting only the $-prefixed cashtag form (z = -10.6).
 Against Hacker News's z = -8.9 and -8.6, the finding generalizes
 across platform, community, unit type, extraction method, and a market
-regime change - and is larger after the regime change, not smaller.
+regime change. It is larger after the change, not smaller.
 Shuffle-based z values are quoted from the registered seed under
 deterministic code; with 100 shuffle replicates the standard deviation of the shuffled
 total implies roughly plus-minus 0.5 seed-to-seed variation at
@@ -440,8 +441,8 @@ fold B r/wallstreetbets is strongly segregated (z = -9.0), like every
 other stratum. The registered subsampling control agrees: matched to
 the analysis stratum document counts, r/wallstreetbets remains at chance
 in fold A (z = -0.0) and segregated in fold B (z = -5.2), so neither
-reading is a document-count artifact. A community-type moderator of segregation is therefore
-not a stable property of these data. On its face the pattern is
+reading is a document-count artifact. So community type is not a stable moderator of segregation in these
+data. On its face the pattern is
 regime-dependent (the same community at chance before 2020, segregated
 after 2021), but that reading is post-hoc and confounded with the
 folds' era and data-source differences, so we leave it as a described
@@ -453,8 +454,9 @@ analysis-stratum cells were recomputed on successive corpus rebuilds
 and match (observed and eligible counts identical; z within the Monte
 Carlo noise of the shuffled estimate; build documents differ by one due to
 deduplication order, disclosed in the released run log). The companion
-paper's independently acquired corpus (Quiring 2026) (same platform, separate API pull
-on a different day, shared unit rules) additionally reproduces the
+paper's independently acquired corpus (Quiring 2026; same platform, a
+separate API pull on a different day, shared unit rules) additionally
+reproduces the
 first fold's r/wallstreetbets document census to within one document
 (44,013 versus 44,012 author-quarters). Its registered confirmatory
 run reproduces the second fold's endpoint on a uniform single data
@@ -478,8 +480,8 @@ further pre-registered evaluations with thresholds fixed in advance before the p
 caught them. We urge text-corpus practice to adopt what ecology already
 settled: a label-shuffle placebo, five lines of code and a few
 CPU-minutes, as a mandatory control wherever a formation or emergence
-rate is computed from co-occurrence counts, and per-pair permutation
-thresholds where the claim needs to survive it.
+rate is computed from co-occurrence counts. Where a claim must survive
+that placebo, use per-pair permutation thresholds.
 
 A related external question remains open. The science-corpus figure of
 67 percent rests on the benchmark's own edge-existence ground truth
@@ -494,7 +496,7 @@ this paper's scope and under active investigation.
 **What the negative does and does not say.** The null result is strong but scoped. It says: on a large general-technology
 forum, over twenty years, with language-model-extracted concept units at two
 granularities, expected-but-absent concept pairs show no above-chance
-tendency to connect, and the previously reported positive versions of
+tendency to connect. The previously reported positive versions of
 this effect on the same data are measurement artifacts. It does not say
 that no discourse corpus anywhere shows real gap-closing (a
 structurally different corpus is tested in the replication above). It does not
@@ -536,12 +538,13 @@ for studying how ideas spread, or fail to, than formation counts that
 inherit the criterion trap. We offer it as the constructive replacement
 for the discovery framing this paper set out to test.
 
-The finding also supplies a measured mechanism to literatures that have
-so far had to assume it. Models of segmented investor attention take
-persistent, sticky attention boundaries as a premise: Merton's investor
-recognition hypothesis prices assets partly by which investors are
-aware of them; Hong and Stein derive momentum from information crossing
-investor segments only slowly; and Cohen and Frazzini document returns
+The finding also supplies a measured regularity to literatures that
+have so far had to assume it. Models of segmented investor attention take
+persistent, sticky attention boundaries as a premise: Merton's (1987)
+investor recognition hypothesis prices assets partly by which investors
+are aware of them; Hong and Stein (1999) derive momentum from
+information crossing investor segments only slowly; and Cohen and
+Frazzini (2008) document returns
 diffusing along economic links with a lag attributed to inattention to
 connected firms. The empirical attention literature measures the same
 boundaries from the investor side (Barber and Odean 2008; Da,
@@ -550,21 +553,22 @@ there the boundaries are directly visible: even analysis-oriented
 finance communities mention economically adjacent tickers together at
 less than half chance rates, in both folds, on either side of a market
 regime change. Similarly, the returns to brokerage across "structural
-holes" (Burt) require that holes persist against the incentive to close
+holes" (Burt 2004) require that holes persist against the incentive to close
 them; co-attention persistently below chance over two decades is
 direct evidence of that persistence. We note one implication running the other
 way: accounts in which new cross-domain narratives percolate upward
-from public conversation sit uneasily with both the author-space timing evidence
-and the segregation result. Discourse data alone cannot
+from public conversation sit uneasily with both the segregation result and the author-space
+timing evidence, in which co-occurrence preceded any written claim
+connecting the pair. Discourse data alone cannot
 settle how narratives interact with prices, however.
 
 We built the missing co-occurrence index for a twenty-year discourse
 corpus and asked science's most romantic question of it: which of the
-ideas that should have met will meet next? The answer, secured by a
-positive control, a registered placebo that caught our own false
-positive, a corrected permutation criterion, and a pre-registered
-replication on a second platform with independent units, is none of
-them, at rates distinguishable from error. The durable fact is the
+ideas that should have met will meet next? The answer is none of them, at rates distinguishable from error. That
+answer is secured by a positive control, a registered placebo that
+caught our own false positive, a corrected permutation criterion, and a
+pre-registered replication on a second platform with independent
+units. The durable fact is the
 opposite one. In open discourse, the expected-but-absent pairs are not
 discoveries waiting to happen; they are walls that persist, decade
 after decade, on every platform we measured. Instruments that
@@ -575,7 +579,7 @@ claim otherwise should first be pointed at shuffled data.
 ### Corpus
 
 We use Hacker News, a technology discussion forum active since 2007,
-chosen for its twenty-year span, stable community norms, and public
+whose archive begins in October 2006, chosen for its twenty-year span, stable community norms, and public
 archive. The corpus contains 1.32 million discussion threads from 2006
 through 2026; each document is a story title plus its top twenty
 comments. All items carry source timestamps, and every derived artifact
@@ -607,9 +611,9 @@ Analyses use two document definitions. In **thread space**, a document
 is one discussion thread. In **author space**, a document is one
 author's set of concepts within one calendar quarter. Author-quarters
 with more than 100 distinct concepts are excluded as hubs: without the
-guard, hub documents' combinatorial co-occurrence collapses the
+exclusion, hub documents' combinatorial co-occurrence collapses the
 suppressed universe to 41 and 9 eligible pairs in the two folds
-(released with the artifacts).
+(commit appendix).
 
 Within a **build window**, a concept is *frequent* if it appears in at
 least 20 distinct documents. For frequent concepts i and j with document
@@ -665,8 +669,8 @@ the replication's second-fold census exists only in released artifacts
 and was not appended to its registration. The repository's commit
 history, released with the paper, provides independent timestamps
 (Figure 4) for the ordering of every
-registration and result, including the ones that embarrassed us. One
-exception is disclosed: the Science4Cast control's registration and
+registration and result, including the ones that embarrassed us. A
+second exception concerns the Science4Cast control: its registration and
 result were originally committed together in a single commit, so for
 that control the ordering rested on the working log rather than on
 commit granularity. To close the gap, the control was subsequently
@@ -699,10 +703,9 @@ unavailable mid-acquisition and was replaced by API pulls under dated
 amendments. An interim evaluation ran before those amendments; its
 partial-fold outcomes existed but had been voided in advance by a
 committed interim clause. One stratum's early exemption from that
-voiding was decided after seeing its result replicate, a decision made
-after seeing a result, later validated when the final corpus
-reproduced the stratum's counts exactly. A registered source-
-equivalence check on the evaluation year was never performed: it was
+voiding was decided after its result was seen to replicate; the final
+corpus later reproduced the stratum's counts exactly. A registered source-equivalence
+check on the evaluation year was never performed: it was
 rendered moot when we chose to acquire the evaluation year uniformly
 from one source. Cross-source equivalence evidence therefore rests on
 one build-era month (comments only), where the two sources agree at
@@ -710,9 +713,9 @@ one build-era month (comments only), where the two sources agree at
 month is missing. Separately, a registered unit rule (exclusion of
 index ETFs) was found unenforced in one extraction branch by an
 internal adversarial review after the first complete run; the final
-numbers reported in Results enforce it, which changed no conclusion. Registered
-secondary readouts not computed: the author-persistence module and
-duplicate-rate checks (no thresholds attached). The second fold's
+numbers reported in Results enforce it, which changed no conclusion. Two
+registered secondary readouts were not computed, the author-persistence
+module and the duplicate-rate checks; neither had a threshold attached. The second fold's
 minimum-detectable-rate figure is post-hoc arithmetic on the final
 census, computed by the registered formula but not itself registered.
 
@@ -720,9 +723,8 @@ census, computed by the registered formula but not itself registered.
 
 Analysis code, evaluations, and manuscript drafting were performed with
 a large-language-model assistant operating under the author's direction.
-All experimental designs, thresholds, and interpretation rules were
-pre-registered and committed before evaluation, by either party; the
-version-control history documents the full sequence, including the
+All designs, thresholds, and interpretation rules were registered and
+committed before evaluation; the version-control history documents the full sequence, including the
 registered placebo that overturned an intermediate conclusion.
 
 ## Data availability
