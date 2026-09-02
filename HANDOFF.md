@@ -30,9 +30,15 @@
 - BEFORE THE REPO FLIP: data/README.md names the GCP staging project
   (antikythera_hn under a pricemole project id); scrub it. Not in the
   deposit.
-- Owner steps remaining: set the license on the Zenodo draft (CC BY 4.0
-  suggested), replace README.md and zenodo_metadata.json in the draft
-  with the updated copies from v1_zenodo_upload, publish. Then: DOI into both papers'
+- PUBLISHED 2026-09-03 (Zenodo clock): https://doi.org/10.5281/zenodo.22262036
+  resolves to https://zenodo.org/records/22262036, all 8 files, 202.9 MB,
+  server MD5s verified against local copies, CC BY 4.0, ORCID attached.
+  Related-works entry points at the GitHub repo (still private; resolves
+  after the flip). Two related_identifiers (SocArXiv DOIs) still to add
+  as a metadata-only edit after posting; no new version needed.
+- NEXT: SocArXiv for both preprints (owner submits; PDF via the render
+  script + headless Chrome per the playbook), then paper 2's paper-1
+  reference and paper 1's companion reference get the SocArXiv DOIs. Then: DOI into both papers'
   Data availability and paper 2's paper-1 reference, re-render, post
   both preprints to SocArXiv, fill the two related_identifiers.
 - Deferred to a later deposit version: per-document HN claim
