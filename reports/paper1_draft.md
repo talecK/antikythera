@@ -254,8 +254,7 @@ of 0.851. Within the benchmark's suppressed subset (expected joint
 count at least 2, no prior co-occurrence), 67 percent of pairs connect
 (188 of 281 in a 10-million-pair sample).
 
-One definitional difference matters and is easy to miss, so we state it
-plainly. Formation on the benchmark is the benchmark's own ground
+One definitional difference matters and is easy to miss. Formation on the benchmark is the benchmark's own ground
 truth: the appearance of any edge in the target-year graph. Our
 discourse analyses use the chance-calibrated criterion (Methods).
 The control therefore certifies the pipeline (eligibility construction,
@@ -282,7 +281,7 @@ from room to room. A person can connect two ideas that no single
 conversation ever did. On this reasoning we re-defined the document as
 one author's concepts within a calendar quarter and re-ran the
 identical formulation, registered before evaluation as always. The structure of
-the problem changed sharply: eligible suppressed pairs became rare (364
+the problem changed: eligible suppressed pairs became rare (364
 in fold 1, 110 in fold 2, versus tens of thousands in thread space),
 resembling the science benchmark. Under the z-criterion they formed
 at 19.2 and 23.6 percent, thirty times the thread-space rate. The effect
@@ -310,7 +309,7 @@ registration specified the failure condition in advance: a shuffled mean
 at or above half the observed count would be reported as a revision of the
 result, not a nuance.
 
-The placebo did not merely halve the result. Shuffled data forms more
+The placebo did more than halve the result. Shuffled data forms more
 pairs than the real data (Figure 2a, b): 125.1 on average versus 70
 observed in fold 1,
 and 53.0 versus 26 in fold 2. The observed counts sit 5.8 and 5.0
@@ -370,7 +369,7 @@ direction opposite to the discovery thesis (Table 3).
 Suppressed pairs co-occur at roughly 70 percent of chance in author
 space and roughly a quarter of chance in thread space. The registered
 pass threshold for this statistic (z ≤ −3 in both author folds) is met
-overwhelmingly, in both spaces. The interpretation is simple and, we
+by a wide margin, in both spaces. The interpretation is simple and, we
 believe, the paper's most durable finding: two concepts that have never
 co-occurred, despite ample independent popularity, are not on their way
 to meeting. Their audiences are substantially disjoint and remain so.
@@ -417,7 +416,7 @@ rescue the null result.
 With Hacker News this closes the discovery hypothesis on a clean
 negative spanning two platforms and two independent unit vocabularies.
 Segregation: the registered pass threshold (z <= -3 in both folds) is met
-decisively in the pooled all-subreddits cell, which we take as primary
+by a wide margin in the pooled all-subreddits cell, which we take as primary
 for symmetry with the formation readout. The registration left the
 cell unspecified, and per-stratum readings vary (one fold-A stratum
 sits at chance, below). Suppressed ticker pairs co-occur at z = -8.8
@@ -475,7 +474,7 @@ fully constrained permutation null models in response (Introduction); to our
 knowledge, text-corpus practice never absorbed that lesson. Our
 results measure what the omission costs: with heterogeneous document
 sizes the partially constrained criterion manufactures large, stable,
-replication-surviving effects from nothing. The 19-to-24-percent author-space rates survived two
+replication-surviving effects where no real association exists. The 19-to-24-percent author-space rates survived two
 further pre-registered evaluations with thresholds fixed in advance before the placebo
 caught them. We urge text-corpus practice to adopt what ecology already
 settled: a label-shuffle placebo, five lines of code and a few
@@ -487,9 +486,9 @@ A related external question remains open. The science-corpus figure of
 67 percent rests on the benchmark's own edge-existence ground truth
 (Results), not on the criterion we retire here, so it is not
 contaminated by this defect. But scientific corpora share the
-structural features that make co-occurrence baselines treacherous:
+structural features that make co-occurrence baselines unreliable:
 rapid growth in density and heavily skewed degree distributions. Whether
-that celebrated number is substantially mechanical under a permutation
+that widely cited number is substantially mechanical under a permutation
 test has, to our knowledge, never been tested. The question is outside
 this paper's scope and under active investigation.
 
@@ -513,7 +512,7 @@ walled (co-occurrence far below chance) straight through the event. The negative
 is about discourse in its ordinary state; what cascades do is that
 study's question.
 
-Three limitations deserve emphasis. First, concept units come from a
+Three limitations stand out. First, concept units come from a
 language-model extraction. The science control shows the pipeline finds
 real signal through comparable unit noise, and a registered robustness
 check shows the results are insensitive to the attribution path, but
@@ -548,16 +547,16 @@ Frazzini (2008) document returns
 diffusing along economic links with a lag attributed to inattention to
 connected firms. The empirical attention literature measures the same
 boundaries from the investor side (Barber and Odean 2008; Da,
-Engelberg and Gao 2011). Our replication corpus is exactly such a setting, and
+Engelberg and Gao 2011). Our replication corpus is such a setting, and
 there the boundaries are directly visible: even analysis-oriented
 finance communities mention economically adjacent tickers together at
 less than half chance rates, in both folds, on either side of a market
 regime change. Similarly, the returns to brokerage across "structural
 holes" (Burt 2004) require that holes persist against the incentive to close
 them; co-attention persistently below chance over two decades is
-direct evidence of that persistence. We note one implication running the other
+direct evidence of that persistence. One implication runs the other
 way: accounts in which new cross-domain narratives percolate upward
-from public conversation sit uneasily with both the segregation result and the author-space
+from public conversation are hard to square with both the segregation result and the author-space
 timing evidence, in which co-occurrence preceded any written claim
 connecting the pair. Discourse data alone cannot
 settle how narratives interact with prices, however.
@@ -697,7 +696,7 @@ committed before any outcome was computed, and the two folds are separated by th
 build 2022-2023 with evaluation 2024).
 
 The acquisition did not go to plan, and we disclose the sequence
-precisely because parts of it fall short of the strict outcome-blind
+because parts of it fall short of the strict outcome-blind
 standard we hold elsewhere. Part of the archival source proved
 unavailable mid-acquisition and was replaced by API pulls under dated
 amendments. An interim evaluation ran before those amendments; its
