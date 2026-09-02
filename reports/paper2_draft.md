@@ -23,7 +23,7 @@ committed in advance all pass. The community moves from chance-level
 mixing to persistent walls, onset 2021-04-01, with zero reversions. In
 the two windows straddling the January 2021 GameStop episode,
 suppressed ticker pairs co-mention 28.6 and 30.9 standard deviations
-above their shuffle nulls. It is the only above-chance excursion this
+above chance. It is the only above-chance excursion this
 research program has observed, and shuffled data never produce it.
 Analysis-oriented control communities stay walled through the squeeze,
 so the excursion is specific to r/wallstreetbets. Two causes were in
@@ -64,7 +64,7 @@ r/investing). The document is one author's ticker mentions within one
 calendar quarter. A pair of frequently mentioned tickers is *eligible*
 ("suppressed") in a build window if its expected joint document count
 is at least 2 while its observed co-mention count is zero. The
-segregation statistic is the total observed evaluation-window co-mention count over all eligible pairs, standardized against a label-shuffle null (Methods). Two temporal folds bracket the 2020-2021 regime break:
+segregation statistic is the total observed evaluation-window co-mention count over all eligible pairs, standardized against a permutation test that shuffles ticker labels (Methods). Two temporal folds bracket the 2020-2021 regime break:
 build 2017-2018 with evaluation 2019 (fold A), and build 2022-2023 with
 evaluation 2024 (fold B). The companion analysis's final values (its section "A second platform") read as follows (Table 1).
 
@@ -161,7 +161,7 @@ empirical cousin of this theory: chance-level mixing is the
 connectivity substrate, and the walls are its removal. What this paper
 adds to all four shelves is a registered, longitudinal measurement of
 one community's idea-segregation state through a cascade, with a
-calibrated null (the companion paper's machinery), a dated onset, and a
+calibrated permutation test (the companion paper's machinery), a dated onset, and a
 same-platform control.
 
 This paper is the registered study of that transition. It asks three
@@ -192,7 +192,7 @@ consider most important, however, was not one of the bets. Between the
 chance-level regime and the walls, in the two evaluation windows
 that straddle the GameStop episode, the suppressed pairs of
 r/wallstreetbets co-mention at 28.6 and 30.9 standard deviations above
-their calibrated nulls. In every other window this program has
+chance. In every other window this program has
 measured, on any platform, co-mention over suppressed pairs sits at or
 below chance; these two windows are the only exception. The control
 stratum, measured through the same windows by the same machinery,
@@ -224,7 +224,7 @@ that chance alone should have put the two in the same author's quarter
 at least twice, yet it never happened. The segregation statistic z for
 a window counts the documents in the following evaluation period in
 which any eligible pair is co-mentioned. That total is standardized
-against a label-shuffle null, which permutes ticker labels over the
+against a permutation null distribution, which shuffles ticker labels over the
 document-ticker incidences of the frequent set, with 100 replicates and
 a fixed seed. A z near zero means suppressed
 pairs are co-mentioned about as often as chance predicts. A strongly
@@ -313,7 +313,7 @@ data, three and a half years without a single reversion.
 
 Between the chance-level regime and the walls sit two windows already
 visible in the series above. In the two evaluation windows straddling
-the GameStop episode (evaluation 2020Q4 to 2021Q1 and 2021Q1 to 2021Q2), the suppressed pairs of WSB co-mention at 28.6 and 30.9 standard deviations *above* their label-shuffle nulls (Table 5).
+the GameStop episode (evaluation 2020Q4 to 2021Q1 and 2021Q1 to 2021Q2), the suppressed pairs of WSB co-mention at 28.6 and 30.9 standard deviations *above* chance (Table 5).
 
 **Table 5.** The two excursion windows, and the control stratum in the same windows.
 
@@ -325,7 +325,7 @@ the GameStop episode (evaluation 2020Q4 to 2021Q1 and 2021Q1 to 2021Q2), the sup
 | DD eval 2021Q1-2021Q2 | 211 | 522 | 771.4 | -8.6 | 0 | 1.0 |
 
 The excursion claim rests on the primary z, which is the same
-statistic, same null, and same seed as every other window in the
+statistic, same permutation test, and same seed as every other window in the
 series. The formation counts are the registered secondary readout and
 point the same way: 24 of 124 and 61 of 318 eligible pairs newly
 co-mention beyond their per-pair permutation thresholds, against a
@@ -345,7 +345,7 @@ whether the machinery can produce the excursion from GME-era document
 structure alone. Each replicate applies an *outer* label shuffle that
 destroys any real author-ticker association. It then recomputes the
 full registered statistic from scratch: eligibility construction, inner
-shuffle null, R = 100. There are 20 replicates per excursion window, with per-replicate seeds documented (Table 6).
+permutation test, R = 100. There are 20 replicates per excursion window, with per-replicate seeds documented (Table 6).
 
 **Table 6.** Shuffled-data placebo: 20 replicates per excursion window against the real values.
 
@@ -523,7 +523,7 @@ two-quarter evaluations: the onset time is the start of an evaluation
 interval, so events inside a quarter (the squeeze itself spans weeks)
 are unresolvable. The excursion's two windows overlap by one quarter,
 so they are not independent measurements of the same phenomenon. They
-were not treated as such; the placebo nulls each separately. Second,
+were not treated as such; the placebo tests each separately. Second,
 different-powered windows: eligible-pair universes range 45-498 across
 the primary series. Threshold verdicts are per-window calibrated;
 cross-window magnitude comparisons are not (the display rule in Methods
@@ -600,7 +600,7 @@ WSB volume series itself shows the era: monthly
 comments run around 300 thousand through 2019, spike to 2.6 million in
 March 2020 (COVID) and 8.0 million in January 2021 (GameStop), then
 decay to under a million by 2023. Volume is not the studied statistic,
-and the shuffle null conditions on the realized documents of each
+and the permutation test conditions on the realized documents of each
 window. Second, one control subreddit (r/SecurityAnalysis) decays to a
 few thousand comments per year by 2023-24. The DD control is
 registered as the union of five subreddits, so this changes nothing,
@@ -621,7 +621,7 @@ author-quarters; an eligible ("suppressed") pair has expected joint
 count E = f_i·f_j/N ≥ 2 with zero observed build co-mentions.
 
 The primary statistic per window is the companion paper's segregation z: the total observed evaluation-window co-mention document count over all eligible
-pairs, standardized against a label-shuffle null. The null permutes
+pairs, standardized against a permutation null distribution. The test permutes
 concept labels over the (document, ticker) incidences of the frequent
 set, with within-document duplicates collapsed, using R = 100
 replicates and numpy default_rng seed 20260831. The evaluation script
@@ -658,7 +658,7 @@ One census property was recorded in the amendment before any z existed,
 and it binds how results are displayed: eligible-pair counts co-move
 with era volume, so between-window z magnitudes are different-powered
 tests. Per-window z values are each internally calibrated, because the
-null conditions on that window's realized documents, and the onset rule
+permutation test conditions on that window's realized documents, and the onset rule
 uses only per-window threshold crossings. But a reader comparing raw z
 magnitudes across windows is comparing tests whose eligible universes
 differ by up to a factor of ten. For this reason every z series in this
@@ -816,7 +816,7 @@ The primary segregation z for r/wallstreetbets (union lens, four-quarter
 build) over the nineteen rolling evaluation windows, labelled by
 starting quarter. z is the count of evaluation-window documents
 co-mentioning any suppressed ticker pair, standardized against a
-label-shuffle null; values near zero mean suppressed pairs co-mention
+permutation test that shuffles ticker labels; values near zero mean suppressed pairs co-mention
 about as often as chance predicts, strongly negative values mean they
 are kept apart, and positive values mean they are brought together
 beyond chance. The shaded band marks |z| < 3, the chance region; the
@@ -828,7 +828,7 @@ number of eligible pairs in that window, which sets the power of that
 window's test; every z series in this paper is shown with this strip.
 
 **Figure 3** (p2_fig2.png/.pdf). The excursion placebo. (a, b) For
-each excursion window, the 20 truth-null placebo z values as a histogram,
+each excursion window, the 20 placebo z values as a histogram,
 each obtained by shuffling ticker labels across authors and recomputing
 the full registered statistic from scratch, with the real value marked.
 Annotations carry the secondary formation counts (real 24 and 61
