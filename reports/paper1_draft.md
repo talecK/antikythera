@@ -9,35 +9,26 @@ All results final; awaiting author prose pass.**
 
 ## Abstract
 
-In science, pairs of concepts that frequently appear in the literature but
-never together are strong candidates for future discovery: such
-"suppressed" pairs later co-occur at high reported rates, and predicting
-which pairs connect next is the basis of literature-based discovery. We ask
-whether the same machinery applies to general online discourse, using 1.3
-million Hacker News discussions spanning 2006 to 2026. Across four
-pre-registered evaluations, at both the thread and the author level, we
-find no predictive signal beyond generic popularity and shared-neighbor
-effects. The instrument is not at fault: pointed at the Science4Cast
-benchmark, where the signal is known to exist, the same harness finds
-it. We then report a cautionary result. When we redefined the document as one author's
-quarterly output, 19 to 24 percent of suppressed pairs appeared to
-form, thirty times the thread-level rate. This apparent revival
-survived two further pre-registered evaluations. A registered placebo test
-showed the effect to be an artifact of the measuring stick: when
-documents vary widely in size, the standard chance-calibrated criterion
-flags formation far too easily, and randomly shuffled data "forms" more
-pairs than the real data. Under a corrected per-pair permutation criterion, formation is
-indistinguishable from the false-positive floor in every condition. The
-real regularity runs in the opposite direction: suppressed pairs co-occur
-substantially below chance (nearly 9 standard deviations below at the
-author level, over 100 at the thread level). A pre-registered replication on a
-second platform confirms both results. In 41.5 million Reddit finance
-posts and comments, where the concept unit is the stock ticker and no
-language model is involved, suppressed pairs again fail to form above
-chance and again co-occur far below it (z = -8.8 and -17.7), on either
-side of the 2020-2021 market regime change. Idea communities in discourse do not
-drift together; they stay apart. We release all code, data derivations,
-and time-stamped pre-registrations.
+In science, two well-studied ideas that are never discussed together
+make a likely candidate for a future discovery. Predicting which pair
+connects next is the aim of literature-based discovery. Whether this
+holds in online discussion is untested. Here we test it on 1.3 million
+Hacker News discussions over twenty years, with a pre-registered
+replication on 41.5 million Reddit finance posts using stock tickers.
+The same instrument recovers the known signal on the Science4Cast
+benchmark of AI papers. Four pre-registered evaluations use threads,
+then authors, as documents. Pairs never discussed together, called
+suppressed pairs, connect no more than popularity and overlapping topics
+predict. The standard test against chance flags connections too easily
+when document sizes vary. It reported 19 to 24 percent of pairs
+connecting within authors' quarterly output, yet randomly shuffled data
+connected more pairs than real data. A per-pair permutation test leaves
+new connections no higher than false positives alone produce. Instead,
+suppressed pairs appear together far below chance: nearly 9 standard
+deviations at the author level, over 100 at the thread level. Both
+results replicate across the 2020-2021 market regime change. Ideas that
+never meet online mark communities that stay apart, not future
+discoveries waiting to happen.
 
 ---
 
