@@ -126,11 +126,9 @@ and Winkler (2025) document social contagion in WSB asset discussions,
 where engagement with a discussed asset raises a user's probability of
 starting new discussions of it. Pedersen (2022) builds the equilibrium
 theory: a social network propagating an investment idea produces
-exactly the frenzy, bubble, and burst observed. All of this work
-studies the cascade as the outcome: how coordination formed and how it
+exactly the frenzy, bubble, and burst observed. All of this work studies the squeeze as the outcome: how coordination formed and how it
 moved prices. The present study measures the other side of the event:
-what the cascade did to the community's idea-structure, before, during,
-and after, under a registered design. To our knowledge no prior work
+what the squeeze did to the community's idea-structure, before, during, and after, under a registered design. To our knowledge no prior work
 tracks a community's co-attention structure through the episode.
 
 Moderation interventions on Reddit have a causal-inference literature.
@@ -477,8 +475,7 @@ five years, all three states this program's statistic can express:
 chance-level mixing (through 2020Q3), cascade fusion (2020Q4-2021Q2),
 and walls (2021Q2 onward). No other measured community has occupied
 more than one state. WSB traversed all three in eighteen months, and
-the ordering is not arbitrary: the fusion sits at the cascade, and the
-walls begin as it ends.
+the ordering is not arbitrary: the fusion sits at the squeeze, and the walls begin as it ends.
 
 **Cascade susceptibility (interpretive, non-registered, speculative).**
 The arc invites a reading in which chance-level mixing is the substrate
@@ -511,12 +508,11 @@ looks healthy, because that is where new connections should form. Here,
 the one community where ideas mixed freely is the one that had the
 cascade.
 
-**Pre-cascade generality (inferential, non-registered).** The companion
+**Pre-squeeze generality (inferential, non-registered).** The companion
 paper could not say whether WSB's fold-A chance reading was a property
 of the community or of the single year 2019. The rolling series answers
 this: chance-level mixing holds in the last two windows evaluated
-wholly before the cascade (evals beginning 2020Q2 and 2020Q3, both
-+1.5; the series' opening window reads -3.7 on its smallest universe,
+wholly before the squeeze (evaluation windows beginning 2020Q2 and 2020Q3, both +1.5; the series' opening window reads -3.7 on its smallest universe,
 45 pairs, its least-powered cell). The wall-free state was WSB's
 standing condition through at least mid-2020, not a 2019 anomaly. The
 companion paper cites this inference to the present study, and the
