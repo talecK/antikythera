@@ -237,6 +237,59 @@ values) so the two papers' figures read as one set.
 - HANDOFF.md paper line updated with the state and the open items.
 - Memory updated (project status) in one paragraph.
 
+## Lessons from the paper 1 application (2026-09-01)
+
+- The figure scripts need the project virtualenv (`.venv/bin/python`);
+  the shell's python3 has no matplotlib. Measure margins with
+  matplotlib.image when Pillow is absent.
+- Building the registered-predictions table forces every registration
+  file open; expect it to surface disclosures the prose never carried
+  (paper 1's first thread-space rule was met on a technicality the run
+  log records as a drafting error). Put them in the table and tell the
+  owner.
+- A parallel session may edit the same draft (paper 1's title changed
+  under this one). Check `git log` when an artifact-changed notice
+  arrives, and re-read the artifact before republishing.
+- "Shuffle null" and its clipped relatives are lab shorthand. Standard
+  phrasing per use: permutation test (method), null distribution or
+  shuffled expectation (reference value), null model (ecology), null
+  result (the finding). Neither paper now uses the shorthand.
+- A schematic panel that shows a collapse must keep one shared scale
+  and say so; bars that "fill the space" would reverse the message.
+
+## Lessons from the lay-reader and literature pass (2026-09-02)
+
+- No field-as-actor verbs. "Ecology settled", "the literature absorbed",
+  "practice never adopted" personify a field and hide who showed what.
+  Name the studies and the finding: "those studies measured X and
+  converged on Y as the safer default".
+- Check every dated claim against the earliest citation in the same
+  sentence or section. "Twenty-five years ago" sat next to a 1979
+  reference; "forty years ago" was written against the same one.
+  "Decades ago" or the year itself.
+- Check every characterization of a cited work against the work, not
+  against memory of it. Caught in one pass: a third-place entry called
+  the winner; a study that found no Reddit echo chamber cited for Reddit
+  echo chambers; a burst-detection paper cited as a co-occurrence
+  z-test; Swanson's ABC linkage described as our expected-count rule.
+  Verify with the paper's own text (ar5iv renders old arXiv as HTML)
+  or the competition repository, then cite what verified.
+- Own the constructs that are ours. The eligibility rule (expected
+  co-occurrence under independence high, observed zero) is this
+  program's operationalization; say so where LBD is introduced, so a
+  referee cannot read the critique as testing a criterion nobody
+  proposed.
+- A "to our knowledge, the first" claim widens or narrows with the noun
+  it governs. "Machinery" to "methods" widened it past what is true;
+  "the literature-based discovery gap criterion" is the defensible noun.
+- The Google Docs import of the draft truncates every cell of the
+  registered-predictions table and downsamples figures to 483 px. A
+  reviewer copy comes from `eval/render_paper_html.py` printed with
+  headless Chrome (`--headless=new --no-pdf-header-footer
+  --print-to-pdf`), never from a Docs conversion.
+- A lay reader who summarizes the back half with a chatbot has not read
+  it. Ask which sections were read directly before counting the pass.
+
 ## Paper 1 specifics to carry in
 
 - Draft: reports/paper1_draft.md, last commit ddb7e29 before this
