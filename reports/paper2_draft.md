@@ -495,19 +495,22 @@ describe every step of that sentence, the mixing state, the fusion, the
 walls, and their order, but the causal links between the steps are not
 claimed, as stated above.
 
-One more observation fits the same reading. The rule that excludes
-stocks worth under one billion dollars was already in the subreddit's
-rulebook before the squeeze (archived rules page, reference list), so
-the fusion happened in a moderated community, not an unruled one. What
-was missing before the squeeze was not rules but the enforcement and
-containment that arrived afterwards, A4 to A7. On this reading the
-walls followed enforcement, not legislation. One rule, one community,
-and no measure of enforcement: a reading, not a result.
+One more observation fits this reading. The subreddit already banned
+discussion of stocks worth under one billion dollars before the squeeze
+(archived rules page, reference list). So the community had rules about
+what could be discussed, and the excursion happened anyway. What
+changed after the squeeze was not the rulebook but how it was enforced:
+new moderators, an automatic ticker filter, and the megathreads that
+confined single-ticker talk (anchors A4 to A7). If this reading is
+right, the walls came from enforcement, not from the rules themselves.
+We have not measured enforcement, and this is one rule in one
+community, so it remains a reading rather than a result.
 
-We note the reading because it turns the usual meaning of the
-segregation statistic on its head. Chance-level mixing looks healthy
-under the discovery framing the companion paper tested; yet here, the
-one mixing community was the one that produced the cascade.
+The reading matters because it reverses how the companion paper's
+framing would score this community. In that framing, borrowed from
+literature-based discovery, a community whose ideas mix freely looks
+healthy, because that is where new connections should form. Here, the
+one community that mixed freely is the one that produced the cascade.
 
 **Pre-cascade generality (inferential, non-registered).** The companion
 paper could not say whether WSB's fold-A chance reading was a property
