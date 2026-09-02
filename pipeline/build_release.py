@@ -174,9 +174,13 @@ def main():
 
     after = {s: sha256(s) for s in sources}
     changed = [s for s in sources if before[s] != after[s]]
+    def label(s):  # repo-relative labels; no local absolute paths in the release
+        if s.startswith(NVME):
+            return "data" + s[len(NVME):]
+        return "repo:" + os.path.relpath(s, ROOT)
     with open(fresh(f"{out}/SOURCE_CHECKSUMS.txt"), "w") as f:
         for s in sources:
-            f.write(f"{before[s]}  {after[s]}  {s}\n")
+            f.write(f"{before[s]}  {after[s]}  {label(s)}\n")
     if changed:
         sys.exit(f"SOURCE CHANGED DURING BUILD: {changed}")
     print(f"sources unchanged: {len(sources)}/{len(sources)}", flush=True)
