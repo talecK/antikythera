@@ -64,7 +64,7 @@ r/investing). The document is one author's ticker mentions within one
 calendar quarter. A pair of frequently mentioned tickers is *eligible*
 ("suppressed") in a build window if its expected joint document count
 is at least 2 while its observed co-mention count is zero. The
-segregation statistic is the total observed evaluation-window co-mention count over all eligible pairs, standardized against a permutation test that shuffles ticker labels (Methods). Two temporal folds bracket the 2020-2021 regime break:
+segregation statistic is the total observed evaluation-window co-mention count over all eligible pairs, standardized against a permutation test that shuffles ticker labels (Methods). Two temporal folds bracket the 2020-2021 regime change:
 build 2017-2018 with evaluation 2019 (fold A), and build 2022-2023 with
 evaluation 2024 (fold B). The companion analysis's final values (its section "A second platform") read as follows (Table 1).
 
@@ -84,7 +84,7 @@ subsampling control matched to DD's document counts leaves it at chance
 shown near z = -7. In the post-2021 fold WSB was strongly walled, like
 every other stratum. The companion paper reported this as a described
 observation and declined to interpret it, for three stated reasons. The
-two folds sit on opposite sides of the 2020-2021 market regime break
+two folds sit on opposite sides of the 2020-2021 market regime change
 (era confound). They differ in data source, with the change of source aligned to the fold boundary (data-source confound). And the
 community split itself was exploratory, with no registered prediction
 attached (post-hoc). Even so, the observation is unique in this research program, meaning the companion paper and this study. Across
@@ -180,7 +180,7 @@ analysis-oriented control subreddits continuously from 2019 through
 the companion paper's walled endpoint survives on a single data source.
 A rolling-window design over continuous time, with the control stratum
 computed identically alongside, answers (though cannot eliminate) the
-era confound: there is no fold boundary for a regime break to hide in,
+era confound: there is no fold boundary for a regime change to hide in,
 and an era-wide effect would move both strata. The registration removes
 the post-hoc character of the original observation: window definitions,
 thresholds, onset rule, and primary cell were fixed and committed before any outcome was computed, with outcome-blind census checks in between.
@@ -869,8 +869,8 @@ ahead of its result. The numbers in this paper trace as follows:
 
 ## References
 
-- Quiring, K. (2026). The gaps that don't close: idea segregation
-  persists in twenty years of online discourse. Preprint; SocArXiv DOI inserted at posting. The source observation is its section "A second platform".
+- Quiring, K. (2026). Ideas that never meet online mark divided
+  communities, not future discoveries. Preprint; SocArXiv DOI inserted at posting. The source observation is its section "A second platform".
 - McPherson, M., Smith-Lovin, L., Cook, J.M. (2001). Birds of a
   feather: Homophily in social networks. *Annual Review of Sociology*
   27, 415-444. doi:10.1146/annurev.soc.27.1.415
