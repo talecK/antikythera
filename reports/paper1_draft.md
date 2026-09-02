@@ -15,20 +15,20 @@ connects next is the aim of literature-based discovery. Whether this
 holds in online discussion is untested. Here we test it on 1.3 million
 Hacker News discussions over twenty years, with a pre-registered
 replication on 41.5 million Reddit finance posts using stock tickers.
-The same instrument recovers the known signal on the Science4Cast
-benchmark of AI papers. Four pre-registered evaluations use threads,
-then authors, as documents. Pairs never discussed together, called
-suppressed pairs, connect no more than popularity and overlapping topics
-predict. The standard test against chance flags connections too easily
-when document sizes vary. It reported 19 to 24 percent of pairs
-connecting within authors' quarterly output, yet randomly shuffled data
-connected more pairs than real data. A per-pair permutation test leaves
-new connections no higher than false positives alone produce. Instead,
+Four pre-registered evaluations use threads, then authors, as documents.
+Pairs never discussed together, called suppressed pairs, connect no more
+than popularity and overlapping topics predict. On the Science4Cast
+benchmark of AI papers, where the effect is known, the same method finds
+it. The standard test against chance flags connections too easily when
+document sizes vary. It reported 19 to 24 percent of pairs connecting
+within authors' quarterly output, yet randomly shuffled data connected
+more pairs than real data. A per-pair permutation test leaves new
+connections no higher than false positives alone produce. Instead,
 suppressed pairs appear together far below chance: nearly 9 standard
-deviations at the author level, over 100 at the thread level. Both
-results replicate across the 2020-2021 market regime change. Ideas that
-never meet online mark communities that stay apart, not future
-discoveries waiting to happen.
+deviations at author level, over 100 at thread level. Both results
+replicate across the 2020-2021 market regime change. Ideas that never
+meet online mark communities that stay apart, not future discoveries
+waiting to happen.
 
 ---
 
