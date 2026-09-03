@@ -1,0 +1,384 @@
+term	papers	class	replacement	note
+anchor	2	D	dated event	defined in Methods
+anchors	2	D		defined
+author-persistence module	1	D	a check on whether the same authors persist across folds	describe once
+author-space	1	D		defined in Measurement summary
+cascade fusion	2	D		defined with fusion
+cascade-susceptibility	2	D		speculative section, labelled
+cell	12	D	one stratum-by-lens-by-fold combination	define once
+cells	12	D		with cell
+census	12	D	count of documents and eligible pairs, computed before any outcome	define once
+chance-level mixing	2	D		defined
+chance-to-wall cliff	2	D		with cliff
+cliff	2	D	a chance-level window followed by one at z <= -5	defined in Methods P3; gloss at first use
+co-attention	12	D	attention shared between two ideas	coinage (deep-learning sense elsewhere); gloss at first use
+co-mention	2	D	two tickers in the same document	define once in paper 2
+co-mentioned	2	D		with co-mention
+co-mentioning	2	D		with co-mention
+co-mentions	2	D		with co-mention
+commit appendix	1	D		named by its title
+communities of attention	12	D	the sets of people who discuss each idea	define at first use
+concept unit	12	D	the item counted: a concept string or a ticker	define once
+conforming run	2	D	the run that follows the registration	define once
+connectivity substrate	2	D		speculative, labelled
+containment-by-daily-thread	2	D	confining discussion to a daily thread	define at first use
+containment-by-megathread	2	D	confining single-ticker discussion to one pinned thread	define at first use, then keep
+criterion trap	1	D	the z-criterion's false positives under unequal document sizes	coinage kept as the hook; defined where introduced
+data-source confound	2	D		defined
+dd	2	D	due diligence, the union of five analysis subreddits	expand the initialism once
+deficit	12	D		with mixing deficit
+determinism rule	2	D		defined
+discrimination reading	2	D		defined
+display rule	2	D		registered, defined in Methods
+duplicate-rate checks	1	D	checks on duplicate items	describe once
+edge-existence	1	D		defined with the control
+eligible	12	D		defined
+eligible-pair	12	D		defined
+endpoint	12	D		defined in paper 2 intro
+endpoints	2	D		defined
+era confound	2	D		defined
+era-wide	2	D		era confound is defined
+excursion	2	D	the two windows above chance	define at first use
+excursion placebo	2	D		defined
+expected-but-absent	12	D		plain, defined
+exposed	1	D		registered classification, defined
+exposed pairs	1	D		registered classification
+false-positive floor	12	D	the 1 percent per pair that the permutation criterion produces by construction	define once
+floor	12	D		with false-positive floor
+fold	12	D		temporal fold, defined
+folds	12	D		defined
+formation	12	D		defined
+formed	12	D		defined
+forms	1	D		defined
+frequency-product control	1	D	ranking pairs by the product of their two frequencies	needs a gloss in paper 1
+fusion	2	D	co-mention above chance	define at first use (three regimes)
+gap-closing	1	D		gap defined via LBD
+gap-finding	1	D		gap defined
+hub	1	D		defined
+hubs	1	D		defined
+label-shuffle	12	D		defined
+label-shuffle placebo	12	D		defined
+label-shuffled	1	D		defined
+measurement trap	1	D		same, intro; the next sentence defines it
+measuring stick	1	D		metaphor, one site; owner call
+mixing	12	D		chance-level mixing defined
+mixing deficit	12	D	observed joint attention over its shuffled expectation	coinage, defined inline in paper 1; define in paper 2
+near-tie	2	D		defined
+near-tie set	2	D		defined
+node popularity	1	D	node degree, how often a concept is mentioned	gloss at first use
+non-separable	2	D		defined in Table 2
+onset	2	D		defined by rule
+onset rule	2	D		defined
+outer label shuffle	2	D		defined
+per-pair permutation	12	D		defined
+placebo	12	D		label-shuffle placebo, defined
+primary-cell	2	D		defined
+registration-conforming	2	D	the run that follows the registration	define "conforming run" once
+research program	2	D	the companion paper and this study	defined in paper 2 intro
+reversion	2	D	a later window back at chance	define
+reversions	2	D		with reversion
+scale/fragmentation	2	D		defined bullet
+scar	2	D		metaphor in the speculative paragraph; owner call
+segregation	12	D		defined
+segregation statistic	12	D		defined
+segregation z	12	D		defined
+subsampling control	12	D	a rerun on a subsample matched in size	gloss
+substrate	2	D		speculative paragraph, labelled
+suppressed	12	D		defined
+suppressed-pair	1	D		defined
+the shuffle	1	D		defined
+thread-space	1	D		defined
+three-regime arc	2	D		speculative section
+wall	2	D		defined in abstract
+wall-building	2	D		wall is defined
+wall-free	2	D		wall is defined
+walled	12	D		defined
+walled endpoint	2	D		wall + endpoint defined
+walls	12	D		defined
+z-criterion	1	D		defined in Methods
+b-ladder	2	Q	window-length rule	registration working name, explained in Methods
+bar	12	Q	pass threshold	working name explained in Methods
+calibrated formation	1	Q		registered item label in Table 1
+discovery machinery	1	Q		Table 1 registered reading only
+gate	12	Q	the replication study	working name
+ladder	1	Q	cross-corpus comparison	working name
+low-power	2	Q	fewer than 30 eligible pairs	registered label LOW-POWER; gloss at first use
+non-low-power	2	Q	with at least 30 eligible pairs	registered label; gloss
+suppression-by-affinity	1	Q		registered ranker name, Table 1
+suppression-by-affinity ranker	1	Q	ranking by embedding similarity of the two concepts	registered ranker name; gloss
+terminal	1	Q	the registered last test	Table 1 label; gloss
+the thesis closes	1	Q		registered reading
+better-powered	1	R	more powerful	coinage
+calibrated criterion	1	R	per-pair permutation criterion	unify; Table 1 registered label "calibrated formation" stays
+calibration ladder	1	R	cross-corpus comparison of formation rates	working name leaked into Results
+cashtag lens	2	R	cashtag-only count	with lens
+chance-calibrated	1	R	tested against a chance expectation	coinage
+corrected criterion	1	R	per-pair permutation criterion	three names for one thing; unify
+dd-sized	2	R	the size of the DD effect	coinage
+deep-wall	2	R	most negative	coinage
+deterministic artifacts	1	R	fixed inputs and seeds	software jargon
+different-powered	2	R	of different power	coinage; "tests of different power"
+directionally consistent	2	R	has the same sign	jargon
+discovery apparatus	1	R	discovery method	coinage
+document slots	1	R	concept positions within documents	coinage
+document-count artifact	1	R	an effect of document count	coinage
+eligible universe	2	R	set of eligible pairs	coinage
+embedding affinity	1	R	cosine similarity between concept-label embeddings	coinage
+epistemic position	2	R	what was known in advance	jargon
+extraction branch	1	R	one part of the extraction code	software jargon
+flip to walls	2	R	first walled window	coinage
+four shelves	2	R	four literatures	metaphor
+fusion-then-walls	2	R	fusion followed by walls	coinage
+ground whose far end is secured	2	R	the 2024 endpoint is confirmed	metaphor
+idea space	2	R	which ideas its members discuss together	metaphor
+idea-communities	2	R	communities of attention	use the defined term
+idea-segregation	2	R	segregation	redundant compound
+idea-structure	2	R	which ideas are discussed together	coinage/metaphor
+informativeness floor	2	R	reporting floor of 20 eligible pairs	coinage
+internal tribalization	2	R	splitting into factions	coinage
+joint attention	1	R	joint mentions	collides with the psychology term
+least-powered	2	R	with the fewest eligible pairs	coinage
+lens	2	R	counting rule	coinage; "union lens" -> "union count", "cashtag lens" -> "cashtag-only count"
+machinery	1	R	method	prose sites only; Table 1 quotes registered language and keeps it
+marginal popularities	2	R	how often each ticker is mentioned on its own	coinage
+mechanical artifact	1	R	artifact of the test	coinage
+mod-team regime change	2	R	replacement of the moderator team	collides with market regime change
+monte carlo noise	1	R	run-to-run variation of the shuffle	jargon; already replaced in paper 2
+old-vs-old	2	R	a comparison of two uncorrected values	coinage
+operative tables	2	R	the tables the paper uses	coinage
+post-regime	1	R	fold B	with pre-regime
+post-review regeneration	1	R	re-run after review	software jargon
+power artifact	12	R	an effect of too little data	coinage
+power context	2	R	the number of eligible pairs, which sets each window's power	coinage
+power floor	2	R	minimum eligible-pair count	coinage
+pre-regime	1	R	fold A	Reddit folds named A and B; drop the third naming
+rank-auc	1	R	AUC	non-standard name
+readout	12	R	result	coinage
+readouts	12	R	results	coinage
+regime-break	2	R	regime change	earlier decision: regime change; one instance left
+rule-bound	2	R	following rules fixed in advance	coinage
+rule-chosen	2	R	chosen by the registered rule	coinage
+rungs	1	R	steps	with calibration ladder
+seam	2	R	change of data source	coinage
+self-indexing	1	R	built-in indexing (citations, keywords)	coinage
+sensitivity lens	2	R	sensitivity count	with lens
+solution vector	1	R	answer key	benchmark jargon
+sourcing artifact	1	R	an artifact of the data source	coinage
+stable moderator	1	R	does not consistently change the size of	statistics sense collides with Reddit moderators
+structural minima	1	R	minimum-count requirements	coinage
+substantially mechanical	1	R	largely produced by the test itself	prose sites; Table 1 quotes the registered reading
+the bets	2	R	the registered predictions	informal
+timing bet	2	R	timing prediction	informal
+topicality policing	2	R	enforcement of on-topic rules	coinage
+uniform api	2	R	API data in both folds	table header
+union lens	2	R	union count	with lens
+unit noise	1	R	error in the extracted concepts	coinage
+unit vocabularies	12	R	kinds of unit	coinage
+universes	2	R	eligible-pair counts	with eligible universe
+unpinned	2	R	not established	coinage
+voided in advance	1	R	declared non-binding in advance	legal register
+wsb-dependent	2	R	involving WSB	coinage
+z-style	1	R	z-score	"z-style chance calibration" -> "the z-score test"
+above-chance	12	S		
+above-floor	1	S		
+all-subreddits	1	S		
+analysis-oriented	12	S		
+analysis-stratum	1	S		
+anti-conservative	1	S		
+archival-dump	2	S		
+arctic shift api	2	S	a third-party Reddit archive	gloss at first use
+artifact	12	S		alone with "of X"; compounds handled below
+artifacts	12	S		
+artificial-intelligence	1	S		
+author-level	12	S		
+author-persistence	1	S		
+author-quarter	1	S		
+author-quarters	12	S		
+author-ticker	2	S		
+below-chance	2	S		
+best-established	1	S		
+between-window	2	S		
+build-era	1	S		
+burst	12	S		
+cascade	2	S		cited literature
+causal-inference	2	S		
+chance-level	2	S		
+claim-level	1	S		
+co-located	2	S		
+co-move	2	S		
+co-occur	12	S		
+co-occurred	1	S		
+co-occurrence	12	S		
+co-occurrences	1	S		
+co-occurs	1	S		
+co-word	1	S		
+cohort-stratified	2	S		
+common-neighbors	1	S		network science
+community-level	12	S		
+companion paper	12	S		
+concept-level	1	S		
+cpu-minutes	1	S		
+cross-checking	2	S		
+cross-corpus	1	S		
+cross-domain	1	S		
+cross-source	1	S		
+cross-window	2	S		
+data-source	12	S		
+default-listing	2	S		
+degree bias	1	S		cited
+degree-based	1	S		
+degree-bias	1	S		
+degree-only	1	S		
+document-concept	1	S		
+document-count	1	S		
+document-size	12	S		
+document-ticker	2	S		
+duplicate-rate	1	S		
+engagement-stratified	2	S		
+evaluation-window	2	S		
+excluded-tickers	2	S		
+exclusion-filter	2	S		
+false-positive	12	S		
+first-run	2	S		
+fixed-fixed	1	S		ecology null-model term, cited
+fold-a	12	S		
+fold-b	2	S		
+fold-boundary	2	S		
+fold-level	2	S		
+follow-up	12	S		
+full-document	1	S		
+full-parse	2	S		
+general-technology	1	S		
+gme-era	2	S		
+growth shock	2	S		cited literature
+half-year	2	S		
+half-yearly	1	S		
+high-impact	1	S		
+hygiene	2	S	data cleaning	gloss
+ill-posed	1	S		
+in-range	2	S		
+individual-level	2	S		
+instrument	12	S		plain English
+language-model	1	S		
+language-model-extracted	1	S		
+large-language-model	12	S		
+least-squares	2	S		
+liben-nowell	1	S		
+link-prediction	1	S		
+literature-based	12	S		
+literature-based discovery	12	S		standard
+load-time	2	S		
+machine-learning	1	S		
+market-cap	2	S		
+market-wide	2	S		
+materials-science	1	S		
+mechanism families	2	S		plain
+mid-acquisition	1	S		
+mid-april	2	S		
+mid-build	1	S		
+million-pair	1	S		
+minimum-detectable-rate	1	S		
+mixed-source	2	S		
+mod-team	2	S		plain; but see "mod-team regime change"
+monroy-hernandez	2	S		
+near-exact	2	S		
+network-science	1	S		
+never-connected	2	S		
+non-registered	2	S		
+non-scientific	1	S		
+one-break	2	S		
+online-community	2	S		
+out-of-span	2	S		
+outcome-blind	12	S		standard in trial and preregistration practice
+owner-reviewed	2	S		
+pair-count	2	S		
+partial-fold	1	S		
+per-file	2	S		
+per-pair	12	S		
+per-replicate	2	S		
+per-stratum	1	S		
+per-sub	2	S		
+per-window	2	S		
+percent-per-pair	12	S		
+platform-administered	2	S		
+plus-minus	1	S		
+poisson-style	1	S		
+positive control	1	S		
+post-hoc	12	S		
+post-hoc	12	S		
+post-registration	2	S		
+post-review	1	S		
+post-squeeze	2	S		
+pre-census	2	S		
+pre-commitment	2	S		
+pre-committed	12	S		
+pre-event	2	S		
+pre-exclusion	2	S		
+pre-onset	2	S		
+pre-outcome	2	S		
+pre-publication	2	S		
+pre-registered	1	S		
+pre-squeeze	2	S		
+predictor families	1	S		plain
+private-mode	2	S		
+quantum-physics	1	S		
+quarantine-restrict-ban	2	S		
+re-decided	2	S		
+re-decision	2	S		
+re-defined	1	S		
+re-derivation	2	S		
+re-derived	2	S		
+re-executed	1	S		
+re-measurement	1	S		
+re-ran	1	S		
+re-run	2	S		
+rebuilt-fold	2	S		
+regime	12	S		finance usage
+regime change	12	S	the 2020-2021 retail-trading boom	name the event once at first use in each paper
+regime-dependent	1	S		
+registered study	2	S		preregistered
+replication-surviving	1	S		
+risk-reward	1	S		
+rolling-window	2	S		
+same-platform	2	S		
+science-corpus	1	S		
+science4cast	1	S	a published link-prediction benchmark built from AI papers	gloss at first use
+sec registrant table	12	S	the SEC's list of registered companies	gloss at first use
+second-fold	1	S		
+seed-to-seed	1	S		
+self-reinforcing	2	S		
+shuffle-based	1	S		
+shuffled-data	2	S		
+sign-off	2	S		
+single-source	2	S		
+single-ticker	2	S		
+site-by-species	1	S		
+smith-lovin	12	S		
+sort attention	2	S		plain metaphor, intro line
+source-equivalence	1	S		
+spin-off	2	S		
+spot-checks	2	S		
+step fit	2	S		change-point fit; gloss present
+story-author	1	S		
+strata	12	S		
+stratum	12	S		
+subscriber explosion	2	S		plain
+target-year	1	S		
+text-corpus	1	S		
+thirty-fold	2	S		
+thread-level	1	S		
+three-regime	2	S		
+ticker-filter	2	S		
+triadic closure	1	S		
+two-quarter	2	S		
+un-seen	2	S		
+version-control	12	S		
+well-studied	1	S		
+window	12	S		
+window-length	2	S		
+windows	12	S		
+within-community	2	S		
+within-document	2	S		
+within-window	1	S		
+wsb-specific	2	S		
+z-score	1	S		
