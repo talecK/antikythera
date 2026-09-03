@@ -78,7 +78,7 @@ evaluation 2024 (fold B). The companion analysis's final values (its section "A 
 | DD | -10.1 | -17.1 |
 | WSB | **-0.1** | **-9.0** |
 
-(The registration for the present study quotes the earlier values -0.2 and -8.7 for the WSB cells, from a run of the companion analysis that preceded its post-review correction. The difference is that correction plus Monte Carlo noise and is immaterial to every pass threshold here.)
+(The registration for this study quotes slightly different values for the two WSB cells, -0.2 and -8.7, taken from an earlier run of the companion analysis. That run was later corrected, and the shuffle test carries a small amount of random variation between runs. Neither source of difference comes near any pass threshold in this study.)
 
 WSB's fold-A chance reading is well measured: the registered
 subsampling control matched to DD's document counts leaves it at chance
