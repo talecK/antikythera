@@ -293,6 +293,7 @@ never-connected	2	S
 non-binding	12	S		plain compound introduced by the term pass
 non-registered	2	S		
 non-scientific	1	S		
+on-topic	12	S		plain compound introduced by the term pass
 one-break	2	S		
 online-community	2	S		
 out-of-span	2	S		
@@ -377,6 +378,7 @@ stratum	12	S
 subscriber explosion	2	S		plain
 target-year	1	S		
 text-corpus	1	S		
+third-party	12	S		plain compound introduced by the term pass
 thirty-fold	2	S		
 thread-level	1	S		
 three-regime	2	S		
@@ -384,6 +386,7 @@ ticker-filter	2	S
 triadic closure	1	S		
 two-quarter	2	S		
 un-seen	2	S		
+union-count	12	S		plain compound introduced by the term pass
 version-control	12	S		
 well-studied	1	S		
 window	12	S		

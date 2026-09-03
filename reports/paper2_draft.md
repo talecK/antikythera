@@ -4,8 +4,8 @@
 
 **Draft v0.5, 2026-09-01. Registered study (preregistration_paper2.md,
 commit 99ffd9e, amendments V1-V4). All numbers are from the
-registration-conforming run (commit 21a9dc7); a disclosed implementation
-deviation and its rule-bound correction are reported in Methods.
+registration-conforming run (commit 21a9dc7); a disclosed implementation deviation and its correction are reported in
+Methods.
 Commit references for every quantity are collected in the commit appendix. Structured as Introduction, Results, Discussion, Methods. Prose, jargon, and figure passes complete.**
 
 ---
@@ -44,15 +44,15 @@ and Twitter (Cinelli et al. 2021) and the community-level polarization
 measured on Reddit (Waller and Anderson 2021). The companion paper to
 this study measured a specific form of that sorting (Quiring 2026).
 It borrowed the gap criterion of literature-based discovery, which
-treats concept pairs that are linked through shared intermediates but
-never directly as latent connections (Swanson 1986), operationalized
-as pairs whose expected co-occurrence under independence is high and
-whose observed co-occurrence is zero, and asked whether that criterion
-transfers from scientific corpora to ordinary discourse. It found no formation signal on either of two
+treats concept pairs linked through shared intermediates but never
+directly as latent connections (Swanson 1986). It operationalized that
+criterion as pairs whose expected co-occurrence under independence is
+high and whose observed co-occurrence is zero. It then asked whether the
+criterion transfers from scientific corpora to ordinary discourse. It found no formation signal on either of two
 platforms, and it found that suppressed pairs co-occur far
-below chance, at magnitudes their marginal popularities cannot explain.
-The stable result was segregation: the communities of attention around
-two never-connected ideas stay apart, on every platform and at every
+below chance, at magnitudes their individual popularity cannot explain.
+The stable result was segregation: the communities of attention (the sets of people who discuss each idea)
+around two never-connected ideas stay apart, on every platform and at every
 granularity measured. Throughout this paper we call that persistent
 below-chance separation a wall, and a community whose suppressed pairs
 sit far below chance walled.
@@ -60,17 +60,20 @@ sit far below chance walled.
 There was one exception. The companion paper's replication corpus is
 Reddit financial discussion, where the concept unit is the stock
 ticker, extracted by pattern matching, with no language model involved. It splits
-six financial subreddits into two strata: r/wallstreetbets alone (hereafter WSB; the companion paper labels this stratum MEME) and DD (the union of five analysis-oriented subreddits:
+six financial subreddits into two strata: r/wallstreetbets alone (hereafter WSB; the companion paper labels this stratum MEME) and DD (short for due diligence, the union of five analysis-oriented
+subreddits:
 r/SecurityAnalysis, r/ValueInvesting, r/StockMarket, r/stocks,
 r/investing). The document is one author's ticker mentions within one
 calendar quarter. A pair of frequently mentioned tickers is *eligible*
 ("suppressed") in a build window if its expected joint document count
-is at least 2 while its observed co-mention count is zero. The
-segregation statistic is the total observed evaluation-window co-mention count over all eligible pairs, standardized against a permutation test that shuffles ticker labels (Methods). Two temporal folds bracket the 2020-2021 regime change:
+is at least 2 while its observed co-mention count (the two tickers in
+the same document) is zero. The
+segregation statistic is the total observed evaluation-window co-mention count over all eligible pairs, standardized against a permutation test that shuffles ticker labels (Methods). Two temporal folds bracket the 2020-2021 market regime change, the
+pandemic-era retail-trading boom and the meme-stock episode:
 build 2017-2018 with evaluation 2019 (fold A), and build 2022-2023 with
 evaluation 2024 (fold B). The companion analysis's final values (its section "A second platform") read as follows (Table 1).
 
-**Table 1.** Segregation z in the companion analysis, by stratum and fold, union lens.
+**Table 1.** Segregation z in the companion analysis, by stratum and fold, union count.
 
 | stratum | fold A (eval 2019) | fold B (eval 2024) |
 |---------|-------------------:|-------------------:|
@@ -80,10 +83,10 @@ evaluation 2024 (fold B). The companion analysis's final values (its section "A 
 
 (The registration for this study quotes slightly different values for the two WSB cells, -0.2 and -8.7, taken from an earlier run of the companion analysis. That run was later corrected, and the shuffle test carries a small amount of random variation between runs. Neither source of difference comes near any pass threshold in this study.)
 
-WSB's fold-A chance reading is well measured: the registered
-subsampling control matched to DD's document counts leaves it at chance
-(z = -0.0), so it is not a power artifact. A DD-sized effect would have
-shown near z = -7. In the post-2021 fold WSB was strongly walled, like
+WSB's fold-A chance reading is well measured. The registered subsampling
+control, which matches WSB to DD's document count, leaves WSB at chance
+(z = -0.0), so the reading is not an effect of sample size. An effect
+the size of DD's would have shown near z = -7. In the post-2021 fold WSB was strongly walled, like
 every other stratum. The companion paper reported this as a described
 observation and declined to interpret it, for three stated reasons. The
 two folds sit on opposite sides of the 2020-2021 market regime change
@@ -105,14 +108,18 @@ The candidate mechanisms, stated before any window was computed
 
 - **Scale/fragmentation.** WSB grew roughly 30-fold in weeks around the
   January 2021 GameStop squeeze, from about 1.8 million to over 9
-  million subscribers (anchor A2; dated sources in Methods). If walls
-  are internal tribalization of a suddenly enormous community, onset
+  million subscribers (anchor A2; the anchors are dated events listed with
+sources in Methods). If walls are a suddenly enormous community
+splitting into factions, onset
   should track the subscriber explosion: fast, in or immediately after
   2021Q1.
-- **Governance.** After the squeeze, WSB's moderation regime changed
-  wholesale: a mod-team regime change, automated ticker filtering,
-  containment-by-megathread, and a market-cap floor on discussable tickers (anchors A4-A8; dated sources in Methods, where a later source check shows the market-cap floor predates the squeeze). If walls are
-  topicality policing, onset should lag the event by months, tracking
+- **Governance.** After the squeeze, WSB's moderation regime changed wholesale:
+replacement of the moderator team, automated ticker filtering,
+confinement of single-ticker discussion to megathreads, and a market-cap
+floor on discussable tickers (anchors A4-A8; dated sources in Methods).
+A later source check found that the market-cap floor predates the
+squeeze, which Methods reports. If walls are moderators enforcing
+on-topic rules, onset should lag the event by months, tracking
   the datable rule changes through 2021.
 - **Era narratives.** Market-wide sector stories sort attention
   everywhere at once; this predicts a parallel discontinuity in the DD
@@ -130,19 +137,20 @@ starting new discussions of it. Pedersen (2022) builds the equilibrium
 theory: a social network propagating an investment idea produces
 the frenzy, bubble, and burst observed. All of this work studies the squeeze as the outcome: how coordination formed and how it
 moved prices. The present study measures the other side of the event:
-what the squeeze did to the community's idea-structure, before, during, and after, under a registered design. To our knowledge no prior work
-tracks a community's co-attention structure through the episode.
+what the squeeze did to which ideas the community discussed together,
+before, during, and after, under a registered design. To our knowledge no prior work tracks a community's co-attention
+structure (which ideas share an audience) through the episode.
 
 Moderation interventions on Reddit have a causal-inference literature.
 Chandrasekharan et al. (2017) measured the effects of the 2015
 subreddit bans on hate speech; Trujillo and Cresci (2022) measured the
 escalating quarantine-restrict-ban sequence applied to r/The_Donald.
 These study platform-administered interventions and behavioral
-outcomes (activity, toxicity). Our governance mechanism concerns
-interventions from inside the community (a mod-team regime change,
-automated ticker filtering, containment-by-megathread; anchors A3-A8),
-and the outcome is the structure of the community's idea space rather
-than the behavior of its users. Newcomer floods are a classic concern
+outcomes (activity, toxicity). Our governance mechanism concerns interventions from inside the
+community: replacement of the moderator team, automated ticker
+filtering, and containment-by-megathread (anchors A3-A8). And our
+outcome is which ideas the community discusses together, not the
+behavior of its users. Newcomer floods are a classic concern
 of online-community research. Kiene, Monroy-Hernandez and Hill (2016)
 found that r/NoSleep absorbed a large newcomer surge without major
 incident; Lin et al. (2017) found that ten subreddits hit by
@@ -160,9 +168,9 @@ supply the individual-level mechanism (Bikhchandani, Hirshleifer and
 Welch 1992). The cascade-susceptibility
 reading of our results, labelled speculative in the Discussion, is the
 empirical cousin of this theory: chance-level mixing is the
-connectivity substrate, and the walls are its removal. What this paper
-adds to all four shelves is a registered, longitudinal measurement of
-one community's idea-segregation state through a cascade, with a
+connectivity substrate, and the walls are its removal. What this paper adds to all four literatures is a registered,
+longitudinal measurement of one community's segregation state through a
+cascade, with a
 calibrated permutation test (the companion paper's instrument), a dated onset, and a
 same-platform control.
 
@@ -185,12 +193,13 @@ computed identically alongside, answers (though cannot eliminate) the
 era confound: there is no fold boundary for a regime change to hide in,
 and an era-wide effect would move both strata. The registration removes
 the post-hoc character of the original observation: window definitions,
-thresholds, onset rule, and primary cell were fixed and committed before any outcome was computed, with outcome-blind census checks in between.
+thresholds, onset rule, and primary cell were fixed and committed before any outcome was computed, with outcome-blind census checks (counts of documents and eligible
+pairs, computed before any outcome) in between.
 
 All three registered predictions pass. The transition is real, sharp,
 and dated: onset 2021-04-01, with chance-level mixing before it and
 walls in every window after it, with zero reversions. The result we
-consider most important, however, was not one of the bets. Between the
+consider most important, however, was not one of the registered predictions. Between the
 chance-level regime and the walls, in the two evaluation windows
 that straddle the GameStop episode, the suppressed pairs of
 r/wallstreetbets co-mention at 28.6 and 30.9 standard deviations above
@@ -198,7 +207,7 @@ chance. In every other window this program has
 measured, on any platform, co-mention over suppressed pairs sits at or
 below chance; these two windows are the only exception. The control
 stratum, measured through the same windows by the same instrument,
-stayed below chance throughout. After the excursion recedes, the walls
+stayed below chance throughout. We call these two windows the excursion. After it recedes, the walls
 appear and persist. r/wallstreetbets is the test case. The general
 object is the transition between segregation states in a discourse
 community, which no measurement in this program had previously caught
@@ -207,11 +216,11 @@ such transitions are, and the Discussion returns to that limit.
 
 ## Results
 
-All numbers in this section are from the registration-conforming run
-(window series and results document listed in the commit appendix). Throughout, every z series is tabulated with its
-eligible-pair counts, per the registered display rule (Methods):
-between-window z magnitudes are different-powered tests, and the pair
-counts are the power context.
+All numbers in this section are from the conforming run, the run that
+follows the registration as amended (window series and results document listed in the commit appendix). Throughout, every z series is tabulated with its eligible-pair counts,
+per the registered display rule (Methods). Windows differ in how many
+eligible pairs they hold, so their z values are tests of different
+power, and the pair counts show that power.
 
 ### Measurement summary
 
@@ -235,8 +244,9 @@ brought together beyond chance. Windows roll over the 24 quarters of
 2019 through 2024, stepped one quarter, with a build period of four
 quarters and an evaluation period of the following two quarters, the
 build length having been chosen by an outcome-blind census rule. Both
-strata, WSB and DD, are computed identically and independently, under
-a primary union lens, which counts a ticker whether written as $GME or as GME, and a cashtag sensitivity lens, which counts only the $GME form. Every window
+strata, WSB and DD, are computed identically and independently, under a primary union count, which counts a ticker whether written as
+$GME or as GME, and a cashtag-only count used as a sensitivity check,
+which counts only the $GME form. Every window
 definition, threshold, and rule was registered before any statistic
 existed; full specifications are in Methods.
 
@@ -260,39 +270,39 @@ mechanisms. Both are summarized in Table 2; the verbatim rules are in Methods.
 
 ### The endpoint survives a single data source (Part A)
 
-Rebuilt with API data in both folds, the fold-B endpoint cells read as follows (Table 3), under the companion analysis's criterion, unchanged, and with its mixed-source values alongside for comparison.
+Rebuilt with API data in both folds, the fold-B endpoint cells (each
+cell is one stratum, counting rule, and fold) read as follows (Table 3), under the companion analysis's criterion, unchanged, and with its mixed-source values alongside for comparison.
 
 **Table 3.** Part A: fold-B endpoint cells rebuilt on API data in both folds.
 
-| cell | eligible pairs | z (uniform API) | z (companion analysis, mixed sources) | formed | binomial p |
+| cell | eligible pairs | z (API data in both folds) | z (companion analysis, mixed sources) | formed | binomial p |
 |------|---------------:|----------------:|-------------------:|-------:|-----------:|
 | WSB (MEME)/union | 210 | **-9.40** | -9.0 | 0 | 1.00 |
 | ALL/union | 479 | **-21.57** | -17.7 | 2 | 0.95 |
 | DD/union | 281 | **-16.41** | -17.1 | 0 | 1.00 |
 
 The registered expectation (WSB fold-B z ≤ -3) is met with a wide
-margin, and the eligible-pair counts track the companion analysis's census (210 versus 209). The cashtag sensitivity lens is directionally consistent
-(-8.5/-10.1/-3.1; results document in the commit appendix). The
-companion paper's walled endpoint is therefore not an artifact of the data source; the data-source confound is removed from that observation, and
-the transition study below runs on ground whose far end is secured.
+margin, and the eligible-pair counts track the companion analysis's census (210 versus 209). The cashtag-only count has the same sign in every cell (-8.5/-10.1/-3.1;
+results document in the commit appendix). The
+companion paper's walled endpoint is therefore not an artifact of the data source; the data-source confound is removed from that observation, and the transition study below starts from a confirmed 2024 endpoint.
 
 ### The transition: onset 2021-04-01, all three predictions pass
 
-The primary cell is the WSB stratum under the union lens at B = 4:
+The primary cell is the WSB stratum under the union count at B = 4:
 nineteen rolling windows with two-quarter evaluation intervals from
 2020Q1 through 2024Q4. It produces the series in Table 4, with evaluation windows labelled by starting quarter.
 
-**Table 4.** Primary series: r/wallstreetbets, union lens, four-quarter build, nineteen rolling windows.
+**Table 4.** Primary series: r/wallstreetbets, union count, four-quarter build, nineteen rolling windows.
 
 | eval start | 20Q1 | 20Q2 | 20Q3 | 20Q4 | 21Q1 | 21Q2 | 21Q3 | 21Q4 | 22Q1 | 22Q2 | 22Q3 | 22Q4 | 23Q1 | 23Q2 | 23Q3 | 23Q4 | 24Q1 | 24Q2 | 24Q3 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | z | -3.7 | +1.5 | +1.5 | **+28.6** | **+30.9** | -10.7 | -9.0 | -8.6 | -5.9 | -7.3 | -4.9 | -9.7 | -4.6 | -7.7 | -6.7 | -7.2 | -11.0 | -5.3 | -6.3 |
 | eligible pairs | 45 | 77 | 64 | 124 | 318 | 498 | 391 | 373 | 397 | 225 | 146 | 115 | 99 | 94 | 103 | 78 | 71 | 93 | 131 |
 
-Applying the pre-committed onset rule mechanically: the onset window is the
-one whose evaluation interval begins 2021Q2 (z = -10.7), because every
-one of the thirteen subsequent windows also has z ≤ -3, with zero
-reversions where the rule allowed one. **The onset time is
+Applying the pre-committed onset rule mechanically, the onset window is
+the one whose evaluation interval begins 2021Q2 (z = -10.7). Every one
+of the thirteen subsequent windows also has z ≤ -3. The rule allowed one
+reversion, a later window back at chance; there were none. **The onset time is
 2021-04-01.** The first window, at -3.7, does not start an onset. The
 rule requires persistence, and the four windows after it include two at
 chance and two far above it.
@@ -328,13 +338,13 @@ the GameStop episode (evaluation 2020Q4 to 2021Q1 and 2021Q1 to 2021Q2), the sup
 
 The excursion claim rests on the primary z, which is the same
 statistic, same permutation test, and same seed as every other window in the
-series. The formation counts are the registered secondary readout and
-point the same way: 24 of 124 and 61 of 318 eligible pairs newly
+series. The formation counts are the registered secondary result and point the
+same way: 24 of 124 and 61 of 318 eligible pairs newly
 co-mention beyond their per-pair permutation thresholds, against a
-1-percent-per-pair floor (binomial p of about 1e-23 and 1e-57). For
-context: across two platforms, two unit vocabularies, and every
-ordinary window ever measured in this program, formation sat at the
-false-positive floor; these two windows are the only place it has ever
+1-percent-per-pair floor (binomial p of about 1e-23 and 1e-57). For context: across two platforms, two kinds of unit, and every ordinary
+window ever measured in this program, formation sat at the
+false-positive floor, the 1 percent per pair that the criterion flags by
+construction; these two windows are the only place it has ever
 risen above it. No registered pass threshold attaches to formation here, by design. The claim rests on z, and the z is unambiguous.
 
 **The placebo.** A result this far above chance calls for the same
@@ -368,54 +378,51 @@ For two overlapping half-year evaluation windows, then, the
 same authors co-mentioned ticker pairs, in thousands of documents, at
 two to three times their expected rates. These were pairs the
 preceding year of WSB discourse had kept fully apart: zero
-co-mentions, despite ample independent popularity. The mixing deficit
-inverted. Every other measurement in this program, including WSB itself
+co-mentions, despite ample independent popularity. The mixing deficit, the shortfall of co-mentions below chance, inverted. Every other measurement in this program, including WSB itself
 one quarter later, sits at or far below chance.
 
 ### Specificity: the control stays walled through the squeeze
 
 The DD stratum, computed identically through the same calendar (Table 7).
 
-**Table 7.** Control series: DD stratum, union lens, four-quarter build.
+**Table 7.** Control series: DD stratum, union count, four-quarter build.
 
 | eval start | 20Q1 | 20Q2 | 20Q3 | 20Q4 | 21Q1 | 21Q2 | 21Q3 | 21Q4 | 22Q1 | 22Q2 | 22Q3 | 22Q4 | 23Q1 | 23Q2 | 23Q3 | 23Q4 | 24Q1 | 24Q2 | 24Q3 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | z | -8.1 | -9.8 | -8.9 | -7.7 | -8.6 | -11.6 | -10.7 | -10.3 | -9.6 | -9.4 | -7.2 | -8.0 | -6.7 | -10.2 | -10.1 | -10.6 | -11.2 | -12.1 | -15.7 |
 | eligible pairs | 63 | 104 | 151 | 145 | 211 | 345 | 272 | 281 | 290 | 250 | 179 | 158 | 150 | 139 | 128 | 143 | 120 | 127 | 161 |
 
-- **P3 PASS.** Every DD window in the registered range (and in fact
-  every DD window, period) sits between -6.7 and -15.7: no window pair
-  anywhere shows the registered cliff pattern (chance-level then
-  z ≤ -5), because no DD window is ever above -6.7 to begin with.
+- **P3 PASS.** Every DD window in the registered range, and in fact every DD window in the series, sits between -6.7 and -15.7. The registered cliff pattern (a chance-level window followed by one at z ≤ -5) cannot occur, because no DD window is ever above -6.7 to begin with.
 
 This contrast carries the paper's specificity claim. In the two
 excursion windows, at the height of the squeeze, the analysis-oriented
 communities' suppressed pairs stayed *below* chance (-7.7, -8.6). The
 DD authors lived through the same news cycle and the same market, in
-the same corpus, under the same statistic, and their idea-communities
-did not fuse. The fusion and the subsequent wall-building are
-properties of one community, not of the era. DD's own deepening over
+the same corpus, under the same statistic, and their communities of attention did not fuse. The fusion (co-mention
+above chance) and the subsequent wall-building are properties of one
+community, not of the era. DD's own deepening over
 the five years (from about -8 toward -15.7) is gradual, as predicted.
 
-### Sensitivity, consistency, and power context
+### Sensitivity, consistency, and power
 
 **Window length.** The registered sensitivity curves reproduce the
 shape at both alternative window lengths. At B = 6 the excursion
-windows read +32.2 and +46.0 and the flip to walls occurs at the same evaluation window (2021Q2, z = -8.9, all subsequent windows ≤ -5). At B = 8
+windows read +32.2 and +46.0 and the first walled window is the same (2021Q2, z = -8.9, all
+subsequent windows ≤ -5). At B = 8
 the single in-range excursion window reads +27.3 with the flip also
 at 2021Q2 (-7.6). No pass threshold attaches to these curves; they are reported regardless of outcome so that the choice of B = 4 cannot be what makes the transition appear. Longer builds start later in the
 calendar, so the B = 6 and B = 8 series begin at evaluation windows 2020Q3 and 2021Q1 respectively. The full series with pair counts are in the released
 window table.
 
-**Lens.** The cashtag lens is registered sensitivity with an
-informativeness floor: windows under 20 eligible pairs are reported
-UNINFORMATIVE, which claims several early windows (and most DD cashtag
+**Cashtag-only count.** The cashtag-only count is a registered
+sensitivity check with a reporting floor: windows under 20 eligible
+pairs are reported UNINFORMATIVE, which claims several early windows (and most DD cashtag
 windows). Where informative, the cashtag series shows the same
 signature: elevated in the excursion windows (+2.0, +2.5 at B = 4, with
 formation 9/63 and 14/117, binomial p of about 1e-8 and 1e-11). From
 2021Q2 onward every informative window is negative. The cashtag
-excursion z is far smaller than the union value on a far smaller
-eligible universe; it is reported as directional sensitivity, not as a
+excursion z is far smaller than the union value on a far smaller set of eligible pairs; it is reported as directional
+sensitivity, not as a
 second measurement of the magnitude.
 
 **Census consistency.** The corrected census's first B = 4 window
@@ -425,13 +432,13 @@ agree to one document in 44 thousand. The agreement is near-exact rather
 than identical (Amendment V4 addendum; the
 superseded V3 anchor had matched two pre-exclusion values exactly).
 
-**Power context.** Eligible-pair counts range 45-498 across the
-primary series. The deep-wall z values of 2021-2022 sit on the largest
-universes (373-498 pairs) and the pre-onset chance readings on the
-smallest (45-77). The registered display rule (Methods) exists for
-this reason: threshold verdicts are per-window calibrated,
-cross-window magnitude comparisons are not, and so we do not read -11.0
-(2024Q1, 71 pairs) as deeper than -9.0 (2021Q3, 391 pairs).
+**Eligible-pair counts and power.** Eligible-pair counts range 45-498
+across the primary series. The most negative z values, in 2021-2022, sit
+on the largest eligible-pair counts (373-498 pairs) and the pre-onset
+chance readings on the smallest (45-77). The registered display rule (Methods) exists for this reason. Threshold
+verdicts are calibrated within each window; comparisons of magnitude
+across windows are not. So we do not read -11.0 (2024Q1, 71 pairs) as
+deeper than -9.0 (2021Q3, 391 pairs).
 
 ## Discussion
 
@@ -444,7 +451,11 @@ control stratum moved gradually and monotonically the whole time.
 What the timing does *not* do is pick a mechanism, and the registration
 constrains what we may conclude here. The anchors amendment froze the
 discrimination rule before any window existed. Onset in 2021Q1 would
-have favored scale/fragmentation (the subscriber explosion, A2). Onset in late 2021 would have favored governance (the mod-team regime change, ticker-filter bot, megathread containment, and market-cap ban, A4-A8; a post-registration source check dates the market-cap ban to before the squeeze, so the governance family that remains is A4 to A7, Methods).
+have favored scale/fragmentation (the subscriber explosion, A2). Onset in late 2021 would have favored governance: the replacement of the
+moderator team, the ticker-filter bot, megathread containment, and the
+market-cap ban (A4-A8). A post-registration source check dates the
+market-cap ban to before the squeeze, so the governance family that
+remains is A4 to A7 (Methods).
 Onset in 2021Q2 was named, in advance, as the non-separable case: both
 mechanism families active, and the design supporting neither over the
 other. The measured onset is 2021Q2. The ordering evidence is still
@@ -454,14 +465,13 @@ quarter contains the containment-by-megathread anchors (A6, A7,
 mid-April 2021). But the scale shock is only one quarter older, and at
 two-quarter evaluation resolution the design cannot cut between them.
 Separating the mechanisms would need a different instrument, not a
-sharper reading of this one. Engagement-stratified or
-cohort-stratified readouts on the same corpus are the natural
+sharper reading of this one. Engagement-stratified or cohort-stratified results on the same corpus are the natural
 candidates; the acquisition deliberately collected the `score` field
 for this follow-up, under a separate registration.
 
 The era confound, too, is answered by design, not eliminated. A continuous within-community series on a single data source, with a control stratum that shows no discontinuity, rules
-out the confound's most natural expressions: a fold-boundary artifact,
-a source seam, or an era-wide narrative shift moving all finance
+out the confound's most natural expressions: a fold-boundary artifact, a change of data source, or an era-wide
+narrative shift moving all finance
 discourse at once. It cannot rule out an era interaction that touches
 only WSB, because WSB's era exposure (being the epicenter of the
 squeeze) is inseparable from WSB's identity in the way the anchors
@@ -513,10 +523,11 @@ cascade.
 
 **Pre-squeeze generality (inferential, non-registered).** The companion
 paper could not say whether WSB's fold-A chance reading was a property
-of the community or of the single year 2019. The rolling series answers
-this: chance-level mixing holds in the last two windows evaluated
-wholly before the squeeze (evaluation windows beginning 2020Q2 and 2020Q3, both +1.5; the series' opening window reads -3.7 on its smallest universe,
-45 pairs, its least-powered cell). The wall-free state was WSB's
+of the community or of the single year 2019. The rolling series answers this. Chance-level mixing holds in the last
+two windows evaluated wholly before the squeeze, the evaluation windows
+beginning 2020Q2 and 2020Q3, both at +1.5. The series' opening window
+reads -3.7, but on its smallest set of 45 pairs, the cell with the
+fewest eligible pairs. The wall-free state was WSB's
 standing condition through at least mid-2020, not a 2019 anomaly. The
 companion paper cites this inference to the present study, and the
 inference belongs here.
@@ -526,23 +537,19 @@ two-quarter evaluations: the onset time is the start of an evaluation
 interval, so events inside a quarter (the squeeze itself spans weeks)
 are unresolvable. The excursion's two windows overlap by one quarter,
 so they are not independent measurements of the same phenomenon. They
-were not pooled; the placebo tests each separately. Second,
-different-powered windows: eligible-pair universes range 45-498 across
-the primary series. Threshold verdicts are per-window calibrated;
-cross-window magnitude comparisons are not (the display rule in Methods
-and the power context in Results). Third, one community, one platform,
+were not pooled; the placebo tests each separately. Second, windows of different power: eligible-pair counts range 45-498
+across the primary series. Threshold verdicts are per-window calibrated;
+cross-window magnitude comparisons are not (the display rule in Methods and the eligible-pair counts in Results). Third, one community, one platform,
 one transition: this is a case study of the only transition the program
 has observed. Nothing here establishes how often discourse communities
-transition, in either direction, or whether fusion-then-walls is the
-generic cascade signature. That requires deliberately surveying for
+transition, in either direction, or whether fusion followed by walls is the generic cascade signature. That requires deliberately surveying for
 transitions, which the segregation statistic makes possible.
 Fourth, the excursion placebo is post-registration. It follows the
 companion paper's registered placebo pattern and its per-replicate
 seeds and code are committed, but it was designed after the excursion
 was seen, as a robustness check on a result the registration did not
 predict. The registered claims (P1-P3) do not depend on it. Fifth, the Amendment V4 deviation: the first run omitted a registered exclusion filter, and
-its outcomes were seen before correction (Methods). The correction was
-rule-bound, both runs are released, and every verdict is identical
+its outcomes were seen before correction (Methods). The correction followed rules fixed in advance, both runs are released, and every verdict is identical
 across them. Even so, the first run did not meet the strict
 outcome-blind standard, and we say so rather than netting the two runs
 into one clean story.
@@ -558,7 +565,7 @@ platform at any granularity, and one the instrument cannot produce from
 shuffled data. From April 2021 to the end of the data the community is
 walled in every window, with no reversion, while the analysis-oriented
 control stayed below chance for the entire five years, squeeze
-included. The registered timing bet resolved inside 2021 as predicted,
+included. The registered timing prediction resolved inside 2021 as predicted,
 and the onset falls where the pre-committed anchor list said the scale
 and governance mechanisms cannot be told apart. The study can say when
 the walls went up, but not the exact mechanism that built them. What
@@ -570,21 +577,24 @@ went up.
 
 ### Corpus acquisition
 
-The corpus is a fresh, single-source pull: the Arctic Shift API,
-acquired 2026-08-31 in one run (pull script and runbook in the code release), landing 864 monthly files. These cover 72 months of WSB posts and comments spanning 2019-01 through 2024-12, plus the
+The corpus is a fresh, single-source pull: the Arctic Shift API (a
+third-party archive of Reddit content), acquired 2026-08-31 in one run (pull script and runbook in the code release), landing 864 monthly files. These cover 72 months of WSB posts and comments spanning 2019-01 through 2024-12, plus the
 same 72 months for each of the five DD subreddits, totaling 98,084,631
 rows (about 5.6 GB compressed). The corpus is never mixed with the
 companion paper's corpus: one source, one collection pass, uniform fields for
-treatment and control strata alike. This uniformity is the design answer to the data-source confound. There is no archival/API seam
-anywhere in the data, and in particular none co-located with the
+treatment and control strata alike. This uniformity is the design answer to the data-source confound. There is no change of data source anywhere in the data, and in particular none co-located with the
 phenomenon under study.
 
-Hygiene follows the program's standing rules: deleted/removed authors and
-AutoModerator dropped; deduplication by item id; ticker extraction by
-the companion analysis's extractor, unchanged (union lens primary, cashtag lens sensitivity, committed stoplist, symbols resolved against the SEC registrant table, index and macro tickers excluded, a cap of 50 tickers per document).
+Data cleaning follows the program's standing rules: deleted/removed
+authors and AutoModerator dropped; deduplication by item id; ticker
+extraction by the companion analysis's extractor, unchanged (union count
+primary, cashtag-only count as sensitivity, committed stoplist, symbols
+resolved against the SEC registrant table, the regulator's list of
+registered companies, index and macro tickers excluded, a cap of 50
+tickers per document).
 Extraction yields 11,200,484 ticker mentions. The exclusion-filter
 deviation and correction affecting the scripts that read the mention table is disclosed
-below. The 2020-2021 regime-break years are deliberately *included*:
+below. The 2020-2021 regime change years are deliberately *included*:
 prior studies in this program excluded them as a confound, but here the
 transition is the object of study (registration, decision 2 carried over from the companion analysis).
 
@@ -633,11 +643,10 @@ construction. A registered determinism rule, carried over from the companion ana
 before permutation, so no set or dict iteration order can feed the
 seeded RNG. The script refuses to run unless the registration status
 is REGISTERED. Formation counts per window (eligible pairs newly
-co-mentioning beyond their per-pair permutation thresholds) are a
-registered *secondary* readout with no pass threshold attached: the companion analysis's power table shows them underpowered at these window sizes.
+co-mentioning beyond their per-pair permutation thresholds) are a registered *secondary* result with no pass threshold attached: the companion analysis's power table shows them underpowered at these window sizes.
 
 Both strata (WSB treatment, DD control) are computed identically and
-independently, under both lenses (union primary, cashtag sensitivity;
+independently, under both counting rules (union primary, cashtag-only sensitivity;
 a cashtag window with fewer than 20 eligible pairs is reported
 UNINFORMATIVE, never as a negative).
 
@@ -650,21 +659,19 @@ script imports the document builder but structurally cannot compute
 the statistic. It was computed, committed as a dated amendment, and
 owner-reviewed before the first segregation z existed (Amendment V3;
 corrected census under the disclosed deviation below). The rule chose **B = 4**: on the corrected census the B=4 WSB/union cell has a median
-of 115 eligible pairs per window, with range 45-498 over 19 windows. No
-window at any B, in either stratum under the union lens, falls below
-the registered LOW-POWER floor of 30 eligible pairs, so every window
+of 115 eligible pairs per window, with range 45-498 over 19 windows. No window at any B, in either stratum under the union count, falls below
+the registered LOW-POWER minimum of 30 eligible pairs, so every window
 enters the onset rule. B = 6 and B = 8 become registered sensitivity
 curves, computed and reported regardless of outcome, so that the
 window-length choice cannot be what makes a transition appear.
 
 One census property was recorded in the amendment before any z existed,
 and it binds how results are displayed: eligible-pair counts co-move
-with era volume, so between-window z magnitudes are different-powered
-tests. Per-window z values are each internally calibrated, because the
+with era volume, so between-window z magnitudes are tests of different power. Per-window z values are each internally calibrated, because the
 permutation test conditions on that window's realized documents, and the onset rule
 uses only per-window threshold crossings. But a reader comparing raw z
-magnitudes across windows is comparing tests whose eligible universes
-differ by up to a factor of ten. For this reason every z series in this
+magnitudes across windows is comparing tests whose eligible-pair counts differ by up to a factor of
+ten. For this reason every z series in this
 paper, in every figure and every table, carries its eligible-pair
 counts alongside, and the figures plot the pair-count series directly
 beneath the z series.
@@ -687,11 +694,13 @@ w's evaluation interval. If no such window exists, there is no onset.
   anywhere in eval range 2020-01 through 2022-12; that is, no cliff.
   DD's deepening (fold A -10.1 to fold B -17.1) is predicted gradual.
 
-P1 and P2 are scored on the WSB stratum, union lens, at the rule-chosen B = 4; P3 on the DD stratum, union lens, same B. No other cell is tested against a threshold (primary-cell clause, committed pre-outcome). A
+P1 and P2 are scored on the WSB stratum, union count, at the B = 4
+chosen by the registered rule; P3 on the DD stratum, union count, same
+B. No other cell is tested against a threshold (primary-cell clause, committed pre-outcome). A
 secondary one-break step fit on the primary z series (least-squares, all interior candidate breaks, near-tie set within 10% of the best fit's squared error)
 was registered pre-census as an uncertainty band on the onset date. No pass threshold attaches to it.
 
-The registration also states its own epistemic position: the two
+The registration also states what was known in advance: the two
 fold-level endpoints were known and could not be un-seen, so what is
 registered as pre-outcome is everything between and around them. No
 rolling-window statistic, no rebuilt-fold cell, and no per-window
@@ -701,7 +710,7 @@ and timing of the transition, not on its existence at the endpoints.
 ### Part A: the endpoint on a single data source
 
 Part A rebuilds the companion paper's fold B with the archival-dump
-months replaced by API months from this pull, giving API data in both folds. It then recomputes the WSB-dependent cells of the companion analysis under its criterion, unchanged, reusing its evaluation code verbatim: same per-pair label-shuffle p99, R = 100, seed
+months replaced by API months from this pull, giving API data in both folds. It then recomputes the cells involving WSB of the companion analysis under its criterion, unchanged, reusing its evaluation code verbatim: same per-pair label-shuffle p99, R = 100, seed
 20260831, formation floor, and segregation z. The registered
 expectation is that fold-B WSB segregation z stays ≤ -3, i.e., that
 the walled endpoint is real and not an artifact of the data source. Part A removes the data-source confound only; it says nothing about timing.
@@ -710,18 +719,16 @@ the walled endpoint is real and not an artifact of the data source. Part A remov
 
 Because "the onset matches event X" is cheap after the fact, a list of
 dated WSB governance events was collected and committed before any
-rolling-window statistic existed (Amendment V2; anchors file in the commit appendix). Eight anchors A1-A8 span April 2020 through
-August 2021: the pre-event removal of the subreddit's founder (A1, 2020-04; Brown 2021; Reimann 2023); the GameStop squeeze and roughly 30x
-subscriber explosion (A2, 2021-01; Bloomberg News 2021; Newsweek
-2021); the Discord ban and brief private-mode flip as moderation was
-overwhelmed (A3, 2021-01-27; Sandler 2021; Kotaku 2021); the mod-team
-regime change (A4, 2021-02-04/05; Business Insider 2021; HotHardware
-2021); the automod ticker-filter bot, publicized by a WSB moderator
-(A5, 2021-02, posted 2021-02-27; Hacker News item 26281147);
-containment-by-daily-thread demonstrated on crypto and reversed within
-a day (A6, 2021-04-14/15; Decrypt 2021; Bitcoin.com News 2021); the
-final GME megathread, pushing single-ticker attention out to spin-off
-subreddits (A7, 2021-04-16; Shacknews 2021); and the sub-$1B market-cap discussion ban (A8, in force by 2021-08; wallstbets101.com mirror; its introduction date is flagged in the amendment as unpinned and unusable for timing claims). A source check made after registration, and after all results were known, dates A8 more tightly: archived copies of the subreddit's rules page show no market-cap clause on 2020-09-12 and the clause in place by 2021-01-22, before the squeeze peak and before the moderator change (reference list). The rule therefore predates the squeeze and is not a post-squeeze governance change. The registered anchor list and its discrimination reading are left as committed; the check changes no verdict, because no prediction depends on the anchors and the measured onset was already the non-separable case. The committed anchors file remains
+rolling-window statistic existed (Amendment V2; anchors file in the commit appendix). Eight anchors A1-A8 span April 2020 through August 2021:
+
+- A1, 2020-04: the pre-event removal of the subreddit's founder (Brown 2021; Reimann 2023).
+- A2, 2021-01: the GameStop squeeze and roughly 30x subscriber explosion (Bloomberg News 2021; Newsweek 2021).
+- A3, 2021-01-27: the Discord ban and brief switch to private mode as moderation was overwhelmed (Sandler 2021; Kotaku 2021).
+- A4, 2021-02-04/05: the replacement of the moderator team (Business Insider 2021; HotHardware 2021).
+- A5, 2021-02, posted 2021-02-27: the automod ticker-filter bot, publicized by a WSB moderator (Hacker News item 26281147).
+- A6, 2021-04-14/15: confinement of crypto discussion to a daily thread, demonstrated and reversed within a day (Decrypt 2021; Bitcoin.com News 2021).
+- A7, 2021-04-16: the final GME megathread, pushing single-ticker attention out to spin-off subreddits (Shacknews 2021).
+- A8, in force by 2021-08: the sub-$1B market-cap discussion ban (wallstbets101.com mirror); its introduction date is flagged in the amendment as not established and unusable for timing claims. A source check made after registration, and after all results were known, dates A8 more tightly: archived copies of the subreddit's rules page show no market-cap clause on 2020-09-12 and the clause in place by 2021-01-22, before the squeeze peak and before the moderator change (reference list). The rule therefore predates the squeeze and is not a post-squeeze governance change. The registered anchor list and its discrimination reading are left as committed; the check changes no verdict, because no prediction depends on the anchors and the measured onset was already the non-separable case. The committed anchors file remains
 the pre-commitment record; its sources are itemized in the reference
 list.
 
@@ -733,7 +740,7 @@ Any timing comparison against an event not on this list is labelled
 exploratory. The DD subreddits share none of A3-A8, which is what gives
 P3 its power against era-wide narratives.
 
-### Disclosed deviation and rule-bound correction (Amendment V4)
+### Disclosed deviation and its correction (Amendment V4)
 
 The first full run of the three paper-2 scripts (census, rolling
 windows, Part A) deviated from the registered spec. The scripts loaded
@@ -742,20 +749,19 @@ load-time excluded-tickers filter (SPY, QQQ, VIX, BTC, ETH). The companion analy
 The omission was found by a code diff during cross-checking against the companion analysis's tables, *after* first-run outcomes had been seen, and is
 disclosed as Amendment V4.
 
-The correction path is rule-bound. The filter was added to the three reading scripts. The census was re-derived and the window length re-decided by the unchanged registered rule; B = 4 stands, and the
+The correction path followed rules fixed in advance. The filter was added to the three reading scripts. The census was re-derived and the window length re-decided by the unchanged registered rule; B = 4 stands, and the
 re-decision was committed before any corrected z existed. Parts A and
 B were then re-run under the unchanged thresholds, seeds, and window definitions. No threshold, seed, window definition, or onset rule changed at any point.
 
 Because first-run outcomes were seen before the correction, the
 protection is that every re-derivation step is a rule fixed in advance, with no free parameter. Both runs are released: the first-run outputs
-are retained as superseded artifacts, and the conforming run's outputs
-are the operative tables (file names in the commit appendix). **The
+are retained as superseded artifacts, and the conforming run's outputs are the tables this paper uses (file
+names in the commit appendix). **The
 two runs agree on every verdict**: same onset window, same P1/P2/P3
 outcomes, same excursion and control readings. Every number in Results
 is from the conforming run. A related target correction is disclosed
 in the same amendment: the census consistency anchor recorded in
-Amendment V3 compared two pre-exclusion quantities; the agreement was
-real but old-vs-old. The operative target is the companion analysis's final census value,
+Amendment V3 compared two pre-exclusion quantities; the agreement was real but compared two uncorrected values. The operative target is the companion analysis's final census value,
 and the corrected comparison is reported in Results under census
 consistency.
 
@@ -819,8 +825,8 @@ zero), in the order r/wallstreetbets passed through them. All values in
 this figure are illustrative; measured values are in Figures 2 to 4.
 
 **Figure 2** (p2_fig1.png/.pdf). The transition and the excursion. (a)
-The primary segregation z for r/wallstreetbets (union lens, four-quarter
-build) over the nineteen rolling evaluation windows, labelled by
+The primary segregation z for r/wallstreetbets (union count,
+four-quarter build) over the nineteen rolling evaluation windows, labelled by
 starting quarter. z is the count of evaluation-window documents
 co-mentioning any suppressed ticker pair, standardized against a
 permutation test that shuffles ticker labels; values near zero mean suppressed pairs co-mention
@@ -841,10 +847,9 @@ the full registered statistic from scratch, with the real value marked.
 Annotations carry the secondary formation counts (real 24 and 61
 versus placebo maxima 4 and 7).
 
-**Figure 4** (p2_fig3.png/.pdf). Sensitivity. (a) r/wallstreetbets
-union-lens z at build lengths of four, six, and eight quarters on a
-common calendar, with grouped pair counts beneath. (b) The cashtag
-sensitivity lens at a four-quarter build, with windows under 20
+**Figure 4** (p2_fig3.png/.pdf). Sensitivity. (a) r/wallstreetbets union-count z at build lengths of four, six, and
+eight quarters on a
+common calendar, with grouped pair counts beneath. (b) The cashtag-only count at a four-quarter build, with windows under 20
 eligible pairs shown as open markers (reported UNINFORMATIVE, never as
 negative), pair counts beneath.
 
