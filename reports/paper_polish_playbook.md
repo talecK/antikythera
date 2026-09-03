@@ -302,6 +302,16 @@ values) so the two papers' figures read as one set.
   files in whichever cache is listed first. Grep the pipeline for year filters, count the cache, and
   state the evaluated span; the ingest span belongs in Methods only.
   Corrected at cae7c38 and 55d4b5f.
+- Jargon is found by counting, not by reading. Reading passes by the
+  writer missed "power artifact", "readout", "lens", and "seam" because
+  the writer cannot see its own coinages. The fix that ended it:
+  eval/term_inventory.py lists every hyphenated compound, repeated
+  phrase, and watch word; two context-free cold reads list what a
+  stranger would need defined; reports/term_table.tsv records a
+  decision per term (standard, define at first use, quoted registered
+  label, replace) with evidence; eval/term_lint.py fails any render
+  that contains an unlisted compound or a replaced term. Run the lint
+  before every render. A new term enters a paper only with a table row.
 
 ## Paper 1 specifics to carry in
 

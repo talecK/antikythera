@@ -5,6 +5,14 @@
 ## papers from here. Everything below the next "## Status" banner is the
 ## pre-paper project history and is still accurate for the machinery.
 
+### Term pass and lint (2026-09-02 evening)
+- Both drafts passed through a mechanical jargon audit: 383 terms
+  classified in reports/term_table.tsv (S/D/Q/R), 71 replaced, glosses
+  added at first use, 20 overloaded sentences split (39a7aa1 paper 1,
+  next commit paper 2). eval/term_lint.py all must report 0 failures
+  before any render; a new term needs a table row. Artifacts and
+  preprint PDFs regenerated after the pass.
+
 ### Data release v1 (2026-09-02, built, awaiting owner publish)
 - Folder: data/release/v1 (symlink to the NVMe; 194 MB, 17 files).
   Built by pipeline/build_release.py (read-only over sources, refuses
