@@ -199,8 +199,10 @@ below-chance	2	S
 best-established	1	S		
 between-window	2	S		
 build-era	1	S		
+built-in	12	S		plain compound introduced by the term pass
 burst	12	S		
 cascade	2	S		cited literature
+cashtag-only	12	S		plain compound introduced by the term pass
 causal-inference	2	S		
 chance-level	2	S		
 claim-level	1	S		
@@ -224,6 +226,7 @@ cross-domain	1	S
 cross-source	1	S		
 cross-window	2	S		
 data-source	12	S		
+deduplication-order	12	S		plain compound introduced by the term pass
 default-listing	2	S		
 degree bias	1	S		cited
 degree-based	1	S		
@@ -241,6 +244,7 @@ exclusion-filter	2	S
 false-positive	12	S		
 first-run	2	S		
 fixed-fixed	1	S		ecology null-model term, cited
+fixed-in-advance	12	S		plain compound introduced by the term pass
 fold-a	12	S		
 fold-b	2	S		
 fold-boundary	2	S		
@@ -273,10 +277,12 @@ market-cap	2	S
 market-wide	2	S		
 materials-science	1	S		
 mechanism families	2	S		plain
+meme-stock	12	S		plain compound introduced by the term pass
 mid-acquisition	1	S		
 mid-april	2	S		
 mid-build	1	S		
 million-pair	1	S		
+minimum-count	12	S		plain compound introduced by the term pass
 minimum-detectable-rate	1	S		
 mixed-source	2	S		
 mod-team	2	S		plain; but see "mod-team regime change"
@@ -284,6 +290,7 @@ monroy-hernandez	2	S
 near-exact	2	S		
 network-science	1	S		
 never-connected	2	S		
+non-binding	12	S		plain compound introduced by the term pass
 non-registered	2	S		
 non-scientific	1	S		
 one-break	2	S		
@@ -292,6 +299,7 @@ out-of-span	2	S
 outcome-blind	12	S		standard in trial and preregistration practice
 owner-reviewed	2	S		
 pair-count	2	S		
+pandemic-era	12	S		plain compound introduced by the term pass
 partial-fold	1	S		
 per-file	2	S		
 per-pair	12	S		
@@ -338,8 +346,11 @@ regime change	12	S	the 2020-2021 retail-trading boom	name the event once at firs
 regime-dependent	1	S		
 registered study	2	S		preregistered
 replication-surviving	1	S		
+retail-trading	12	S		plain compound introduced by the term pass
 risk-reward	1	S		
 rolling-window	2	S		
+rules-fixed	12	S		plain compound introduced by the term pass
+run-to-run	12	S		plain compound introduced by the term pass
 same-platform	2	S		
 science-corpus	1	S		
 science4cast	1	S	a published link-prediction benchmark built from AI papers	gloss at first use
@@ -356,6 +367,7 @@ site-by-species	1	S
 smith-lovin	12	S		
 sort attention	2	S		plain metaphor, intro line
 source-equivalence	1	S		
+space-by-fold	12	S		plain compound introduced by the term pass
 spin-off	2	S		
 spot-checks	2	S		
 step fit	2	S		change-point fit; gloss present

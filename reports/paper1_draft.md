@@ -74,19 +74,17 @@ directly.
 
 Scientific literature is a small and unusual corner of written thought.
 The bulk of recorded reasoning happens in ordinary discourse: forums,
-comment threads, industry discussion. That discourse is known to sort
-itself: people who discuss one thing tend not to discuss another, from
-homophily in offline networks (McPherson, Smith-Lovin and Cook 2001)
-to the segregated link structure of political blogs and Twitter
+comment threads, industry discussion. That discourse is known to sort itself: people who discuss one thing
+tend not to discuss another. The evidence runs from homophily in offline
+networks (McPherson, Smith-Lovin and Cook 2001) to the segregated link structure of political blogs and Twitter
 (Adamic and Glance 2005; Conover et al. 2011), the echo chambers
 measured on Facebook and Twitter (Cinelli et al. 2021), and the
 community-level polarization measured on Reddit (Waller and Anderson
 2021). If expected-but-absent concept
 pairs predict future connections there, the applications are broad, from
 research recommendation to trend analysis. To our knowledge the transfer
-has not been tested, chiefly because discourse lacks the self-indexing
-that makes science tractable: no citations, no keywords, no discrete
-units. This paper builds that index for one large corpus, runs the test, and
+has not been tested, chiefly because discourse lacks the built-in indexing that makes science
+tractable: no citations, no keywords, no discrete units. This paper builds that index for one large corpus, runs the test, and
 replicates it on a second platform.
 
 Two adjacent literatures frame what a positive result would and would
@@ -104,8 +102,8 @@ carries an implicit degree bias: a degree-only ranker is near optimal on
 many benchmarks. A Science4Cast competition entry demonstrated the same
 point in practice, placing third with degree-based features alone
 (Aghajohari et al. 2021).
-Our thread-level findings echo this: the only surviving predictor
-families are node popularity and triadic closure, the two best-established
+Our thread-level findings echo this: the only surviving predictor families are node popularity (how often a
+concept is mentioned, its degree in the graph) and triadic closure, the two best-established
 generic regularities of growing networks (Newman 2001; Kossinets and
 Watts 2006). A separate study
 (in preparation) examines the Science4Cast benchmark itself in this
@@ -120,8 +118,7 @@ false-positive (Type I) inflation of partially constrained null models
 and converged on fully constrained ("fixed-fixed") randomizations as
 the safer default (Connor and Simberloff 1979; Gotelli 2000; Gotelli
 and Ulrich 2012; Gotelli and Graves 1996; see also Maslov and Sneppen
-2002 for the network analog). Our corrected criterion belongs to that
-family: a label permutation over the document-concept matrix that
+2002 for the network analog). Our per-pair permutation criterion belongs to that family: a label permutation over the document-concept matrix that
 holds every document's size and every concept's frequency fixed. The
 standard text-corpus criterion, the z-score against a Poisson
 expectation, constrains less. It holds each concept's frequency fixed
@@ -142,9 +139,8 @@ pipeline, pointed at Science4Cast, recovers the known signal at roughly
 105 times random precision.
 
 Second, a measurement trap likely to extend beyond this study. The
-standard way to score a new co-occurrence as "real" is a
-chance-calibrated test: observed joint document count against an
-expected count derived from the two concepts' marginal frequencies,
+standard way to score a new co-occurrence as "real" is a test against a chance expectation: the observed joint document
+count against an expected count derived from the two concepts' marginal frequencies,
 that is, from how often each appears on its own. We
 show this criterion is badly anti-conservative, flagging formation far
 too easily, when documents vary in
@@ -153,16 +149,15 @@ analysis it produced formation rates of 19 to 24 percent that
 survived two further pre-registered evaluations. A placebo test,
 registered with its failure condition stated in advance, then revealed
 that randomly shuffled data "forms" nearly twice as many pairs as the
-real data. We describe the corrected criterion (a per-pair permutation
-test) and suggest the shuffle as a mandatory control for co-occurrence
+real data. We describe the per-pair permutation criterion and suggest the shuffle as a mandatory control for co-occurrence
 formation claims generally.
 
-Third, a positive finding we did not seek. Under the corrected
-criterion, suppressed pairs do not only fail to connect. They
+Third, a positive finding we did not seek. Under the per-pair permutation criterion, suppressed pairs do not only
+fail to connect. They
 co-occur below chance, by nearly 9 standard deviations at the author
-level and by more than 100 at the thread level. Two ideas that have never met
-attract separate communities of attention. Those communities stay
-apart, at rates their sizes cannot explain. In discourse, the gaps that
+level and by more than 100 at the thread level. Two ideas that have never met attract separate communities of attention,
+meaning separate sets of people who discuss each of them. Those
+communities stay apart, at rates their sizes cannot explain. In discourse, the gaps that
 literature-based discovery hunts for do not close. They persist,
 far below chance, everywhere we measured.
 
@@ -174,9 +169,9 @@ in this program that ever changed state.
 
 ## Results
 
-All numbers in this section are from the post-review regeneration on
-deterministic artifacts; the commit references for every quantity are
-collected in the commit appendix.
+All numbers in this section are from a re-run after review on fixed
+inputs and seeds. The commit references for every quantity are collected
+in the commit appendix.
 
 ### Measurement summary
 
@@ -199,8 +194,8 @@ per-pair permutation criterion. The difference between them is itself
 one of this paper's findings. The segregation statistic z pools all eligible
 pairs: it counts the evaluation documents in which any eligible pair
 co-occurs and standardizes that total against a permutation null
-distribution. The shuffle moves concept labels across document slots,
-preserving every document's size and every concept's total frequency,
+distribution. The shuffle moves concept labels across the concept positions within
+documents, preserving every document's size and every concept's total frequency,
 with 100 replicates and a fixed seed. A z near zero means suppressed
 pairs co-occur about as often as chance predicts; a strongly negative z
 means they are kept apart. Two temporal folds are used: build 2015 to
@@ -222,8 +217,8 @@ commit appendix.
 
 | Registered item | Pre-committed reading | Observed |
 |---|---|---|
-| Thread space, ranking: the suppression-by-affinity or the common-neighbors ranker beats both the frequency-product control and random at k = 200 | The discovery machinery adds predictive signal beyond popularity | Primary ranker at zero; common neighbors cleared the threshold only because the frequency-product control scored zero by construction, which the run log records as a drafting error in the rule and does not claim (thread-level results) |
-| Thread space, economically relevant vocabulary (terminal): any ranker beats random and the frequency-product control at k = 200 on exposed pairs in both folds | The machinery works where it would matter; otherwise the thesis closes | Not met in either fold; 8 and 1 formations per year, all rankers at random |
+| Thread space, ranking: the suppression-by-affinity ranker (ranking by embedding similarity of the two concepts) or the common-neighbors ranker beats both the frequency-product control (ranking by the product of the two concepts' frequencies) and random at k = 200 | The discovery machinery adds predictive signal beyond popularity | Primary ranker at zero; common neighbors cleared the threshold only because the frequency-product control scored zero by construction, which the run log records as a drafting error in the rule and does not claim (thread-level results) |
+| Thread space, economically relevant vocabulary (terminal, the registered last test): any ranker beats random and the frequency-product control at k = 200 on exposed pairs in both folds | The machinery works where it would matter; otherwise the thesis closes | Not met in either fold; 8 and 1 formations per year, all rankers at random |
 | Positive control: common-neighbors precision at 200 at least 10 times random on the Science4Cast benchmark, and rank-AUC within 0.05 of the benchmark baseline | The pipeline detects known signal, so a Hacker News null result is about the corpus, not the instrument | Met: roughly 105 times random; AUC 0.899 against 0.851 |
 | Author space: formation at least 5 percent in both folds under the z-criterion | Threads buried the signal; the author-level document becomes the default | Met at the time: 19.2 and 23.6 percent; revised by the placebo below |
 | Author space, exposed pairs: at least 3 of 26 pooled exposed pairs form | The author-space effect survives economically relevant vocabulary | Met at the time: 6 of 26; inherits the revision below |
@@ -247,10 +242,9 @@ ordering is triadic closure (common neighbors, meaning the number of
 frequent concepts that co-occur with both members of a pair). Its
 precision-at-200, the share of the top 200 ranked pairs that formed, is
 around 2.5 percent, roughly 4 times random: the generic
-network-science baseline, which requires none of the discovery
-apparatus.
-Semantic features (embedding affinity between concept labels) are
-indistinguishable from random. Restricting to economically relevant
+network-science baseline, which requires none of the discovery method.
+Semantic features (cosine similarity between the embeddings of the two
+concept labels) are indistinguishable from random. Restricting to economically relevant
 vocabulary (a registered classification of concepts into exposed versus
 generic) leaves 8 formations per year in fold 1 and 1 in fold 2 across
 the entire site.
@@ -267,17 +261,17 @@ count at least 2, no prior co-occurrence), 67 percent of pairs connect
 (188 of 281 in a 10-million-pair sample).
 
 One definitional difference matters and is easy to miss. Formation on the benchmark is the benchmark's own ground
-truth: the appearance of any edge in the target-year graph. Our
-discourse analyses use the chance-calibrated criterion (Methods).
+truth: the appearance of any edge in the target-year graph. Our discourse analyses call a pair formed only when its co-occurrence
+beats a chance expectation (Methods).
 The control therefore certifies the pipeline (eligibility construction,
 ranking, precision measurement) and not the formation criterion, which
 the benchmark never exercises. It also means the 67 percent is not
 comparable with any discourse rate in this paper: "any edge appears"
 and "co-occurrence exceeds a calibrated threshold across two independent
-authors" are different events. Early in this project we treated the two
-as rungs of one calibration ladder; that comparison was ill-posed and
-we withdraw it here. Whether the benchmark's 67 percent is itself
-substantially mechanical (the AI concept graph grows denser rapidly over
+authors" are different events. Early in this project we treated the two as steps of one cross-corpus
+comparison of formation rates. That comparison was ill-posed and we
+withdraw it here. Whether the benchmark's 67 percent is itself largely produced by the
+test (the AI concept graph grows denser rapidly over
 the target years) is a further open question, outside this paper's
 scope.
 
@@ -312,8 +306,8 @@ pairs at high rates.
 Author-quarter documents vary widely in size (median 5 concepts, 90th
 percentile 21, maximum 100 under the hub exclusion described in
 Methods). Before drafting any
-claims we registered a placebo: shuffle the concept labels across the
-evaluation window's document slots, and count how many eligible pairs
+claims we registered a placebo: shuffle the concept labels across the concept positions of the
+evaluation window's documents, and count how many eligible pairs
 "form" under the z-criterion in 100 such replicates. The shuffle
 preserves every document's size and every concept's total frequency
 while destroying any real association between concepts and people. The
@@ -341,10 +335,11 @@ replicates (commit appendix).
 
 ### Calibrated formation: nothing, anywhere
 
-We then registered and ran the corrected criterion (per-pair permutation
-test, Methods) in both document spaces and both folds, with the
-interpretation thresholds again fixed in advance. Formation collapses to the
-false-positive floor everywhere (Figure 3, Table 2).
+We then registered and ran the per-pair permutation criterion (Methods)
+in both document spaces and both folds, with the
+interpretation thresholds again fixed in advance. Formation collapses everywhere to the false-positive floor, the 1
+percent of pairs that the per-pair criterion flags by construction
+(Figure 3, Table 2).
 
 **Table 2.** Calibrated formation against the false-positive floor, by space and fold.
 
@@ -355,16 +350,15 @@ false-positive floor everywhere (Figure 3, Table 2).
 | thread | 1 | 25,161 | 22 | 251.6 | ~1 |
 | thread | 2 | 7,505 | 12 | 75.0 | ~1 |
 
-No cell shows formation above what a 1-percent-per-pair error rate
-produces on its own. The handful of "formed" pairs are consistent with
+No cell, meaning no space-by-fold combination, shows formation above
+what a 1-percent-per-pair error rate produces on its own. The handful of "formed" pairs are consistent with
 noise, and we make no claims about them individually. At corpus scale,
 on this platform, suppressed concept pairs do not connect above chance
 at either granularity.
 
 ### The gaps are held open
 
-The same permutation machinery yields a second, better-powered
-statistic: the total number of joint occurrences across all eligible
+The same permutation test yields a second, more powerful statistic: the total number of joint occurrences across all eligible
 pairs, observed versus shuffled (Figure 2c). Here the data speak
 loudly, in the
 direction opposite to the discovery thesis (Table 3).
@@ -404,37 +398,38 @@ Whether these regularities are facts about one forum or about discourse
 is testable. We tested it with a pre-registered replication on a
 structurally different corpus (acquisition and disclosures in Methods): Reddit financial discussion (six
 subreddits, 41.5 million unique posts and comments, 2017-2024). There
-the concept unit is the stock ticker, extracted by pattern matching and validated
-against the SEC registrant table rather than produced by a language
-model. The six subreddits are read as two strata, r/wallstreetbets
+the concept unit is the stock ticker, extracted by pattern matching and validated against the SEC registrant
+table (the regulator's list of registered companies) rather than
+produced by a language model. The six subreddits are read as two strata, r/wallstreetbets
 alone and the five analysis-oriented subreddits pooled, and as one
 pooled set of all six. The design, criterion,
 folds, the first fold's power analysis, and all interpretation
 thresholds were fixed and committed before any outcome was computed.
-The two
-folds are separated by the 2020-2021 market regime change (build
-2017-2018 with evaluation 2019; build 2022-2023 with evaluation 2024).
+The two folds are separated by the 2020-2021 market regime change, the
+pandemic-era retail-trading boom and the meme-stock episode (build
+2017-2018 with evaluation 2019, fold A; build 2022-2023 with evaluation
+2024, fold B).
 
 Both registered claims resolved. Formation was not significant in
 either fold: 0 of 166 eligible pairs, then 1 of 478 against a floor of
 4.8. Power limits this to "no effect larger than 3.7 and roughly 2
 percent respectively", not "no effect"; the first figure was
 registered, the second is post-hoc arithmetic disclosed in Methods. The single formed pair in the second
-fold's pooled cell is itself a disclosed mechanical artifact. A symbol
+fold's pooled cell is itself a disclosed artifact of the test. A symbol
 that listed mid-build (ARM, September 2023) is automatically
 "suppressed" early and automatically likely to co-occur later: a
 survivorship pattern that inflates formation and therefore cannot
 rescue the null result.
 With Hacker News this closes the discovery hypothesis on a clean
-negative spanning two platforms and two independent unit vocabularies.
+negative spanning two platforms and two independent kinds of unit.
 Segregation: the registered pass threshold (z <= -3 in both folds) is met
 by a wide margin in the pooled all-subreddits cell, which we take as primary
-for symmetry with the formation readout. The registration left the
+for symmetry with the formation result. The registration left the
 cell unspecified, and per-stratum readings vary (one fold-A stratum
-sits at chance, below). Suppressed ticker pairs co-occur at z = -8.8
-in the pre-regime fold (334 observed joint mentions against 544
-expected) and z = -17.7 in the post-regime fold (726 against 1,383),
-robust to counting only the $-prefixed cashtag form (z = -10.6).
+sits at chance, below). Suppressed ticker pairs co-occur at z = -8.8 in fold A (334 observed
+joint mentions against 544 expected) and z = -17.7 in fold B (726
+against 1,383). Counting only the $-prefixed cashtag form gives the same
+reading (z = -10.6).
 Against Hacker News's z = -8.9 and -8.6, the finding generalizes
 across platform, community, unit type, extraction method, and a market
 regime change. It is larger after the change, not smaller.
@@ -444,39 +439,37 @@ total implies roughly plus-minus 0.5 seed-to-seed variation at
 these magnitudes, immaterial to every threshold.
 
 One exploratory observation from the first fold did not survive the
-second, and we report it as measured. In fold A the segregation lived
-entirely in the analysis-oriented subreddits (z = -10.1) while
-r/wallstreetbets sat exactly at chance (z = -0.1; not a power artifact,
-since an analysis-stratum effect there would have shown z near -7). In
+second, and we report it as measured. In fold A the segregation lived entirely in the analysis-oriented
+subreddits (z = -10.1), while r/wallstreetbets sat exactly at chance (z
+= -0.1). That chance reading is not a matter of too little data: an
+effect the size of the analysis stratum's would have shown there as z
+near -7. In
 fold B r/wallstreetbets is strongly segregated (z = -9.0), like every
 other stratum. The registered subsampling control agrees: matched to
 the analysis stratum document counts, r/wallstreetbets remains at chance
-in fold A (z = -0.0) and segregated in fold B (z = -5.2), so neither
-reading is a document-count artifact. So community type is not a stable moderator of segregation in these
-data. On its face the pattern is
+in fold A (z = -0.0) and segregated in fold B (z = -5.2), so neither reading is an effect of document count. So community type does not consistently change the size of segregation
+in these data. On its face the pattern is
 regime-dependent (the same community at chance before 2020, segregated
 after 2021), but that reading is post-hoc and confounded with the
 folds' era and data-source differences, so we leave it as a described
-observation. The registered, stable result is simpler: in the
-post-regime fold, every stratum segregates.
+observation. The registered, stable result is simpler: in fold B, every stratum segregates.
 
-A reproduction check accompanied the amended acquisition: the
-analysis-stratum cells were recomputed on successive corpus rebuilds
-and match (observed and eligible counts identical; z within the Monte
-Carlo noise of the shuffled estimate; build documents differ by one due to
-deduplication order, disclosed in the released run log). A registered confirmatory
-run in the companion paper (Quiring 2026), on a single uniform data
-source, reproduces the second fold's endpoint (all strata far below
-chance, formation at the floor), so the second fold's result is not a
-sourcing artifact; the census agreement between the two corpora is
-given in Methods.
+A reproduction check accompanied the amended acquisition. The analysis-stratum cells were recomputed on successive corpus rebuilds and match:
+observed and eligible counts are identical, and z agrees within the run-to-run variation of the shuffle. The build document count differs by one
+between rebuilds, a deduplication-order effect disclosed in the released
+run log. The companion paper (Quiring 2026) reran the second fold's endpoint as a
+registered confirmation on a single uniform data source. It reproduces:
+all strata sit far below chance and formation stays at the floor. The
+second fold's result is therefore not an artifact of the data source.
+The census agreement between the two corpora (the counts of documents
+and eligible pairs, computed before any outcome) is given in Methods.
 
 ## Discussion
 
-**A criterion to retire.** The z-style chance calibration we began with is not an exotic choice;
-it is the natural first implementation of "co-occurs more than
-expected" and variants of it appear throughout the co-occurrence and LBD
-literatures (Church and Hanks 1989). Ecologists identified the defect in
+**A criterion to retire.** The z-score test we began with is not an
+exotic choice. It is the natural first implementation of "co-occurs more
+than expected," and variants of it appear throughout the co-occurrence
+and LBD literatures (Church and Hanks 1989). Ecologists identified the defect in
 this class of test decades ago and converged on fully constrained
 permutation null models as the safer default in response (Introduction); to our
 knowledge, text-corpus practice has not adopted that fix. Our
@@ -495,9 +488,8 @@ A related external question remains open. The science-corpus figure of
 (Results), not on the criterion we retire here, so it is not
 contaminated by this defect. But scientific corpora share the
 structural features that make co-occurrence baselines unreliable:
-rapid growth in density and heavily skewed degree distributions. Whether
-that widely cited number is substantially mechanical under a permutation
-test has, to our knowledge, never been tested. The question is outside
+rapid growth in density and heavily skewed degree distributions. Whether that widely cited number survives a permutation test has, to our
+knowledge, never been tested. The question is outside
 this paper's scope and under active investigation.
 
 **What the negative does and does not say.** The null result is strong but scoped. It says: on a large general-technology
@@ -511,21 +503,21 @@ structurally different corpus is tested in the replication above). It does not
 say that no individual pair ever genuinely connects (our per-pair
 power is limited by rarity). And it says nothing about scientific
 corpora except that their headline rates deserve re-measurement. Nor does it say formation never
-occurs under any conditions. The companion paper's registered study on the
-replication corpus (Quiring 2026) finds a confined above-floor
-formation burst inside the windows around the January 2021 GameStop squeeze (windows
-our folds exclude by design as a regime change), with formation at the
-floor in every other window of six years. Even then the burst is
+occurs under any conditions. The companion paper's registered study on the replication corpus
+(Quiring 2026) finds one confined burst of above-floor formation, in the
+windows around the January 2021 GameStop squeeze. Our folds exclude
+those windows by design as a regime change. In every other window of six
+years, formation sits at the floor. Even then the burst is
 confined to r/wallstreetbets: the analysis-oriented stratum stayed
 walled (co-occurrence far below chance) straight through the event. The negative reported here
 is about discourse in its ordinary state; what cascades do is that
 study's question.
 
 Three limitations stand out. First, concept units come from a
-language-model extraction. The science control shows the pipeline finds
-real signal through comparable unit noise, and a registered robustness
-check shows the results are insensitive to the attribution path, but
-unit noise still bounds how sharp any concept-level claim can be. Second, author histories are truncated by the corpus
+language-model extraction. The science control shows the pipeline finds real signal through
+comparable error in its units, and a registered robustness check shows
+the results are insensitive to the attribution path. Even so, error in
+the extracted concepts bounds how sharp any concept-level claim can be. Second, author histories are truncated by the corpus
 design (top-20 comments per thread), so author-space frequencies
 undercount true activity; this shrinks the eligible universe but has no
 evident mechanism for biasing formation direction. Third, raised by our
@@ -539,32 +531,32 @@ data below even our permissive test) is unaffected.
 **Segregation as the object of study.** Reading the result forward rather than as a failed prediction: the
 persistence of suppressed-pair segregation is itself a measurable,
 large, stable property of a discourse community, and plausibly varies
-across communities, platforms, and time. A forum's "mixing deficit"
-(observed joint attention over its shuffled expectation) is computable
-with the machinery released here and may prove a more honest instrument
-for studying how ideas spread, or fail to, than formation counts that
-inherit the criterion trap. We offer it as the constructive replacement
+across communities, platforms, and time. A forum's "mixing deficit" (its observed joint mentions over their
+shuffled expectation) is computable with the code released here. It may
+prove a more honest instrument for studying how ideas spread, or fail
+to, than formation counts that inherit the z-criterion's false
+positives. We offer it as the constructive replacement
 for the discovery framing this paper set out to test.
 
 The finding also supplies a measured regularity to literatures that
-have so far had to assume it. Models of segmented investor attention take
-persistent, sticky attention boundaries as a premise: Merton's (1987)
-investor recognition hypothesis prices assets partly by which investors
-are aware of them; Hong and Stein (1999) derive momentum from
-information crossing investor segments only slowly; and Cohen and
-Frazzini (2008) document returns
-diffusing along economic links with a lag attributed to inattention to
-connected firms. The empirical attention literature measures investor attention
+have so far had to assume it. Models of segmented investor attention take persistent, sticky attention
+boundaries as a premise. Merton's (1987) investor recognition hypothesis
+prices assets partly by which investors are aware of them. Hong and
+Stein (1999) derive momentum from information crossing investor segments
+only slowly. Cohen and Frazzini (2008) document returns diffusing along
+economic links with a lag they attribute to inattention to connected
+firms. The empirical attention literature measures investor attention
 itself and its price effects (Barber and Odean 2008; Da, Engelberg
 and Gao 2011). Our replication corpus is such a setting, and
 there the boundaries are directly visible: even analysis-oriented
 finance communities mention economically adjacent tickers together at
 less than half chance rates, in both folds, on either side of a market
-regime change. Similarly, the returns to brokerage across "structural
-holes" (Burt 2004) require that holes persist against the incentive to close
-them; co-attention persistently below chance across a decade of discourse
-on two platforms, 2015 to 2024, is consistent with that persistence, though it is measured between
-concepts rather than between people. One implication runs the other
+regime change. Similarly, the returns to brokerage across "structural holes" (Burt
+2004) require that holes persist against the incentive to close them.
+Co-attention, the sharing of an audience between two ideas, below chance
+across a decade of discourse on two platforms, 2015 to 2024, is
+consistent with that persistence. The caveat is that we measure it
+between concepts, not between people. One implication runs the other
 way: accounts in which new cross-domain narratives percolate upward
 from public conversation are hard to square with both the segregation result and the author-space
 timing evidence, in which co-occurrence preceded any written claim
@@ -646,13 +638,10 @@ paper, and we used two versions:
   authors are involved, and the observed joint document count exceeds
   its marginal expectation by at least 2 standard deviations under a
   Poisson-style null model, z = (n_obs − E_eval) / sqrt(E_eval) ≥ 2.
-- **Calibrated criterion (used for the placebo and the calibrated
-  formation results):** the same structural
-  minima, but the joint count must strictly exceed the 99th percentile
+- **Per-pair permutation criterion (used for the placebo and the calibrated formation results):** the same minimum-count requirements, but the joint count must strictly exceed the 99th percentile
   of that specific pair's count distribution across 100 label-shuffled
-  replicates of the evaluation window (concept labels permuted across
-  document slots, preserving every document's size and every concept's
-  total frequency). This makes each pair's false-positive rate about 1
+  replicates of the evaluation window (concept labels permuted across the concept positions within documents,
+preserving every document's size and every concept's total frequency). This makes each pair's false-positive rate about 1
   percent by construction, independent of document-size heterogeneity.
 
 ### Positive control on the Science4Cast benchmark
@@ -662,7 +651,7 @@ pipeline, unchanged, on the Science4Cast benchmark's 10-million-pair
 sample (Krenn et al. 2023), with the benchmark's own edge-existence
 ground truth as the outcome; the consequences of that definitional
 difference are stated with the result. Its registration was written
-before any ranker was scored against the benchmark's solution vector,
+before any ranker was scored against the benchmark's answer key,
 and the control was later re-executed from a separately pre-committed
 registration on different hardware (Registration protocol).
 
@@ -684,16 +673,13 @@ registration and result, including the ones that overturned our own conclusions.
 second exception concerns the Science4Cast control: its registration and
 result were originally committed together in a single commit, so for
 that control the ordering rested on the working log rather than on
-commit granularity. To close the gap, the control was subsequently
-re-executed from a separately pre-committed registration on different
-hardware (x86-64 Linux versus the original Apple Silicon; disclosed in
-the registration), with MD5-verified inputs; the outputs matched the
-originals exactly, byte for byte. Every Hacker News evaluation has a
+commit granularity. To close the gap, the control was re-executed from a separately pre-committed registration, on different hardware (x86-64 Linux versus the
+original Apple Silicon, as the registration discloses) and with
+MD5-verified inputs. The outputs matched the originals byte for byte. Every Hacker News evaluation has a
 registration commit that strictly precedes its result commit. The
 registration files use working names that this paper does not: each
 pass threshold is a bar, the cross-corpus comparison of formation rates
-is the ladder, and the replication study is the gate, whose amended
-readouts Q1 and Q1b are the replication's formation and segregation
+is the ladder, and the replication study is the gate, whose amended results Q1 and Q1b are the replication's formation and segregation
 claims reported here.
 
 ### Replication corpus and acquisition
@@ -703,17 +689,16 @@ The replication corpus is Reddit financial discussion: six subreddits,
 ticker as the concept unit, extracted by pattern matching and validated
 against the SEC registrant table. The design, criterion, folds, the first fold's
 power analysis, and all interpretation thresholds were fixed and
-committed before any outcome was computed, and the two folds are separated by the
-2020-2021 market regime change (build 2017-2018 with evaluation 2019;
-build 2022-2023 with evaluation 2024).
+committed before any outcome was computed, and the two folds are separated by the 2020-2021 market regime change
+(build 2017-2018 with evaluation 2019, fold A; build 2022-2023 with
+evaluation 2024, fold B).
 
 The acquisition did not go to plan, and we disclose the sequence
 because parts of it fall short of the strict outcome-blind
 standard we hold elsewhere. Part of the archival source proved
 unavailable mid-acquisition and was replaced by API pulls under dated
 amendments. An interim evaluation ran before those amendments; its
-partial-fold outcomes existed but had been voided in advance by a
-committed interim clause. One stratum's early exemption from that
+partial-fold outcomes existed but had been declared non-binding in advance by a committed interim clause. One stratum's early exemption from that
 voiding was decided after its result was seen to replicate; the final
 corpus later reproduced the stratum's counts exactly. A registered source-equivalence
 check on the evaluation year was never performed: it was
@@ -724,12 +709,12 @@ one build-era month (comments only), where the two sources agree at
 month is missing. The companion paper's independently acquired corpus
 (same platform, a separate API pull on a different day, shared unit
 rules) reproduces the first fold's r/wallstreetbets document census to
-within one document (44,013 versus 44,012 author-quarters). Separately, a registered unit rule (exclusion of
-index ETFs) was found unenforced in one extraction branch by an
-internal adversarial review after the first complete run; the final
-numbers reported in Results enforce it, which changed no conclusion. Two
-registered secondary readouts were not computed, the author-persistence
-module and the duplicate-rate checks; neither had a threshold attached. The second fold's
+within one document (44,013 versus 44,012 author-quarters). Separately, an internal adversarial review after the first complete run
+found that a registered unit rule, the exclusion of index ETFs, had not
+been enforced in one part of the extraction code. The final numbers in
+Results enforce it. No conclusion changed. Two registered secondary results were not computed: a check on whether
+the same authors persist across folds, and checks on duplicate items.
+Neither had a threshold attached. The second fold's
 minimum-detectable-rate figure is post-hoc arithmetic on the final
 census, computed by the registered formula but not itself registered.
 
@@ -784,7 +769,7 @@ manuscript.
 ## Figure legends
 
 **Figure 1** (p1_schematic.png/.pdf). How the instrument is built, the
-two readouts it produces, and why one formation criterion was retired.
+two results it produces, and why one formation criterion was retired.
 (a) The document, two ways: a Hacker News thread (story plus top
 comments) or one author's concepts within one calendar quarter. (b) An
 eligible (we also call it suppressed) pair: two frequent concepts that never share a
