@@ -882,7 +882,9 @@ ahead of its result. The numbers in this paper trace as follows:
 ## References
 
 - Quiring, K. (2026). Ideas that never meet online mark divided
-  communities, not future discoveries. Preprint; SocArXiv DOI inserted at posting. The source observation is its section "A second platform".
+  communities, not future discoveries. SocArXiv preprint.
+  doi:10.31235/osf.io/3h76g_v1. The source observation is its section
+  "A second platform".
 - McPherson, M., Smith-Lovin, L., Cook, J.M. (2001). Birds of a
   feather: Homophily in social networks. *Annual Review of Sociology*
   27, 415-444. doi:10.1146/annurev.soc.27.1.415

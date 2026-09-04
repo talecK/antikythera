@@ -959,5 +959,5 @@ The numbers in this paper trace as follows.
   preregistration revolution. *PNAS* 115(11), 2600-2606.
   doi:10.1073/pnas.1708274114
 - Quiring, K. (2026). Watching the walls go up: r/wallstreetbets
-  segregated after the GameStop squeeze. Preprint; SocArXiv DOI
-  inserted at posting.
+  segregated after the GameStop squeeze. SocArXiv preprint.
+  doi:10.31235/osf.io/s4gpb_v1

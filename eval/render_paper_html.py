@@ -26,6 +26,8 @@ PAPERS = {
         accent=("#3d4f7d", "#333f66", "#96a8e0", "#aab9e8"),
         companion=("Watching the Walls Go Up",
                    "https://claude.ai/code/artifact/34b0ab8e-c6bd-48b2-af90-8d5874de0ba7"),
+        doi="10.31235/osf.io/3h76g_v1",
+        companion_doi="10.31235/osf.io/s4gpb_v1",
     ),
     "paper2": dict(
         md="reports/paper2_draft.md",
@@ -34,6 +36,8 @@ PAPERS = {
         accent=("#0e5f6b", "#0b4d57", "#58b7c4", "#7fc9d4"),
         companion=("Ideas That Never Meet",
                    "https://claude.ai/code/artifact/b6e82250-dc7e-42d1-9421-64eff6faeda9"),
+        doi="10.31235/osf.io/s4gpb_v1",
+        companion_doi="10.31235/osf.io/3h76g_v1",
     ),
 }
 
@@ -273,9 +277,10 @@ def render(paper, out_path, preprint=None):
         head = (f'<p class="eyebrow">Preprint · {html.escape(preprint)}</p>'
                 f'<h1>{inline(title_line or cfg["title"])}</h1>'
                 f'<p class="byline"><b>{inline(byline or "")}</b></p>'
-                f'<div class="status">Data release: <a href="https://doi.org/{DATA_DOI}">doi:{DATA_DOI}</a>. '
-                f'Code and registrations: <a href="{CODE_URL}">{CODE_URL}</a> (public at publication). '
-                f'Companion paper: {html.escape(comp_name)} (preprint).</div>')
+                f'<div class="status">This preprint: <a href="https://doi.org/{cfg["doi"]}">doi:{cfg["doi"]}</a>. '
+                f'Data release: <a href="https://doi.org/{DATA_DOI}">doi:{DATA_DOI}</a>. '
+                f'Code and registrations: <a href="{CODE_URL}">{CODE_URL}</a>. '
+                f'Companion paper: {html.escape(comp_name)}, <a href="https://doi.org/{cfg["companion_doi"]}">doi:{cfg["companion_doi"]}</a>.</div>')
         tail = ''
     else:
         head = (f'<p class="eyebrow">{html.escape(cfg["eyebrow"])}</p>'
