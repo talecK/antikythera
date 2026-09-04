@@ -61,7 +61,19 @@
   Repo flipped public the same day after the staging project id and local
   absolute paths were scrubbed from the tree (owner call: id stays in
   history; it names a deleted staging dataset, not a credential).
-- NEXT: after both DOIs arrive: insert each into the other paper's references,
+- APPROVED 2026-09-04 (both public): paper 1 doi:10.31235/osf.io/3h76g_v1,
+  paper 2 doi:10.31235/osf.io/s4gpb_v1 (only the versioned DOIs resolve;
+  the bare 10.31235/osf.io/XXXXX form 404s). Same day: DOIs cross-inserted
+  (b8908f9; render_paper_html preprint header now carries own + companion
+  DOI), PDFs regenerated (26/29 pp), v2 of each uploaded via Create New
+  Version (3h76g_v2, s4gpb_v2, pending moderation; metadata carries over,
+  only the file step is repeated), both Claude artifacts republished, and
+  the Zenodo record given both DOIs as related works (isSupplementTo,
+  Publication/Preprint; metadata-only edit, still version 1.0.0). The
+  original plan below is DONE except the v2 approvals.
+- NEXT: when the v2s clear moderation, nothing further is required; the
+  _v1 DOIs cited in each paper keep resolving. Old plan for reference,
+  after both DOIs arrive: insert each into the other paper's references,
   re-render, upload v2 of both, add both DOIs to the Zenodo record as
   related works (metadata-only edit). Then: DOI into both papers'
   Data availability and paper 2's paper-1 reference, re-render, post
