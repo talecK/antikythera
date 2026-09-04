@@ -16,7 +16,7 @@ import time
 
 import numpy as np
 
-ROOT = os.environ.get("TIER_A_ROOT", "/Users/andrej/workspace/antikythera")
+ROOT = os.environ.get("TIER_A_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BASE = os.environ.get("TIER_A_BASE",
                       "/Volumes/1TB NVME 1/antikythera/data/science4cast")
 E_MIN = 2.0

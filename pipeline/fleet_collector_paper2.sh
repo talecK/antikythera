@@ -9,7 +9,7 @@
 # tails overlap the later waves. Adapted from fleet_collector.sh (gate run,
 # 21 nodes, zero bans); both SSH landmines and alarm-timeouts preserved.
 set -u
-source ~/.config/pricemole/vultr.env
+source ~/.config/antikythera/vultr.env
 AUTH="Authorization: Bearer $VULTR_API_KEY"
 SSHKEY_ID="7a23f40e-b96a-407e-a826-0aa991a75d10"
 REGION="sea"; PLAN="vc2-1c-1gb"; OSID="2136"   # Debian 12
@@ -19,7 +19,7 @@ S="-o StrictHostKeyChecking=accept-new -o ConnectTimeout=12 -o ServerAliveInterv
 TO () { perl -e 'alarm shift @ARGV; exec @ARGV' "$@"; }
 DEST="/Volumes/1TB NVME 1/antikythera/data/paper2/pull"
 LOG="/Volumes/1TB NVME 1/antikythera/data/paper2/fleet_watch.log"
-PULLER="/Users/andrej/workspace/antikythera/pipeline/pull_reddit_paper2.py"
+PULLER="$HOME/workspace/antikythera/pipeline/pull_reddit_paper2.py"
 MAXBOX=20
 
 MONTHS=""

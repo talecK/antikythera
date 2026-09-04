@@ -1,5 +1,5 @@
 -- Full comment graph, no text. n_replies = direct child count (latest state).
-CREATE OR REPLACE TABLE `pricemole-g4a.antikythera_hn.comment_skeleton` AS
+CREATE OR REPLACE TABLE `YOUR_GCP_PROJECT.antikythera_hn.comment_skeleton` AS
 WITH comments AS (
   SELECT id, parent, `by`, timestamp AS time
   FROM `bigquery-public-data.hacker_news.full`

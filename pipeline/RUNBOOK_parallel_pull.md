@@ -25,7 +25,7 @@ Target example throughout: WSB 2019-01..2024-12 continuous (72 months).
 - Plan `vc2-1c-1gb` ($5/mo ≈ $0.007/h), region `sea`, os_id 2136
   (Debian 12), tag every instance (e.g. `antikythera-pull`) — the tag is
   how the collector finds them and how you verify teardown.
-- Key: `~/.config/pricemole/vultr.env` (VULTR_API_KEY); account ssh key id
+- Key: `~/.config/antikythera/vultr.env` (VULTR_API_KEY); account ssh key id
   `7a23f40e-b96a-407e-a826-0aa991a75d10` (local `~/.ssh/id_ed25519`).
 - Create via API (see `pipeline/fleet_pull.sh` for the exact curl; ignore
   its launch loop — buggy, superseded by the collector, kept for the

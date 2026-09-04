@@ -4,7 +4,7 @@
 set -euo pipefail
 IP="$1"
 SSH="ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=10 root@$IP"
-SRC="/Users/andrej/workspace/antikythera"
+SRC="$HOME/workspace/antikythera"
 REG="/Volumes/1TB NVME 1/antikythera/data/registry/pilot1"
 
 echo "== wait for ssh =="

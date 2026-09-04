@@ -5,7 +5,7 @@
 -- Window (pre-registered): comment.time <= story.time + 90 days, per story
 -- (cleaner than the playground mirror's year+90d window; mirrors may differ
 -- marginally at the window edge).
-CREATE OR REPLACE TABLE `pricemole-g4a.antikythera_hn.comments_top20` AS
+CREATE OR REPLACE TABLE `YOUR_GCP_PROJECT.antikythera_hn.comments_top20` AS
 WITH stories AS (
   SELECT id, timestamp AS s_time
   FROM `bigquery-public-data.hacker_news.full`

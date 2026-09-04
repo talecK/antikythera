@@ -4,7 +4,7 @@
 - **Canonical source: HN BigQuery public dataset**
   (`bigquery-public-data.hacker_news.full`, max ts 2026-08-27, 49.45M rows),
   per the brief. Pulled via CTAS into staging dataset
-  `pricemole-g4a:antikythera_hn` (deleted after export), exported locally via
+  `YOUR_GCP_PROJECT:antikythera_hn` (deleted after export), exported locally via
   Storage Read API → `raw/hn_bq/*.parquet`. SQL: `sql/bq/*.sql`.
   Exporter: `pipeline/export_bq.py`.
 - **Robustness mirror: ClickHouse public playground**
@@ -79,5 +79,5 @@ Verify: `pipeline/verify_pull.py`.
   1,315,936 stories / 7,071,121 top-20 comments / 42,246,310 skeleton rows.
 - 0 duplicate story ids; 0 orphan top-20 comments; 0 stories with >20
   comments; 0 null/empty titles.
-- Staging dataset `pricemole-g4a:antikythera_hn` deleted after export
+- Staging dataset `YOUR_GCP_PROJECT:antikythera_hn` deleted after export
   (reproducible from `sql/bq/*.sql`).

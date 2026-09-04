@@ -34,9 +34,9 @@
   Sensitive-string sweep done over every file including parquet
   columns and parquet metadata: one leak (local absolute paths in
   SOURCE_CHECKSUMS.txt) fixed and the script patched (6fd75f5); no
-  pricemole or other project names anywhere in the upload.
+  staging-project names anywhere in the upload.
 - BEFORE THE REPO FLIP: data/README.md names the GCP staging project
-  (antikythera_hn under a pricemole project id); scrub it. Not in the
+  (antikythera_hn under the staging project id); scrubbed 2026-09-03. Not in the
   deposit.
 - PUBLISHED 2026-09-03 (Zenodo clock): https://doi.org/10.5281/zenodo.22262036
   resolves to https://zenodo.org/records/22262036, all 8 files, 202.9 MB,
@@ -52,8 +52,16 @@
   socarxiv_submission_sheet.md (titles, abstracts, tags, links, order).
   Recipe: render --preprint, disable the dark media query, print with
   Chrome --headless=new --no-pdf-header-footer --print-to-pdf.
-- NEXT: owner submits both to SocArXiv (OSF login via ORCID). After
-  both DOIs arrive: insert each into the other paper's references,
+- SUBMITTED to SocArXiv 2026-09-03, both pending moderation:
+  paper 1 https://osf.io/preprints/socarxiv/3h76g_v1, paper 2
+  https://osf.io/preprints/socarxiv/s4gpb_v1. License CC BY 4.0; subjects
+  Sociology > Communication, Information Technologies, and Media Sociology
+  + Economic Sociology (SocArXiv's tree has no Computer Sciences branch);
+  data = Zenodo DOI, preregistration = Both, linked to the GitHub repo.
+  Repo flipped public the same day after the staging project id and local
+  absolute paths were scrubbed from the tree (owner call: id stays in
+  history; it names a deleted staging dataset, not a credential).
+- NEXT: after both DOIs arrive: insert each into the other paper's references,
   re-render, upload v2 of both, add both DOIs to the Zenodo record as
   related works (metadata-only edit). Then: DOI into both papers'
   Data availability and paper 2's paper-1 reference, re-render, post
@@ -360,7 +368,7 @@ CAVEAT: client-side cost counters in the scripts use STALE prices
    wired in (prepaid balance runs dry silently otherwise).
 2. Never pipe long stages through tail/grep — log to files (CLAUDE.md rule).
 3. Exact 1M+-vector clustering: ~10h on the M1 mini, ~35min on a $2.6/h
-   64-core Vultr box (key: ~/.config/pricemole/vultr.env; bootstrap script
+   64-core Vultr box (key: ~/.config/antikythera/vultr.env; bootstrap script
    pipeline/box_bootstrap.sh). HNSW option exists but is uncertified.
 4. No timeline claims without a microbenchmark; no eval without frozen
    registration. Both failed painfully when skipped.

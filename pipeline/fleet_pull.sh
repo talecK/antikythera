@@ -3,11 +3,11 @@
 # so bootstrap is just scp. Results rsync back to the NVMe pull dir with
 # month-granular shard names; boxes are destroyed at the end regardless.
 set -uo pipefail
-source ~/.config/pricemole/vultr.env
+source ~/.config/antikythera/vultr.env
 KEY="Authorization: Bearer $VULTR_API_KEY"
 SSHKEY_ID="7a23f40e-b96a-407e-a826-0aa991a75d10"
 REGION="sea"; PLAN="vc2-1c-1gb"; OSID="2136"   # Debian 12
-SRC="/Users/andrej/workspace/antikythera/pipeline/pull_reddit_gate.py"
+SRC="$HOME/workspace/antikythera/pipeline/pull_reddit_gate.py"
 DEST="/Volumes/1TB NVME 1/antikythera/data/reddit_gate/pull"
 LOG="/Volumes/1TB NVME 1/antikythera/data/reddit_gate/fleet.log"
 MONTHS=("$@")

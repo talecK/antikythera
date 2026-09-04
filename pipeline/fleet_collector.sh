@@ -5,7 +5,7 @@
 # 21 months are local run extraction + the final gate. One WATCH line per
 # cycle; event lines (COLLECTED/RELAUNCH/READY/STUCK) for the monitor.
 set -u
-source ~/.config/pricemole/vultr.env
+source ~/.config/antikythera/vultr.env
 AUTH="Authorization: Bearer $VULTR_API_KEY"
 S="-o StrictHostKeyChecking=accept-new -o ConnectTimeout=12 -o ServerAliveInterval=5 -o ServerAliveCountMax=3"
 # macOS has no timeout(1); perl alarm gives every remote call a hard bound so
@@ -13,8 +13,8 @@ S="-o StrictHostKeyChecking=accept-new -o ConnectTimeout=12 -o ServerAliveInterv
 TO () { perl -e 'alarm shift @ARGV; exec @ARGV' "$@"; }
 DEST="/Volumes/1TB NVME 1/antikythera/data/reddit_gate/pull"
 LOG="/Volumes/1TB NVME 1/antikythera/data/reddit_gate/fleet_watch.log"
-PULLER="/Users/andrej/workspace/antikythera/pipeline/pull_reddit_gate.py"
-PY="/Users/andrej/workspace/antikythera/.venv/bin/python"
+PULLER="$HOME/workspace/antikythera/pipeline/pull_reddit_gate.py"
+PY="$HOME/workspace/antikythera/.venv/bin/python"
 
 have_month () { [ "$(ls "$DEST"/*wallstreetbets_"$1".ndjson.gz 2>/dev/null | wc -l | tr -d ' ')" = "2" ]; }
 
@@ -57,8 +57,8 @@ while true; do
   echo "$(date +%H:%M) WATCH months_home=$local_done/21 boxes_up=$n_boxes$line" >> "$LOG"
   if [ "$local_done" = "21" ]; then
     echo "$(date +%H:%M) ALL 21 MONTHS HOME — extract + gate" >> "$LOG"
-    "$PY" -u /Users/andrej/workspace/antikythera/pipeline/extract_tickers.py >> "/Volumes/1TB NVME 1/antikythera/data/reddit_gate/extract.log" 2>&1 \
-      && "$PY" -u /Users/andrej/workspace/antikythera/eval/run_gate.py >> "/Volumes/1TB NVME 1/antikythera/data/reddit_gate/gate_final.log" 2>&1 \
+    "$PY" -u $HOME/workspace/antikythera/pipeline/extract_tickers.py >> "/Volumes/1TB NVME 1/antikythera/data/reddit_gate/extract.log" 2>&1 \
+      && "$PY" -u $HOME/workspace/antikythera/eval/run_gate.py >> "/Volumes/1TB NVME 1/antikythera/data/reddit_gate/gate_final.log" 2>&1 \
       && echo "$(date +%H:%M) FINAL GATE TABLE READY" >> "$LOG" \
       || echo "$(date +%H:%M) PIPELINE FAILED — see extract.log/gate_final.log" >> "$LOG"
     exit 0

@@ -14,7 +14,7 @@ import pyarrow.parquet as pq
 from google.cloud.bigquery_storage import BigQueryReadClient, types
 from google.oauth2.credentials import Credentials
 
-PROJECT = "pricemole-g4a"
+PROJECT = "YOUR_GCP_PROJECT"
 DATASET = "antikythera_hn"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "data", "raw", "hn_bq")
