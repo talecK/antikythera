@@ -35,15 +35,20 @@
   written. The 2 percent threshold prediction was withdrawn, not
   reworded.
 - HOLD the SocArXiv v2 uploads until the revision is in.
-- Runs go on the M3 MBP: clone, `python3 -m venv .venv && .venv/bin/pip
-  install -r requirements.txt` (numpy must be 2.5.2 for the stream to
-  reproduce), plug in the NVMe and recreate the data/ symlinks (docs,
-  registry, paper2, reddit_gate, science4cast, release), then follow the
-  runbook in preregistration_nulls.md step by step with stdout
-  redirected to a log file. Gate first: `run_paper2.py --workers 8` must
-  leave reports/paper2_windows_z.tsv unchanged under git, and
-  `run_eval8.py` serially must reproduce the run-8 JSONs. Expected
-  wall time for the whole runbook on an M3 Pro: about 1 h 20 min.
+- Runs go on the M3 MBP; the NVMe stays on the M1. Clone, `python3 -m
+  venv .venv && .venv/bin/pip install -r requirements.txt` (numpy must
+  be 2.5.2 for the stream to reproduce). Copy the 26 input files (1.45
+  GB) listed in mbp_inputs.txt into a real data/ directory at the same
+  relative paths (rsync --files-from from the NVMe's antikythera/data
+  on the M1). Nothing else under data/ is needed for the runbook. Before
+  running run_eval8.py, copy the two run8_*.json files aside as the
+  reference for the Paper 1 gate diff, because that script overwrites
+  them. Then follow the runbook in preregistration_nulls.md step by
+  step with stdout redirected to a log file. Gate first:
+  `run_paper2.py --workers 8` must leave reports/paper2_windows_z.tsv
+  unchanged under git, and `run_eval8.py` serially must reproduce the
+  two run-8 JSONs. Expected wall time for the whole runbook on an M3
+  Pro: about 1 h 20 min.
 - After the runs: append every prediction's outcome to
   reports/pilot1_runs.md, write and register the N2 amendment, then the
   prose pass (statistic definition, "fixed-fixed" language, ratios in
