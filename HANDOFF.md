@@ -1,3 +1,37 @@
+# Single bounded Paper 2 extension prepared — 2026-09-04 Pacific
+
+Both full first-pass audits are complete: Paper 1 104 files, Paper 2 968
+files, with raw stage diagnostics/moments/formation checks recomputed and
+all frozen input/census/code/matrix hashes verified. Paper 2: 13 N2 and
+19 N3 passing cells; 25 N2 and 19 N3 unresolved. The first-pass queue
+finished all 84 attempts. Final queue snapshot:
+reports/curveball_first_pass_completed_queue.json. All original first-pass
+predictions/results remain unchanged; Xa/Xb/Xc are unresolved, Xd passes,
+Xe remains unresolved for both nulls.
+
+The user accepted one bounded Paper 2 extension, then no further large
+compute except correction of a demonstrated implementation error. Protocol:
+preregistration_nulls_extension1.md. Exact 44-job plan:
+reports/curveball_extension1_plan.json. Commit both before any real chain.
+New driver eval/run_curveball_extension.py reuses the original Ensemble,
+kernel and diagnostic implementation unchanged. Fresh extension1 seed
+phase names; pilot 1760/3520/7040 with candidate burns80/160/320/640;
+fresh production800/1600/3200, burn twice selected pilot burn. Two workers,
+six-hour global sampling wall limit, 90 minutes per case; resource-truncated
+stages cannot pass. First-pass passing cells are not rerun. No new Paper 1
+sampling or formation/FDR work. Four synthetic extension tests pass,
+including budget exits and an actual native-kernel pilot/production check.
+
+The extension has NOT yet started at this checkpoint. Next: consolidate
+MBP's completed report changes with this main, verify native environment,
+run its preflight and four extension tests, then launch detached with
+caffeinate. Save launch/process evidence, and do not alter scientific
+sources in the MBP checkout during the extension. Score only its passing
+production, combined with passing first-pass cells, via
+ eval/score_curveball_extension.py. Keep original first-pass scores separate.
+
+---
+
 # Paper 1 independently verified; first-pass queue complete — 2026-09-04
 
 The MBP manifest directly reports COMPLETE, 84/84 registered cell/null

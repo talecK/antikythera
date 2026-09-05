@@ -644,3 +644,21 @@ after the initial queue; retain all unresolved results, preserve thresholds,
 and stop after that extension absent a demonstrated implementation error.
 The extension has NOT started; full Paper 2 import/audit and prospective
 registration must precede it.
+
+## Paper 2 audit and single bounded extension registration (2026-09-04)
+
+All 76 first-pass Paper 2 attempts independently audited on M1: 968 files,
+raw moments, stage diagnostics, formation checks and 38 frozen primary
+censuses match. N2 has 13 passing/25 unresolved cells; N3 has 19 passing/
+19 unresolved. No unresolved first-pass effect is treated as a result.
+The complete first-pass queue snapshot is preserved separately.
+
+The user accepted one bounded extension and no further large sampling
+for this revision except correction of an implementation error. Registered
+protocol preregistration_nulls_extension1.md and its exact 44-job JSON plan
+retain original predictions and diagnostics. Fresh pilot stages1760/3520/
+7040, candidate burns80/160/320/640; independent production800/1600/3200,
+burn twice selected pilot burn. Native MBP, two workers, six-hour sampling
+wall limit and 90 minutes per case, plus explicit finalization overhead.
+Original kernel, Ensemble and diagnostics are unchanged. Four synthetic
+tests pass. No real extension chain has run before this registration.

@@ -1,5 +1,6 @@
 """Audit transferred Curveball results from frozen matrices and raw chains."""
 import argparse
+import csv
 from functools import lru_cache
 import json
 from pathlib import Path
@@ -51,6 +52,13 @@ def audit_record(payload,path):
         source='data/registry/run5_author/run8_author.json' if meta['space']=='author' else 'data/registry/pilot1_concepts/run8_thread.json'
         frozen=json.loads((ROOT/source).read_text())[meta['fold']]
         if obs!=frozen['obs_total'] or meta['eligible']!=frozen['eligible']:raise ValueError('frozen observed census mismatch')
+    else:
+        with (ROOT/'reports/paper2_windows_z.tsv').open() as f:
+            frozen=next(r for r in csv.DictReader(f,delimiter='\t') if
+                (int(r['B']),int(r['window']),r['stratum'],r['lens'])==
+                (meta['B'],meta['window'],meta['stratum'],meta['lens']))
+        for a,b in [('obs_total','obs_total'),('eligible','n_eligible'),('build_docs','build_docs'),('eval_docs','eval_docs')]:
+            if meta[a]!=int(frozen[b]):raise ValueError(f'frozen Paper 2 census mismatch: {a}')
     production=None;stage_count=0
     for phase in ('pilot','production'):
         result=record.get(phase)

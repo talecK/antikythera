@@ -1,0 +1,314 @@
+{
+  "predictions": {
+    "N2": {
+      "X-a": {
+        "status": "PENDING",
+        "missing": {
+          "p2_WSB_03": "PENDING_EXTENSION",
+          "p2_WSB_04": "PENDING_EXTENSION",
+          "p2_WSB_05": "PENDING_EXTENSION",
+          "p2_DD_04": "PENDING_EXTENSION",
+          "p2_DD_05": "PENDING_EXTENSION",
+          "p2_WSB_06": "PENDING_EXTENSION",
+          "p2_WSB_07": "PENDING_EXTENSION",
+          "p2_WSB_08": "PENDING_EXTENSION",
+          "p2_WSB_10": "PENDING_EXTENSION",
+          "p2_WSB_11": "PENDING_EXTENSION",
+          "p2_WSB_12": "PENDING_EXTENSION",
+          "p2_WSB_14": "PENDING_EXTENSION",
+          "p2_WSB_15": "PENDING_EXTENSION",
+          "p2_WSB_16": "PENDING_EXTENSION",
+          "p2_WSB_17": "PENDING_EXTENSION",
+          "p2_DD_02": "PENDING_EXTENSION",
+          "p2_DD_06": "PENDING_EXTENSION",
+          "p2_DD_07": "PENDING_EXTENSION",
+          "p2_DD_08": "PENDING_EXTENSION",
+          "p2_DD_09": "PENDING_EXTENSION",
+          "p2_DD_11": "PENDING_EXTENSION",
+          "p2_DD_12": "PENDING_EXTENSION",
+          "p2_DD_13": "PENDING_EXTENSION",
+          "p2_DD_17": "PENDING_EXTENSION",
+          "p2_DD_18": "PENDING_EXTENSION"
+        }
+      },
+      "X-b": {
+        "status": "PENDING",
+        "missing": {
+          "p2_WSB_03": "PENDING_EXTENSION",
+          "p2_WSB_04": "PENDING_EXTENSION",
+          "p2_WSB_05": "PENDING_EXTENSION",
+          "p2_DD_04": "PENDING_EXTENSION",
+          "p2_DD_05": "PENDING_EXTENSION",
+          "p2_WSB_06": "PENDING_EXTENSION",
+          "p2_WSB_07": "PENDING_EXTENSION",
+          "p2_WSB_08": "PENDING_EXTENSION",
+          "p2_WSB_10": "PENDING_EXTENSION",
+          "p2_WSB_11": "PENDING_EXTENSION",
+          "p2_WSB_12": "PENDING_EXTENSION",
+          "p2_WSB_14": "PENDING_EXTENSION",
+          "p2_WSB_15": "PENDING_EXTENSION",
+          "p2_WSB_16": "PENDING_EXTENSION",
+          "p2_WSB_17": "PENDING_EXTENSION",
+          "p2_DD_02": "PENDING_EXTENSION",
+          "p2_DD_06": "PENDING_EXTENSION",
+          "p2_DD_07": "PENDING_EXTENSION",
+          "p2_DD_08": "PENDING_EXTENSION",
+          "p2_DD_09": "PENDING_EXTENSION",
+          "p2_DD_11": "PENDING_EXTENSION",
+          "p2_DD_12": "PENDING_EXTENSION",
+          "p2_DD_13": "PENDING_EXTENSION",
+          "p2_DD_17": "PENDING_EXTENSION",
+          "p2_DD_18": "PENDING_EXTENSION"
+        }
+      },
+      "X-c": {
+        "status": "PENDING",
+        "missing": {
+          "p2_WSB_03": "PENDING_EXTENSION",
+          "p2_WSB_04": "PENDING_EXTENSION"
+        }
+      },
+      "usable_cells": 13,
+      "missing": {
+        "p2_WSB_03": "PENDING_EXTENSION",
+        "p2_WSB_04": "PENDING_EXTENSION",
+        "p2_WSB_05": "PENDING_EXTENSION",
+        "p2_DD_04": "PENDING_EXTENSION",
+        "p2_DD_05": "PENDING_EXTENSION",
+        "p2_WSB_06": "PENDING_EXTENSION",
+        "p2_WSB_07": "PENDING_EXTENSION",
+        "p2_WSB_08": "PENDING_EXTENSION",
+        "p2_WSB_10": "PENDING_EXTENSION",
+        "p2_WSB_11": "PENDING_EXTENSION",
+        "p2_WSB_12": "PENDING_EXTENSION",
+        "p2_WSB_14": "PENDING_EXTENSION",
+        "p2_WSB_15": "PENDING_EXTENSION",
+        "p2_WSB_16": "PENDING_EXTENSION",
+        "p2_WSB_17": "PENDING_EXTENSION",
+        "p2_DD_02": "PENDING_EXTENSION",
+        "p2_DD_06": "PENDING_EXTENSION",
+        "p2_DD_07": "PENDING_EXTENSION",
+        "p2_DD_08": "PENDING_EXTENSION",
+        "p2_DD_09": "PENDING_EXTENSION",
+        "p2_DD_11": "PENDING_EXTENSION",
+        "p2_DD_12": "PENDING_EXTENSION",
+        "p2_DD_13": "PENDING_EXTENSION",
+        "p2_DD_17": "PENDING_EXTENSION",
+        "p2_DD_18": "PENDING_EXTENSION"
+      },
+      "sources": {
+        "p2_WSB_01": {
+          "attempt": "first_pass",
+          "sha256": "cfd3521dd2482cf38f949c51c9204d6cc6a6bbe6989aa5b0c55d25963f449ad8"
+        },
+        "p2_WSB_02": {
+          "attempt": "first_pass",
+          "sha256": "2cb8be53a22e88f071f220e07ef9687937f8b8af87fa0d27ad4e2290bc759085"
+        },
+        "p2_WSB_18": {
+          "attempt": "first_pass",
+          "sha256": "ea38bef50386378b06a7bf88f9f433182cfa4849bb489f67c166eedf05c6841e"
+        },
+        "p2_WSB_00": {
+          "attempt": "first_pass",
+          "sha256": "d0d1a0dfad0fb43f939cccd104911ae989df7916e8de903dba8d5bbbb8b51c10"
+        },
+        "p2_WSB_09": {
+          "attempt": "first_pass",
+          "sha256": "54d774b39e5f1a15c9ecdd022b0285520a3b91625badd12dfd815fcf861cd27f"
+        },
+        "p2_WSB_13": {
+          "attempt": "first_pass",
+          "sha256": "8d003bf4e262831fb84648e0f765a18dc765edfa8febece4077a56f49184cdb2"
+        },
+        "p2_DD_00": {
+          "attempt": "first_pass",
+          "sha256": "92bcf629355fac77488e47ca5e27f12dcd3fe56a87b24901478f9209d58af26e"
+        },
+        "p2_DD_01": {
+          "attempt": "first_pass",
+          "sha256": "99bc1a875dd064a8b95f0c2691f46870fcb5e196d18d314ac62cb9d128d518f2"
+        },
+        "p2_DD_03": {
+          "attempt": "first_pass",
+          "sha256": "a4874df1182d829f8e96589267e4a9fe157cafbb40f0fb6e30947c9e73ec35c3"
+        },
+        "p2_DD_10": {
+          "attempt": "first_pass",
+          "sha256": "8f31cc84ac880c5b45d6b8683f8f34ec2fce8f04abb82f2a6ec7036a556306c9"
+        },
+        "p2_DD_14": {
+          "attempt": "first_pass",
+          "sha256": "240ecbff9ac4bd35ae04cd653b0e1f0d44c7317a38626943fc0cd5c210362d34"
+        },
+        "p2_DD_15": {
+          "attempt": "first_pass",
+          "sha256": "a89fd9b0dd8027b18dd6c500f97c22ce56bc8b68642883f43fc0fcaf305926d7"
+        },
+        "p2_DD_16": {
+          "attempt": "first_pass",
+          "sha256": "a2b70786a0f91500fbe60046083c8aeeb8e7570ccafd5b5423a5671a27f7ded0"
+        }
+      }
+    },
+    "N3": {
+      "X-a": {
+        "status": "PENDING",
+        "missing": {
+          "p2_WSB_03": "PENDING_EXTENSION",
+          "p2_WSB_04": "PENDING_EXTENSION",
+          "p2_WSB_05": "PENDING_EXTENSION",
+          "p2_DD_05": "PENDING_EXTENSION",
+          "p2_WSB_00": "PENDING_EXTENSION",
+          "p2_WSB_06": "PENDING_EXTENSION",
+          "p2_WSB_07": "PENDING_EXTENSION",
+          "p2_WSB_08": "PENDING_EXTENSION",
+          "p2_WSB_09": "PENDING_EXTENSION",
+          "p2_WSB_11": "PENDING_EXTENSION",
+          "p2_WSB_12": "PENDING_EXTENSION",
+          "p2_WSB_13": "PENDING_EXTENSION",
+          "p2_DD_03": "PENDING_EXTENSION",
+          "p2_DD_08": "PENDING_EXTENSION",
+          "p2_DD_09": "PENDING_EXTENSION",
+          "p2_DD_10": "PENDING_EXTENSION",
+          "p2_DD_17": "PENDING_EXTENSION",
+          "p2_DD_18": "PENDING_EXTENSION"
+        }
+      },
+      "X-b": {
+        "status": "PENDING",
+        "missing": {
+          "p2_WSB_02": "PENDING_EXTENSION",
+          "p2_WSB_03": "PENDING_EXTENSION",
+          "p2_WSB_04": "PENDING_EXTENSION",
+          "p2_WSB_05": "PENDING_EXTENSION",
+          "p2_DD_05": "PENDING_EXTENSION",
+          "p2_WSB_00": "PENDING_EXTENSION",
+          "p2_WSB_06": "PENDING_EXTENSION",
+          "p2_WSB_07": "PENDING_EXTENSION",
+          "p2_WSB_08": "PENDING_EXTENSION",
+          "p2_WSB_09": "PENDING_EXTENSION",
+          "p2_WSB_11": "PENDING_EXTENSION",
+          "p2_WSB_12": "PENDING_EXTENSION",
+          "p2_WSB_13": "PENDING_EXTENSION",
+          "p2_DD_03": "PENDING_EXTENSION",
+          "p2_DD_08": "PENDING_EXTENSION",
+          "p2_DD_09": "PENDING_EXTENSION",
+          "p2_DD_10": "PENDING_EXTENSION",
+          "p2_DD_17": "PENDING_EXTENSION",
+          "p2_DD_18": "PENDING_EXTENSION"
+        }
+      },
+      "X-c": {
+        "status": "PENDING",
+        "missing": {
+          "p2_WSB_03": "PENDING_EXTENSION",
+          "p2_WSB_04": "PENDING_EXTENSION"
+        }
+      },
+      "usable_cells": 19,
+      "missing": {
+        "p2_WSB_02": "PENDING_EXTENSION",
+        "p2_WSB_03": "PENDING_EXTENSION",
+        "p2_WSB_04": "PENDING_EXTENSION",
+        "p2_WSB_05": "PENDING_EXTENSION",
+        "p2_DD_05": "PENDING_EXTENSION",
+        "p2_WSB_00": "PENDING_EXTENSION",
+        "p2_WSB_06": "PENDING_EXTENSION",
+        "p2_WSB_07": "PENDING_EXTENSION",
+        "p2_WSB_08": "PENDING_EXTENSION",
+        "p2_WSB_09": "PENDING_EXTENSION",
+        "p2_WSB_11": "PENDING_EXTENSION",
+        "p2_WSB_12": "PENDING_EXTENSION",
+        "p2_WSB_13": "PENDING_EXTENSION",
+        "p2_DD_03": "PENDING_EXTENSION",
+        "p2_DD_08": "PENDING_EXTENSION",
+        "p2_DD_09": "PENDING_EXTENSION",
+        "p2_DD_10": "PENDING_EXTENSION",
+        "p2_DD_17": "PENDING_EXTENSION",
+        "p2_DD_18": "PENDING_EXTENSION"
+      },
+      "sources": {
+        "p2_WSB_01": {
+          "attempt": "first_pass",
+          "sha256": "a4df62a270e6c3656abb03f5887b74c2b85f046e37c2d3702e5ec3ca5585329c"
+        },
+        "p2_WSB_18": {
+          "attempt": "first_pass",
+          "sha256": "8f4da3cf476f32e3abccde5992cf12c5a5bcbf097e4a794652401bf3bbfca438"
+        },
+        "p2_DD_04": {
+          "attempt": "first_pass",
+          "sha256": "5ac11279c23b96201770726d39e321d72736d9b30bc88e5cc04b3941f6bc568f"
+        },
+        "p2_WSB_10": {
+          "attempt": "first_pass",
+          "sha256": "926b2fe9cfc74235d54c9b6caeb1437fb201360fa56b3234121adc2098a41c8e"
+        },
+        "p2_WSB_14": {
+          "attempt": "first_pass",
+          "sha256": "869ac0b5af415ec84f009195c2e792f10663cca5b99ed3ec6010da3694e89b9e"
+        },
+        "p2_WSB_15": {
+          "attempt": "first_pass",
+          "sha256": "0d4d61b1e6626fe2f855aae4a235fad60667849b2828f0610548f488fe4c28e5"
+        },
+        "p2_WSB_16": {
+          "attempt": "first_pass",
+          "sha256": "17f6eb9e2831bd11570918685af59f86b7f74d67d847994e6af1861a407ced5e"
+        },
+        "p2_WSB_17": {
+          "attempt": "first_pass",
+          "sha256": "f5872eb2da2034ae97ff8ff30a2eda198d59570d6cc15862500220ad34ac8146"
+        },
+        "p2_DD_00": {
+          "attempt": "first_pass",
+          "sha256": "bef85a09fc8b4cb85bb3e2c08d4df0b86a211940dd5842418f879b9c8f9fd07a"
+        },
+        "p2_DD_01": {
+          "attempt": "first_pass",
+          "sha256": "c14d166fec83764ecc51f941e76febf1c984787ebe3783f4bae1fdee492f0c61"
+        },
+        "p2_DD_02": {
+          "attempt": "first_pass",
+          "sha256": "32e4731f0b69eed558e9c98167d2a27927649b3910a56f248490ce544b6f5b43"
+        },
+        "p2_DD_06": {
+          "attempt": "first_pass",
+          "sha256": "f1ab49b4f30a174b2fbd23900b74435fb9eb8d26b689184ef6b79d7d3bfdb5c5"
+        },
+        "p2_DD_07": {
+          "attempt": "first_pass",
+          "sha256": "ec894c30c9e244f14ab0eac10721e73ad2492f031e3c7ba23475ab8879c2f050"
+        },
+        "p2_DD_11": {
+          "attempt": "first_pass",
+          "sha256": "0b99148a22c257e785fc37ded969bcbec08693e810294326216a10bed6c7d4db"
+        },
+        "p2_DD_12": {
+          "attempt": "first_pass",
+          "sha256": "53cb4ef528932dfb863f36377cc0f2ac2574f62d5fb3f5ae8c37fc3efbdea175"
+        },
+        "p2_DD_13": {
+          "attempt": "first_pass",
+          "sha256": "9ac3a2534fc5dadbeb6e66b52ec8d40994a3ace2ea345ebc93343376ebc92e4a"
+        },
+        "p2_DD_14": {
+          "attempt": "first_pass",
+          "sha256": "af756a01c111ed80dad700e1739d54383a49b697a7d50023c6f1eec9bad0f4e9"
+        },
+        "p2_DD_15": {
+          "attempt": "first_pass",
+          "sha256": "6b33961cb265099eb69824b66918112d2cdf69da05cadb82622823aae5534424"
+        },
+        "p2_DD_16": {
+          "attempt": "first_pass",
+          "sha256": "2c12639ff3ab9e8714920ab5e6ba9ae2d2dba42985dc338e795d67991ee0bef7"
+        }
+      }
+    }
+  },
+  "plan_sha256": "b3dd3767bfca08a4799380ec6fd1623d4427c460d84f164bf165e03cc1da908b",
+  "interpretation": "Original first-pass scores are preserved separately. Only passing production is selected; no pooling of old unresolved trajectories, pilots or nulls.",
+  "public_release_ready": false
+}
