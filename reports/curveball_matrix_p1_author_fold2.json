@@ -1,0 +1,42 @@
+{
+  "cell": "p1_author_fold2",
+  "space": "author",
+  "fold": "fold2",
+  "matrix_path": "data/registry/nulls_revisions/curveball_v1/matrices/p1_author_fold2.npz",
+  "matrix_sha256": "8d0ca5a460aed4bf49d19ac30b2e3c37f96c25d7fc67e423d3db55f0ac661868",
+  "input_sha256": {
+    "data/registry/run5_author/author_concepts.parquet": "1676727f583ec84ea9e03a1a023ad64b43128202d79014f11092f97f31443761"
+  },
+  "registration_sha256": "af016ad9da776d92c6e1394a756bdb0b9e4a98ca758722f9ddd653285a13ba49",
+  "code_sha256": {
+    "eval/prepare_curveball.py": "3f09dc040a17242292b45b22e89c8b83d655eb456ba393fe813acb53bb32f5c8",
+    "eval/run_eval8.py": "4724f55fa24c558b5f5f4d6ab6e1608c7dc8f00b1d4ff4cdd8e8d98f3c64775b",
+    "eval/run_paper2.py": "b5c1acbcd94968f802b29fdcf6763e2c29e4377266d8050a7278b8a6993c6980",
+    "eval/run_gate.py": "a52754c146890452b8a6e92096b77f345eec6e97b54970b05ee842d589b3892d",
+    "eval/curveball.py": "358151531f64100c2147739f4136a47f61855d5ec99dafac3b23a20596def1bc",
+    "eval/curveball_kernel.cpp": "99ab0494eb66a1f50e256bdf2ae7c6054c3aa8d446ba82ae4f7fe8c362990cba",
+    "eval/run_eval8_nulls.py": "d12dff490b6b73325fd5d351e94467eefc112987e7c1475118c2a35efff5b325"
+  },
+  "commit": "83760dec39c0322a4780461081f2025496410434",
+  "native_observed_per_pair_matches": true,
+  "eligible": 110,
+  "obs_total": 454,
+  "active_rows": 64042,
+  "eval_docs": 71243,
+  "build_docs": 70880,
+  "columns": 4346,
+  "incidences": 319673,
+  "arrays_sha256": {
+    "offsets": "361f329e1af6f7cc198a7fd176dcaa35d534d43cb27dfa11269cdc4b387216cc",
+    "labels": "b827fd54fd2ee916fe9af086844db97e727ee31b34c824ef2796f3a92040f8ce",
+    "vocabulary": "660c586b201d937804acd0e47429430d0c22a948917f245d0b4eb50c27deea6a",
+    "pairs": "b0e5de225ff4da165f4875a3b27cd3c8f985ee811a951d0fce83b060cc0604e6",
+    "observed": "ba8489a18c84d28ec127ec5ac056364cbaaef858fad6bacc820afb547d8b910f",
+    "supported": "41c966aba60564434bfc678034b54c263aadbbd054607178fd689f0ef3a913f5",
+    "quarters": "0c7ddb3898b8802715ad6079f5b94272a63216cb3081807cdc39b26081dde8ee",
+    "document_ids": "cceaddabe32e9aa037076c37296094fa16c75edc6ee7dec82621e5e0c3501f9a",
+    "build_docs": "cc260331a086ec4d2517387fa301066a77931af90d8ab69b9af0400b5c3115d9",
+    "eval_docs": "fa40aa2db7cab711b14d9cdf3953cfee9b2779fc3087fc6a9e3660fdc9746682"
+  },
+  "prepare_seconds": 2.8665197920054197
+}

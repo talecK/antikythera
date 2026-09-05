@@ -91,26 +91,116 @@
         }
       },
       "X-d": {
-        "status": "PENDING",
-        "missing": {
-          "p1_author_fold1": "PENDING",
-          "p1_author_fold2": "PENDING",
-          "p1_thread_fold1": "PENDING",
-          "p1_thread_fold2": "PENDING"
+        "status": "PASS",
+        "cells": {
+          "p1_author_fold1": {
+            "obs_total": 746,
+            "null_mean": 1076.7121875,
+            "null_sd": 33.30132281854347,
+            "z_seg": -9.930902423967574,
+            "ratio": 0.6928499636770388,
+            "R": 3200,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              1077.18875,
+              1078.10125,
+              1075.38375,
+              1076.175
+            ],
+            "chain_sds": [
+              31.124477882166957,
+              34.10752847154862,
+              34.696923292094645,
+              33.10240738979569
+            ]
+          },
+          "p1_author_fold2": {
+            "obs_total": 454,
+            "null_mean": 666.71,
+            "null_sd": 26.29680874174659,
+            "z_seg": -8.088814201333852,
+            "ratio": 0.680955737877038,
+            "R": 3200,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              665.46625,
+              665.295,
+              670.8325,
+              665.24625
+            ],
+            "chain_sds": [
+              27.41060672326499,
+              26.38054159792782,
+              25.19636766976542,
+              25.71518249862326
+            ]
+          },
+          "p1_thread_fold1": {
+            "obs_total": 12098,
+            "null_mean": 49026.0725,
+            "null_sd": 229.19750706268601,
+            "z_seg": -161.1189972057597,
+            "ratio": 0.24676665666008632,
+            "R": 1600,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              49018.825,
+              48987.8225,
+              49046.6725,
+              49050.97
+            ],
+            "chain_sds": [
+              224.0428851247011,
+              233.9334328259858,
+              241.09742894471106,
+              210.99317311230712
+            ]
+          },
+          "p1_thread_fold2": {
+            "obs_total": 7866,
+            "null_mean": 28724.64375,
+            "null_sd": 170.97609653380644,
+            "z_seg": -121.99742638220602,
+            "ratio": 0.27384151631123366,
+            "R": 1600,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              28715.6825,
+              28720.29,
+              28743.0425,
+              28719.56
+            ],
+            "chain_sds": [
+              176.21134099072626,
+              167.99091017075895,
+              165.96059982342194,
+              172.20157200211617
+            ]
+          }
         }
       },
       "X-e": {
-        "status": "PENDING",
-        "missing": {
-          "p1_author_fold1": "PENDING",
-          "p1_author_fold2": "PENDING",
-          "p1_thread_fold1": "PENDING",
-          "p1_thread_fold2": "PENDING"
+        "status": "UNRESOLVED",
+        "formation_precision_failures": [
+          "p1_author_fold1",
+          "p1_author_fold2",
+          "p1_thread_fold1",
+          "p1_thread_fold2"
+        ],
+        "provisional_counts": {
+          "p1_author_fold1": 1,
+          "p1_author_fold2": 0,
+          "p1_thread_fold1": 10,
+          "p1_thread_fold2": 5
         }
       },
       "inventory": {
-        "completed_attempts": 3,
-        "usable_production": 2,
+        "completed_attempts": 7,
+        "usable_production": 6,
         "unavailable": {
           "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING",
@@ -118,10 +208,6 @@
           "p2_WSB_18": "PENDING",
           "p2_DD_04": "PENDING",
           "p2_DD_05": "PENDING",
-          "p1_author_fold1": "PENDING",
-          "p1_author_fold2": "PENDING",
-          "p1_thread_fold1": "PENDING",
-          "p1_thread_fold2": "PENDING",
           "p2_WSB_00": "PENDING",
           "p2_WSB_06": "PENDING",
           "p2_WSB_07": "PENDING",
@@ -247,26 +333,115 @@
         }
       },
       "X-d": {
-        "status": "PENDING",
-        "missing": {
-          "p1_author_fold1": "PENDING",
-          "p1_author_fold2": "PENDING",
-          "p1_thread_fold1": "PENDING",
-          "p1_thread_fold2": "PENDING"
+        "status": "PASS",
+        "cells": {
+          "p1_author_fold1": {
+            "obs_total": 746,
+            "null_mean": 1075.4465625,
+            "null_sd": 32.27651459550107,
+            "z_seg": -10.20700551558069,
+            "ratio": 0.6936653349524282,
+            "R": 3200,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              1075.47875,
+              1077.1575,
+              1074.035,
+              1075.115
+            ],
+            "chain_sds": [
+              32.28489659945498,
+              34.98024719395219,
+              30.635743421696166,
+              30.944818225350748
+            ]
+          },
+          "p1_author_fold2": {
+            "obs_total": 454,
+            "null_mean": 664.3690625,
+            "null_sd": 25.135402928361696,
+            "z_seg": -8.369432672297794,
+            "ratio": 0.6833551193543121,
+            "R": 3200,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              659.4425,
+              666.34125,
+              665.39625,
+              666.29625
+            ],
+            "chain_sds": [
+              24.85677359896091,
+              24.640004026734655,
+              25.18648915465393,
+              25.196745542579503
+            ]
+          },
+          "p1_thread_fold1": {
+            "obs_total": 12098,
+            "null_mean": 48998.62875,
+            "null_sd": 220.67956333434574,
+            "z_seg": -167.21362047509965,
+            "ratio": 0.24690486874084205,
+            "R": 1600,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              49000.5875,
+              48984.6925,
+              48999.57,
+              49009.665
+            ],
+            "chain_sds": [
+              223.3589428336148,
+              214.68590532158834,
+              227.7789830076515,
+              215.90418656200254
+            ]
+          },
+          "p1_thread_fold2": {
+            "obs_total": 7866,
+            "null_mean": 28716.993125,
+            "null_sd": 167.8318707151129,
+            "z_seg": -124.23738731002784,
+            "ratio": 0.273914471677473,
+            "R": 1600,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              28709.48,
+              28718.7075,
+              28710.075,
+              28729.71
+            ],
+            "chain_sds": [
+              176.85677708247428,
+              153.3696741332849,
+              165.382751141103,
+              173.92283030125745
+            ]
+          }
         }
       },
       "X-e": {
-        "status": "PENDING",
-        "missing": {
-          "p1_author_fold1": "PENDING",
-          "p1_author_fold2": "PENDING",
-          "p1_thread_fold1": "PENDING",
-          "p1_thread_fold2": "PENDING"
+        "status": "UNRESOLVED",
+        "formation_precision_failures": [
+          "p1_author_fold1",
+          "p1_thread_fold1",
+          "p1_thread_fold2"
+        ],
+        "provisional_counts": {
+          "p1_author_fold1": 1,
+          "p1_author_fold2": 0,
+          "p1_thread_fold1": 12,
+          "p1_thread_fold2": 7
         }
       },
       "inventory": {
-        "completed_attempts": 3,
-        "usable_production": 1,
+        "completed_attempts": 7,
+        "usable_production": 5,
         "unavailable": {
           "p2_WSB_02": "UNRESOLVED",
           "p2_WSB_03": "UNRESOLVED",
@@ -275,10 +450,6 @@
           "p2_WSB_18": "PENDING",
           "p2_DD_04": "PENDING",
           "p2_DD_05": "PENDING",
-          "p1_author_fold1": "PENDING",
-          "p1_author_fold2": "PENDING",
-          "p1_thread_fold1": "PENDING",
-          "p1_thread_fold2": "PENDING",
           "p2_WSB_00": "PENDING",
           "p2_WSB_06": "PENDING",
           "p2_WSB_07": "PENDING",
@@ -380,6 +551,122 @@
       "summary": null,
       "source_sha256": "25ed57575bee668263d3d158f4992315ea23bf6a4433e3d8cf3ff47a8cc1b5c8"
     },
+    "p1_author_fold1_N2": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 119.3390093750786,
+      "production_seconds": 108.75594566599466,
+      "summary": {
+        "obs_total": 746,
+        "null_mean": 1076.7121875,
+        "null_sd": 33.30132281854347,
+        "z_seg": -9.930902423967574,
+        "ratio": 0.6928499636770388,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1077.18875,
+          1078.10125,
+          1075.38375,
+          1076.175
+        ],
+        "chain_sds": [
+          31.124477882166957,
+          34.10752847154862,
+          34.696923292094645,
+          33.10240738979569
+        ]
+      },
+      "source_sha256": "461b3933ae3eab831f62551f85eb48948ac648fc640954bd325e449b098ff785"
+    },
+    "p1_author_fold2_N2": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 94.71868849999737,
+      "production_seconds": 86.39684370800387,
+      "summary": {
+        "obs_total": 454,
+        "null_mean": 666.71,
+        "null_sd": 26.29680874174659,
+        "z_seg": -8.088814201333852,
+        "ratio": 0.680955737877038,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          665.46625,
+          665.295,
+          670.8325,
+          665.24625
+        ],
+        "chain_sds": [
+          27.41060672326499,
+          26.38054159792782,
+          25.19636766976542,
+          25.71518249862326
+        ]
+      },
+      "source_sha256": "9ea648dfc50b1114aacee22235b4a23850193dd45cbd38773e6b4fd2003ca69e"
+    },
+    "p1_thread_fold1_N2": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 167.17069804202765,
+      "production_seconds": 71.96097933303099,
+      "summary": {
+        "obs_total": 12098,
+        "null_mean": 49026.0725,
+        "null_sd": 229.19750706268601,
+        "z_seg": -161.1189972057597,
+        "ratio": 0.24676665666008632,
+        "R": 1600,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          49018.825,
+          48987.8225,
+          49046.6725,
+          49050.97
+        ],
+        "chain_sds": [
+          224.0428851247011,
+          233.9334328259858,
+          241.09742894471106,
+          210.99317311230712
+        ]
+      },
+      "source_sha256": "c7ccff36fba570ee3456effb808b0cf268cc868764ffc34627761fccc22b065d"
+    },
+    "p1_thread_fold2_N2": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 68.8637944170041,
+      "production_seconds": 57.35153262503445,
+      "summary": {
+        "obs_total": 7866,
+        "null_mean": 28724.64375,
+        "null_sd": 170.97609653380644,
+        "z_seg": -121.99742638220602,
+        "ratio": 0.27384151631123366,
+        "R": 1600,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          28715.6825,
+          28720.29,
+          28743.0425,
+          28719.56
+        ],
+        "chain_sds": [
+          176.21134099072626,
+          167.99091017075895,
+          165.96059982342194,
+          172.20157200211617
+        ]
+      },
+      "source_sha256": "509a8070f597f65b73ea02385108037253c819f526d7aeb173e4d969631ef18d"
+    },
     "p2_WSB_01_N3": {
       "pilot": "PASS",
       "production": "PASS",
@@ -424,6 +711,122 @@
       "production_seconds": 0,
       "summary": null,
       "source_sha256": "fd3dd286156634d5173fa60456bbe24b6a8d01db0aaeb778e5c7e354da145bd2"
+    },
+    "p1_author_fold1_N3": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 118.6729026249377,
+      "production_seconds": 108.28245495795272,
+      "summary": {
+        "obs_total": 746,
+        "null_mean": 1075.4465625,
+        "null_sd": 32.27651459550107,
+        "z_seg": -10.20700551558069,
+        "ratio": 0.6936653349524282,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1075.47875,
+          1077.1575,
+          1074.035,
+          1075.115
+        ],
+        "chain_sds": [
+          32.28489659945498,
+          34.98024719395219,
+          30.635743421696166,
+          30.944818225350748
+        ]
+      },
+      "source_sha256": "e239a7c3e76cc983aac048f6dfe8eb2778af5bc4b1eb470c6ea9ec817dcb17de"
+    },
+    "p1_author_fold2_N3": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 94.34508724999614,
+      "production_seconds": 85.98767108295579,
+      "summary": {
+        "obs_total": 454,
+        "null_mean": 664.3690625,
+        "null_sd": 25.135402928361696,
+        "z_seg": -8.369432672297794,
+        "ratio": 0.6833551193543121,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          659.4425,
+          666.34125,
+          665.39625,
+          666.29625
+        ],
+        "chain_sds": [
+          24.85677359896091,
+          24.640004026734655,
+          25.18648915465393,
+          25.196745542579503
+        ]
+      },
+      "source_sha256": "a29a8728eb10542e5b73a598ae00e92e4b15c883655d3e92b47e2a4f9a289d93"
+    },
+    "p1_thread_fold1_N3": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 53.88142237497959,
+      "production_seconds": 75.99193608295172,
+      "summary": {
+        "obs_total": 12098,
+        "null_mean": 48998.62875,
+        "null_sd": 220.67956333434574,
+        "z_seg": -167.21362047509965,
+        "ratio": 0.24690486874084205,
+        "R": 1600,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          49000.5875,
+          48984.6925,
+          48999.57,
+          49009.665
+        ],
+        "chain_sds": [
+          223.3589428336148,
+          214.68590532158834,
+          227.7789830076515,
+          215.90418656200254
+        ]
+      },
+      "source_sha256": "06f820f64340dcad5850b5d149823a8cebe023f9e8cc3eaaf12e89e13619b628"
+    },
+    "p1_thread_fold2_N3": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 70.49516558402684,
+      "production_seconds": 58.59978162497282,
+      "summary": {
+        "obs_total": 7866,
+        "null_mean": 28716.993125,
+        "null_sd": 167.8318707151129,
+        "z_seg": -124.23738731002784,
+        "ratio": 0.273914471677473,
+        "R": 1600,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          28709.48,
+          28718.7075,
+          28710.075,
+          28729.71
+        ],
+        "chain_sds": [
+          176.85677708247428,
+          153.3696741332849,
+          165.382751141103,
+          173.92283030125745
+        ]
+      },
+      "source_sha256": "2e03a5c7a84cb8a9ec07730e59a79e46304e349e5036a060dd0ea27ce4237254"
     }
   },
   "public_release_ready": false,

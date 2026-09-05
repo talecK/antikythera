@@ -1,3 +1,32 @@
+# Paper 1 independently verified; first-pass queue complete — 2026-09-04
+
+The MBP manifest directly reports COMPLETE, 84/84 registered cell/null
+attempts. It has NOT started an extension. M1 Paper 1 verification is
+COMPLETE: all 104 transferred files and all raw moments/stage diagnostics/
+formation checks match. Durable audit:
+reports/paper1_curveball_verification.json; verifier:
+eval/verify_curveball_results.py. X-d PASS under both N2 and N3; X-e
+UNRESOLVED under both. Seven of eight formation checks are unresolved;
+N3 author fold2 passes with zero formed pairs. Paper 1 Table 5 now records
+these results. Original reports and failures remain intact.
+
+The user accepted this remaining compute plan: one prospectively registered
+bounded extension for Paper 2 unresolved cases, then no further large
+compute unless a demonstrated implementation error requires correction.
+No extra Paper 1 sampling solely for formation precision; no new FDR
+project. Qualify those claims in the revision. Proposed Paper 2 extension
+budget is roughly 4-6 MBP hours; define exact rules and commit before any
+new chain. Do not describe that extension as running yet.
+
+Next: transfer/hash-verify all finished Paper 2 arrays/reports, inspect
+diagnostic failures, implement/validate and register the single bounded
+extension, execute it on MBP with exclusive ownership, then finish both
+manuscripts and final visual QA. Both papers remain unreleased. SSH/rsync
+access and merged-main consolidation remain authorized. Do not touch
+absentia/H2 or contact anyone. See prior block for host/path details.
+
+---
+
 # LIVE MBP Curveball queue — verified 2026-09-04 21:53 Pacific
 
 The network transfer and native restart are COMPLETE. SSH access:

@@ -1,0 +1,433 @@
+{
+  "created_utc": "2026-09-05T06:01:38.182281+00:00",
+  "queue_status": "COMPLETE",
+  "queue_completed_attempts": 84,
+  "reports": {
+    "p1_author_fold1_N2": "461b3933ae3eab831f62551f85eb48948ac648fc640954bd325e449b098ff785",
+    "p1_author_fold1_N3": "e239a7c3e76cc983aac048f6dfe8eb2778af5bc4b1eb470c6ea9ec817dcb17de",
+    "p1_author_fold2_N2": "9ea648dfc50b1114aacee22235b4a23850193dd45cbd38773e6b4fd2003ca69e",
+    "p1_author_fold2_N3": "a29a8728eb10542e5b73a598ae00e92e4b15c883655d3e92b47e2a4f9a289d93",
+    "p1_thread_fold1_N2": "c7ccff36fba570ee3456effb808b0cf268cc868764ffc34627761fccc22b065d",
+    "p1_thread_fold1_N3": "06f820f64340dcad5850b5d149823a8cebe023f9e8cc3eaaf12e89e13619b628",
+    "p1_thread_fold2_N2": "509a8070f597f65b73ea02385108037253c819f526d7aeb173e4d969631ef18d",
+    "p1_thread_fold2_N3": "2e03a5c7a84cb8a9ec07730e59a79e46304e349e5036a060dd0ea27ce4237254"
+  },
+  "files": {
+    "data/registry/nulls_revisions/curveball_v1/matrices/p1_author_fold1.npz": {
+      "sha256": "ca2fd9bd0962da12f80b873930712269b908053f9f4e24504a5956c65e54f433",
+      "bytes": 1484947
+    },
+    "data/registry/nulls_revisions/curveball_v1/matrices/p1_author_fold2.npz": {
+      "sha256": "8d0ca5a460aed4bf49d19ac30b2e3c37f96c25d7fc67e423d3db55f0ac661868",
+      "bytes": 1256700
+    },
+    "data/registry/nulls_revisions/curveball_v1/matrices/p1_thread_fold1.npz": {
+      "sha256": "f71afcefcfaeefb8a30c004f80d0bcea18205bc2cc344c7671554b7166c89cbd",
+      "bytes": 1387505
+    },
+    "data/registry/nulls_revisions/curveball_v1/matrices/p1_thread_fold2.npz": {
+      "sha256": "64823e079a3d06037ca7c75ef36c1f237f5fdd546dc9a2085fe9f3df777c4668",
+      "bytes": 1183063
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N2/pilot_0280.npz": {
+      "sha256": "67a15b8ff7eb22e095656f96a5e77cf60134fa8129c914b541efb3395554aace",
+      "bytes": 283462
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N2/pilot_0480.npz": {
+      "sha256": "f37d4970744900072d978721b27f6b48afedffee8378001b87cd497ad5305054",
+      "bytes": 485239
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N2/pilot_0880.npz": {
+      "sha256": "c44d2077cc5989b8536f758a168586a4c1716db9fbb80dc60b49414383a72281",
+      "bytes": 889068
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N2/pilot_starts.json": {
+      "sha256": "92f25d841f39afc8aefcb4454d4ad8a71bf22c515aae93396b33b59fae51eb31",
+      "bytes": 942
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N2/production_0400.npz": {
+      "sha256": "7915a5ef6f59de7450b3761cbf1df7aa8636e3af1d97b7fa073ffca80ad0e4a5",
+      "bytes": 404694
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N2/production_0800.npz": {
+      "sha256": "a9c97b234eb02a5a7124126aab7ee54033c93057ed9ec5f55abc80d6ed2d2479",
+      "bytes": 808766
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N2/production_starts.json": {
+      "sha256": "e8dd434424d930d4454fca2e3f1235b80063c6c111237a340cb0147c41957d26",
+      "bytes": 940
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N2/provenance.json": {
+      "sha256": "bbed50f55804bf9a53669c4325a818e1706f81dcddf311f514f61aa50120c98e",
+      "bytes": 4727
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N3/pilot_0280.npz": {
+      "sha256": "e7853ff157da143d8abff034a349872325d286a542c25219a4bb09a5084f097d",
+      "bytes": 283679
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N3/pilot_0480.npz": {
+      "sha256": "a7d4f4f8201bc85edec42053dbd37d30f664428299dae017d9333f19741be1f4",
+      "bytes": 485550
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N3/pilot_0880.npz": {
+      "sha256": "fb4c49ad7052b3be5cf05c7e965c8c9c128a15b753ab1dec9466f366d381b8dd",
+      "bytes": 889185
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N3/pilot_starts.json": {
+      "sha256": "9243934da8c53a9ccd3e02cd5375289467f20153ac699e39270782dbb9141738",
+      "bytes": 2712
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N3/production_0400.npz": {
+      "sha256": "1d28d7849e7bebd78373018b40c1e006b882d24b641d50e6cc99890a102f6513",
+      "bytes": 403933
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N3/production_0800.npz": {
+      "sha256": "244947ed30c487b76a6bb751434825be5421bc452240574d37ca8c25f222c966",
+      "bytes": 808175
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N3/production_starts.json": {
+      "sha256": "db469ce70b7e0083891d937adc336de73376c14e2f3da7ef452d2eccb09f827a",
+      "bytes": 2705
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold1_N3/provenance.json": {
+      "sha256": "4d1b8026fea9f06759730d76496e98422d5dc2f777de88c050d026389cbd62f8",
+      "bytes": 4727
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N2/pilot_0280.npz": {
+      "sha256": "ce539f6492c69b8ad24765e8509a27b3a2201c6d0b200e618996f5e0a8726447",
+      "bytes": 100893
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N2/pilot_0480.npz": {
+      "sha256": "a5779e7dc44e68502a45bb81f4c0d46bb35b23debfdd31c4bb1fb84ad19a3553",
+      "bytes": 172282
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N2/pilot_0880.npz": {
+      "sha256": "d8308ec5832edd8d463b1629b22d2d5aa6d89b2a849f64c3defbcd6c3155e5a3",
+      "bytes": 315011
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N2/pilot_starts.json": {
+      "sha256": "af4614b190f9c7079b9787a4f91b76e80758e030ef07bda477872e0202d82641",
+      "bytes": 937
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N2/production_0400.npz": {
+      "sha256": "70947ffeb754e47ce2dd0b69893b32f8ae3db9055bcf94ef0700c1cb7e1def95",
+      "bytes": 143216
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N2/production_0800.npz": {
+      "sha256": "4d1a587ed64cbebaae41c7f1503fb4d28e8d153f0d5eca5b0e3c6378de12d9fd",
+      "bytes": 285901
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N2/production_starts.json": {
+      "sha256": "b9ecf42cb1696dc9470dcafd89162f2de8c848924be9f2b77dd06485a4705533",
+      "bytes": 937
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N2/provenance.json": {
+      "sha256": "f89673bcd10759dda03736d102a8acdba8d237f1a8393654d387bfe7ecf82d27",
+      "bytes": 4727
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N3/pilot_0280.npz": {
+      "sha256": "b83012b86eaecf60c535b6e1c895244193fd6360a138f848cef93dba2b36de37",
+      "bytes": 100440
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N3/pilot_0480.npz": {
+      "sha256": "68c06fc8fb5e267283b8d6cfa822a9e64d6e8d744a960ab8bc2497eaaaa6e276",
+      "bytes": 171870
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N3/pilot_0880.npz": {
+      "sha256": "3edabfec7f0221a33de927740eb4d47c5437d0ea92f2bdb3aa6c662eda9f2907",
+      "bytes": 314663
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N3/pilot_starts.json": {
+      "sha256": "3b284d0ce690ba94d178be8f85939f400855f8783c5eda6c0a9ec963538829be",
+      "bytes": 2708
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N3/production_0400.npz": {
+      "sha256": "db66c724c3e36378a942cfe4ba1265b6578b36ada24feac670029c7bb46e01f9",
+      "bytes": 143421
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N3/production_0800.npz": {
+      "sha256": "c31750981214b9eaaae27125986dc97bc285e7c7657456dfb22fe2cd7d6694f7",
+      "bytes": 285752
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N3/production_starts.json": {
+      "sha256": "e3786ddc9daa52189a3ad57ea05980ad715323a88ac693fb30667d374bc7ac8e",
+      "bytes": 2701
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_author_fold2_N3/provenance.json": {
+      "sha256": "2ad52ecfc186b630000081ebab7a5cbf37f7c58cdfc965b87c24fe71089a9fce",
+      "bytes": 4727
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N2/pilot_0280.npz": {
+      "sha256": "198a4bd370a0358dd2de4bd3767e8d5a29fce07812409425aa2dfec875ca632f",
+      "bytes": 17846197
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N2/pilot_0480.npz": {
+      "sha256": "65ccaa370d2881de4f9a9cd78061d3139c2c8538553b14cec44d10f4da0ca2eb",
+      "bytes": 30595829
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N2/pilot_0880.npz": {
+      "sha256": "13b3be05448c3dca68dc2cefe8fb453a777ae152fec0635aab0f66afe1212289",
+      "bytes": 56094095
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N2/pilot_starts.json": {
+      "sha256": "45b0ff66ce04e5bb804a36f102f129b6e51f4db1b9b7e644b5da466ac9d21cdd",
+      "bytes": 946
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N2/production_0400.npz": {
+      "sha256": "7bc9ab17e8612e963edfe2282e3bbaccf57b533a7c8b6756b93d2a956635b241",
+      "bytes": 25499814
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N2/production_starts.json": {
+      "sha256": "748d73880a68091b56dc896c6259bf4b9127ff0c8f959e8b35260e2a5a981f03",
+      "bytes": 947
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N2/provenance.json": {
+      "sha256": "5814cca30a328c6fa354f1e61cc6bfd5b85e7882399cf24c176cc64cd8f03813",
+      "bytes": 6932
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N3/pilot_0280.npz": {
+      "sha256": "3267e44b0c172cd5993b2fbf0f2b8d5576f49961d2a128135512f68b06a8bc54",
+      "bytes": 17839359
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N3/pilot_starts.json": {
+      "sha256": "0dc0ef890567adfeb2c85b3207dd6fe0e4e1d7a7345063670528e9ebc88c157f",
+      "bytes": 2705
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N3/production_0400.npz": {
+      "sha256": "a85a3d3231dc13c819bae76c6f35df405db0fe4586d3cb9ff4e4ef90f3a9376e",
+      "bytes": 25494976
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N3/production_starts.json": {
+      "sha256": "39af362b6952228d7650aade8a54a401eba94e4435ed24fb04e86809d018ee29",
+      "bytes": 2710
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold1_N3/provenance.json": {
+      "sha256": "e6e8ebdace064f3deac81f840a38a0e27464a028070cfb1b882ad22df4f7ce24",
+      "bytes": 6932
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N2/pilot_0280.npz": {
+      "sha256": "35c643050e9edc8258e221020a53082ce73c0ff86e20707c9b81c4b997b3df61",
+      "bytes": 6201244
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N2/pilot_0480.npz": {
+      "sha256": "13e6b2a23786315b93f86f325df4907e446521125dbf2160076b829126a5817f",
+      "bytes": 10631995
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N2/pilot_starts.json": {
+      "sha256": "9a4f97de264991b9a9b3a71f07a33040da315a024c497c5ca28578ff60eb407c",
+      "bytes": 947
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N2/production_0400.npz": {
+      "sha256": "ded47e2e7598de460e4702117d67d97a293722bf2b11254a5af824f284674531",
+      "bytes": 8861553
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N2/production_starts.json": {
+      "sha256": "d516deba9840c3f5c5d0620c418f5f613c02e7422981e1c8b811283ba17f5725",
+      "bytes": 947
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N2/provenance.json": {
+      "sha256": "88140086cf24552f6f11ed8fdc3e15d4aae627913392c6f0965ff4ccb4ac14b5",
+      "bytes": 6928
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N3/pilot_0280.npz": {
+      "sha256": "a3c328ea8a8746d72048f933cc29047476e28289ff1b4e87a184312661e6e34f",
+      "bytes": 6201688
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N3/pilot_0480.npz": {
+      "sha256": "4519725fd757546d5a626c74a40a5bbb43f5c72446acdad1218c684ac59e816d",
+      "bytes": 10630750
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N3/pilot_starts.json": {
+      "sha256": "e945c201214507301e900e011bab134a748789c316ace4f72571a709a4c7cc13",
+      "bytes": 2710
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N3/production_0400.npz": {
+      "sha256": "7cba8d800ac596209e4a016978d39e48f1228f77e144655da3caf35f6902a710",
+      "bytes": 8859018
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N3/production_starts.json": {
+      "sha256": "09e3c8d9182524f9ab093af673252b4cd0483be57d3b18f8955c214195d53cae",
+      "bytes": 2715
+    },
+    "data/registry/nulls_revisions/curveball_v1/p1_thread_fold2_N3/provenance.json": {
+      "sha256": "94820eb4243c46668f947bae3959657e380d1e22709a4a8ec4b7de10a5c4e4e1",
+      "bytes": 6928
+    },
+    "reports/curveball_matrix_p1_author_fold1.json": {
+      "sha256": "079797578d2426d2561b053a100fb797fe83c4715553a2745b9392720c0eb3b4",
+      "bytes": 2350
+    },
+    "reports/curveball_matrix_p1_author_fold2.json": {
+      "sha256": "76ff29a67a4f7695b72aef7600c393295332b6f6aae8e788310d3f0baf2a0fe2",
+      "bytes": 2350
+    },
+    "reports/curveball_matrix_p1_thread_fold1.json": {
+      "sha256": "a9801aa7f6cadf33c1e1123e000254abceb9a06095c432953205ad160a9a261a",
+      "bytes": 4513
+    },
+    "reports/curveball_matrix_p1_thread_fold2.json": {
+      "sha256": "16ff306246e11586c475298c67108ce47dca99b7fd03bb1e358b40596381e201",
+      "bytes": 4509
+    },
+    "reports/curveball_p1_author_fold1_N2.json": {
+      "sha256": "461b3933ae3eab831f62551f85eb48948ac648fc640954bd325e449b098ff785",
+      "bytes": 322732
+    },
+    "reports/curveball_p1_author_fold1_N2_pilot_0280.json": {
+      "sha256": "64732a4fbb74f9641a3c36dee60f4102afcbcf25f971b479cc8c99c13fb04fc4",
+      "bytes": 48239
+    },
+    "reports/curveball_p1_author_fold1_N2_pilot_0480.json": {
+      "sha256": "c9914e6d02d2fb380d1bdb335126d30d47453f3c26d643a9543abc06daec0a8c",
+      "bytes": 48282
+    },
+    "reports/curveball_p1_author_fold1_N2_pilot_0880.json": {
+      "sha256": "52fb21fda760ea309f7313b547a2235028d4af67ac5ea779a045ccc9bf915b63",
+      "bytes": 48404
+    },
+    "reports/curveball_p1_author_fold1_N2_production_0400.json": {
+      "sha256": "1e2e8d8bc9bf18b61cfaba97eb55749d279f915738f53dd824ec016bf65d2f21",
+      "bytes": 10297
+    },
+    "reports/curveball_p1_author_fold1_N2_production_0800.json": {
+      "sha256": "289c0f778c8d4403db8486da6bf65b7134ca19e1ddf61fcc8098c7e78d48abb1",
+      "bytes": 10309
+    },
+    "reports/curveball_p1_author_fold1_N3.json": {
+      "sha256": "e239a7c3e76cc983aac048f6dfe8eb2778af5bc4b1eb470c6ea9ec817dcb17de",
+      "bytes": 332765
+    },
+    "reports/curveball_p1_author_fold1_N3_pilot_0280.json": {
+      "sha256": "2763f4c3d296297f808f835864a4447c70b39cd20b473a640832209de3a5cee6",
+      "bytes": 49867
+    },
+    "reports/curveball_p1_author_fold1_N3_pilot_0480.json": {
+      "sha256": "e6a8ea5853d45e1951fc30513251408dfdf53e8523494482e80805010800f7f9",
+      "bytes": 49922
+    },
+    "reports/curveball_p1_author_fold1_N3_pilot_0880.json": {
+      "sha256": "f1804e9edc21163251f1b1c8981455d500639eb1513110d4154a3b19919b1229",
+      "bytes": 50035
+    },
+    "reports/curveball_p1_author_fold1_N3_production_0400.json": {
+      "sha256": "709d20a7545b4a0065e18769b497a4340481317007e3c15c61031317c0f89f8d",
+      "bytes": 11916
+    },
+    "reports/curveball_p1_author_fold1_N3_production_0800.json": {
+      "sha256": "7b1e87314050f08e5043d5db0a426070e1e802145328badf6fbadc6608ae0c56",
+      "bytes": 11979
+    },
+    "reports/curveball_p1_author_fold2_N2.json": {
+      "sha256": "9ea648dfc50b1114aacee22235b4a23850193dd45cbd38773e6b4fd2003ca69e",
+      "bytes": 256671
+    },
+    "reports/curveball_p1_author_fold2_N2_pilot_0280.json": {
+      "sha256": "45a6023f969a10a1e2192e61dbd1574e68dc7d96e2e1bcc73a2017aa6425abab",
+      "bytes": 48188
+    },
+    "reports/curveball_p1_author_fold2_N2_pilot_0480.json": {
+      "sha256": "8c6ec9c8f45a67c37ac96e5da05a769c6a2779607fe53c248a0f62411b3704a1",
+      "bytes": 48217
+    },
+    "reports/curveball_p1_author_fold2_N2_pilot_0880.json": {
+      "sha256": "3c1f955f07efd9b0a87b738b932ca95e36eddc0cb41c4072aebff940955e1227",
+      "bytes": 48285
+    },
+    "reports/curveball_p1_author_fold2_N2_production_0400.json": {
+      "sha256": "2eec81b791180d8d6fcc118ee582b6a623016fae1ce7080111e91475b64312f5",
+      "bytes": 10271
+    },
+    "reports/curveball_p1_author_fold2_N2_production_0800.json": {
+      "sha256": "082f46a5e2ec1a54e1780d9a47bb4291f0cd3b55e1fa15d7177931a1ea36fc58",
+      "bytes": 10296
+    },
+    "reports/curveball_p1_author_fold2_N3.json": {
+      "sha256": "a29a8728eb10542e5b73a598ae00e92e4b15c883655d3e92b47e2a4f9a289d93",
+      "bytes": 266786
+    },
+    "reports/curveball_p1_author_fold2_N3_pilot_0280.json": {
+      "sha256": "295bfcdc1dee62ad875287c99ddca4831a18b426ab139cc79fbc4b7a48189005",
+      "bytes": 49801
+    },
+    "reports/curveball_p1_author_fold2_N3_pilot_0480.json": {
+      "sha256": "5ae669ede241816945583006b6b5c0488ca8047e5e293c2f0bac382e5df543df",
+      "bytes": 49857
+    },
+    "reports/curveball_p1_author_fold2_N3_pilot_0880.json": {
+      "sha256": "e082e8b0a6cc2de28120526706ffacd766302daa718edf2478d72605fb83eeab",
+      "bytes": 49956
+    },
+    "reports/curveball_p1_author_fold2_N3_production_0400.json": {
+      "sha256": "984864bcb8bd5218ed7a7d86043513f83eff6472a99cf21f8020dee78fe73106",
+      "bytes": 11895
+    },
+    "reports/curveball_p1_author_fold2_N3_production_0800.json": {
+      "sha256": "cd282cc186e89b5c3f083d1807d0e9f15fcb9feab34ac79c91505f606a8e35a8",
+      "bytes": 11948
+    },
+    "reports/curveball_p1_thread_fold1_N2.json": {
+      "sha256": "c7ccff36fba570ee3456effb808b0cf268cc868764ffc34627761fccc22b065d",
+      "bytes": 1714120
+    },
+    "reports/curveball_p1_thread_fold1_N2_pilot_0280.json": {
+      "sha256": "02b1a7aa7b7f53ca9887a672b2cff71ce0b516bd07b6e4744f8994f9d2171ddb",
+      "bytes": 48367
+    },
+    "reports/curveball_p1_thread_fold1_N2_pilot_0480.json": {
+      "sha256": "733eba8ea37e86ba25944abc7d91ed4fde23aaed314eda46cd5d86e6d42b0443",
+      "bytes": 48480
+    },
+    "reports/curveball_p1_thread_fold1_N2_pilot_0880.json": {
+      "sha256": "c143fd899b7e1c20667dac9b5f29202f3a5186a8158c2daa9fc65cfd88610696",
+      "bytes": 48768
+    },
+    "reports/curveball_p1_thread_fold1_N2_production_0400.json": {
+      "sha256": "493be7422f574b3159e41ff36985ec0a2766ab822ac35a08164343c4e6c05945",
+      "bytes": 10296
+    },
+    "reports/curveball_p1_thread_fold1_N3.json": {
+      "sha256": "06f820f64340dcad5850b5d149823a8cebe023f9e8cc3eaaf12e89e13619b628",
+      "bytes": 1604968
+    },
+    "reports/curveball_p1_thread_fold1_N3_pilot_0280.json": {
+      "sha256": "23ca82b762fc94d985548b3f377dcc11838ad1e0dac3e729c05383ba04eac9f6",
+      "bytes": 50017
+    },
+    "reports/curveball_p1_thread_fold1_N3_production_0400.json": {
+      "sha256": "79cbaa36c449d24f75e4effb7c122a535c4f8365865909ddf5b613a4ba106494",
+      "bytes": 11934
+    },
+    "reports/curveball_p1_thread_fold2_N2.json": {
+      "sha256": "509a8070f597f65b73ea02385108037253c819f526d7aeb173e4d969631ef18d",
+      "bytes": 1339000
+    },
+    "reports/curveball_p1_thread_fold2_N2_pilot_0280.json": {
+      "sha256": "3a949c226f098ce56abb9d6c9883945b8ab102fdd934d6f94009f13124828e88",
+      "bytes": 48274
+    },
+    "reports/curveball_p1_thread_fold2_N2_pilot_0480.json": {
+      "sha256": "e26fd5d6481a51220a770052ada769eb3364b8c5e2ec3de5d4893eedb4cceda8",
+      "bytes": 48456
+    },
+    "reports/curveball_p1_thread_fold2_N2_production_0400.json": {
+      "sha256": "868b84c7391bc83a8f33d160a73c344d033a34f33e8959ea56bf89deb9f1ba05",
+      "bytes": 10308
+    },
+    "reports/curveball_p1_thread_fold2_N3.json": {
+      "sha256": "2e03a5c7a84cb8a9ec07730e59a79e46304e349e5036a060dd0ea27ce4237254",
+      "bytes": 1343922
+    },
+    "reports/curveball_p1_thread_fold2_N3_pilot_0280.json": {
+      "sha256": "28e284960cccc631623b14fa9171694643b64cc5116b6e8c1d1d0e574882b3c4",
+      "bytes": 49926
+    },
+    "reports/curveball_p1_thread_fold2_N3_pilot_0480.json": {
+      "sha256": "94bad08786f710df9a5e0cb4cee66436a9cd4ab6ede30b2c693ddb29c7e151ca",
+      "bytes": 50109
+    },
+    "reports/curveball_p1_thread_fold2_N3_production_0400.json": {
+      "sha256": "ffc7dd72bd1d0f96dd697bd976d624dfae133363ad38c13343da8395edbcfd89",
+      "bytes": 11921
+    }
+  }
+}
