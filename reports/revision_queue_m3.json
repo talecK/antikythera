@@ -1,0 +1,121 @@
+{
+  "jobs": {
+    "paper2_label_R1000": {
+      "status": "complete",
+      "started_utc": "2026-09-05T02:59:01Z",
+      "command": [
+        ".venv/bin/python",
+        "eval/run_paper2.py",
+        "--headline",
+        "--R",
+        "1000",
+        "--null",
+        "label",
+        "--drift",
+        "10",
+        "--workers",
+        "8"
+      ],
+      "commit_at_start": "b84435b5fdfc1a6f14051fefbf0df5edf8b8be2c",
+      "code_sha256": {
+        "eval/run_revision_queue.py": "cbc4c4ef99682a6d2820ad5d5029a2400cd7418f02b4db11da9381b758e2c0a5",
+        "eval/run_paper2.py": "b5c1acbcd94968f802b29fdcf6763e2c29e4377266d8050a7278b8a6993c6980",
+        "eval/run_eval8_nulls.py": "d12dff490b6b73325fd5d351e94467eefc112987e7c1475118c2a35efff5b325",
+        "eval/nulls.py": "3b3a3c09f91cb4bb63d888a8845fbb59fa6b80dc84ff20866630afd26827449d",
+        "eval/run_eval8.py": "4724f55fa24c558b5f5f4d6ab6e1608c7dc8f00b1d4ff4cdd8e8d98f3c64775b",
+        "eval/run_gate.py": "a52754c146890452b8a6e92096b77f345eec6e97b54970b05ee842d589b3892d",
+        "preregistration_nulls.md": "9ee10f8269fc9e1d4cac393179d5f1c24813fa1e8d8471cee56be4953f93d01c"
+      },
+      "source_manifest_sha256": "9d7a58232f4d3cc72e0f5f8b0d03d26cd75cc36813d64ac4ddafdb4a9d3f2e39",
+      "python": "3.14.6",
+      "numpy": "2.5.2",
+      "duckdb": "1.5.5",
+      "architecture": "arm64",
+      "log": "logs/m3_paper2_label_R1000.log",
+      "outputs": {
+        "reports/paper2_windows_z_label_R1000_headline.tsv": "77f8b07067484cb37e85571b76c8b9f3417821a40d87bf710025ac0c50ce04f2"
+      },
+      "wall_seconds": 1679.058
+    },
+    "paper2_stratified_R1000": {
+      "status": "complete",
+      "started_utc": "2026-09-05T03:27:00Z",
+      "command": [
+        ".venv/bin/python",
+        "eval/run_paper2.py",
+        "--headline",
+        "--R",
+        "1000",
+        "--null",
+        "stratified",
+        "--drift",
+        "10",
+        "--workers",
+        "8"
+      ],
+      "commit_at_start": "b84435b5fdfc1a6f14051fefbf0df5edf8b8be2c",
+      "code_sha256": {
+        "eval/run_revision_queue.py": "cbc4c4ef99682a6d2820ad5d5029a2400cd7418f02b4db11da9381b758e2c0a5",
+        "eval/run_paper2.py": "b5c1acbcd94968f802b29fdcf6763e2c29e4377266d8050a7278b8a6993c6980",
+        "eval/run_eval8_nulls.py": "d12dff490b6b73325fd5d351e94467eefc112987e7c1475118c2a35efff5b325",
+        "eval/nulls.py": "3b3a3c09f91cb4bb63d888a8845fbb59fa6b80dc84ff20866630afd26827449d",
+        "eval/run_eval8.py": "4724f55fa24c558b5f5f4d6ab6e1608c7dc8f00b1d4ff4cdd8e8d98f3c64775b",
+        "eval/run_gate.py": "a52754c146890452b8a6e92096b77f345eec6e97b54970b05ee842d589b3892d",
+        "preregistration_nulls.md": "9ee10f8269fc9e1d4cac393179d5f1c24813fa1e8d8471cee56be4953f93d01c"
+      },
+      "source_manifest_sha256": "9d7a58232f4d3cc72e0f5f8b0d03d26cd75cc36813d64ac4ddafdb4a9d3f2e39",
+      "python": "3.14.6",
+      "numpy": "2.5.2",
+      "duckdb": "1.5.5",
+      "architecture": "arm64",
+      "log": "logs/m3_paper2_stratified_R1000.log",
+      "outputs": {
+        "reports/paper2_windows_z_stratified_R1000_headline.tsv": "2a1428351c81edbecf022ca33aefdfd8829b0250a9403823b36e129400fe7e59"
+      },
+      "wall_seconds": 1853.548
+    },
+    "paper1_thread_pooled": {
+      "status": "complete",
+      "started_utc": "2026-09-05T03:57:53Z",
+      "command": [
+        ".venv/bin/python",
+        "eval/run_eval8_nulls.py",
+        "--null",
+        "label",
+        "--space",
+        "thread",
+        "--seeds",
+        "10",
+        "--R",
+        "100",
+        "--workers",
+        "2"
+      ],
+      "commit_at_start": "b84435b5fdfc1a6f14051fefbf0df5edf8b8be2c",
+      "code_sha256": {
+        "eval/run_revision_queue.py": "cbc4c4ef99682a6d2820ad5d5029a2400cd7418f02b4db11da9381b758e2c0a5",
+        "eval/run_paper2.py": "b5c1acbcd94968f802b29fdcf6763e2c29e4377266d8050a7278b8a6993c6980",
+        "eval/run_eval8_nulls.py": "d12dff490b6b73325fd5d351e94467eefc112987e7c1475118c2a35efff5b325",
+        "eval/nulls.py": "3b3a3c09f91cb4bb63d888a8845fbb59fa6b80dc84ff20866630afd26827449d",
+        "eval/run_eval8.py": "4724f55fa24c558b5f5f4d6ab6e1608c7dc8f00b1d4ff4cdd8e8d98f3c64775b",
+        "eval/run_gate.py": "a52754c146890452b8a6e92096b77f345eec6e97b54970b05ee842d589b3892d",
+        "preregistration_nulls.md": "9ee10f8269fc9e1d4cac393179d5f1c24813fa1e8d8471cee56be4953f93d01c"
+      },
+      "source_manifest_sha256": "9d7a58232f4d3cc72e0f5f8b0d03d26cd75cc36813d64ac4ddafdb4a9d3f2e39",
+      "python": "3.14.6",
+      "numpy": "2.5.2",
+      "duckdb": "1.5.5",
+      "architecture": "arm64",
+      "log": "logs/m3_paper1_thread_pooled.log",
+      "outputs": {
+        "reports/paper1_nulls_label_R100_thread_seeds10.tsv": "90959eae252b3be8f940a55ac2ba781d21ee05f206587e962d72e6011075be37",
+        "reports/paper1_nulls_label_R100_thread_seeds10_batches.tsv": "e5be5161477e7d8427fdbb2a3342fad3c36ec4b36d16ae59db32a032a87b6b76",
+        "reports/paper1_nulls_label_R100_thread_seeds10.json": "fb13039467729804d8c19206acb1b73fe1647dcd924e2279c286241409e7c6dd",
+        "data/registry/pilot1_concepts/run8_nulls_label_R100_thread_seeds10.json": "705c8a0b71209951e05c90ad8148c7f3914fa88261b2d40eb9f739ace15bdb4a",
+        "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold1.npz": "6995d9dd770df3eac83f4028d9d0bb65238a5efce1821d8a85e6515c474b201e",
+        "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold2.npz": "5988e93cfdd28a18f15ea6242cc644d4b21c67d993031dc21e2ba83b5a26a97e"
+      },
+      "wall_seconds": 394.355
+    }
+  }
+}
