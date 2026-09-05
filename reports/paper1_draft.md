@@ -522,19 +522,19 @@ counts remain provisional wherever the formation column is unresolved.
 
 The aggregate segregation prediction X-d passes under both nulls in all
 four evaluations. Author-space co-mention totals are about 31-32% below
-the fixed-margin expectations; thread totals are about 73-75% below them.
+the expectations with fixed margins; thread totals are about 73-75% below them.
 The reported z values describe standardized deviations from each null,
-not Gaussian tail probabilities or exact MCMC permutation p-values.
+not Gaussian tail probabilities or exact permutation probabilities.
 
-The literal formed-count prediction X-e remains UNRESOLVED under both
+The literal prediction about formed counts X-e remains UNRESOLVED under both
 nulls. Seven of eight cell/null combinations do not pass every supported
 pair's precision checks; only N3 author fold 2 passes, with zero formed
 pairs. This does not invalidate the aggregate estimates. The provisional
 counts are descriptive percentile classifications, with no calibrated
-false-discovery-rate guarantee. This revision does not add sampling solely
+false discovery rate guarantee. This revision does not add sampling solely
 to resolve these classifications or introduce a new FDR analysis.
 
-All 104 transferred files were hash-verified on M1. Raw moments, archived
+The hashes of all 104 transferred files were verified on M1. Raw moments, archived
 stage diagnostics, formation checks and frozen observed censuses were
 recomputed; the results match the MBP reports within the stated numerical
 tolerance. Verification: `reports/paper1_curveball_verification.json`.
