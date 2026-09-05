@@ -5,6 +5,52 @@
 ## papers from here. Everything below the next "## Status" banner is the
 ## pre-paper project history and is still accurate for the machinery.
 
+### Critique response: nulls amendment (2026-09-04) — CURRENT PICKUP POINT
+- An external model-generated review of both preprints arrived
+  2026-09-04. Verified against code: (1) the label-shuffle null is NOT
+  fixed-fixed (documents rebuilt as sets collapse duplicate labels) and
+  both drafts say it is; (2) the segregation statistic sums per-pair
+  document counts, the prose says "documents holding any eligible pair";
+  (3) the DD control's z is not monotone and its observed/null ratio
+  steps at eval 2021Q2 like WSB; (4) "30-fold" contradicts the 1.8M->9M
+  anchor (fivefold); (5) the extraction model is never named in Paper 1;
+  (6) Paper 2 still says "private during review". The kill (Paper 1)
+  and the onset (Paper 2) are not at risk; the Paper 2 excursion is the
+  exposed result (collapse deflates the null, so positive z is
+  anti-conservative, and a timing-preserving null has never been run).
+- Registered response: preregistration_nulls.md (STATUS: REGISTERED,
+  predictions N1-a..d, R-a/b, D-b, P1-a/b, decision rules 1 to 5,
+  runbook at the end). Code: eval/nulls.py (registered sampler moved
+  verbatim + quarter-stratified sampler + margin-drift diagnostic +
+  Monte Carlo p with the +1 correction), run_paper2.py (--workers,
+  --null, --R, --headline, --cells, --drift; registered path unchanged
+  and byte-identical through the pool: verified on three cells on the
+  M1), run_eval8_nulls.py (Paper 1's four cells, per-cell seeds;
+  run_eval8.py frozen), tests/test_nulls.py (7 passing).
+- ALREADY KNOWN and disclosed in the amendment: the reproduction check
+  emitted drift for three cells: the registered null collapses 3 to 6
+  percent of incidences (WSB k=0 0.057, k=1 0.058, DD k=0 0.033). That
+  triggers rule 4: a margin-preserving null (N2, curveball) is required
+  for the headline cells before v2, under a further amendment not yet
+  written. The 2 percent threshold prediction was withdrawn, not
+  reworded.
+- HOLD the SocArXiv v2 uploads until the revision is in.
+- Runs go on the M3 MBP: clone, `python3 -m venv .venv && .venv/bin/pip
+  install -r requirements.txt` (numpy must be 2.5.2 for the stream to
+  reproduce), plug in the NVMe and recreate the data/ symlinks (docs,
+  registry, paper2, reddit_gate, science4cast, release), then follow the
+  runbook in preregistration_nulls.md step by step with stdout
+  redirected to a log file. Gate first: `run_paper2.py --workers 8` must
+  leave reports/paper2_windows_z.tsv unchanged under git, and
+  `run_eval8.py` serially must reproduce the run-8 JSONs. Expected
+  wall time for the whole runbook on an M3 Pro: about 1 h 20 min.
+- After the runs: append every prediction's outcome to
+  reports/pilot1_runs.md, write and register the N2 amendment, then the
+  prose pass (statistic definition, "fixed-fixed" language, ratios in
+  every table, onset as a window, |z|<3 as non-detection, DD step
+  disclosed, 30-fold, "monotonically", model identifier, repo status,
+  Neal 2014 / FDSM and LBD citations, abstract scope).
+
 ### Term pass and lint (2026-09-02 evening)
 - Both drafts passed through a mechanical jargon audit: 383 terms
   classified in reports/term_table.tsv (S/D/Q/R), 71 replaced, glosses
