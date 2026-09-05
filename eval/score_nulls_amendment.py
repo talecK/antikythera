@@ -42,6 +42,37 @@ def score_onset(rows):
             "later_exceptions": [k for k in range(onset+1,19) if zs[k]>-3] if onset is not None else None}
 
 
+def score_m3(base, directory):
+    """Verify manifest/raw pooled estimates before scoring imported results."""
+    from verify_m3_results import verify, read_table
+    verification = verify(directory)
+    label = read_table(directory / "reports/paper2_windows_z_label_R1000_headline.tsv")
+    changes = [{"cell":list(key(r)), "relative_z_change":
+        abs(float(r['z_seg'])-float(base[key(r)]['z_seg']))/abs(float(base[key(r)]['z_seg']))}
+        for r in label]
+    tails = []
+    for r in label:
+        k=key(r); p=float(r['mc_p_2s'])
+        if abs(float(base[k]['z_seg']))>=5:
+            tails.append(dict(cell=list(k),p=p,passed=abs(p-2/1001)<1e-12))
+        elif k in [(4,1,'WSB','union'),(4,2,'WSB','union')]:
+            tails.append(dict(cell=list(k),p=p,passed=p>.05))
+    manifest = json.loads((directory / 'reports/paper1_nulls_label_R100_thread_seeds10.json').read_text())
+    batches=[dict(fold=c['fold'],eligible=c['eligible'],**b) for c in manifest['cells'] for b in c['batches']]
+    spread=[dict(fold=c['fold'],relative_range=(max(b['ratio'] for b in c['batches'])-
+         min(b['ratio'] for b in c['batches']))/c['ratio']) for c in manifest['cells']]
+    return {
+        'R-a':verdict(all(c['relative_z_change']<=.2 for c in changes),changes=changes),
+        'R-b':verdict(all(c['passed'] for c in tails),cells=tails),
+        'T-a':verdict(all(b['z_seg'] < -100 for b in batches),
+                      failures=[b for b in batches if b['z_seg']>=-100]),
+        'T-b':verdict(all(b['formed']<=.01*b['eligible'] for b in batches),
+                      failures=[b for b in batches if b['formed']>.01*b['eligible']]),
+        'T-c':verdict(all(s['relative_range']<=.05 for s in spread),folds=spread),
+        'M3_verification':verification,
+    }, {int(r['window']):float(r['collapsed_frac']) for r in label if r['stratum']=='WSB'}
+
+
 def main():
     base = {key(r): r for r in table("paper2_windows_z.tsv")}
     rows = table("paper2_windows_z_stratified_R100.tsv")
@@ -89,6 +120,10 @@ def main():
                       "WSB_original_null": {"status":"PENDING_M3"}}
     for name in ("R-a","R-b","T-a","T-b","T-c"):
         result[name] = {"status":"PENDING_M3"}
+    if (ROOT/'reports/revision_queue_m3.json').exists():
+        m3, wsb = score_m3(base, ROOT)
+        result.update(m3)
+        result['D-b']['WSB_original_null'] = wsb
     result["decision_rules"] = {
         "excursion_withdrawal_triggered": not all(r["z"]>3 for r in excursion),
         "onset_revision_triggered": onset["window"] != 5,

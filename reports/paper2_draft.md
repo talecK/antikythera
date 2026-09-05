@@ -19,14 +19,14 @@ r/wallstreetbets: at chance before 2020, walled by 2024 like everywhere
 else. Here we report a registered study of when that happened, using
 rolling quarterly windows over a fresh single-source corpus of 98.1
 million Reddit posts and comments, 2019 to 2024. Three predictions
-committed in advance all pass. The community moves from chance-level
-mixing to persistent walls, onset 2021-04-01, with zero reversions. In
+committed in advance all pass. Under the registered label null, persistent segregation begins in the
+window evaluating 2021Q2-Q3, with no later threshold reversions. In
 the two windows straddling the January 2021 GameStop episode,
 suppressed ticker pairs co-mention 28.6 and 30.9 standard deviations
 above chance. It is the only above-chance excursion this
-research program has observed, and shuffled data never produce it.
+research program has observed, and none of the evaluated shuffled-data placebos reproduces its size.
 Analysis-oriented control communities stay walled through the squeeze,
-so the excursion is specific to r/wallstreetbets. Two causes were in
+although their co-mention ratios also fall at the onset window. Two causes were in
 play, roughly fivefold subscriber growth during the squeeze and a moderation overhaul
 after it, and we decided in advance that a mid-2021 onset could point
 to either. Segregation transitions in online communities can be
@@ -197,9 +197,11 @@ the post-hoc character of the original observation: window definitions,
 thresholds, onset rule, and primary cell were fixed and committed before any outcome was computed, with outcome-blind census checks (counts of documents and eligible
 pairs, computed before any outcome) in between.
 
-All three registered predictions pass. The transition is real, sharp,
-and dated: onset 2021-04-01, with chance-level mixing before it and
-walls in every window after it, with zero reversions. The result we
+All three registered predictions pass. Under the original label null, the registered onset window evaluates
+2021Q2-Q3, preceded by two windows with no detected deviation and followed by
+segregation in every later window. A threshold nondetection does not
+establish equivalence to the null, and the window does not date a change
+to an exact day. The result we
 consider most important, however, was not one of the registered predictions. Between the
 chance-level regime and the walls, in the two evaluation windows
 that straddle the GameStop episode, the suppressed pairs of
@@ -290,7 +292,7 @@ margin, and the eligible-pair counts track the companion analysis's census (210 
 results document in the commit appendix). The
 companion paper's walled endpoint is therefore not an artifact of the data source; the data-source confound is removed from that observation, and the transition study below starts from a confirmed 2024 endpoint.
 
-### The transition: onset 2021-04-01, all three predictions pass
+### The registered onset window evaluates 2021Q2-Q3
 
 The primary cell is the WSB stratum under the union count at B = 4:
 nineteen rolling windows with two-quarter evaluation intervals from
@@ -306,8 +308,8 @@ nineteen rolling windows with two-quarter evaluation intervals from
 Applying the pre-committed onset rule mechanically, the onset window is
 the one whose evaluation interval begins 2021Q2 (z = -10.7). Every one
 of the thirteen subsequent windows also has z ≤ -3. The rule allowed one
-reversion, a later window back at chance; there were none. **The onset time is
-2021-04-01.** The first window, at -3.7, does not start an onset. The
+reversion, a later window back at chance; there were none. **The onset window evaluates 2021Q2-Q3.** Its registered start date
+label is 2021-04-01; it is not an estimate of the exact day of change. The first window, at -3.7, does not start an onset. The
 rule requires persistence, and the four windows after it include two at
 chance and two far above it.
 
@@ -345,11 +347,12 @@ statistic, same permutation test, and same seed as every other window in the
 series. The formation counts are the registered secondary result and point the
 same way: 24 of 124 and 61 of 318 eligible pairs newly
 co-mention beyond their per-pair permutation thresholds, against a
-1-percent-per-pair floor (binomial p of about 1e-23 and 1e-57). For context: across two platforms, two kinds of unit, and every ordinary
-window ever measured in this program, formation sat at the
-false-positive floor, the 1 percent per pair that the criterion flags by
-construction; these two windows are the only place it has ever
-risen above it. No registered pass threshold attaches to formation here, by design. The claim rests on z, and the z is unambiguous.
+nominal count reference of 0.01 times the eligible count. The legacy
+binomial probabilities assume independent pair events and are not
+calibrated evidence here. Some windows outside the excursion also exceed that
+reference; the earlier assertion that only these two do so was false.
+No registered pass threshold attaches to formation here. The primary z
+is a standardized null effect, not a significance claim based on Gaussian tails.
 
 **The placebo.** A result this far above chance calls for the same
 scrutiny the companion paper applied to its own false positive: its
@@ -398,14 +401,40 @@ The DD stratum, computed identically through the same calendar (Table 7).
 
 - **P3 PASS.** Every DD window in the registered range, and in fact every DD window in the series, sits between -6.7 and -15.7. The registered cliff pattern (a chance-level window followed by one at z ≤ -5) cannot occur, because no DD window is ever above -6.7 to begin with.
 
-This contrast carries the paper's specificity claim. In the two
-excursion windows, at the height of the squeeze, the analysis-oriented
-communities' suppressed pairs stayed *below* chance (-7.7, -8.6). The
-DD authors lived through the same news cycle and the same market, in
-the same corpus, under the same statistic, and their communities of attention did not fuse. The fusion (co-mention
-above chance) and the subsequent wall-building are properties of one
-community, not of the era. DD's own deepening over
-the five years (from about -8 toward -15.7) is gradual, as predicted.
+In the two excursion windows, the analysis-oriented communities'
+suppressed pairs stayed below their label null expectation (-7.7, -8.6).
+This distinguishes the observed WSB excursion from the control's
+aggregate sign. It does not isolate a WSB-specific cause for the later
+decline: DD's observed/null ratio also steps downward at the 2021Q2
+window, and its z trajectory is not monotone. That control step was
+recognized before the nulls amendment and is not a new prediction. P3
+passes its narrower threshold rule despite the simultaneous decline.
+
+### Quarter-stratified robustness
+
+N1 repeats all 38 primary cells with label shuffling restricted to each
+calendar quarter. The registered sign, onset and excursion predictions
+pass. The onset remains k=5 (evaluation 2021Q2-Q3), with P1, P2 and P3
+passing. WSB excursion observed/null ratios are 1.569 and 1.627, with
+z=19.63 and 30.45. The DD ratio falls from 0.692 at k=4 to 0.459 at k=5,
+so the contemporaneous control step remains visible under this null.
+
+The prediction that every formed count outside the excursion would be at or below
+0.01 times its eligible count fails in seven WSB windows: k=0,1,2,5,9,10,16.
+The claimed historical premise was already false in the original table;
+it was disclosed before N1, and the prediction was retained unchanged.
+These count failures are not calibrated evidence of individual discoveries.
+
+N1 loses 13.00% and 12.86% of shuffled incidences through deduplication in
+the two excursion cells, versus 6.50% and 7.54% in the two preceding
+cells with no detected deviation. Exact binary margin sensitivity remains necessary.
+The N2/N3 scientific predictions and rules for pilot and production sampling were
+committed at 5215719 before any Curveball chain on the corpus. Their results
+are pending in this working draft; headline cells alone cannot validate
+onset or persistence across the full series.
+
+Sources: `reports/paper2_windows_z_stratified_R100.tsv`,
+`reports/nulls_amendment_scores.json`, and `preregistration_nulls_n2.md`.
 
 ### Sensitivity, consistency, and power
 
@@ -446,7 +475,10 @@ deeper than -9.0 (2021Q3, 391 pairs).
 
 ## Discussion
 
-With P1, P2, and P3 all passing, the registered claim stands: **a WSB-specific structural transition, onset 2021-04-01**.
+P1, P2 and P3 pass under the original label null and N1. The supported
+measurement is a persistent WSB threshold crossing at the window
+evaluating 2021Q2-Q3. The simultaneous DD ratio decline limits any claim
+that the underlying structural change was specific to WSB.
 The community moved from the only chance-level mixing state this
 program has observed, through its only above-chance excursion, to
 walls indistinguishable from every other measured community. The
@@ -573,8 +605,8 @@ one known exception ended. r/wallstreetbets mixed at chance through
 mid-2020. In the two windows around the GameStop squeeze its
 suppressed pairs co-mentioned at 28 to 31 standard deviations above
 chance. This is the only above-chance excursion in the program on any
-platform at any granularity, and one the instrument cannot produce from
-shuffled data. From April 2021 to the end of the data the community is
+platform at any granularity, and none of the evaluated shuffled-data placebos reproduced its size.
+From the window evaluating 2021Q2-Q3 to the end of the data the community is
 walled in every window, with no reversion, while the analysis-oriented
 control stayed below chance for the entire five years, squeeze
 included. The registered timing prediction resolved inside 2021 as predicted,

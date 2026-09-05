@@ -9,6 +9,7 @@ Usage: render_paper_html.py paper1|paper2 --out /path/to/file.html
 import argparse
 import base64
 import html
+import hashlib
 import os
 import re
 import subprocess
@@ -22,7 +23,7 @@ PAPERS = {
     "paper1": dict(
         md="reports/paper1_draft.md",
         title="Ideas That Never Meet",
-        eyebrow="Antikythera · Paper 1 · final results, awaiting author prose pass",
+        eyebrow="Antikythera · Paper 1 · revision in progress, robustness checks pending",
         accent=("#3d4f7d", "#333f66", "#96a8e0", "#aab9e8"),
         companion=("Watching the Walls Go Up",
                    "https://claude.ai/code/artifact/34b0ab8e-c6bd-48b2-af90-8d5874de0ba7"),
@@ -32,7 +33,7 @@ PAPERS = {
     "paper2": dict(
         md="reports/paper2_draft.md",
         title="Watching the Walls Go Up",
-        eyebrow="Antikythera · Paper 2 · registered study, conforming run",
+        eyebrow="Antikythera · Paper 2 · revision in progress, robustness checks pending",
         accent=("#0e5f6b", "#0b4d57", "#58b7c4", "#7fc9d4"),
         companion=("Ideas That Never Meet",
                    "https://claude.ai/code/artifact/b6e82250-dc7e-42d1-9421-64eff6faeda9"),
@@ -207,6 +208,10 @@ def render(paper, out_path, preprint=None):
     md = open(md_path).read()
     commit = subprocess.run(["git", "-C", ROOT, "log", "-1", "--format=%h", "--", cfg["md"]],
                             capture_output=True, text=True).stdout.strip()
+    changed = subprocess.run(["git", "-C", ROOT, "status", "--porcelain", "--", cfg["md"]],
+                             capture_output=True, text=True, check=True).stdout.strip()
+    if changed:
+        commit += " + working changes (sha256 " + hashlib.sha256(md.encode()).hexdigest()[:16] + ")"
 
     title_line, byline, status = None, None, None
     body, toc = [], []

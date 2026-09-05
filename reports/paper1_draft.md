@@ -26,8 +26,8 @@ benchmark of AI papers, where the effect is known, the same method finds
 it. The standard test against chance flags connections too easily when
 document sizes vary. It reported 19 to 24 percent of pairs connecting
 within authors' quarterly output, yet shuffled data connected
-more pairs than real data. A per-pair permutation test leaves new
-connections no higher than false positives produce.
+more pairs than real data. Per-pair shuffle thresholds identify few new
+connections, without supporting a claim of discovery enrichment.
 Suppressed pairs appear together far below chance: nearly 9 standard
 deviations at author level, over 100 at thread level. Both results
 replicate across the 2020-2021 market regime change. Ideas that never
@@ -335,28 +335,30 @@ sit below their own shuffled expectations: in every window and under both attrib
 observed formation count falls below the minimum of its 100 shuffle
 replicates (commit appendix).
 
-### Calibrated formation: nothing, anywhere
+### Formation under the registered shuffle thresholds
 
 We then registered and ran the per-pair permutation criterion (Methods)
 in both document spaces and both folds, with the
-interpretation thresholds again fixed in advance. Formation collapses everywhere to the false-positive floor, the 1
-percent of pairs that the per-pair criterion flags by construction
-(Figure 3, Table 2).
+interpretation thresholds again fixed in advance. Every observed formed
+count falls below the nominal reference of 0.01 times the eligible count
+(Figure 3, Table 2). This reference is neither an exact expected count nor
+a guaranteed upper bound. Pairs are dependent, so the registered binomial
+probabilities are retained as historical descriptions, not calibrated tests.
 
-**Table 2.** Calibrated formation against the false-positive floor, by space and fold.
+**Table 2.** Original formation counts against a nominal 1% reference, by space and fold. Binomial probabilities reproduce the registered analysis and assume pair independence, which is not established.
 
-| space | fold | eligible | formed | 1% floor | binomial p |
+| space | fold | eligible | formed | nominal 1% reference | legacy binomial p |
 |-------|------|---------:|-------:|---------:|-----------:|
 | author | 1 | 364 | 2 | 3.6 | 0.88 |
 | author | 2 | 110 | 0 | 1.1 | 1 |
 | thread | 1 | 25,161 | 22 | 251.6 | ~1 |
 | thread | 2 | 7,505 | 12 | 75.0 | ~1 |
 
-No cell, meaning no space-by-fold combination, shows formation above
-what a 1-percent-per-pair error rate produces on its own. The handful of "formed" pairs are consistent with
-noise, and we make no claims about them individually. At corpus scale,
-on this platform, suppressed concept pairs do not connect above chance
-at either granularity.
+No cell, meaning no space-by-fold combination, exceeds that nominal
+count reference. We make no discovery claims about the flagged pairs
+individually. These counts did not meet the original registered
+formation criterion; they do not establish that every flagged pair is
+noise or that a fixed margin test would have a calibrated 1% error rate.
 
 ### The gaps are held open
 
@@ -442,8 +444,8 @@ these magnitudes, immaterial to every threshold.
 
 One exploratory observation from the first fold did not survive the
 second, and we report it as measured. In fold A the segregation lived entirely in the analysis-oriented
-subreddits (z = -10.1), while r/wallstreetbets sat exactly at chance (z
-= -0.1). That chance reading is not a matter of too little data: an
+subreddits (z = -10.1), while r/wallstreetbets had no detected deviation under the label null (z
+= -0.1). This is not an equivalence result. For scale, an
 effect the size of the analysis stratum's would have shown there as z
 near -7. In
 fold B r/wallstreetbets is strongly segregated (z = -9.0), like every
@@ -465,6 +467,38 @@ all strata sit far below chance and formation stays at the floor. The
 second fold's result is therefore not an artifact of the data source.
 The census agreement between the two corpora (the counts of documents
 and eligible pairs, computed before any outcome) is given in Methods.
+
+### Temporal robustness and binary margin sensitivity
+
+The prospective nulls amendment repeats the four Hacker News cells with
+labels shuffled within each document's calendar quarter (N1). The
+registered segregation and count predictions pass in all four cells
+(Table 4). These are additional estimates; Tables 2 and 3 preserve the
+original results and their historical random streams.
+
+**Table 4.** Quarter-stratified label null, 100 replicates per cell. The
+statistic is the sum of document counts over eligible pairs.
+
+| space | fold | observed/null | z | formed/eligible |
+|---|---|---:|---:|---:|
+| author | 1 | 0.7066 | -10.89 | 2/364 |
+| author | 2 | 0.6970 | -7.33 | 0/110 |
+| thread | 1 | 0.2504 | -168.24 | 15/25,161 |
+| thread | 2 | 0.2784 | -104.10 | 14/7,505 |
+
+Shuffling within quarters preserves temporal slot frequencies but still
+collapses repeated labels within documents. The prediction that collapse
+would be greater in thread space than author space failed in both folds.
+Under the original label null, collapse was 0.314% and 0.367% in thread
+space, versus 0.474% and 0.568% in author space. Incidence loss alone does
+not determine the direction of error relative to an exact binary margin
+null. The N2/N3 protocol therefore evaluates fixed binary margins with
+and without quarter constraints. Those estimates and the independently
+pooled thread rerun remain pending in this working draft.
+
+Sources: `reports/paper1_nulls_stratified_R100.tsv`,
+`reports/paper1_nulls_label_R100.tsv`, `reports/nulls_amendment_scores.json`,
+and the prospective `preregistration_nulls_n2.md` at commit 5215719.
 
 ## Discussion
 
@@ -508,8 +542,9 @@ corpora except that their headline rates deserve re-measurement. Nor does it say
 occurs under any conditions. The companion paper's registered study on the replication corpus
 (Quiring 2026) finds one confined burst of above-floor formation, in the
 windows around the January 2021 GameStop squeeze. Our folds exclude
-those windows by design as a regime change. In every other window of six
-years, formation sits at the floor. Even then the burst is
+those windows by design as a regime change. Some other windows also exceed the nominal 1% count reference;
+the distinct feature of the squeeze windows is their large positive
+aggregate co-mention effect under the original null. Even then the burst is
 confined to r/wallstreetbets: the analysis-oriented stratum stayed
 walled (co-occurrence far below chance) straight through the event. The negative reported here
 is about discourse in its ordinary state; what cascades do is that
@@ -742,8 +777,7 @@ deposited at Zenodo, doi:10.5281/zenodo.22262036, together with the
 replication program's Reddit ticker-mention panel with hashed authors.
 The per-document extraction cache, the author-attribution table, the
 co-occurrence censuses, and every per-run result file are released with
-the code repository at https://github.com/talecK/antikythera (private
-during review; public at publication), with the commit references
+the code repository at https://github.com/talecK/antikythera (public), with the commit references
 listed in the commit appendix. Raw Hacker News content is public and
 retrievable via the official API, and raw Reddit content via the
 archival and API sources named in the replication registration; the
@@ -789,8 +823,8 @@ giving z. Multiple eligible pairs in one document contribute separately. (e) The
 criteria for calling a pair formed. Under the retired z-criterion,
 whose expectation comes from each concept's own frequency, randomly
 shuffled data form more pairs than the real data; under the per-pair
-permutation criterion, both sit at the one-percent false-positive
-floor. The dotted guide carries the left panel's scale into the right.
+permutation criterion, the illustrated counts sit near the nominal
+one-percent reference. The dotted guide carries the left panel's scale into the right.
 All values in this figure are illustrative; measured values are in
 Figures 2 to 4.
 
@@ -812,8 +846,8 @@ standard deviation.
 **Figure 3** (fig2.png/.pdf). Formation rate by criterion. The share of
 eligible suppressed pairs that form under the retired z-criterion and
 under the per-pair permutation criterion, in all four cells, on a log
-scale, against the one-percent false-positive floor that the
-permutation criterion produces by construction. The author-space fold 2
+scale, against a nominal one-percent count reference. The reference
+is not an exact expected count or a deterministic bound. The author-space fold 2
 cell formed no pairs under the permutation criterion and is marked 0.
 
 **Figure 4** (fig3.png/.pdf). Registration protocol. Each evaluation's
