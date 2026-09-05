@@ -1,0 +1,42 @@
+{
+  "cell": "p1_author_fold1",
+  "space": "author",
+  "fold": "fold1",
+  "matrix_path": "data/registry/nulls_revisions/curveball_v1/matrices/p1_author_fold1.npz",
+  "matrix_sha256": "ca2fd9bd0962da12f80b873930712269b908053f9f4e24504a5956c65e54f433",
+  "input_sha256": {
+    "data/registry/run5_author/author_concepts.parquet": "1676727f583ec84ea9e03a1a023ad64b43128202d79014f11092f97f31443761"
+  },
+  "registration_sha256": "af016ad9da776d92c6e1394a756bdb0b9e4a98ca758722f9ddd653285a13ba49",
+  "code_sha256": {
+    "eval/prepare_curveball.py": "3f09dc040a17242292b45b22e89c8b83d655eb456ba393fe813acb53bb32f5c8",
+    "eval/run_eval8.py": "4724f55fa24c558b5f5f4d6ab6e1608c7dc8f00b1d4ff4cdd8e8d98f3c64775b",
+    "eval/run_paper2.py": "b5c1acbcd94968f802b29fdcf6763e2c29e4377266d8050a7278b8a6993c6980",
+    "eval/run_gate.py": "a52754c146890452b8a6e92096b77f345eec6e97b54970b05ee842d589b3892d",
+    "eval/curveball.py": "358151531f64100c2147739f4136a47f61855d5ec99dafac3b23a20596def1bc",
+    "eval/curveball_kernel.cpp": "99ab0494eb66a1f50e256bdf2ae7c6054c3aa8d446ba82ae4f7fe8c362990cba",
+    "eval/run_eval8_nulls.py": "d12dff490b6b73325fd5d351e94467eefc112987e7c1475118c2a35efff5b325"
+  },
+  "commit": "83760dec39c0322a4780461081f2025496410434",
+  "native_observed_per_pair_matches": true,
+  "eligible": 364,
+  "obs_total": 746,
+  "active_rows": 68572,
+  "eval_docs": 73817,
+  "build_docs": 142123,
+  "columns": 8419,
+  "incidences": 378816,
+  "arrays_sha256": {
+    "offsets": "d73a0fd8afd58286cc6f2f5ae5481b2356e3e5da3b0d750e4652f0e37ce9542d",
+    "labels": "c0cf61a0adf8d4a2bb72d46aeb18b1be766b25c4e241ad704ad073338828e91e",
+    "vocabulary": "12e703ed2b80794a257cbb1665644e40c14480c4e01c40d21eb15dcf40c62af5",
+    "pairs": "1e72dbf13baac214923830214595b9bbc34c3f85bded33f0cbbc90543ebcfc1d",
+    "observed": "75306772a73f87e9c11dfe31b9f04e3d802408888351bf36a969980542f8133c",
+    "supported": "9c5e1521210fcd8d19ad88841d48f6e423be6bb1eb8572fb93db51f162e2bdf5",
+    "quarters": "873bd1f913d9ade6cc7a5f89d8feefcd64ef103c181dd219762b65c955907bbc",
+    "document_ids": "10f404fb4a452351dee0402f19a57ac945fceeca219333b42936acad364b0213",
+    "build_docs": "a3ac003f928e27341802fd26f89ef3de3863434dafa7c9b296df5e29b5c2f384",
+    "eval_docs": "1814bdf082e9a0e55e057357625416930cfdd21bf5a57066647af81fc548a620"
+  },
+  "prepare_seconds": 4.343858625041321
+}

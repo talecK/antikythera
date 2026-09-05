@@ -1,0 +1,43 @@
+{
+  "started_utc": "2026-09-05T04:53:29.268842+00:00",
+  "host": "Kevins-MacBook-Pro.local",
+  "architecture": "arm64",
+  "code_commit": "83760dec39c0322a4780461081f2025496410434",
+  "pid": 38106,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/andrej/workspace/antikythera/.venv/bin/python",
+    "eval/run_curveball_queue.py",
+    "--cells",
+    "all",
+    "--workers",
+    "2"
+  ],
+  "log": "logs/curveball_queue_mbp_v1.log",
+  "preflight": {
+    "status": "PASS",
+    "architecture": "arm64",
+    "versions": {
+      "python": "3.14.6",
+      "numpy": "2.5.2",
+      "duckdb": "1.5.5"
+    },
+    "code_commit": "2e5de106ac42952377146d1fa02a02dfbc82748d",
+    "repository_files": 172,
+    "payload_files": 56,
+    "installed_files": 53,
+    "verified_input_files": 26
+  },
+  "tests": {
+    "kernel": 4,
+    "pipeline_reference": 5,
+    "result_verification": 2
+  },
+  "test_log_sha256": {
+    "curveball_mbp_kernel_tests.log": "5f7ba91593c0f2d9d5df63bceeb19b9b032687079f0079e7fefc8c88cabb8443",
+    "curveball_mbp_pipeline_tests.log": "b0f01390fb0478e0882e9c2d81639b6892e1141eed1f1920eff8e86d0a209b6b",
+    "curveball_mbp_verification_tests.log": "ec5ce487789f0bf1b922299cf02b3e3633d037e37a94d17df2b3bbbe3ed5fcc6"
+  },
+  "ownership": "MBP owns all remaining N2/N3. M1 stopped. No completed unresolved attempts are retried."
+}
