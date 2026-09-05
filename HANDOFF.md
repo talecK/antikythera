@@ -1,3 +1,143 @@
+# Session transition checkpoint — 2026-09-04 20:42 Pacific
+
+This is the latest operational checkpoint. Read it before the older
+handoff blocks below. The user requested a clean handoff to a fresh
+session while the MBP continues computing. No new scientific runs were
+started during this checkpoint.
+
+## Resume here
+
+- Active M1 checkout: `/Users/andrej/workspace/antikythera`, branch `main`.
+  Latest scientific/code commit is `f8013b4`, confirmed pushed to origin.
+  The following checkpoint commit changes only this handoff.
+- No Antikythera evaluation, Curveball, or queue process is running on
+  the M1 at this checkpoint. Two Python H2 convergence processes were
+  found, but their working directory is `/Users/andrej/workspace/absentia`;
+  these belong to another project. Do not stop, modify, or duplicate them.
+  Consider their CPU use before choosing local pilot worker counts.
+- The user reports the M3 MBP is STILL RUNNING its assigned queue.
+  That is user-reported status, not remotely inspected telemetry.
+  No MBP queue results, logs, branch, or manifest have been received or
+  inspected in this coordinating session. All new numerical findings
+  below come from completed local M1 runs.
+- The earlier app task inventory exposed only local tasks, not the MBP
+  task/host. Do not claim direct communication with the MBP. Exchange
+  completed reports via its separate results branch or user-provided
+  artifacts. No messages have been sent to that task from here.
+- Do not pull or alter code in the MBP checkout while its queue runs.
+  The older “M3 pickup” instructions below apply only before queue start.
+  M3 owns Paper 2 headline label R=1000, headline stratified R=1000,
+  and Paper 1 thread 10 independent batches of R=100 with pooled output.
+  Do not start duplicate copies on M1.
+- Preserve the user-authorized takeover: continue revising both papers,
+  implementing and testing necessary robustness work, and committing
+  reproducible code/results. Historical “final / do not reopen” statements
+  are superseded for this revision. Do not publish revised preprints yet.
+  Do not contact external people. No outreach authorization was given.
+
+## Completed and verified locally
+
+Read `reports/nulls_amendment_scores.json` and the latest appendices of
+`reports/pilot1_runs.md` for machine-readable scores and provenance.
+
+1. Three-cell Paper 2 replay exactly matches all 16 published fields.
+   All four Paper 1 eligible counts and observed totals also match.
+   Audit: `reports/reproduction_audit_2026-09-04.tsv` and `.json`.
+   Original frozen outputs/scripts have been preserved.
+2. Paper 1 canonical label R=100 seed check: P1-b PASS, largest relative
+   z change 7.46%. Outputs: `reports/paper1_nulls_label_R100.tsv/.json`.
+3. Paper 2 N1 (quarter-stratified collapsed-label null), all 38 primary
+   cells, R=100: complete in 1276.81 seconds. N1-a/b/c PASS; onset remains
+   k=5, evaluation 2021Q2–Q3, with P1/P2/P3 passing. Excursion ratios are
+   1.5687 and 1.6267 (z=19.6267 and 30.4467). N1-d FAILS in seven
+   non-excursion WSB cells. The historical premise that every such cell
+   was already below the nominal 1% formed-count reference was false;
+   disclosed before N1 without changing the prediction. Output:
+   `reports/paper2_windows_z_stratified_R100.tsv`.
+4. Paper 1 N1 R=100: all four cells pass P1-a. Output:
+   `reports/paper1_nulls_stratified_R100.tsv/.json`.
+5. D-b FAILS because thread collapse is smaller than author collapse in
+   both HN folds. WSB N1 collapse reaches about 13% in excursion cells.
+   Exact binary-margin sensitivity therefore remains required.
+6. Curveball has passed FOUR SYNTHETIC tests (exact five-state kernel,
+   empirical native sampling, margins/counts/replay, fixed/empty cases).
+   Log: `logs/takeover_curveball_tests.log`. Source:
+   `eval/curveball_kernel.cpp`, `eval/curveball.py`,
+   `tests/test_curveball.py`. Synthetic 588k-row benchmark is about
+   2.72 million attempted trades/second; see
+   `reports/curveball_synthetic_benchmark_m1.json`. This is NOT evidence
+   of real-matrix mixing or an estimate of complete production runtime.
+
+## Immediate next work — N2/N3 still require implementation
+
+`preregistration_nulls_n2.md` is DRAFT. No real-data Curveball chain or
+outcome has been run. Finish and commit the prospective pilot design
+before running any real-data N2/N3, including pilot outcomes. Fix the
+scientific predictions before the pilot too: known observed counts plus
+pilot null means can already reveal effects. Do not claim blindness.
+
+The current draft proposes four logical chains, candidate burn-in levels
+5r/10r/20r/40r/80r, and sampling intervals r (per-quarter r_q for N3).
+These are draft choices, not established mixing bounds. Still specify:
+seed namespaces, valid dispersed initialization, diagnostic sample sizes,
+stopping/doubling rules and maximum budget, rank/folded R-hat, effective
+sample sizes and mean/SD Monte Carlo errors, discrete/constant handling,
+and what to report when mixing remains unresolved. Use evidence-backed
+choices; do not silently turn this draft into a fixed 5r heuristic.
+
+Implement canonical matrix preparation and the real-data pilot runner,
+plus validated diagnostics. Reuse frozen eligibility and observed-support
+rules; verify observed counts with the native kernel before sampling.
+No such preparation/diagnostics/pilot runner exists yet. Keep raw arrays
+under ignored data/, scratch/builds under work/, and logs under logs/.
+The existing wrapper compiles for the Python interpreter architecture;
+M1 .venv is x86_64 under Rosetta, not native arm64. Its macOS SDK header
+search is explicit. Record source/build/compiler/architecture metadata.
+Do not change the pinned original-run environment to add dependencies.
+
+N2 fixes binary row/column margins; N3 also fixes label frequencies within
+quarter. Eight Paper 2 headline cells are the initial scope, but onset
+and persistence claims require all 38 primary cells under the relevant
+null. Paper 1 needs its four cells. Preserve failed diagnostics and
+predictions; finite-chain diagnostics are evidence, not a mixing proof.
+
+When MBP results arrive, verify queue manifest, code/input/output hashes,
+and completeness before incorporation. Extend
+`eval/score_nulls_amendment.py`: R-a/R-b/T-a/T-b/T-c currently remain
+PENDING_M3 (placeholders, not automatic detection). The primary thread
+estimate pools all 1,000 per-pair draws before means, SD, z, and p99
+thresholds; batch ranges show Monte Carlo variation, not confidence
+intervals. Do not average batch z values as the primary estimate.
+
+Finally revise both manuscripts' result-dependent abstracts, prose,
+tables, and figures; current drafts are explicitly unfinished. Existing
+method/presentation corrections are already committed. Term lint had
+zero failures and eight stale-entry warnings. No revised PDF has been
+rendered or visually checked yet. Preserve historical registrations and
+published reference artifacts. Preprint uploads remain on hold.
+
+## Interpretive constraints to carry forward
+
+- Statistic is sum of per-pair document counts, not a union of documents.
+- Slot shuffle followed by deduplication does not fix binary margins.
+  Incidence loss alone does not establish a universal bias direction
+  relative to the exact-margin null; the blanket conservatism claim was
+  withdrawn in A1.
+- z is a standardized null effect, not a normal-tail significance claim.
+  Pair-dependent formed counts do not justify calibrated binomial p.
+  MCMC tail fractions are not automatically exact permutation p-values.
+- Passing P3 does not rule out DD's simultaneous ratio step, establish
+  WSB-specific causation, or date onset to an exact day. DD step was
+  pre-observed. Abs(z)<3 is non-detection, not equivalence.
+- N1 successes do not settle exact-margin robustness. Do not guarantee
+  either paper's conclusions survive before N2/N3 results are available.
+
+The previous ETA (2–4 hours to initial Curveball checks; 1–2 days for full
+runs and revised drafts) was a rough work estimate, not a running-job
+completion prediction. Re-estimate after pilot throughput and mixing.
+
+---
+
 # Current execution handoff — Codex takeover, 2026-09-04 Pacific
 
 This block supersedes conflicting instructions and conclusions in the
