@@ -1,0 +1,21 @@
+{
+  "started_utc": "2026-09-05T06:21:31.528183+00:00",
+  "host": "Kevins-MacBook-Pro.local",
+  "pid": 40239,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/andrej/workspace/antikythera/.venv/bin/python",
+    "eval/run_curveball_extension.py"
+  ],
+  "commit": "4a43dae0916b4bfa7abc8adc1cd5e0e69c06ea68",
+  "architecture": "arm64",
+  "registered_jobs": 44,
+  "global_sampling_wall_seconds": 21600,
+  "per_attempt_seconds": 5400,
+  "workers": 2,
+  "registration_sha256": "8840e8172ba5e9ddba916c44497a4c5de9b650026259bb337c9b711a7101ef16",
+  "plan_sha256": "b3dd3767bfca08a4799380ec6fd1623d4427c460d84f164bf165e03cc1da908b",
+  "native_test_log_sha256": "3a8808dd24f4941d0ff01bb5bea7851df0db1e97cec7f00dcb00e126051fd2ee",
+  "ownership": "MBP exclusive sampling; M1 verification/manuscripts only"
+}

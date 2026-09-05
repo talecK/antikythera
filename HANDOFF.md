@@ -1,3 +1,47 @@
+# LIVE bounded Paper 2 extension — verified 2026-09-04 23:21 Pacific
+
+The single registered extension is NOW RUNNING on native ARM MBP.
+SSH andrej@Kevins-MacBook-Pro.local; checkout
+/Users/andrej/workspace/antikythera. Started 2026-09-05T06:21:31Z.
+Parent PID40239, workers40246/40247; ps and queue manifest verify active
+work on p2_WSB_03 N2/N3. Command: caffeinate -i .venv/bin/python
+ eval/run_curveball_extension.py. Sampling code commit:
+4a43dae0916b4bfa7abc8adc1cd5e0e69c06ea68. Registration was committed
+before launch at62539a6, then merged with completed MBP first-pass history.
+Both machines' main were consolidated and pushed at4a43dae before launch.
+
+Native preflight verified44 exact jobs and pinned environment; all four
+extension synthetic tests passed on MBP. Launch/provenance evidence:
+reports/curveball_extension1_launch.json. Runtime log on MBP:
+logs/curveball_extension1_queue.log, per-job logs
+logs/curveball_extension1_<cell>_<null>.log. Queue manifest:
+reports/curveball_extension1_queue.json. New raw arrays under
+ data/registry/nulls_revisions/curveball_extension1/.
+
+Two workers; 21600-second sampling wall budget from launch, nominal cutoff
+2026-09-05T12:21:31Z (05:21 Pacific), plus recorded finalization overhead.
+Per-case cap5400seconds. Budget expiry/remaining diagnostic failures stay
+unresolved. No second extension, Paper1 formation sampling or FDR project.
+Do not alter MBP scientific code/registration or pull M1 documentation
+updates during this run. M1 does verification and manuscripts only.
+
+Both first-pass audits and Paper1 scoring are COMPLETE. Paper1 Xd PASS
+under both nulls; Xe UNRESOLVED under both. Table5 records verified results.
+Paper2 original first-pass scores are preserved; extension score tool is
+ eval/score_curveball_extension.py. Next: inspect native extended-pilot
+progress, transfer/hash-verify finished extension outputs, independently
+recompute stage diagnostics/moments before scientific scoring, then finish
+both papers and final visual QA. The existing first-pass verifier needs
+an explicit extension path for production with formation NOT_EVALUATED;
+do not mislabel that as a failed formation test or pool pilot arrays.
+No preprints/outreach or absentia/H2 changes are authorized.
+
+MBP GitHub read access works but its push lacks credentials. Consolidation
+was completed by transferring its incremental git bundle over authorized
+SSH to M1 and pushing from M1. Do not request passwords or copy credentials.
+
+---
+
 # Single bounded Paper 2 extension prepared — 2026-09-04 Pacific
 
 Both full first-pass audits are complete: Paper 1 104 files, Paper 2 968
