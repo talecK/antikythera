@@ -435,13 +435,13 @@ ratios of 0.843 and 0.847. Both aggregate results passed the registered
 diagnostics; their 6400 and 3200 production draws were independent of
 the pilots. The full series analysis is still running. This first result
 puts the preceding nondetection pattern at risk and cannot by itself
-score the onset or persistence prediction. The next pre-GME window
+score the onset or persistence prediction. The next window before GME
 (2020Q3-Q4) gives z=-2.98 and observed/null=0.822 under N2, with passing
 aggregate diagnostics; N3 remains unresolved at its pilot limit. The
 first excursion window (2020Q4-2021Q1) reaches the pilot limit without
 passing diagnostics under either N2 or N3, so neither has a production
 estimate for that window. Pilot outcomes are not scored as scientific
-results. These partial findings support pre-GME segregation in the first
+results. These partial findings support segregation before GME in the first
 window under exact margins, but do not yet establish a sustained early
 regime or the excursion's robustness.
 

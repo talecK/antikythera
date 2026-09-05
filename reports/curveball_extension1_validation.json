@@ -1,0 +1,20 @@
+{
+  "timestamp_utc": "2026-09-05T06:19:35.930029+00:00",
+  "synthetic_tests": 4,
+  "test_log_sha256": "7e9e534755ce3eb2e93e82dc58c5bd6c95a0c0d2f94e8eb134ea96f0a1e79c31",
+  "checks": [
+    "fresh extension seed namespace distinct from first pass",
+    "cumulative stage prefixes and immutable prior files",
+    "expired deadline stops sampling without rewriting old stages",
+    "expired phase cannot pass",
+    "fresh production excludes pilot and raw moments match"
+  ],
+  "source_sha256": {
+    "eval/run_curveball_extension.py": "6d0e3ad78bb7711efcaa8a04b94174908f928a5ac978ef0277a19e621a4ee22f",
+    "eval/score_curveball_extension.py": "8b0bb163712b23b19e4f480c4bbb20af730779f9e1908bf35f35e831cf3b1fc5",
+    "tests/test_curveball_extension.py": "d0d215d1b48a33c2641a2dd9caa88e253f8ab522f5351ef839c1e98b48a071d2",
+    "preregistration_nulls_extension1.md": "8840e8172ba5e9ddba916c44497a4c5de9b650026259bb337c9b711a7101ef16",
+    "reports/curveball_extension1_plan.json": "b3dd3767bfca08a4799380ec6fd1623d4427c460d84f164bf165e03cc1da908b"
+  },
+  "real_extension_chains_started": false
+}

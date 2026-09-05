@@ -3,10 +3,11 @@
 **Author:** Kevin Quiring (independent researcher; ORCID 0009-0001-9034-5533)
 
 **Revision in progress, 2026-09-04. The published analyses remain in the
-version history. A reproduction audit and additional null models are
-being evaluated under preregistration_nulls.md. Thread-space estimates,
-robustness tables and conclusions are pending that work. This draft is
-not ready for a new public preprint release.**
+version history. Hacker News aggregate robustness checks are complete and
+independently verified, including the pooled thread estimates and both
+exact binary-margin nulls. Most pair-formation classifications remain
+unresolved. Final manuscript review and the accompanying Paper 2 analysis
+remain in progress; this draft is not ready for a public preprint release.**
 
 ---
 
@@ -493,7 +494,7 @@ Under the original label null, collapse was 0.314% and 0.367% in thread
 space, versus 0.474% and 0.568% in author space. Incidence loss alone does
 not determine the direction of error relative to an exact binary margin
 null. The N2/N3 protocol therefore evaluates fixed binary margins with
-and without quarter constraints. Those exact margin estimates remain pending in this working draft.
+and without quarter constraints. The exact margin estimates are now independently verified (Table 5).
 The separately registered thread rerun is complete: ten independent
 batches of 100 draws per fold were pooled before computing moments and
 percentiles. The resulting ratios are 0.2501 and 0.2784, with z=-162.88
@@ -502,6 +503,42 @@ stability predictions pass. Batch z ranges are -178.93 to -144.59 and
 -148.01 to -113.42; these describe Monte Carlo variation, not confidence
 intervals. Source: `reports/paper1_nulls_label_R100_thread_seeds10.json`;
 raw array recalculation is documented in `reports/m3_incorporation_verification.json`.
+
+**Table 5.** Exact binary-margin robustness. N2 fixes binary row and
+column totals; N3 additionally fixes those totals within quarters. All
+aggregate estimates pass the registered production diagnostics. Formed
+counts remain provisional wherever the formation column is unresolved.
+
+| space | fold | null | observed/null | z | formed count | formation precision |
+|---|---|---|---:|---:|---:|---|
+| author | 1 | N2 | 0.6928 | -9.93 | 1 | unresolved |
+| author | 1 | N3 | 0.6937 | -10.21 | 1 | unresolved |
+| author | 2 | N2 | 0.6810 | -8.09 | 0 | unresolved |
+| author | 2 | N3 | 0.6834 | -8.37 | 0 | passes |
+| thread | 1 | N2 | 0.2468 | -161.12 | 10 | unresolved |
+| thread | 1 | N3 | 0.2469 | -167.21 | 12 | unresolved |
+| thread | 2 | N2 | 0.2738 | -122.00 | 5 | unresolved |
+| thread | 2 | N3 | 0.2739 | -124.24 | 7 | unresolved |
+
+The aggregate segregation prediction X-d passes under both nulls in all
+four evaluations. Author-space co-mention totals are about 31-32% below
+the expectations with fixed margins; thread totals are about 73-75% below them.
+The reported z values describe standardized deviations from each null,
+not Gaussian tail probabilities or exact permutation probabilities.
+
+The literal prediction about formed counts X-e remains UNRESOLVED under both
+nulls. Seven of eight cell/null combinations do not pass every supported
+pair's precision checks; only N3 author fold 2 passes, with zero formed
+pairs. This does not invalidate the aggregate estimates. The provisional
+counts are descriptive percentile classifications, with no calibrated
+false discovery rate guarantee. This revision does not add sampling solely
+to resolve these classifications or introduce a new FDR analysis.
+
+The hashes of all 104 transferred files were verified on M1. Raw moments, archived
+stage diagnostics, formation checks and frozen observed censuses were
+recomputed; the results match the MBP reports within the stated numerical
+tolerance. Verification: `reports/paper1_curveball_verification.json`.
+Literal prediction scores: `reports/curveball_scores.json`.
 
 Sources: `reports/paper1_nulls_stratified_R100.tsv`,
 `reports/paper1_nulls_label_R100.tsv`, `reports/nulls_amendment_scores.json`,

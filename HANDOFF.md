@@ -1,3 +1,103 @@
+# Single bounded Paper 2 extension prepared — 2026-09-04 Pacific
+
+Both full first-pass audits are complete: Paper 1 104 files, Paper 2 968
+files, with raw stage diagnostics/moments/formation checks recomputed and
+all frozen input/census/code/matrix hashes verified. Paper 2: 13 N2 and
+19 N3 passing cells; 25 N2 and 19 N3 unresolved. The first-pass queue
+finished all 84 attempts. Final queue snapshot:
+reports/curveball_first_pass_completed_queue.json. All original first-pass
+predictions/results remain unchanged; Xa/Xb/Xc are unresolved, Xd passes,
+Xe remains unresolved for both nulls.
+
+The user accepted one bounded Paper 2 extension, then no further large
+compute except correction of a demonstrated implementation error. Protocol:
+preregistration_nulls_extension1.md. Exact 44-job plan:
+reports/curveball_extension1_plan.json. Commit both before any real chain.
+New driver eval/run_curveball_extension.py reuses the original Ensemble,
+kernel and diagnostic implementation unchanged. Fresh extension1 seed
+phase names; pilot 1760/3520/7040 with candidate burns80/160/320/640;
+fresh production800/1600/3200, burn twice selected pilot burn. Two workers,
+six-hour global sampling wall limit, 90 minutes per case; resource-truncated
+stages cannot pass. First-pass passing cells are not rerun. No new Paper 1
+sampling or formation/FDR work. Four synthetic extension tests pass,
+including budget exits and an actual native-kernel pilot/production check.
+
+The extension has NOT yet started at this checkpoint. Next: consolidate
+MBP's completed report changes with this main, verify native environment,
+run its preflight and four extension tests, then launch detached with
+caffeinate. Save launch/process evidence, and do not alter scientific
+sources in the MBP checkout during the extension. Score only its passing
+production, combined with passing first-pass cells, via
+ eval/score_curveball_extension.py. Keep original first-pass scores separate.
+
+---
+
+# Paper 1 independently verified; first-pass queue complete — 2026-09-04
+
+The MBP manifest directly reports COMPLETE, 84/84 registered cell/null
+attempts. It has NOT started an extension. M1 Paper 1 verification is
+COMPLETE: all 104 transferred files and all raw moments/stage diagnostics/
+formation checks match. Durable audit:
+reports/paper1_curveball_verification.json; verifier:
+eval/verify_curveball_results.py. X-d PASS under both N2 and N3; X-e
+UNRESOLVED under both. Seven of eight formation checks are unresolved;
+N3 author fold2 passes with zero formed pairs. Paper 1 Table 5 now records
+these results. Original reports and failures remain intact.
+
+The user accepted this remaining compute plan: one prospectively registered
+bounded extension for Paper 2 unresolved cases, then no further large
+compute unless a demonstrated implementation error requires correction.
+No extra Paper 1 sampling solely for formation precision; no new FDR
+project. Qualify those claims in the revision. Proposed Paper 2 extension
+budget is roughly 4-6 MBP hours; define exact rules and commit before any
+new chain. Do not describe that extension as running yet.
+
+Next: transfer/hash-verify all finished Paper 2 arrays/reports, inspect
+diagnostic failures, implement/validate and register the single bounded
+extension, execute it on MBP with exclusive ownership, then finish both
+manuscripts and final visual QA. Both papers remain unreleased. SSH/rsync
+access and merged-main consolidation remain authorized. Do not touch
+absentia/H2 or contact anyone. See prior block for host/path details.
+
+---
+
+# LIVE MBP Curveball queue — verified 2026-09-04 21:53 Pacific
+
+The network transfer and native restart are COMPLETE. SSH access:
+andrej@Kevins-MacBook-Pro.local; checkout:
+/Users/andrej/workspace/antikythera. Main was safely fast-forwarded to
+83760dec39c0322a4780461081f2025496410434 before launch. User's historical
+notes are preserved as documented below; untracked logs/reference remain.
+
+MBP queue started at 2026-09-05T04:53:29Z, PID 38106; workers 38114/38115.
+Direct ps and live logs verify active computation in p2_WSB_04 under
+both N2 and N3. Three completed cell attempts per null were hash-verified
+and skipped, including unresolved attempts. Native arm64 Python 3.14.6,
+numpy 2.5.2 and duckdb 1.5.5. Hardware directly verified: M3 Max, 14
+physical cores, 36 GiB memory. Two workers as registered; no additional
+M1 queue or duplicate MBP jobs. Transfer preflight verified 172 repository
+files, 56 payload files and 26 required inputs; 53 missing payload files
+installed, 3 existing identical files retained. Four kernel, five pipeline
+and two result-verification tests passed natively before launch.
+
+Command: caffeinate -i .venv/bin/python eval/run_curveball_queue.py
+--cells all --workers 2. Remote aggregate log:
+logs/curveball_queue_mbp_v1.log; remote per-cell logs:
+logs/curveball_<cell>_<N2|N3>.log. Queue manifest:
+reports/curveball_queue_v1.json. M1 copy of launch/test/environment evidence:
+reports/curveball_mbp_launch.json. Process is detached from SSH and has
+caffeinate. Do not modify MBP scientific code or registration while it runs.
+Do not pull M1 documentation checkpoints into the live MBP checkout.
+
+Next: inspect actual native pilot timings for a fresh ETA, verify and
+incorporate finished remote outputs using hashes, finish literal scoring,
+then complete manuscript revisions. Completed unresolved cells still
+require a separate prospective extension before any retry. No preprint
+publication/outreach is authorized. Local M1 remains available for review
+and manuscripts, not duplicate sampling. SSH and rsync are authorized.
+
+---
+
 # MBP connection verified and transfer in progress — 2026-09-04 21:54 Pacific
 
 SSH access is now verified at andrej@Kevins-MacBook-Pro.local, checkout

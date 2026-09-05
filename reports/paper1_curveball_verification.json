@@ -1,0 +1,265 @@
+{
+  "status": "PASS",
+  "transfer_manifest_sha256": "72d8a986798506ee92da389c458c2a61acb35e9d27cc2c8b783929c8d92d1209",
+  "files_verified": 104,
+  "installed": true,
+  "results": [
+    {
+      "cell": "p1_author_fold1",
+      "null": "N2",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 746,
+        "null_mean": 1076.7121875,
+        "null_sd": 33.30132281854347,
+        "z_seg": -9.930902423967574,
+        "ratio": 0.6928499636770388,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1077.18875,
+          1078.10125,
+          1075.38375,
+          1076.175
+        ],
+        "chain_sds": [
+          31.124477882166957,
+          34.10752847154862,
+          34.696923292094645,
+          33.10240738979569
+        ]
+      },
+      "formation_passed": false,
+      "formed": 1,
+      "formation_unresolved_pairs": 1
+    },
+    {
+      "cell": "p1_author_fold1",
+      "null": "N3",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 746,
+        "null_mean": 1075.4465625,
+        "null_sd": 32.27651459550107,
+        "z_seg": -10.20700551558069,
+        "ratio": 0.6936653349524282,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1075.47875,
+          1077.1575,
+          1074.035,
+          1075.115
+        ],
+        "chain_sds": [
+          32.28489659945498,
+          34.98024719395219,
+          30.635743421696166,
+          30.944818225350748
+        ]
+      },
+      "formation_passed": false,
+      "formed": 1,
+      "formation_unresolved_pairs": 3
+    },
+    {
+      "cell": "p1_author_fold2",
+      "null": "N2",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 454,
+        "null_mean": 666.71,
+        "null_sd": 26.29680874174659,
+        "z_seg": -8.088814201333852,
+        "ratio": 0.680955737877038,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          665.46625,
+          665.295,
+          670.8325,
+          665.24625
+        ],
+        "chain_sds": [
+          27.41060672326499,
+          26.38054159792782,
+          25.19636766976542,
+          25.71518249862326
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 1
+    },
+    {
+      "cell": "p1_author_fold2",
+      "null": "N3",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 454,
+        "null_mean": 664.3690625,
+        "null_sd": 25.135402928361696,
+        "z_seg": -8.369432672297794,
+        "ratio": 0.6833551193543121,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          659.4425,
+          666.34125,
+          665.39625,
+          666.29625
+        ],
+        "chain_sds": [
+          24.85677359896091,
+          24.640004026734655,
+          25.18648915465393,
+          25.196745542579503
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p1_thread_fold1",
+      "null": "N2",
+      "stages_recomputed": 4,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 12098,
+        "null_mean": 49026.0725,
+        "null_sd": 229.19750706268601,
+        "z_seg": -161.1189972057597,
+        "ratio": 0.24676665666008632,
+        "R": 1600,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          49018.825,
+          48987.8225,
+          49046.6725,
+          49050.97
+        ],
+        "chain_sds": [
+          224.0428851247011,
+          233.9334328259858,
+          241.09742894471106,
+          210.99317311230712
+        ]
+      },
+      "formation_passed": false,
+      "formed": 10,
+      "formation_unresolved_pairs": 56
+    },
+    {
+      "cell": "p1_thread_fold1",
+      "null": "N3",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 12098,
+        "null_mean": 48998.62875,
+        "null_sd": 220.67956333434574,
+        "z_seg": -167.21362047509965,
+        "ratio": 0.24690486874084205,
+        "R": 1600,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          49000.5875,
+          48984.6925,
+          48999.57,
+          49009.665
+        ],
+        "chain_sds": [
+          223.3589428336148,
+          214.68590532158834,
+          227.7789830076515,
+          215.90418656200254
+        ]
+      },
+      "formation_passed": false,
+      "formed": 12,
+      "formation_unresolved_pairs": 56
+    },
+    {
+      "cell": "p1_thread_fold2",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 7866,
+        "null_mean": 28724.64375,
+        "null_sd": 170.97609653380644,
+        "z_seg": -121.99742638220602,
+        "ratio": 0.27384151631123366,
+        "R": 1600,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          28715.6825,
+          28720.29,
+          28743.0425,
+          28719.56
+        ],
+        "chain_sds": [
+          176.21134099072626,
+          167.99091017075895,
+          165.96059982342194,
+          172.20157200211617
+        ]
+      },
+      "formation_passed": false,
+      "formed": 5,
+      "formation_unresolved_pairs": 50
+    },
+    {
+      "cell": "p1_thread_fold2",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 7866,
+        "null_mean": 28716.993125,
+        "null_sd": 167.8318707151129,
+        "z_seg": -124.23738731002784,
+        "ratio": 0.273914471677473,
+        "R": 1600,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          28709.48,
+          28718.7075,
+          28710.075,
+          28729.71
+        ],
+        "chain_sds": [
+          176.85677708247428,
+          153.3696741332849,
+          165.382751141103,
+          173.92283030125745
+        ]
+      },
+      "formation_passed": false,
+      "formed": 7,
+      "formation_unresolved_pairs": 57
+    }
+  ],
+  "method": "Recomputed raw moments, all archived stage diagnostics and production formation diagnostics using independently reference-tested diagnostic routines; verified frozen input/matrix/code/census and transfer hashes. No sampling rerun."
+}

@@ -1,0 +1,1342 @@
+{
+  "status": "PASS",
+  "transfer_manifest_sha256": "418d14570f2ddefd5280a055eba6db1195226b213643d12a44764f42c7f96d6b",
+  "files_verified": 968,
+  "installed": true,
+  "results": [
+    {
+      "cell": "p2_WSB_01",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 695,
+        "null_mean": 824.1721875,
+        "null_sd": 27.75146462738217,
+        "z_seg": -4.654607936351824,
+        "ratio": 0.843270387597252,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          822.955625,
+          821.844375,
+          826.95125,
+          824.9375
+        ],
+        "chain_sds": [
+          27.83089391053358,
+          29.01674354332986,
+          26.759626743239526,
+          27.069537191278318
+        ]
+      },
+      "formation_passed": false,
+      "formed": 1,
+      "formation_unresolved_pairs": 1
+    },
+    {
+      "cell": "p2_WSB_01",
+      "null": "N3",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 695,
+        "null_mean": 820.9553125,
+        "null_sd": 26.560818239040447,
+        "z_seg": -4.742147300073174,
+        "ratio": 0.8465747031754545,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          824.24125,
+          818.3175,
+          820.1575,
+          821.105
+        ],
+        "chain_sds": [
+          27.65127571085103,
+          26.00008064891338,
+          25.71789637100982,
+          26.485589950008663
+        ]
+      },
+      "formation_passed": true,
+      "formed": 1,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_WSB_02",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 199,
+        "null_mean": 242.08984375,
+        "null_sd": 14.474845313528775,
+        "z_seg": -2.9768776671987296,
+        "ratio": 0.822008874546188,
+        "R": 6400,
+        "tail_lo": 0.00203125,
+        "tail_hi": 0.99890625,
+        "chain_means": [
+          242.826875,
+          241.81625,
+          241.540625,
+          242.175625
+        ],
+        "chain_sds": [
+          14.51578977301528,
+          14.717973227910832,
+          14.424747817877961,
+          14.204129007418054
+        ]
+      },
+      "formation_passed": false,
+      "formed": 2,
+      "formation_unresolved_pairs": 2
+    },
+    {
+      "cell": "p2_WSB_02",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_03",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_03",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_04",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_04",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_05",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_05",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_18",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 357,
+        "null_mean": 645.39640625,
+        "null_sd": 23.92039309532686,
+        "z_seg": -12.056507813257541,
+        "ratio": 0.5531484162955083,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          645.155625,
+          645.53,
+          644.293125,
+          646.606875
+        ],
+        "chain_sds": [
+          23.654495468290484,
+          22.689652928152075,
+          25.706875592618697,
+          23.468778786600186
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 5
+    },
+    {
+      "cell": "p2_WSB_18",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 357,
+        "null_mean": 663.71578125,
+        "null_sd": 24.404072425563495,
+        "z_seg": -12.568221233793434,
+        "ratio": 0.5378808370770527,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          663.816875,
+          663.249375,
+          664.7075,
+          663.089375
+        ],
+        "chain_sds": [
+          24.440992005939016,
+          24.631579062442892,
+          23.838822197205968,
+          24.663031790706004
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 3
+    },
+    {
+      "cell": "p2_DD_04",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_04",
+      "null": "N3",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 522,
+        "null_mean": 1027.885625,
+        "null_sd": 29.96957904875167,
+        "z_seg": -16.879970992487852,
+        "ratio": 0.5078386031519802,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1032.29125,
+          1025.96375,
+          1026.56,
+          1026.7275
+        ],
+        "chain_sds": [
+          28.544682927604924,
+          27.62860720227315,
+          30.58012262892351,
+          32.453324078590164
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 8
+    },
+    {
+      "cell": "p2_DD_05",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_05",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_00",
+      "null": "N2",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 227,
+        "null_mean": 354.5225,
+        "null_sd": 18.85306987601754,
+        "z_seg": -6.764017788011159,
+        "ratio": 0.6402978654387239,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          354.365,
+          356.03375,
+          351.8625,
+          355.82875
+        ],
+        "chain_sds": [
+          18.315479109212514,
+          18.560310098096423,
+          19.276503670271744,
+          18.950908248353166
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 2
+    },
+    {
+      "cell": "p2_WSB_00",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_06",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_06",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_07",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_07",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_08",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_08",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_09",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 107,
+        "null_mean": 310.69703125,
+        "null_sd": 17.885353398424183,
+        "z_seg": -11.389041452652933,
+        "ratio": 0.34438694045294327,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          310.919375,
+          312.141875,
+          308.55125,
+          311.175625
+        ],
+        "chain_sds": [
+          18.468666021382678,
+          17.13933331504977,
+          17.900764604829035,
+          17.812559638058058
+        ]
+      },
+      "formation_passed": false,
+      "formed": 1,
+      "formation_unresolved_pairs": 3
+    },
+    {
+      "cell": "p2_WSB_09",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_10",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_10",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 288,
+        "null_mean": 516.05703125,
+        "null_sd": 21.072887585390937,
+        "z_seg": -10.822296200550305,
+        "ratio": 0.5580778529504824,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          514.23875,
+          517.244375,
+          515.531875,
+          517.213125
+        ],
+        "chain_sds": [
+          20.92884966828086,
+          21.289484631135977,
+          20.977284952642822,
+          20.943559934604597
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 4
+    },
+    {
+      "cell": "p2_WSB_11",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_11",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_12",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_12",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_13",
+      "null": "N2",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 85,
+        "null_mean": 207.83125,
+        "null_sd": 13.786098920198564,
+        "z_seg": -8.909790268517154,
+        "ratio": 0.40898565542958526,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          208.01125,
+          207.02,
+          208.43625,
+          207.8575
+        ],
+        "chain_sds": [
+          13.033749400594596,
+          14.0732760933622,
+          14.433500474157334,
+          13.524318605756077
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 3
+    },
+    {
+      "cell": "p2_WSB_13",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_14",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_14",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 59,
+        "null_mean": 147.5759375,
+        "null_sd": 11.819390149076801,
+        "z_seg": -7.494120794964923,
+        "ratio": 0.3997941737622368,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          147.53375,
+          147.6475,
+          148.059375,
+          147.063125
+        ],
+        "chain_sds": [
+          11.81884558396039,
+          12.578135543473842,
+          11.703668211692221,
+          11.109360478190228
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_WSB_15",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_15",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 324,
+        "null_mean": 602.46578125,
+        "null_sd": 21.490413946156284,
+        "z_seg": -12.957674149399322,
+        "ratio": 0.5377898796638088,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          602.088125,
+          601.14875,
+          604.298125,
+          602.328125
+        ],
+        "chain_sds": [
+          21.30907339572453,
+          20.990572251310827,
+          21.666748636663854,
+          21.8625069235981
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 4
+    },
+    {
+      "cell": "p2_WSB_16",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_16",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 325,
+        "null_mean": 654.78046875,
+        "null_sd": 23.610711812232037,
+        "z_seg": -13.967409003702722,
+        "ratio": 0.4963495637254376,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          656.206875,
+          652.9025,
+          652.934375,
+          657.078125
+        ],
+        "chain_sds": [
+          23.18092594644086,
+          24.584125848807396,
+          23.349947930549543,
+          22.992597101771146
+        ]
+      },
+      "formation_passed": false,
+      "formed": 1,
+      "formation_unresolved_pairs": 5
+    },
+    {
+      "cell": "p2_WSB_17",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_WSB_17",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 253,
+        "null_mean": 469.80578125,
+        "null_sd": 20.116207652714973,
+        "z_seg": -10.777666695081015,
+        "ratio": 0.5385204058725065,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          472.015,
+          467.39375,
+          469.456875,
+          470.3575
+        ],
+        "chain_sds": [
+          20.713969320243766,
+          19.025935218472178,
+          20.292163271430056,
+          20.117056040832615
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 2
+    },
+    {
+      "cell": "p2_DD_00",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 189,
+        "null_mean": 371.0215625,
+        "null_sd": 18.35863652504166,
+        "z_seg": -9.914764762171627,
+        "ratio": 0.5094043557104582,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          370.951875,
+          370.67625,
+          372.673125,
+          369.785
+        ],
+        "chain_sds": [
+          18.168951785515173,
+          17.767004135123624,
+          18.671469619030393,
+          18.69160974876161
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 1
+    },
+    {
+      "cell": "p2_DD_00",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 189,
+        "null_mean": 370.17125,
+        "null_sd": 18.688859942155382,
+        "z_seg": -9.694077143322287,
+        "ratio": 0.5105744976142799,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          371.198125,
+          369.973125,
+          370.294375,
+          369.219375
+        ],
+        "chain_sds": [
+          18.790126968287762,
+          18.572322222446363,
+          18.67000183072768,
+          18.668422526002967
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 2
+    },
+    {
+      "cell": "p2_DD_01",
+      "null": "N2",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 419,
+        "null_mean": 801.18125,
+        "null_sd": 26.622845423385908,
+        "z_seg": -14.355387034035296,
+        "ratio": 0.5229777906060582,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          802.8975,
+          801.86,
+          797.79625,
+          802.17125
+        ],
+        "chain_sds": [
+          25.569209877311422,
+          26.24172059907658,
+          27.399995181340817,
+          26.946000138007495
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 9
+    },
+    {
+      "cell": "p2_DD_01",
+      "null": "N3",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 419,
+        "null_mean": 783.6109375,
+        "null_sd": 27.282117639052395,
+        "z_seg": -13.364466143129798,
+        "ratio": 0.5347041241368584,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          783.08625,
+          784.99125,
+          782.8,
+          783.56625
+        ],
+        "chain_sds": [
+          28.046770062477783,
+          26.921667359907335,
+          27.344286423309715,
+          26.745244641571333
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 6
+    },
+    {
+      "cell": "p2_DD_02",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_02",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 243,
+        "null_mean": 520.95671875,
+        "null_sd": 22.288951197474464,
+        "z_seg": -12.470605560906563,
+        "ratio": 0.4664494981138968,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          521.439375,
+          521.72875,
+          520.38125,
+          520.2775
+        ],
+        "chain_sds": [
+          20.815831105420102,
+          22.67261946572341,
+          22.28790924329826,
+          23.26951855432338
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_03",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 570,
+        "null_mean": 1053.0409375,
+        "null_sd": 30.14936067516347,
+        "z_seg": -16.021598026717722,
+        "ratio": 0.5412894975889767,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1051.4925,
+          1056.661875,
+          1052.209375,
+          1051.8
+        ],
+        "chain_sds": [
+          30.547441689116944,
+          29.524651504875973,
+          30.48039184638831,
+          29.7370139724889
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 5
+    },
+    {
+      "cell": "p2_DD_03",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_06",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_06",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 136,
+        "null_mean": 420.566875,
+        "null_sd": 20.230165353609323,
+        "z_seg": -14.066463127016883,
+        "ratio": 0.3233730664118519,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          418.1025,
+          422.151875,
+          419.14375,
+          422.869375
+        ],
+        "chain_sds": [
+          20.097126504801626,
+          20.75340475643394,
+          19.36486731009278,
+          20.28619757641572
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 1
+    },
+    {
+      "cell": "p2_DD_07",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_07",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 173,
+        "null_mean": 472.11453125,
+        "null_sd": 22.430577095624926,
+        "z_seg": -13.335124191180181,
+        "ratio": 0.3664365075608971,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          473.303125,
+          471.28375,
+          471.860625,
+          472.010625
+        ],
+        "chain_sds": [
+          22.792953740890514,
+          22.216817637490298,
+          22.693610325582288,
+          21.959946769274623
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_08",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_08",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_09",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_09",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_10",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 125,
+        "null_mean": 289.52140625,
+        "null_sd": 16.97108325277031,
+        "z_seg": -9.694219502643945,
+        "ratio": 0.43174700489007456,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          290.471875,
+          288.978125,
+          290.626875,
+          288.00875
+        ],
+        "chain_sds": [
+          17.0172473974017,
+          17.137645593382278,
+          16.688810704612088,
+          16.898518379949767
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 1
+    },
+    {
+      "cell": "p2_DD_10",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_11",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_11",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 116,
+        "null_mean": 276.4234375,
+        "null_sd": 15.996476586535978,
+        "z_seg": -10.028673291406324,
+        "ratio": 0.4196460367077231,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          275.616875,
+          275.8475,
+          277.57,
+          276.659375
+        ],
+        "chain_sds": [
+          16.48560251353814,
+          15.507594711946789,
+          15.991758815089728,
+          15.912246843528258
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_12",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_12",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 126,
+        "null_mean": 282.59484375,
+        "null_sd": 17.00669183477745,
+        "z_seg": -9.207836848655946,
+        "ratio": 0.44586800780932506,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          282.83625,
+          281.9775,
+          283.2,
+          282.365625
+        ],
+        "chain_sds": [
+          17.430309404525783,
+          16.900946534144175,
+          16.334243171937903,
+          17.314356567870924
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_13",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_13",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 112,
+        "null_mean": 302.029375,
+        "null_sd": 17.559285637786495,
+        "z_seg": -10.8221586526885,
+        "ratio": 0.3708248576814755,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          302.956875,
+          300.8375,
+          301.81125,
+          302.511875
+        ],
+        "chain_sds": [
+          18.28267664305134,
+          16.862638991272984,
+          17.951340435674993,
+          17.026372455234704
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_14",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 88,
+        "null_mean": 272.18578125,
+        "null_sd": 16.33795478562566,
+        "z_seg": -11.273490694933798,
+        "ratio": 0.32330858576030047,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          273.185,
+          272.704375,
+          271.07625,
+          271.7775
+        ],
+        "chain_sds": [
+          16.281800422557698,
+          17.035242318774774,
+          15.834311981816576,
+          16.094346639425908
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_14",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 88,
+        "null_mean": 273.58046875,
+        "null_sd": 16.12118442547797,
+        "z_seg": -11.511590206530238,
+        "ratio": 0.3216603889966103,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          273.426875,
+          274.86125,
+          272.661875,
+          273.371875
+        ],
+        "chain_sds": [
+          16.321830557090554,
+          16.165688925545364,
+          16.231683414987337,
+          15.678642606564352
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_15",
+      "null": "N2",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 131,
+        "null_mean": 359.4140625,
+        "null_sd": 18.799388015201288,
+        "z_seg": -12.15007968957836,
+        "ratio": 0.3644821215085317,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          357.1775,
+          358.00375,
+          361.31625,
+          361.15875
+        ],
+        "chain_sds": [
+          18.181920793744535,
+          18.776580783984606,
+          19.479957287876687,
+          18.368547804263134
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_15",
+      "null": "N3",
+      "stages_recomputed": 6,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 131,
+        "null_mean": 360.4421875,
+        "null_sd": 18.698807654897244,
+        "z_seg": -12.27041807876497,
+        "ratio": 0.3634424730040792,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          362.255625,
+          359.74,
+          358.27375,
+          361.499375
+        ],
+        "chain_sds": [
+          19.160220010724693,
+          19.047864709725342,
+          18.21153647931717,
+          18.093783452041613
+        ]
+      },
+      "formation_passed": true,
+      "formed": 0,
+      "formation_unresolved_pairs": 0
+    },
+    {
+      "cell": "p2_DD_16",
+      "null": "N2",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 177,
+        "null_mean": 467.514375,
+        "null_sd": 21.509033994100594,
+        "z_seg": -13.506621221561183,
+        "ratio": 0.3785979842865794,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          465.4925,
+          466.9425,
+          469.04875,
+          468.57375
+        ],
+        "chain_sds": [
+          20.432998892722527,
+          22.614800325229492,
+          21.004436994061518,
+          21.737975088252814
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 2
+    },
+    {
+      "cell": "p2_DD_16",
+      "null": "N3",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 177,
+        "null_mean": 467.43,
+        "null_sd": 20.935841874641678,
+        "z_seg": -13.87238219217639,
+        "ratio": 0.37866632436942427,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          466.52625,
+          466.57,
+          465.67125,
+          470.9525
+        ],
+        "chain_sds": [
+          19.907958482413513,
+          20.858933338020908,
+          21.119793404233388,
+          21.417580249645383
+        ]
+      },
+      "formation_passed": false,
+      "formed": 0,
+      "formation_unresolved_pairs": 3
+    },
+    {
+      "cell": "p2_DD_17",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_17",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_18",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    },
+    {
+      "cell": "p2_DD_18",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN"
+    }
+  ],
+  "method": "Recomputed raw moments, all archived stage diagnostics and production formation diagnostics using independently reference-tested diagnostic routines; verified frozen input/matrix/code/census and transfer hashes. No sampling rerun.",
+  "frozen_primary_census_rows_verified": 38
+}

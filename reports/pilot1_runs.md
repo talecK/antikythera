@@ -619,3 +619,46 @@ The queue budget now charges the 1045.829384 summed worker-seconds from
 these interrupted attempts. No kernel, seed, sampling-limit or diagnostic
 rule changed. Host transfer instructions restart only the interrupted
 cell and unstarted cells, preserving completed unresolved attempts.
+
+## Paper 1 exact-margin verification complete (2026-09-04 Pacific)
+
+The full MBP queue reports COMPLETE, 84/84 cell/null attempts. Paper 1's
+104 files (246,229,276 bytes) were transferred to M1 using an immutable
+file manifest. File hashes, frozen input/census/matrix/code provenance,
+all saved aggregate diagnostic stages, production moments, and formation
+checks were recomputed and matched. This audit resampled no data.
+Verifier: eval/verify_curveball_results.py; audit:
+reports/paper1_curveball_verification.json. Raw files remain ignored.
+
+X-d PASS under both N2 and N3 for all four HN cells. Exact-margin ratios
+are .681-.694 in author space and .247-.274 in thread space. X-e remains
+UNRESOLVED under both nulls: seven cell/null combinations fail one or
+more pair-classification precision checks. N3 author fold2 passes those
+checks with zero formed pairs. Original and failed results are retained.
+Table 5 in paper1_draft.md records the final aggregate outcomes and
+qualifies the descriptive counts. No further Paper 1 sampling solely for
+formation precision or new FDR project is planned for this revision.
+
+The user accepted one prospectively registered, bounded Paper 2 extension
+after the initial queue; retain all unresolved results, preserve thresholds,
+and stop after that extension absent a demonstrated implementation error.
+The extension has NOT started; full Paper 2 import/audit and prospective
+registration must precede it.
+
+## Paper 2 audit and single bounded extension registration (2026-09-04)
+
+All 76 first-pass Paper 2 attempts independently audited on M1: 968 files,
+raw moments, stage diagnostics, formation checks and 38 frozen primary
+censuses match. N2 has 13 passing/25 unresolved cells; N3 has 19 passing/
+19 unresolved. No unresolved first-pass effect is treated as a result.
+The complete first-pass queue snapshot is preserved separately.
+
+The user accepted one bounded extension and no further large sampling
+for this revision except correction of an implementation error. Registered
+protocol preregistration_nulls_extension1.md and its exact 44-job JSON plan
+retain original predictions and diagnostics. Fresh pilot stages1760/3520/
+7040, candidate burns80/160/320/640; independent production800/1600/3200,
+burn twice selected pilot burn. Native MBP, two workers, six-hour sampling
+wall limit and 90 minutes per case, plus explicit finalization overhead.
+Original kernel, Ensemble and diagnostics are unchanged. Four synthetic
+tests pass. No real extension chain has run before this registration.
