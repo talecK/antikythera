@@ -1,3 +1,50 @@
+# Paper 1 rewrite findings and lessons saved — 2026-09-05
+
+The user asked to preserve the final findings and methodological lessons
+for the Paper 1 rewrite. Read the NEW top section of
+reports/paper1_rewrite_plan.md before drafting. It now contains the final
+Paper 2 scores, evidence links, editorial allocation, inference limits,
+methodological diagnosis and additional acceptance checks. No substantive
+manuscript rewrite or merger was performed by this notes update.
+
+Current evidence: all44 bounded extension jobs completed and all496
+transferred files passed independent M1 verification; combined with32
+original passing results, all76 Paper2 window/null cases are usable.
+X-a, X-b and X-c FAIL under BOTH N2 and N3. N3 detects separation in
+every measured WSB window from2020Q1-Q2; this does not date its original
+emergence. N2 retains a small positive first excursion, so do not portray
+continuous separation as common to both nulls. All sampling is complete;
+no additional large compute is planned. Final evidence is on main at
+9d8b8e8. Earlier RUNNING/pending entries below are historical.
+
+Editorial direction discussed with the user: retire Paper2's original
+standalone GME transition/strong-excursion story; use its modest surviving
+contribution to strengthen Paper1. Default to one longitudinal figure and
+a short robustness subsection, with comprehensive tables and failed
+predictions in the supplement. Consistent source and quarterly coverage
+add validation and temporal detail, not a new mechanism or pair discovery.
+Do not claim the2019 Reddit endpoint was rerun under exact margins.
+Paper1's four HN cells retain aggregate X-d PASS under both nulls;
+X-e remains UNRESOLVED, with7/8 formation precision checks unresolved.
+
+Central lesson: the original shuffle permutes label slots then collapses
+duplicates into sets, contradicting the claim that binary document sizes
+and label frequencies stay fixed. The registered algorithm reproduced;
+its description and subsequent interpretation overreached. We have not
+isolated the contribution of collapse versus timing/ensemble changes.
+Do not assert a universal bias direction or blame one code fix for the
+entire reversal. Nondetection is not proof of absence; large z values,
+reproducibility and preregistration do not validate a baseline's assumptions.
+
+Rewrite from validated Methods and Results outward: audit actual algorithm
+constraints and existing diagnostics, map each claim to evidence, establish
+what survives, then write Discussion/Introduction/title/abstract. Preserve
+original registrations/results and failures; do not rescue the original
+story by renaming failed predictions. Both drafts still need integration
+and visual QA. No publication/outreach or absentia/H2 work authorized.
+
+---
+
 # Bounded extension COMPLETE and independently verified — 2026-09-05 03:15 Pacific
 
 All 44 extension jobs completed on MBP; every pilot and aggregate

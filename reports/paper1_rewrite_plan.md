@@ -1,5 +1,136 @@
 # Paper 1: substantive manuscript rewrite plan
 
+## Current findings and editorial direction — 2026-09-05
+
+This update supersedes the earlier operational uncertainty about Paper 2.
+The bounded extension is complete and independently audited. Final results
+and evidence were committed at 9d8b8e8 and pushed to main. No Paper 1 or
+Paper 2 sampling remains from this queue; no further large compute is
+planned. This update records findings and writing guidance, not a completed
+manuscript rewrite, merger or public release.
+
+All 44 extension jobs passed aggregate production diagnostics. M1 verified
+496 transferred files, recomputed all archived stage diagnostics and raw
+production estimates, and checked source/input/matrix/census hashes. With
+the 32 passing original results, all 76 Paper 2 window/null combinations
+are usable. The unchanged scientific predictions have resolved outcomes:
+
+| Prediction | N2 | N3 |
+|---|---|---|
+| X-a: originally detected cells retain sign | FAIL: WSB k=4 reverses | FAIL: WSB k=3,4 reverse |
+| X-b: onset k=5 and original P1/P2/P3 | FAIL: k=4; P1 fails | FAIL: k=0; P1 and P2 fail |
+| X-c: both GME excursion windows have z>=5 and ratio>1 | FAIL | FAIL |
+
+WSB k=3 (2020Q4-2021Q1): N2 ratio=1.08254, z=3.0072; N3
+ratio=0.89572, z=-4.4503. WSB k=4 (2021Q1-Q2): N2 ratio=0.84970,
+z=-10.5007; N3 ratio=0.84223, z=-10.9927. N3 detects separation in
+every measured WSB window, beginning at 2020Q1-Q2. Returning k=0 means
+the onset rule is already satisfied at the observed series boundary;
+it does not locate when separation originally emerged. N2 returns k=4,
+one window before the registered onset, but fails the full prediction.
+Do not describe persistent separation in every window as common to both
+nulls: N2 retains the small positive k=3 result.
+
+Retire Paper 2's original standalone argument that WSB first became
+segregated after GameStop or exhibited a robust strong positive excursion.
+The historical label-null results remain valid records of that algorithm's
+output; the broader interpretation did not survive the registered checks.
+The direction discussed with the user is to incorporate only the useful
+companion evidence into Paper 1, rather than manufacture a replacement
+Paper 2 story. This is not evidence that GameStop had no effect; no causal
+effect was identified by these comparisons.
+
+### What the companion work adds, and how much space it deserves
+
+Its contribution is useful but modest relative to Paper 1's central result:
+
+- Quarterly trajectories fill the interval between the sparse Reddit
+  endpoint evaluations and show separation before GameStop under N3.
+- The consistent source provides a check on the concern that the earlier
+  comparison crossed a data-source boundary. Verify any endpoint-replay
+  statement against its own Part A artifacts. Do not claim the new exact
+  margin audit reran the 2019 Reddit endpoint; it did not.
+- The failed excursion and onset predictions demonstrate how strongly
+  historical interpretation can depend on the chosen randomization model.
+
+Default allocation: one longitudinal figure and a short robustness
+subsection, with full window tables, original predictions, failures and
+diagnostic records in the supplement. If the main argument becomes crowded,
+move more of this material to the supplement. Work volume or corpus size
+does not establish novelty or justify a second major narrative. This adds
+neither a causal mechanism nor validated pair discovery. It is not an
+independent platform replication, and source consistency alone does not
+remove all measurement, selection or audience confounding.
+
+Paper 1's own verified aggregate result remains the anchor: X-d passes
+under both nulls for its four Hacker News cells, with author deficits of
+about 31-32% and thread deficits of about 73-75%. X-e remains unresolved
+under both nulls; seven of eight pair formation precision checks remain
+unresolved. The Paper 2 extension did not evaluate formation and supplies
+no new support for an individual-pair discovery or 1% error-rate claim.
+
+### Methodological lesson to carry into the rewrite
+
+The primary concrete technical problem was the mismatch between the
+original shuffle and the invariants claimed in the prose. It permutes
+incidence labels, then rebuilds each document as a set. Repeated labels
+collapse: three slots receiving GME, GME, AMC become two distinct tickers.
+Document sizes and ticker document frequencies therefore are not preserved
+exactly in the binary matrix used to count pairs. The original code follows
+its registered algorithm; the claim that it preserves both binary margins
+was wrong. Do not describe the outputs as fabricated, irreproducible, or
+all randomization tests as invalid.
+
+N2 preserves exact binary margins; N3 additionally preserves those margins
+within quarters. The results show material sensitivity to these choices.
+We have not decomposed the discrepancy into a numerical contribution from
+duplicate collapse versus temporal conditioning or the change in ensemble.
+Do not write that one code fix alone explains the entire reversal, that
+collapse always biases every statistic in one direction, or that N3 is a
+uniquely true counterfactual. State which constraints answer which question.
+
+The inferential mistakes were treating nondetection under one baseline as
+absence of separation, treating reproducibility and large z values as
+robustness, and building a historical explanation before checking the
+baseline's claimed properties. Additional draws stabilized the original
+model's estimates; they could not validate its assumptions. Preregistration
+guards against changing predictions after results, but cannot make an
+inadequate measurement or wrongly described null valid. Discuss methods and
+claims in the public paper, not presumed model authorship or personal blame.
+
+The workflow agreed in discussion is to reason from validated methods and
+results outward: define the question and predictions prospectively; verify
+the implemented measurement and null constraints; inspect diagnostics and
+plausible alternative baselines; decide which claims survive; then write
+the narrative, title and abstract. A provisional abstract can clarify a
+question, but must not become a story the analysis is expected to deliver.
+Writing Results first is insufficient if the method remains unvalidated.
+For this rewrite, use the completed checks; this lesson does not authorize
+new sampling or retrospective changes to registrations.
+
+### Additional sources and acceptance checks
+
+- Final interpretation: reports/curveball_extension1_conclusions.md.
+- Literal scores: reports/curveball_extension1_scores.json.
+- Final raw audit: reports/curveball_extension1_verification_final.json.
+- Transfer ledger: reports/curveball_extension1_transfer_manifest_final.json.
+- Completion: reports/curveball_extension1_completed_queue.json and
+  reports/curveball_extension1_completed_wall_guard.json.
+- Initial companion audit: reports/paper2_curveball_verification.json.
+- Prospective extension: preregistration_nulls_extension1.md and its plan.
+- Algorithm/description mismatch: preregistration_nulls.md, especially
+  "What this amends," and eval/nulls.py label_shuffle.
+
+Extend the evidence/preservation audits below to cover these requirements:
+remove or qualify "only wall-free community," "at chance" as a claim of
+absence, "walls went up after GME," and robust positive-excursion language
+wherever they occur, including companion citations, figures and captions.
+Explicitly retain all three failed robustness predictions under both nulls.
+Never convert aggregate diagnostic PASS into scientific prediction PASS.
+Do not let stale pending/RUNNING wording in either draft override these
+completed results. Align Methods with the actual algorithms before finalizing
+the argument, and distinguish historical results from the revised claims.
+
 ## Session handoff and intended task
 
 The user reviewed Paper 1's position after its additional null-model tests,
@@ -12,10 +143,10 @@ evidence while preserving the original PDF's accessible language and useful
 narrative. This is a substantive scientific rewrite, not a sentence-level
 polish or another appended robustness section.
 
-Read the latest HANDOFF.md before starting: Paper 2 has separate operational
-work whose status may have advanced. The operational banner below the
-rewrite pointer was not reverified in this planning session. Do not infer
-that an old RUNNING banner describes a currently active process.
+Read the latest HANDOFF.md before starting. The update above records the
+completed Paper 2 extension; old RUNNING banners are historical. The rest
+of this plan preserves the earlier rewrite guidance with current findings
+taking precedence where the earlier companion status was still pending.
 
 ## Diagnosis agreed with the user
 
@@ -131,7 +262,13 @@ by earlier results are not globally outcome-blind independent replications.
 
 ## Rewrite sequence
 
-### 1. Build a claim-to-evidence map before drafting
+### 1. Audit Methods and build a claim-to-evidence map before drafting
+
+Read the actual measurement and null implementations against their prose
+definitions and completed invariant/diagnostic audits. Correct the original
+margin-preservation description explicitly. Methods and results must support
+the interpretation before prose is built around it; a methods section
+polished at the end cannot substitute for this validation.
 
 For each major claim, record its actual source, tested population/window,
 outcome definition, null, registration timing, status and defensible wording.
@@ -253,7 +390,7 @@ do not present a targeted search as exhaustive novelty verification.
 This is manuscript work. Do not change frozen registrations, sampling code,
 raw results or historical scientific outcomes to fit a preferred story.
 No new large compute, Paper 1 formation-precision extension or FDR project
-is part of this rewrite. Do not disturb another session's Paper 2 work.
+is part of this rewrite. The Paper 2 queue is complete; preserve its files.
 No submission, preprint upload, outreach or absentia/H2 work is authorized
 by this plan. Preserve the original release PDF.
 
