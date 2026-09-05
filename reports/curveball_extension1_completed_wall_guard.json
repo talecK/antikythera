@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-09-05T06:36:52.488093+00:00",
+  "parent_pid": 40239,
+  "deadline_utc": "2026-09-05T12:21:31.528183+00:00",
+  "reason": "macOS maintenance sleep pauses the internal monotonic clock; enforce the unchanged original six-hour UTC wall limit externally.",
+  "status": "QUEUE_EXITED",
+  "finished_utc": "2026-09-05T08:36:55.816003+00:00"
+}

@@ -681,3 +681,18 @@ original idle-sleep assertion. Added process-bound caffeinate -isu and
 verified PreventSystemSleep=1 on AC. An external UTC wall guard enforces
 the original05:21Pacific deadline because macOS monotonic time pauses
 in system sleep. No scientific source or sampling budget was changed.
+
+## Final bounded extension verified (2026-09-05 Pacific)
+
+All44 extension attempts completed, passing aggregate production diagnostics,
+with no resource-limited cases. M1 independently verified496files,
+164,102,602bytes, all frozen hashes/censuses, stage diagnostics and raw
+moments. Original32 passing cases plus44 extension cases resolve all76
+Paper2 cell/null cases. X-a, X-b and X-c FAIL under both N2 and N3.
+N2 onset k4 with P1false; N3 onset k0 with P1/P2false, all later WSB
+windows z<=-3. The second excursion reverses under both nulls. Full
+values and interpretation: reports/curveball_extension1_conclusions.md.
+The queue exited by08:36:55UTC, about2h15 after start; summed attempt
+durations4.140worker-hours. No further sampling planned; original results
+and failed predictions preserved. No formation inference added. Final
+audit and immutable transfer manifest use the extension1_*_final names.

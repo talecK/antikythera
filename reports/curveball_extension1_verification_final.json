@@ -1,0 +1,1329 @@
+{
+  "status": "PASS",
+  "transfer_manifest_sha256": "6233ebd16d38db15c4f9b0c2f0f80f7c6610c7877e00da2f7acd14ddf207d6b1",
+  "files_verified": 496,
+  "installed": true,
+  "results": [
+    {
+      "cell": "p2_WSB_03",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 1125,
+        "null_mean": 1255.9675,
+        "null_sd": 29.428645802177172,
+        "z_seg": -4.4503406945864565,
+        "ratio": 0.8957238145095315,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1259.336875,
+          1254.449375,
+          1254.7075,
+          1255.37625
+        ],
+        "chain_sds": [
+          29.438404172685296,
+          31.119285613737585,
+          28.563122093881823,
+          28.24366629772948
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_03",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 1125,
+        "null_mean": 1039.2234375,
+        "null_sd": 28.523527800459636,
+        "z_seg": 3.007221375282258,
+        "ratio": 1.082539095448374,
+        "R": 6400,
+        "tail_lo": 0.99875,
+        "tail_hi": 0.00125,
+        "chain_means": [
+          1038.625,
+          1038.199375,
+          1043.613125,
+          1036.45625
+        ],
+        "chain_sds": [
+          26.81635461803114,
+          28.60882074831773,
+          28.633476085420977,
+          29.47160643632274
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_04",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 2891,
+        "null_mean": 3432.54734375,
+        "null_sd": 49.26408056149364,
+        "z_seg": -10.9927423302667,
+        "ratio": 0.8422316462040786,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          3437.4475,
+          3430.243125,
+          3434.515,
+          3427.98375
+        ],
+        "chain_sds": [
+          49.50476990907038,
+          48.93922522102669,
+          46.906393753943604,
+          51.06662056507656
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_05",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 603,
+        "null_mean": 1445.62375,
+        "null_sd": 43.18097452510191,
+        "z_seg": -19.513773351969327,
+        "ratio": 0.41712098324339236,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1443.883125,
+          1443.6925,
+          1446.088125,
+          1448.83125
+        ],
+        "chain_sds": [
+          41.47751758765675,
+          46.37532149484249,
+          41.564727943105495,
+          42.92367089890495
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_05",
+      "null": "N3",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 603,
+        "null_mean": 1391.525234375,
+        "null_sd": 41.86926998977076,
+        "z_seg": -18.833030395983684,
+        "ratio": 0.4333374523896693,
+        "R": 12800,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1386.35375,
+          1391.969375,
+          1391.2371875,
+          1396.540625
+        ],
+        "chain_sds": [
+          40.956766668494474,
+          43.693259630169216,
+          41.64416591300447,
+          40.48666724502494
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_04",
+      "null": "N2",
+      "stages_recomputed": 5,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 2891,
+        "null_mean": 3402.362734375,
+        "null_sd": 48.697982523901274,
+        "z_seg": -10.500696494439373,
+        "ratio": 0.8497036400003555,
+        "R": 12800,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          3401.7284375,
+          3400.489375,
+          3406.4275,
+          3400.805625
+        ],
+        "chain_sds": [
+          49.353948082282066,
+          49.62948858399989,
+          48.53584751243147,
+          46.99455785896251
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_02",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 199,
+        "null_mean": 263.2528125,
+        "null_sd": 15.54631663256103,
+        "z_seg": -4.13299265791522,
+        "ratio": 0.7559273464552254,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          262.6475,
+          263.75875,
+          262.08,
+          264.525
+        ],
+        "chain_sds": [
+          15.01110401502834,
+          15.540810739388727,
+          15.661891648201376,
+          15.842683642615603
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_00",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 227,
+        "null_mean": 332.17234375,
+        "null_sd": 17.888949560604054,
+        "z_seg": -5.879179400316261,
+        "ratio": 0.6833801918525916,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          331.41375,
+          332.525,
+          332.9225,
+          331.828125
+        ],
+        "chain_sds": [
+          17.589700422050967,
+          18.243885962151815,
+          18.06122210012379,
+          17.613413467706224
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_05",
+      "null": "N2",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 242,
+        "null_mean": 647.7675,
+        "null_sd": 23.947879733913812,
+        "z_seg": -16.94377558717117,
+        "ratio": 0.37359083313071434,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          645.41625,
+          647.24125,
+          646.71,
+          651.7025
+        ],
+        "chain_sds": [
+          23.95110615269157,
+          23.679749754537106,
+          24.085958565105937,
+          23.60246795888091
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_04",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 522,
+        "null_mean": 1043.06734375,
+        "null_sd": 30.181673803308787,
+        "z_seg": -17.26436204783566,
+        "ratio": 0.5004470738421581,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1044.071875,
+          1041.599375,
+          1046.14125,
+          1040.456875
+        ],
+        "chain_sds": [
+          31.635311899590544,
+          30.560249910780755,
+          27.60846878110954,
+          30.4525350378975
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_05",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 242,
+        "null_mean": 637.4009375,
+        "null_sd": 24.84070246835008,
+        "z_seg": -15.917461996245333,
+        "ratio": 0.3796668403864718,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          636.326875,
+          638.1875,
+          639.705,
+          635.384375
+        ],
+        "chain_sds": [
+          24.450153940913644,
+          24.6092684521503,
+          23.899931485257444,
+          26.123966598879562
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_06",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 83,
+        "null_mean": 316.11484375,
+        "null_sd": 20.79934865958754,
+        "z_seg": -11.207795376926132,
+        "ratio": 0.26256280475598515,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          315.658125,
+          316.475,
+          316.0975,
+          316.22875
+        ],
+        "chain_sds": [
+          20.842204693466932,
+          20.68198189245895,
+          20.635327565851725,
+          21.027159186097872
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_06",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 83,
+        "null_mean": 314.4671875,
+        "null_sd": 20.550536448955384,
+        "z_seg": -11.263316073277778,
+        "ratio": 0.2639385070978192,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          313.613125,
+          315.33875,
+          316.790625,
+          312.12625
+        ],
+        "chain_sds": [
+          20.918256445850716,
+          20.615534153581855,
+          19.44586812434392,
+          20.885768143343448
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_07",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 55,
+        "null_mean": 237.36046875,
+        "null_sd": 17.499934815029267,
+        "z_seg": -10.42063702965256,
+        "ratio": 0.23171507997790808,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          236.9275,
+          238.350625,
+          235.176875,
+          238.986875
+        ],
+        "chain_sds": [
+          17.952812975965635,
+          16.27391124190417,
+          17.8038083070554,
+          17.671741644059168
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_07",
+      "null": "N2",
+      "stages_recomputed": 4,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 55,
+        "null_mean": 242.616875,
+        "null_sd": 17.908650918882053,
+        "z_seg": -10.476326544630195,
+        "ratio": 0.22669486613410547,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          242.65,
+          244.18125,
+          242.441875,
+          241.194375
+        ],
+        "chain_sds": [
+          17.53867155744699,
+          17.58147884671537,
+          18.60303393224812,
+          17.76486260457353
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_08",
+      "null": "N2",
+      "stages_recomputed": 4,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 62,
+        "null_mean": 250.894765625,
+        "null_sd": 24.38830606256446,
+        "z_seg": -7.745300765884249,
+        "ratio": 0.24711555797329124,
+        "R": 12800,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          252.6021875,
+          251.38375,
+          251.114375,
+          248.47875
+        ],
+        "chain_sds": [
+          24.915912239266774,
+          24.482779375256804,
+          24.404380618228668,
+          23.54432359269427
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_08",
+      "null": "N3",
+      "stages_recomputed": 4,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 62,
+        "null_mean": 256.70859375,
+        "null_sd": 23.254312527947604,
+        "z_seg": -8.373010103652577,
+        "ratio": 0.2415189888827008,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          255.788125,
+          255.795625,
+          257.27625,
+          257.974375
+        ],
+        "chain_sds": [
+          23.615979420391927,
+          24.210666158934472,
+          21.46039808432034,
+          23.55902095502644
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_10",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 288,
+        "null_mean": 546.79578125,
+        "null_sd": 21.84959269533756,
+        "z_seg": -11.844421306087957,
+        "ratio": 0.5267048683909354,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          546.80375,
+          547.219375,
+          546.925625,
+          546.234375
+        ],
+        "chain_sds": [
+          21.81184279095877,
+          22.60970476608164,
+          21.54292443841771,
+          21.402206506792123
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_09",
+      "null": "N3",
+      "stages_recomputed": 4,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 107,
+        "null_mean": 288.489609375,
+        "null_sd": 16.462643834904284,
+        "z_seg": -11.024329457350202,
+        "ratio": 0.3708972403956273,
+        "R": 12800,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          289.6134375,
+          286.769375,
+          288.08125,
+          289.494375
+        ],
+        "chain_sds": [
+          16.279289202345222,
+          16.517110434618246,
+          15.525471762155892,
+          17.314895129898275
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_11",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 38,
+        "null_mean": 167.0771875,
+        "null_sd": 13.211606340254153,
+        "z_seg": -9.769984374021012,
+        "ratio": 0.22743978737372508,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          167.694375,
+          167.37,
+          166.81125,
+          166.433125
+        ],
+        "chain_sds": [
+          12.397821113380164,
+          13.054093227796406,
+          12.910146143150357,
+          14.368255904401723
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_11",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 38,
+        "null_mean": 170.38046875,
+        "null_sd": 12.850416813484044,
+        "z_seg": -10.301647850915788,
+        "ratio": 0.22303025856653536,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          169.99375,
+          170.81,
+          170.678125,
+          170.04
+        ],
+        "chain_sds": [
+          13.242213219001574,
+          11.637499731471532,
+          13.320501923139947,
+          13.106139782559929
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_12",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 85,
+        "null_mean": 172.356875,
+        "null_sd": 12.982072359002432,
+        "z_seg": -6.7290392923609215,
+        "ratio": 0.4931628053711231,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          172.230625,
+          173.44,
+          171.949375,
+          171.8075
+        ],
+        "chain_sds": [
+          12.80824683980501,
+          13.200857926665222,
+          12.951662522988121,
+          12.900404790160655
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_12",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 85,
+        "null_mean": 180.53484375,
+        "null_sd": 13.234036550239914,
+        "z_seg": -7.218874104459692,
+        "ratio": 0.47082323962739187,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          180.289375,
+          181.174375,
+          180.18125,
+          180.494375
+        ],
+        "chain_sds": [
+          13.28591875292691,
+          13.024216612118174,
+          13.097934892092722,
+          13.500415488397941
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_13",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 85,
+        "null_mean": 198.739375,
+        "null_sd": 13.700645955916642,
+        "z_seg": -8.301752732387154,
+        "ratio": 0.4276958202168041,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          198.7775,
+          196.96125,
+          199.308125,
+          199.910625
+        ],
+        "chain_sds": [
+          13.912601976265979,
+          13.232195525969983,
+          13.516912886616344,
+          13.95040813415059
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_14",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 59,
+        "null_mean": 147.45078125,
+        "null_sd": 11.617003271698275,
+        "z_seg": -7.613906889867777,
+        "ratio": 0.40013351912979434,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          146.72625,
+          147.854375,
+          147.48125,
+          147.74125
+        ],
+        "chain_sds": [
+          11.779646044661105,
+          11.36862649396905,
+          11.465203811424374,
+          11.814791510538813
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_15",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 324,
+        "null_mean": 591.25140625,
+        "null_sd": 23.192733531161455,
+        "z_seg": -11.523066303975098,
+        "ratio": 0.5479902399809303,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          592.25875,
+          588.921875,
+          590.00625,
+          593.81875
+        ],
+        "chain_sds": [
+          22.608500579151638,
+          23.251118714685,
+          23.45679455802732,
+          23.13111321224078
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_16",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 325,
+        "null_mean": 707.05203125,
+        "null_sd": 24.835142922862826,
+        "z_seg": -15.383524565839691,
+        "ratio": 0.45965499798569454,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          705.359375,
+          708.910625,
+          707.2575,
+          706.680625
+        ],
+        "chain_sds": [
+          24.853625985142994,
+          24.728857375733618,
+          25.704667742454873,
+          23.88909007495629
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_17",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 253,
+        "null_mean": 450.13125,
+        "null_sd": 19.43694030544674,
+        "z_seg": -10.142092680336045,
+        "ratio": 0.5620582885547271,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          447.878125,
+          451.125,
+          449.414375,
+          452.1075
+        ],
+        "chain_sds": [
+          19.139377510367858,
+          18.370815850146666,
+          20.474653070549817,
+          19.434015121688056
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_02",
+      "null": "N2",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 243,
+        "null_mean": 519.2815625,
+        "null_sd": 21.62417131495664,
+        "z_seg": -12.776515616527057,
+        "ratio": 0.46795422281144444,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          520.07375,
+          519.27625,
+          518.01375,
+          519.7625
+        ],
+        "chain_sds": [
+          21.646669742422272,
+          21.558291582068833,
+          21.729497484698076,
+          21.50450170894457
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_06",
+      "null": "N2",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 136,
+        "null_mean": 422.914375,
+        "null_sd": 20.295477781007644,
+        "z_seg": -14.136862314642936,
+        "ratio": 0.32157809722121644,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          423.65625,
+          423.56875,
+          421.65625,
+          422.77625
+        ],
+        "chain_sds": [
+          22.055058057903633,
+          19.841251811251727,
+          19.52883985129429,
+          19.584909648438515
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_03",
+      "null": "N3",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 570,
+        "null_mean": 1015.50625,
+        "null_sd": 28.38979721550508,
+        "z_seg": -15.692477357911063,
+        "ratio": 0.5612963977326579,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1011.58375,
+          1017.42875,
+          1016.06375,
+          1016.94875
+        ],
+        "chain_sds": [
+          28.959635459333736,
+          28.188427118899344,
+          29.42430434075715,
+          26.521898941016648
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_07",
+      "null": "N2",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 173,
+        "null_mean": 473.708125,
+        "null_sd": 21.697518498307012,
+        "z_seg": -13.859102137576851,
+        "ratio": 0.3652037845033796,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          471.29375,
+          473.2875,
+          473.5625,
+          476.68875
+        ],
+        "chain_sds": [
+          22.145766207957223,
+          23.438479979512323,
+          20.237306978696548,
+          20.46635955507232
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_08",
+      "null": "N3",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 151,
+        "null_mean": 402.5659375,
+        "null_sd": 20.881032715028578,
+        "z_seg": -12.047581215604437,
+        "ratio": 0.37509383167819554,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          402.26,
+          401.1675,
+          401.8175,
+          405.01875
+        ],
+        "chain_sds": [
+          20.60315267137532,
+          22.120961637098873,
+          19.602785356933335,
+          20.912876378860464
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_08",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 151,
+        "null_mean": 404.44296875,
+        "null_sd": 20.41886835592324,
+        "z_seg": -12.41219465898949,
+        "ratio": 0.3733530106029319,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          405.563125,
+          404.15625,
+          404.103125,
+          403.949375
+        ],
+        "chain_sds": [
+          21.264195616913774,
+          20.73561153999322,
+          19.58755957832356,
+          20.005513292824432
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_09",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 182,
+        "null_mean": 444.67109375,
+        "null_sd": 21.35104158884786,
+        "z_seg": -12.30249553198375,
+        "ratio": 0.40929127743644794,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          446.475,
+          445.25,
+          444.506875,
+          442.4525
+        ],
+        "chain_sds": [
+          21.721058330569438,
+          20.76041907091473,
+          21.90108336896545,
+          20.795979028408354
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_09",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 182,
+        "null_mean": 441.365625,
+        "null_sd": 21.553300347264106,
+        "z_seg": -12.033684903060468,
+        "ratio": 0.41235653546875106,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          442.446875,
+          442.14375,
+          442.856875,
+          438.015
+        ],
+        "chain_sds": [
+          21.14071138193734,
+          20.97827652447884,
+          22.48196811300948,
+          21.22492108348109
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_10",
+      "null": "N3",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 125,
+        "null_mean": 288.370625,
+        "null_sd": 15.954882077576599,
+        "z_seg": -10.239538230721573,
+        "ratio": 0.43346994861213756,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          288.33,
+          287.535,
+          288.7425,
+          288.875
+        ],
+        "chain_sds": [
+          16.385698032125454,
+          15.933730730748527,
+          15.71579440403825,
+          15.741009338666945
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_11",
+      "null": "N2",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 116,
+        "null_mean": 278.0834375,
+        "null_sd": 16.572480221246117,
+        "z_seg": -9.780276418264004,
+        "ratio": 0.417140988484796,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          277.83875,
+          279.68125,
+          278.065,
+          276.74875
+        ],
+        "chain_sds": [
+          14.974653533137252,
+          18.33206612571262,
+          16.667206574588317,
+          16.002909842822337
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_12",
+      "null": "N2",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 126,
+        "null_mean": 283.6234375,
+        "null_sd": 17.636496624431786,
+        "z_seg": -8.937344012055362,
+        "ratio": 0.44425101504525694,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          284.6275,
+          282.9325,
+          282.6375,
+          284.29625
+        ],
+        "chain_sds": [
+          17.760032200139726,
+          16.8583197190586,
+          16.805388830669763,
+          18.95338982708634
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_13",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 112,
+        "null_mean": 301.73484375,
+        "null_sd": 17.15085197338855,
+        "z_seg": -11.062706624976686,
+        "ratio": 0.37118682949588916,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          302.84875,
+          301.450625,
+          300.206875,
+          302.433125
+        ],
+        "chain_sds": [
+          17.56355241508676,
+          17.563636073130613,
+          17.02187057095591,
+          16.302124945367552
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_17",
+      "null": "N2",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 222,
+        "null_mean": 564.04875,
+        "null_sd": 23.430391555360316,
+        "z_seg": -14.59850763448925,
+        "ratio": 0.3935830014692879,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          565.26,
+          564.17125,
+          563.57,
+          563.19375
+        ],
+        "chain_sds": [
+          22.76817735349055,
+          23.47731721124669,
+          23.206951544741933,
+          24.194084213656446
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_17",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 222,
+        "null_mean": 562.2796875,
+        "null_sd": 23.493747038357753,
+        "z_seg": -14.483840612756767,
+        "ratio": 0.39482130501112933,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          562.996875,
+          564.19375,
+          560.429375,
+          561.49875
+        ],
+        "chain_sds": [
+          23.697665818269424,
+          22.54157183821705,
+          23.22611702608456,
+          24.2993569552262
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_18",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 277,
+        "null_mean": 720.559375,
+        "null_sd": 26.22201912724066,
+        "z_seg": -16.915530907351442,
+        "ratio": 0.3844235598211459,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          718.684375,
+          722.12625,
+          719.5725,
+          721.854375
+        ],
+        "chain_sds": [
+          26.139453052031808,
+          25.851553356374932,
+          26.807340296083087,
+          25.914246436263102
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_DD_18",
+      "null": "N3",
+      "stages_recomputed": 2,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 277,
+        "null_mean": 711.2946875,
+        "null_sd": 26.316363194357685,
+        "z_seg": -16.50283834025798,
+        "ratio": 0.38943071678712626,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          708.60125,
+          711.86,
+          713.605,
+          711.1125
+        ],
+        "chain_sds": [
+          27.270629777060524,
+          26.680384180142536,
+          26.62642437504518,
+          24.346711148530925
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    }
+  ],
+  "method": "Recomputed raw moments, all archived stage diagnostics and production formation diagnostics using independently reference-tested diagnostic routines; verified frozen input/matrix/code/census and transfer hashes. No sampling rerun."
+}

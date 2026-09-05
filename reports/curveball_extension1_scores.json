@@ -2,96 +2,77 @@
   "predictions": {
     "N2": {
       "X-a": {
-        "status": "PENDING",
-        "missing": {
-          "p2_WSB_04": "PENDING_EXTENSION",
-          "p2_WSB_05": "PENDING_EXTENSION",
-          "p2_DD_04": "PENDING_EXTENSION",
-          "p2_DD_05": "PENDING_EXTENSION",
-          "p2_WSB_06": "PENDING_EXTENSION",
-          "p2_WSB_07": "PENDING_EXTENSION",
-          "p2_WSB_08": "PENDING_EXTENSION",
-          "p2_WSB_10": "PENDING_EXTENSION",
-          "p2_WSB_11": "PENDING_EXTENSION",
-          "p2_WSB_12": "PENDING_EXTENSION",
-          "p2_WSB_14": "PENDING_EXTENSION",
-          "p2_WSB_15": "PENDING_EXTENSION",
-          "p2_WSB_16": "PENDING_EXTENSION",
-          "p2_WSB_17": "PENDING_EXTENSION",
-          "p2_DD_02": "PENDING_EXTENSION",
-          "p2_DD_06": "PENDING_EXTENSION",
-          "p2_DD_07": "PENDING_EXTENSION",
-          "p2_DD_08": "PENDING_EXTENSION",
-          "p2_DD_09": "PENDING_EXTENSION",
-          "p2_DD_11": "PENDING_EXTENSION",
-          "p2_DD_12": "PENDING_EXTENSION",
-          "p2_DD_13": "PENDING_EXTENSION",
-          "p2_DD_17": "PENDING_EXTENSION",
-          "p2_DD_18": "PENDING_EXTENSION"
-        }
+        "status": "FAIL",
+        "failures": [
+          [
+            4,
+            4,
+            "WSB",
+            "union"
+          ]
+        ]
       },
       "X-b": {
-        "status": "PENDING",
-        "missing": {
-          "p2_WSB_04": "PENDING_EXTENSION",
-          "p2_WSB_05": "PENDING_EXTENSION",
-          "p2_DD_04": "PENDING_EXTENSION",
-          "p2_DD_05": "PENDING_EXTENSION",
-          "p2_WSB_06": "PENDING_EXTENSION",
-          "p2_WSB_07": "PENDING_EXTENSION",
-          "p2_WSB_08": "PENDING_EXTENSION",
-          "p2_WSB_10": "PENDING_EXTENSION",
-          "p2_WSB_11": "PENDING_EXTENSION",
-          "p2_WSB_12": "PENDING_EXTENSION",
-          "p2_WSB_14": "PENDING_EXTENSION",
-          "p2_WSB_15": "PENDING_EXTENSION",
-          "p2_WSB_16": "PENDING_EXTENSION",
-          "p2_WSB_17": "PENDING_EXTENSION",
-          "p2_DD_02": "PENDING_EXTENSION",
-          "p2_DD_06": "PENDING_EXTENSION",
-          "p2_DD_07": "PENDING_EXTENSION",
-          "p2_DD_08": "PENDING_EXTENSION",
-          "p2_DD_09": "PENDING_EXTENSION",
-          "p2_DD_11": "PENDING_EXTENSION",
-          "p2_DD_12": "PENDING_EXTENSION",
-          "p2_DD_13": "PENDING_EXTENSION",
-          "p2_DD_17": "PENDING_EXTENSION",
-          "p2_DD_18": "PENDING_EXTENSION"
-        }
+        "status": "FAIL",
+        "window": 4,
+        "eval_start": "2021Q1",
+        "P1": false,
+        "P2": true,
+        "P3": true,
+        "DD_cliff_windows": [],
+        "later_exceptions": []
       },
       "X-c": {
-        "status": "PENDING",
-        "missing": {
-          "p2_WSB_04": "PENDING_EXTENSION"
+        "status": "FAIL",
+        "cells": {
+          "p2_WSB_03": {
+            "obs_total": 1125,
+            "null_mean": 1039.2234375,
+            "null_sd": 28.523527800459636,
+            "z_seg": 3.007221375282258,
+            "ratio": 1.082539095448374,
+            "R": 6400,
+            "tail_lo": 0.99875,
+            "tail_hi": 0.00125,
+            "chain_means": [
+              1038.625,
+              1038.199375,
+              1043.613125,
+              1036.45625
+            ],
+            "chain_sds": [
+              26.81635461803114,
+              28.60882074831773,
+              28.633476085420977,
+              29.47160643632274
+            ]
+          },
+          "p2_WSB_04": {
+            "obs_total": 2891,
+            "null_mean": 3402.362734375,
+            "null_sd": 48.697982523901274,
+            "z_seg": -10.500696494439373,
+            "ratio": 0.8497036400003555,
+            "R": 12800,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              3401.7284375,
+              3400.489375,
+              3406.4275,
+              3400.805625
+            ],
+            "chain_sds": [
+              49.353948082282066,
+              49.62948858399989,
+              48.53584751243147,
+              46.99455785896251
+            ]
+          }
         }
       },
-      "usable_cells": 14,
-      "missing": {
-        "p2_WSB_04": "PENDING_EXTENSION",
-        "p2_WSB_05": "PENDING_EXTENSION",
-        "p2_DD_04": "PENDING_EXTENSION",
-        "p2_DD_05": "PENDING_EXTENSION",
-        "p2_WSB_06": "PENDING_EXTENSION",
-        "p2_WSB_07": "PENDING_EXTENSION",
-        "p2_WSB_08": "PENDING_EXTENSION",
-        "p2_WSB_10": "PENDING_EXTENSION",
-        "p2_WSB_11": "PENDING_EXTENSION",
-        "p2_WSB_12": "PENDING_EXTENSION",
-        "p2_WSB_14": "PENDING_EXTENSION",
-        "p2_WSB_15": "PENDING_EXTENSION",
-        "p2_WSB_16": "PENDING_EXTENSION",
-        "p2_WSB_17": "PENDING_EXTENSION",
-        "p2_DD_02": "PENDING_EXTENSION",
-        "p2_DD_06": "PENDING_EXTENSION",
-        "p2_DD_07": "PENDING_EXTENSION",
-        "p2_DD_08": "PENDING_EXTENSION",
-        "p2_DD_09": "PENDING_EXTENSION",
-        "p2_DD_11": "PENDING_EXTENSION",
-        "p2_DD_12": "PENDING_EXTENSION",
-        "p2_DD_13": "PENDING_EXTENSION",
-        "p2_DD_17": "PENDING_EXTENSION",
-        "p2_DD_18": "PENDING_EXTENSION"
-      },
+      "usable_cells": 38,
+      "missing": {},
       "sources": {
         "p2_WSB_01": {
           "attempt": "first_pass",
@@ -105,21 +86,77 @@
           "attempt": "extension1",
           "sha256": "8dcc0be72b71634b1ab5a91d301da12aa05fb56664047a242ded6a33f67251d8"
         },
+        "p2_WSB_04": {
+          "attempt": "extension1",
+          "sha256": "fc98dc7daa2db811ffa50721ece93d9454c20508c1b1ca9b0519a9d0e95187fb"
+        },
+        "p2_WSB_05": {
+          "attempt": "extension1",
+          "sha256": "a8bcda3fda23ca7077810d1ebb107e8f14d35fd357fca07d25486cfd04a2a88c"
+        },
         "p2_WSB_18": {
           "attempt": "first_pass",
           "sha256": "ea38bef50386378b06a7bf88f9f433182cfa4849bb489f67c166eedf05c6841e"
+        },
+        "p2_DD_04": {
+          "attempt": "extension1",
+          "sha256": "58e78642f437d74f60c188aad0b78a67c70ba4ef2e88908c620b39ee864d267c"
+        },
+        "p2_DD_05": {
+          "attempt": "extension1",
+          "sha256": "1947f4be771acc4057242910ba152f6efd9e63d3470d0ce8fbfb6ff2cc19ea6a"
         },
         "p2_WSB_00": {
           "attempt": "first_pass",
           "sha256": "d0d1a0dfad0fb43f939cccd104911ae989df7916e8de903dba8d5bbbb8b51c10"
         },
+        "p2_WSB_06": {
+          "attempt": "extension1",
+          "sha256": "8231b036bd5c10d6c42dc78a305990e92cdbc11c334dd8457af1f7725c8e84c6"
+        },
+        "p2_WSB_07": {
+          "attempt": "extension1",
+          "sha256": "d8a450ad3ec75399dbe46d98ea8e404c7f3b286ce1bc6ef29f75e0418f24a4a8"
+        },
+        "p2_WSB_08": {
+          "attempt": "extension1",
+          "sha256": "b8eb03f1b9f77e98366bc5c186348e584b0f3f44b415d44c0e8f2da7461673a2"
+        },
         "p2_WSB_09": {
           "attempt": "first_pass",
           "sha256": "54d774b39e5f1a15c9ecdd022b0285520a3b91625badd12dfd815fcf861cd27f"
         },
+        "p2_WSB_10": {
+          "attempt": "extension1",
+          "sha256": "19677347eea9bc4769982cbfb920f8e8602ce35f4f713c534d982aad48b17d08"
+        },
+        "p2_WSB_11": {
+          "attempt": "extension1",
+          "sha256": "ef7fde876a09837c6581307427817ab0ea8444b4aa3d57aa326864da9f8ca824"
+        },
+        "p2_WSB_12": {
+          "attempt": "extension1",
+          "sha256": "6d1926fa3ccceec59cb8323b59451b3a09f6e931cece7f82324293c3562636f5"
+        },
         "p2_WSB_13": {
           "attempt": "first_pass",
           "sha256": "8d003bf4e262831fb84648e0f765a18dc765edfa8febece4077a56f49184cdb2"
+        },
+        "p2_WSB_14": {
+          "attempt": "extension1",
+          "sha256": "8a8b3b62c9fe60e371732b938d864ca108efca63c78fa4f2086d62d30cd3ccfe"
+        },
+        "p2_WSB_15": {
+          "attempt": "extension1",
+          "sha256": "ce5b27cd3a57c04cd931c86bd85b066629ee2f497e4ac615426c5fad40363757"
+        },
+        "p2_WSB_16": {
+          "attempt": "extension1",
+          "sha256": "ed9fb846d1aa7fbdc300d8e443715403b59ce57269490ad6de498c2b38f693f7"
+        },
+        "p2_WSB_17": {
+          "attempt": "extension1",
+          "sha256": "63ea08116638038809684f2ab7fc82092dd66ee959ca3eb73cd8448d5fac1ef8"
         },
         "p2_DD_00": {
           "attempt": "first_pass",
@@ -129,13 +166,45 @@
           "attempt": "first_pass",
           "sha256": "99bc1a875dd064a8b95f0c2691f46870fcb5e196d18d314ac62cb9d128d518f2"
         },
+        "p2_DD_02": {
+          "attempt": "extension1",
+          "sha256": "2040c36b26328cc8a65c5b01b3c53ded5eaabb3835b2edaf0850be2f85b5d115"
+        },
         "p2_DD_03": {
           "attempt": "first_pass",
           "sha256": "a4874df1182d829f8e96589267e4a9fe157cafbb40f0fb6e30947c9e73ec35c3"
         },
+        "p2_DD_06": {
+          "attempt": "extension1",
+          "sha256": "94d2001c140ed36c57ab62ac2f9dc63d541fdc6ee34d2aec10aea8ee681dd1ef"
+        },
+        "p2_DD_07": {
+          "attempt": "extension1",
+          "sha256": "f831083ca551d80e9d02d34c33b29d1dfddfc9511a9f20ecd46e43bd63a73d3f"
+        },
+        "p2_DD_08": {
+          "attempt": "extension1",
+          "sha256": "0060f30ac149deebac666874d8e391483ae79b2d7f0134c71032e669858b3ed8"
+        },
+        "p2_DD_09": {
+          "attempt": "extension1",
+          "sha256": "0797d5bf161008deefc41683655365048543193854c37b5e37e7fa2a2fee1f85"
+        },
         "p2_DD_10": {
           "attempt": "first_pass",
           "sha256": "8f31cc84ac880c5b45d6b8683f8f34ec2fce8f04abb82f2a6ec7036a556306c9"
+        },
+        "p2_DD_11": {
+          "attempt": "extension1",
+          "sha256": "90166d271ceba9baa7b53f0676d07501e81703f4b92e856862c14c01ef8645ad"
+        },
+        "p2_DD_12": {
+          "attempt": "extension1",
+          "sha256": "56368350bf59d23acd8db9a299d46e69b1e4d91cd104e5552d3cb431e5cd7ed6"
+        },
+        "p2_DD_13": {
+          "attempt": "extension1",
+          "sha256": "b59c77e5c76d98fba36f3bbe88ffa068e32706a27275f7b820f234def5f23e51"
         },
         "p2_DD_14": {
           "attempt": "first_pass",
@@ -148,90 +217,116 @@
         "p2_DD_16": {
           "attempt": "first_pass",
           "sha256": "a2b70786a0f91500fbe60046083c8aeeb8e7570ccafd5b5423a5671a27f7ded0"
+        },
+        "p2_DD_17": {
+          "attempt": "extension1",
+          "sha256": "1f3d28062857161f413b2b7a980340c5ea663bf0c4530c55c917f0ebd64d54fd"
+        },
+        "p2_DD_18": {
+          "attempt": "extension1",
+          "sha256": "17e6bd04ead4cbfa4c46d3910c355912caccfe0872ba3071c56c7eaae81faf79"
         }
       }
     },
     "N3": {
       "X-a": {
-        "status": "PENDING",
-        "missing": {
-          "p2_WSB_04": "PENDING_EXTENSION",
-          "p2_WSB_05": "PENDING_EXTENSION",
-          "p2_DD_05": "PENDING_EXTENSION",
-          "p2_WSB_00": "PENDING_EXTENSION",
-          "p2_WSB_06": "PENDING_EXTENSION",
-          "p2_WSB_07": "PENDING_EXTENSION",
-          "p2_WSB_08": "PENDING_EXTENSION",
-          "p2_WSB_09": "PENDING_EXTENSION",
-          "p2_WSB_11": "PENDING_EXTENSION",
-          "p2_WSB_12": "PENDING_EXTENSION",
-          "p2_WSB_13": "PENDING_EXTENSION",
-          "p2_DD_03": "PENDING_EXTENSION",
-          "p2_DD_08": "PENDING_EXTENSION",
-          "p2_DD_09": "PENDING_EXTENSION",
-          "p2_DD_10": "PENDING_EXTENSION",
-          "p2_DD_17": "PENDING_EXTENSION",
-          "p2_DD_18": "PENDING_EXTENSION"
-        }
+        "status": "FAIL",
+        "failures": [
+          [
+            4,
+            3,
+            "WSB",
+            "union"
+          ],
+          [
+            4,
+            4,
+            "WSB",
+            "union"
+          ]
+        ]
       },
       "X-b": {
-        "status": "PENDING",
-        "missing": {
-          "p2_WSB_02": "PENDING_EXTENSION",
-          "p2_WSB_04": "PENDING_EXTENSION",
-          "p2_WSB_05": "PENDING_EXTENSION",
-          "p2_DD_05": "PENDING_EXTENSION",
-          "p2_WSB_00": "PENDING_EXTENSION",
-          "p2_WSB_06": "PENDING_EXTENSION",
-          "p2_WSB_07": "PENDING_EXTENSION",
-          "p2_WSB_08": "PENDING_EXTENSION",
-          "p2_WSB_09": "PENDING_EXTENSION",
-          "p2_WSB_11": "PENDING_EXTENSION",
-          "p2_WSB_12": "PENDING_EXTENSION",
-          "p2_WSB_13": "PENDING_EXTENSION",
-          "p2_DD_03": "PENDING_EXTENSION",
-          "p2_DD_08": "PENDING_EXTENSION",
-          "p2_DD_09": "PENDING_EXTENSION",
-          "p2_DD_10": "PENDING_EXTENSION",
-          "p2_DD_17": "PENDING_EXTENSION",
-          "p2_DD_18": "PENDING_EXTENSION"
-        }
+        "status": "FAIL",
+        "window": 0,
+        "eval_start": "2020Q1",
+        "P1": false,
+        "P2": false,
+        "P3": true,
+        "DD_cliff_windows": [],
+        "later_exceptions": []
       },
       "X-c": {
-        "status": "PENDING",
-        "missing": {
-          "p2_WSB_04": "PENDING_EXTENSION"
+        "status": "FAIL",
+        "cells": {
+          "p2_WSB_03": {
+            "obs_total": 1125,
+            "null_mean": 1255.9675,
+            "null_sd": 29.428645802177172,
+            "z_seg": -4.4503406945864565,
+            "ratio": 0.8957238145095315,
+            "R": 6400,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              1259.336875,
+              1254.449375,
+              1254.7075,
+              1255.37625
+            ],
+            "chain_sds": [
+              29.438404172685296,
+              31.119285613737585,
+              28.563122093881823,
+              28.24366629772948
+            ]
+          },
+          "p2_WSB_04": {
+            "obs_total": 2891,
+            "null_mean": 3432.54734375,
+            "null_sd": 49.26408056149364,
+            "z_seg": -10.9927423302667,
+            "ratio": 0.8422316462040786,
+            "R": 6400,
+            "tail_lo": 0.0,
+            "tail_hi": 1.0,
+            "chain_means": [
+              3437.4475,
+              3430.243125,
+              3434.515,
+              3427.98375
+            ],
+            "chain_sds": [
+              49.50476990907038,
+              48.93922522102669,
+              46.906393753943604,
+              51.06662056507656
+            ]
+          }
         }
       },
-      "usable_cells": 20,
-      "missing": {
-        "p2_WSB_02": "PENDING_EXTENSION",
-        "p2_WSB_04": "PENDING_EXTENSION",
-        "p2_WSB_05": "PENDING_EXTENSION",
-        "p2_DD_05": "PENDING_EXTENSION",
-        "p2_WSB_00": "PENDING_EXTENSION",
-        "p2_WSB_06": "PENDING_EXTENSION",
-        "p2_WSB_07": "PENDING_EXTENSION",
-        "p2_WSB_08": "PENDING_EXTENSION",
-        "p2_WSB_09": "PENDING_EXTENSION",
-        "p2_WSB_11": "PENDING_EXTENSION",
-        "p2_WSB_12": "PENDING_EXTENSION",
-        "p2_WSB_13": "PENDING_EXTENSION",
-        "p2_DD_03": "PENDING_EXTENSION",
-        "p2_DD_08": "PENDING_EXTENSION",
-        "p2_DD_09": "PENDING_EXTENSION",
-        "p2_DD_10": "PENDING_EXTENSION",
-        "p2_DD_17": "PENDING_EXTENSION",
-        "p2_DD_18": "PENDING_EXTENSION"
-      },
+      "usable_cells": 38,
+      "missing": {},
       "sources": {
         "p2_WSB_01": {
           "attempt": "first_pass",
           "sha256": "a4df62a270e6c3656abb03f5887b74c2b85f046e37c2d3702e5ec3ca5585329c"
         },
+        "p2_WSB_02": {
+          "attempt": "extension1",
+          "sha256": "d66c95b9a1974ecbb5f7e66d4ce049a408b5d665f0fe2f97348db497e63aa01e"
+        },
         "p2_WSB_03": {
           "attempt": "extension1",
           "sha256": "91a039e37231d256b731796bcfbd38687a6846afa5f151120fa64d5733f68bc3"
+        },
+        "p2_WSB_04": {
+          "attempt": "extension1",
+          "sha256": "4c732d25cc7ba88705e0cc1bd39d9f53c073afc67347ee22921358b1493adfd6"
+        },
+        "p2_WSB_05": {
+          "attempt": "extension1",
+          "sha256": "63a03061505a4326f3c1c6763af4519e18f3037ac4f1a20d84eec0b932fc6450"
         },
         "p2_WSB_18": {
           "attempt": "first_pass",
@@ -241,9 +336,45 @@
           "attempt": "first_pass",
           "sha256": "5ac11279c23b96201770726d39e321d72736d9b30bc88e5cc04b3941f6bc568f"
         },
+        "p2_DD_05": {
+          "attempt": "extension1",
+          "sha256": "297eccce0c7048641b48754e51d1b7778ddb999246cf4fcc591e702e02cd53bd"
+        },
+        "p2_WSB_00": {
+          "attempt": "extension1",
+          "sha256": "9574521b411ef64129dc123f74b0ca108a5cbd84ac4bcef4e6e3df1f530ed9cb"
+        },
+        "p2_WSB_06": {
+          "attempt": "extension1",
+          "sha256": "aca8c9056cfcdd51f71edb68f5e85b6a9a40cc2aae96d995d8a5717692b85af4"
+        },
+        "p2_WSB_07": {
+          "attempt": "extension1",
+          "sha256": "e6c1eb4489d708574abdb970cb9f9437d5c8d53ae92050a16de043c8a2d1ec86"
+        },
+        "p2_WSB_08": {
+          "attempt": "extension1",
+          "sha256": "c6c1427db4f6d0635c2ba6e9eb5d5ac0cc2f82ebc834e59b3e61ff05524844c3"
+        },
+        "p2_WSB_09": {
+          "attempt": "extension1",
+          "sha256": "bc2ba8eb4b1f6331e68080ffe1e21f87c40b040c299b55b768283717c06854be"
+        },
         "p2_WSB_10": {
           "attempt": "first_pass",
           "sha256": "926b2fe9cfc74235d54c9b6caeb1437fb201360fa56b3234121adc2098a41c8e"
+        },
+        "p2_WSB_11": {
+          "attempt": "extension1",
+          "sha256": "7cc300f168248e22c83525f4ddda1e305d0190be6d756568ff42c3526ee55270"
+        },
+        "p2_WSB_12": {
+          "attempt": "extension1",
+          "sha256": "9ff47250253e7e3ca52584a62eb184dd44f070acd03ecbbedfaab294a9d2f741"
+        },
+        "p2_WSB_13": {
+          "attempt": "extension1",
+          "sha256": "dcf56a2fa9d5013d0155a11d7924f65ae92570911601a863fddceea4127cf790"
         },
         "p2_WSB_14": {
           "attempt": "first_pass",
@@ -273,6 +404,10 @@
           "attempt": "first_pass",
           "sha256": "32e4731f0b69eed558e9c98167d2a27927649b3910a56f248490ce544b6f5b43"
         },
+        "p2_DD_03": {
+          "attempt": "extension1",
+          "sha256": "d33e68971c583ebc2f4d1abdd57bcdc49a7a8b4a0704d966afe87a269b7e6c69"
+        },
         "p2_DD_06": {
           "attempt": "first_pass",
           "sha256": "f1ab49b4f30a174b2fbd23900b74435fb9eb8d26b689184ef6b79d7d3bfdb5c5"
@@ -280,6 +415,18 @@
         "p2_DD_07": {
           "attempt": "first_pass",
           "sha256": "ec894c30c9e244f14ab0eac10721e73ad2492f031e3c7ba23475ab8879c2f050"
+        },
+        "p2_DD_08": {
+          "attempt": "extension1",
+          "sha256": "4f573ad37f768a937d8b2bb050a3f4ee2eedc94b0561f9fa65fde51daa334d2d"
+        },
+        "p2_DD_09": {
+          "attempt": "extension1",
+          "sha256": "40ec310957d0d351e81574d4676663be6537372fcb7a3c17bee19e047e0d0715"
+        },
+        "p2_DD_10": {
+          "attempt": "extension1",
+          "sha256": "c101a28fa8cf9900b09801dd42166ee07d9c2c98b2ee66bcaf2391160d4abfca"
         },
         "p2_DD_11": {
           "attempt": "first_pass",
@@ -304,6 +451,14 @@
         "p2_DD_16": {
           "attempt": "first_pass",
           "sha256": "2c12639ff3ab9e8714920ab5e6ba9ae2d2dba42985dc338e795d67991ee0bef7"
+        },
+        "p2_DD_17": {
+          "attempt": "extension1",
+          "sha256": "153e61219f6186ffcd8f0666751e98e33757d2503484413da9f861cc20be9dc8"
+        },
+        "p2_DD_18": {
+          "attempt": "extension1",
+          "sha256": "2005d05f59ab1eb7c69518669ad823bdd6249520bbeef22e8036e65fe028a8c9"
         }
       }
     }

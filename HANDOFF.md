@@ -1,3 +1,34 @@
+# Bounded extension COMPLETE and independently verified — 2026-09-05 03:15 Pacific
+
+All 44 extension jobs completed on MBP; every pilot and aggregate
+production check passed. No resource-limited attempts. Queue exited by
+08:36:55 UTC (01:36:55 Pacific); workers, power assertion and watchdog
+are gone. No further sampling is planned. M1 final audit passed all496
+files (164,102,602bytes), source/input/matrix/census hashes and recomputed
+all stage diagnostics and production estimates. Together with32 original
+passing results, all76 Paper2 cell/null cases are usable.
+
+Final unchanged prediction scores: X-a FAIL, X-b FAIL, X-c FAIL under
+BOTH N2 and N3. N2 onset k4 (2021Q1-Q2), P1fails; N3 onset k0
+(2020Q1-Q2), P1/P2fail, every subsequent WSB window z<=-3. Second
+excursion WSB04 reverses under both: N2ratio.84970,z-10.5007;
+N3ratio.84223,z-10.9927. WSB03 remains N2ratio1.08254,z3.0072 and
+N3ratio.89572,z-4.4503. These are scientific failures with resolved
+aggregate diagnostics. Original results/registrations remain preserved;
+no new formation claim. Paper1 XdPASS/XeUNRESOLVED remains unchanged.
+
+Read reports/curveball_extension1_conclusions.md and final scores/audit.
+Latest recommendation to user: consolidate useful Paper2 longitudinal
+and source-consistency evidence into Paper1/supplement; this manuscript
+merge has NOT been performed. Both drafts still need substantive revision
+and must not retain original GME transition/excursion claims as robust.
+Preserve failed predictions. No publication/outreach. See Paper1 rewrite
+plan below. Absentia was informed MBP sampling has finished; leave its
+separate checkout/runtime/jobs alone. All older RUNNING entries below
+are historical, not live status.
+
+---
+
 # First extension result verified — 2026-09-05 00:03 Pacific
 
 LIVE extension continues on MBP; 2/44 jobs complete at the status check,
