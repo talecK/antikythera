@@ -1,0 +1,492 @@
+{
+  "commit": "b84435b5fdfc1a6f14051fefbf0df5edf8b8be2c",
+  "code_sha256": {
+    "eval/run_eval8_nulls.py": "d12dff490b6b73325fd5d351e94467eefc112987e7c1475118c2a35efff5b325",
+    "eval/run_eval8.py": "4724f55fa24c558b5f5f4d6ab6e1608c7dc8f00b1d4ff4cdd8e8d98f3c64775b",
+    "eval/nulls.py": "3b3a3c09f91cb4bb63d888a8845fbb59fa6b80dc84ff20866630afd26827449d",
+    "preregistration_nulls.md": "9ee10f8269fc9e1d4cac393179d5f1c24813fa1e8d8471cee56be4953f93d01c"
+  },
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "architecture": "x86_64",
+  "numpy": "2.5.2",
+  "duckdb": "1.5.5",
+  "rng": "numpy.random.PCG64",
+  "ddof": 0,
+  "arguments": {
+    "null": "stratified",
+    "R": 100,
+    "workers": 1,
+    "drift": 10,
+    "space": "all",
+    "seeds": null
+  },
+  "cells": [
+    {
+      "space": "author",
+      "fold": "fold1",
+      "null_kind": "stratified",
+      "R": 100,
+      "seed": "[20260831, 0]",
+      "build_docs": 142123,
+      "eval_docs": 73817,
+      "frequent": 8419,
+      "eligible": 364,
+      "obs_total": 746,
+      "null_mean": 1055.81,
+      "null_sd": 28.442466489388714,
+      "z_seg": -10.892515250587833,
+      "ratio": 0.7065665223856565,
+      "null_min": 988.0,
+      "null_max": 1139.0,
+      "mc_p_lo": 0.009900990099009901,
+      "mc_p_hi": 1.0,
+      "mc_p_2s": 0.019801980198019802,
+      "formed": 2,
+      "floor": 3.64,
+      "binom_p": 0.87945293805304,
+      "drift_reps": 10,
+      "inc_before": 378816.0,
+      "inc_after": 376934.3,
+      "docs_changed": 1598.4,
+      "toks_changed": 510.7,
+      "collapsed_frac": 0.004967319226220676,
+      "formed_pairs": [
+        [
+          [
+            "deployment",
+            "software engineering"
+          ],
+          9,
+          7.02000000000001
+        ],
+        [
+          [
+            "developer productivity",
+            "marketing"
+          ],
+          6,
+          5.02000000000001
+        ]
+      ],
+      "batches": [
+        {
+          "batch": 0,
+          "seed": [
+            20260831,
+            0
+          ],
+          "null_mean": 1055.81,
+          "null_sd": 28.442466489388714,
+          "z_seg": -10.892515250587833,
+          "ratio": 0.7065665223856565,
+          "null_min": 988.0,
+          "null_max": 1139.0,
+          "mc_p_lo": 0.009900990099009901,
+          "mc_p_hi": 1.0,
+          "mc_p_2s": 0.019801980198019802,
+          "R": 100,
+          "formed": 2
+        }
+      ],
+      "reference_structure_matches": true,
+      "replicate_artifact": "data/registry/nulls_revisions/stratified_R100/author_fold1.npz",
+      "replicate_sha256": "864840b1ec2a65d5a1e23149fbb3f7e2baab75c35f4da67768d062ca078653a6"
+    },
+    {
+      "space": "author",
+      "fold": "fold2",
+      "null_kind": "stratified",
+      "R": 100,
+      "seed": "[20260831, 1]",
+      "build_docs": 70880,
+      "eval_docs": 71243,
+      "frequent": 4346,
+      "eligible": 110,
+      "obs_total": 454,
+      "null_mean": 651.37,
+      "null_sd": 26.944259128801445,
+      "z_seg": -7.325122544899588,
+      "ratio": 0.6969924927460583,
+      "null_min": 586.0,
+      "null_max": 715.0,
+      "mc_p_lo": 0.009900990099009901,
+      "mc_p_hi": 1.0,
+      "mc_p_2s": 0.019801980198019802,
+      "formed": 0,
+      "floor": 1.1,
+      "binom_p": 1.0,
+      "drift_reps": 10,
+      "inc_before": 319673.0,
+      "inc_after": 317848.3,
+      "docs_changed": 1551.7,
+      "toks_changed": 492.8,
+      "collapsed_frac": 0.005708020383329251,
+      "formed_pairs": [],
+      "batches": [
+        {
+          "batch": 0,
+          "seed": [
+            20260831,
+            1
+          ],
+          "null_mean": 651.37,
+          "null_sd": 26.944259128801445,
+          "z_seg": -7.325122544899588,
+          "ratio": 0.6969924927460583,
+          "null_min": 586.0,
+          "null_max": 715.0,
+          "mc_p_lo": 0.009900990099009901,
+          "mc_p_hi": 1.0,
+          "mc_p_2s": 0.019801980198019802,
+          "R": 100,
+          "formed": 0
+        }
+      ],
+      "reference_structure_matches": true,
+      "replicate_artifact": "data/registry/nulls_revisions/stratified_R100/author_fold2.npz",
+      "replicate_sha256": "1eefe23748ed6031e0553f4f7b200d4431eb7e4d6f7085ba8835ce48ffa23a05"
+    },
+    {
+      "space": "thread",
+      "fold": "fold1",
+      "null_kind": "stratified",
+      "R": 100,
+      "seed": "[20260831, 2]",
+      "build_docs": 133634,
+      "eval_docs": 59358,
+      "frequent": 10444,
+      "eligible": 25161,
+      "obs_total": 12098,
+      "null_mean": 48311.99,
+      "null_sd": 215.2573109095252,
+      "z_seg": -168.2358190157876,
+      "ratio": 0.25041402765648857,
+      "null_min": 47824.0,
+      "null_max": 48775.0,
+      "mc_p_lo": 0.009900990099009901,
+      "mc_p_hi": 1.0,
+      "mc_p_2s": 0.019801980198019802,
+      "formed": 15,
+      "floor": 251.61,
+      "binom_p": 0.9999999999874419,
+      "drift_reps": 10,
+      "inc_before": 455921.0,
+      "inc_after": 454473.6,
+      "docs_changed": 1398.9,
+      "toks_changed": 446.2,
+      "collapsed_frac": 0.003174672805157085,
+      "formed_pairs": [
+        [
+          [
+            "accuracy",
+            "iteration"
+          ],
+          4,
+          3.010000000000005
+        ],
+        [
+          [
+            "ai",
+            "propaganda"
+          ],
+          8,
+          6.010000000000005
+        ],
+        [
+          [
+            "amazon",
+            "wealth"
+          ],
+          11,
+          10.010000000000005
+        ],
+        [
+          [
+            "android",
+            "search engines"
+          ],
+          6,
+          4.0
+        ],
+        [
+          [
+            "automation",
+            "earnings"
+          ],
+          5,
+          4.0
+        ],
+        [
+          [
+            "compensation",
+            "platform"
+          ],
+          5,
+          4.02000000000001
+        ],
+        [
+          [
+            "compensation",
+            "women"
+          ],
+          7,
+          6.0
+        ],
+        [
+          [
+            "compiler warnings",
+            "performance"
+          ],
+          5,
+          4.0
+        ],
+        [
+          [
+            "cost",
+            "teachers"
+          ],
+          5,
+          4.0
+        ],
+        [
+          [
+            "cross-platform",
+            "monetization"
+          ],
+          8,
+          7.0400000000000205
+        ],
+        [
+          [
+            "education",
+            "paypal"
+          ],
+          5,
+          4.010000000000005
+        ],
+        [
+          [
+            "elections",
+            "regulation"
+          ],
+          10,
+          6.0
+        ],
+        [
+          [
+            "entrepreneurs",
+            "software development"
+          ],
+          5,
+          4.0
+        ],
+        [
+          [
+            "guidelines",
+            "learning"
+          ],
+          5,
+          4.010000000000005
+        ],
+        [
+          [
+            "ranking",
+            "value"
+          ],
+          6,
+          4.0
+        ]
+      ],
+      "batches": [
+        {
+          "batch": 0,
+          "seed": [
+            20260831,
+            2
+          ],
+          "null_mean": 48311.99,
+          "null_sd": 215.2573109095252,
+          "z_seg": -168.2358190157876,
+          "ratio": 0.25041402765648857,
+          "null_min": 47824.0,
+          "null_max": 48775.0,
+          "mc_p_lo": 0.009900990099009901,
+          "mc_p_hi": 1.0,
+          "mc_p_2s": 0.019801980198019802,
+          "R": 100,
+          "formed": 15
+        }
+      ],
+      "reference_structure_matches": true,
+      "replicate_artifact": "data/registry/nulls_revisions/stratified_R100/thread_fold1.npz",
+      "replicate_sha256": "493d657ad08eec2550f16514d00ec0d2db1f1a1ba7a1147598a70386621d7415"
+    },
+    {
+      "space": "thread",
+      "fold": "fold2",
+      "null_kind": "stratified",
+      "R": 100,
+      "seed": "[20260831, 3]",
+      "build_docs": 69014,
+      "eval_docs": 64620,
+      "frequent": 5460,
+      "eligible": 7505,
+      "obs_total": 7866,
+      "null_mean": 28257.8,
+      "null_sd": 195.8956865272944,
+      "z_seg": -104.09519658902128,
+      "ratio": 0.2783656194041999,
+      "null_min": 27571.0,
+      "null_max": 28697.0,
+      "mc_p_lo": 0.009900990099009901,
+      "mc_p_hi": 1.0,
+      "mc_p_2s": 0.019801980198019802,
+      "formed": 14,
+      "floor": 75.05,
+      "binom_p": 1.0,
+      "drift_reps": 10,
+      "inc_before": 411216.0,
+      "inc_after": 409731.1,
+      "docs_changed": 1435.5,
+      "toks_changed": 440.2,
+      "collapsed_frac": 0.0036109976265515527,
+      "formed_pairs": [
+        [
+          [
+            "anonymity",
+            "government"
+          ],
+          11,
+          9.010000000000005
+        ],
+        [
+          [
+            "apple watch",
+            "simplicity"
+          ],
+          4,
+          3.0
+        ],
+        [
+          [
+            "code quality",
+            "operating systems"
+          ],
+          8,
+          7.010000000000005
+        ],
+        [
+          [
+            "cost",
+            "space"
+          ],
+          10,
+          6.02000000000001
+        ],
+        [
+          [
+            "documentation",
+            "system design"
+          ],
+          5,
+          4.010000000000005
+        ],
+        [
+          [
+            "errors",
+            "productivity"
+          ],
+          9,
+          7.010000000000005
+        ],
+        [
+          [
+            "exercise",
+            "quality"
+          ],
+          6,
+          5.010000000000005
+        ],
+        [
+          [
+            "facebook",
+            "politics"
+          ],
+          14,
+          11.0
+        ],
+        [
+          [
+            "google analytics",
+            "open source"
+          ],
+          6,
+          5.010000000000005
+        ],
+        [
+          [
+            "learning",
+            "publishing"
+          ],
+          8,
+          6.0
+        ],
+        [
+          [
+            "platforms",
+            "risk"
+          ],
+          9,
+          8.0
+        ],
+        [
+          [
+            "popularity",
+            "speed"
+          ],
+          7,
+          6.030000000000015
+        ],
+        [
+          [
+            "projects",
+            "technology"
+          ],
+          7,
+          6.0
+        ],
+        [
+          [
+            "scalability",
+            "uber"
+          ],
+          13,
+          11.02000000000001
+        ]
+      ],
+      "batches": [
+        {
+          "batch": 0,
+          "seed": [
+            20260831,
+            3
+          ],
+          "null_mean": 28257.8,
+          "null_sd": 195.8956865272944,
+          "z_seg": -104.09519658902128,
+          "ratio": 0.2783656194041999,
+          "null_min": 27571.0,
+          "null_max": 28697.0,
+          "mc_p_lo": 0.009900990099009901,
+          "mc_p_hi": 1.0,
+          "mc_p_2s": 0.019801980198019802,
+          "R": 100,
+          "formed": 14
+        }
+      ],
+      "reference_structure_matches": true,
+      "replicate_artifact": "data/registry/nulls_revisions/stratified_R100/thread_fold2.npz",
+      "replicate_sha256": "69528187089a9f7f0e2447732e45dc8762a4df5a775a4131bb091d8d9e741f39"
+    }
+  ]
+}

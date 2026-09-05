@@ -7,13 +7,14 @@ is setting up the M3 MBP to share the large computations.
 ## Ownership and current runs
 - M1 owns the 38-cell Paper 2 N1 series at R=100 (three workers), log
   logs/takeover_n1_primary.log, output
-  reports/paper2_windows_z_stratified_R100.tsv. It is still running;
-  do not duplicate it or treat a partial TSV as complete.
+  reports/paper2_windows_z_stratified_R100.tsv. It completed in 1276.81 seconds; all 38 rows are present.
+  N1-a/b/c PASS, N1-d FAIL. Onset remains 2021Q2, P1/P2/P3 PASS.
 - M1 completed the four-cell Paper 1 label seeding check at R=100;
   reports/paper1_nulls_label_R100.tsv and .json, source commit 8365fe5.
   P1-b PASS, max z difference 7.46%. The HN component of D-b FAILS:
   thread collapse is smaller than author collapse. Full details are
-  appended to reports/pilot1_runs.md. M1 will run Paper 1 N1 next.
+  appended to reports/pilot1_runs.md. Paper 1 N1 is now also complete:
+  all four cells satisfy P1-a. See reports/nulls_amendment_scores.json.
 - M3 is assigned ONLY the larger runs in eval/run_revision_queue.py:
   Paper 2 label and stratified headline cells at R=1000 (drift=10),
   then Paper 1 thread space, 10x100 independent label batches with
@@ -71,9 +72,14 @@ are calibrated despite pair dependence; P3 passing rules out a DD step;
 the two papers' conclusions are guaranteed unchanged before N1/N2.
 The new registration appendix states their qualifications explicitly.
 
-Next: complete and score M1 N1 runs, incorporate M3 results, prepare a
+Next: incorporate M3 results and finish a
 registered Curveball mixing pilot and exact-margin plus quarter-stratified
 exact-margin design, then revise result-dependent claims and figures.
+The N2 document is DRAFT. The new compiled Curveball kernel has passed
+synthetic tests (including an independently enumerated five-state
+transition kernel, native sampling, margins and counts). A 588k-row
+synthetic benchmark records about 2.72 million attempts/second on M1
+x86_64; this is throughput evidence, not a real-matrix mixing bound.
 Eight headline cells alone do not establish an onset/persistence rule
 across the full series. Preserve all original registrations and failed
 predictions. Public preprint updates remain on hold.

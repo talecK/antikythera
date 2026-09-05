@@ -1,0 +1,202 @@
+{
+  "N1-a": {
+    "status": "PASS",
+    "sign_failures": [],
+    "non_detection_failures": []
+  },
+  "N1-b": {
+    "status": "PASS",
+    "window": 5,
+    "eval_start": "2021Q2",
+    "P1": true,
+    "P2": true,
+    "P3": true,
+    "DD_cliff_windows": [],
+    "later_exceptions": []
+  },
+  "N1-c": {
+    "status": "PASS",
+    "excursion": [
+      {
+        "window": 3,
+        "z": 19.626703206174998,
+        "ratio": 1.5686657277911793
+      },
+      {
+        "window": 4,
+        "z": 30.446715596544124,
+        "ratio": 1.6266795705700974
+      }
+    ]
+  },
+  "N1-d": {
+    "status": "FAIL",
+    "exceptions": [
+      {
+        "cell": [
+          4,
+          0,
+          "WSB",
+          "union"
+        ],
+        "formed": 1,
+        "eligible": 45
+      },
+      {
+        "cell": [
+          4,
+          1,
+          "WSB",
+          "union"
+        ],
+        "formed": 2,
+        "eligible": 77
+      },
+      {
+        "cell": [
+          4,
+          2,
+          "WSB",
+          "union"
+        ],
+        "formed": 2,
+        "eligible": 64
+      },
+      {
+        "cell": [
+          4,
+          5,
+          "WSB",
+          "union"
+        ],
+        "formed": 6,
+        "eligible": 498
+      },
+      {
+        "cell": [
+          4,
+          9,
+          "WSB",
+          "union"
+        ],
+        "formed": 3,
+        "eligible": 225
+      },
+      {
+        "cell": [
+          4,
+          10,
+          "WSB",
+          "union"
+        ],
+        "formed": 2,
+        "eligible": 146
+      },
+      {
+        "cell": [
+          4,
+          16,
+          "WSB",
+          "union"
+        ],
+        "formed": 2,
+        "eligible": 71
+      }
+    ],
+    "interpretation": "Literal nominal-count prediction; not a test that these pairs are true discoveries"
+  },
+  "D-a": {
+    "status": "WITHDRAWN_BEFORE_REGISTRATION"
+  },
+  "P1-a": {
+    "status": "PASS",
+    "failures": []
+  },
+  "P1-b": {
+    "status": "PASS",
+    "changes": [
+      {
+        "space": "author",
+        "fold": "fold1",
+        "relative_z_change": 0.07460039056725126
+      },
+      {
+        "space": "author",
+        "fold": "fold2",
+        "relative_z_change": 0.020802162123236267
+      },
+      {
+        "space": "thread",
+        "fold": "fold1",
+        "relative_z_change": 0.0328817363499077
+      },
+      {
+        "space": "thread",
+        "fold": "fold2",
+        "relative_z_change": 0.04442886119555455
+      }
+    ]
+  },
+  "D-b": {
+    "status": "FAIL",
+    "reason": "HN thread collapse is below author collapse in both folds",
+    "HN": {
+      "label": {
+        "fold1": {
+          "author": 0.004742143943233716,
+          "thread": 0.0031406756872353397
+        },
+        "fold2": {
+          "author": 0.005675174318757016,
+          "thread": 0.003667902027158448
+        }
+      },
+      "stratified": {
+        "fold1": {
+          "author": 0.004967319226220676,
+          "thread": 0.003174672805157085
+        },
+        "fold2": {
+          "author": 0.005708020383329251,
+          "thread": 0.0036109976265515527
+        }
+      }
+    },
+    "WSB_N1": {
+      "1": 0.06500075347262242,
+      "2": 0.07544136012290703,
+      "3": 0.13002667137954502,
+      "4": 0.1286385279156293
+    },
+    "WSB_original_null": {
+      "status": "PENDING_M3"
+    }
+  },
+  "R-a": {
+    "status": "PENDING_M3"
+  },
+  "R-b": {
+    "status": "PENDING_M3"
+  },
+  "T-a": {
+    "status": "PENDING_M3"
+  },
+  "T-b": {
+    "status": "PENDING_M3"
+  },
+  "T-c": {
+    "status": "PENDING_M3"
+  },
+  "decision_rules": {
+    "excursion_withdrawal_triggered": false,
+    "onset_revision_triggered": false,
+    "exact_margin_null_required": true,
+    "public_manuscript_release_ready": false
+  },
+  "source_sha256": {
+    "paper2_windows_z.tsv": "f020a13013f9317dfcb902ee8f69d199d9f8e4f06763216410b91c4aeb1faa27",
+    "paper2_windows_z_stratified_R100.tsv": "0ab9057b7a0986f987e7dd9ed219d23c5f2d8162bd5462578e8d482e36fabbdb",
+    "paper1_nulls_label_R100.tsv": "ee4a9053e3b1a213d8f70a4d0e2646ba95e5bd7c80c6af4fdb0eb17906d97838",
+    "paper1_nulls_stratified_R100.tsv": "0345dc7d9ef74c5069cab477831139fef50d7c536af19e69e2058663ef753cc8"
+  }
+}

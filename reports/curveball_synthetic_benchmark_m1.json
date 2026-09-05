@@ -1,0 +1,29 @@
+{
+  "synthetic_only": true,
+  "rows": 588000,
+  "columns": 1000,
+  "degree_distribution": {
+    "1": 0.6,
+    "2": 0.2,
+    "5": 0.15,
+    "20": 0.05
+  },
+  "incidences": 1621394,
+  "attempts": 2940000,
+  "build_seconds": 1.2215365839656442,
+  "trade_seconds": 1.0811183329788037,
+  "count_seconds": 0.056970042001921684,
+  "attempts_per_second": 2719406.294683231,
+  "diagnostics": {
+    "attempts": 2940000,
+    "tradable_attempts": 2931293,
+    "changed_binary_entries": 2729268
+  },
+  "statistic": 13395,
+  "architecture": "x86_64",
+  "python": "3.14.6",
+  "numpy": "2.5.2",
+  "compiler": "Apple clang version 16.0.0 (clang-1600.0.26.6)",
+  "source_sha256": "34f0fa4d47bd4b88e20ff8acfcc1b80615ee006932351074bb38c5b97b700480",
+  "binary_sha256": "a14391872c1d3741a5662ad8c8f5b2adeb847eb847a8baa3db43bdac03322686"
+}
