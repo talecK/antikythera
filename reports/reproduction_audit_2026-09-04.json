@@ -1,0 +1,37 @@
+{
+  "local_gate": "PASS",
+  "cells": [
+    {
+      "B": "4",
+      "window": "0",
+      "stratum": "WSB",
+      "lens": "union"
+    },
+    {
+      "B": "4",
+      "window": "1",
+      "stratum": "WSB",
+      "lens": "union"
+    },
+    {
+      "B": "4",
+      "window": "0",
+      "stratum": "DD",
+      "lens": "union"
+    }
+  ],
+  "comparison": "exact strings for all 16 published columns",
+  "code_commit": "e939759",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "architecture": "x86_64",
+  "numpy": "2.5.2",
+  "duckdb": "1.5.5",
+  "baseline_sha256": {
+    "reports/paper2_windows_z.tsv": "f020a13013f9317dfcb902ee8f69d199d9f8e4f06763216410b91c4aeb1faa27",
+    "data/registry/run5_author/run8_author.json": "2c9d152e556a3c3e08f715a654fcf5cb101048e67c67ff947537bce4988b8c77",
+    "data/registry/pilot1_concepts/run8_thread.json": "39fd4149ef32b83fc2d074dbbca05b9d9bbf2b9a93a01b1b5a0b44db805d7f63"
+  },
+  "wall_seconds": 125.15,
+  "workers": 2,
+  "m3_full_gate": "owner-reported; raw logs not available in this checkout"
+}

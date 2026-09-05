@@ -25,10 +25,14 @@ Writes reports/paper1_nulls_<null>_R<R>.tsv and, per space, a JSON with
 the formed pairs next to the run-8 JSONs.
 """
 import argparse
+import hashlib
 import json
 import multiprocessing as mp
 import os
+import platform
+import subprocess
 import sys
+from pathlib import Path
 from collections import Counter, defaultdict
 
 import duckdb
@@ -59,16 +63,36 @@ def thread_doc_quarter():
     return {d: (t.year, (t.month - 1) // 3) for d, t in rows}
 
 
-def cell_stat(space, fold_name, be, ee, null_kind, R, drift_reps, seed):
+def summarize_counts(obs, null, eligible, supported):
+    """Pool replicate counts before estimating moments and pair thresholds."""
+    p99 = np.percentile(null, 99, axis=0)
+    formed = [(list(p), int(obs[j]), float(p99[j]))
+              for j, p in enumerate(eligible)
+              if supported[j] and obs[j] > p99[j] and obs[j] >= 2]
+    return null_summary(int(obs.sum()), null.sum(axis=1)), formed
+
+
+def cell_stat(space, fold_name, be, ee, null_kind, R, drift_reps, seed,
+              batches=None, artifact_dir=None):
     bdoc, edoc, author_fn = (author_universe if space == "author"
                              else thread_universe)(be, ee)
     fs, eligible = eligible_set(bdoc)
+    eligible = sorted(eligible)
     idx = {p: j for j, p in enumerate(eligible)}
     n = len(eligible)
     obs, docs_of = pair_doc_counts(edoc, fs, idx)
+    reference_path = (os.path.join(ROOT, "data", "registry", "run5_author",
+                                   "run8_author.json") if space == "author"
+                      else os.path.join(PC, "run8_thread.json"))
+    with open(reference_path) as f:
+        reference = json.load(f)[fold_name]
+    if n != reference["eligible"] or int(obs.sum()) != reference["obs_total"]:
+        raise RuntimeError(f"{space}/{fold_name}: observed structure differs from run 8")
+    supported = np.array([len({author_fn(d) for d in docs_of.get(p, set())}) >= 2
+                          for p in eligible])
     if space == "author":
         quarter_of = lambda d: (d[1], d[2])  # noqa: E731
-    else:
+    elif null_kind == "stratified":
         tq = thread_doc_quarter()
         quarter_of = lambda d: tq[d]        # noqa: E731
     inc_doc, inc_con = [], []
@@ -82,45 +106,58 @@ def cell_stat(space, fold_name, be, ee, null_kind, R, drift_reps, seed):
     strata = [quarter_of(d) for d in inc_doc] if null_kind == "stratified" else None
     size_before, freq_before = (Counter(inc_doc), Counter(inc_con.tolist())) \
         if drift_reps else (None, None)
-    rng = np.random.default_rng(seed)
-    null = np.zeros((R, n), dtype=np.int32)
+    batch_count = batches if batches is not None else 1
+    seeds = [seed + [s] for s in range(batch_count)] if batches is not None else [seed]
+    null = np.zeros((R * batch_count, n), dtype=np.int32)
     drifts = []
-    for r in range(R):
-        sh = label_shuffle(inc_doc, inc_con, rng) if null_kind == "label" \
-            else label_shuffle_stratified(inc_doc, inc_con, rng, strata)
-        null[r], _ = pair_doc_counts(sh, fs, idx)
-        if r < drift_reps:
-            drifts.append(margin_drift(inc_doc, inc_con, sh, size_before, freq_before))
-        if (r + 1) % 20 == 0:
-            print(f"  {space} {fold_name} {null_kind} rep {r+1}/{R}", flush=True)
-    p99 = np.percentile(null, 99, axis=0)
-    formed = []
-    for j, p in enumerate(eligible):
-        if obs[j] > p99[j] and obs[j] >= 2 and \
-           len({author_fn(d) for d in docs_of.get(p, set())}) >= 2:
-            formed.append((list(p), int(obs[j]), float(p99[j])))
+    batch_summaries = []
+    for s, batch_seed in enumerate(seeds):
+        rng = np.random.default_rng(batch_seed)
+        for r in range(R):
+            sh = label_shuffle(inc_doc, inc_con, rng) if null_kind == "label" \
+                else label_shuffle_stratified(inc_doc, inc_con, rng, strata)
+            null[s * R + r], _ = pair_doc_counts(sh, fs, idx)
+            if r < drift_reps:
+                drifts.append(margin_drift(inc_doc, inc_con, sh, size_before, freq_before))
+            if (r + 1) % 20 == 0:
+                print(f"  {space} {fold_name} {null_kind} batch {s+1}/{batch_count} "
+                      f"rep {r+1}/{R}", flush=True)
+        bs, bf = summarize_counts(obs, null[s * R:(s + 1) * R], eligible, supported)
+        batch_summaries.append({"batch": s, "seed": batch_seed, **bs,
+                                "formed": len(bf)})
+    summ, formed = summarize_counts(obs, null, eligible, supported)
     k = len(formed)
-    totals = null.sum(axis=1)
-    summ = null_summary(int(obs.sum()), totals)
-    rec = {"space": space, "fold": fold_name, "null_kind": null_kind, "R": R,
-           "seed": str(seed), "build_docs": len(bdoc), "eval_docs": len(edoc),
+    rec = {"space": space, "fold": fold_name, "null_kind": null_kind, "R": len(null),
+           "seed": str(seeds if batches is not None else seed),
+           "build_docs": len(bdoc), "eval_docs": len(edoc),
            "frequent": len(fs), "eligible": n, "obs_total": int(obs.sum()),
            **{k_: summ[k_] for k_ in ("null_mean", "null_sd", "z_seg", "ratio",
                                      "null_min", "null_max", "mc_p_lo",
                                      "mc_p_hi", "mc_p_2s")},
            "formed": k, "floor": 0.01 * n,
            "binom_p": binom_sf_ge(k, n, 0.01) if k else 1.0,
-           "drift_reps": drift_reps, **drift_mean(drifts),
-           "formed_pairs": formed}
+           "drift_reps": len(drifts), **drift_mean(drifts),
+           "formed_pairs": formed, "batches": batch_summaries,
+           "reference_structure_matches": True}
+    if artifact_dir is not None:
+        path = Path(artifact_dir) / f"{space}_{fold_name}.npz"
+        # Exclusive creation protects an earlier realization from replacement.
+        with path.open("xb") as f:
+            np.savez_compressed(f, observed=obs, null_counts=null,
+                                eligible=np.asarray(eligible, dtype=str),
+                                supported=supported, seeds=np.asarray(seeds))
+        rec["replicate_artifact"] = str(path.relative_to(ROOT))
+        rec["replicate_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
     return rec
 
 
 def cell_job(job):
-    ci, null_kind, R, drift_reps = job
+    ci, null_kind, R, drift_reps, batches, artifact_dir = job
     space, fold_name = CELLS[ci]
     be, ee = next((b, e) for nm, b, e in FOLDS if nm == fold_name)
     seed = [SEED, ci]
-    return cell_stat(space, fold_name, be, ee, null_kind, R, drift_reps, seed)
+    return cell_stat(space, fold_name, be, ee, null_kind, R, drift_reps, seed,
+                     batches, artifact_dir)
 
 
 def main():
@@ -129,11 +166,28 @@ def main():
     ap.add_argument("--R", type=int, default=100)
     ap.add_argument("--workers", type=int, default=1)
     ap.add_argument("--drift", type=int, default=10)
+    ap.add_argument("--space", choices=("all", "author", "thread"), default="all")
+    ap.add_argument("--seeds", type=int, default=None,
+                    help="A1 thread analysis: 10 batches, pooled for primary estimates")
     args = ap.parse_args()
     assert os.path.exists(NULLS_REG) and "STATUS: REGISTERED" in open(NULLS_REG).read(), \
         "nulls amendment not registered — refusing to run"
-    out_tsv = os.path.join(ROOT, "reports", f"paper1_nulls_{args.null}_R{args.R}.tsv")
-    jobs = [(ci, args.null, args.R, args.drift) for ci in range(len(CELLS))]
+    if args.R < 2 or args.workers < 1 or not 0 <= args.drift <= args.R:
+        ap.error("R >= 2, workers >= 1 and 0 <= drift <= R required")
+    if args.seeds is not None and (args.seeds, args.R, args.null, args.space) != \
+            (10, 100, "label", "thread"):
+        ap.error("A1 registers --seeds 10 only with --R 100 --null label --space thread")
+    tag = f"{args.null}_R{args.R}"
+    if args.space != "all":
+        tag += f"_{args.space}"
+    if args.seeds is not None:
+        tag += f"_seeds{args.seeds}"
+    out_tsv = os.path.join(ROOT, "reports", f"paper1_nulls_{tag}.tsv")
+    artifact_dir = os.path.join(ROOT, "data", "registry", "nulls_revisions", tag)
+    Path(artifact_dir).mkdir(parents=True, exist_ok=False)
+    jobs = [(ci, args.null, args.R, args.drift, args.seeds, artifact_dir)
+            for ci, (space, _) in enumerate(CELLS)
+            if args.space == "all" or space == args.space]
     print(f"null={args.null} R={args.R} workers={args.workers} -> {out_tsv}", flush=True)
     if args.workers > 1:
         pool = mp.get_context("spawn").Pool(min(args.workers, len(CELLS)))
@@ -142,7 +196,7 @@ def main():
         pool = None
         it = map(cell_job, jobs)
     recs = []
-    with open(out_tsv, "w") as f:
+    with open(out_tsv, "x") as f:
         f.write("\t".join(COLS) + "\n")
         for rec in it:
             recs.append(rec)
@@ -160,8 +214,27 @@ def main():
     for space, path in (("author", os.path.join(ROOT, "data", "registry", "run5_author")),
                         ("thread", PC)):
         js = {r["fold"]: r for r in recs if r["space"] == space}
-        with open(os.path.join(path, f"run8_nulls_{args.null}_R{args.R}.json"), "w") as f:
+        if not js:
+            continue
+        with open(os.path.join(path, f"run8_nulls_{tag}.json"), "x") as f:
             json.dump(js, f, indent=1)
+    manifest = {"commit": subprocess.check_output(["git", "-C", ROOT, "rev-parse", "HEAD"],
+                                                   text=True).strip(),
+                "python": sys.version, "architecture": platform.machine(),
+                "numpy": np.__version__, "duckdb": duckdb.__version__,
+                "rng": "numpy.random.PCG64", "ddof": 0,
+                "arguments": vars(args), "cells": recs}
+    with open(os.path.join(ROOT, "reports", f"paper1_nulls_{tag}.json"), "x") as f:
+        json.dump(manifest, f, indent=2)
+    if args.seeds is not None:
+        columns = ["space", "fold", "batch", "seed", "R", "null_mean", "null_sd",
+                   "z_seg", "ratio", "formed"]
+        with open(out_tsv.replace(".tsv", "_batches.tsv"), "x") as f:
+            f.write("\t".join(columns) + "\n")
+            for rec in recs:
+                for batch in rec["batches"]:
+                    row = {"space": rec["space"], "fold": rec["fold"], **batch}
+                    f.write("\t".join(str(row[c]) for c in columns) + "\n")
     print(f"results: {out_tsv}")
 
 

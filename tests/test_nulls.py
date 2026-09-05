@@ -132,6 +132,26 @@ def test_registered_cell_scope():
     assert selected_cells("label", explicit="4:0:WSB:union") == [(4, 0, "WSB", "union")]
 
 
+def test_pool_counts_before_estimating_z_and_formation():
+    from run_eval8_nulls import summarize_counts
+    eligible = [("A", "B"), ("A", "C")]
+    observed = np.array([8, 3])
+    first = np.array([[0, 0], [2, 0]], dtype=np.int32)
+    second = np.array([[10, 1], [12, 1]], dtype=np.int32)
+    pooled = np.concatenate([first, second])
+    summary, formed = summarize_counts(observed, pooled, eligible, [True, True])
+    totals = np.array([0, 2, 11, 13])
+    assert summary["R"] == 4
+    assert summary["z_seg"] == (11 - totals.mean()) / totals.std()
+    assert summary["ratio"] == 11 / totals.mean()
+    assert formed == [(["A", "C"], 3, 1.0)]
+    batch_z = [summarize_counts(observed, b, eligible, [True, True])[0]["z_seg"]
+               for b in (first, second)]
+    assert not np.isclose(summary["z_seg"], np.mean(batch_z))
+    _, unsupported = summarize_counts(observed, pooled, eligible, [True, False])
+    assert unsupported == []
+
+
 if __name__ == "__main__":
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for fn in fns:
