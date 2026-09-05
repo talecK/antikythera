@@ -1,3 +1,51 @@
+# Extension sleep delay corrected — 2026-09-04 23:36 Pacific
+
+A status check found the MBP entering maintenance sleep despite the
+original caffeinate -i assertion. pmset directly recorded a 612-second
+sleep from23:22:37 to23:32:49 and other short maintenance transitions.
+Both workers remained intact and resumed; no result or chain was restarted.
+
+Added a run-scoped AC system-sleep assertion, caffeinate -isu -w40239,
+PID40399. Readback confirmed PreventSystemSleep=1. MBP is on AC, lid open.
+The additional assertion exits with the queue; no permanent power setting
+was changed. Operational record:
+reports/curveball_extension1_power_recovery.json.
+
+Because macOS monotonic time pauses during system sleep, an external
+UTC wall guard (PID40400) now enforces the ORIGINAL deadline of
+2026-09-05T12:21:31.528183Z (05:21 Pacific), without changing scientific
+source hashes or extending the registered budget. It checks exact queue
+PID/command and only terminates that queue and its own worker children
+at deadline, preserving existing artifacts. Code:
+eval/curveball_extension_wall_guard.py (MBP executes identical bytes from
+work/curveball_extension_wall_guard.py). Remote runtime record:
+reports/curveball_extension1_wall_guard.json. Inspect that record alongside
+the queue manifest: a wall-budget stop may leave the queue manifest RUNNING
+and the last stage partial; treat those as resource-limited, never passing.
+
+At recovery both workers were still on WSB_03 extension pilots. No
+extension result had completed. Paper1 remains independently verified.
+Keep the MBP on AC and awake; do not change scientific sources mid-run.
+
+---
+
+# Paper 1 substantive rewrite plan saved for next session
+
+The user agreed that Paper 1 needs a substantive rewrite in light of the
+completed tests, and requested a written plan for a new session. Read
+reports/paper1_rewrite_plan.md for the agreed approach, evidence boundaries,
+original-PDF comparison baseline, prior-art finding, known inconsistencies,
+deliverables and acceptance checks. The manuscript rewrite has NOT been
+performed in this planning session. Current prose still mixes old definitive
+discovery claims with robust aggregate results and unresolved pair formation.
+
+The plan is documentation only; it does not change scientific results or
+authorize publication or additional compute. Existing Paper 2 operations are
+separate. The operational status below was NOT reverified during this planning
+session; check current evidence before acting on its RUNNING banner.
+
+---
+
 # LIVE bounded Paper 2 extension — verified 2026-09-04 23:21 Pacific
 
 The single registered extension is NOW RUNNING on native ARM MBP.

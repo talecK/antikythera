@@ -1,0 +1,16 @@
+{
+  "timestamp_utc": "2026-09-05T06:36:52.469863+00:00",
+  "cause": "pmset logged maintenance sleep, including 23:22:37-23:32:49 Pacific (612 seconds), despite idle-sleep prevention",
+  "queue_pid": 40239,
+  "sleep_prevention_pid": 40399,
+  "sleep_prevention_command": [
+    "/usr/bin/caffeinate",
+    "-isu",
+    "-w",
+    "40239"
+  ],
+  "wall_guard_pid": 40400,
+  "wall_guard_sha256": "0cab2e6244c2a7f376832803bc3ae81a02811384f5deb2d5f86eb773f719dc36",
+  "scientific_source_changed": false,
+  "registered_budget_increased": false
+}
