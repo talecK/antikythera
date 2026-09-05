@@ -121,6 +121,17 @@ def test_null_summary_pvalues():
     assert abs(s["z_seg"] - z) < 1e-12
 
 
+def test_registered_cell_scope():
+    from run_paper2 import selected_cells, HEADLINE
+    primary = selected_cells("stratified")
+    assert len(primary) == 38
+    assert set(primary) == {(4, k, s, "union")
+                            for s in ("WSB", "DD") for k in range(19)}
+    assert len(selected_cells("label")) == 204
+    assert selected_cells("stratified", headline=True) == HEADLINE
+    assert selected_cells("label", explicit="4:0:WSB:union") == [(4, 0, "WSB", "union")]
+
+
 if __name__ == "__main__":
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     for fn in fns:

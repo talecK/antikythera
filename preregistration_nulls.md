@@ -186,3 +186,105 @@ Paper 1, N1:
    above.
 6. Draft the N2 amendment (chain length, thinning, per-chain seeds,
    predictions) and run it on the headline cells; then the prose pass.
+
+---
+
+## Amendment A1 — reproduction audit and pooled thread rerun
+
+STATUS: REGISTERED, 2026-09-04 Pacific (2026-09-05 UTC), before the
+new runs below. The owner delegated execution of the revision after
+discussing these choices with Codex. This appendix supersedes the
+conflicting reproduction and reporting clauses above; the original text
+and predictions remain in the record. No N1 or R=1000 outcome has been
+examined by the takeover session at this point.
+
+### Known results and limits of verification
+
+The owner reports an M3 reproduction of all 204 Paper 2 cells: counts,
+null means, standard deviations, z and formation counts agree exactly;
+66 binomial probabilities differ by at most 6.4e-13 relatively between
+arm64 and x86_64 libm. Paper 1 author space reproduces; thread-space
+shuffle realizations differ because a DuckDB join supplies unpinned
+document order. These are reported results, not independently inspected
+M3 logs. Code inspection confirms that run_eval8.run_space sorts labels
+but not documents. The frozen script and its published outputs remain
+unchanged. The earlier hash-seed check did not establish query-order
+determinism. The replacement thread estimates are new Monte Carlo
+estimates under the same label-shuffle distribution, not recovered
+copies of the original random stream.
+
+### Numerical comparison and local gate
+
+Integer counts must agree exactly when replaying identical draws.
+Same-environment floating results are checked exactly; cross-platform
+means, standard deviations and z may differ by
+abs(new-reference) <= 1e-12 + 1e-10*abs(reference). Positive representable
+binomial probabilities may differ relatively by at most 1e-9, with no
+absolute probability tolerance. Underflowed probabilities cannot certify
+tail agreement; a stable log-probability comparison is needed if such a
+case occurs. Registered decisions must agree exactly, even when numeric
+tolerances pass. This engineering tolerance is chosen after observing
+the reported platform discrepancy and is not claimed to be prospective
+to that audit.
+
+Before N1, locally replay the already reported Paper 2 cells WSB k=0,1
+and DD k=0 at B=4, union, R=100 without drift diagnostics, to a new file;
+compare against the archived TSV. Check Paper 1 observed counts and
+eligible counts against the archived JSONs in the corrected runner.
+The impossible exact-thread-stream requirement in runbook step 1 is
+replaced by these structural checks and the seeded rerun below. The
+full M3 replay remains owner-reported until its artifacts are recovered.
+Record environment, code commit, seeds, commands and reference hashes.
+
+### Thread estimates and diagnostics
+
+For each thread fold, generate 10 independent batches of 100 label
+shuffles, with seed default_rng([20260831, cell_index, batch_index]),
+cell_index=2 for fold1 and 3 for fold2, batch_index=0,...,9. Sort document
+IDs, labels and the eligible-pair output ordering. Pool all 1000
+per-pair replicate counts for the primary null mean, population standard
+deviation (ddof=0, retained for comparability), z, observed/null ratio,
+per-pair 99th percentile and formation count. Do not average batch z or
+batch ratios to produce the primary estimate. Retain all batch summaries
+and integer replicate arrays. Batch ranges describe Monte Carlo
+variability, not confidence intervals or uncertainty across populations.
+The 1000-draw percentile estimate is a precision extension of the
+100-draw procedure; its formation count need not equal the old count.
+
+New predictions, motivated by already observed large negative values:
+T-a: every batch z < -100 in both thread folds. T-b: each batch formed
+count <= 0.01 times its eligible count (a nominal reference, not an exact
+false-positive expectation). T-c: (max batch ratio - min batch ratio)
+/ pooled ratio <= 0.05 in each fold. Report each separately, regardless
+of outcome. The original P1-b comparison still uses the separately
+registered seed [20260831, cell_index] at R=100, not these batches.
+
+### Execution and interpretation clarifications
+
+The N1 full-series run means the 38 B=4 union cells only, as specified
+under Cells above. The command previously selected all 204 cells; correct
+its selection before execution without changing the sampler. R=1000
+headline runs include drift on the first 10 replicates for both nulls.
+
+The structural direction of collapse is fewer binary incidences than
+shuffled slots. This alone does not prove a universal direction of error
+relative to a uniform fixed-binary-margin ensemble for each eligible
+pair, aggregate or z. Rule 4's blanket conservatism claim is withdrawn;
+the direction relative to N2 will be measured. The N2 requirement stands.
+
+Binomial probabilities of formed counts are legacy descriptive outputs:
+pair events are dependent and their nominal reference is not an exact
+binomial model. Likewise +1 Monte Carlo tail summaries of the collapsed
+label null do not establish exchangeability of the observed binary
+matrix with draws from a different sample space. They are reported as
+simulation tail summaries, without claiming an exact calibrated test.
+Ordinary correlated Curveball output will not inherit an exact
+independent-permutation p-value guarantee.
+
+Passing eight N2 headline cells will establish robustness only for those
+cells. Claims about N2 onset and persistence require the 38 primary
+cells. A separate N2 protocol will specify a mixing pilot and the
+quarter-stratified fixed-margin combination before those runs. New-null
+results may change either paper's conclusions; the existing onset is
+currently supported under the original null only. Public manuscript
+updates remain on hold pending the required robustness results.

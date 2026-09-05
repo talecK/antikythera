@@ -275,6 +275,18 @@ def parse_cells(spec):
     return out
 
 
+def selected_cells(null_kind, headline=False, explicit=None):
+    """N1's registered full series is 38 primary cells, not sensitivities."""
+    if explicit:
+        return parse_cells(explicit)
+    if headline:
+        return list(HEADLINE)
+    cells = all_cells()
+    if null_kind == "stratified":
+        return [c for c in cells if c[0] == B_PRIMARY and c[3] == "union"]
+    return cells
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=1)
@@ -295,12 +307,7 @@ def main() -> None:
             "STATUS: REGISTERED" in open(NULLS_REG).read(), \
             "nulls amendment not registered — refusing to run a new null"
 
-    if args.cells:
-        cells = parse_cells(args.cells)
-    elif args.headline:
-        cells = list(HEADLINE)
-    else:
-        cells = all_cells()
+    cells = selected_cells(args.null, args.headline, args.cells)
     subset = len(cells) != len(all_cells())
 
     if args.out is None:
