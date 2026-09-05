@@ -96,10 +96,18 @@ def audit_record(payload,path):
             c=np.bincount([v for row in rows for v in row],minlength=len(data['vocabulary']))
             ca,cb=c[data['pairs'][:,0]],c[data['pairs'][:,1]]
             lower+=np.maximum(0,ca+cb-len(rows));upper+=np.minimum(ca,cb)
-        formation=formation_diagnostics(production,data['observed'],data['supported'],lower,upper)
-        equal(formation,record['production']['formation'],'formation')
-        outcome.update(summary=summary,formation_passed=formation['passed'],formed=formation['formed'],
-                       formation_unresolved_pairs=sum(not d['passed'] for d in formation['checks'].values()))
+        reported=record['production']['formation']
+        if record.get('extension')==1:
+            if reported!='NOT_EVALUATED: extension targets aggregate Paper 2 predictions only':
+                raise ValueError('unexpected extension formation claim')
+            original=ROOT/'reports'/f"curveball_{meta['cell']}_{record['null']}.json"
+            if sha256(original)!=record['first_pass_sha256']:raise ValueError('extension parent checksum mismatch')
+            outcome.update(summary=summary,formation_evaluation='NOT_EVALUATED')
+        else:
+            formation=formation_diagnostics(production,data['observed'],data['supported'],lower,upper)
+            equal(formation,reported,'formation')
+            outcome.update(summary=summary,formation_passed=formation['passed'],formed=formation['formed'],
+                           formation_unresolved_pairs=sum(not d['passed'] for d in formation['checks'].values()))
     return outcome
 
 
@@ -114,7 +122,8 @@ def main():
         if target.exists() and digest(str(target))!=r['sha256']:raise ValueError(f'conflicting local file preserved: {name}')
     results=[]
     for name,h in manifest['reports'].items():
-        path=payload/'reports'/f'curveball_{name}.json'
+        prefix='curveball_extension1_' if manifest.get('extension')==1 else 'curveball_'
+        path=payload/'reports'/f'{prefix}{name}.json'
         if digest(str(path))!=h:raise ValueError('queue/report hash mismatch')
         result=audit_record(payload,path);results.append(result)
         print('VERIFIED',name,'aggregate',result['production'],'formation',result.get('formation_passed'),flush=True)

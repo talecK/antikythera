@@ -1,3 +1,25 @@
+# First extension result verified — 2026-09-05 00:03 Pacific
+
+LIVE extension continues on MBP; 2/44 jobs complete at the status check,
+both WSB_03 nulls. M1 independently verified22 transferred files, all raw
+stage diagnostics/moments and source/input/matrix hashes. Audit:
+reports/curveball_extension1_verification_001.json. N2 ratio1.0825391,
+z3.0072214; N3 ratio0.8957238,z-4.4503407, both productionPASS with6400
+draws. These are diagnostic passes, not scientific prediction passes:
+N2 falls below Xc's5 threshold, and N3 reverses the original positive sign.
+Paper2 draft records this null sensitivity; full predictions remain pending
+until their required cells resolve or finish unresolved. WSB_04 was active.
+
+Continue the single bounded queue; no additional extension. Keep MBP
+scientific sources unchanged. Sleep prevention and external UTC budget
+guard remain active; original cutoff05:21Pacific. Existing verifier now
+supports extension artifacts with explicit formation NOT_EVALUATED, without
+turning that into a formation failure or computing a new formation claim.
+Snapshot001 contains only the two completed WSB_03 reports; future imports
+must preserve their hashes and use a new snapshot manifest.
+
+---
+
 # Extension sleep delay corrected — 2026-09-04 23:36 Pacific
 
 A status check found the MBP entering maintenance sleep despite the

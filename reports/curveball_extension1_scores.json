@@ -4,7 +4,6 @@
       "X-a": {
         "status": "PENDING",
         "missing": {
-          "p2_WSB_03": "PENDING_EXTENSION",
           "p2_WSB_04": "PENDING_EXTENSION",
           "p2_WSB_05": "PENDING_EXTENSION",
           "p2_DD_04": "PENDING_EXTENSION",
@@ -34,7 +33,6 @@
       "X-b": {
         "status": "PENDING",
         "missing": {
-          "p2_WSB_03": "PENDING_EXTENSION",
           "p2_WSB_04": "PENDING_EXTENSION",
           "p2_WSB_05": "PENDING_EXTENSION",
           "p2_DD_04": "PENDING_EXTENSION",
@@ -64,13 +62,11 @@
       "X-c": {
         "status": "PENDING",
         "missing": {
-          "p2_WSB_03": "PENDING_EXTENSION",
           "p2_WSB_04": "PENDING_EXTENSION"
         }
       },
-      "usable_cells": 13,
+      "usable_cells": 14,
       "missing": {
-        "p2_WSB_03": "PENDING_EXTENSION",
         "p2_WSB_04": "PENDING_EXTENSION",
         "p2_WSB_05": "PENDING_EXTENSION",
         "p2_DD_04": "PENDING_EXTENSION",
@@ -104,6 +100,10 @@
         "p2_WSB_02": {
           "attempt": "first_pass",
           "sha256": "2cb8be53a22e88f071f220e07ef9687937f8b8af87fa0d27ad4e2290bc759085"
+        },
+        "p2_WSB_03": {
+          "attempt": "extension1",
+          "sha256": "8dcc0be72b71634b1ab5a91d301da12aa05fb56664047a242ded6a33f67251d8"
         },
         "p2_WSB_18": {
           "attempt": "first_pass",
@@ -155,7 +155,6 @@
       "X-a": {
         "status": "PENDING",
         "missing": {
-          "p2_WSB_03": "PENDING_EXTENSION",
           "p2_WSB_04": "PENDING_EXTENSION",
           "p2_WSB_05": "PENDING_EXTENSION",
           "p2_DD_05": "PENDING_EXTENSION",
@@ -179,7 +178,6 @@
         "status": "PENDING",
         "missing": {
           "p2_WSB_02": "PENDING_EXTENSION",
-          "p2_WSB_03": "PENDING_EXTENSION",
           "p2_WSB_04": "PENDING_EXTENSION",
           "p2_WSB_05": "PENDING_EXTENSION",
           "p2_DD_05": "PENDING_EXTENSION",
@@ -202,14 +200,12 @@
       "X-c": {
         "status": "PENDING",
         "missing": {
-          "p2_WSB_03": "PENDING_EXTENSION",
           "p2_WSB_04": "PENDING_EXTENSION"
         }
       },
-      "usable_cells": 19,
+      "usable_cells": 20,
       "missing": {
         "p2_WSB_02": "PENDING_EXTENSION",
-        "p2_WSB_03": "PENDING_EXTENSION",
         "p2_WSB_04": "PENDING_EXTENSION",
         "p2_WSB_05": "PENDING_EXTENSION",
         "p2_DD_05": "PENDING_EXTENSION",
@@ -232,6 +228,10 @@
         "p2_WSB_01": {
           "attempt": "first_pass",
           "sha256": "a4df62a270e6c3656abb03f5887b74c2b85f046e37c2d3702e5ec3ca5585329c"
+        },
+        "p2_WSB_03": {
+          "attempt": "extension1",
+          "sha256": "91a039e37231d256b731796bcfbd38687a6846afa5f151120fa64d5733f68bc3"
         },
         "p2_WSB_18": {
           "attempt": "first_pass",

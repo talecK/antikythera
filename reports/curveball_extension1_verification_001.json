@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "transfer_manifest_sha256": "aab654991574661b5c049ac27793b78cc438a82ffe1fe100074b3d408266b5bc",
+  "files_verified": 22,
+  "installed": true,
+  "results": [
+    {
+      "cell": "p2_WSB_03",
+      "null": "N3",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 1125,
+        "null_mean": 1255.9675,
+        "null_sd": 29.428645802177172,
+        "z_seg": -4.4503406945864565,
+        "ratio": 0.8957238145095315,
+        "R": 6400,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          1259.336875,
+          1254.449375,
+          1254.7075,
+          1255.37625
+        ],
+        "chain_sds": [
+          29.438404172685296,
+          31.119285613737585,
+          28.563122093881823,
+          28.24366629772948
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    },
+    {
+      "cell": "p2_WSB_03",
+      "null": "N2",
+      "stages_recomputed": 3,
+      "pilot": "PASS",
+      "production": "PASS",
+      "summary": {
+        "obs_total": 1125,
+        "null_mean": 1039.2234375,
+        "null_sd": 28.523527800459636,
+        "z_seg": 3.007221375282258,
+        "ratio": 1.082539095448374,
+        "R": 6400,
+        "tail_lo": 0.99875,
+        "tail_hi": 0.00125,
+        "chain_means": [
+          1038.625,
+          1038.199375,
+          1043.613125,
+          1036.45625
+        ],
+        "chain_sds": [
+          26.81635461803114,
+          28.60882074831773,
+          28.633476085420977,
+          29.47160643632274
+        ]
+      },
+      "formation_evaluation": "NOT_EVALUATED"
+    }
+  ],
+  "method": "Recomputed raw moments, all archived stage diagnostics and production formation diagnostics using independently reference-tested diagnostic routines; verified frozen input/matrix/code/census and transfer hashes. No sampling rerun."
+}

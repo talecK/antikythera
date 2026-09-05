@@ -445,6 +445,19 @@ results. These partial findings support segregation before GME in the first
 window under exact margins, but do not yet establish a sustained early
 regime or the excursion's robustness.
 
+The single prospectively registered precision extension has now resolved
+its first excursion window, 2020Q4-2021Q1, under both exact margin nulls.
+Fresh N2 production gives observed/null=1.0825 and z=3.007, while N3 gives
+observed/null=0.8957 and z=-4.450. Each uses 6400 production draws and
+passes the unchanged aggregate diagnostics. All transferred arrays and
+stage diagnostics were independently verified on M1. N2 falls short of
+the registered excursion threshold z>=5; N3 reverses the original
+positive sign. Thus the strong excursion is not robust across these nulls
+in this window. The other excursion and remaining unresolved windows are
+still being evaluated; original results and predictions are
+retained separately. Sources: `preregistration_nulls_extension1.md` and
+`reports/curveball_extension1_verification_001.json`.
+
 The registered 1000-draw headline extension also passes both precision
 predictions for the original label null: all eight z estimates change by
 less than 20% (maximum 13.94%). The two excursion ratios are 2.3115 and

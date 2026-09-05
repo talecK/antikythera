@@ -662,3 +662,22 @@ burn twice selected pilot burn. Native MBP, two workers, six-hour sampling
 wall limit and 90 minutes per case, plus explicit finalization overhead.
 Original kernel, Ensemble and diagnostics are unchanged. Four synthetic
 tests pass. No real extension chain has run before this registration.
+
+## First extension window independently verified (2026-09-05 Pacific)
+
+The MBP extension resolved WSB k=3 (2020Q4-2021Q1) under both nulls.
+Both pilots passed at1760 sweeps; fresh production passed at1600 sweeps
+per chain, 6400 pooled draws. M1 verified 22 transferred files, code/input/
+matrix hashes, all stage diagnostics and raw summary moments. N2 ratio
+1.0825390954, z3.0072213753; N3 ratio0.8957238145, z-4.4503406946.
+This window does not meet X-c's z>=5 under either null, and the N3 sign
+reverses the original positive result. Full-scope prediction scoring
+remains pending while other required extension cells run. Do not score
+these diagnostic passes as scientific prediction passes. Sources:
+reports/curveball_extension1_verification_001.json and matching manifest.
+
+A status check also identified maintenance sleep on MBP despite the
+original idle-sleep assertion. Added process-bound caffeinate -isu and
+verified PreventSystemSleep=1 on AC. An external UTC wall guard enforces
+the original05:21Pacific deadline because macOS monotonic time pauses
+in system sleep. No scientific source or sampling budget was changed.

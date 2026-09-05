@@ -1,0 +1,98 @@
+{
+  "extension": 1,
+  "created_utc": "2026-09-05T07:04:18.635257+00:00",
+  "reports": {
+    "p2_WSB_03_N3": "91a039e37231d256b731796bcfbd38687a6846afa5f151120fa64d5733f68bc3",
+    "p2_WSB_03_N2": "8dcc0be72b71634b1ab5a91d301da12aa05fb56664047a242ded6a33f67251d8"
+  },
+  "files": {
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N2/pilot_01760.npz": {
+      "bytes": 650587,
+      "sha256": "98b71f776e9bbc09709f6895f0c4f92d4981171e5878d79f4827b7275a1a5216"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N2/pilot_starts.json": {
+      "bytes": 948,
+      "sha256": "3901c4662d8d6a227ec4ac26c2fed7847b4e051e679862c259fb1bc8a4671145"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N2/production_00800.npz": {
+      "bytes": 295127,
+      "sha256": "ff0a15b8aab6cb06ee285fd378e5080573ef29afbac11d0979ee17029095272d"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N2/production_01600.npz": {
+      "bytes": 589430,
+      "sha256": "992963a546ca416012af48d7d54b8b131447a5fb158144f367c965bbdcacd539"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N2/production_starts.json": {
+      "bytes": 948,
+      "sha256": "ea99682f414914d9ddac09b102c122b27931cd0faaa7b047e7caeb07561974d6"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N2/provenance.json": {
+      "bytes": 5176,
+      "sha256": "b3377324103484d45b37058078f8ec3e3d51b9c8e99047ad6c2aa9e071233390"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N3/pilot_01760.npz": {
+      "bytes": 715445,
+      "sha256": "5f44bee0f4c01177dddcc477b2d2dce767751588d7231aa1c3622155341287c9"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N3/pilot_starts.json": {
+      "bytes": 1547,
+      "sha256": "d51e04c1fea0472cd2cacb2ba720da0094350117313ef46a1aca6158cf145f63"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N3/production_00800.npz": {
+      "bytes": 325166,
+      "sha256": "adf94942720bf54fdc8297398f3ff071f710dd78a2a1d9332c7f0ee64a935230"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N3/production_01600.npz": {
+      "bytes": 648963,
+      "sha256": "daf7736635593740b6349a00299376fdd8521925d5cc30e65a5958370f04b71b"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N3/production_starts.json": {
+      "bytes": 1552,
+      "sha256": "f353e1b85369a5d5a4ed03c231dc981c8b9a3b152a002aa45204bbcbeb0a1572"
+    },
+    "data/registry/nulls_revisions/curveball_extension1/p2_WSB_03_N3/provenance.json": {
+      "bytes": 5176,
+      "sha256": "a23f1502acbd6eee3fee5c92d30f51d930b41b681aafd4ebd8234163a3012f1b"
+    },
+    "data/registry/nulls_revisions/curveball_v1/matrices/p2_WSB_03.npz": {
+      "bytes": 7415194,
+      "sha256": "6349ddb40ce4c2f2c6e5ba024eceb63da1e48c4613fbe70ec741841b5a80d7f4"
+    },
+    "reports/curveball_extension1_p2_WSB_03_N2.json": {
+      "bytes": 75979,
+      "sha256": "8dcc0be72b71634b1ab5a91d301da12aa05fb56664047a242ded6a33f67251d8"
+    },
+    "reports/curveball_extension1_p2_WSB_03_N2_pilot_01760.json": {
+      "bytes": 38808,
+      "sha256": "f8451513585acf322fb978d31ec788c2abb4df6b68b61f829c9cd89f730157b0"
+    },
+    "reports/curveball_extension1_p2_WSB_03_N2_production_00800.json": {
+      "bytes": 10259,
+      "sha256": "2b47b5666f9aea84279676f1ffcf88170983c7ef27840ae4ba14980875cf2d19"
+    },
+    "reports/curveball_extension1_p2_WSB_03_N2_production_01600.json": {
+      "bytes": 10254,
+      "sha256": "d38160d14f2ee80ae942b4ca609a8a2756c4552e3fd0150cdfbe9a5753a1a807"
+    },
+    "reports/curveball_extension1_p2_WSB_03_N3.json": {
+      "bytes": 78013,
+      "sha256": "91a039e37231d256b731796bcfbd38687a6846afa5f151120fa64d5733f68bc3"
+    },
+    "reports/curveball_extension1_p2_WSB_03_N3_pilot_01760.json": {
+      "bytes": 39383,
+      "sha256": "172b65e70ea19e4de06f88386f1929afb3651ddae37ac9dd44b96ab3b3b276bc"
+    },
+    "reports/curveball_extension1_p2_WSB_03_N3_production_00800.json": {
+      "bytes": 10794,
+      "sha256": "9abc88c7c8d5662d9af803fac38f422adccbd89e7e387d8b57f7454f4b784e36"
+    },
+    "reports/curveball_extension1_p2_WSB_03_N3_production_01600.json": {
+      "bytes": 10822,
+      "sha256": "20a83114a5c855bd54bc00ef4c576239588bcd525e1fc2ec9127978a8382e6cc"
+    },
+    "reports/curveball_matrix_p2_WSB_03.json": {
+      "bytes": 2402,
+      "sha256": "feafa4739ab80633a452730223d57e687aabad7eaa49bb391988485a87ac634e"
+    }
+  }
+}
