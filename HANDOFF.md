@@ -1,3 +1,25 @@
+# MBP connection verified and transfer in progress — 2026-09-04 21:54 Pacific
+
+SSH access is now verified at andrej@Kevins-MacBook-Pro.local, checkout
+/Users/andrej/workspace/antikythera. A direct process inspection found no
+Antikythera queue/evaluation jobs running. Its .venv is native arm64,
+Python 3.14.6, numpy 2.5.2 and duckdb 1.5.5. This supersedes the earlier
+user-reported-only idle status. M1 Antikythera remains stopped.
+
+The MBP had uncommitted historical reproduction notes in pilot1_runs.md.
+They were copied and hash-verified on both machines, preserved as a git
+stash on MBP, and incorporated verbatim in
+reports/m3_historical_reproduction_gate_notes.md. Its untracked logs/ and
+reference/ remain untouched. No original notes were discarded.
+
+The user authorized merged main and network rsync. Consolidated main was
+pushed at 2e5de10; this follow-up preserves recovered historical notes.
+Next: safely fast-forward MBP main, rsync the verified transfer directory,
+run native preflight and tests, then launch the registered two-worker
+queue. Do not claim it started until process/log evidence confirms it.
+
+---
+
 # Consolidated main and direct transfer authorized — 2026-09-04
 
 The user requested merging current code/reports/draft revisions onto main
