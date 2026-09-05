@@ -1,3 +1,40 @@
+# LIVE MBP Curveball queue — verified 2026-09-04 21:53 Pacific
+
+The network transfer and native restart are COMPLETE. SSH access:
+andrej@Kevins-MacBook-Pro.local; checkout:
+/Users/andrej/workspace/antikythera. Main was safely fast-forwarded to
+83760dec39c0322a4780461081f2025496410434 before launch. User's historical
+notes are preserved as documented below; untracked logs/reference remain.
+
+MBP queue started at 2026-09-05T04:53:29Z, PID 38106; workers 38114/38115.
+Direct ps and live logs verify active computation in p2_WSB_04 under
+both N2 and N3. Three completed cell attempts per null were hash-verified
+and skipped, including unresolved attempts. Native arm64 Python 3.14.6,
+numpy 2.5.2 and duckdb 1.5.5. Hardware directly verified: M3 Max, 14
+physical cores, 36 GiB memory. Two workers as registered; no additional
+M1 queue or duplicate MBP jobs. Transfer preflight verified 172 repository
+files, 56 payload files and 26 required inputs; 53 missing payload files
+installed, 3 existing identical files retained. Four kernel, five pipeline
+and two result-verification tests passed natively before launch.
+
+Command: caffeinate -i .venv/bin/python eval/run_curveball_queue.py
+--cells all --workers 2. Remote aggregate log:
+logs/curveball_queue_mbp_v1.log; remote per-cell logs:
+logs/curveball_<cell>_<N2|N3>.log. Queue manifest:
+reports/curveball_queue_v1.json. M1 copy of launch/test/environment evidence:
+reports/curveball_mbp_launch.json. Process is detached from SSH and has
+caffeinate. Do not modify MBP scientific code or registration while it runs.
+Do not pull M1 documentation checkpoints into the live MBP checkout.
+
+Next: inspect actual native pilot timings for a fresh ETA, verify and
+incorporate finished remote outputs using hashes, finish literal scoring,
+then complete manuscript revisions. Completed unresolved cells still
+require a separate prospective extension before any retry. No preprint
+publication/outreach is authorized. Local M1 remains available for review
+and manuscripts, not duplicate sampling. SSH and rsync are authorized.
+
+---
+
 # MBP connection verified and transfer in progress — 2026-09-04 21:54 Pacific
 
 SSH access is now verified at andrej@Kevins-MacBook-Pro.local, checkout
