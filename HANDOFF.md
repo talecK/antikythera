@@ -1,3 +1,85 @@
+# Current execution handoff — Codex takeover, 2026-09-04 Pacific
+
+This block supersedes conflicting instructions and conclusions in the
+historical handoff below. The owner delegated the revision to Codex and
+is setting up the M3 MBP to share the large computations.
+
+## Ownership and current runs
+- M1 owns the 38-cell Paper 2 N1 series at R=100 (three workers), log
+  logs/takeover_n1_primary.log, output
+  reports/paper2_windows_z_stratified_R100.tsv. It is still running;
+  do not duplicate it or treat a partial TSV as complete.
+- M1 completed the four-cell Paper 1 label seeding check at R=100;
+  reports/paper1_nulls_label_R100.tsv and .json, source commit 8365fe5.
+  P1-b PASS, max z difference 7.46%. The HN component of D-b FAILS:
+  thread collapse is smaller than author collapse. Full details are
+  appended to reports/pilot1_runs.md. M1 will run Paper 1 N1 next.
+- M3 is assigned ONLY the larger runs in eval/run_revision_queue.py:
+  Paper 2 label and stratified headline cells at R=1000 (drift=10),
+  then Paper 1 thread space, 10x100 independent label batches with
+  pooled primary summaries. These have not started on the M1.
+
+## M3 pickup
+Open the existing checkout with its real data/ directory. Pull the
+latest main without discarding local modifications. Use the pinned
+.venv: Python 3.14.6, numpy 2.5.2, duckdb 1.5.5. From the repo root:
+
+    .venv/bin/python eval/run_revision_queue.py --check-only
+    caffeinate -i .venv/bin/python eval/run_revision_queue.py --workers 8
+
+The queue verifies 24 source parquet SHA-256 values before evaluation,
+logs each job to logs/m3_<job>.log, and writes
+reports/revision_queue_m3.json with start commit, code hashes, seeds via
+child manifests, timings and output hashes. Completed jobs are skipped
+only if their output hashes match. Existing partial outputs are
+preserved and require inspection before restarting that job. Raw
+replicate arrays stay in data/registry/nulls_revisions/ and out of git.
+Do not launch Curveball or change registrations from the M3 task.
+Return the queue manifest and generated reports to the coordinating
+M1 task. Do not overwrite the M1's running N1 table, draft changes,
+HANDOFF, or shared run log. No automatic git push or publication is
+performed by the queue.
+
+## Registered correction and local evidence
+- A1, e939759, specifies numerical tolerances, reported versus inspected
+  gate evidence, canonical ordering and pooled thread summaries.
+- 8365fe5 discloses that the prior N1-d rationale about the 1% floor was
+  already false in the published table. The prediction itself remains
+  unchanged and must be scored literally.
+- Local three-cell Paper 2 replay exactly matches all 16 published
+  fields; all four Paper 1 observed totals and eligible counts match.
+  Evidence and baseline hashes: reports/reproduction_audit_2026-09-04.*.
+  Full M3 gate remains owner-reported; its raw artifacts are not here.
+- The frozen run_eval8.py and published outputs remain unchanged.
+  The corrected runner archives per-pair integer draws and computes
+  pooled z, ratio and formation thresholds, not averages of batch z.
+- Code audit found that the N1 command selected 204 cells despite the
+  38-cell registration. selected_cells() now enforces the registered
+  scope. Tests include scope and pooled-statistic checks.
+
+## Scientific and manuscript status
+Both drafts are explicitly marked revision-in-progress and not ready
+for public release. Known method definitions, extraction identity,
+subscriber arithmetic, repository status and the DD-step description
+have been corrected. Result-dependent prose, tables and figures still
+need the full robustness results. Term lint currently has zero failures.
+
+Do not repeat these historical overclaims: collapse proves negative z
+conservative under fixed margins; a nominal 1% reference is an exact
+floor or deterministic upper bound; binomial formed-count probabilities
+are calibrated despite pair dependence; P3 passing rules out a DD step;
+the two papers' conclusions are guaranteed unchanged before N1/N2.
+The new registration appendix states their qualifications explicitly.
+
+Next: complete and score M1 N1 runs, incorporate M3 results, prepare a
+registered Curveball mixing pilot and exact-margin plus quarter-stratified
+exact-margin design, then revise result-dependent claims and figures.
+Eight headline cells alone do not establish an onset/persistence rule
+across the full series. Preserve all original registrations and failed
+predictions. Public preprint updates remain on hold.
+
+---
+
 # Handoff — state of the Antikythera project (2026-08-30, RE-REVISED 2026-08-30 evening)
 
 ## PAPER PROGRAM HANDOFF (2026-09-01) — READ THIS FIRST FOR PAPER 1 / PAPER 2 WORK

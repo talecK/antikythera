@@ -420,3 +420,35 @@ Gate v2 (data/registry/gate_eval.json + timestamped copy; log gate_rerun_v2.log)
 ### threshold moves to k=12/2.1%, hence the paper quotes "roughly 2 percent").
 ### Second pass verified v2 end-to-end: traceability PASS, determinism PASS
 ### (PYTHONHASHSEED-independent to 6 decimals), no stale numbers.
+
+
+## Nulls amendment: local takeover and registered label-seed check (2026-09-04)
+Registration and source: A1 at e939759; pre-run clarification at 8365fe5.
+The three-cell Paper 2 local replay agrees exactly in all 16 published
+columns. All four Paper 1 observed totals and eligible counts agree
+with the archived JSONs. Full M3 reproduction remains owner-reported.
+
+Paper 1 label-shuffle seeding check (R=100; per-cell seeds as registered):
+| space | fold | observed/null | z | formed/eligible | z change from archived run 8 |
+|---|---|---:|---:|---:|---:|
+| author | fold1 | 0.7067 | -9.54 | 1/364 | 7.46% |
+| author | fold2 | 0.7025 | -8.39 | 0/110 | 2.08% |
+| thread | fold1 | 0.2500 | -157.34 | 21/25161 | 3.29% |
+| thread | fold2 | 0.2784 | -128.64 | 10/7505 | 4.44% |
+
+P1-b: PASS; maximum relative z change 7.46%, below the 20% bar.
+
+The HN component of D-b fails under the registered label null: thread
+collapse is 0.314% and 0.367%, below author collapse of 0.474% and
+0.568%, respectively. The temporal-null and WSB components are pending.
+These are Monte Carlo seed checks under the original label null, not
+validation of a fixed-margin null. Binomial outputs are historical
+descriptions; the 1% reference is not a guaranteed bound on realized
+counts or evidence that each observed pair is a false positive.
+
+Artifacts: reports/paper1_nulls_label_R100.tsv and .json (environment,
+seeds, formed pairs and raw-count checksums). Integer replicate arrays
+are retained under data/registry/nulls_revisions/label_R100/.
+The source TSV and run-8 JSONs were not overwritten. The 38-cell N1
+series is running locally; the large R=1000 and pooled thread runs are
+assigned to the M3 queue and have not started here.

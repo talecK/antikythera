@@ -170,6 +170,11 @@ def main():
     ap.add_argument("--seeds", type=int, default=None,
                     help="A1 thread analysis: 10 batches, pooled for primary estimates")
     args = ap.parse_args()
+    code_commit = subprocess.check_output(["git", "-C", ROOT, "rev-parse", "HEAD"],
+                                           text=True).strip()
+    code_sha256 = {name: hashlib.sha256((Path(ROOT) / name).read_bytes()).hexdigest()
+                   for name in ("eval/run_eval8_nulls.py", "eval/run_eval8.py",
+                                "eval/nulls.py", "preregistration_nulls.md")}
     assert os.path.exists(NULLS_REG) and "STATUS: REGISTERED" in open(NULLS_REG).read(), \
         "nulls amendment not registered — refusing to run"
     if args.R < 2 or args.workers < 1 or not 0 <= args.drift <= args.R:
@@ -218,8 +223,7 @@ def main():
             continue
         with open(os.path.join(path, f"run8_nulls_{tag}.json"), "x") as f:
             json.dump(js, f, indent=1)
-    manifest = {"commit": subprocess.check_output(["git", "-C", ROOT, "rev-parse", "HEAD"],
-                                                   text=True).strip(),
+    manifest = {"commit": code_commit, "code_sha256": code_sha256,
                 "python": sys.version, "architecture": platform.machine(),
                 "numpy": np.__version__, "duckdb": duckdb.__version__,
                 "rng": "numpy.random.PCG64", "ddof": 0,

@@ -397,3 +397,5 @@ within-document	2	S
 within-window	1	S		
 wsb-specific	2	S		
 z-score	1	S		
+deepseek-v	1	S		Tokenizer fragment of the exact model identifier deepseek-v4-flash; retain for reproducibility
+flash-nothink	1	S		Tokenizer fragment of the exact extraction cache identifier; retain for reproducibility

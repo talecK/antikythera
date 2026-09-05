@@ -2,11 +2,11 @@
 
 **Author:** Kevin Quiring (independent researcher; ORCID 0009-0001-9034-5533)
 
-**Draft v0.5, 2026-09-01. Registered study (preregistration_paper2.md,
-commit 99ffd9e, amendments V1-V4). All numbers are from the
-registration-conforming run (commit 21a9dc7); a disclosed implementation deviation and its correction are reported in
-Methods.
-Commit references for every quantity are collected in the commit appendix. Structured as Introduction, Results, Discussion, Methods. Prose, jargon, and figure passes complete.**
+**Revision in progress, 2026-09-04. Original results come from the
+registration-conforming run at commit 21a9dc7. The reproduction audit
+and additional null models are documented in preregistration_nulls.md.
+Robustness results and the resulting conclusions are pending. This draft
+is not ready for a new public preprint release.**
 
 ---
 
@@ -27,7 +27,7 @@ above chance. It is the only above-chance excursion this
 research program has observed, and shuffled data never produce it.
 Analysis-oriented control communities stay walled through the squeeze,
 so the excursion is specific to r/wallstreetbets. Two causes were in
-play, thirty-fold growth during the squeeze and a moderation overhaul
+play, roughly fivefold subscriber growth during the squeeze and a moderation overhaul
 after it, and we decided in advance that a mid-2021 onset could point
 to either. Segregation transitions in online communities can be
 measured and dated, but their timing alone cannot identify the
@@ -106,7 +106,7 @@ of dated governance events, can order the candidate mechanisms.
 The candidate mechanisms, stated before any window was computed
 (registration and its planning note in the code release):
 
-- **Scale/fragmentation.** WSB grew roughly 30-fold in weeks around the
+- **Scale/fragmentation.** WSB grew roughly fivefold in weeks around the
   January 2021 GameStop squeeze, from about 1.8 million to over 9
   million subscribers (anchor A2; the anchors are dated events listed with
 sources in Methods). If walls are a suddenly enormous community
@@ -155,8 +155,9 @@ of online-community research. Kiene, Monroy-Hernandez and Hill (2016)
 found that r/NoSleep absorbed a large newcomer surge without major
 incident; Lin et al. (2017) found that ten subreddits hit by
 default-listing growth shocks stayed recognizably themselves. Both
-studies find resilience, at growth scales far below WSB's roughly
-30-fold explosion in weeks. Whether the transition we measure is what a
+studies find resilience under growth shocks. WSB's subscriber count
+increased roughly fivefold within weeks; comparisons across these
+studies depend on how the growth interval and population are defined. Whether the transition we measure is what a
 growth shock beyond that scale does to a community is the scale
 mechanism above, and the Discussion explains why this design cannot
 settle it. Cascade theory, finally, predicts that a system's
@@ -233,11 +234,14 @@ independence is at least 2, and its observed co-mention count in the
 build period is zero. In plain terms, each ticker is popular enough
 that chance alone should have put the two in the same author's quarter
 at least twice, yet it never happened. The segregation statistic z for
-a window counts the documents in the following evaluation period in
-which any eligible pair is co-mentioned. That total is standardized
+a window sums the number of evaluation documents containing each
+eligible pair. A document containing several eligible pairs contributes
+separately for each pair. That total is standardized
 against a permutation null distribution, which shuffles ticker labels over the
 document-ticker incidences of the frequent set, with 100 replicates and
-a fixed seed. A z near zero means suppressed
+a fixed seed. Repeated labels assigned to one document are collapsed,
+so this shuffle preserves slot counts and label multiplicities before
+collapse, rather than exact binary row and column totals. A z near zero means suppressed
 pairs are co-mentioned about as often as chance predicts. A strongly
 negative z means they are kept apart; a positive z means they are
 brought together beyond chance. Windows roll over the 24 quarters of
@@ -446,7 +450,15 @@ With P1, P2, and P3 all passing, the registered claim stands: **a WSB-specific s
 The community moved from the only chance-level mixing state this
 program has observed, through its only above-chance excursion, to
 walls indistinguishable from every other measured community. The
-control stratum moved gradually and monotonically the whole time.
+control stratum remained below the registered null throughout, but its
+trajectory was not monotone. Its observed/null ratio also steps downward
+in the evaluation window beginning in 2021Q2, from about 0.6-0.7 in
+earlier windows to about 0.4-0.5 thereafter. This was identified from
+the released table during the revision audit, before runs of the additional null models.
+P3 tests a specific transition from z > -3 to z <= -5, which a control
+already below -3 cannot exhibit. Passing P3 therefore does not rule out
+a contemporaneous change in the control or establish a WSB-specific
+mechanism.
 
 What the timing does *not* do is pick a mechanism, and the registration
 constrains what we may conclude here. The anchors amendment froze the
@@ -785,8 +797,7 @@ deposited at Zenodo, doi:10.5281/zenodo.22262036. Raw Reddit content is
 public and retrievable via the Arctic Shift API; the deposit's datasheet
 and the code release include exact pull specifications, and raw data
 files stay out of both. The same derivations are committed at
-https://github.com/talecK/antikythera (private during review; public at
-publication), with the commit references listed in the commit appendix.
+https://github.com/talecK/antikythera (public), with the commit references listed in the commit appendix.
 
 ## Code availability
 
@@ -818,8 +829,8 @@ pair: two frequent tickers whose audiences never overlap in the build
 period even though chance alone predicts at least two shared documents.
 (c) Windows roll over 2019 to 2024 with a four-quarter build and a
 two-quarter evaluation, stepped one quarter. (d) The statistic compares
-the observed count of evaluation documents holding any eligible pair
-against 100 label shuffles, giving z. (e) The three regimes: chance-level
+the sum of per-pair evaluation-document counts against 100 label
+shuffles followed by within-document deduplication, giving z. (e) The three regimes: chance-level
 mixing (z near zero), fusion (z far above zero), and walls (z far below
 zero), in the order r/wallstreetbets passed through them. All values in
 this figure are illustrative; measured values are in Figures 2 to 4.
@@ -827,8 +838,8 @@ this figure are illustrative; measured values are in Figures 2 to 4.
 **Figure 2** (p2_fig1.png/.pdf). The transition and the excursion. (a)
 The primary segregation z for r/wallstreetbets (union count,
 four-quarter build) over the nineteen rolling evaluation windows, labelled by
-starting quarter. z is the count of evaluation-window documents
-co-mentioning any suppressed ticker pair, standardized against a
+starting quarter. z is the sum of per-pair evaluation-document counts
+over eligible suppressed ticker pairs, standardized against a
 permutation test that shuffles ticker labels; values near zero mean suppressed pairs co-mention
 about as often as chance predicts, strongly negative values mean they
 are kept apart, and positive values mean they are brought together
@@ -856,8 +867,7 @@ negative), pair counts beneath.
 ## Appendix: where every number comes from
 
 All artifacts live in the same repository as the companion paper's
-(https://github.com/talecK/antikythera; private during review, public
-at publication), whose commit history timestamps every registration
+(https://github.com/talecK/antikythera; public), whose commit history timestamps every registration
 ahead of its result. The numbers in this paper trace as follows:
 
 | quantity | artifact | commit |

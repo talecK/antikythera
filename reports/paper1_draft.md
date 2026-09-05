@@ -2,11 +2,11 @@
 
 **Author:** Kevin Quiring (independent researcher; ORCID 0009-0001-9034-5533)
 
-**Draft v0.3, 2026-09-01. All results final (post-review regeneration on
-deterministic artifacts, commit a67d556). Structured as Introduction,
-Results, Discussion, Methods; commit references for every quantity are
-collected in the commit appendix. Prose, jargon, and figure passes in
-progress.**
+**Revision in progress, 2026-09-04. The published analyses remain in the
+version history. A reproduction audit and additional null models are
+being evaluated under preregistration_nulls.md. Thread-space estimates,
+robustness tables and conclusions are pending that work. This draft is
+not ready for a new public preprint release.**
 
 ---
 
@@ -109,25 +109,23 @@ Watts 2006). A separate study
 (in preparation) examines the Science4Cast benchmark itself in this
 light.
 
-How to calibrate "beyond chance" was worked out in ecology decades
-ago, and text-corpus work has not adopted the answer. Ecologists faced
-the same question, whether species co-occur more or less than chance,
-and tested it against null models that hold row and column totals of a
-site-by-species matrix to varying degrees. Those studies measured the
-false-positive (Type I) inflation of partially constrained null models
-and converged on fully constrained ("fixed-fixed") randomizations as
-the safer default (Connor and Simberloff 1979; Gotelli 2000; Gotelli
-and Ulrich 2012; Gotelli and Graves 1996; see also Maslov and Sneppen
-2002 for the network analog). Our per-pair permutation criterion belongs to that family: a label permutation over the document-concept matrix that
-holds every document's size and every concept's frequency fixed. The
-standard text-corpus criterion, the z-score against a Poisson
-expectation, constrains less. It holds each concept's frequency fixed
-but lets document sizes float, which makes it the kind of partially
-constrained null that ecology showed to inflate false positives, and
-it fails here for the same reason: large documents produce
-co-occurrences that the expectation does not anticipate. We claim no
-novelty for the fix. Our contribution is to carry it into text corpora
-and to measure what leaving it out has cost.
+Ecological co-occurrence research established that conclusions depend
+on which features a null model constrains, including the row and column
+totals of a site-by-species matrix (Connor and Simberloff 1979; Gotelli
+2000; Gotelli and Ulrich 2012; Gotelli and Graves 1996). Related network
+methods constrain node degrees (Maslov and Sneppen 2002). Work on
+bipartite projections already provides both stochastic models and models with fixed degrees for co-occurrence networks, including an implementation using Curveball (Domagalski, Neal and Sagan 2021). We do not
+claim to introduce these ideas to text or knowledge networks.
+
+The label-shuffle null used in the original analyses preserves the
+number of concept positions within documents and the multiplicity of each label before
+within-document duplicates collapse. It therefore differs from a
+null with fixed binary margins. Our empirical comparison concerns the
+Poisson-style formation criterion implemented in this study and its
+behaviour under that label shuffle. It does not establish that all
+literature-based discovery systems use the same criterion or share its
+limitations. The revision evaluates temporal stratification and exact
+binary margins separately before drawing broader conclusions.
 
 Our answer is negative. Three headline results follow.
 
@@ -192,11 +190,14 @@ pair, whether the two concepts now co-occur beyond chance. The paper
 uses two definitions of beyond chance, the standard z-criterion and a
 per-pair permutation criterion. The difference between them is itself
 one of this paper's findings. The segregation statistic z pools all eligible
-pairs: it counts the evaluation documents in which any eligible pair
-co-occurs and standardizes that total against a permutation null
-distribution. The shuffle moves concept labels across the concept positions within
-documents, preserving every document's size and every concept's total frequency,
-with 100 replicates and a fixed seed. A z near zero means suppressed
+pairs: it sums the number of evaluation documents containing each
+eligible pair and standardizes that total against a permutation null
+distribution. A document contributes once for each eligible pair it
+contains, so it can contribute more than once to the total. The shuffle moves concept labels across the concept positions within
+documents, with 100 replicates and a fixed seed. The shuffle preserves
+document slot counts and label multiplicities before repeated labels
+within a document are collapsed. It therefore does not preserve binary
+document sizes or concept frequencies exactly. A z near zero means suppressed
 pairs co-occur about as often as chance predicts; a strongly negative z
 means they are kept apart. Two temporal folds are used: build 2015 to
 2016 with evaluation 2017 (fold 1), and build 2015 with evaluation 2016
@@ -309,8 +310,9 @@ Methods). Before drafting any
 claims we registered a placebo: shuffle the concept labels across the concept positions of the
 evaluation window's documents, and count how many eligible pairs
 "form" under the z-criterion in 100 such replicates. The shuffle
-preserves every document's size and every concept's total frequency
-while destroying any real association between concepts and people. The
+preserves document slot counts and label multiplicities before
+within-document duplicates collapse. It randomizes the allocation of
+concepts to people, but does not preserve the binary matrix margins. The
 registration specified the failure condition in advance: a shuffled mean
 at or above half the observed count would be reported as a revision of the
 result, not a nuance.
@@ -592,10 +594,11 @@ windows).
 
 ### Concept extraction and attribution
 
-Concepts are extracted by a pinned commercial language model (exact model
-identifier, prompt version, and decoding configuration are part of the
-released cache key; extraction configuration is fixed per run and
-cached immutably per document). For 2015 through 2017, the full-document
+Concepts are extracted with DeepSeek V4 Flash (model identifier
+`deepseek-v4-flash`), with thinking disabled, prompt version 2 and schema
+version 1. The extraction cache is keyed by
+`deepseek-v4-flash-nothink_pv2_sv1`; configuration is fixed per run and
+outputs are cached immutably per document. For 2015 through 2017, the full-document
 extraction yields 1.17 million claims, each a paraphrased assertion with
 a verbatim supporting quote and a list of lowercased concept strings.
 
@@ -641,8 +644,12 @@ paper, and we used two versions:
 - **Per-pair permutation criterion (used for the placebo and the calibrated formation results):** the same minimum-count requirements, but the joint count must strictly exceed the 99th percentile
   of that specific pair's count distribution across 100 label-shuffled
   replicates of the evaluation window (concept labels permuted across the concept positions within documents,
-preserving every document's size and every concept's total frequency). This makes each pair's false-positive rate about 1
-  percent by construction, independent of document-size heterogeneity.
+followed by collapse of within-document duplicates). The 99th percentile
+  is a nominal reference for the upper tail. Discrete counts, finite simulation
+  and the additional document and author requirements mean it does not
+  give an exact 1-percent false-positive rate. Shared concepts and
+  documents also make the pair decisions dependent; binomial
+  probabilities of their total are retained only as historical outputs.
 
 ### Positive control on the Science4Cast benchmark
 
@@ -776,9 +783,9 @@ eligible (we also call it suppressed) pair: two frequent concepts that never sha
 document in the build window even though chance alone predicts at
 least two shared documents. (c) The two folds: build on 2015 to 2016
 and evaluate 2017; build on 2015 and evaluate 2016. (d) The segregation
-statistic: the count of evaluation documents holding any eligible pair,
-compared with 100 shuffles of concept labels that preserve every
-document's size and every concept's frequency, giving z. (e) The two
+statistic: the sum of per-pair evaluation-document counts, compared
+with 100 label shuffles followed by within-document deduplication,
+giving z. Multiple eligible pairs in one document contribute separately. (e) The two
 criteria for calling a pair formed. Under the retired z-criterion,
 whose expectation comes from each concept's own frequency, randomly
 shuffled data form more pairs than the real data; under the per-pair
@@ -792,11 +799,10 @@ placebo. For each author-space fold, the histogram shows how many
 eligible suppressed pairs meet the z-criterion for formation in each of
 100 label-shuffled replicates of the evaluation window; the vertical
 line is the count observed in the real data. A replicate permutes
-concept labels across document slots, preserving every document's size
-and every concept's total frequency while destroying any real
-association between concepts and people. (c) Segregation. The observed
-number of evaluation documents in which any eligible pair co-occurs, as
-a fraction of its mean under the same shuffle, in all four
+concept labels across concept positions within documents, preserving slot counts and label
+multiplicities before within-document duplicates are collapsed. (c) Segregation. The observed
+sum of per-pair evaluation-document counts, as a fraction of its mean
+under the same shuffle, in all four
 space-by-fold cells; the bars span two standard deviations of the
 shuffled total around its mean. Values below one mean suppressed pairs
 co-occur less often than chance predicts. Throughout the paper, z is
@@ -843,6 +849,10 @@ The numbers in this paper trace as follows.
 | Figures 2 to 4 | eval/make_paper_figs.py, reports/figures/fig1-3 (shared style eval/paper2_figstyle.py) | 7a1a118; regenerated a67d556; restyled b2ebfd2 |
 
 ## References
+
+- Domagalski, R., Neal, Z.P., Sagan, B. (2021). Backbone: An R package
+  for extracting the backbone of bipartite projections. *PLOS ONE*
+  16(1), e0244363. doi:10.1371/journal.pone.0244363
 
 - Swanson, D.R. (1986a). Fish oil, Raynaud's syndrome, and undiscovered
   public knowledge. *Perspectives in Biology and Medicine* 30(1), 7-18.
