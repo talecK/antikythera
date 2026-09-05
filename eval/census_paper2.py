@@ -29,7 +29,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
 from run_gate import build_docs, E_MIN, F_DEFAULT, EXCLUDED_TICKERS  # noqa: E402
 from collections import defaultdict  # noqa: E402
 
-MENTIONS = "/Volumes/1TB NVME 1/antikythera/data/paper2/ticker_mentions.parquet"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MENTIONS = os.path.join(ROOT, "data", "paper2", "ticker_mentions.parquet")
 DD_SUBS = ("SecurityAnalysis", "ValueInvesting", "StockMarket", "stocks",
            "investing")
 WSB_SUBS = ("wallstreetbets",)

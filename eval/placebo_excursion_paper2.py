@@ -34,7 +34,7 @@ from run_gate import (  # noqa: E402
     build_docs, E_MIN, F_DEFAULT, R, SHUFFLE_SEED, EXCLUDED_TICKERS)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MENTIONS = "/Volumes/1TB NVME 1/antikythera/data/paper2/ticker_mentions.parquet"
+MENTIONS = os.path.join(ROOT, "data", "paper2", "ticker_mentions.parquet")
 B, EVAL_Q = 4, 2
 WINDOWS = (3, 4)          # k: eval 2020Q4..2021Q1 and 2021Q1..2021Q2
 REPS = 20

@@ -35,7 +35,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from run_eval8 import binom_sf_ge  # noqa: E402  (registered null, run 8)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MENTIONS = "/Volumes/1TB NVME 1/antikythera/data/reddit_gate/ticker_mentions.parquet"
+MENTIONS = os.path.join(ROOT, "data", "reddit_gate", "ticker_mentions.parquet")
 DD_SUBS = {"SecurityAnalysis", "ValueInvesting", "StockMarket", "stocks",
            "investing"}
 MEME_SUBS = {"wallstreetbets"}

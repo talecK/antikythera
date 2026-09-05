@@ -25,7 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from run_gate import analyse, EXCLUDED_TICKERS  # noqa: E402  (frozen criterion, verbatim)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MENTIONS = "/Volumes/1TB NVME 1/antikythera/data/paper2/ticker_mentions.parquet"
+MENTIONS = os.path.join(ROOT, "data", "paper2", "ticker_mentions.parquet")
 DD_SUBS = ("SecurityAnalysis", "ValueInvesting", "StockMarket", "stocks",
            "investing")
 MEME_SUBS = ("wallstreetbets",)
