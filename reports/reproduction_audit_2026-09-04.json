@@ -33,5 +33,35 @@
   },
   "wall_seconds": 125.15,
   "workers": 2,
-  "m3_full_gate": "owner-reported; raw logs not available in this checkout"
+  "m3_full_gate": "owner-reported; raw logs not available in this checkout",
+  "paper1_observed_structure": [
+    {
+      "space": "author",
+      "fold": "fold1",
+      "eligible": 364,
+      "obs_total": 746,
+      "matches": true
+    },
+    {
+      "space": "author",
+      "fold": "fold2",
+      "eligible": 110,
+      "obs_total": 454,
+      "matches": true
+    },
+    {
+      "space": "thread",
+      "fold": "fold1",
+      "eligible": 25161,
+      "obs_total": 12098,
+      "matches": true
+    },
+    {
+      "space": "thread",
+      "fold": "fold2",
+      "eligible": 7505,
+      "obs_total": 7866,
+      "matches": true
+    }
+  ]
 }

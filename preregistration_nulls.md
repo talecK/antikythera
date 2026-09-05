@@ -288,3 +288,14 @@ quarter-stratified fixed-margin combination before those runs. New-null
 results may change either paper's conclusions; the existing onset is
 currently supported under the original null only. Public manuscript
 updates remain on hold pending the required robustness results.
+
+### A1 provenance note before N1 execution
+
+Direct inspection of the published B=4 union table during the local gate
+shows that N1-d's phrase "as under the registered null" is factually
+incorrect. Outside the excursion, formed/n exceeds 0.01 in WSB windows
+k=0,1,2,5,9,12,16,18 (for example 2/77 at k=1 and 6/498 at k=5).
+N1-d remains unchanged and will be scored literally. A realized count
+above 0.01*n is not by itself evidence against a calibrated 1% per-pair
+test; that reference is not a deterministic upper bound. No new-null
+outcome was inspected to identify this error.
