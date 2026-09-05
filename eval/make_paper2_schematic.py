@@ -123,10 +123,10 @@ def panel_b(ax, box):
     text(ax, x + w / 2, cy, "0\nshared", size=T_BODY, color=RED, ha="center",
          va="center", fontweight="bold")
     text(ax, x, y + lines_h(4),
-         "Both tickers are frequent. Had authors picked tickers\n"
-         "independently, at least 2 build-period documents would\n"
-         "hold both. Observed: none. The pair is eligible; every\n"
-         "window has dozens to hundreds of such pairs.")
+         "Both tickers are frequent. Independent choice predicts an\n"
+         "expected count of at least 2 shared build documents.\n"
+         "Observed: none. The pair is eligible; every window has\n"
+         "dozens to hundreds of such pairs.")
 
 
 def panel_c(ax, box):
@@ -159,9 +159,9 @@ def panel_c(ax, box):
         text(ax, lx + k * 1.05 + 0.19, ly, s, size=T_SMALL, color=INK,
              va="center")
     text(ax, x, y + lines_h(3),
-         "Eligible pairs are found in the build period; the statistic\n"
-         "counts evaluation-period documents holding any of them. Build\n"
-         "length was set by an outcome-blind census rule before any result.")
+         "Count document co-mentions separately for each eligible\n"
+         "pair, then sum them. Build length follows the registered\n"
+         "outcome-blind census rule.")
 
 
 def panel_d(ax, box):
@@ -189,10 +189,10 @@ def panel_d(ax, box):
     text(ax, left + span, base - 0.03, "more", size=T_SMALL, color=MUTED,
          ha="right")
     text(ax, x, y + lines_h(4),
-         "z = (observed - shuffle mean) / shuffle sd. z near 0:\n"
-         "suppressed pairs meet as often as chance. z far below 0:\n"
-         "kept apart, a wall. z above 0: pushed together. Each\n"
-         "window has its own null.")
+         "z = (observed - shuffle mean) / shuffle SD.\n"
+         "Shuffled labels are deduplicated; margins can change.\n"
+         "Negative z: fewer joint mentions than under this null.\n"
+         "z is an effect size, not a Gaussian tail probability.")
 
 
 def panel_e(ax, box):
@@ -201,7 +201,7 @@ def panel_e(ax, box):
     r = 0.30
     cy = top - 0.30 - r
     col = w / 3
-    specs = [("Chance-level mixing", 0.30, "z near 0", "through 2020Q3"),
+    specs = [("No detected effect", 0.30, "z near 0", "original null: through 2020Q3"),
              ("Fusion", 0.09, "z far above 0", "the two GameStop windows"),
              ("Walls", 0.46, "z far below 0", "2021Q2 onward, no reversion")]
     for i, (title, sep, ztxt, when) in enumerate(specs):
@@ -241,9 +241,8 @@ def main():
     panel_d(ax, card(ax, xr, y2, CW, R1, "d",
                      "The statistic: observed count vs. label shuffles"))
     panel_e(ax, card(ax, xl, y3, 2 * CW + G, R3, "e",
-                     "Three regimes, and the order r/wallstreetbets passed "
-                     "through them"))
-    print("wrote", save(fig, "p2_schematic", tight=False) + ".{png,pdf}")
+                     "Three regimes under the original label null"))
+    print("wrote", save(fig, "p2_schematic_revision", tight=False) + ".{png,pdf}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,18 @@
+{
+  "status": "REPORT_AND_SOURCE_HASHES_VERIFIED_RAW_PENDING",
+  "branch": "codex/m3-revision-results",
+  "commit": "1ca981771f2f119684581b4d2ca3d3cf335b0165",
+  "verified_outputs": {
+    "reports/paper2_windows_z_label_R1000_headline.tsv": "77f8b07067484cb37e85571b76c8b9f3417821a40d87bf710025ac0c50ce04f2",
+    "reports/paper2_windows_z_stratified_R1000_headline.tsv": "2a1428351c81edbecf022ca33aefdfd8829b0250a9403823b36e129400fe7e59",
+    "reports/paper1_nulls_label_R100_thread_seeds10.tsv": "90959eae252b3be8f940a55ac2ba781d21ee05f206587e962d72e6011075be37",
+    "reports/paper1_nulls_label_R100_thread_seeds10_batches.tsv": "e5be5161477e7d8427fdbb2a3342fad3c36ec4b36d16ae59db32a032a87b6b76",
+    "reports/paper1_nulls_label_R100_thread_seeds10.json": "fb13039467729804d8c19206acb1b73fe1647dcd924e2279c286241409e7c6dd"
+  },
+  "missing_artifacts": [
+    "data/registry/pilot1_concepts/run8_nulls_label_R100_thread_seeds10.json",
+    "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold1.npz",
+    "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold2.npz"
+  ],
+  "scope": "Recorded input-manifest hash and code bytes match; supplied report bytes match. Raw pooled estimates not independently recalculated yet."
+}

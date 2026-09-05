@@ -1,0 +1,17 @@
+{
+  "timestamp_utc": "2026-09-05T04:45:56.719406+00:00",
+  "checks": {
+    "kernel_tests": 4,
+    "pipeline_reference_tests": 5,
+    "result_verification_tests": 2,
+    "interruption_budget_positive_negative_nonfinite_checks": "PASS",
+    "transfer_path_absolute_and_parent_traversal_rejection": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "scientific_method_changed": false,
+  "operational_change": "Queue global budget includes preserved interrupted worker time; verified data transfer preflight requires native ARM and pinned versions.",
+  "source_sha256": {
+    "eval/run_curveball_queue.py": "d0b10f0825bbab68ead4cd9f29ed3764468c0bb67ebf7ab53def62e0b74d660f",
+    "eval/verify_curveball_handoff.py": "f3d1c832706d68bff8eb7b0d11a1020e469fc92128cce3fc15ca21d2e4526c53"
+  }
+}

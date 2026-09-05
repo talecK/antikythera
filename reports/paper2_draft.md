@@ -429,11 +429,32 @@ N1 loses 13.00% and 12.86% of shuffled incidences through deduplication in
 the two excursion cells, versus 6.50% and 7.54% in the two preceding
 cells with no detected deviation. Exact binary margin sensitivity remains necessary.
 The N2/N3 scientific predictions and rules for pilot and production sampling were
-committed at 5215719 before any Curveball chain on the corpus. Their results
-are pending in this working draft; headline cells alone cannot validate
-onset or persistence across the full series.
+committed at 5215719 before any Curveball chain on the corpus. The first completed cell, evaluation 2020Q2-Q3, changes from the original
+z of about +1.5 to -4.65 under N2 and -4.74 under N3, with observed/null
+ratios of 0.843 and 0.847. Both aggregate results passed the registered
+diagnostics; their 6400 and 3200 production draws were independent of
+the pilots. The full series analysis is still running. This first result
+puts the preceding nondetection pattern at risk and cannot by itself
+score the onset or persistence prediction. The next pre-GME window
+(2020Q3-Q4) gives z=-2.98 and observed/null=0.822 under N2, with passing
+aggregate diagnostics; N3 remains unresolved at its pilot limit. The
+first excursion window (2020Q4-2021Q1) reaches the pilot limit without
+passing diagnostics under either N2 or N3, so neither has a production
+estimate for that window. Pilot outcomes are not scored as scientific
+results. These partial findings support pre-GME segregation in the first
+window under exact margins, but do not yet establish a sustained early
+regime or the excursion's robustness.
+
+The registered 1000-draw headline extension also passes both precision
+predictions for the original label null: all eight z estimates change by
+less than 20% (maximum 13.94%). The two excursion ratios are 2.3115 and
+1.6947, with z=31.84 and 33.60. Under N1 at 1000 draws they are 1.5707
+and 1.6235, with z=18.01 and 28.93. These are precision extensions of the
+label nulls and do not substitute for the exact margin analyses.
 
 Sources: `reports/paper2_windows_z_stratified_R100.tsv`,
+`reports/paper2_windows_z_label_R1000_headline.tsv`,
+`reports/paper2_windows_z_stratified_R1000_headline.tsv`,
 `reports/nulls_amendment_scores.json`, and `preregistration_nulls_n2.md`.
 
 ### Sensitivity, consistency, and power
@@ -854,7 +875,7 @@ the corpus, ran the analyses, and wrote the manuscript.
 
 ## Figure legends
 
-**Figure 1** (p2_schematic.png/.pdf). How the statistic is built, and
+**Figure 1** (p2_schematic_revision.png/.pdf). How the statistic is built, and
 the three regimes it can express. (a) The document is one author's set
 of tickers in one calendar quarter. (b) An eligible (we also call it suppressed)
 pair: two frequent tickers whose audiences never overlap in the build

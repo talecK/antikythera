@@ -1,0 +1,45 @@
+{
+  "status": "VERIFIED",
+  "artifact_root": "/Users/andrej/workspace/antikythera/work/m3_results_1ca9817",
+  "manifest_sha256": "d444b6b335208982bed87962971318f3dd081e8a9347d0871beb875869c85b13",
+  "source_manifest_sha256": "9d7a58232f4d3cc72e0f5f8b0d03d26cd75cc36813d64ac4ddafdb4a9d3f2e39",
+  "jobs": {
+    "paper2_label_R1000": {
+      "commit": "b84435b5fdfc1a6f14051fefbf0df5edf8b8be2c",
+      "architecture": "arm64",
+      "outputs": {
+        "reports/paper2_windows_z_label_R1000_headline.tsv": "77f8b07067484cb37e85571b76c8b9f3417821a40d87bf710025ac0c50ce04f2"
+      }
+    },
+    "paper2_stratified_R1000": {
+      "commit": "b84435b5fdfc1a6f14051fefbf0df5edf8b8be2c",
+      "architecture": "arm64",
+      "outputs": {
+        "reports/paper2_windows_z_stratified_R1000_headline.tsv": "2a1428351c81edbecf022ca33aefdfd8829b0250a9403823b36e129400fe7e59"
+      }
+    },
+    "paper1_thread_pooled": {
+      "commit": "b84435b5fdfc1a6f14051fefbf0df5edf8b8be2c",
+      "architecture": "arm64",
+      "outputs": {
+        "reports/paper1_nulls_label_R100_thread_seeds10.tsv": "90959eae252b3be8f940a55ac2ba781d21ee05f206587e962d72e6011075be37",
+        "reports/paper1_nulls_label_R100_thread_seeds10_batches.tsv": "e5be5161477e7d8427fdbb2a3342fad3c36ec4b36d16ae59db32a032a87b6b76",
+        "reports/paper1_nulls_label_R100_thread_seeds10.json": "fb13039467729804d8c19206acb1b73fe1647dcd924e2279c286241409e7c6dd",
+        "data/registry/pilot1_concepts/run8_nulls_label_R100_thread_seeds10.json": "705c8a0b71209951e05c90ad8148c7f3914fa88261b2d40eb9f739ace15bdb4a",
+        "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold1.npz": "6995d9dd770df3eac83f4028d9d0bb65238a5efce1821d8a85e6515c474b201e",
+        "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold2.npz": "5988e93cfdd28a18f15ea6242cc644d4b21c67d993031dc21e2ba83b5a26a97e"
+      }
+    }
+  },
+  "outputs_sha256": {
+    "reports/paper2_windows_z_label_R1000_headline.tsv": "77f8b07067484cb37e85571b76c8b9f3417821a40d87bf710025ac0c50ce04f2",
+    "reports/paper2_windows_z_stratified_R1000_headline.tsv": "2a1428351c81edbecf022ca33aefdfd8829b0250a9403823b36e129400fe7e59",
+    "reports/paper1_nulls_label_R100_thread_seeds10.tsv": "90959eae252b3be8f940a55ac2ba781d21ee05f206587e962d72e6011075be37",
+    "reports/paper1_nulls_label_R100_thread_seeds10_batches.tsv": "e5be5161477e7d8427fdbb2a3342fad3c36ec4b36d16ae59db32a032a87b6b76",
+    "reports/paper1_nulls_label_R100_thread_seeds10.json": "fb13039467729804d8c19206acb1b73fe1647dcd924e2279c286241409e7c6dd",
+    "data/registry/pilot1_concepts/run8_nulls_label_R100_thread_seeds10.json": "705c8a0b71209951e05c90ad8148c7f3914fa88261b2d40eb9f739ace15bdb4a",
+    "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold1.npz": "6995d9dd770df3eac83f4028d9d0bb65238a5efce1821d8a85e6515c474b201e",
+    "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold2.npz": "5988e93cfdd28a18f15ea6242cc644d4b21c67d993031dc21e2ba83b5a26a97e"
+  },
+  "limitation": "Manifest verifies supplied records and bytes; it is not remote machine telemetry."
+}

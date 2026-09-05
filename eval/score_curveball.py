@@ -38,7 +38,9 @@ def main():
             return [key(r) for r in rows() if abs(float(original[key(r)]['z_seg']))>=3 and
                     r['z_seg']*float(original[key(r)]['z_seg'])<=0]
         out={}
-        out['X-a']=score(p2,lambda:not sign_failures(),lambda:dict(failures=sign_failures()))
+        sign_required=[c for c in p2 if abs(float(original[
+            4,int(c.split('_')[2]),c.split('_')[1],'union']['z_seg']))>=3]
+        out['X-a']=score(sign_required,lambda:not sign_failures(),lambda:dict(failures=sign_failures()))
         out['X-b']=score(p2,lambda:score_onset(rows())['window']==5 and all(score_onset(rows())[p] for p in ('P1','P2','P3')),lambda:score_onset(rows()))
         excursion=['p2_WSB_03','p2_WSB_04']
         out['X-c']=score(excursion,lambda:all(usable[c]['production']['summary']['z_seg']>=5 and usable[c]['production']['summary']['ratio']>1 for c in excursion),lambda:dict(cells={c:usable[c]['production']['summary'] for c in excursion}))

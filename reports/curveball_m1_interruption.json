@@ -1,0 +1,81 @@
+{
+  "stopped_utc": "2026-09-05T04:41:07.914692+00:00",
+  "reason": "User requested immediate stop and restart on MBP",
+  "parent_pid": 8428,
+  "worker_pids": [
+    8436,
+    8437
+  ],
+  "interrupted_cell": "p2_WSB_04",
+  "nulls": [
+    "N2",
+    "N3"
+  ],
+  "signal": "SIGTERM",
+  "preservation": "Completed reports and partial stage/raw arrays remain in place; no scientific outcome assigned to interrupted attempts",
+  "archive": [
+    {
+      "original_path": "data/registry/nulls_revisions/curveball_v1/p2_WSB_04_N2/pilot_0280.npz",
+      "archive_path": "data/registry/nulls_revisions/curveball_v1/interrupted_m1_20260905/p2_WSB_04_N2/pilot_0280.npz",
+      "sha256": "f036625cabcb201f740437d9ab53a8e0c262e1a9eb668d53bda863df8b2c0f05"
+    },
+    {
+      "original_path": "data/registry/nulls_revisions/curveball_v1/p2_WSB_04_N2/pilot_0480.npz",
+      "archive_path": "data/registry/nulls_revisions/curveball_v1/interrupted_m1_20260905/p2_WSB_04_N2/pilot_0480.npz",
+      "sha256": "59e4e57f21ededbe926a99303f07cd894b7638251fa0fade47808e73862ad67e"
+    },
+    {
+      "original_path": "data/registry/nulls_revisions/curveball_v1/p2_WSB_04_N2/pilot_starts.json",
+      "archive_path": "data/registry/nulls_revisions/curveball_v1/interrupted_m1_20260905/p2_WSB_04_N2/pilot_starts.json",
+      "sha256": "753fefd8d5311b4552111ad9a16fae7944720dd59e4366056da4ce155de4892d"
+    },
+    {
+      "original_path": "data/registry/nulls_revisions/curveball_v1/p2_WSB_04_N2/provenance.json",
+      "archive_path": "data/registry/nulls_revisions/curveball_v1/interrupted_m1_20260905/p2_WSB_04_N2/provenance.json",
+      "sha256": "29e01d8a4d262641dc68c9045815a0f51388fb7f2f0b99c9704d194ee0a30b70"
+    },
+    {
+      "original_path": "reports/curveball_p2_WSB_04_N2_pilot_0280.json",
+      "archive_path": "reports/curveball_interrupted_m1_20260905/curveball_p2_WSB_04_N2_pilot_0280.json",
+      "sha256": "86876c3f6398df35d1642ffb9817b7175f0e455052ee9d92581b18c41de638e3"
+    },
+    {
+      "original_path": "reports/curveball_p2_WSB_04_N2_pilot_0480.json",
+      "archive_path": "reports/curveball_interrupted_m1_20260905/curveball_p2_WSB_04_N2_pilot_0480.json",
+      "sha256": "7794a798675142cad924325208a1060eab4f937c22c6782dc400be8c7052429f"
+    },
+    {
+      "original_path": "data/registry/nulls_revisions/curveball_v1/p2_WSB_04_N3/pilot_0280.npz",
+      "archive_path": "data/registry/nulls_revisions/curveball_v1/interrupted_m1_20260905/p2_WSB_04_N3/pilot_0280.npz",
+      "sha256": "972095755e7775c98789300c4d8c94526c0a99015cea2208b8bcf86aa488d98d"
+    },
+    {
+      "original_path": "data/registry/nulls_revisions/curveball_v1/p2_WSB_04_N3/pilot_0480.npz",
+      "archive_path": "data/registry/nulls_revisions/curveball_v1/interrupted_m1_20260905/p2_WSB_04_N3/pilot_0480.npz",
+      "sha256": "821fe0cd28dd383c3488f854a149c8641b80600b295c011dbc3fe736b93e48e3"
+    },
+    {
+      "original_path": "data/registry/nulls_revisions/curveball_v1/p2_WSB_04_N3/pilot_starts.json",
+      "archive_path": "data/registry/nulls_revisions/curveball_v1/interrupted_m1_20260905/p2_WSB_04_N3/pilot_starts.json",
+      "sha256": "89794a4cbe7d5600507d3f18edca7a497e8bb58991198ddab9d6e89bedfaa51b"
+    },
+    {
+      "original_path": "data/registry/nulls_revisions/curveball_v1/p2_WSB_04_N3/provenance.json",
+      "archive_path": "data/registry/nulls_revisions/curveball_v1/interrupted_m1_20260905/p2_WSB_04_N3/provenance.json",
+      "sha256": "96886329a18e10e1225e3c27103b2657f85179c949dbaab63e117ac828e1a9ed"
+    },
+    {
+      "original_path": "reports/curveball_p2_WSB_04_N3_pilot_0280.json",
+      "archive_path": "reports/curveball_interrupted_m1_20260905/curveball_p2_WSB_04_N3_pilot_0280.json",
+      "sha256": "695986d7f234dc0c483fcf99d2e54b3ac1c63723598537a959e6db9455a01de8"
+    },
+    {
+      "original_path": "reports/curveball_p2_WSB_04_N3_pilot_0480.json",
+      "archive_path": "reports/curveball_interrupted_m1_20260905/curveball_p2_WSB_04_N3_pilot_0480.json",
+      "sha256": "6f3c6762a9998555d5f228aeab728765f174e88cff9df8d0943e53fc781e6c19"
+    }
+  ],
+  "charged_worker_seconds": 1045.829384,
+  "accounting": "Conservative wall time from each interrupted worker provenance start through stop, summed over both workers; preserved completed stages are not counted twice.",
+  "restart_rule": "Only interrupted WSB_04 may restart with original deterministic seeds and unchanged sampling rules. Completed UNRESOLVED cells are not retried."
+}

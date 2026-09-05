@@ -2,10 +2,9 @@
   "predictions": {
     "N2": {
       "X-a": {
-        "status": "PENDING",
+        "status": "UNRESOLVED",
         "missing": {
-          "p2_WSB_02": "PENDING",
-          "p2_WSB_03": "PENDING",
+          "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING",
           "p2_WSB_05": "PENDING",
           "p2_WSB_18": "PENDING",
@@ -44,10 +43,9 @@
         }
       },
       "X-b": {
-        "status": "PENDING",
+        "status": "UNRESOLVED",
         "missing": {
-          "p2_WSB_02": "PENDING",
-          "p2_WSB_03": "PENDING",
+          "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING",
           "p2_WSB_05": "PENDING",
           "p2_WSB_18": "PENDING",
@@ -86,9 +84,9 @@
         }
       },
       "X-c": {
-        "status": "PENDING",
+        "status": "UNRESOLVED",
         "missing": {
-          "p2_WSB_03": "PENDING",
+          "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING"
         }
       },
@@ -111,11 +109,10 @@
         }
       },
       "inventory": {
-        "completed_attempts": 1,
-        "usable_production": 1,
+        "completed_attempts": 3,
+        "usable_production": 2,
         "unavailable": {
-          "p2_WSB_02": "PENDING",
-          "p2_WSB_03": "PENDING",
+          "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING",
           "p2_WSB_05": "PENDING",
           "p2_WSB_18": "PENDING",
@@ -160,11 +157,9 @@
     },
     "N3": {
       "X-a": {
-        "status": "PENDING",
+        "status": "UNRESOLVED",
         "missing": {
-          "p2_WSB_01": "PENDING",
-          "p2_WSB_02": "PENDING",
-          "p2_WSB_03": "PENDING",
+          "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING",
           "p2_WSB_05": "PENDING",
           "p2_WSB_18": "PENDING",
@@ -203,11 +198,10 @@
         }
       },
       "X-b": {
-        "status": "PENDING",
+        "status": "UNRESOLVED",
         "missing": {
-          "p2_WSB_01": "PENDING",
-          "p2_WSB_02": "PENDING",
-          "p2_WSB_03": "PENDING",
+          "p2_WSB_02": "UNRESOLVED",
+          "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING",
           "p2_WSB_05": "PENDING",
           "p2_WSB_18": "PENDING",
@@ -246,9 +240,9 @@
         }
       },
       "X-c": {
-        "status": "PENDING",
+        "status": "UNRESOLVED",
         "missing": {
-          "p2_WSB_03": "PENDING",
+          "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING"
         }
       },
@@ -271,12 +265,11 @@
         }
       },
       "inventory": {
-        "completed_attempts": 0,
-        "usable_production": 0,
+        "completed_attempts": 3,
+        "usable_production": 1,
         "unavailable": {
-          "p2_WSB_01": "PENDING",
-          "p2_WSB_02": "PENDING",
-          "p2_WSB_03": "PENDING",
+          "p2_WSB_02": "UNRESOLVED",
+          "p2_WSB_03": "UNRESOLVED",
           "p2_WSB_04": "PENDING",
           "p2_WSB_05": "PENDING",
           "p2_WSB_18": "PENDING",
@@ -349,6 +342,88 @@
         ]
       },
       "source_sha256": "cfd3521dd2482cf38f949c51c9204d6cc6a6bbe6989aa5b0c55d25963f449ad8"
+    },
+    "p2_WSB_02_N2": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 134.976395124977,
+      "production_seconds": 225.9286551659461,
+      "summary": {
+        "obs_total": 199,
+        "null_mean": 242.08984375,
+        "null_sd": 14.474845313528775,
+        "z_seg": -2.9768776671987296,
+        "ratio": 0.822008874546188,
+        "R": 6400,
+        "tail_lo": 0.00203125,
+        "tail_hi": 0.99890625,
+        "chain_means": [
+          242.826875,
+          241.81625,
+          241.540625,
+          242.175625
+        ],
+        "chain_sds": [
+          14.51578977301528,
+          14.717973227910832,
+          14.424747817877961,
+          14.204129007418054
+        ]
+      },
+      "source_sha256": "2cb8be53a22e88f071f220e07ef9687937f8b8af87fa0d27ad4e2290bc759085"
+    },
+    "p2_WSB_03_N2": {
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN",
+      "pilot_seconds": 776.9503747909912,
+      "production_seconds": 0,
+      "summary": null,
+      "source_sha256": "25ed57575bee668263d3d158f4992315ea23bf6a4433e3d8cf3ff47a8cc1b5c8"
+    },
+    "p2_WSB_01_N3": {
+      "pilot": "PASS",
+      "production": "PASS",
+      "pilot_seconds": 151.90759241604246,
+      "production_seconds": 144.02492908301065,
+      "summary": {
+        "obs_total": 695,
+        "null_mean": 820.9553125,
+        "null_sd": 26.560818239040447,
+        "z_seg": -4.742147300073174,
+        "ratio": 0.8465747031754545,
+        "R": 3200,
+        "tail_lo": 0.0,
+        "tail_hi": 1.0,
+        "chain_means": [
+          824.24125,
+          818.3175,
+          820.1575,
+          821.105
+        ],
+        "chain_sds": [
+          27.65127571085103,
+          26.00008064891338,
+          25.71789637100982,
+          26.485589950008663
+        ]
+      },
+      "source_sha256": "a4df62a270e6c3656abb03f5887b74c2b85f046e37c2d3702e5ec3ca5585329c"
+    },
+    "p2_WSB_02_N3": {
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN",
+      "pilot_seconds": 127.69028654199792,
+      "production_seconds": 0,
+      "summary": null,
+      "source_sha256": "c436137c741ca0f79fde060c8a64d3c5b3d337f1b26f24ad43dda52b38c70b84"
+    },
+    "p2_WSB_03_N3": {
+      "pilot": "UNRESOLVED",
+      "production": "NOT_RUN",
+      "pilot_seconds": 731.8170220839675,
+      "production_seconds": 0,
+      "summary": null,
+      "source_sha256": "fd3dd286156634d5173fa60456bbe24b6a8d01db0aaeb778e5c7e354da145bd2"
     }
   },
   "public_release_ready": false,

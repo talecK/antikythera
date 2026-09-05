@@ -1,0 +1,8 @@
+{
+  "archive_name": "m3-thread-raw.tar.gz",
+  "archive_sha256": "fc5e120cb60c8cd0f30cf7a2a9c30745d52546724a3a1181bdb5f11220b78062",
+  "verified_arrays": {
+    "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold1.npz": "6995d9dd770df3eac83f4028d9d0bb65238a5efce1821d8a85e6515c474b201e",
+    "data/registry/nulls_revisions/label_R100_thread_seeds10/thread_fold2.npz": "5988e93cfdd28a18f15ea6242cc644d4b21c67d993031dc21e2ba83b5a26a97e"
+  }
+}

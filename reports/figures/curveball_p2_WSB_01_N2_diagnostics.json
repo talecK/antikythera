@@ -1,0 +1,7 @@
+{
+  "source": "reports/curveball_p2_WSB_01_N2.json",
+  "source_sha256": "cfd3521dd2482cf38f949c51c9204d6cc6a6bbe6989aa5b0c55d25963f449ad8",
+  "raw_sha256": "0a6bc8357611ab94c0377580669a38811af132d156a5593e382097ba2c5b8aa5",
+  "output_sha256": "7c3027d2fa22d9feb7983413d2069327d626aea16988836478604671cf9118d7",
+  "note": "Finite diagnostics are evidence, not proof of mixing."
+}

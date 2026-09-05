@@ -493,8 +493,15 @@ Under the original label null, collapse was 0.314% and 0.367% in thread
 space, versus 0.474% and 0.568% in author space. Incidence loss alone does
 not determine the direction of error relative to an exact binary margin
 null. The N2/N3 protocol therefore evaluates fixed binary margins with
-and without quarter constraints. Those estimates and the independently
-pooled thread rerun remain pending in this working draft.
+and without quarter constraints. Those exact margin estimates remain pending in this working draft.
+The separately registered thread rerun is complete: ten independent
+batches of 100 draws per fold were pooled before computing moments and
+percentiles. The resulting ratios are 0.2501 and 0.2784, with z=-162.88
+and -124.27 and formed counts 11/25,161 and 9/7,505. All three batch
+stability predictions pass. Batch z ranges are -178.93 to -144.59 and
+-148.01 to -113.42; these describe Monte Carlo variation, not confidence
+intervals. Source: `reports/paper1_nulls_label_R100_thread_seeds10.json`;
+raw array recalculation is documented in `reports/m3_incorporation_verification.json`.
 
 Sources: `reports/paper1_nulls_stratified_R100.tsv`,
 `reports/paper1_nulls_label_R100.tsv`, `reports/nulls_amendment_scores.json`,
@@ -809,7 +816,7 @@ manuscript.
 
 ## Figure legends
 
-**Figure 1** (p1_schematic.png/.pdf). How the instrument is built, the
+**Figure 1** (p1_schematic_revision.png/.pdf). How the instrument is built, the
 two results it produces, and why one formation criterion was retired.
 (a) The document, two ways: a Hacker News thread (story plus top
 comments) or one author's concepts within one calendar quarter. (b) An
@@ -843,7 +850,7 @@ co-occur less often than chance predicts. Throughout the paper, z is
 the observed total minus the shuffled mean, divided by the shuffled
 standard deviation.
 
-**Figure 3** (fig2.png/.pdf). Formation rate by criterion. The share of
+**Figure 3** (fig2_revision.png/.pdf). Formation rate by criterion. The share of
 eligible suppressed pairs that form under the retired z-criterion and
 under the per-pair permutation criterion, in all four cells, on a log
 scale, against a nominal one-percent count reference. The reference

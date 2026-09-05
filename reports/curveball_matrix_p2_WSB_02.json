@@ -1,0 +1,46 @@
+{
+  "cell": "p2_WSB_02",
+  "B": 4,
+  "window": 2,
+  "stratum": "WSB",
+  "lens": "union",
+  "eval_start": "2020Q3",
+  "eval_end": "2020Q4",
+  "matrix_path": "data/registry/nulls_revisions/curveball_v1/matrices/p2_WSB_02.npz",
+  "matrix_sha256": "8b7b5899a3862036ae2ae8a5a80490fecbdc389776548de760940cb65c8d1337",
+  "input_sha256": {
+    "data/paper2/ticker_mentions.parquet": "5ad59f04fca6fb1c392fdb224902960a6375afd0d6ea9f782290e0f7f470073b"
+  },
+  "registration_sha256": "af016ad9da776d92c6e1394a756bdb0b9e4a98ca758722f9ddd653285a13ba49",
+  "code_sha256": {
+    "eval/prepare_curveball.py": "3f09dc040a17242292b45b22e89c8b83d655eb456ba393fe813acb53bb32f5c8",
+    "eval/run_eval8.py": "4724f55fa24c558b5f5f4d6ab6e1608c7dc8f00b1d4ff4cdd8e8d98f3c64775b",
+    "eval/run_paper2.py": "b5c1acbcd94968f802b29fdcf6763e2c29e4377266d8050a7278b8a6993c6980",
+    "eval/run_gate.py": "a52754c146890452b8a6e92096b77f345eec6e97b54970b05ee842d589b3892d",
+    "eval/curveball.py": "358151531f64100c2147739f4136a47f61855d5ec99dafac3b23a20596def1bc",
+    "eval/curveball_kernel.cpp": "99ab0494eb66a1f50e256bdf2ae7c6054c3aa8d446ba82ae4f7fe8c362990cba",
+    "eval/run_eval8_nulls.py": "d12dff490b6b73325fd5d351e94467eefc112987e7c1475118c2a35efff5b325"
+  },
+  "commit": "8e55822d6f445b816239657ecb2ec5bba91ae099",
+  "native_observed_per_pair_matches": true,
+  "eligible": 64,
+  "obs_total": 199,
+  "active_rows": 85094,
+  "eval_docs": 95297,
+  "build_docs": 101474,
+  "columns": 1138,
+  "incidences": 333911,
+  "arrays_sha256": {
+    "offsets": "0d767b17b7635e0a73c553b53ea99e85699678dbb20ca52235300ec7fb87a0ba",
+    "labels": "265a965287b3e0fe6749bfe4d77b02668389eb7072b78f8bd1fa1ae44fa87308",
+    "vocabulary": "d6e6543fce07b92ef347a07d5d93d4c1e8e92f06456ec3fe40cd464dd8cedbff",
+    "pairs": "872423f4f482ae9a557d6a6da73b2727d12c23e9aca5c453b0cecf5c2676d9af",
+    "observed": "091285c6dbcd5f2f0ea83bec490ce232efc7788bdeff18a270001c2334edd4d5",
+    "supported": "436142af199a97efc2a8d6b2372727b005b045cded7d2c0e0e842f57bf796e6f",
+    "quarters": "a13bae97f9fde0ae8a2b59423cc6e985cdad59e4b4631d49e1377873154b2ad5",
+    "document_ids": "197438f44c1ca9f0f3773316cd15f87c828c6ab16a4030ee88ed7133a1d40a82",
+    "build_docs": "8344423736f1c823f751c75040250f2910e8a26168cf652ff57bbbfa82e54804",
+    "eval_docs": "eef0e81cb6bb2e407625cfa3194db6c046e58144215367f17a97f1d856829f64"
+  },
+  "prepare_seconds": 36.55166541703511
+}

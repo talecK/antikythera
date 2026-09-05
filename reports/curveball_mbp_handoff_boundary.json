@@ -1,0 +1,9 @@
+{
+  "requested_utc": "2026-09-05T04:40:23.069034+00:00",
+  "parent_pid": 8428,
+  "parent_command": "/usr/local/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python eval/run_curveball_queue.py --cells all --workers 2",
+  "action": "SIGINT to scheduling parent only; ProcessPoolExecutor context waits for active cell workers before exit",
+  "active_cell": "p2_WSB_04",
+  "purpose": "Clean cell boundary for user-requested MBP handoff; no worker signals, no scientific file edits",
+  "status": "BOUNDARY_STOP_REQUESTED"
+}

@@ -95,7 +95,7 @@ def fig_rate_by_criterion():
             ax.text(x + 0.18, floor_plot * 1.15, "0", ha="center",
                     va="bottom", fontsize=7, color=INK)
     ax.axhline(1.0, color=GREY, ls="--", lw=0.8)
-    ax.text(3.55, 1.12, "1 percent false-positive floor", fontsize=7,
+    ax.text(3.55, 1.12, "nominal 1 percent reference", fontsize=7,
             color=MUTED, ha="right", va="bottom")
     ax.set_yscale("log")
     ax.set_ylim(floor_plot, 60)
@@ -103,7 +103,7 @@ def fig_rate_by_criterion():
     ax.set_xticks(xs, cells)
     ax.set_title("formation rate by criterion", loc="left")
     ax.legend(loc="upper right", bbox_to_anchor=(1.0, 1.0))
-    return save(fig, "fig2")
+    return save(fig, "fig2_revision")
 
 
 def fig_registration_timeline():

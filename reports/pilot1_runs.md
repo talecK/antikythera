@@ -534,3 +534,88 @@ This is local M1 timing for one cell, not an ETA for the larger thread
 matrices. N3 on this cell is running at this entry. MBP remains
 user-reported running; no outputs have been received or incorporated.
 A read-only shared-remote branch listing exposed only main.
+
+The same first cell also completed N3 (exact margins within quarter):
+pilot stages 280/480 failed and 880 passed with burn-in 40. Fresh
+production used burn-in 80; 400 sweeps per chain failed and 800 passed.
+The 3200 pooled production draws give null mean 820.9553125, SD
+26.5608182390, z=-4.7421473001 and observed/null=0.8465747032. Aggregate
+and formation diagnostics pass for N3. Both exact-margin variants therefore
+remove the original non-detection reading in this first window. Full-series
+predictions remain pending. N3 pilot/production took 151.91/144.02 seconds.
+
+The complete registered 42-cell scope (38 Paper 2 plus four Paper 1), both
+N2 and N3, is now queued on two M1 workers via
+`eval/run_curveball_queue.py --cells all --workers 2`. Matrices prepare
+serially before the two nulls run concurrently. The shared lock excludes
+the earlier serial runner; completed first-cell outputs were hash-checked
+and skipped. The queue records its own code hashes and per-cell result
+hashes in `reports/curveball_queue_v1.json`. Neither MBP workloads nor
+absentia H2 jobs are launched or modified by this queue.
+
+## M3 results independently incorporated (2026-09-04)
+
+Fetched results branch `codex/m3-revision-results`, commit 1ca9817.
+That commit adds six report files only; its parent is b84435b. The
+queue manifest records all three jobs complete on arm64, using the
+pinned versions and the expected code and input-manifest hashes. This
+is verified artifact evidence, not live remote process telemetry.
+
+The branch omitted ignored raw data as intended. The owner supplied
+`m3-thread-raw.tar.gz`; both thread NPZ SHA256s match the queue manifest.
+The companion ignored JSON was reconstructed from the identical cell
+records embedded in the supplied report JSON; its exact bytes also
+match the queue manifest. Independently recomputed all pooled and batch
+means, SDs, z, ratios and formation counts from the integer arrays.
+All comparisons pass, with exact integer counts and registered floating
+tolerances. Verification artifacts: `reports/m3_import_verification.json`,
+`reports/m3_incorporation_verification.json`, and
+`reports/m3_raw_transfer_verification.json`. Earlier report-only review
+files are retained as chronological evidence, superseded by this audit.
+Merged the six report files into local main at d50d952. Original M1
+registrations, results and local working changes were preserved. Raw
+arrays remain under ignored data/; no new remote push or preprint upload.
+
+| prediction | outcome | evidence |
+|---|---|---|
+| R-a | PASS | All eight label-null headline z estimates within 20% of original; largest change 13.94% |
+| R-b | PASS | Six strongly detected cells have two-sided simulation-tail summary 2/1001; the two original nondetection cells have 0.140 and 0.194 |
+| T-a | PASS | Every thread batch z<-100 in both folds |
+| T-b | PASS | Every batch formed count<=0.01*eligible |
+| T-c | PASS | Batch ratio range / pooled ratio is 0.0992% and 0.2431%, below 5% |
+
+Pooled thread results (1000 draws, pooled before moments and percentiles):
+fold1 observed/null=0.2500673, z=-162.8774, formed 11/25161;
+fold2 observed/null=0.2784329, z=-124.2746, formed 9/7505.
+Batch z ranges are -178.93 to -144.59 and -148.01 to -113.42;
+these are Monte Carlo batch ranges, not confidence intervals.
+
+Paper 2 headline excursion estimates at R=1000:
+original label null: ratios 2.3115/1.6947, z=31.8441/33.6004;
+quarter-stratified label null: ratios 1.5707/1.6235, z=18.0051/28.9301.
+WSB original-null collapse is 12.829%/12.720% in the excursion, versus
+5.828%/6.858% in the two preceding cells. That component of D-b is in
+the predicted direction, but D-b still FAILS due to its HN component.
+N1-d also remains FAIL. Full updated literal scoring is in
+`reports/nulls_amendment_scores.json`. N2/N3 work remains in progress.
+
+## Current Curveball outcomes and user-directed M1 stop (2026-09-04)
+
+WSB k=2 N2 passes aggregate production diagnostics: z=-2.97688,
+observed/null=0.82201, 6400 pooled draws; formation unresolved. Its N3
+pilot remains UNRESOLVED at 880 sweeps per chain. WSB k=3 reaches the
+same pilot cap without passing under either null; no production runs.
+X-a, X-b and X-c are therefore UNRESOLVED under both nulls, while
+Paper 1 predictions await their cells. These diagnostic failures are
+preserved and do not constitute scientific failures or usable effects.
+
+At 2026-09-05T04:41:07Z the user requested stopping M1 immediately and
+restarting on MBP. Only the queue parent and its two workers were sent
+SIGTERM, and their exit was verified. WSB k=4 was interrupted during its
+pilot; saved 280/480 stages and initialization/provenance files remain
+byte-identical in an explicit archive. No result is assigned to the
+interrupted cell. The path/SHA map is reports/curveball_m1_interruption.json.
+The queue budget now charges the 1045.829384 summed worker-seconds from
+these interrupted attempts. No kernel, seed, sampling-limit or diagnostic
+rule changed. Host transfer instructions restart only the interrupted
+cell and unstarted cells, preserving completed unresolved attempts.

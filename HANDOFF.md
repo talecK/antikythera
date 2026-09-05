@@ -1,3 +1,161 @@
+# Consolidated main and direct transfer authorized — 2026-09-04
+
+The user requested merging current code/reports/draft revisions onto main
+while both Antikythera queues are idle, and authorized rsync of project
+data to MBP as needed. M1 process exit is verified; MBP idle remains
+user-reported until connection/remote checks. No saved SSH alias was
+found; the MBP SSH address and checkout path have been requested.
+Do not infer an address or claim remote execution before verification.
+
+All completed M3 artifacts have been verified and merged locally. Current
+N2/N3 outcomes and failed/aborted stages are preserved. The active work
+is consolidating/pushing main and arranging the data transfer/native MBP
+restart. No public preprint upload or external contact is authorized.
+
+---
+
+# M1 stopped for immediate MBP transfer — 2026-09-04 21:41 Pacific
+
+User explicitly requested killing the current cell and restarting on MBP.
+Queue parent 8428 and its workers 8436/8437 received SIGTERM; ps verified
+all three exited. No other project/process was signaled. No M1 N2/N3
+computation remains active. Do not restart it on M1 or duplicate MBP work.
+
+Both interrupted WSB_04 attempts are preserved under
+reports/curveball_interrupted_m1_20260905/ and the matching ignored raw
+subdirectory. reports/curveball_m1_interruption.json maps every original
+path to its archived path and SHA256. All 12 moved files were verified
+byte-identical. Charge 1045.829384 worker-seconds to the global budget;
+the queue now includes interruption ledger time automatically. Scientific
+kernel, seeds, diagnostics, sampling limits and registration are unchanged.
+Restart only this interrupted cell, with original seeds; do not retry the
+completed UNRESOLVED cells absent a prospective extension registration.
+
+A transfer bundle is being prepared in work/m1_curveball_handoff and
+will be delivered in Downloads/m1-curveball-handoff.tar.gz. It includes
+an incremental git bundle based on b84435b, all existing Curveball raw
+artifacts/matrices, a checksum manifest and a complete MBP prompt.
+The user now requests consolidating current work on merged main. The
+MBP should sync that main before starting, use native ARM and pinned
+versions, and isolate subsequent results on a new results branch if useful. Verify the bundle, input hashes and nine synthetic tests
+before running the same 42-cell queue; completed attempts are verified
+and skipped. The MBP has NOT yet been launched or directly contacted.
+
+---
+
+# MBP handoff boundary requested — 2026-09-04 21:41 Pacific
+
+This operational update supersedes the queue scheduling status below.
+The user is preparing to move N3 to MBP. SIGINT was sent ONLY to the M1
+queue parent (PID 8428), whose ProcessPoolExecutor shutdown waits for its
+active workers. Both workers continue p2_WSB_04 normally; no new cell
+will be scheduled by this parent. Do not interrupt those workers or
+start replacement jobs while this cell is active. Verify both final
+cell reports and worker exit before preparing the remaining-cell manifest.
+The queue manifest may omit this final cell because its parent was
+interrupted while awaiting futures; use hash-verified per-cell reports
+as completion evidence. Boundary request record:
+reports/curveball_mbp_handoff_boundary.json.
+
+Latest completed cell p2_WSB_03 is UNRESOLVED for BOTH N2 and N3 at
+maximum pilot length, with no production. Preserve the failed stages;
+pilot effect estimates cannot establish excursion robustness.
+N3 first started 21:05:33 Pacific. Native ARM Python is installed on M1,
+but the pinned .venv is Intel Python 3.14.6 and runs through Rosetta.
+No replacement environment or MBP benchmark has been started. A hardware
+move is distinct from any prospectively registered sampling extension.
+
+---
+
+# Active revision checkpoint — 2026-09-04 21:29 Pacific
+
+This block supersedes the older session-transition checkpoint below.
+The authorized M1 revision is IN PROGRESS; do not launch a duplicate queue.
+
+- Checkout stays `/Users/andrej/workspace/antikythera`, local main. N2/N3
+  registration was committed at 5215719 before any real-data chain;
+  implementation/validation at f4e812b. First result and scoring work at
+  8e55822. M3 results merged locally at d50d952. No M1 push or preprint
+  publication has occurred in this session. Current uncommitted reports,
+  manuscript/figure edits and diagnostics are intentional; preserve them.
+- RUNNING: `caffeinate -i .venv/bin/python eval/run_curveball_queue.py
+  --cells all --workers 2`, logs/curveball_queue_v1.log. Two independent
+  null workers per serially prepared cell, all 42 cells x N2/N3. At this
+  checkpoint it is evaluating WSB k=3, the first excursion cell. Per-null
+  progress logs: logs/curveball_<cell>_<N2|N3>.log. The queue uses a shared
+  lock under ignored data/registry/nulls_revisions/curveball_v1/. Do not
+  edit the scientific source files or N2/N3 registration while this queue
+  runs: source hashes are guarded before each cell and before production.
+  Scoring, manuscript and figure files can be edited independently.
+- Both first-cell production results passed aggregate diagnostics:
+  p2_WSB_01 (eval 2020Q2-Q3) N2 z=-4.6546, ratio=.84327, 6400 draws;
+  N3 z=-4.7421, ratio=.84657, 3200 draws. Pilot draws are excluded.
+  N2 formation precision unresolved; N3 formation precision passes.
+  This is a changed reading from original z~+1.5, not a reproduction.
+- Second cell p2_WSB_02 N2: production passes, z=-2.97688, ratio=.82201,
+  6400 draws; formation precision unresolved. N3 pilot failed at the
+  maximum 880 sweeps per chain (total R-hat about 1.014); no production
+  ran. This remains UNRESOLVED. Preserve failed stages. No thresholds or
+  predictions have been relaxed; any further pilot-length/resource
+  amendment must be prospective and preserve this attempt.
+- All scientific predictions are fixed at the top of
+  preregistration_nulls_n2.md; the historical DRAFT below is preserved,
+  not operative. eval/score_curveball.py scores only hash-verified
+  production results that pass diagnostics. Full-series predictions
+  remain pending/unresolved; headline cells alone cannot settle onset.
+
+## M3 is now verified artifact evidence
+
+The user supplied pushed branch codex/m3-revision-results (1ca9817), then
+/Users/andrej/Downloads/m3-thread-raw.tar.gz. Fetch/read occurred only on
+M1, not in the MBP checkout. The six-file results commit has been merged
+into local main at d50d952. Recorded code/input-manifest hashes and all
+output hashes match. Both raw thread arrays were copied into ignored
+local data/ at their manifest paths. The companion ignored JSON was
+reconstructed from identical embedded report records and matches its
+exact manifest hash. Independently recomputed pooled and all batch
+means, SD, z, ratio, and formation counts. Full audit:
+reports/m3_incorporation_verification.json. Earlier report-only audit
+files are historical and superseded. No direct remote process telemetry
+has been inspected; the manifest records all three assigned jobs complete.
+
+R-a/R-b/T-a/T-b/T-c PASS. N1-d and D-b still FAIL. Machine-readable
+scoring: reports/nulls_amendment_scores.json. Pooled thread z=-162.8774
+and -124.2746, ratios .2500673/.2784329, formed 11/25161 and 9/7505.
+Paper 2 R1000 excursions: label z=31.8441/33.6004; N1=18.0051/28.9301.
+The raw NPZs, not averages of batch z, produce the primary estimates.
+
+## Remaining work
+
+- Let the registered local Curveball queue finish, inspect every failed
+  stage and score predictions literally. Decide whether unresolved
+  cells justify a further prospectively registered length extension;
+  never silently rerun or relax criteria. Current real timing: small
+  cells need several minutes per null; the first large excursion cell
+  takes about .8 seconds per saved four-chain sweep. Re-estimate from
+  matrix/phase timings; several more hours of local work are plausible,
+  with HN thread counting cost not yet measured. No deadline was set.
+- Both drafts have corrected nominal-count, control-specificity, onset
+  date, statistic and margin descriptions, plus completed N1 and M3
+  summaries. Result-dependent abstracts, tables and conclusions still
+  need final N2/N3 findings. Paper 2 may need a substantive interpretation
+  change if the prior nondetection regime is not robust.
+- New schematic/formation figures use *_revision filenames; original
+  figure files are untouched. Three figure PDFs were rendered with
+  Poppler and visually checked after a heading-overlap correction.
+  Current term lint: zero failures, nine stale-entry warnings.
+  Full revised manuscript PDFs are NOT yet produced/visually checked.
+  Local HTML previews are work/paper1_revision.html and
+  work/paper2_revision.html (regenerate after edits).
+- Diagnostic validation: four synthetic kernel tests + five pipeline
+  tests; independent ArviZ 0.22.0 fixtures in tests/fixtures/. The
+  reference environment lives in work/diagnostic_reference_env; original
+  .venv stayed pinned and unchanged. Two result-verification tests pass.
+- No absentia files or H2 jobs have been changed. No external outreach,
+  revised preprint publication, or MBP workload duplication is authorized.
+
+---
+
 # Session transition checkpoint — 2026-09-04 20:42 Pacific
 
 This is the latest operational checkpoint. Read it before the older

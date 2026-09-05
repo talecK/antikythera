@@ -8,6 +8,7 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor
 import fcntl
 import json
+import math
 import multiprocessing as mp
 from pathlib import Path
 import subprocess
@@ -16,6 +17,18 @@ import time
 from prepare_curveball import ROOT,BASE,ALL,HEADLINE,P1,prepare,registered
 from run_curveball import run_cell,CODE
 from run_revision_queue import sha256
+
+
+def interrupted_worker_seconds():
+    """Keep user-interrupted attempts inside the registered global budget."""
+    total=0.0
+    for path in (ROOT/'reports').glob('curveball_*_interruption.json'):
+        record=json.loads(path.read_text())
+        seconds=float(record['charged_worker_seconds'])
+        if not math.isfinite(seconds) or seconds<0:
+            raise ValueError(f'invalid interrupted worker time: {path}')
+        total+=seconds
+    return total
 
 
 def job(cell,null):
@@ -39,7 +52,8 @@ def main():
     run=dict(started_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),
              commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
              code_sha256={n:sha256(ROOT/n) for n in CODE+['eval/run_curveball_queue.py']},
-             workers=args.workers,cells=args.cells,completed=[])
+             workers=args.workers,cells=args.cells,completed=[],
+             interrupted_worker_seconds=interrupted_worker_seconds())
     previous['runs'].append(run)
     def save():
         temp=report_path.with_suffix('.tmp');temp.write_text(json.dumps(previous,indent=2)+'\n');temp.replace(report_path)
@@ -49,7 +63,7 @@ def main():
         for cell in cells:
             if any(sha256(ROOT/n)!=h for n,h in run['code_sha256'].items()):
                 raise RuntimeError('scientific code changed during queue')
-            elapsed=0
+            elapsed=interrupted_worker_seconds()
             for p in (ROOT/'reports').glob('curveball_p*_N[23].json'):
                 r=json.loads(p.read_text());elapsed+=sum(r.get(ph,{}).get('seconds',0) for ph in ('pilot','production'))
             new=sum(not (ROOT/'reports'/f'curveball_{cell}_{null}.json').exists() for null in ('N2','N3'))

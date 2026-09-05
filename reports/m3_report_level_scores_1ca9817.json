@@ -1,0 +1,189 @@
+{
+  "verification_scope": "Paper 2 report hashes, source hashes and frozen census verified. Thread decisions below are reported-summary checks pending independent raw-array recalculation.",
+  "R-a": {
+    "status": "PASS",
+    "changes": [
+      {
+        "cell": [
+          4,
+          1,
+          "WSB",
+          "union"
+        ],
+        "relative_z_change": 0.04257271430563498
+      },
+      {
+        "cell": [
+          4,
+          2,
+          "WSB",
+          "union"
+        ],
+        "relative_z_change": 0.06608920493559536
+      },
+      {
+        "cell": [
+          4,
+          3,
+          "WSB",
+          "union"
+        ],
+        "relative_z_change": 0.11245122129865276
+      },
+      {
+        "cell": [
+          4,
+          4,
+          "WSB",
+          "union"
+        ],
+        "relative_z_change": 0.08865345558075528
+      },
+      {
+        "cell": [
+          4,
+          5,
+          "WSB",
+          "union"
+        ],
+        "relative_z_change": 0.13936265787704316
+      },
+      {
+        "cell": [
+          4,
+          18,
+          "WSB",
+          "union"
+        ],
+        "relative_z_change": 0.09692059652009802
+      },
+      {
+        "cell": [
+          4,
+          4,
+          "DD",
+          "union"
+        ],
+        "relative_z_change": 0.07268091839215345
+      },
+      {
+        "cell": [
+          4,
+          5,
+          "DD",
+          "union"
+        ],
+        "relative_z_change": 0.11619082851996693
+      }
+    ]
+  },
+  "R-b": {
+    "status": "PASS",
+    "cells": [
+      {
+        "cell": [
+          4,
+          1,
+          "WSB",
+          "union"
+        ],
+        "p": 0.13986013986013987,
+        "passed": true
+      },
+      {
+        "cell": [
+          4,
+          2,
+          "WSB",
+          "union"
+        ],
+        "p": 0.1938061938061938,
+        "passed": true
+      },
+      {
+        "cell": [
+          4,
+          3,
+          "WSB",
+          "union"
+        ],
+        "p": 0.001998001998001998,
+        "passed": true
+      },
+      {
+        "cell": [
+          4,
+          4,
+          "WSB",
+          "union"
+        ],
+        "p": 0.001998001998001998,
+        "passed": true
+      },
+      {
+        "cell": [
+          4,
+          5,
+          "WSB",
+          "union"
+        ],
+        "p": 0.001998001998001998,
+        "passed": true
+      },
+      {
+        "cell": [
+          4,
+          18,
+          "WSB",
+          "union"
+        ],
+        "p": 0.001998001998001998,
+        "passed": true
+      },
+      {
+        "cell": [
+          4,
+          4,
+          "DD",
+          "union"
+        ],
+        "p": 0.001998001998001998,
+        "passed": true
+      },
+      {
+        "cell": [
+          4,
+          5,
+          "DD",
+          "union"
+        ],
+        "p": 0.001998001998001998,
+        "passed": true
+      }
+    ]
+  },
+  "T-a_reported": {
+    "status": "PASS"
+  },
+  "T-b_reported": {
+    "status": "PASS"
+  },
+  "T-c_reported": {
+    "status": "PASS",
+    "folds": [
+      {
+        "fold": "fold1",
+        "relative_range": 0.0009923897525713162
+      },
+      {
+        "fold": "fold2",
+        "relative_range": 0.0024310389186593217
+      }
+    ]
+  },
+  "reconstructed_companion_json": {
+    "source": "identical cells embedded in supplied report JSON",
+    "path": "data/registry/pilot1_concepts/run8_nulls_label_R100_thread_seeds10.json",
+    "sha256": "705c8a0b71209951e05c90ad8148c7f3914fa88261b2d40eb9f739ace15bdb4a"
+  }
+}

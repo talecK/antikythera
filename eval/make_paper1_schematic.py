@@ -73,10 +73,10 @@ def panel_b(ax, box):
     text(ax, x + w / 2, cy, "0\nshared", size=T_BODY, color=RED, ha="center",
          va="center", fontweight="bold")
     text(ax, x, y + lines_h(4),
-         "Both concepts are frequent. Had documents picked concepts\n"
-         "independently, at least 2 build-window documents would\n"
-         "hold both. Observed: none. The pair is eligible, or\n"
-         "suppressed: it should have met and never did.")
+         "Both concepts are frequent. Under independence, their\n"
+         "expected joint count is at least 2 build-window documents.\n"
+         "Observed: none. The pair is eligible, or suppressed:\n"
+         "it was expected to co-occur but never did.")
 
 
 def panel_c(ax, box):
@@ -140,10 +140,10 @@ def panel_d(ax, box):
     text(ax, left + span, base - 0.03, "more", size=T_SMALL, color=MUTED,
          ha="right")
     text(ax, x, y + lines_h(4),
-         "Pooled over all eligible pairs: the evaluation documents holding\n"
-         "any of them, against 100 shuffles that keep every document's\n"
-         "size and every concept's frequency. z = (observed - shuffle\n"
-         "mean) / shuffle sd. z far below 0: the pairs are kept apart.")
+         "Sum document counts separately for every eligible pair. Compare\n"
+         "with 100 label shuffles, then deduplicate within documents.\n"
+         "Binary margins can change. z = (observed - null mean) /\n"
+         "null SD. Negative z means fewer joint occurrences.")
 
 
 def panel_e(ax, box):
@@ -158,9 +158,9 @@ def panel_e(ax, box):
               "'form' more pairs than the real data."),
              ("per-pair permutation criterion", [("real data", 0.17, BLUE),
                                                  ("shuffled data", 0.15, GREY)],
-              "Each pair's threshold is the 99th percentile of its own\n"
-              "shuffled counts. Real and shuffled data both sit at the\n"
-              "1 percent false-positive floor.")]
+              "Each pair's threshold is its shuffled 99th percentile.\n"
+              "Dashed line: nominal 1 percent count reference, not a\n"
+              "calibrated error rate or a guaranteed count bound.")]
     for i, (title, bars, body) in enumerate(specs):
         cx = x + col * i
         text(ax, cx, top - 0.02, title, size=8, color=INK, fontweight="bold")
@@ -178,7 +178,7 @@ def panel_e(ax, box):
             fy = base + 0.17
             ax.plot([bx0 - 0.15, bx0 + 2 * bw + gap + 0.15], [fy, fy],
                     color=GREY, lw=0.8, ls="--")
-            text(ax, bx0 + 2 * bw + gap + 0.20, fy, "floor", size=T_SMALL,
+            text(ax, bx0 + 2 * bw + gap + 0.20, fy, "1%", size=T_SMALL,
                  color=MUTED, va="center")
         text(ax, cx + 2.25, base + 0.58, "pairs\nformed", size=T_SMALL,
              color=MUTED, ha="left", va="top")
@@ -208,17 +208,17 @@ def main():
     y1 = y2 + R1 + G
     xl, xr = M, M + CW + G
     panel_a(ax, card(ax, xl, y1, CW, R1, "a",
-                     "The document, two ways: a thread, or an author-quarter"))
+                     "Documents: a thread or an author-quarter"))
     panel_b(ax, card(ax, xr, y1, CW, R1, "b",
                      "An eligible pair: should have met, never did"))
     panel_c(ax, card(ax, xl, y2, CW, R1, "c",
                      "Two folds: build on past years, evaluate the next"))
     panel_d(ax, card(ax, xr, y2, CW, R1, "d",
-                     "The segregation statistic: observed count vs. label shuffles"))
+                     "Segregation: observed counts vs. label shuffles"))
     panel_e(ax, card(ax, xl, y3, 2 * CW + G, R3, "e",
                      "Two criteria for 'this pair formed', and what shuffled "
                      "data do under each"))
-    print("wrote", save(fig, "p1_schematic", tight=False) + ".{png,pdf}")
+    print("wrote", save(fig, "p1_schematic_revision", tight=False) + ".{png,pdf}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,67 @@
+{
+  "runs": [
+    {
+      "started_utc": "2026-09-05T04:11:24Z",
+      "commit": "8e55822d6f445b816239657ecb2ec5bba91ae099",
+      "code_sha256": {
+        "eval/run_curveball.py": "a4c646cf95600b292903eec313597408dd45d1ffb609f610b2e65f943e6496e5",
+        "eval/prepare_curveball.py": "3f09dc040a17242292b45b22e89c8b83d655eb456ba393fe813acb53bb32f5c8",
+        "eval/curveball.py": "358151531f64100c2147739f4136a47f61855d5ec99dafac3b23a20596def1bc",
+        "eval/curveball_kernel.cpp": "99ab0494eb66a1f50e256bdf2ae7c6054c3aa8d446ba82ae4f7fe8c362990cba",
+        "eval/curveball_diagnostics.py": "b3599619301ab55a3674cd4483e20a1571110de56fff1628f287fcd42564b954",
+        "eval/run_eval8.py": "4724f55fa24c558b5f5f4d6ab6e1608c7dc8f00b1d4ff4cdd8e8d98f3c64775b",
+        "eval/run_eval8_nulls.py": "d12dff490b6b73325fd5d351e94467eefc112987e7c1475118c2a35efff5b325",
+        "eval/run_paper2.py": "b5c1acbcd94968f802b29fdcf6763e2c29e4377266d8050a7278b8a6993c6980",
+        "eval/run_gate.py": "a52754c146890452b8a6e92096b77f345eec6e97b54970b05ee842d589b3892d",
+        "preregistration_nulls_n2.md": "af016ad9da776d92c6e1394a756bdb0b9e4a98ca758722f9ddd653285a13ba49",
+        "eval/run_curveball_queue.py": "4a45ef5202875714964502643b57e9a36f4e7ed84002c30a2fc98ae0b122f57f"
+      },
+      "workers": 2,
+      "cells": "all",
+      "completed": [
+        {
+          "cell": "p2_WSB_01",
+          "null": "N2",
+          "pilot": "PASS",
+          "production": "PASS",
+          "sha256": "cfd3521dd2482cf38f949c51c9204d6cc6a6bbe6989aa5b0c55d25963f449ad8"
+        },
+        {
+          "cell": "p2_WSB_01",
+          "null": "N3",
+          "pilot": "PASS",
+          "production": "PASS",
+          "sha256": "a4df62a270e6c3656abb03f5887b74c2b85f046e37c2d3702e5ec3ca5585329c"
+        },
+        {
+          "cell": "p2_WSB_02",
+          "null": "N2",
+          "pilot": "PASS",
+          "production": "PASS",
+          "sha256": "2cb8be53a22e88f071f220e07ef9687937f8b8af87fa0d27ad4e2290bc759085"
+        },
+        {
+          "cell": "p2_WSB_02",
+          "null": "N3",
+          "pilot": "UNRESOLVED",
+          "production": "NOT_RUN",
+          "sha256": "c436137c741ca0f79fde060c8a64d3c5b3d337f1b26f24ad43dda52b38c70b84"
+        },
+        {
+          "cell": "p2_WSB_03",
+          "null": "N2",
+          "pilot": "UNRESOLVED",
+          "production": "NOT_RUN",
+          "sha256": "25ed57575bee668263d3d158f4992315ea23bf6a4433e3d8cf3ff47a8cc1b5c8"
+        },
+        {
+          "cell": "p2_WSB_03",
+          "null": "N3",
+          "pilot": "UNRESOLVED",
+          "production": "NOT_RUN",
+          "sha256": "fd3dd286156634d5173fa60456bbe24b6a8d01db0aaeb778e5c7e354da145bd2"
+        }
+      ]
+    }
+  ]
+}
