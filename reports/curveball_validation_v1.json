@@ -1,0 +1,44 @@
+{
+  "validation": "Synthetic only; no real-data chain has run",
+  "registration_commit": "5215719",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "architecture": "x86_64",
+  "reference": "ArviZ 0.22.0 in isolated work/diagnostic_reference_env; original .venv untouched",
+  "reference_tolerance": {
+    "rtol": 1e-10,
+    "atol": 1e-10
+  },
+  "intentional_difference": "Constant 95th-percentile Bernoulli indicator: ESS undefined rather than N",
+  "results": {
+    "logs/n2_pipeline_validation_v3.log": "ok test_canonical_support_and_zero_rows\nok test_constants_and_support\nok test_reference_diagnostics\nok test_stage_serialization_and_extension\nok test_stratified_ensemble_and_reference\n",
+    "logs/n2_kernel_validation_v2.log": "ok test_exact_small_kernel_uniform_stationary\nok test_fixed_and_empty_states\nok test_margins_counts_and_replay\nok test_native_empirical_small_space\n4 passed\n"
+  },
+  "sha256": {
+    "logs/n2_pipeline_validation_v3.log": "b0f01390fb0478e0882e9c2d81639b6892e1141eed1f1920eff8e86d0a209b6b",
+    "logs/n2_kernel_validation_v2.log": "5f7ba91593c0f2d9d5df63bceeb19b9b032687079f0079e7fefc8c88cabb8443",
+    "tests/fixtures/mcmc_reference.json": "24c904c0b1a648a13b06fb5d8283251b98b7890df4d03ce10a478f9588ef1ea6",
+    "tests/fixtures/mcmc_reference_inputs.npz": "998ce196e9df3e0bbec622f96c75fc8d53bb3e44ebc21d62d17876e8fd495c20"
+  },
+  "build": {
+    "command": [
+      "clang++",
+      "-std=c++17",
+      "-O3",
+      "-shared",
+      "-fPIC",
+      "-arch",
+      "x86_64",
+      "-isysroot",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-isystem",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1",
+      "/Users/andrej/workspace/antikythera/eval/curveball_kernel.cpp",
+      "-o",
+      "/Users/andrej/workspace/antikythera/work/curveball_build/curveball_x86_64_99ab0494eb66a1f5.dylib"
+    ],
+    "compiler": "Apple clang version 16.0.0 (clang-1600.0.26.6)\nTarget: x86_64-apple-darwin23.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+    "architecture": "x86_64",
+    "source_sha256": "99ab0494eb66a1f50e256bdf2ae7c6054c3aa8d446ba82ae4f7fe8c362990cba",
+    "library_sha256": "a87d11e18e6460e016c61f2b549f6f8cf3835c80f44f59295d067085537b7d7f"
+  }
+}

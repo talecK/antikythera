@@ -5,6 +5,7 @@ including x86_64 Python on Apple Silicon. Build products live in work/.
 """
 import ctypes as ct
 import hashlib
+import json
 import os
 from pathlib import Path
 import platform
@@ -34,6 +35,13 @@ def build_library():
         try:
             subprocess.run([*command, str(SOURCE), "-o", str(temporary)], check=True)
             temporary.replace(path)
+            path.with_suffix('.build.json').write_text(json.dumps({
+                'command': [*command, str(SOURCE), '-o', str(path)],
+                'compiler': subprocess.check_output(['clang++', '--version'], text=True),
+                'architecture': arch,
+                'source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+                'library_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+            }, indent=2) + '\n')
         finally:
             temporary.unlink(missing_ok=True)
     return path
@@ -49,6 +57,7 @@ def library():
     lib.cb_step.argtypes = [ct.c_void_p, ct.c_uint64]
     lib.cb_step.restype = ct.c_int
     lib.cb_export.argtypes = [ct.c_void_p, ptr32]
+    lib.cb_reference.argtypes = [ct.c_void_p, ptr32]
     lib.cb_margins.argtypes = [ct.c_void_p, ptr64]
     for name in ("cb_distance", "cb_attempts", "cb_tradable"):
         function = getattr(lib, name)
@@ -119,6 +128,18 @@ class Curveball:
         result = np.zeros(self.n_columns, dtype=np.uint64)
         self.lib.cb_margins(self.handle, pointer(result, ct.c_uint64))
         return result
+
+    def set_reference(self, rows):
+        """Distance reference only; does not alter states, margins or RNG."""
+        self._check_open()
+        if len(rows) != len(self.offsets)-1 or any(
+                len(r) != b-a for r,a,b in zip(rows,self.offsets[:-1],self.offsets[1:])):
+            raise ValueError('reference row degrees differ')
+        if any(len(set(r)) != len(r) or any(int(x)!=x or not 0<=x<self.n_columns for x in r)
+               for r in rows):
+            raise ValueError('invalid reference labels')
+        flat = np.asarray([x for r in rows for x in sorted(r)], dtype=np.uint32)
+        self.lib.cb_reference(self.handle, pointer(flat, ct.c_uint32))
 
     def counts(self, pairs):
         self._check_open()

@@ -82,6 +82,10 @@ void* cb_create(uint64_t n, uint32_t columns, const uint64_t* offsets,
     catch (const std::exception& e) { error=e.what(); return nullptr; }
 }
 void cb_destroy(void* p) { delete static_cast<Chain*>(p); }
+void cb_reference(void* p, const uint32_t* labels) {
+    auto& chain=*static_cast<Chain*>(p);
+    for (auto& row: chain.initial) for (auto& label: row) label=*labels++;
+}
 int cb_step(void* p, uint64_t attempts) {
     try { static_cast<Chain*>(p)->step(attempts); return 0; }
     catch (const std::exception& e) { error=e.what(); return -1; }
