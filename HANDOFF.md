@@ -6,55 +6,206 @@
 ## pre-paper project history and is still accurate for the machinery.
 
 ### Critique response: nulls amendment (2026-09-04) — CURRENT PICKUP POINT
-- An external model-generated review of both preprints arrived
-  2026-09-04. Verified against code: (1) the label-shuffle null is NOT
-  fixed-fixed (documents rebuilt as sets collapse duplicate labels) and
-  both drafts say it is; (2) the segregation statistic sums per-pair
-  document counts, the prose says "documents holding any eligible pair";
-  (3) the DD control's z is not monotone and its observed/null ratio
-  steps at eval 2021Q2 like WSB; (4) "30-fold" contradicts the 1.8M->9M
-  anchor (fivefold); (5) the extraction model is never named in Paper 1;
-  (6) Paper 2 still says "private during review". The kill (Paper 1)
-  and the onset (Paper 2) are not at risk; the Paper 2 excursion is the
-  exposed result (collapse deflates the null, so positive z is
-  anti-conservative, and a timing-preserving null has never been run).
-- Registered response: preregistration_nulls.md (STATUS: REGISTERED,
-  predictions N1-a..d, R-a/b, D-b, P1-a/b, decision rules 1 to 5,
-  runbook at the end). Code: eval/nulls.py (registered sampler moved
-  verbatim + quarter-stratified sampler + margin-drift diagnostic +
-  Monte Carlo p with the +1 correction), run_paper2.py (--workers,
-  --null, --R, --headline, --cells, --drift; registered path unchanged
-  and byte-identical through the pool: verified on three cells on the
-  M1), run_eval8_nulls.py (Paper 1's four cells, per-cell seeds;
-  run_eval8.py frozen), tests/test_nulls.py (7 passing).
-- ALREADY KNOWN and disclosed in the amendment: the reproduction check
-  emitted drift for three cells: the registered null collapses 3 to 6
-  percent of incidences (WSB k=0 0.057, k=1 0.058, DD k=0 0.033). That
-  triggers rule 4: a margin-preserving null (N2, curveball) is required
-  for the headline cells before v2, under a further amendment not yet
-  written. The 2 percent threshold prediction was withdrawn, not
-  reworded.
-- HOLD the SocArXiv v2 uploads until the revision is in.
-- Runs go on the M3 MBP; the NVMe stays on the M1. Clone, `python3 -m
-  venv .venv && .venv/bin/pip install -r requirements.txt` (numpy must
-  be 2.5.2 for the stream to reproduce). Copy the 26 input files (1.45
-  GB) listed in mbp_inputs.txt into a real data/ directory at the same
-  relative paths (rsync --files-from from the NVMe's antikythera/data
-  on the M1). Nothing else under data/ is needed for the runbook. Before
-  running run_eval8.py, copy the two run8_*.json files aside as the
-  reference for the Paper 1 gate diff, because that script overwrites
-  them. Then follow the runbook in preregistration_nulls.md step by
-  step with stdout redirected to a log file. Gate first:
-  `run_paper2.py --workers 8` must leave reports/paper2_windows_z.tsv
-  unchanged under git, and `run_eval8.py` serially must reproduce the
-  two run-8 JSONs. Expected wall time for the whole runbook on an M3
-  Pro: about 1 h 20 min.
-- After the runs: append every prediction's outcome to
-  reports/pilot1_runs.md, write and register the N2 amendment, then the
-  prose pass (statistic definition, "fixed-fixed" language, ratios in
-  every table, onset as a window, |z|<3 as non-detection, DD step
-  disclosed, 30-fold, "monotonically", model identifier, repo status,
-  Neal 2014 / FDSM and LBD citations, abstract scope).
+Written 2026-09-04 evening for a takeover by another agent. Everything
+in this block is true as of commit 39c3d2e on main (origin in sync,
+nothing unpushed, working tree clean). The MBP session described below
+has NOT pushed anything; its results exist only as the owner's report,
+transcribed here.
+
+#### 1. State of the repo
+- Branch main, HEAD 39c3d2e. Three commits today on top of c559f66:
+  dc3a540 (portability + requirements.txt), e50b1b9 (registered nulls
+  amendment + code + tests), 39c3d2e (HANDOFF + mbp_inputs.txt).
+- Machines: M1 (this repo checkout, /Users/andrej/workspace/antikythera;
+  the NVMe with all data stays here, mounted at
+  "/Volumes/1TB NVME 1/antikythera/data", reached through the data/
+  symlinks: docs, extractions, extractions_raw, paper2, raw, registry,
+  release, science4cast, reddit_gate). M3 MBP (a clone; data/ is a real
+  directory holding the 26 files in mbp_inputs.txt, 1.45 GB, copied
+  from the NVMe at the same relative paths).
+- Environments: .venv on each machine from requirements.txt (Python
+  3.14.6, numpy 2.5.2, duckdb 1.5.5). IMPORTANT: the M1 venv is an
+  x86_64 interpreter under Rosetta (platform.machine() == x86_64); the
+  MBP venv is arm64. The permutation stream is identical on both; libm
+  lgamma/exp differ by ulps, which shows up only in binom_p.
+- No jobs are running on the M1. The only M1 real-data run today was
+  the 3-cell pool reproduction check (registered null; WSB k=0,1 and
+  DD k=0; byte-identical), output in the session scratchpad only, not
+  kept.
+
+#### 2. What the critique said and what we verified (2026-09-04)
+External model-generated review of both preprints. Verified against
+code and drafts:
+- The label-shuffle null (run_eval8.run_space, run_paper2.window_stat,
+  run_gate.analyse) permutes the label column and rebuilds documents as
+  sets, so duplicate labels collapse: NOT fixed-fixed. Both drafts say
+  it "holds every document's size and every concept's frequency fixed"
+  (paper1_draft.md lines ~122, 197, 311, 780, 796; paper2_draft.md
+  ~238). Measured collapse (registered null, first 10 replicates): WSB
+  B=4 k=0 collapsed_frac 0.057, WSB k=1 0.058, DD k=0 0.033. Bias
+  direction: collapse removes incidences, null pair counts deflate;
+  negative z conservative, positive z (Paper 2 excursion) anti-
+  conservative, per-pair p99 slightly easier to exceed (formation was
+  at the floor anyway).
+- Statistic definition: code sums per-pair document counts (obs.sum());
+  prose says "documents holding any eligible pair". Prose is wrong.
+- DD control (reports/paper2_windows_z.tsv, B=4 union): z not monotone
+  (-8.1 -9.8 -8.9 -7.7 -8.6 -11.6 -10.7 -10.3 -9.6 -9.4 -7.2 -8.0 -6.7
+  -10.2 -10.1 -10.6 -11.2 -12.1 -15.7); observed/null ratio steps from
+  0.59-0.73 (eval 2020Q1..2021Q1) to 0.37-0.51 (2021Q2 onward),
+  coincident with the WSB onset. WSB ratios: 0.80 1.06 1.10 2.32 1.69
+  then 0.68 0.36 0.31 0.35 0.52 0.76 0.28 0.59 0.52 0.49 0.67 0.60 0.75
+  0.71. paper2_draft.md line ~449 "gradually and monotonically" is
+  false. P3 unaffected (DD never at chance or excursion).
+- "30-fold" (paper2_draft.md ~30, 109, 159) contradicts its own anchor
+  A2 (1.8M -> 9M subscribers = fivefold); either re-source to a volume
+  figure or correct.
+- Extraction model never named in Paper 1 (deferred to the cache key,
+  ~line 595). Paper 2 lines ~788 and ~859 still say "private during
+  review" (repo is public).
+- Onset should be stated as the window whose eval interval covers
+  2021Q2-Q3; |z|<3 is non-detection, not equivalence; the step-fit
+  near-tie set is not a CI.
+- Prior art: bipartite backbone work (Neal 2014 FDSM, Saracco BiCM,
+  Zweig & Kaufmann) already uses fixed-fixed nulls; the defensible claim
+  is that LBD / co-occurrence z-scoring has not. Cite Neal; cite 2-3
+  papers using the Poisson z-criterion being retired.
+- 1 percent floor is "at most 1 percent nominal", not exact; binomial
+  on formed counts assumes independence (fails); z is an effect size in
+  null-SD units, not a tail probability. Both cut against the
+  alternative, so the kill stands.
+- Impact: Paper 1 kill and Paper 2 onset not at risk. Paper 2 excursion
+  (+28.6, +30.9) is the exposed result until N1 and curveball run.
+
+#### 3. What was built today (all committed)
+- eval/nulls.py: label_shuffle (registered sampler moved verbatim;
+  test asserts identical output to the inline code), label_shuffle_
+  stratified (permute within strata, strata visited sorted),
+  margin_drift (inc_before/inc_after/docs_changed/toks_changed;
+  precomputed Counters optional), null_summary (mean, sd, z, ratio,
+  null_min/max, mc_p_lo/hi/2s with the +1 correction), drift_mean.
+- eval/run_paper2.py: --workers N (spawn pool; workers load their own
+  rows via duckdb; parent writes rows in registered order; per-cell
+  fresh default_rng(20260831) so output is order-independent), --null
+  label|stratified, --R, --headline (8 cells: WSB union B=4 k in
+  1,2,3,4,5,18; DD union B=4 k in 4,5), --cells "B:k:stratum:lens,...",
+  --drift N. Registered path (label, R=100, all cells, no --out) writes
+  reports/paper2_windows_z.tsv with the 16 registered columns only.
+  Anything else requires preregistration_nulls.md STATUS: REGISTERED,
+  refuses to overwrite the registered TSV, writes
+  reports/paper2_windows_z_<null>_R<R>[_headline].tsv with 14 wide
+  columns (null_kind R ratio null_min null_max mc_p_lo mc_p_hi mc_p_2s
+  drift_reps inc_before inc_after collapsed_frac docs_changed
+  toks_changed). Drift default: 0 for the registered null, 10 otherwise
+  (changed after the reproduction check accidentally emitted drift).
+- eval/run_eval8_nulls.py: Paper 1's four cells, per-cell seed
+  default_rng([20260831, cell_index]), documents iterated sorted,
+  --null stratified|label, --R, --workers (<=4), --drift. Output
+  reports/paper1_nulls_<null>_R<R>.tsv and data/registry/{run5_author,
+  pilot1_concepts}/run8_nulls_<null>_R<R>.json. Thread-space strata =
+  quarter of the thread's first claim (min(time) per doc_id from
+  claims.parquet). run_eval8.py is untouched.
+- tests/test_nulls.py: 7 tests; `.venv/bin/python tests/test_nulls.py`.
+- preregistration_nulls.md: STATUS: REGISTERED. Predictions N1-a..d,
+  R-a/b, D-b (D-a withdrawn and disclosed), P1-a/b; decision rules 1-5;
+  runbook steps 1-6. Rule 4 is ALREADY TRIGGERED by the drift values:
+  curveball (N2) required on the headline cells before v2 under a
+  further amendment (not yet drafted).
+- mbp_inputs.txt: the 26 data files the MBP needs.
+- Memory note for Claude sessions: project-critique-response-nulls.md
+  (not part of the repo).
+
+#### 4. MBP reproduction gate (runbook step 1) — RUN, RESULT REPORTED BY OWNER, NOT COMMITTED
+- Paper 2, `run_paper2.py --workers 8` (arm64): all 204 cells; every
+  eligible count, observed total, null mean, null sd, z, formed count
+  byte-identical to the published TSV; registered scoring reprinted
+  unchanged (onset eval 2021Q2, P1/P2/P3 pass). Only drift: binom_p in
+  66 of 204 rows, max relative difference 6.4e-13 (libm on arm64 vs the
+  M1's x86_64 Rosetta interpreter). An x86_64 interpreter on the MBP
+  reproduces the published bytes. The Paper 2 stream is reproducible.
+- Paper 1, `run_eval8.py` serial: author space reproduces exactly in
+  both folds. Thread space does NOT: fold1 z = -178.8 (published
+  -152.3), formed 20 (published 22); fold2 z = -116.3 (published
+  -123.2). Observed totals and eligible counts identical. Cause,
+  verified on the MBP: thread_universe's DuckDB hash join has no ORDER
+  BY and run_space iterates edoc in insertion order before the
+  permutation; the document set is stable, the order is not, even
+  between consecutive runs on the M1. Published thread-space null
+  values are single draws from an unpinned stream and cannot be
+  regenerated anywhere. The 2026-08-31 determinism check covered
+  hash-seed variation only. Sign and scale not in doubt (every draw
+  below -100, formation at the floor). Paper 2, run_gate, and author
+  space sort documents and are unaffected. run_eval8_nulls.py already
+  sorts.
+- Whether the MBP's gate outputs (TSV diff, JSONs, logs) were saved is
+  not known here; the MBP session was told to log to logs/<step>.log
+  and to keep reference/ copies of the run8 JSONs. Check that clone.
+- Runbook steps 2-6 have NOT run. No N1, R=1000, or curveball value
+  exists anywhere.
+
+#### 5. Registered decisions vs proposals awaiting the owner
+REGISTERED (preregistration_nulls.md, commit e50b1b9): the registered
+null stays primary for v1 claims; N1, D, Monte Carlo p, R=1000 on the
+headline cells; predictions and rules 1-5; N2 required (rule 4
+triggered); v2 uploads on hold.
+PROPOSED, NOT DECIDED (owner has been asked; also put to the external
+reviewer as questions a-c):
+- Gate standard: byte identity for counts and z; p-values within 1e-9
+  relative; platform and interpreter architecture recorded per run;
+  do not chase byte identity through an x86_64 emulator. Keep the
+  published TSV as the x86 baseline and log the arm64 diff.
+- Thread space: re-report as 10 independent seeds at R=100 under
+  sorted document iteration (z mean and range, formed range, ratio mean
+  and range), nondeterminism disclosed and scoped, in a dated
+  registered note appended to preregistration_nulls.md with a
+  prediction (every seed z < -100, formation at the floor in all,
+  ratio within 5 percent across seeds). Alternative on the table: one
+  re-baselined draw (rejected in our recommendation) or R=1000 plus a
+  few seeds.
+- Curveball design (trades per row before first sample, thinning,
+  independent chains vs one thinned chain per core): open; the MBP
+  session was to draft preregistration_nulls_n2.md as STATUS: DRAFT.
+- A paste-ready follow-up to the external reviewer with these results
+  and questions was drafted in conversation; whether it was sent is
+  unknown.
+
+#### 6. Remaining work, in order
+1. Owner decides the two proposals above. Then append the dated note
+   to preregistration_nulls.md (tolerance clause; thread-space 10-seed
+   re-report with its prediction; nondeterminism disclosure), commit,
+   push. Do not run anything new before that commit.
+2. Add a --seeds N mode to run_eval8_nulls.py for the thread-space
+   re-report (registered sampler, sorted iteration, seeds
+   default_rng([20260831, cell_index, s])), one TSV row per seed;
+   extend tests; commit, push.
+3. MBP, from the runbook: step 2 `run_paper2.py --null stratified
+   --workers 8` (full series, ~15-20 min on an M3 Pro); step 3
+   `run_paper2.py --headline --R 1000 --workers 8` and the same with
+   `--null stratified` (~15-20 min each); step 4 `run_eval8_nulls.py
+   --null stratified --workers 4` and `--null label --workers 4`
+   (~3 min each), plus the new 10-seed thread-space run (~10 x 5 min).
+   Every run `>> logs/<step>.log 2>&1`. Score every prediction
+   (N1-a..d, R-a/b, D-b, P1-a/b, and the new thread-space prediction)
+   PASS/FAIL with numbers in reports/pilot1_runs.md, apply rules 1-5
+   as written, commit the TSVs/JSONs/log summaries, push.
+4. Draft preregistration_nulls_n2.md (curveball: chain length,
+   thinning, per-chain seeds, headline cells, predictions), owner
+   review, flip to REGISTERED, run on the 8 headline cells (~1 h with
+   one chain per core, plus a second independent chain set as the
+   convergence check), score, commit.
+5. Prose pass on both drafts (reports/paper1_draft.md,
+   reports/paper2_draft.md): statistic definition; drop "fixed-fixed"
+   and state the collapse bias; ratios in every table; Monte Carlo p;
+   onset as a window; |z|<3 as non-detection; DD step disclosed;
+   "monotonically" removed; 30-fold corrected; extraction model named
+   in Methods; repo status line; Neal 2014 / FDSM and LBD citations;
+   abstract and conclusion scoped to the tested criterion; Paper 1
+   thread-space numbers as ranges with the determinism qualification;
+   registration history consolidated. Then eval/term_lint.py all (0
+   failures), re-render (eval/render_paper_html.py), regenerate
+   preprint PDFs, upload SocArXiv v2s, add related identifiers on
+   Zenodo.
+Expected compute for steps 3-4 on an M3 Pro: about 2.5 to 3.5 h wall.
 
 ### Term pass and lint (2026-09-02 evening)
 - Both drafts passed through a mechanical jargon audit: 383 terms
